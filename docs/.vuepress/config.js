@@ -5,13 +5,19 @@ import { viteBundler } from '@vuepress/bundler-vite'
 export default defineUserConfig({
   lang: 'en-US',
 
-  title: 'VuePress',
-  description: 'My first VuePress Site',
+  title: 'Zip Solutions',
+  description: 'The Home of Accessibility',
 
   theme: defaultTheme({
-    logo: 'https://vuejs.press/images/hero.png',
+    logo: '/images/zip_logo_blue_trans.png',
 
-    navbar: ['/', '/get-started'],
+    navbar: [
+      '/', '/about-us',
+      {
+        text: 'Zip Captions',
+        link: 'https://zipcaptions.app',
+      },
+    ],
   }),
 
   bundler: viteBundler(),
