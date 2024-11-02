@@ -1,6 +1,8 @@
 import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress/cli'
 import { viteBundler } from '@vuepress/bundler-vite'
+import { searchPlugin } from '@vuepress/plugin-search'
+import { markdownImagePlugin } from '@vuepress/plugin-markdown-image'
 
 export default defineUserConfig({
   lang: 'en-US',
@@ -12,7 +14,7 @@ export default defineUserConfig({
     logo: '/images/zip_logo_blue_trans.png',
 
     navbar: [
-      '/', '/about-us',
+      '/', '/about-us', '/advisory',
       {
         text: 'Zip Captions',
         link: 'https://zipcaptions.app',
@@ -21,4 +23,23 @@ export default defineUserConfig({
   }),
 
   bundler: viteBundler(),
+
+  colorMode: 'light',
+  colorModeSwitch: false,
+
+  plugins: [
+    searchPlugin({
+      // options
+    }),
+    markdownImagePlugin({
+      // Enable figure
+      figure: true,
+      // Enable image lazyload
+      lazyload: true,
+      // Enable image mark
+      mark: true,
+      // Enable image size
+      size: true,
+    }),
+  ],
 })
