@@ -3,8 +3,6 @@ import { defineUserConfig } from 'vuepress/cli'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { searchPlugin } from '@vuepress/plugin-search'
 import { markdownImagePlugin } from '@vuepress/plugin-markdown-image'
-import { revealJsPlugin } from '@vuepress/plugin-revealjs'
-import { markdownStylizePlugin } from '@vuepress/plugin-markdown-stylize'
 
 
 export default defineUserConfig({
@@ -43,12 +41,6 @@ export default defineUserConfig({
       mark: true,
       // Enable image size
       size: true,
-    }),
-    revealJsPlugin({
-      // plugin options
-    }),
-    markdownStylizePlugin({
-      // options
     }),
   ],
 })
