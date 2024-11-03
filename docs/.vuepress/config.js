@@ -4,6 +4,7 @@ import { viteBundler } from '@vuepress/bundler-vite'
 import { searchPlugin } from '@vuepress/plugin-search'
 import { markdownImagePlugin } from '@vuepress/plugin-markdown-image'
 
+
 export default defineUserConfig({
   lang: 'en-US',
 
@@ -14,7 +15,7 @@ export default defineUserConfig({
     logo: '/images/zip_logo_blue_trans.png',
 
     navbar: [
-      '/', '/about-us', '/advisory',
+      '/', '/about-us', '/products','/advisory',
       {
         text: 'Zip Captions',
         link: 'https://zipcaptions.app',
