@@ -1,7 +1,0 @@
----
-title: :mail:
----
-
-<form>
-
-</form>
