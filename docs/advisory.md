@@ -1,5 +1,5 @@
 ---
-title: Our Advisory Board
+title: Advisory Board
 sidebar: false
 ---
 
