@@ -1,5 +1,5 @@
 ---
-title: Our Products & Services
+title: Products & Services
 sidebar: false
 ---
 

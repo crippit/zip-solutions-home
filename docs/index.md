@@ -1,6 +1,6 @@
 ---
 home: true
-title: Welcome to Zip Solutions
+title: Zip Solutions
 description: Welcome to Zip Solutions
 heroImage: /images/zip_logo_blue_trans.png
 heroText: We are Zip Solutions
