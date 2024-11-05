@@ -15,7 +15,7 @@ export default defineUserConfig({
     logo: '/images/zip_logo_blue_trans.png',
 
     navbar: [
-      '/', '/about-us', '/products','/advisory',
+      '/', '/about-us', '/products','/advisory','/contact-us',
       {
         text: 'Zip Captions',
         link: 'https://zipcaptions.app',
