@@ -17,6 +17,8 @@ In 2023 Chris had the opportunity to take part in the first ever Dell Education 
 
 Solutions Zip (Operating as Zip Captions and Zip Solutions) is a registered business in Quebec.
 
+If you want to learn more, or want to talk to us, [get in touch](../contact-us.md)
+
 ---
 # Our Team
 ![Chris Webb](/images/Chris_Circle.png)
