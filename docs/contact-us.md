@@ -8,7 +8,6 @@ sidebar: false
 <style>
   /* Form container */
   form {
-      background: white;
       padding: 24px;
       border-radius: 8px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -25,7 +24,6 @@ sidebar: false
   label {
       display: block;
       font-size: 1rem;
-      color: #555;
       margin-bottom: 8px;
       font-weight: 500;
   }
@@ -34,20 +32,19 @@ sidebar: false
   input[type="text"],
   input[type="email"],
   textarea {
-      width: 90%;
-      padding: 12px;
+      width: 100%;
+      padding: 12px 0;
       font-size: 1rem;
       border: 1px solid #ccc;
       border-radius: 4px;
       transition: all 0.3s ease;
-      background-color: #f9f9f9;
+      
   }
 
   input[type="text"]:focus,
   input[type="email"]:focus,
   textarea:focus {
       outline: none;
-      border-color: ##2e5487;
       box-shadow: 0 2px 6px rgba(98, 0, 238, 0.3);
   }
 
@@ -63,7 +60,6 @@ sidebar: false
       font-size: 0.9rem;
       top: -8px;
       left: 12px;
-      color: #4278BF;
   }
 
   /* Radio Buttons */
@@ -77,8 +73,6 @@ sidebar: false
 
   /* Buttons */
   button {
-      background-color: #4278BF;
-      color: white;
       padding: 12px 20px;
       font-size: 1rem;
       border: none;
@@ -86,14 +80,6 @@ sidebar: false
       cursor: pointer;
       width: 100%;
       transition: background-color 0.3s ease;
-  }
-
-  button:hover {
-      background-color: ##2e5487;
-  }
-
-  button:active {
-      background-color: #4278BF;
   }
 
   /* Spacing for radio buttons and labels */
@@ -126,7 +112,7 @@ sidebar: false
   }
 </style>
 
-<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeat_QYrLNUwVb37U-qYQvWAlhKns2xs9zd_gnsZvI6XmgYow/formResponse" method="POST" id="contactForm">
+<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeat_QYrLNUwVb37U-qYQvWAlhKns2xs9zd_gnsZvI6XmgYow/formResponse" method="POST" id="contactForm" class="theme-default-content">
     <div>
         <label for="name">Your Name:</label>
         <input type="text" name="entry.862584966" id="name" required>
