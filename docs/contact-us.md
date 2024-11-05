@@ -34,7 +34,7 @@ sidebar: false
   input[type="text"],
   input[type="email"],
   textarea {
-      width: 100%;
+      width: 90%;
       padding: 12px;
       font-size: 1rem;
       border: 1px solid #ccc;
@@ -47,7 +47,7 @@ sidebar: false
   input[type="email"]:focus,
   textarea:focus {
       outline: none;
-      border-color: #6200ee;
+      border-color: ##2e5487;
       box-shadow: 0 2px 6px rgba(98, 0, 238, 0.3);
   }
 
@@ -63,7 +63,7 @@ sidebar: false
       font-size: 0.9rem;
       top: -8px;
       left: 12px;
-      color: #6200ee;
+      color: #4278BF;
   }
 
   /* Radio Buttons */
@@ -77,7 +77,7 @@ sidebar: false
 
   /* Buttons */
   button {
-      background-color: #6200ee;
+      background-color: #4278BF;
       color: white;
       padding: 12px 20px;
       font-size: 1rem;
@@ -89,11 +89,11 @@ sidebar: false
   }
 
   button:hover {
-      background-color: #3700b3;
+      background-color: ##2e5487;
   }
 
   button:active {
-      background-color: #6200ee;
+      background-color: #4278BF;
   }
 
   /* Spacing for radio buttons and labels */
