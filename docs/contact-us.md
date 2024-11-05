@@ -5,6 +5,127 @@ sidebar: false
 
 # Contact Us
 
+<style>
+  /* Form container */
+  form {
+      background: white;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+  }
+
+  div {
+      margin-bottom: 16px;
+      position: relative;
+  }
+
+  /* Labels */
+  label {
+      display: block;
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 8px;
+      font-weight: 500;
+  }
+
+  /* Input Fields and Textarea */
+  input[type="text"],
+  input[type="email"],
+  textarea {
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      background-color: #f9f9f9;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  textarea:focus {
+      outline: none;
+      border-color: #6200ee;
+      box-shadow: 0 2px 6px rgba(98, 0, 238, 0.3);
+  }
+
+  textarea {
+      resize: vertical;
+  }
+
+  /* Floating label effect */
+  input:focus + label,
+  textarea:focus + label,
+  input:not(:focus):valid + label,
+  textarea:not(:focus):valid + label {
+      font-size: 0.9rem;
+      top: -8px;
+      left: 12px;
+      color: #6200ee;
+  }
+
+  /* Radio Buttons */
+  input[type="radio"] {
+      margin-right: 8px;
+  }
+
+  input[type="radio"]:checked + label {
+      font-weight: bold;
+  }
+
+  /* Buttons */
+  button {
+      background-color: #6200ee;
+      color: white;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+      background-color: #3700b3;
+  }
+
+  button:active {
+      background-color: #6200ee;
+  }
+
+  /* Spacing for radio buttons and labels */
+  label[for="partnership"],
+  label[for="product"],
+  label[for="advisory-board"],
+  label[for="help-support"],
+  label[for="media-press"],
+  label[for="general-contact"] {
+      display: inline-block;
+      margin-right: 20px;
+      padding-left: 6px;
+  }
+
+  /* Spacing adjustments for form layout */
+  form > div {
+      margin-bottom: 20px;
+  }
+
+  /* Overall responsiveness */
+  @media (max-width: 600px) {
+      form {
+          padding: 16px;
+      }
+
+      button {
+          font-size: 1.1rem;
+          padding: 14px;
+      }
+  }
+</style>
+
 <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeat_QYrLNUwVb37U-qYQvWAlhKns2xs9zd_gnsZvI6XmgYow/formResponse" method="POST" id="contactForm">
     <div>
         <label for="name">Your Name:</label>
