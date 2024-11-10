@@ -39,17 +39,17 @@ These systems can work via Wi-Fi, Infrared, Magnetic Loops and via FM. We have e
 
 We offer a number of options including our innovative "install your own system" model, where we send you detailed instructions and a shopping list, so you to acquire your own equipment, install it and set it up. Not only does this reduce the cost of the system and the consultancy, but it also means that you understand how your system works, and how it is installed.
 
-[Contact us to learn more](../contact-us.md)
+[Contact us to learn more](/contact-us.md)
 
 ### Digital Sound & Lighting Systems
 We have significant experience with Digital Audio Systems in professional theatre spaces, as well as AV systems in conference and educational settings. We also have experience with architectural lighting systems such as ETC Mosaic as well as the integration and automation of these systems with others.
 
-[Contact us to learn more](../contact-us.md)
+[Contact us to learn more](/contact-us.md)
 
 ### Captioning
 As the creators of ZipCaptions we have considerable experience with Live Captions. We can help you to integrate live captions at your next event. We also have experience with the implementation of Surtitles, the captioning used in live theatre based on a script. We can help you to set up surtitles for your event, as well as with how to best display the surtitles on your stage.
 
-[Contact us to learn more](../contact-us.md)
+[Contact us to learn more](/contact-us.md)
 
 ### Free Resources for Listening Accessibility
 We have a whole set of resources dedicated to getting started with listening accessibility, including:
