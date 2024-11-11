@@ -1,7 +1,7 @@
 import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress/cli'
 import { viteBundler } from '@vuepress/bundler-vite'
-import { searchPlugin } from '@vuepress/plugin-search'
+//import { searchPlugin } from '@vuepress/plugin-search'
 import { markdownImagePlugin } from '@vuepress/plugin-markdown-image'
 
 
@@ -29,10 +29,7 @@ export default defineUserConfig({
   colorModeSwitch: false,
 
   plugins: [
-    searchPlugin({
-      // options
-    }),
-    markdownImagePlugin({
+      markdownImagePlugin({
       // Enable figure
       figure: true,
       // Enable image lazyload
