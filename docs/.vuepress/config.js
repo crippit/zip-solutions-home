@@ -11,11 +11,14 @@ export default defineUserConfig({
   title: 'Zip Solutions',
   description: 'The Home of Accessibility',
 
-  theme: defaultTheme({
+ theme: defaultTheme({
     logo: '/images/zip_logo_blue_trans.png',
-
     navbar: [
-      '/', '/about-us', '/products','/advisory',
+      '/', '/products','/advisory',
+      {
+        text: 'About Us',
+        children: ['story.md','about-us.md','press.md','privacy.md'],
+      },
       {
         text: 'Zip Captions',
         link: 'https://zipcaptions.app',
