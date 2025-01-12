@@ -9,6 +9,13 @@ Don’t just take our word for it. Hear directly from our satisfied clients abou
 
 ---
 
+###  Mia
+https://bsky.app/profile/techmia.bsky.social
+
+> "I LOVE ZIP CAPTIONS. Full stop"
+
+---
+
 ### Doris
 Congregation Member of the Rock Valley First Reformed Church
 
