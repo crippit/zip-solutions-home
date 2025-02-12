@@ -17,8 +17,5 @@ Necessary cookies allow us to offer you the best possible experience when access
 #### Functionality Cookies
 Functionality cookies let us operate the site in accordance with the choices you make. For example, we will remember how you customized the site during future visits.
 
-#### Analytical Cookies
-These cookies enable us and third-party services to collect aggregated data for statistical purposes on how our visitors use the website. These cookies do not contain personal information such as names and email addresses and are used to help us improve your user experience of the website.These cookies enable us and third-party services to collect aggregated data for statistical purposes on how our visitors use the website. These cookies do not contain personal information such as names and email addresses and are used to help us improve your user experience of the website.
-
 ### How to delete cookies?
 If you want to restrict or block the cookies that are set by our website, you can do so through your browser setting. Alternatively, you can visit www.internetcookies.com , which contains comprehensive information on how to do this on a wide variety of browsers and devices. You will find general information about cookies and details on how to delete cookies from your device.
