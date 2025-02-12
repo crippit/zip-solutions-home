@@ -76,6 +76,7 @@ Want to learn more about what we do with any information we collect? Review the 
 
 ### 1. WHAT INFORMATION DO WE COLLECT?
 Personal information you disclose to us
+
 In Short: We collect personal information that you provide to us.
 
 We collect personal information that you voluntarily provide to us when you register on the Services, express an interest in obtaining information about us or our products and Services, when you participate in activities on the Services, or otherwise when you contact us.
