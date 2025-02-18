@@ -28,12 +28,12 @@ sidebar: false
             <td><b>Browser <br>Support</b></td>
             <td>Chrome/Safari<sup>2</sup></td>
             <td>Chrome/Safari<sup>2</sup></td>
-            <td>Any Browser<sup>1</sup></td>
-            <td>Any Browser<sup>1</sup></td>
-            <td>Any Browser<sup>1</sup></td>
+            <td>Chromium & Safari<sup>1</sup></td>
+            <td>Chromium & Safari<sup>1</sup></td>
+            <td>Chromium & Safari<sup>1</sup></td>
         </tr>
         <tr>
-            <td><b>Premium Captioning (/month)<sup>3</sup></b></td>
+            <td><b>AI Captioning (/month)<sup>3</sup></b></td>
             <td>-</td>
             <td></td>
             <td>5 hours</td>
@@ -97,14 +97,6 @@ sidebar: false
             <td>Yes</td>
         </tr>
         <tr>
-            <td><b>Premium Translations<sup>6</sup></b></td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>Yes</td>
-            <td>Yes</td>
-        </tr>
-        <tr>
             <td><b>SWAG &amp; More</b></td>
             <td>-</td>
             <td>-</td>
@@ -124,14 +116,12 @@ sidebar: false
 </table>
 </div>
 
-1. You can use any browser when using the Premium Captioning Service for the Unlimited Captioning Service see #2
+1. Any Chromium based browser will work with the AI Captioning. Safari is also supported.
 
 2. Any browser which supports the WebSpeech API will work. Edge is supported when ZipCaptions is installed from the Microsoft Store
 
-3. The number of hours are based on credit based usage. The Credits are awarded based on your Patreon tier, and are reliant upon you having an active Patreon subscription. Credit allocation is subject to change at any point and is currently subsidized by our membership to the Microsoft Founders Hub. 
+3. The number of hours are based on token usage. The tokens are awarded based on your Patreon tier, and are reliant upon you having an active Patreon subscription. Token allocation is subject to change at any point and is currently subsidized by our membership to the Microsoft Founders Hub. 
 
 4. You can install Zip Captions from the Google Play Store, but it will also run on iOS, either as an installable Progressive Web App, or in the browser
 
 5. Dedicated support is available for all tiers, however, response times will vary, and the lower tiers rely mainly on community support.
-
-6. Translations use the same bank of credits as the premium captions, and using translations will deplete your premium captioning hours more quickly. 
