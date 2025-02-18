@@ -27,7 +27,7 @@ sidebar: false
         <tr>
             <td><b>Browser <br>Support</b></td>
             <td>Chrome/Safari<sup>2</sup></td>
-            <td>Any Browser<sup>1</sup></td>
+            <td>Chrome/Safari<sup>2</sup></td>
             <td>Any Browser<sup>1</sup></td>
             <td>Any Browser<sup>1</sup></td>
             <td>Any Browser<sup>1</sup></td>
@@ -35,7 +35,7 @@ sidebar: false
         <tr>
             <td><b>Premium Captioning (/month)<sup>3</sup></b></td>
             <td>-</td>
-            <td>-</td>
+            <td></td>
             <td>5 hours</td>
             <td>10 hours<sup>6</sup></td>
             <td>25 hours<sup>6</sup></td>
@@ -98,14 +98,6 @@ sidebar: false
         </tr>
         <tr>
             <td><b>Premium Translations<sup>6</sup></b></td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>Yes</td>
-            <td>Yes</td>
-        </tr>
-        <tr>
-            <td><b>Unique Subdomain Captioning Link</b></td>
             <td>-</td>
             <td>-</td>
             <td>-</td>
