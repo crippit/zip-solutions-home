@@ -34,8 +34,8 @@ sidebar: false
         </tr>
         <tr>
             <td><b>Premium Captioning (/month)<sup>3</sup></b></td>
-            <td>Unavailable</td>
-            <td>Unavailable</td>
+            <td>-</td>
+            <td>-</td>
             <td>5 hours</td>
             <td>10 hours<sup>6</sup></td>
             <td>25 hours<sup>6</sup></td>
