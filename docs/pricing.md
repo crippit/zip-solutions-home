@@ -8,7 +8,7 @@ sidebar: false
     <thead>
         <tr>
             <th>Tier</th>
-            <th>Non-Patreon User</th>
+            <th>Non-Patreon</th>
             <th>Free Tier</th>
             <th>Essential Tier</th>
             <th>Premium Tier</th>
