@@ -16,6 +16,6 @@ There is no promise of token availability, and if you require a guarantee of tok
 
 If you meet the criteria listed above, please click the button below to get started.
 
-<form action="https://forms.gle/veyocz1pZBci1cNq8" target="_blank">
+<form action="https://forms.gle/bczV9tWeJs5uzXPc7" target="_blank">
     <input type="submit" value="Request Tokens Now" />
 </form>
