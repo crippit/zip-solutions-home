@@ -8,7 +8,7 @@ sidebar: false
     <thead>
         <tr>
             <th>Tier</th>
-            <th>Non-Patreon</th>
+            <th>Regular</th>
             <th>Free Tier</th>
             <th>Essential Tier</th>
             <th>Premium Tier</th>
@@ -26,8 +26,8 @@ sidebar: false
         </tr>
         <tr>
             <td><b>Browser <br>Support</b></td>
-            <td>Chrome/Safari<sup>2</sup></td>
-            <td>Chrome/Safari<sup>2</sup></td>
+            <td>Chrome or Safari<sup>2</sup></td>
+            <td>Chrome or Safari<sup>2</sup></td>
             <td>Chromium & Safari<sup>1</sup></td>
             <td>Chromium & Safari<sup>1</sup></td>
             <td>Chromium & Safari<sup>1</sup></td>
@@ -35,10 +35,10 @@ sidebar: false
         <tr>
             <td><b>AI Captioning (/month)<sup>3</sup></b></td>
             <td>-</td>
-            <td></td>
-            <td>5 hours</td>
-            <td>10 hours<sup>6</sup></td>
-            <td>25 hours<sup>6</sup></td>
+            <td><a href="./givingback.html">Request</a><sup>7</sup></td>
+            <td>5 hours<sup>3</sup></td>
+            <td>10 hours<sup>3</sup></td>
+            <td>25 hours<sup>3</sup></td>
         </tr>
         <tr>
             <td><b>Transcription Available</b></td>
@@ -105,7 +105,7 @@ sidebar: false
             <td>Yes</td>
         </tr>
         <tr>
-            <td><b>Cost Per Month<sup>7</sup></b></td>
+            <td><b>Cost Per Month<sup>6</sup></b></td>
             <td>$0</td>
             <td>$0</td>
             <td>$5</td>
@@ -125,3 +125,7 @@ sidebar: false
 4. You can install Zip Captions from the Google Play Store, but it will also run on iOS, either as an installable Progressive Web App, or in the browser
 
 5. Dedicated support is available for all tiers, however, response times will vary, and the lower tiers rely mainly on community support.
+
+6. The price is stated in USD. The price can be changed at any time.
+
+7. Requests can be made at any time by certain groups of people. [Read more here](./givingback.html)
