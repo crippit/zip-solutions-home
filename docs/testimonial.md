@@ -19,6 +19,12 @@ import instagramEmbed from '../../components/instagramEmbed.vue';
 
 ---
 
+### Brian Friedlander
+
+<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7298110392227016704" height="888" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+
+---
+
 ###  Mia
 https://bsky.app/profile/techmia.bsky.social
 
