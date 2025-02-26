@@ -9,6 +9,16 @@ Don’t just take our word for it. Hear directly from our satisfied clients abou
 
 ---
 
+### Hadley Media
+
+<instagramEmbed permalink="https://www.instagram.com/p/DGTssN-PJuX/?utm_source=ig_embed&amp;utm_campaign=loading" />
+
+<script setup>
+import instagramEmbed from '../../components/instagramEmbed.vue';
+</script>
+
+---
+
 ###  Mia
 https://bsky.app/profile/techmia.bsky.social
 
