@@ -17,7 +17,7 @@ export default defineUserConfig({
       '/', '/products','/advisory',
       {
         text: 'About Us',
-        children: ['story.md','about-us.md','testimonial.md','press.md','privacy.md','cookies.md'],
+        children: ['story.md','about-us.md','testimonial.md','press.md','privacy.md','cookies.md','pressrelease.md'],
       },
       {
         text: 'Zip Captions',
