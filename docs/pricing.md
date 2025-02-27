@@ -9,10 +9,10 @@ sidebar: false
         <tr>
             <th>Tier</th>
             <th>Regular</th>
-            <th>Free Tier</th>
-            <th>Essential Tier</th>
-            <th>Premium Tier</th>
-            <th>Platinum Tier</th>
+            <th><a href="https://patreon.com/zipcaptions" target="_blank">Free Tier</a></th>
+            <th><a href="https://www.patreon.com/zipcaptions/membership" target="_blank">Essential Tier</a></th>
+            <th><a href="https://patreon.com/zipcaptions/membership" target="_blank">Premium Tier</a></th>
+            <th><a href="https://patreon.com/zipcaptions/membership" target="_blank">Platinum Tier</a></th>
         </tr>
     </thead>
     <tbody>
