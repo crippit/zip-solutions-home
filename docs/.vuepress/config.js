@@ -16,13 +16,15 @@ export default defineUserConfig({
     navbar: [
       '/', '/products','/advisory',
       {
+        text: 'Zip Captions',
+
+        children: ['zipcaptions.md','pricing.md',{ text: 'Start Captioning', link: 'https://zipcaptions.app' },{ text: 'Help', link: 'https://help.zipcaptions.app'},{ text: 'Community', link: 'https://discord.gg/5Hyu7sQTHv' },{ text: 'Patreon', link: 'https://patreon.com/zipcaptions' }]
+      },
+      {
         text: 'About Us',
         children: ['story.md','about-us.md','testimonial.md','press.md','privacy.md','cookies.md','pressrelease.md'],
       },
-      {
-        text: 'Zip Captions',
-        link: 'https://zipcaptions.app',
-      },
+    
     ],
   }),
 
