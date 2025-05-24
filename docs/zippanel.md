@@ -5,7 +5,7 @@ sidebar: false
 
 # Zip Panel Chrome Extension
 
-Tired of missing out on audio content while you browse or work? The Zip Captions Chrome Extension is a powerful Chrome extension designed to keep you in the loop by displaying the captions from Zip Captions in a convenient, always-accessible overlay. Whether you're watching presentations, live streams, or any web content that generates live text, our extension ensures those captions are visible across all your Chrome tabs or even in a separate, floating window that stays with you.
+Are you tired of missing out on audio content while you browse or work? The Zip Captions Chrome Extension is a powerful Chrome extension designed to keep you in the loop by displaying the captions from Zip Captions in a convenient, always-accessible overlay. Whether you're watching presentations, live streams, or any web content that generates live text, our extension ensures those captions are visible across all your Chrome tabs or even in a separate, floating window that stays with you.
 
 The extension allows you to multitask effectively without losing track of spoken content. Customize the overlay's appearance to perfectly match your viewing comfort with adjustable background opacity and text size. Choose to have captions displayed discreetly at the bottom of your pages or "pop out" the overlay into its own resizable window for maximum flexibility. Stay informed, stay productive, and never miss a word, no matter where you browse!
 
