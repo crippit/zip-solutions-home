@@ -16,10 +16,10 @@ export default defineUserConfig({
     navbar: [
       '/', 
       {
-        text: 'Products',
+        text: 'Products& Services',
         children: [
           {
-            text: 'Product Overview',
+            text: 'Services Overview',
             link: 'products.md',
           },
           {
