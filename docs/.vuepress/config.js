@@ -16,7 +16,7 @@ export default defineUserConfig({
     navbar: [
       '/', 
       {
-        text: 'Products& Services',
+        text: 'Products & Services',
         children: [
           {
             text: 'Services Overview',
