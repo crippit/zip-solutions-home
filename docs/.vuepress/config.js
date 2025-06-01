@@ -14,7 +14,29 @@ export default defineUserConfig({
  theme: defaultTheme({
     logo: '/images/zip_logo_blue_trans.png',
     navbar: [
-      '/', '/products','/advisory',
+      '/', 
+      {
+        text: 'Products',
+        children: [
+          {
+            text: 'Product Overview',
+            link: 'products.md',
+          },
+          {
+            text: 'Zip Captions',
+            link: 'zipcaptions.md',
+          },
+          {
+            text: 'Zip Panel Extension',
+            link: 'zippanel.md',
+          },
+          {
+            text: 'Zip Connect Extension',
+            link: 'zipconnect.md',
+          },
+        ],
+      },
+      '/advisory',
       {
         text: 'Zip Captions',
 
