@@ -17,6 +17,14 @@ We also built Zip Captions for the Classroom, and we wanted to make sure that we
 * Do not use trackers, analytics or other tools to identify your browsing habits on our main sites
 * Do not display or use ad's on our main sites
 
+We know that you don't want to read all the way through here, so:
+
+* We comply with GDPR
+* We will never sell your data
+* Transcripts are only stored on your local machine!
+* Your data (email address and settings preferences are stored with Azure in a data bucket in the USA)
+* You can use Zip Captions without logging in, in which case we store ZERO data about you.
+
 These are just a few of the ways that we help to protect your data, and your privacy. 
 
 Keep reading to see our full privacy policy

@@ -1,5 +1,5 @@
 ---
-title: 'Zip Captions'
+title: Zip Captions
 sidebar: false
 ---
 

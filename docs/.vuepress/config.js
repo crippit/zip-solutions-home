@@ -34,6 +34,10 @@ export default defineUserConfig({
             text: 'Zip Connect Extension',
             link: 'zipconnect.md',
           },
+          {
+            text: 'Zip Captions vMix Bridge',
+            link: 'zipvmix.md',
+          },
         ],
       },
       '/advisory',
