@@ -1,5 +1,5 @@
 ---
-title: 'Zip Connect Chrome Extension'
+title: Zip Connect Chrome Extension
 sidebar: false
 ---
 
