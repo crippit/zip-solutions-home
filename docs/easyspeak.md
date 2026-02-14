@@ -9,7 +9,7 @@ sidebar: false
 
 Access Easy Speech by visiting [https://easyspeak.zipsolutions.org](https://easyspeak.zipsolutions.org)
 
-Read the [getting started instructions here](/easyspeakhguide.md).
+Read the [getting started instructions here](/easyspeakguide.md).
 
 ### 🌟 Key Features
 
