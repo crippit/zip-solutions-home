@@ -1,5 +1,5 @@
 ---
-title: EasySpeech Getting Started
+title: EasySpeak Getting Started
 sidebar: false
 ---
 

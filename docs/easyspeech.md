@@ -1,5 +1,5 @@
 ---
-title: Zip Easy Speech
+title: Zip EasySpeak
 sidebar: false
 ---
 
