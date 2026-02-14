@@ -28,7 +28,7 @@ export default defineUserConfig({
           },
           {
             text: 'Easy Speak AAC',
-            link: 'easyspeech.md',
+            link: 'easyspeak.md',
           },
           {
             text: 'Zip Panel Extension',
