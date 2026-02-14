@@ -7,7 +7,7 @@ sidebar: false
 
 Welcome to your new AAC dashboard! This guide will help you set up and start communicating in minutes.
 
-Access Easy Speech by visiting [https://easyspeech.zipsolutions.org](https://easyspeech.zipsolutions.org)
+Access Easy Speech by visiting [https://easyspeak.zipsolutions.org](https://easyspeak.zipsolutions.org)
 
 ### 1. The Basics: Speaking
 
