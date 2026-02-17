@@ -59,6 +59,46 @@ Don't want to build pages from scratch? We have created a custom **Gemini Gem** 
 
 5. In Zip EasySpeak, go to **Settings > Data** and use **"Import Page (Merge)"**.
 
+Use this tool to paste in your JSON code block and then save it to your computer
+
+<template>
+  <div class="json-box">
+    <textarea v-model="jsonInput" placeholder="Paste JSON here..."></textarea>
+    <div class="controls">
+      <input v-model="fileName" placeholder="filename.json" />
+      <button @click="download">Download</button>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+const jsonInput = ref('')
+const fileName = ref('data.json')
+
+const download = () => {
+  try {
+    JSON.parse(jsonInput.value)
+    const blob = new Blob([jsonInput.value], { type: 'application/json' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = fileName.value.includes('.') ? fileName.value : fileName.value + '.json'
+    a.click()
+    URL.revokeObjectURL(url)
+  } catch (e) {
+    alert("Invalid JSON!")
+  }
+}
+</script>
+
+<style scoped>
+.json-box { margin: 20px 0; border: 1px solid #eaecef; padding: 20px; border-radius: 8px; }
+textarea { width: 100%; height: 200px; font-family: monospace; margin-bottom: 10px; }
+.controls { display: flex; gap: 10px; }
+button { background: #3eaf7c; color: white; border: none; padding: 5px 15px; border-radius: 4px; cursor: pointer; }
+</style>
+
 ### 📂 Community Resources
 
 We maintain a library of pre-made pages and board layouts to help you get started quickly. You can download specific topic pages and import them directly into your app.
