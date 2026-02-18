@@ -3,11 +3,12 @@ title: Zip EasySpeak
 sidebar: false
 ---
 
-## Zip EasySpeak ⚡️
+## Zip EasySpeak & EasySpeakAI⚡️
 
-**Zip EasySpeak** is a free, open-source, and fully customizable Augmentative and Alternative Communication (AAC) dashboard. Designed for accessibility and ease of use, it runs directly in your browser and works offline, making it a reliable voice for anyone, anywhere.
+**Zip EasySpeak** is a free, open-source, and fully customizable Augmentative and Alternative Communication (AAC) dashboard. Designed for accessibility and ease of use, it runs directly in your browser and works offline, making it a reliable voice for anyone, anywhere. **EasySpeakAI** introduces some additional features which are listed below in _italics_.
 
 Access Easy Speech by visiting [https://easyspeak.zipsolutions.org](https://easyspeak.zipsolutions.org)
+Access Easy Speech AI by visiting [https://easyspeakai.zipsolutions.org](https://easyspeakai.zipsolutions.org)
 
 Read the [getting started instructions here](/easyspeakguide.md).
 
@@ -24,6 +25,12 @@ Read the [getting started instructions here](/easyspeakguide.md).
 * **Natural Voices:** Uses your device's built-in high-quality text-to-speech engines.
 
 * **Offline Capable:** Works without an internet connection once loaded.
+
+* **_Prediction using AI:_** _EasySpeakAI will give three suggestions to predict what you are saying using an offline LLM Model. This is run on your device so fully private._
+
+* **_Location & Time Predictions:_** _The same AI engine will improve predictions using a location drop down and the time of day. This can be disabled in the settings._
+
+* **_QWERTY Keyboard:_** _EasySpeakAI has the addition of a QWERTY Keyboard which allows you to write out words and phrases, with the addition of the prediction engine_
 
 #### 🎨 Fully Customizable
 
