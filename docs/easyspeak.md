@@ -8,6 +8,7 @@ sidebar: false
 **Zip EasySpeak** is a free, open-source, and fully customizable Augmentative and Alternative Communication (AAC) dashboard. Designed for accessibility and ease of use, it runs directly in your browser and works offline, making it a reliable voice for anyone, anywhere. **EasySpeakAI** introduces some additional features which are listed below in _italics_.
 
 Access Easy Speech by visiting [https://easyspeak.zipsolutions.org](https://easyspeak.zipsolutions.org)
+
 Access Easy Speech AI by visiting [https://easyspeakai.zipsolutions.org](https://easyspeakai.zipsolutions.org)
 
 Read the [getting started instructions here](/easyspeakguide.md).
