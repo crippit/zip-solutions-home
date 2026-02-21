@@ -10,6 +10,8 @@ sidebar: false
 Access Easy Speech by visiting [https://easyspeak.zipsolutions.org](https://easyspeak.zipsolutions.org)
 
 Access Easy Speech AI by visiting [https://easyspeakai.zipsolutions.org](https://easyspeakai.zipsolutions.org)
+* **[Android App](https://play.google.com/store/apps/details?id=org.zipsolutions.easyspeakai.twa)**
+* **[iOS/iPad OS App](https://apps.apple.com/ca/app/zip-easyspeak-ai/id6759290232)**
 
 Read the [getting started instructions here](/easyspeakguide.md).
 
@@ -31,7 +33,7 @@ Read the [getting started instructions here](/easyspeakguide.md).
 
 * **_Location & Time Predictions:_** _The same AI engine will improve predictions using a location drop down and the time of day. This can be disabled in the settings._
 
-* **_QWERTY Keyboard:_** _EasySpeakAI has the addition of a QWERTY Keyboard which allows you to write out words and phrases, with the addition of the prediction engine_
+* **_QWERTY & ABC Keyboard:_** _EasySpeakAI has the addition of a QWERTY Keyboard which allows you to write out words and phrases, with the addition of the prediction engine_
 
 #### 🎨 Fully Customizable
 
