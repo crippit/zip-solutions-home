@@ -9,94 +9,79 @@ Welcome to your new AAC dashboard! This guide will help you set up and start com
 
 Access Easy Speech by visiting [https://easyspeak.zipsolutions.org](https://easyspeak.zipsolutions.org)
 
-### 1. The Basics: Speaking
+## **💬 Basic Usage**
 
-Zip EasySpeak has two ways to talk. You can change this in **Settings**.
+### **Building a Sentence**
 
-#### Mode A: Direct Speech (Default)
+1. **Tap the tiles** on the screen to add words to the **Sentence Strip** at the top.  
+2. As you tap, the app will highlight statistically likely next words with a glowing yellow border.  
+3. To hear your sentence, tap the blue **Play (▶)** button on the sentence strip.  
+4. To remove the last word you added, tap the **Delete (⌫)** button next to the Play button.
 
-* **How it works:** Simply tap a button (like "Apple"), and the device speaks "Apple" immediately.
+### **Typing Custom Words**
 
-* **Best for:** Beginning communicators or quick requests.
+1. Tap the **"Type" (⌨️)** button on the Core page to open the keyboard.  
+2. Type your word.  
+3. Tap the **Space (␣)** button to commit the word to your sentence.  
+4. *Mobile Tip:* If you are on a smartphone, the keyboard optimizes for your small screen. Rotate your phone sideways (landscape) for larger, square keys\!
 
-#### Mode B: Sentence Builder
+### **Using Word Forms (Grammar/Morphology)**
 
-* **How it works:**
+Some action or object tiles have multiple grammatical forms (like "want", "wants", "wanted").
 
-  1. Tap words to build a sentence (e.g., `I` + `Want` + `Cookie`).
+* You can identify these tiles by the **three tiny dots (...)** in the bottom right corner.  
+* **Long-press (hold your finger down)** on the tile for half a second.  
+* A menu will pop up allowing you to choose the exact tense or plural form you need.
 
-  2. Words appear in the **Sentence Strip** at the top.
+## **✨ The AI Magic Bar**
 
-  3. Tap the **Play (▶️)** button to speak the whole sentence at once.
+Easy Speak AI features an intelligent "Magic Bar" that saves you time by predicting full sentences based on a few keywords.
 
-* **Enable it:** Go to **Settings (⚙️) > Interaction Mode > Sentence Builder**.
+**How it works:**
 
-### 2. Customizing Your Board
+1. Tap a few keywords (e.g., tap `I`, then `Want`, then `Apple`).  
+2. Look at the **Magic Bar** sitting just below the sentence strip.  
+3. The AI will think for a moment and offer full sentence buttons (e.g., `"I want an apple, please."` or `"Can I have an apple?"`).  
+4. Tap the suggestion to immediately speak the full, grammatically correct sentence\!
 
-To make changes, you need to enter **Edit Mode**.
+**Context Awareness:** At the top of the screen, you can set your current **Location** (Home, School, Restaurant, etc.). The app also automatically knows the **Time of Day** (Morning, Afternoon, Evening). The AI uses this information to make smarter predictions\!
 
-#### 🔓 Unlocking the Board
+## **🎨 Customizing Your Board (Edit Mode)**
 
-1. Click the **Lock Icon (🔒)** in the bottom sidebar.
+Easy Speak AI is fully customizable. You can add your own pictures, create new pages, and change colors.
 
-2. If an Admin PIN is set, enter it now. If not, it unlocks immediately.
+### **Unlocking Edit Mode**
 
-3. You will see **Pencil Icons** appear on tiles and **"Add"** buttons appear in the grid.
+1. Look at the bottom of the left-hand sidebar.  
+2. Tap the **Padlock (🔒)** icon to unlock Edit Mode. The sidebar buttons will turn green and drag handles will appear on the tiles. *(If an Admin PIN is set, you will be asked to enter it here).*
 
-#### ➕ Adding a New Button
+### **Editing a Tile**
 
-1. Click the large **"Add Button"** square in the grid.
+1. In Edit Mode, hover over or tap a tile.  
+2. Tap the blue **Pencil (✏️)** icon on the tile.  
+3. **Label & Phrase:** Change what the button says and what it speaks aloud.  
+4. **Color:** Choose a background color. The colors follow the standard **Fitzgerald Key** for Speech-Language Pathologists (e.g., Yellow for People, Green for Verbs).  
+5. **Image/Emoji:** Type an emoji, or tap the **Search (🔍)** icon to search the *OpenSymbols* library for a picture. Images are saved to your device for offline use\!  
+6. **Word Variants:** Add comma-separated words (e.g., `eat, ate, eating`) to enable the long-press grammar menu for this tile.  
+7. **Action Settings:** You can link a tile to another page (like a folder), or set it to "Silent" so it just navigates without adding a word to the sentence.
 
-2. A new "White" button will appear.
+### **Adding & Reordering**
 
-3. Click the **Pencil Icon** on that new button to configure it.
+* **Add a Tile:** Scroll to the bottom of any page in Edit Mode and tap the large **"+ Add"** button.  
+* **Add a Page:** Tap the **"+ Add"** button in the left sidebar.  
+* **Reorder:** Simply tap, hold, and drag any tile or page to a new position\!
 
-#### ✏️ Editing a Button
+## **⚙️ Settings & Preferences**
 
-1. **Label:** What is written on the button.
+Tap the **Settings (⚙️)** gear icon in the bottom left corner to access preferences.
 
-2. **Phrase:** What the device actually speaks (e.g., Label: "TV", Phrase: "I want to watch TV").
+* **Visuals:** Change the Grid Size (number of columns) and switch your keyboard between QWERTY and ABC layouts.  
+* **Interaction Mode:** \* Turn the Sentence Builder on or off.  
+  * **Speak on Select:** Speaks each word instantly as you tap it.  
+  * **Clear After Speaking:** Automatically empties your sentence strip after you hit Play.  
+* **Speech:** Choose a specific voice from your device, and adjust the speaking Rate and Pitch.  
+* **Security:** Set an **Admin PIN** to prevent users from accidentally deleting tiles or changing settings.  
+* **Data & Storage:** Back up your entire configuration to a file, or export single pages to share with other devices\!
 
-3. **Image:**
+*(Troubleshooting: If the app updates but you don't see the new features, scroll to the bottom of the Settings menu and tap **"Clear App Cache"**).*
 
-   * **Emoji:** Type an emoji directly.
-
-   * **Image Search:** Click the **Magnifying Glass (🔍)** to search thousands of symbols. Click an image to select it.
-
-4. **Color:** Choose a background color (Yellow for people, Green for actions, Orange for nouns).
-
-5. **Link to Page:** (Advanced) Make this button open another page automatically when clicked.
-
-### 3. Organizing Pages
-
-Pages allow you to organize words by category (e.g., Food, Feelings, School).
-
-* **Switch Pages:** Tap the icons in the **Left Sidebar**.
-
-* **Add Page:** Unlock the board and click **"Add Page"** in the sidebar.
-
-* **Edit Page:** Unlock the board, select the page you want to change, and click the **Pencil Icon** next to the page title at the top of the screen.
-
-### 4. Settings & Accessibility
-
-Click the **Gear Icon (⚙️)** to open the Settings menu.
-
-* **Voice:** Change the speaking voice, speed (rate), and pitch.
-
-* **Grid Size:** Make buttons larger (2 columns) or smaller (8 columns) to fit the user's motor skills.
-
-* **Offline Mode:** Toggle "Offline Voices Only" if you don't have internet access.
-
-* **Security:** Set an **Admin PIN** to prevent students from accidentally deleting buttons.
-
-### 5. Saving & Sharing (Important!)
-
-Zip EasySpeak runs in your browser, so your data is saved on your device. To keep it safe or move it to another iPad/Laptop:
-
-1. Go to **Settings > Data & Storage**.
-
-2. **Backup Full:** Downloads a `.json` file with *everything* (pages, buttons, images, settings).
-
-3. **Restore:** Upload a backup file to replace your current board.
-
-4. **Import Page (Merge):** Upload a file to *add* pages to your current board without deleting what you already have.
