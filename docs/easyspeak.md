@@ -124,3 +124,29 @@ We maintain a library of pre-made pages and board layouts to help you get starte
 * **Privacy Focused:** No data is sent to our servers. Your board lives on your device. Remember to back it up!
 
 * **Open Source:** Built with React and Vite.
+
+## **🚀 PWA Installation**
+
+Easy Speak AI is available as a **Progressive Web App (PWA)**. This means you don't need to go to an app store to download it; you can install it directly from your web browser to use it completely offline\!
+
+### **Installing on an iPad or iPhone (Safari)**
+
+1. Open the Easy Speak AI website in Safari.  
+2. Tap the **Share** icon (the square with an arrow pointing up) at the bottom or top of the screen.  
+3. Scroll down and tap **"Add to Home Screen"**.  
+4. Tap **"Add"**. The app will now appear on your home screen like a regular app.
+
+### **Installing on Android (Chrome)**
+
+1. Open the Easy Speak AI website in Google Chrome.  
+2. A prompt may appear at the bottom saying **"Add Easy Speak AI to Home screen"**. Tap it.  
+3. If the prompt doesn't appear, tap the **Three Dots (Menu)** in the top right corner.  
+4. Tap **"Install app"** or **"Add to Home screen"**.
+
+### **Installing on a Computer (Chrome/Edge)**
+
+1. Open the website in Google Chrome or Microsoft Edge.  
+2. Look at the right side of the URL address bar. You will see a small **Install icon** (it looks like a screen with a downward arrow).  
+3. Click it and select **"Install"**.
+
+*(Note: Once installed, the app will download its required files and AI models. After this first load, it will work completely without an internet connection\!)*
