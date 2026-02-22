@@ -16,6 +16,8 @@ Access Easy Speech AI by visiting [https://easyspeakai.zipsolutions.org](https:/
 [![MacOS App](/images/mac-app-store.svg "Download the App")](https://apps.apple.com/ca/app/zip-easyspeak-ai/id6759290232)
 
 Read the [getting started instructions here](/easyspeakguide.md).
+Need Support? Found a Bug? [Submit an issue on GitHub](https://github.com/crippit/zipEasySpeakAI/issues).
+Like what we made? [Support us on Patreon](https://patreon.com/zipcaptions).
 
 ### 🌟 Key Features
 
