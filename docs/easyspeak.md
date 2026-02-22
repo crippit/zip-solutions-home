@@ -10,6 +10,7 @@ sidebar: false
 Access Easy Speech by visiting [https://easyspeak.zipsolutions.org](https://easyspeak.zipsolutions.org)
 
 Access Easy Speech AI by visiting [https://easyspeakai.zipsolutions.org](https://easyspeakai.zipsolutions.org)
+
 <a href="https://play.google.com/store/apps/details?id=org.zipsolutions.easyspeakai.twa"><img src="/images/GooglePlay_Badge.png" height="40" alt="Download the App from Google Play"></a>
 [![iOS App](/images/app-store.svg "Download the App")](https://apps.apple.com/ca/app/zip-easyspeak-ai/id6759290232)
 [![MacOS App](/images/mac-app-store.svg "Download the App")](https://apps.apple.com/ca/app/zip-easyspeak-ai/id6759290232)
