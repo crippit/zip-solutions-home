@@ -10,8 +10,9 @@ sidebar: false
 Access Easy Speech by visiting [https://easyspeak.zipsolutions.org](https://easyspeak.zipsolutions.org)
 
 Access Easy Speech AI by visiting [https://easyspeakai.zipsolutions.org](https://easyspeakai.zipsolutions.org)
-* **[Android App](https://play.google.com/store/apps/details?id=org.zipsolutions.easyspeakai.twa)**
-* **[iOS/iPad OS App](https://apps.apple.com/ca/app/zip-easyspeak-ai/id6759290232)**
+[![Android App](/images/GooglePlay_Badge.png "Download the App")](https://play.google.com/store/apps/details?id=org.zipsolutions.easyspeakai.twa)
+[![iOS App](/images/app-store.svg "Download the App")](https://apps.apple.com/ca/app/zip-easyspeak-ai/id6759290232)
+[![MacOS App](/images/mac-app-store.svg "Download the App")](https://apps.apple.com/ca/app/zip-easyspeak-ai/id6759290232)
 
 Read the [getting started instructions here](/easyspeakguide.md).
 
