@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dashboard-page {
+  --content-width: 90% !important;
+  --c-page-width: 90% !important;
+}
+
+/* Fallback for the default container */
+.theme-default-content {
+  max-width: 95% !important;
+}
