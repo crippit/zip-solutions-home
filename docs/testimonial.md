@@ -11,11 +11,7 @@ Don’t just take our word for it. Hear directly from our satisfied clients abou
 
 ### Hadley Media
 
-<instagramEmbed permalink="https://www.instagram.com/p/DGTssN-PJuX/?utm_source=ig_embed&amp;utm_campaign=loading" />
-
-<script setup>
-import instagramEmbed from '../../components/instagramEmbed.vue';
-</script>
+![Hadley Media on Instagram](/images/hadley.png)
 
 ---
 
@@ -29,6 +25,12 @@ import instagramEmbed from '../../components/instagramEmbed.vue';
 https://bsky.app/profile/techmia.bsky.social
 
 > "I LOVE ZIP CAPTIONS. Full stop"
+
+---
+
+### @necrohell.bsky.social (The Goat of Menendez)
+
+> "Recently discovered the wonderful Zip Captions app and how brilliantly easy it was to incorporate it into our @chicagoknockouts.bsky.social live stream".
 
 ---
 
