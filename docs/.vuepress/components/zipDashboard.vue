@@ -176,6 +176,17 @@ const products = [
   },
   {
     id: 11,
+    name: "EquiBrowse",
+    appUrl: "",
+    learnUrl: "/equibrowse.html",
+    description: "Accessibility built right into your browser. Read text aloud, highlight as you read, get definitions and access the picture dictionary!",
+    icon: ShieldCheck,
+    category: "Education",
+    color: "bg-emerald-500",
+    shadow: "shadow-emerald-500/20"
+  },
+  {
+    id: 12,
     name: "Assistive Listening System Consultancy",
     learnUrl: "/contact-us.html",
     description: "Assistive Listening provides those with hearing loss the ability to have better access to sound. Get in touch to learn about our innovative install your own system model, where we send you detailed instructions and a shopping list",
@@ -185,7 +196,7 @@ const products = [
     shadow: "shadow-teal-500/20"
   },
   {
-    id: 12,
+    id: 13,
     name: "Digital Sound & Lighting Systems",
     learnUrl: "/contact-us.html",
     description: "Get in touch to learn about how we can help to integrate systems in professional theatre spaces, as well as AV systems in conference and educational settings. We also have experience with architectural lighting systems such as ETC Mosaic as well as the integration and automation of these systems with others.",
@@ -195,7 +206,7 @@ const products = [
     shadow: "shadow-teal-500/20"
   },
   {
-    id: 13,
+    id: 14,
     name: "Free Resources for Listening Accessibility",
     learnUrl: "https://resources.zipsolutions.org",
     description: "We have a whole set of resources dedicated to getting started with listening accessibility, including: Setting up SMART Technologies products with Assistive Listening products such as Phonak Roger, Setting up Interactive Flat Panel & TVs with Assistive Listening products, Understanding the Roger Inspiro, Using the Roger Touchscreen & Roger Media Hub in the classroom, WiFi based assistive listening systems, Getting started with Surtitles for Theatre captioning, and many more",
@@ -205,7 +216,7 @@ const products = [
     shadow: "shadow-teal-500/20"
   },
   {
-    id: 14,
+    id: 15,
     name: "Captioning Consultancy",
     learnUrl: "/contact-us.html",
     description: "As the creators of ZipCaptions we have considerable experience with Live Captions. We can help you to integrate live captions at your next event. We also have experience with the implementation of Surtitles, the captioning used in live theatre based on a script. We can help you to set up surtitles for your event, as well as with how to best display the surtitles on your stage.",
