@@ -1,4 +1,3 @@
-
 ---
 title: EquiBrowse Browser Extension
 sidebar: false
