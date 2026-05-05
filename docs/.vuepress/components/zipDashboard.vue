@@ -177,7 +177,7 @@ const products = [
   {
     id: 11,
     name: "EquiBrowse",
-    appUrl: "",
+    appUrl: "https://chromewebstore.google.com/detail/equibrowse-by-zip-solutio/alahhcjbblegneebpjehobaiemckblhl?authuser=0&hl=en-GB",
     learnUrl: "/equibrowse.html",
     description: "Accessibility built right into your browser. Read text aloud, highlight as you read, get definitions and access the picture dictionary!",
     icon: ShieldCheck,
