@@ -7,6 +7,8 @@ sidebar: false
 
 EquiBrowse is a powerful accessibility and reading comprehension extension designed to create an equitable browsing experience for all users. Whether you're a student, a professional, or someone looking to enhance your reading efficiency, EquiBrowse provides a suite of tools to help you understand, organize, and interact with web content more effectively.
 
+[Install The Extension](https://chromewebstore.google.com/detail/equibrowse-by-zip-solutio/alahhcjbblegneebpjehobaiemckblhl?authuser=0&hl=en-GB)
+
 ## Key Features
 
 ### 🔊 Read Aloud (Text-to-Speech)
