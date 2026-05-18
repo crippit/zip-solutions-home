@@ -48,7 +48,7 @@ Because Classroom Sync formats your data predictably, it unlocks incredible use-
 * **NotebookLM Interventions:** Upload your synced spreadsheet to NotebookLM. Ask it to identify students with missing work in the Master Grades tab and instantly generate personalized, 3-day catch-up study guides based on the attached materials.
 
 ### Ready to Supercharge Your Classroom?
-**[ Get the Template / Copy the Sheet ]**(https://bit.ly/class-sync) *No Add-on store installations required. Runs 100% locally and securely in your own Google Workspace account.*
+**[Get the Template / Copy the Sheet](https://bit.ly/class-sync)** *No Add-on store installations required. Runs 100% locally and securely in your own Google Workspace account.*
 
 # Classroom Studio Sync: Turn Google Classroom Data into an AI-Powered Teaching Assistant
 
