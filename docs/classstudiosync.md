@@ -6,7 +6,7 @@ sidebar: false
 # Classroom Sync by ZipSolutions
 
 <div class="image-gallery">
-  ![Image 1](/images/Classroom Assistant At Risk of failure.png)
+  <img src="/images/Classroom Assistant At Risk of failure.png">
   ![Image 2](/images/Classroom Assistant Email.png)
   ![Image 3](/images/Classroom Assistant Gem.png)
   ![Image 4](/images/Classroom Assistant Missing Work.png)
