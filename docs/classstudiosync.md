@@ -6,12 +6,12 @@ sidebar: false
 # Classroom Sync by ZipSolutions
 
 <div class="image-gallery">
-  ![Image 1](./images/Classroom Assistant At Risk of failure.png)
-  ![Image 2](./images/Classroom Assistant Email.png)
-  ![Image 3](./images/Classroom Assistant Gem.png)
-  ![Image 4](./images/Classroom Assistant Missing Work.png)
-  ![Image 5](./images/Classroom Studio NotebookLM Risk.png)
-  ![Image 6](./images/Classroom Studio NotebookLM.png)
+  ![Image 1](/images/Classroom Assistant At Risk of failure.png)
+  ![Image 2](/images/Classroom Assistant Email.png)
+  ![Image 3](/images/Classroom Assistant Gem.png)
+  ![Image 4](/images/Classroom Assistant Missing Work.png)
+  ![Image 5](/images/Classroom Studio NotebookLM Risk.png)
+  ![Image 6](/images/Classroom Studio NotebookLM.png)
 </div>
 
 **Turn your Google Classroom into a live, structured database inside Google Sheets—built specifically to power your AI workflows.**
