@@ -5,13 +5,13 @@ sidebar: false
 
 # Classroom Sync by ZipSolutions
 
-<div class="image-gallery">
-  <img src="/images/Classroom Assistant At Risk of failure.png">
-  ![Image 2](/images/Classroom Assistant Email.png)
-  ![Image 3](/images/Classroom Assistant Gem.png)
-  ![Image 4](/images/Classroom Assistant Missing Work.png)
-  ![Image 5](/images/Classroom Studio NotebookLM Risk.png)
-  ![Image 6](/images/Classroom Studio NotebookLM.png)
+<div style="display: grid;  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  gap: 15px;  padding: 15px;">
+  <img style= "width: 100%; height: 200px; object-fit: cover; border-radius: 8px;  cursor: pointer;  transition: transform 0.2s ease;" src="/images/Classroom Assistant At Risk of failure.png">
+  <img style= "width: 100%; height: 200px; object-fit: cover; border-radius: 8px;  cursor: pointer;  transition: transform 0.2s ease;" src="/images/Classroom Assistant Email.png">
+  <img style= "width: 100%; height: 200px; object-fit: cover; border-radius: 8px;  cursor: pointer;  transition: transform 0.2s ease;" src="/images/Classroom Assistant Gem.png">
+  <img style= "width: 100%; height: 200px; object-fit: cover; border-radius: 8px;  cursor: pointer;  transition: transform 0.2s ease;" src="/images/Classroom Assistant Missing Work.png">
+  <img style= "width: 100%; height: 200px; object-fit: cover; border-radius: 8px;  cursor: pointer;  transition: transform 0.2s ease;" src="/images/Classroom Studio NotebookLM Risk.png">
+  <img style= "width: 100%; height: 200px; object-fit: cover; border-radius: 8px;  cursor: pointer;  transition: transform 0.2s ease;" src="/images/Classroom Studio NotebookLM.png">
 </div>
 
 **Turn your Google Classroom into a live, structured database inside Google Sheets—built specifically to power your AI workflows.**
