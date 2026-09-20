@@ -1,0 +1,310 @@
+---
+import ProductLayout from '../layouts/ProductLayout.astro';
+import JsonGenerator from '../components/JsonGenerator.astro';
+
+const capabilities = [
+  {
+    title: "Two Interaction Modes",
+    description: "Direct Mode speaks immediately on touch for quick requests. Sentence Builder constructs full phrases in an on-screen strip (e.g., 'I' + 'Want' + 'Apple') before vocalizing."
+  },
+  {
+    title: "100% Private On-Device AI",
+    description: "EasySpeakAI provides 3 smart next-word suggestions powered by an offline LLM running entirely inside your local browser—keeping all communications strictly confidential."
+  },
+  {
+    title: "Location & Time Aware Predictions",
+    description: "The AI engine adapts predictions dynamically using your selected location and the current time of day. Fully controllable and can be disabled in settings anytime."
+  },
+  {
+    title: "QWERTY & ABC Keyboards",
+    description: "EasySpeakAI adds integrated virtual keyboards so literate communicators can type out custom words, supported by the continuous next-word prediction engine."
+  },
+  {
+    title: "OpenSymbols & ARASAAC Search",
+    description: "Search thousands of standardized AAC symbols instantly, or upload personal photos and emojis that stay saved offline in your board backup."
+  },
+  {
+    title: "Admin PIN & Modular Merging",
+    description: "Protect board configurations with an administrative PIN lock. Export your entire system to a single file or merge shared topic pages without overwriting existing boards."
+  }
+];
+
+const specs = [
+  { label: "Supported devices", value: "Installable on iPads, iPhones, Android tablets, Chromebooks, Macs, and Windows PCs." },
+  { label: "Offline & private", value: "Runs entirely on your device without needing an internet connection. No speech data ever leaves your hands." },
+  { label: "Symbols & imagery", value: "Includes free integrated ARASAAC and OpenSymbols libraries, with support for emojis and your own uploaded pictures." },
+  { label: "Free & open source", value: "Completely free, with zero ads or subscriptions. Designed openly for teachers, families, and individuals." }
+];
+---
+
+<ProductLayout
+  title="Zip EasySpeak & EasySpeakAI"
+  subtitle="AAC & Speech Synthesis"
+  description="Zip EasySpeak is a free, open-source, and fully customizable Augmentative and Alternative Communication (AAC) dashboard. Designed for accessibility and ease of use, it runs directly in your browser and works offline, making it a reliable voice for anyone, anywhere."
+  actions={[
+    { text: "Launch EasySpeak", url: "https://easyspeak.zipsolutions.org", primary: true, external: true },
+    { text: "Launch EasySpeak AI", url: "https://easyspeakai.zipsolutions.org", primary: false, external: true },
+    { text: "Getting Started Guide", url: "/easyspeakguide", primary: false }
+  ]}
+  heroImage="/images/devices.png"
+  heroImageAlt="Zip EasySpeak running on multiple devices"
+  capabilities={capabilities}
+  specs={specs}
+  ctaTitle="Give voice to communication"
+  ctaDescription="Get started with Zip EasySpeak today—free, open-source, and accessible everywhere."
+  ctaAction={{ text: "Launch EasySpeak Now", url: "https://easyspeak.zipsolutions.org", external: true }}
+>
+
+  <!-- App Store Badges & Quick Links -->
+  <div class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-sm text-center mb-16">
+    <h2 class="text-2xl font-bold font-heading text-midnight mb-2">
+      Download & Quick Access
+    </h2>
+    <p class="text-slate-600 max-w-2xl mx-auto mb-8 text-sm sm:text-base">
+      Access EasySpeak directly in your browser, install native apps, or explore guides and community support channels.
+    </p>
+
+    <!-- App Badges -->
+    <div class="flex flex-wrap items-center justify-center gap-4 mb-8">
+      <a 
+        href="https://play.google.com/store/apps/details?id=org.zipsolutions.easyspeakai.twa" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="inline-block transition-transform hover:-translate-y-0.5"
+      >
+        <img src="/images/GooglePlay_Badge.png" alt="Download on Google Play" class="h-12 w-auto object-contain" />
+      </a>
+      <a 
+        href="https://apps.apple.com/ca/app/zip-easyspeak-ai/id6759290232" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="inline-block transition-transform hover:-translate-y-0.5"
+      >
+        <img src="/images/app-store.svg" alt="Download on the App Store" class="h-12 w-auto object-contain" />
+      </a>
+      <a 
+        href="https://apps.apple.com/ca/app/zip-easyspeak-ai/id6759290232" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="inline-block transition-transform hover:-translate-y-0.5"
+      >
+        <img src="/images/mac-app-store.svg" alt="Download on Mac App Store" class="h-12 w-auto object-contain" />
+      </a>
+    </div>
+
+    <!-- Resource & Community Links -->
+    <div class="flex flex-wrap items-center justify-center gap-6 pt-4 border-t border-slate-100 text-sm font-semibold">
+      <a href="/easyspeakguide" class="text-amethyst hover:text-amethyst-dark inline-flex items-center gap-1.5">
+        <span>📖 Getting Started Guide</span>
+      </a>
+      <a href="https://github.com/crippit/zipEasySpeakAI/issues" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-midnight inline-flex items-center gap-1.5">
+        <span>🐛 Report Bugs on GitHub</span>
+      </a>
+      <a href="https://patreon.com/zipcaptions" target="_blank" rel="noopener noreferrer" class="text-coral hover:text-rose-700 inline-flex items-center gap-1.5">
+        <span>❤️ Support on Patreon</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Detailed Feature Deep-Dive -->
+  <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm mb-16 space-y-12">
+    <div>
+      <h2 class="text-2xl sm:text-3xl font-bold font-heading text-midnight">
+        Comprehensive AAC Feature Set
+      </h2>
+      <p class="mt-2 text-slate-600 text-sm sm:text-base">
+        EasySpeak provides essential tools for daily communication, while EasySpeakAI adds on-device intelligent predictive features.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Pillar 1: Powerful Communication -->
+      <div class="space-y-4">
+        <h3 class="text-xl font-bold font-heading text-midnight flex items-center gap-2">
+          <span>🗣️</span>
+          <span>Powerful Communication</span>
+        </h3>
+        <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+          <li>
+            <strong class="text-midnight block">Two Interaction Modes:</strong>
+            <span class="block">Direct Mode speaks words instantly on button tap.</span>
+            <span class="block">Sentence Builder constructs complete thoughts in a sentence strip (<code class="bg-slate-100 px-1 py-0.5 rounded text-xs">I</code> + <code class="bg-slate-100 px-1 py-0.5 rounded text-xs">Want</code> + <code class="bg-slate-100 px-1 py-0.5 rounded text-xs">Apple</code>) before vocalizing.</span>
+          </li>
+          <li>
+            <strong class="text-midnight block">Natural Voices:</strong>
+            Uses your device's built-in high-quality text-to-speech engines.
+          </li>
+          <li>
+            <strong class="text-midnight block">Offline Capable:</strong>
+            Works reliably without any active internet connection once loaded.
+          </li>
+          <li>
+            <strong class="text-midnight block">AI Predictions:</strong>
+            <em>EasySpeakAI suggests 3 contextual words using an offline on-device LLM. Fully private.</em>
+          </li>
+          <li>
+            <strong class="text-midnight block">Location & Time Awareness:</strong>
+            <em>Improves predictions based on location context and time of day (configurable in settings).</em>
+          </li>
+          <li>
+            <strong class="text-midnight block">QWERTY & ABC Keyboards:</strong>
+            <em>Includes keyboard layouts for custom typing with real-time word predictions.</em>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Pillar 2: Fully Customizable -->
+      <div class="space-y-4">
+        <h3 class="text-xl font-bold font-heading text-midnight flex items-center gap-2">
+          <span>🎨</span>
+          <span>Fully Customizable</span>
+        </h3>
+        <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+          <li>
+            <strong class="text-midnight block">Visual Editor:</strong>
+            Easily add, edit, rearrange, or delete buttons, colors, and entire pages.
+          </li>
+          <li>
+            <strong class="text-midnight block">Symbol Search:</strong>
+            Integrated search powered by OpenSymbols & ARASAAC offers thousands of standardized AAC symbols.
+          </li>
+          <li>
+            <strong class="text-midnight block">Image & Emoji Support:</strong>
+            Upload custom photos or choose emojis. All images are stored offline directly in your device backup file.
+          </li>
+          <li>
+            <strong class="text-midnight block">Smart Page Linking:</strong>
+            Create linked pages that automatically guide grammar flow (e.g., clicking "I" automatically opens the "Action Words" page).
+          </li>
+        </ul>
+      </div>
+
+      <!-- Pillar 3: Secure & Portable -->
+      <div class="space-y-4">
+        <h3 class="text-xl font-bold font-heading text-midnight flex items-center gap-2">
+          <span>🔒</span>
+          <span>Secure & Portable</span>
+        </h3>
+        <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+          <li>
+            <strong class="text-midnight block">Admin PIN Lock:</strong>
+            Lock the editing mode and settings menu behind a PIN code to prevent accidental modifications by students or clients.
+          </li>
+          <li>
+            <strong class="text-midnight block">Single-File Backup & Restore:</strong>
+            Save your entire board layout and media into a single portable backup file.
+          </li>
+          <li>
+            <strong class="text-midnight block">Merge Import:</strong>
+            Import single pages shared by teachers or therapists (e.g., a "Science Class" board) without overwriting your current board setup.
+          </li>
+          <li>
+            <strong class="text-midnight block">Open Source:</strong>
+            Built cleanly with React and Vite, transparently developed for the community.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI Page Builder Section with JsonGenerator component -->
+  <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm mb-16">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl sm:text-3xl font-bold font-heading text-midnight mb-2">
+        🤖 Build Pages Faster with AI
+      </h2>
+      <p class="text-slate-600 leading-relaxed text-sm sm:text-base mb-6">
+        Don't want to build pages from scratch? We have created a custom <strong>Gemini Gem</strong> that can generate complete, color-coded AAC pages for you in seconds.
+      </p>
+      
+      <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-3 text-sm mb-6">
+        <h3 class="font-bold font-heading text-midnight text-base">How to use the Gemini Gem:</h3>
+        <ol class="space-y-2 text-slate-700 list-decimal list-inside leading-relaxed">
+          <li>Open the <a href="https://gemini.google.com/gem/1drrkS7r6KfA8e8STBegFb9JrZ8tvo1ZH?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-amethyst underline font-bold">Zip EasySpeak Page Generator</a>.</li>
+          <li>Ask for a topic (e.g., <em>"Make me a page for a trip to the Zoo"</em>).</li>
+          <li>The AI will generate a <code class="bg-white px-1.5 py-0.5 rounded border border-slate-200 text-xs font-mono">.json</code> code block.</li>
+          <li>Paste that code into the tool below and click download (e.g., save it as <code class="bg-white px-1.5 py-0.5 rounded border border-slate-200 text-xs font-mono">zoo.json</code>).</li>
+          <li>In Zip EasySpeak, go to <strong>Settings &gt; Data</strong> and select <strong>"Import Page (Merge)"</strong>.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Interactive JSON downloader component -->
+    <JsonGenerator />
+  </div>
+
+  <!-- Community Resources Section -->
+  <div class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-sm mb-16 flex flex-col md:flex-row items-center justify-between gap-8">
+    <div class="space-y-3 max-w-xl">
+      <h3 class="text-2xl font-bold font-heading text-midnight flex items-center gap-2">
+        <span>📂</span>
+        <span>Community Resources</span>
+      </h3>
+      <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+        We maintain a library of pre-made pages and board layouts to help you get started quickly. You can download specific topic pages and import them directly into your app.
+      </p>
+    </div>
+    <div>
+      <a 
+        href="https://drive.google.com/drive/folders/1eWk1rXfbYEVQnplz8kcrksy-G6VLV7Dz?usp=sharing" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-6 py-3.5 bg-teal-brand hover:bg-teal-dark text-white font-heading font-bold rounded-2xl transition-all shadow-md"
+      >
+        <span>Access Resource Library (Google Drive)</span>
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- PWA Installation Guide -->
+  <div class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-sm space-y-8">
+    <div>
+      <h3 class="text-2xl font-bold font-heading text-midnight flex items-center gap-2">
+        <span>🚀</span>
+        <span>Progressive Web App (PWA) Installation</span>
+      </h3>
+      <p class="mt-2 text-slate-600 text-sm sm:text-base">
+        Easy Speak AI is available as a <strong>Progressive Web App (PWA)</strong>. You don't need to go to an app store to download it; install it directly from your web browser to use it completely offline!
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+        <h4 class="font-bold font-heading text-midnight text-lg">Installing on an iPad or iPhone (Safari)</h4>
+        <ol class="text-sm text-slate-600 space-y-2 list-decimal list-inside leading-relaxed">
+          <li>Open the Easy Speak AI website in Safari.</li>
+          <li>Tap the <strong>Share</strong> icon (the square with an arrow pointing up).</li>
+          <li>Scroll down and tap <strong>"Add to Home Screen"</strong>.</li>
+          <li>Tap <strong>"Add"</strong>. The app will appear on your home screen like a regular app.</li>
+        </ol>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+        <h4 class="font-bold font-heading text-midnight text-lg">Installing on Android (Chrome)</h4>
+        <ol class="text-sm text-slate-600 space-y-2 list-decimal list-inside leading-relaxed">
+          <li>Open the Easy Speak AI website in Google Chrome.</li>
+          <li>Tap <strong>"Add Easy Speak AI to Home screen"</strong> if prompted.</li>
+          <li>If not prompted, tap the <strong>Three Dots (Menu)</strong> in the top right.</li>
+          <li>Tap <strong>"Install app"</strong> or <strong>"Add to Home screen"</strong>.</li>
+        </ol>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+        <h4 class="font-bold font-heading text-midnight text-lg">Installing on a Computer (Chrome/Edge)</h4>
+        <ol class="text-sm text-slate-600 space-y-2 list-decimal list-inside leading-relaxed">
+          <li>Open the website in Google Chrome or Microsoft Edge.</li>
+          <li>Look at the right side of the address bar for the small <strong>Install icon</strong>.</li>
+          <li>Click it and select <strong>"Install"</strong>.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="p-4 rounded-2xl bg-amber-50 border border-amber-200 text-xs sm:text-sm text-amber-900">
+      <strong>Note:</strong> Once installed, the app will download its required files and AI models. After this first load, it will work completely without an internet connection!
+    </div>
+  </div>
+
+</ProductLayout>

@@ -1,0 +1,170 @@
+---
+import ProductLayout from '../layouts/ProductLayout.astro';
+
+const capabilities = [
+  {
+    title: "100% Free & Browser-Based",
+    description: "No subscription, software installation, or sign-up required. Works directly in any modern browser on desktop, tablet, and mobile."
+  },
+  {
+    title: "Real-Time Broadcaster",
+    description: "Share live captions with remote viewers anywhere in the world using static share codes on their personal devices."
+  },
+  {
+    title: "Private & On-Device Storage",
+    description: "Your transcripts stay in your browser—never saved on external servers. Full privacy for schools, healthcare, and boardrooms."
+  },
+  {
+    title: "OBS & Stream Integration",
+    description: "Connect via WebSockets directly into OBS Studio and vMix to overlay captions onto your live streams in real-time."
+  },
+  {
+    title: "Instant Exporting",
+    description: "Save transcripts instantly formatted as industry-standard SRT, VTT, or plain text files ready for video post-production."
+  },
+  {
+    title: "Multi-Language & Dialects",
+    description: "Support for dozens of languages and regional dialects, plus optional AI-powered transcription for unmatched precision."
+  }
+];
+
+const specs = [
+  { label: "Where it runs", value: "Works directly in your web browser on laptops, phones, and tablets with zero software to install." },
+  { label: "Browser compatibility", value: "Fully tested and supported on Chrome, Safari, Edge, Brave, and Opera." },
+  { label: "Live stream setups", value: "Connects via WebSockets straight into OBS Studio, vMix, and digital video switchers." },
+  { label: "Saving transcripts", value: "Download complete transcripts whenever you finish as industry-standard SRT, VTT, or plain text files." }
+];
+---
+
+<ProductLayout
+  title="Zip Captions"
+  subtitle="Flagship Live Captioning"
+  description="A free, easy-to-use live captioning tool that works directly in your web browser. Real-time text transcription designed to make communication accessible for everyone."
+  actions={[
+    { text: "Launch Zip Captions", url: "https://zipcaptions.app", primary: true, external: true },
+    { text: "View AI Pricing", url: "/pricing" },
+    { text: "Help & Community", url: "https://help.zipcaptions.app", external: true }
+  ]}
+  heroImage="/images/zippreview.png"
+  heroImageAlt="Zip Captions in action on laptop and mobile"
+  capabilities={capabilities}
+  specs={specs}
+  ctaTitle="Experience effortless live captioning"
+  ctaDescription="Start captioning your classroom, meeting, church service, or livestream in seconds with no setup required."
+  ctaAction={{ text: "Launch Zip Captions Free", url: "https://zipcaptions.app", external: true }}
+>
+  
+  <!-- Video Showcases -->
+  <div class="space-y-16 mt-8">
+    
+    <!-- Video 1: Broadcasting -->
+    <div class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div class="space-y-4">
+        <h2 class="text-2xl font-bold font-heading text-midnight">
+          Broadcast Your Captions Anywhere
+        </h2>
+        <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+          Broadcasting allows viewers in the same auditorium or across the globe to follow along with your spoken words in real time on their own smartphones, tablets, or laptops.
+        </p>
+        <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+          Viewers can independently customize font sizing, contrast, and layout to fit their unique accessibility needs without altering your main display screen.
+        </p>
+      </div>
+      <div class="aspect-video rounded-2xl overflow-hidden border border-slate-200 shadow-md">
+        <iframe 
+          class="w-full h-full"
+          src="https://www.youtube.com/embed/OXpaiEtECmI?si=f2T4ORGnv7TEPyf9" 
+          title="Broadcast Captions with Zip Captions" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Video 2: Transcribe what you say -->
+    <div class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div class="order-2 lg:order-1 aspect-video rounded-2xl overflow-hidden border border-slate-200 shadow-md">
+        <iframe 
+          class="w-full h-full"
+          src="https://www.youtube.com/embed/sF7n1X1oIFY?si=v1gFJ-SZGtZjVd9c" 
+          title="Transcribe What You Say" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div class="order-1 lg:order-2 space-y-4">
+        <h2 class="text-2xl font-bold font-heading text-midnight">
+          Transcribe & Archive Your Words
+        </h2>
+        <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+          Whether you need meeting minutes, lecture transcripts, or study notes, Zip Captions creates continuous transcripts stored securely in local browser memory.
+        </p>
+        <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+          When your session finishes, download your transcription in standard subtitle formats (SRT, VTT) or plain text with one click.
+        </p>
+      </div>
+    </div>
+
+    <!-- Video 3: OBS Live Streaming -->
+    <div class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div class="space-y-4">
+        <h2 class="text-2xl font-bold font-heading text-midnight">
+          Native Live Streaming with OBS Studio
+        </h2>
+        <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+          Integrate directly with OBS Studio using WebSockets. Captions appear automatically on your live stream stream output with zero latency.
+        </p>
+        <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+          Reach deaf and hard-of-hearing viewers on Twitch, YouTube Live, and Facebook Gaming effortlessly.
+        </p>
+      </div>
+      <div class="aspect-video rounded-2xl overflow-hidden border border-slate-200 shadow-md">
+        <iframe 
+          class="w-full h-full"
+          src="https://www.youtube.com/embed/QYz4Brh66YA?si=SuBN-KoPIw7t6YdA" 
+          title="Live Streaming with OBS and Zip Captions" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Zip Captions Does Even More -->
+    <div class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-sm space-y-6">
+      <h2 class="text-2xl font-bold font-heading text-midnight">
+        Zip Captions Does Even More
+      </h2>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-slate-700 font-medium">
+        <li class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-sm bg-amethyst"></span>
+          Choose a dialect to get more accurate captioning
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-sm bg-amethyst"></span>
+          Choose from our AI powered captioning engine to get even better results
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-sm bg-amethyst"></span>
+          Change the layout to make it suit your needs
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-sm bg-amethyst"></span>
+          Caption in many languages
+        </li>
+      </ul>
+      <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4 text-sm font-semibold">
+        <a href="https://help.zipcaptions.app" target="_blank" rel="noopener noreferrer" class="text-amethyst hover:text-amethyst-dark inline-flex items-center gap-1">
+          <span>See what's new and get help with Zip Captions &rarr;</span>
+        </a>
+        <a href="/pricing" class="text-teal-brand hover:text-teal-dark inline-flex items-center gap-1">
+          <span>Check out our Pricing for AI based captions &rarr;</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</ProductLayout>

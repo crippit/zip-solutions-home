@@ -1,0 +1,224 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const inquiryTypes = [
+  { id: "partnership", label: "Partnership Inquiry", value: "Partnership Inquiry" },
+  { id: "product", label: "Product or Service Inquiry", value: "Product or service Inquiry" },
+  { id: "advisory-board", label: "Interested in Advisory Board", value: "Interested in Advisory Board" },
+  { id: "help-support", label: "Help or Support", value: "Help or Support" },
+  { id: "media-press", label: "Media / Press", value: "Media / Press" },
+  { id: "general-contact", label: "General Contact", value: "General Contact", defaultChecked: true }
+];
+---
+
+<BaseLayout 
+  title="Contact Us & Event Quotes" 
+  description="Get in touch with the Zip Solutions team for custom live event captioning quotes, in-person and hybrid event organisation, custom professional development, or partnerships."
+>
+
+  <section class="bg-gradient-to-b from-white to-slate-50 border-b border-slate-200/80 pt-14 pb-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm font-bold text-amethyst tracking-wide uppercase mb-3 font-heading">
+        Get In Touch
+      </p>
+      <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-midnight font-heading">
+        Contact Us &amp; Custom Quotes
+      </h1>
+      <p class="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        Organizing an in-person or hybrid event? Need custom live captions for your conference or custom professional development for your educators? Reach out for tailored quotes and technical consultation.
+      </p>
+    </div>
+  </section>
+
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+    
+    <!-- Hidden iframe for background submission to Google Forms without page redirect -->
+    <iframe 
+      name="hidden_gform_iframe" 
+      id="hidden_gform_iframe" 
+      class="hidden" 
+      title="Background Form Target"
+    ></iframe>
+
+    <!-- Contact Form Container -->
+    <div class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm">
+      
+      <!-- Submission Success Card -->
+      <div id="form-success-banner" class="hidden text-center py-10 space-y-4">
+        <div class="w-16 h-16 mx-auto rounded-2xl bg-teal-50 text-teal-brand flex items-center justify-center border border-teal-200">
+          <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h2 class="text-2xl font-bold font-heading text-midnight">Thank you!</h2>
+        <p class="text-slate-600 max-w-md mx-auto text-sm sm:text-base">
+          Your message has been received. Our team will review your inquiry and get back to you shortly.
+        </p>
+        <button 
+          id="reset-form-btn" 
+          type="button" 
+          class="inline-block mt-4 px-6 py-2.5 bg-slate-100 hover:bg-slate-200 text-midnight text-xs font-bold rounded-xl transition-colors"
+        >
+          Send Another Message
+        </button>
+      </div>
+
+      <!-- Main Input Form -->
+      <form 
+        id="zip-contact-form"
+        target="hidden_gform_iframe"
+        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeat_QYrLNUwVb37U-qYQvWAlhKns2xs9zd_gnsZvI6XmgYow/formResponse"
+        method="POST"
+        class="space-y-6"
+      >
+        
+        <!-- Name Field -->
+        <div>
+          <label for="user-name" class="block text-sm font-semibold text-midnight mb-1.5 font-heading">
+            Your Name <span class="text-coral">*</span>
+          </label>
+          <input 
+            type="text" 
+            name="entry.862584966" 
+            id="user-name" 
+            required 
+            placeholder="Jane Doe"
+            class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-midnight placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amethyst text-sm transition-all"
+          />
+        </div>
+
+        <!-- Email Field -->
+        <div>
+          <label for="user-email" class="block text-sm font-semibold text-midnight mb-1.5 font-heading">
+            Email Address <span class="text-coral">*</span>
+          </label>
+          <input 
+            type="email" 
+            name="entry.578521937" 
+            id="user-email" 
+            required 
+            placeholder="jane@example.com"
+            class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-midnight placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amethyst text-sm transition-all"
+          />
+        </div>
+
+        <!-- Inquiry Type Radio Group -->
+        <fieldset>
+          <legend class="block text-sm font-semibold text-midnight mb-3 font-heading">
+            Inquiry Type <span class="text-coral">*</span>
+          </legend>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {inquiryTypes.map((type) => (
+              <label 
+                for={type.id}
+                class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 hover:border-amethyst/50 hover:bg-slate-50/70 cursor-pointer transition-colors"
+              >
+                <input 
+                  type="radio" 
+                  name="entry.1361511396" 
+                  value={type.value} 
+                  id={type.id} 
+                  checked={type.defaultChecked}
+                  class="w-4 h-4 text-amethyst focus:ring-amethyst border-slate-300"
+                />
+                <span class="text-xs sm:text-sm font-medium text-slate-700">{type.label}</span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+
+        <!-- Message Field -->
+        <div>
+          <label for="user-message" class="block text-sm font-semibold text-midnight mb-1.5 font-heading">
+            Your Message <span class="text-coral">*</span>
+          </label>
+          <textarea 
+            name="entry.433641966" 
+            id="user-message" 
+            rows="5" 
+            required 
+            placeholder="Tell us how we can help..."
+            class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-midnight placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amethyst text-sm transition-all resize-y"
+          ></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="pt-2">
+          <button 
+            id="submit-btn"
+            type="submit" 
+            class="w-full py-3.5 px-6 rounded-xl font-heading font-bold text-white bg-teal-brand hover:bg-teal-dark shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-teal-brand text-base flex items-center justify-center gap-2"
+          >
+            <span>Send Message</span>
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </button>
+        </div>
+
+        <p class="text-center text-xs text-slate-500">
+          Your information is sent securely to our team and is never shared.
+        </p>
+
+      </form>
+
+    </div>
+
+    <!-- Additional Direct Contact Info -->
+    <div class="mt-12 text-center text-xs text-slate-500 space-y-2">
+      <p>
+        Prefer email? Reach us directly at <a href="mailto:data-privacy@zipsolutions.org" class="text-teal-brand font-semibold hover:underline">data-privacy@zipsolutions.org</a>
+      </p>
+      <p>
+        Need community support? Join our <a href="https://discord.gg/5Hyu7sQTHv" target="_blank" rel="noopener noreferrer" class="text-amethyst font-semibold hover:underline">Community Discord Server</a>.
+      </p>
+    </div>
+
+  </div>
+
+</BaseLayout>
+
+<script>
+  const form = document.getElementById('zip-contact-form') as HTMLFormElement;
+  const successBanner = document.getElementById('form-success-banner');
+  const resetBtn = document.getElementById('reset-form-btn');
+  const submitBtn = document.getElementById('submit-btn');
+
+  let isSubmitting = false;
+
+  form?.addEventListener('submit', () => {
+    isSubmitting = true;
+    if (submitBtn) {
+      submitBtn.setAttribute('disabled', 'true');
+      submitBtn.innerHTML = `
+        <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+        </svg>
+        <span>Sending...</span>
+      `;
+    }
+
+    // After brief delay for iframe submit to process, display confirmation
+    setTimeout(() => {
+      form.classList.add('hidden');
+      successBanner?.classList.remove('hidden');
+      isSubmitting = false;
+    }, 1200);
+  });
+
+  resetBtn?.addEventListener('click', () => {
+    form?.reset();
+    form?.classList.remove('hidden');
+    successBanner?.classList.add('hidden');
+    if (submitBtn) {
+      submitBtn.removeAttribute('disabled');
+      submitBtn.innerHTML = `
+        <span>Send Message</span>
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      `;
+    }
+  });
+</script>

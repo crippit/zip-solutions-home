@@ -1,0 +1,123 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  schema?: any;
+}
+
+const { 
+  title = 'Zip Solutions', 
+  description = 'The Home of Accessibility - Empowering connection with live captioning, AAC tools, in-person and hybrid event organisation, and accessible learning.',
+  image = '/images/zipsolutions_logo.png',
+  schema
+} = Astro.props;
+
+const siteTitle = title.includes('Zip Solutions') ? title : `${title} | Zip Solutions`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://zipsolutions.org');
+const imageUrl = new URL(image, canonicalURL);
+
+const graphItems: any[] = [
+  {
+    "@type": "Organization",
+    "@id": "https://zipsolutions.org/#organization",
+    "name": "Zip Solutions",
+    "url": "https://zipsolutions.org",
+    "logo": "https://zipsolutions.org/images/zipsolutions_logo.png",
+    "description": "The Home of Accessibility - Empowering connection with live captioning, AAC tools, in-person event organisation, hybrid session production, and custom professional development.",
+    "sameAs": [
+      "https://bsky.app/profile/zipcaptions.app",
+      "https://github.com/crippit",
+      "https://patreon.com/zipcaptions"
+    ]
+  },
+  {
+    "@type": "WebSite",
+    "@id": "https://zipsolutions.org/#website",
+    "url": "https://zipsolutions.org",
+    "name": "Zip Solutions",
+    "publisher": {
+      "@id": "https://zipsolutions.org/#organization"
+    }
+  }
+];
+
+if (schema) {
+  if (Array.isArray(schema)) {
+    graphItems.push(...schema);
+  } else {
+    graphItems.push(schema);
+  }
+}
+
+const schemaOrgJson = {
+  "@context": "https://schema.org",
+  "@graph": graphItems
+};
+---
+
+<!doctype html>
+<html lang="en" class="h-full scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Primary Meta Tags -->
+    <title>{siteTitle}</title>
+    <meta name="title" content={siteTitle} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0F172A" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="Zip Solutions" />
+    <meta name="keywords" content="live captions, AAC, augmentative alternative communication, accessibility, assistive technology, vMix captions, twitch captions, speech to text, educational consultancy, event organisation, hybrid sessions, professional development, live event captions quote" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:site_name" content="Zip Solutions" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={siteTitle} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={imageUrl} />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json" set:html={JSON.stringify(schemaOrgJson)} />
+
+    <!-- Slot for additional head tags if needed -->
+    <slot name="head" />
+  </head>
+  <body class="min-h-full flex flex-col bg-alabaster text-midnight font-sans antialiased selection:bg-amethyst/20 selection:text-midnight">
+    
+    <!-- Accessibility Skip Link -->
+    <a 
+      href="#main-content" 
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2.5 focus:bg-amethyst focus:text-white focus:font-semibold focus:rounded-xl focus:shadow-xl focus:outline-none"
+    >
+      Skip to main content
+    </a>
+
+    <Header />
+
+    <main id="main-content" class="flex-grow">
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>

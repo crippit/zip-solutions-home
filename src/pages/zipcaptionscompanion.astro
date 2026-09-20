@@ -1,0 +1,114 @@
+---
+import ProductLayout from '../layouts/ProductLayout.astro';
+
+const capabilities = [
+  {
+    title: "Start & Stop Captions",
+    description: "Map physical hardware triggers or stream buttons to start and stop caption transcription sessions instantly."
+  },
+  {
+    title: "Play & Pause Controls",
+    description: "Temporarily pause and resume live speech recognition during breaks, musical interludes, or off-the-record discussions."
+  },
+  {
+    title: "Return Status to Companion",
+    description: "Sends real-time session feedback to Companion so your controller keys illuminate and change colors reflecting active states."
+  },
+  {
+    title: "Show Last Captioned Word",
+    description: "Transmits the most recently transcribed word or phrase directly onto your Stream Deck LCD screen for immediate visual verification."
+  },
+  {
+    title: "Local Host Security",
+    description: "Operates strictly over localhost on the same machine as Bitfocus Companion—no cloud servers or internet transit required."
+  },
+  {
+    title: "Broadcast Automation",
+    description: "Integrate Zip Captions triggers seamlessly into complex multi-action production macros alongside cameras and audio mixers."
+  }
+];
+
+const specs = [
+  { label: "Hardware controllers", value: "Supports Elgato Stream Deck, Loupedeck, and any control surface supported by Bitfocus Companion." },
+  { label: "Software setup", value: "Runs alongside Bitfocus Companion on the same local computer for secure, direct communication." },
+  { label: "Tactile buttons", value: "Start, stop, pause, and resume captioning sessions with live color status feedback right on your keys." },
+  { label: "On-key teleprompter", value: "Displays the most recently spoken words directly on your Stream Deck LCD screen so you never lose your place." }
+];
+---
+
+<ProductLayout
+  title="Zip Captions Companion Extension"
+  subtitle="Bitfocus Companion Hardware Bridge"
+  description="Acts as a bridge to allow Bitfocus Companion to send commands to and receive status from an open Zip Captions tab. Add support for Bitfocus Companion with Zip Captions directly on your local computer."
+  actions={[
+    { 
+      text: "Install from Chrome Web Store", 
+      url: "https://chromewebstore.google.com/detail/zip-captions-companion-ad/chcflkiceakimokommplmfpcpodabdcg", 
+      primary: true, 
+      external: true 
+    },
+    { text: "Open Zip Captions", url: "https://zipcaptions.app", external: true },
+    { text: "Help Site", url: "https://help.zipcaptions.app", external: true }
+  ]}
+  capabilities={capabilities}
+  specs={specs}
+  ctaTitle="Take physical control of your live captions"
+  ctaDescription="Streamline your live production desk with tactile hardware controls for Zip Captions."
+  ctaAction={{ 
+    text: "Get Extension on Chrome Web Store", 
+    url: "https://chromewebstore.google.com/detail/zip-captions-companion-ad/chcflkiceakimokommplmfpcpodabdcg", 
+    external: true 
+  }}
+>
+
+  <!-- Video Walkthrough & Feature Breakdown -->
+  <div class="space-y-12 mt-8">
+    <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div class="space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-bold font-heading text-midnight">
+          Hardware Control for Zip Captions
+        </h2>
+        <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+          Acts as a bridge to allow Bitfocus Companion to send commands to and receive status from an open Zip Captions tab.
+        </p>
+        <div class="p-4 bg-amber-50 border border-amber-200 rounded-2xl text-xs sm:text-sm text-amber-900 font-medium">
+          <strong>Note:</strong> This extension must be running on the same local computer as Bitfocus Companion.
+        </div>
+        <div class="pt-2">
+          <h3 class="font-bold font-heading text-midnight mb-2">Supported Commands &amp; Statuses:</h3>
+          <ul class="space-y-2 text-sm text-slate-700 font-medium">
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-sm bg-amethyst"></span>
+              Start / Stop captioning
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-sm bg-amethyst"></span>
+              Play / Pause active sessions
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-sm bg-amethyst"></span>
+              Return Captioning Status to Companion
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-sm bg-amethyst"></span>
+              Show last captioned word in Companion
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="aspect-video rounded-2xl overflow-hidden border border-slate-200 shadow-md">
+        <iframe 
+          class="w-full h-full"
+          src="https://www.youtube.com/embed/xMFm8ToDeU4?si=yghqvetmTaj_MltP" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+
+</ProductLayout>

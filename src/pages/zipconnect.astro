@@ -1,0 +1,120 @@
+---
+import ProductLayout from '../layouts/ProductLayout.astro';
+
+const capabilities = [
+  {
+    title: "Real-time Caption Relay",
+    description: "Captures live captions from zipcaptions.app as they appear, translating spoken words into immediate stream subtitles."
+  },
+  {
+    title: "Seamless Twitch Integration",
+    description: "Automatically pastes captions directly into your chosen Twitch stream's chat without needing bot tokens or third-party servers."
+  },
+  {
+    title: "Simple Control",
+    description: "An intuitive popup with a 'Start/Stop' button gives you full control over when captions are actively being relayed."
+  },
+  {
+    title: "Enhanced Accessibility",
+    description: "Makes live Twitch content more accessible to deaf or hard-of-hearing viewers, or anyone who prefers reading live captions."
+  },
+  {
+    title: "Private Captions",
+    description: "Utilizes your personal ZipCaptions feed, ensuring you see and relay only the captions you intend."
+  },
+  {
+    title: "For Viewers & Creators",
+    description: "Perfect for viewers who rely on captions, content creators offering additional accessibility, or anyone catching every detail of a broadcast."
+  }
+];
+
+const specs = [
+  { label: "Works with Twitch", value: "Relays live captions directly into any Twitch stream chat you participate in or moderate." },
+  { label: "Quick setup", value: "Takes under 60 seconds to get going—simply launch Zip Captions and toggle Start in the extension popup." },
+  { label: "Full control & privacy", value: "You decide exactly when captions are posted, with instant pause controls whenever you need a break." },
+  { label: "Lightweight on gaming rigs", value: "Runs quietly in your browser without eating up GPU or CPU resources while gaming or streaming." }
+];
+---
+
+<ProductLayout
+  title="Zip Connect Chrome Extension"
+  subtitle="ZipCaptions to Twitch: Live Captions in Your Chat"
+  description="Are you tired of missing out on crucial dialogue or needing to switch between windows to follow live captions while watching a Twitch stream? The Zip Captions to Twitch extension is your solution!"
+  actions={[
+    { 
+      text: "Install from Chrome Web Store", 
+      url: "https://chromewebstore.google.com/detail/zip-connect/fgfmfpnphfpiafhipdhjdlfakepdopga?authuser=0&hl=en-GB", 
+      primary: true, 
+      external: true 
+    },
+    { text: "Open Zip Captions", url: "https://zipcaptions.app", external: true },
+    { text: "Help & Support", url: "https://help.zipcaptions.app", external: true }
+  ]}
+  heroImage="/images/zipconnect.png"
+  heroImageAlt="Zip Connect Chrome Extension"
+  capabilities={capabilities}
+  specs={specs}
+  ctaTitle="Make your Twitch stream accessible to everyone"
+  ctaDescription="Level up your live stream with real-time chat captions that engage every single viewer in your community."
+  ctaAction={{ 
+    text: "Add Zip Connect to Chrome", 
+    url: "https://chromewebstore.google.com/detail/zip-connect/fgfmfpnphfpiafhipdhjdlfakepdopga?authuser=0&hl=en-GB", 
+    external: true 
+  }}
+>
+
+  <!-- In-Depth Overview & Features -->
+  <div class="space-y-12 mt-8">
+    <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-6">
+      <h2 class="text-2xl sm:text-3xl font-bold font-heading text-midnight">
+        Live Captions Directly in Your Twitch Chat
+      </h2>
+      <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+        This powerful yet simple extension seamlessly brings live captions from <a href="https://zipcaptions.app" target="_blank" rel="noopener noreferrer" class="text-amethyst underline font-semibold">zipcaptions.app</a> directly into your Twitch chat experience. Enhance accessibility, improve comprehension, and ensure you don't miss a single word of your favorite live content.
+      </p>
+      <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+        Perfect for viewers who rely on captions, content creators who want to offer additional accessibility, or anyone who simply wants to ensure they catch every detail of a live broadcast.
+      </p>
+    </div>
+
+    <!-- How It Works Step-by-Step -->
+    <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-8">
+      <h3 class="text-2xl font-bold font-heading text-midnight">
+        How to Use Zip Connect
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <div class="w-8 h-8 rounded-xl bg-purple-100 text-amethyst font-bold flex items-center justify-center font-heading text-sm">
+            1
+          </div>
+          <h4 class="font-bold font-heading text-midnight text-lg">Start Zip Captions</h4>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Open <a href="https://zipcaptions.app" target="_blank" rel="noopener noreferrer" class="text-amethyst underline font-medium">zipcaptions.app</a> in Chrome and start speaking or receiving transcription.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <div class="w-8 h-8 rounded-xl bg-purple-100 text-amethyst font-bold flex items-center justify-center font-heading text-sm">
+            2
+          </div>
+          <h4 class="font-bold font-heading text-midnight text-lg">Open Twitch Stream</h4>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Navigate to your Twitch stream dashboard or the channel page where you want captions to appear.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <div class="w-8 h-8 rounded-xl bg-purple-100 text-amethyst font-bold flex items-center justify-center font-heading text-sm">
+            3
+          </div>
+          <h4 class="font-bold font-heading text-midnight text-lg">Start Relaying</h4>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Click the Zip Connect extension icon, hit <strong>Start</strong>, and watch live captions post into chat in real time!
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</ProductLayout>

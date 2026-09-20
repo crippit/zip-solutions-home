@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const tiers = [
+  {
+    name: "Regular",
+    price: "$0",
+    period: "forever",
+    description: "Standard browser-based captioning for individual use.",
+    highlight: false,
+    ctaText: "Start Now",
+    ctaLink: "https://zipcaptions.app",
+    external: true,
+  },
+  {
+    name: "Free Tier",
+    price: "$0",
+    period: "with Patreon",
+    description: "Join our free Patreon community for updates and assistance.",
+    highlight: false,
+    ctaText: "Join Free",
+    ctaLink: "https://patreon.com/zipcaptions",
+    external: true,
+  },
+  {
+    name: "Essential Tier",
+    price: "$5",
+    period: "per month",
+    description: "Unlock 5 hours of AI-powered captioning every month.",
+    highlight: false,
+    ctaText: "Choose Essential",
+    ctaLink: "https://www.patreon.com/zipcaptions/membership",
+    external: true,
+  },
+  {
+    name: "Premium Tier",
+    price: "$15",
+    period: "per month",
+    description: "Best for regular meetings, classes, and church broadcasts (10 hours AI).",
+    highlight: true,
+    badge: "Most Popular",
+    ctaText: "Choose Premium",
+    ctaLink: "https://patreon.com/zipcaptions/membership",
+    external: true,
+  },
+  {
+    name: "Platinum Tier",
+    price: "$30",
+    period: "per month",
+    description: "Maximum AI captioning capacity (25 hours) plus SWAG & dedicated priority.",
+    highlight: false,
+    ctaText: "Choose Platinum",
+    ctaLink: "https://patreon.com/zipcaptions/membership",
+    external: true,
+  },
+];
+
+const features = [
+  { name: "Regular Captioning", values: ["Unlimited", "Unlimited", "Unlimited", "Unlimited", "Unlimited"] },
+  { name: "Browser Support", values: ["Chrome / Safari²", "Chrome / Safari²", "Chromium & Safari¹", "Chromium & Safari¹", "Chromium & Safari¹"] },
+  { name: "AI Captioning (/month)³", values: ["—", "Request⁷", "5 hours³", "10 hours³", "25 hours³"] },
+  { name: "Transcription & Export", values: ["Yes", "Yes", "Yes", "Yes", "Yes"] },
+  { name: "Customizable Appearance", values: ["Yes", "Yes", "Yes", "Yes", "Yes"] },
+  { name: "Android Mobile App⁴", values: ["Yes", "Yes", "Yes", "Yes", "Yes"] },
+  { name: "Mobile Browser Support", values: ["Yes", "Yes", "Yes", "Yes", "Yes"] },
+  { name: "Windows App Available²", values: ["Yes", "Yes", "Yes", "Yes", "Yes"] },
+  { name: "Support Available⁵", values: ["Discord Group", "Discord Group", "Priority Support", "Priority Support", "Priority Support"] },
+  { name: "GDPR Compliant", values: ["Yes", "Yes", "Yes", "Yes", "Yes"] },
+  { name: "Exclusive SWAG Pack", values: ["—", "—", "—", "—", "Yes"] },
+];
+---
+
+<BaseLayout 
+  title="Zip Captions Pricing" 
+  description="Affordable, transparent pricing tiers for Zip Captions AI transcription and community support."
+>
+  
+  <section class="bg-gradient-to-b from-white to-slate-50 border-b border-slate-200/80 pt-12 pb-14 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm font-bold text-amethyst tracking-wide uppercase mb-3 font-heading">
+        Fair & Transparent
+      </p>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-midnight font-heading">
+        Zip Captions Pricing
+      </h1>
+      <p class="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        Zip Captions will always have a 100% free core tier. Choose an optional paid membership to unlock advanced AI captioning engines and support development.
+      </p>
+    </div>
+  </section>
+
+  <!-- Pricing Cards (Mobile & Tablet) -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
+      {tiers.map((tier) => (
+        <div class={`rounded-3xl p-6 flex flex-col justify-between transition-all duration-200 ${
+          tier.highlight 
+            ? 'bg-midnight text-white ring-2 ring-amethyst shadow-xl relative' 
+            : 'bg-white text-midnight border border-slate-200 shadow-sm hover:shadow-md'
+        }`}>
+          <div>
+            {tier.badge && (
+              <span class="inline-block mb-3 px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-amethyst text-white">
+                {tier.badge}
+              </span>
+            )}
+            <h3 class={`text-lg font-bold font-heading mb-1 ${tier.highlight ? 'text-white' : 'text-midnight'}`}>
+              {tier.name}
+            </h3>
+            <p class={`text-xs mb-4 min-h-[32px] ${tier.highlight ? 'text-slate-300' : 'text-slate-500'}`}>
+              {tier.description}
+            </p>
+            <div class="mb-6">
+              <span class={`text-3xl sm:text-4xl font-extrabold font-heading ${tier.highlight ? 'text-white' : 'text-midnight'}`}>
+                {tier.price}
+              </span>
+              <span class={`text-xs ml-1 ${tier.highlight ? 'text-slate-300' : 'text-slate-500'}`}>
+                / {tier.period}
+              </span>
+            </div>
+          </div>
+
+          <a 
+            href={tier.ctaLink}
+            target={tier.external ? "_blank" : undefined}
+            rel={tier.external ? "noopener noreferrer" : undefined}
+            class={`w-full py-2.5 px-4 rounded-xl text-center text-xs font-bold font-heading transition-colors ${
+              tier.highlight
+                ? 'bg-amethyst hover:bg-amethyst-dark text-white'
+                : 'bg-slate-100 hover:bg-slate-200 text-midnight'
+            }`}
+          >
+            {tier.ctaText}
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <!-- Comparison Table (Desktop & Scrollable) -->
+    <div class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden mb-12">
+      <div class="px-6 py-5 border-b border-slate-100 bg-slate-50/50 flex items-center justify-between">
+        <h2 class="text-xl font-bold font-heading text-midnight">Feature Matrix Comparison</h2>
+        <span class="text-xs text-slate-500">Scroll horizontally on smaller screens</span>
+      </div>
+      
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse min-w-[700px]">
+          <thead>
+            <tr class="bg-slate-50 border-b border-slate-200 text-xs uppercase tracking-wider text-slate-500">
+              <th class="p-4 font-bold">Feature</th>
+              {tiers.map((t) => (
+                <th class={`p-4 font-bold text-center ${t.highlight ? 'bg-purple-50/60 text-amethyst' : ''}`}>
+                  {t.name}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 text-sm">
+            {features.map((feat) => (
+              <tr class="hover:bg-slate-50/60 transition-colors">
+                <td class="p-4 font-medium text-slate-800">
+                  {feat.name}
+                </td>
+                {feat.values.map((val, idx) => (
+                  <td class={`p-4 text-center text-slate-600 ${tiers[idx].highlight ? 'bg-purple-50/30 font-semibold text-midnight' : ''}`}>
+                    {val === "Yes" ? (
+                      <span class="inline-flex items-center text-teal-brand font-semibold">
+                        <svg class="w-4 h-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                        </svg>
+                        Yes
+                      </span>
+                    ) : (
+                      val
+                    )}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Footnotes -->
+    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 text-xs text-slate-600 space-y-2 leading-relaxed">
+      <p><b>1.</b> Any Chromium based browser will work with the AI Captioning. Safari is also supported.</p>
+      <p><b>2.</b> Any browser which supports the WebSpeech API will work. Edge is supported when ZipCaptions is installed from the Microsoft Store.</p>
+      <p><b>3.</b> The number of hours are based on token usage. The tokens are awarded based on your Patreon tier, and are reliant upon you having an active Patreon subscription. Token allocation is subject to change at any point and is currently subsidized by our membership to the Microsoft Founders Hub.</p>
+      <p><b>4.</b> You can install Zip Captions from the Google Play Store, but it will also run on iOS, either as an installable Progressive Web App, or in the browser.</p>
+      <p><b>5.</b> Dedicated support is available for all tiers, however, response times will vary, and the lower tiers rely mainly on community support.</p>
+      <p><b>6.</b> The price is stated in USD. The price can be changed at any time.</p>
+      <p><b>7.</b> Requests can be made at any time by qualifying groups. <a href="/givingback" class="text-teal-brand font-medium underline">Read more about our giving back initiative</a>.</p>
+    </div>
+
+  </div>
+
+</BaseLayout>

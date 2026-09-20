@@ -1,0 +1,176 @@
+---
+import ProductLayout from '../layouts/ProductLayout.astro';
+
+const capabilities = [
+  {
+    title: "Direct Microphone Stream Injection",
+    description: "Unlike other text-to-speech tools that play audio out of your computer speakers (causing echo), Zip Speech injects audio directly into your Google Meet microphone stream."
+  },
+  {
+    title: "Crystal Clear Voice Delivery",
+    description: "Other participants hear you clearly, as if you were speaking yourself, while you can still hear the meeting audio perfectly without acoustic interference."
+  },
+  {
+    title: "AAC Support & Pre-Defined Phrases",
+    description: "Built-in AAC phraseboard provides pre-defined phrases for fast, effortless contribution during quick-paced meetings and conversations."
+  },
+  {
+    title: "Automatic Phrase Translation",
+    description: "The core in-built phrases automatically translate when the language is switched, bridging cross-linguistic communication gaps."
+  },
+  {
+    title: "Multiple Accents & Languages",
+    description: "Type to speak directly into the meeting with dozens of natural localized voices, accents, and pacing options built into your device."
+  },
+  {
+    title: "Universal Desktop Browser Support",
+    description: "Native extensions built and verified across Google Chrome, Microsoft Edge, Mozilla Firefox, and Apple Safari for macOS."
+  }
+];
+
+const specs = [
+  { label: "Works in Google Meet", value: "Built specifically to provide an accessible voice during Google Meet calls on desktop computers." },
+  { label: "Every major browser", value: "Available as an official extension on Chrome, Safari for Mac, Microsoft Edge, and Firefox." },
+  { label: "Echo-free speech", value: "Audio injects directly into the call's microphone stream so everyone hears you clearly without speaker feedback." },
+  { label: "Quick communication", value: "Pre-defined AAC phrases let you contribute immediately, with automatic translation across languages." }
+];
+---
+
+<ProductLayout
+  title="Zip Speech Browser Extension"
+  subtitle="Give a Voice to Those Without in Google Meet"
+  description="Zip Speech gives a voice to those without in Google Meet. Type to speak directly into the meeting with multiple accents and languages. An accessibility tool designed to give a voice to those who cannot speak during Google Meet calls."
+  actions={[
+    { 
+      text: "Install for Chrome", 
+      url: "https://chromewebstore.google.com/detail/zip-speech/abmneamgapjekkemjihkhokdgpdeejff", 
+      primary: true, 
+      external: true 
+    },
+    { 
+      text: "Safari for Mac", 
+      url: "https://apps.apple.com/ca/app/zip-speech/id6758924987?mt=12", 
+      external: true 
+    },
+    { 
+      text: "Edge Add-on", 
+      url: "https://microsoftedge.microsoft.com/addons/detail/zip-speech/apjbgpfgcknniiicblbmehecojgfdgip", 
+      external: true 
+    }
+  ]}
+  capabilities={capabilities}
+  specs={specs}
+  ctaTitle="Be heard clearly in every virtual meeting"
+  ctaDescription="Install Zip Speech today and experience effortless, echo-free voice communication in Google Meet."
+  ctaAction={{ 
+    text: "Get Zip Speech for Chrome", 
+    url: "https://chromewebstore.google.com/detail/zip-speech/abmneamgapjekkemjihkhokdgpdeejff", 
+    external: true 
+  }}
+>
+
+  <!-- Problem & Solution Comparison Showcase -->
+  <div class="space-y-12 mt-8">
+    <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-8">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-bold font-heading text-midnight">
+          Why Direct Microphone Injection Matters
+        </h2>
+        <p class="mt-3 text-slate-600 text-sm sm:text-base max-w-3xl leading-relaxed">
+          Unlike other text-to-speech tools that play audio out of your computer speakers (causing echo), Zip Speech injects the audio directly into your Google Meet microphone stream. This means other participants hear you clearly, as if you were speaking yourself, while you can still hear the meeting audio perfectly.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- The Old Way -->
+        <div class="p-6 rounded-2xl bg-rose-50/50 border border-rose-100 space-y-3">
+          <div class="flex items-center gap-2 text-rose-700 font-bold font-heading">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+            <span>Traditional Speaker TTS</span>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Audio plays out through physical laptop speakers and is re-captured by your mic. Results in echo, clipped words, poor volume, and mutual speaker confusion.
+          </p>
+        </div>
+
+        <!-- The Zip Speech Way -->
+        <div class="p-6 rounded-2xl bg-teal-50/50 border border-teal-100 space-y-3">
+          <div class="flex items-center gap-2 text-teal-800 font-bold font-heading">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>The Zip Speech Way</span>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Synthesized speech is patched directly into the Google Meet browser audio stream digitally. Participants hear you with crystalline clarity while you continue listening comfortably.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- AAC Support Highlight -->
+    <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-4">
+      <h2 class="text-2xl font-bold font-heading text-midnight">
+        Integrated AAC Phrase Support
+      </h2>
+      <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+        In the latest update we have added AAC support for those who need pre-defined phrases. The core in-built phrases automatically translate when the language is switched, allowing users to communicate rapidly and naturally in any team setting.
+      </p>
+    </div>
+
+    <!-- Download For All Browsers Grid -->
+    <div class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-sm text-center">
+      <h3 class="text-xl font-bold font-heading text-midnight mb-2">
+        Install Zip Speech on Your Favorite Browser
+      </h3>
+      <p class="text-slate-600 text-sm mb-8">
+        Select your platform below to download and install Zip Speech for free.
+      </p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <a 
+          href="https://chromewebstore.google.com/detail/zip-speech/abmneamgapjekkemjihkhokdgpdeejff"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="p-5 rounded-2xl border border-slate-200 bg-slate-50 hover:bg-white hover:border-amethyst/50 transition-all text-center group shadow-sm"
+        >
+          <span class="block font-bold text-midnight group-hover:text-amethyst text-sm sm:text-base">Google Chrome</span>
+          <span class="text-xs text-slate-500">Chrome Web Store</span>
+        </a>
+
+        <a 
+          href="https://apps.apple.com/ca/app/zip-speech/id6758924987?mt=12"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="p-5 rounded-2xl border border-slate-200 bg-slate-50 hover:bg-white hover:border-amethyst/50 transition-all text-center group shadow-sm"
+        >
+          <span class="block font-bold text-midnight group-hover:text-amethyst text-sm sm:text-base">Safari (Mac)</span>
+          <span class="text-xs text-slate-500">Mac App Store</span>
+        </a>
+
+        <a 
+          href="https://microsoftedge.microsoft.com/addons/detail/zip-speech/apjbgpfgcknniiicblbmehecojgfdgip"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="p-5 rounded-2xl border border-slate-200 bg-slate-50 hover:bg-white hover:border-amethyst/50 transition-all text-center group shadow-sm"
+        >
+          <span class="block font-bold text-midnight group-hover:text-amethyst text-sm sm:text-base">Microsoft Edge</span>
+          <span class="text-xs text-slate-500">Edge Add-ons</span>
+        </a>
+
+        <a 
+          href="https://addons.mozilla.org/en-CA/firefox/addon/zip-speech/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="p-5 rounded-2xl border border-slate-200 bg-slate-50 hover:bg-white hover:border-amethyst/50 transition-all text-center group shadow-sm"
+        >
+          <span class="block font-bold text-midnight group-hover:text-amethyst text-sm sm:text-base">Mozilla Firefox</span>
+          <span class="text-xs text-slate-500">Firefox Add-ons</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</ProductLayout>

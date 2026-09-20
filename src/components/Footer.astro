@@ -1,0 +1,170 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-midnight text-slate-300 pt-16 pb-12 border-t border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-slate-800">
+      
+      <!-- Brand & Mission Column -->
+      <div class="lg:col-span-2 space-y-4">
+        <a href="/" class="flex items-center gap-3" aria-label="Zip Solutions - Home">
+          <img 
+            src="/images/zipsolutions_logo.png" 
+            alt="Zip Solutions" 
+            class="h-8 w-auto bg-white/90 rounded-lg p-1.5 object-contain"
+            width="150"
+            height="34"
+          />
+        </a>
+        <p class="text-slate-400 text-sm leading-relaxed max-w-sm">
+          The Home of Accessibility. Creating private, intuitive, and dignified tools that empower individuals and organizations to communicate and learn freely.
+        </p>
+        <div class="pt-2 flex items-center gap-2 text-xs font-medium text-slate-400">
+          <span class="text-sm select-none" aria-hidden="true">🍁</span>
+          <span>Built with <span class="text-coral">❤️</span> near Montreal, Canada</span>
+        </div>
+      </div>
+
+      <!-- Quick Links: Products -->
+      <div>
+        <h3 class="text-white font-heading font-bold text-sm tracking-wider uppercase mb-4">
+          Products & Tools
+        </h3>
+        <ul class="space-y-2.5 text-sm">
+          <li>
+            <a href="/products" class="text-slate-400 hover:text-white transition-colors">
+              Services Overview
+            </a>
+          </li>
+          <li>
+            <a href="/zipcaptions" class="text-slate-400 hover:text-white transition-colors">
+              Zip Captions
+            </a>
+          </li>
+          <li>
+            <a href="/easyspeak" class="text-slate-400 hover:text-white transition-colors">
+              Easy Speak AAC
+            </a>
+          </li>
+          <li>
+            <a href="/zippanel" class="text-slate-400 hover:text-white transition-colors">
+              Zip Panel Extension
+            </a>
+          </li>
+          <li>
+            <a href="/zipconnect" class="text-slate-400 hover:text-white transition-colors">
+              Zip Connect Extension
+            </a>
+          </li>
+          <li>
+            <a href="/zipvmix" class="text-slate-400 hover:text-white transition-colors">
+              vMix Live Bridge
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Quick Links: Organization -->
+      <div>
+        <h3 class="text-white font-heading font-bold text-sm tracking-wider uppercase mb-4">
+          Organization
+        </h3>
+        <ul class="space-y-2.5 text-sm">
+          <li>
+            <a href="/story" class="text-slate-400 hover:text-white transition-colors">
+              Our Story
+            </a>
+          </li>
+          <li>
+            <a href="/about-us" class="text-slate-400 hover:text-white transition-colors">
+              Our Team
+            </a>
+          </li>
+          <li>
+            <a href="/advisory" class="text-slate-400 hover:text-white transition-colors">
+              Advisory Board
+            </a>
+          </li>
+          <li>
+            <a href="/testimonial" class="text-slate-400 hover:text-white transition-colors">
+              Testimonials
+            </a>
+          </li>
+          <li>
+            <a href="/press" class="text-slate-400 hover:text-white transition-colors">
+              In the Press
+            </a>
+          </li>
+          <li>
+            <a href="/pricing" class="text-slate-400 hover:text-white transition-colors">
+              Pricing Plans
+            </a>
+          </li>
+          <li>
+            <a href="/contact-us" class="text-slate-400 hover:text-white transition-colors">
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Quick Links: Community & Legal -->
+      <div>
+        <h3 class="text-white font-heading font-bold text-sm tracking-wider uppercase mb-4">
+          Community & Trust
+        </h3>
+        <ul class="space-y-2.5 text-sm">
+          <li>
+            <a href="https://zipcaptions.app" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors">
+              Launch ZipCaptions ↗
+            </a>
+          </li>
+          <li>
+            <a href="https://patreon.com/zipcaptions" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors">
+              Patreon Community ↗
+            </a>
+          </li>
+          <li>
+            <a href="https://discord.gg/5Hyu7sQTHv" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors">
+              Discord Server ↗
+            </a>
+          </li>
+          <li>
+            <a href="https://help.zipcaptions.app" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors">
+              Help & Docs ↗
+            </a>
+          </li>
+          <li>
+            <a href="/privacy" class="text-slate-400 hover:text-white transition-colors">
+              Privacy Policy
+            </a>
+          </li>
+          <li>
+            <a href="/cookies" class="text-slate-400 hover:text-white transition-colors">
+              Cookie Policy
+            </a>
+          </li>
+          <li>
+            <a href="/pressrelease" class="text-slate-400 hover:text-white transition-colors">
+              Press Releases
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <p>
+        Zip Solutions | Copyright &copy; 2023–{currentYear} Solutions Zip. All rights reserved.
+      </p>
+      <div class="flex items-center space-x-6">
+        <a href="/privacy" class="hover:text-slate-300 transition-colors">Privacy</a>
+        <a href="/cookies" class="hover:text-slate-300 transition-colors">Cookies</a>
+        <a href="/contact-us" class="hover:text-slate-300 transition-colors">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>

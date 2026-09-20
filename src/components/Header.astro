@@ -1,0 +1,368 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.replace(/\/$/, '') || '/';
+---
+
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-all duration-200 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      
+      <!-- Brand Logo -->
+      <a href="/" class="flex items-center gap-3 focus-visible:ring-2 focus-visible:ring-amethyst rounded-lg p-1 group" aria-label="Zip Solutions - Home">
+        <img 
+          src="/images/zipsolutions_logo.png" 
+          alt="Zip Solutions" 
+          class="h-8 sm:h-9 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]" 
+          width="160"
+          height="38"
+        />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2" aria-label="Main Navigation">
+        
+        <a 
+          href="/" 
+          class={`px-3.5 py-2 rounded-xl text-sm font-semibold transition-colors ${currentPath === '/' ? 'text-amethyst bg-purple-50' : 'text-slate-700 hover:text-midnight hover:bg-slate-100'}`}
+        >
+          Home
+        </a>
+
+        <!-- Products & Services Dropdown -->
+        <div class="relative dropdown-group">
+          <button 
+            type="button" 
+            class="dropdown-btn flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-midnight hover:bg-slate-100 transition-colors focus-visible:ring-2 focus-visible:ring-amethyst" 
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            <span>Products & Services</span>
+            <svg class="w-4 h-4 text-slate-500 transition-transform dropdown-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="dropdown-menu hidden absolute left-0 mt-2 w-64 rounded-2xl bg-white border border-slate-200/90 shadow-xl py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+            <a href="/products" class="flex items-center px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-amethyst hover:bg-purple-50/70 transition-colors">
+              Services Overview
+            </a>
+            <a href="/zipcaptions" class="flex items-center px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-amethyst hover:bg-purple-50/70 transition-colors">
+              Zip Captions
+            </a>
+            <a href="/easyspeak" class="flex items-center px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-amethyst hover:bg-purple-50/70 transition-colors">
+              Easy Speak AAC
+            </a>
+            <a href="/zippanel" class="flex items-center px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-amethyst hover:bg-purple-50/70 transition-colors">
+              Zip Panel Extension
+            </a>
+            <a href="/zipconnect" class="flex items-center px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-amethyst hover:bg-purple-50/70 transition-colors">
+              Zip Connect Extension
+            </a>
+            <a href="/zipvmix" class="flex items-center px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-amethyst hover:bg-purple-50/70 transition-colors">
+              Zip Captions vMix Bridge
+            </a>
+            <div class="my-1 border-t border-slate-100"></div>
+            <a href="/products" class="flex items-center px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-amethyst hover:bg-purple-50/70 transition-colors">
+              Event Organisation &amp; Hybrid Sessions
+            </a>
+            <a href="/contact-us" class="flex items-center px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-amethyst hover:bg-purple-50/70 transition-colors">
+              Custom Live Event Quotes
+            </a>
+          </div>
+        </div>
+
+        <!-- Advisory Board Link -->
+        <a 
+          href="/advisory" 
+          class={`px-3.5 py-2 rounded-xl text-sm font-semibold transition-colors ${currentPath === '/advisory' ? 'text-amethyst bg-purple-50' : 'text-slate-700 hover:text-midnight hover:bg-slate-100'}`}
+        >
+          Advisory Board
+        </a>
+
+        <!-- Zip Captions Dropdown -->
+        <div class="relative dropdown-group">
+          <button 
+            type="button" 
+            class="dropdown-btn flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-midnight hover:bg-slate-100 transition-colors focus-visible:ring-2 focus-visible:ring-amethyst" 
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            <span>Zip Captions</span>
+            <svg class="w-4 h-4 text-slate-500 transition-transform dropdown-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="dropdown-menu hidden absolute left-0 mt-2 w-60 rounded-2xl bg-white border border-slate-200/90 shadow-xl py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+            <a href="/zipcaptions" class="flex items-center px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-teal-brand hover:bg-teal-50/70 transition-colors">
+              About Zip Captions
+            </a>
+            <a href="/pricing" class="flex items-center px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-teal-brand hover:bg-teal-50/70 transition-colors">
+              Pricing Plans
+            </a>
+            <hr class="my-1.5 border-slate-100" />
+            <a href="https://zipcaptions.app" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-teal-brand hover:bg-teal-50/70 transition-colors">
+              <span>Start Captioning</span>
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
+            <a href="https://help.zipcaptions.app" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-teal-brand hover:bg-teal-50/70 transition-colors">
+              <span>Help Center</span>
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
+            <a href="https://discord.gg/5Hyu7sQTHv" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-teal-brand hover:bg-teal-50/70 transition-colors">
+              <span>Community Discord</span>
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
+            <a href="https://patreon.com/zipcaptions" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-teal-brand hover:bg-teal-50/70 transition-colors">
+              <span>Support on Patreon</span>
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- About Us Dropdown -->
+        <div class="relative dropdown-group">
+          <button 
+            type="button" 
+            class="dropdown-btn flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-midnight hover:bg-slate-100 transition-colors focus-visible:ring-2 focus-visible:ring-amethyst" 
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            <span>About Us</span>
+            <svg class="w-4 h-4 text-slate-500 transition-transform dropdown-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="dropdown-menu hidden absolute left-0 mt-2 w-56 rounded-2xl bg-white border border-slate-200/90 shadow-xl py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+            <a href="/story" class="flex items-center px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-amethyst hover:bg-purple-50/70 transition-colors">
+              Our Story
+            </a>
+            <a href="/about-us" class="flex items-center px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-amethyst hover:bg-purple-50/70 transition-colors">
+              Our Team
+            </a>
+            <a href="/testimonial" class="flex items-center px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-amethyst hover:bg-purple-50/70 transition-colors">
+              Testimonials
+            </a>
+            <a href="/press" class="flex items-center px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-amethyst hover:bg-purple-50/70 transition-colors">
+              In the Press
+            </a>
+            <a href="/pressrelease" class="flex items-center px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-amethyst hover:bg-purple-50/70 transition-colors">
+              Press Releases
+            </a>
+            <hr class="my-1.5 border-slate-100" />
+            <a href="/privacy" class="flex items-center px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-amethyst hover:bg-purple-50/70 transition-colors">
+              Privacy Policy
+            </a>
+            <a href="/cookies" class="flex items-center px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-amethyst hover:bg-purple-50/70 transition-colors">
+              Cookie Policy
+            </a>
+          </div>
+        </div>
+
+      </nav>
+
+      <!-- Right Action CTA -->
+      <div class="hidden lg:flex items-center gap-3">
+        <a 
+          href="/contact-us" 
+          class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-heading font-semibold text-sm text-white bg-teal-brand hover:bg-teal-dark shadow-sm hover:shadow-md transition-all duration-200 focus-visible:ring-2 focus-visible:ring-teal-brand"
+        >
+          Contact Us
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="flex items-center lg:hidden">
+        <button 
+          id="mobile-menu-btn" 
+          type="button" 
+          class="p-2.5 rounded-xl text-slate-700 hover:text-midnight hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-amethyst" 
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+        >
+          <svg id="hamburger-icon" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2 shadow-xl animate-in slide-in-from-top duration-200 max-h-[calc(100vh-5rem)] overflow-y-auto">
+    
+    <a href="/" class="block px-3 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-slate-100">
+      Home
+    </a>
+
+    <!-- Mobile Products Collapsible -->
+    <details class="group rounded-xl">
+      <summary class="flex items-center justify-between px-3 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-slate-100 cursor-pointer list-none">
+        <span>Products & Services</span>
+        <svg class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </summary>
+      <div class="pl-4 pr-2 py-1 space-y-1">
+        <a href="/products" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-amethyst hover:bg-purple-50">Services Overview</a>
+        <a href="/zipcaptions" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-amethyst hover:bg-purple-50">Zip Captions</a>
+        <a href="/easyspeak" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-amethyst hover:bg-purple-50">Easy Speak AAC</a>
+        <a href="/zippanel" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-amethyst hover:bg-purple-50">Zip Panel Extension</a>
+        <a href="/zipconnect" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-amethyst hover:bg-purple-50">Zip Connect Extension</a>
+        <a href="/zipvmix" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-amethyst hover:bg-purple-50">Zip Captions vMix Bridge</a>
+        <div class="my-1 border-t border-slate-100"></div>
+        <a href="/products" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-amethyst hover:bg-purple-50">Event Organisation &amp; Hybrid Sessions</a>
+        <a href="/contact-us" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-amethyst hover:bg-purple-50">Custom Live Event Quotes</a>
+      </div>
+    </details>
+
+    <a href="/advisory" class="block px-3 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-slate-100">
+      Advisory Board
+    </a>
+
+    <!-- Mobile Zip Captions Collapsible -->
+    <details class="group rounded-xl">
+      <summary class="flex items-center justify-between px-3 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-slate-100 cursor-pointer list-none">
+        <span>Zip Captions</span>
+        <svg class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </summary>
+      <div class="pl-4 pr-2 py-1 space-y-1">
+        <a href="/zipcaptions" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-teal-brand hover:bg-teal-50">About Zip Captions</a>
+        <a href="/pricing" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-teal-brand hover:bg-teal-50">Pricing Plans</a>
+        <a href="https://zipcaptions.app" target="_blank" rel="noopener noreferrer" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-teal-brand hover:bg-teal-50">Start Captioning ↗</a>
+        <a href="https://help.zipcaptions.app" target="_blank" rel="noopener noreferrer" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-teal-brand hover:bg-teal-50">Help Center ↗</a>
+        <a href="https://discord.gg/5Hyu7sQTHv" target="_blank" rel="noopener noreferrer" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-teal-brand hover:bg-teal-50">Community Discord ↗</a>
+        <a href="https://patreon.com/zipcaptions" target="_blank" rel="noopener noreferrer" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-teal-brand hover:bg-teal-50">Patreon ↗</a>
+      </div>
+    </details>
+
+    <!-- Mobile About Us Collapsible -->
+    <details class="group rounded-xl">
+      <summary class="flex items-center justify-between px-3 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-slate-100 cursor-pointer list-none">
+        <span>About Us</span>
+        <svg class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </summary>
+      <div class="pl-4 pr-2 py-1 space-y-1">
+        <a href="/story" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-amethyst hover:bg-purple-50">Our Story</a>
+        <a href="/about-us" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-amethyst hover:bg-purple-50">Our Team</a>
+        <a href="/testimonial" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-amethyst hover:bg-purple-50">Testimonials</a>
+        <a href="/press" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-amethyst hover:bg-purple-50">In the Press</a>
+        <a href="/pressrelease" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-amethyst hover:bg-purple-50">Press Releases</a>
+        <a href="/privacy" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-amethyst hover:bg-purple-50">Privacy Policy</a>
+        <a href="/cookies" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-amethyst hover:bg-purple-50">Cookie Policy</a>
+      </div>
+    </details>
+
+    <div class="pt-3">
+      <a 
+        href="/contact-us" 
+        class="flex items-center justify-center w-full px-5 py-3 rounded-xl font-heading font-semibold text-white bg-teal-brand hover:bg-teal-dark transition-colors shadow-sm"
+      >
+        Contact Us
+      </a>
+    </div>
+
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamburgerIcon = document.getElementById('hamburger-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  if (menuBtn && mobileMenu && hamburgerIcon && closeIcon) {
+    menuBtn.addEventListener('click', () => {
+      const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!isExpanded));
+      mobileMenu.classList.toggle('hidden');
+      hamburgerIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+  }
+
+  // Desktop dropdown interactions (hover + click + keyboard escape)
+  const dropdownGroups = document.querySelectorAll('.dropdown-group');
+  dropdownGroups.forEach((group) => {
+    const btn = group.querySelector('.dropdown-btn');
+    const menu = group.querySelector('.dropdown-menu');
+    const arrow = group.querySelector('.dropdown-arrow');
+
+    if (btn && menu) {
+      let timeoutId: any;
+
+      const openMenu = () => {
+        clearTimeout(timeoutId);
+        // close others
+        dropdownGroups.forEach((g) => {
+          if (g !== group) {
+            g.querySelector('.dropdown-menu')?.classList.add('hidden');
+            g.querySelector('.dropdown-btn')?.setAttribute('aria-expanded', 'false');
+            g.querySelector('.dropdown-arrow')?.classList.remove('rotate-180');
+          }
+        });
+        menu.classList.remove('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+        arrow?.classList.add('rotate-180');
+      };
+
+      const closeMenu = () => {
+        timeoutId = setTimeout(() => {
+          menu.classList.add('hidden');
+          btn.setAttribute('aria-expanded', 'false');
+          arrow?.classList.remove('rotate-180');
+        }, 150);
+      };
+
+      group.addEventListener('mouseenter', openMenu);
+      group.addEventListener('mouseleave', closeMenu);
+
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = !menu.classList.contains('hidden');
+        if (isOpen) {
+          menu.classList.add('hidden');
+          btn.setAttribute('aria-expanded', 'false');
+          arrow?.classList.remove('rotate-180');
+        } else {
+          openMenu();
+        }
+      });
+    }
+  });
+
+  // Global click outside to close dropdowns
+  document.addEventListener('click', (e) => {
+    dropdownGroups.forEach((group) => {
+      if (!group.contains(e.target as Node)) {
+        group.querySelector('.dropdown-menu')?.classList.add('hidden');
+        group.querySelector('.dropdown-btn')?.setAttribute('aria-expanded', 'false');
+        group.querySelector('.dropdown-arrow')?.classList.remove('rotate-180');
+      }
+    });
+  });
+
+  // ESC key to close open menus
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      dropdownGroups.forEach((group) => {
+        group.querySelector('.dropdown-menu')?.classList.add('hidden');
+        group.querySelector('.dropdown-btn')?.setAttribute('aria-expanded', 'false');
+        group.querySelector('.dropdown-arrow')?.classList.remove('rotate-180');
+      });
+      if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+        menuBtn?.setAttribute('aria-expanded', 'false');
+        hamburgerIcon?.classList.remove('hidden');
+        closeIcon?.classList.add('hidden');
+      }
+    }
+  });
+</script>

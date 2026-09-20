@@ -1,0 +1,158 @@
+---
+import ProductLayout from '../layouts/ProductLayout.astro';
+
+const capabilities = [
+  {
+    title: "Direct Digital Integration",
+    description: "No more clunky screen capturing! Captions are sent as pure text data directly to the vMix API, resulting in crisp, broadcast-quality titles that match your style."
+  },
+  {
+    title: "Fully Automated",
+    description: "Detects every new word and phrase from zipcaptions.app and updates your vMix title continuously without any manual intervention. Just speak, and captions appear."
+  },
+  {
+    title: "Lightweight & Efficient",
+    description: "Runs quietly in the background using minimal system resources. It won't slow down your computer while you're focused on your live production."
+  },
+  {
+    title: "Simple & Fast Setup",
+    description: "A straightforward options page lets you connect the extension to your specific vMix setup in under a minute."
+  },
+  {
+    title: "LAN or Localhost Support",
+    description: "Connect over localhost (127.0.0.1) on the same streaming machine or across your local broadcast network from a dedicated transcription laptop."
+  },
+  {
+    title: "Hardware Agnostic",
+    description: "Works with any standard PC audio interface, USB microphone, or mixer feed configured in your Chrome browser."
+  }
+];
+
+const specs = [
+  { label: "vMix editions supported", value: "Works with any vMix edition that supports the Web Controller (HD, 4K, Pro, or Max)." },
+  { label: "Browser requirements", value: "Runs in Google Chrome or any Chromium-based browser such as Microsoft Edge or Brave." },
+  { label: "Direct network bridge", value: "Sends text data directly to vMix over your local machine or across your studio's local production network." },
+  { label: "Clean graphics output", value: "Updates your designated Title input in real time, matching your broadcast typography without fuzzy screen scraping." }
+];
+---
+
+<ProductLayout
+  title="Zip Captions vMix Extension"
+  subtitle="Seamless, Real-Time Captions for Your vMix Production"
+  description="Our Chrome extension creates an automatic, professional bridge between the power of web-based captions and your live stream. Turn spoken words into broadcast-quality on-screen titles in seconds."
+  actions={[
+    { 
+      text: "Download from Chrome Web Store", 
+      url: "https://chromewebstore.google.com/detail/zip-captions-vmix-caption/lbmofcdefajmlgdkccabpofoonmdfjao?hl=en-GB&authuser=0", 
+      primary: true, 
+      external: true 
+    },
+    { text: "Open Zip Captions", url: "https://zipcaptions.app", external: true },
+    { text: "Help Site", url: "https://help.zipcaptions.app", external: true }
+  ]}
+  capabilities={capabilities}
+  specs={specs}
+  ctaTitle="Elevate your broadcast accessibility"
+  ctaDescription="Stop struggling with clunky screen captures. Deliver crisp, professional on-screen captions directly in vMix."
+  ctaAction={{ 
+    text: "Get vMix Extension on Chrome Web Store", 
+    url: "https://chromewebstore.google.com/detail/zip-captions-vmix-caption/lbmofcdefajmlgdkccabpofoonmdfjao?hl=en-GB&authuser=0", 
+    external: true 
+  }}
+>
+
+  <!-- Problem & Solution Overview -->
+  <div class="space-y-12 mt-8">
+    <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-4">
+      <h2 class="text-2xl sm:text-3xl font-bold font-heading text-midnight">
+        Broadcast-Quality Titling Without Clunky Screen Scraping
+      </h2>
+      <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+        Adding live, accurate captions to a production can be complex and expensive. Traditional methods often require clunky screen capturing or complicated third-party software. We've developed a powerful yet simple Chrome extension that changes everything.
+      </p>
+      <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+        This tool captures real-time captions directly from <a href="https://zipcaptions.app" target="_blank" rel="noopener noreferrer" class="text-amethyst underline font-semibold">zipcaptions.app</a> and sends them directly to a title in your vMix production—automatically. It turns your voice into professional, on-screen graphics in seconds, making your content more accessible and engaging for your entire audience.
+      </p>
+    </div>
+
+    <!-- Getting Started in 3 Simple Steps -->
+    <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-8">
+      <div>
+        <h3 class="text-2xl font-bold font-heading text-midnight">
+          Getting Started in 3 Simple Steps
+        </h3>
+        <p class="mt-2 text-slate-600 text-sm sm:text-base">
+          You can be up and running with live captions in just a few minutes.
+        </p>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Step 1 -->
+        <div class="flex flex-col md:flex-row gap-6 p-6 rounded-2xl bg-slate-50 border border-slate-200 items-start">
+          <div class="w-10 h-10 rounded-xl bg-purple-100 text-amethyst font-bold flex items-center justify-center font-heading text-base shrink-0">
+            1
+          </div>
+          <div class="space-y-2">
+            <h4 class="font-bold font-heading text-midnight text-lg">Install &amp; Configure the Extension</h4>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Install the extension from the Chrome Web Store. Right-click the extension icon, go to <strong>Options</strong>, and enter your vMix IP Address (usually <code class="px-2 py-0.5 rounded bg-slate-200 font-mono text-xs text-midnight">127.0.0.1</code>). Give your vMix caption input a name, for example, <code class="px-2 py-0.5 rounded bg-slate-200 font-mono text-xs text-midnight">LiveCaptions</code>, and save the settings.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="flex flex-col md:flex-row gap-6 p-6 rounded-2xl bg-slate-50 border border-slate-200 items-start">
+          <div class="w-10 h-10 rounded-xl bg-purple-100 text-amethyst font-bold flex items-center justify-center font-heading text-base shrink-0">
+            2
+          </div>
+          <div class="space-y-2">
+            <h4 class="font-bold font-heading text-midnight text-lg">Set Up Your vMix Title</h4>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              In vMix, click <strong>"Add Input"</strong> and select the <strong>"Title"</strong> category. Choose a simple title template that fits your style (a basic lower third or ticker works perfectly). Rename the input to exactly match the name you set in the extension's options (e.g., <code class="px-2 py-0.5 rounded bg-slate-200 font-mono text-xs text-midnight">LiveCaptions</code>).
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="flex flex-col md:flex-row gap-6 p-6 rounded-2xl bg-slate-50 border border-slate-200 items-start">
+          <div class="w-10 h-10 rounded-xl bg-purple-100 text-amethyst font-bold flex items-center justify-center font-heading text-base shrink-0">
+            3
+          </div>
+          <div class="space-y-2">
+            <h4 class="font-bold font-heading text-midnight text-lg">Go Live with Captions!</h4>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Open <a href="https://zipcaptions.app" target="_blank" rel="noopener noreferrer" class="text-amethyst underline font-medium">zipcaptions.app</a> in a Chrome tab, start a new session, and begin speaking. The text will automatically appear in your vMix title. You can now use your <code class="px-2 py-0.5 rounded bg-slate-200 font-mono text-xs text-midnight">LiveCaptions</code> input as an overlay in your main production, just like any other graphic!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Requirements Checklist -->
+    <div class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-sm space-y-4">
+      <h3 class="text-xl font-bold font-heading text-midnight">
+        System Requirements
+      </h3>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-700">
+        <li class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-sm bg-teal-brand"></span>
+          Google Chrome or Chromium-based browser
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-sm bg-teal-brand"></span>
+          The vMix Caption Sender extension
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-sm bg-teal-brand"></span>
+          vMix Software (HD, 4K, or Pro with Web Controller)
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-sm bg-teal-brand"></span>
+          A working microphone connected to your computer
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+</ProductLayout>

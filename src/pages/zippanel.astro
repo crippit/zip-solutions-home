@@ -1,0 +1,150 @@
+---
+import ProductLayout from '../layouts/ProductLayout.astro';
+
+const capabilities = [
+  {
+    title: "Universal Caption Display",
+    description: "View live captions from Zip Captions on any other Chrome tab you are currently using without switching windows."
+  },
+  {
+    title: "Persistent Overlay",
+    description: "A clean overlay appears discreetly at the bottom of your browser, showing live captions continuously as you browse."
+  },
+  {
+    title: "Pop-out Window Mode",
+    description: "Detach the caption overlay into a separate, minimal window that can be moved anywhere on your screen and stays visible."
+  },
+  {
+    title: "Docking Functionality",
+    description: "Easily 'dock' the pop-out window back, instantly reverting captions to the in-page overlay mode whenever you need."
+  },
+  {
+    title: "Background Opacity",
+    description: "Adjust the overlay's background transparency for optimal readability without obscuring underlying web page content."
+  },
+  {
+    title: "Smart Source Detection",
+    description: "Automatically identifies and captures captions from the Zip Captions site with zero manual pairing required."
+  }
+];
+
+const specs = [
+  { label: "Browser compatibility", value: "Works on Google Chrome and Chromium-based browsers including Microsoft Edge, Brave, and Opera." },
+  { label: "How it pairs", value: "Automatically picks up captions from any open Zip Captions tab without manual codes or configuration." },
+  { label: "Display flexibility", value: "Keep captions fixed discreetly at the bottom of your pages, or pop them out into a floating window anywhere on screen." },
+  { label: "Reading comfort", value: "Quick sliders let you change text size and tweak background opacity so captions never block your work." }
+];
+---
+
+<ProductLayout
+  title="Zip Panel Chrome Extension"
+  subtitle="Persistent Browser Overlay"
+  description="Tired of missing out on audio content while you browse or work? The Zip Captions Chrome Extension is designed to keep you in the loop by displaying captions from Zip Captions in a convenient, always-accessible overlay across all your Chrome tabs or in a floating window."
+  actions={[
+    { 
+      text: "Install from Chrome Web Store", 
+      url: "https://chromewebstore.google.com/detail/zipcaptions-persistent-ca/ibkgpkncdmagdcbmnnekjikiaijfioma?authuser=0&hl=en-GB", 
+      primary: true, 
+      external: true 
+    },
+    { text: "Open Zip Captions", url: "https://zipcaptions.app", external: true },
+    { text: "Help & Support", url: "https://help.zipcaptions.app", external: true }
+  ]}
+  heroImage="/images/zippanel.png"
+  heroImageAlt="The Zip Captions Persistent Overlay"
+  capabilities={capabilities}
+  specs={specs}
+  ctaTitle="Never miss a word while browsing"
+  ctaDescription="Install the Zip Panel extension today and bring always-on live captions into your daily browser workflow."
+  ctaAction={{ 
+    text: "Get Zip Panel on Chrome Web Store", 
+    url: "https://chromewebstore.google.com/detail/zipcaptions-persistent-ca/ibkgpkncdmagdcbmnnekjikiaijfioma?authuser=0&hl=en-GB", 
+    external: true 
+  }}
+>
+
+  <!-- Complete Feature Breakdown -->
+  <div class="space-y-12 mt-8">
+    
+    <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-6">
+      <h2 class="text-2xl sm:text-3xl font-bold font-heading text-midnight">
+        Multitask Effectively Without Losing Track
+      </h2>
+      <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+        The extension allows you to multitask effectively without losing track of spoken content. Customize the overlay's appearance to perfectly match your viewing comfort with adjustable background opacity and text size. Choose to have captions displayed discreetly at the bottom of your pages or "pop out" the overlay into its own resizable window for maximum flexibility. Stay informed, stay productive, and never miss a word, no matter where you browse!
+      </p>
+    </div>
+
+    <!-- Key Features & Full Customization Grids -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      <!-- Key Features -->
+      <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-4">
+        <h3 class="text-xl font-bold font-heading text-midnight">
+          Key Features
+        </h3>
+        <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+          <li class="flex items-start gap-2">
+            <span class="text-amethyst font-bold">•</span>
+            <span><strong>Universal Caption Display:</strong> View live captions from Zip Captions on any other Chrome tab you are currently using.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-amethyst font-bold">•</span>
+            <span><strong>Persistent Overlay:</strong> A clean overlay appears at the bottom of your browser, showing live captions.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-amethyst font-bold">•</span>
+            <span><strong>Pop-out Window Mode:</strong> Detach the caption overlay into a separate, minimal window that can be moved anywhere on your screen and stays visible. Ideal for resizing underneath your window.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-amethyst font-bold">•</span>
+            <span><strong>Docking Functionality:</strong> Easily "dock" the pop-out window back, reverting captions to the in-page overlay mode.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Full Customization -->
+      <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-4">
+        <h3 class="text-xl font-bold font-heading text-midnight">
+          Full Customization
+        </h3>
+        <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+          <li class="flex items-start gap-2">
+            <span class="text-teal-brand font-bold">•</span>
+            <span><strong>Global Toggle:</strong> Enable or disable the overlay with one click.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-teal-brand font-bold">•</span>
+            <span><strong>Background Opacity:</strong> Adjust the overlay's background transparency for optimal readability without obscuring page content.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-teal-brand font-bold">•</span>
+            <span><strong>Text Size:</strong> Increase or decrease the caption text size to suit your needs.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-teal-brand font-bold">•</span>
+            <span><strong>Smart Source Detection:</strong> Automatically identifies and captures captions from the Zip Captions site.</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Help & Support Banner -->
+    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="text-sm text-slate-600">
+        Need assistance with configuration or have questions? Visit our dedicated documentation center.
+      </div>
+      <a 
+        href="https://help.zipcaptions.app" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="text-sm font-bold text-amethyst hover:text-amethyst-dark shrink-0"
+      >
+        Visit Help Site &rarr;
+      </a>
+    </div>
+
+  </div>
+
+</ProductLayout>

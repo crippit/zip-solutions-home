@@ -1,0 +1,37 @@
+---
+import { getCollection, render } from 'astro:content';
+import PageLayout from '../layouts/PageLayout.astro';
+
+export async function getStaticPaths() {
+  const reservedSlugs = new Set([
+    'testimonial',
+    'testimonials',
+    'press',
+    'pressrelease',
+    'press-releases',
+    'about-us',
+    'about',
+    'team',
+    'our-team',
+    'advisory'
+  ]);
+  const docs = await getCollection('docs');
+  return docs
+    .filter((doc) => !reservedSlugs.has(doc.id.replace(/\.md$/, '')))
+    .map((doc) => ({
+      params: { slug: doc.id.replace(/\.md$/, '') },
+      props: { doc },
+    }));
+}
+
+const { doc } = Astro.props;
+const { Content } = await render(doc);
+---
+
+<PageLayout 
+  title={doc.data.title || 'Zip Solutions'} 
+  description={doc.data.description}
+  heroBadge={doc.data.badge}
+>
+  <Content />
+</PageLayout>
