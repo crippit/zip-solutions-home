@@ -22,51 +22,6 @@ import ZipDashboard from '../components/ZipDashboard.astro';
     </div>
   </section>
 
-  <!-- Universal Inclusion Across Every Environment (Connecting from Homepage) -->
-  <section class="py-12 bg-white border-b border-slate-200/80">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-gradient-to-br from-slate-900 via-midnight to-slate-950 rounded-3xl p-8 sm:p-12 text-white border border-slate-800 shadow-xl">
-        <div class="max-w-3xl space-y-3 mb-8">
-          <span class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading block">
-            Our Inclusive Mission
-          </span>
-          <h2 class="text-2xl sm:text-4xl font-extrabold font-heading tracking-tight">
-            Designed for Universal Inclusion Across Every Setting
-          </h2>
-          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-            True accessibility requires solutions tailored to how people gather and learn. We engineer specialized tools and services that eliminate communication barriers across three core environments:
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-slate-800">
-          <div class="space-y-2">
-            <span class="text-xs font-mono font-bold uppercase tracking-wider text-amethyst">01. Classrooms &amp; Higher Ed</span>
-            <h3 class="text-lg font-bold font-heading text-white">Classrooms &amp; Higher Ed</h3>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              Empowering deaf and hard-of-hearing students with real-time browser captions (<a href="/zipcaptions" class="text-teal-brand hover:underline font-semibold">Zip Captions</a>), non-verbal communication tools (<a href="/easyspeak" class="text-teal-brand hover:underline font-semibold">EasySpeak AAC</a>), and multi-screen classroom displays.
-            </p>
-          </div>
-
-          <div class="space-y-2">
-            <span class="text-xs font-mono font-bold uppercase tracking-wider text-teal-brand">02. Worship &amp; Broadcast</span>
-            <h3 class="text-lg font-bold font-heading text-white">Worship &amp; Community Broadcast</h3>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              Providing low-latency live captions for sanctuary projection, OBS Studio, and cable television feeds (<a href="/zipvmix" class="text-teal-brand hover:underline font-semibold">ZipVMix</a>) so remote and in-person congregants stay connected.
-            </p>
-          </div>
-
-          <div class="space-y-2">
-            <span class="text-xs font-mono font-bold uppercase tracking-wider text-coral">03. Live Events &amp; Summits</span>
-            <h3 class="text-lg font-bold font-heading text-white">Conferences &amp; Conventions</h3>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              Full in-person event organisation, hybrid convention streaming management, and synchronized live captioning deployments that ensure total attendee participation.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- PROMINENT FEATURED SERVICES: Event Organisation & Custom Live Captions -->
   <section class="py-12 bg-white border-b border-slate-200/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -88,20 +43,16 @@ import ZipDashboard from '../components/ZipDashboard.astro';
         <!-- Service 1: In-Person Event Organisation & Professional Development -->
         <div class="bg-gradient-to-br from-slate-50 to-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
           <div>
-            <div class="flex items-center justify-between mb-6">
-              <span class="p-3.5 rounded-2xl bg-amethyst text-white shadow-md">
+            <div class="flex items-center gap-4 mb-5">
+              <span class="p-3.5 rounded-2xl bg-amethyst text-white shadow-md shrink-0">
                 <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
               </span>
-              <span class="text-xs font-bold uppercase tracking-wider text-amethyst font-heading">
-                Education &amp; Events
-              </span>
+              <h3 class="text-xl sm:text-2xl font-bold font-heading text-midnight leading-snug">
+                In-Person &amp; Hybrid Event Organisation
+              </h3>
             </div>
-
-            <h3 class="text-2xl font-bold font-heading text-midnight mb-3">
-              In-Person &amp; Hybrid Event Organisation
-            </h3>
 
             <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
               We provide full-spectrum event organisation for educational institutions, conventions, and non-profit organisations. From technical infrastructure to live streaming and attendee engagement, we handle every detail so your team can focus on programming.
@@ -137,20 +88,16 @@ import ZipDashboard from '../components/ZipDashboard.astro';
         <!-- Service 2: Custom Zip Captions Solutions for Live Events -->
         <div class="bg-gradient-to-br from-slate-50 to-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
           <div>
-            <div class="flex items-center justify-between mb-6">
-              <span class="p-3.5 rounded-2xl bg-teal-brand text-white shadow-md">
+            <div class="flex items-center gap-4 mb-5">
+              <span class="p-3.5 rounded-2xl bg-teal-brand text-white shadow-md shrink-0">
                 <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                 </svg>
               </span>
-              <span class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading">
-                Live Captions &amp; Surtitles
-              </span>
+              <h3 class="text-xl sm:text-2xl font-bold font-heading text-midnight leading-snug">
+                Custom Zip Captions for Live Events
+              </h3>
             </div>
-
-            <h3 class="text-2xl font-bold font-heading text-midnight mb-3">
-              Custom Zip Captions for Live Events
-            </h3>
 
             <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
               Need reliable, enterprise-grade live captioning for an auditorium keynote, theater production, church service, or international conference? We architect and operate custom Zip Captions deployments tailored to your exact venue setup.

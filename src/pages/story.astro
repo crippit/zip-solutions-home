@@ -1,0 +1,298 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const dignityPillars = [
+  {
+    title: "User Agency & Personal Control",
+    description: "Every individual has unique visual and cognitive preferences. By allowing participants to view live captions on their personal phones or tablets, each person controls their own font sizes, high-contrast color palettes, and languages without having to ask for special treatment or alter the auditorium screen.",
+    icon: "user",
+    accent: "text-amethyst",
+    bgAccent: "bg-purple-50",
+    borderAccent: "border-purple-100"
+  },
+  {
+    title: "Invisible, Frictionless Access",
+    description: "Traditional accommodations frequently require cumbersome hardware checkout, admin software installations, or expensive per-minute transcription costs. We build lightweight browser tools that launch instantly on any device with zero friction.",
+    icon: "sparkles",
+    accent: "text-teal-brand",
+    bgAccent: "bg-teal-50",
+    borderAccent: "border-teal-100"
+  },
+  {
+    title: "Privacy as Human Dignity",
+    description: "Personal conversations and accommodation requirements are deeply confidential. We never record voice audio, never build advertising telemetry profiles, and preserve all transcripts strictly in local device memory.",
+    icon: "shield",
+    accent: "text-coral",
+    bgAccent: "bg-orange-50",
+    borderAccent: "border-orange-100"
+  }
+];
+
+const environments = [
+  {
+    step: "01",
+    title: "Classrooms & Higher Education",
+    tag: "Education",
+    description: "Empowering deaf, hard-of-hearing, and neurodivergent learners with instant browser captions, non-verbal communication tools, and multi-display classroom sync.",
+    tools: [
+      { name: "Zip Captions", href: "/zipcaptions" },
+      { name: "EasySpeak AAC", href: "/easyspeak" },
+      { name: "ClassStudioSync", href: "/classstudiosync" }
+    ],
+    color: "border-amethyst/30 hover:border-amethyst"
+  },
+  {
+    step: "02",
+    title: "Worship & Community Broadcast",
+    tag: "Faith & Media",
+    description: "Providing rock-solid, low-latency live captions for sanctuary projection screens, OBS Studio, and weekly homebound cable television broadcasts.",
+    tools: [
+      { name: "Zip Captions", href: "/zipcaptions" },
+      { name: "ZipVMix Bridge", href: "/zipvmix" },
+      { name: "WebSockets Stream Relay", href: "/zipconnect" }
+    ],
+    color: "border-teal-brand/30 hover:border-teal-brand"
+  },
+  {
+    step: "03",
+    title: "Live Events & Global Summits",
+    tag: "Conferences",
+    description: "End-to-end technical direction, multi-room hybrid convention streaming, and synchronized live stage surtitles ensuring total attendee inclusion.",
+    tools: [
+      { name: "In-Person Event Management", href: "/products" },
+      { name: "Tailored Surtitles", href: "/contact-us" },
+      { name: "Custom SLA Support", href: "/contact-us" }
+    ],
+    color: "border-coral/30 hover:border-coral"
+  }
+];
+
+const timeline = [
+  {
+    period: "2013 – 2020",
+    title: "Educators & Tinkering Innovators",
+    description: "James and Chris first met in 2013 at an educational technology workshop. Rather than passively listening to lectures, they spent the sessions collaborating on software that enabled teachers to sync dynamic schedules into Google Calendar. Over the subsequent years, they built assistive scripts, home automation tools, and ed-tech solutions, presenting at symposiums across North America and contributing to the Google for Education blog for Global Accessibility Awareness Day."
+  },
+  {
+    period: "2020 – 2023",
+    title: "The Classroom Turning Point",
+    description: "During the 2020–21 school year, Chris began teaching a student with hearing loss and quickly realized how fundamentally inaccessible ordinary school environments can be. From fire alarms and morning announcements to auditorium assemblies and theatrical productions, standard accommodations repeatedly fell short. Chris and James engineered SlidesCaptions to extract and enlarge presentation subtitles, while Chris spearheaded assistive listening systems in his high school and partnered with educational specialist Tracey Green on classroom accessibility guidance."
+  },
+  {
+    period: "2023 – Present",
+    title: "From Innovation Accelerator to Global Community",
+    description: "In 2023, Chris was selected for the inaugural Dell Education Innovation Accelerator. Merging insights from the accelerator and the Google Certified Innovator community, Zip Captions was officially launched. What began as a grassroots endeavor to support students has expanded into an international platform serving thousands of educators, community broadcasters, conferences, and individuals worldwide."
+  }
+];
+---
+
+<BaseLayout 
+  title="Our Story & Philosophy | Zip Solutions" 
+  description="How a high school classroom challenge sparked an international mission to build free, private, and dignified accessibility tools."
+>
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-b from-white via-alabaster to-slate-100 border-b border-slate-200/80 pt-16 pb-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      
+      <!-- Top Navigation Tabs (Zero Pills) -->
+      <div class="inline-flex p-1 bg-slate-200/70 rounded-xl mb-8">
+        <a 
+          href="/story" 
+          class="px-5 py-2 rounded-lg text-xs font-bold font-heading bg-white text-midnight shadow-sm"
+        >
+          Our Story
+        </a>
+        <a 
+          href="/about-us" 
+          class="px-5 py-2 rounded-lg text-xs font-bold font-heading text-slate-600 hover:text-midnight transition-colors"
+        >
+          Core Team
+        </a>
+        <a 
+          href="/advisory" 
+          class="px-5 py-2 rounded-lg text-xs font-bold font-heading text-slate-600 hover:text-midnight transition-colors"
+        >
+          Advisory Board
+        </a>
+      </div>
+
+      <p class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading mb-4">
+        Our Mission • Our Journey • Universal Dignity
+      </p>
+
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-midnight font-heading tracking-tight leading-tight">
+        The Journey to Dignified Accessibility
+      </h1>
+      <p class="mt-4 text-base sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        How a high school classroom challenge sparked an international mission to build free, private, and universal communication tools.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 space-y-20">
+
+    <!-- Section 1: Dignity as Our North Star -->
+    <section class="space-y-10">
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-amethyst font-heading block">
+          Foundational Philosophy
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold font-heading text-midnight">
+          Dignity as Our North Star
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+          At Zip Solutions, we believe that <strong class="text-midnight font-semibold">dignity is the foundational metric of genuine accessibility.</strong> When an individual in a classroom, lecture hall, or congregation struggles to understand spoken communication, the failure is never theirs—it is a failure of the environment.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {dignityPillars.map((pillar) => (
+          <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-md transition-shadow">
+            <div class="space-y-4">
+              <div class={`w-12 h-12 rounded-2xl ${pillar.bgAccent} border ${pillar.borderAccent} flex items-center justify-center ${pillar.accent}`}>
+                {pillar.icon === "user" && (
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                )}
+                {pillar.icon === "sparkles" && (
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                )}
+                {pillar.icon === "shield" && (
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                )}
+              </div>
+
+              <h3 class="text-xl font-bold font-heading text-midnight">
+                {pillar.title}
+              </h3>
+
+              <p class="text-slate-600 text-sm leading-relaxed">
+                {pillar.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Section 2: Universal Inclusion Across Every Setting -->
+    <section class="bg-gradient-to-br from-slate-900 via-midnight to-slate-950 rounded-3xl p-8 sm:p-12 text-white border border-slate-800 shadow-xl space-y-10">
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading block">
+          Universal Inclusion
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold font-heading tracking-tight">
+          Designed for Inclusion Across Every Setting
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          True accessibility cannot be one-size-fits-all. We architect specialized software and services that eliminate communication barriers across three core environments:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-slate-800">
+        {environments.map((env) => (
+          <div class="bg-slate-900/80 rounded-2xl p-6 border border-slate-800 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <span class="text-xs font-mono font-bold uppercase tracking-wider text-teal-brand">
+                {env.step} • {env.tag}
+              </span>
+              <h3 class="text-lg font-bold font-heading text-white">
+                {env.title}
+              </h3>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                {env.description}
+              </p>
+            </div>
+
+            <div class="pt-3 border-t border-slate-800 flex flex-wrap gap-2 text-xs">
+              {env.tools.map((tool) => (
+                <a 
+                  href={tool.href} 
+                  class="text-teal-brand hover:text-white font-medium transition-colors inline-flex items-center gap-0.5"
+                >
+                  <span>{tool.name}</span>
+                  <span class="text-xs leading-none">→</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Section 3: The Journey & History (Timeline) -->
+    <section class="space-y-10">
+      <div class="border-b border-slate-200 pb-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-amethyst font-heading block mb-1">
+          Our Evolution
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-bold font-heading text-midnight">
+          How Zip Solutions Began
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 mt-1">
+          From a grassroots classroom accommodation tool to an international accessibility platform.
+        </p>
+      </div>
+
+      <div class="space-y-8">
+        {timeline.map((item) => (
+          <article class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-10 transition-all hover:border-amethyst/30">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+              <div class="lg:col-span-4">
+                <span class="text-xs font-mono font-bold uppercase tracking-wider text-teal-brand block mb-1">
+                  Timeline Milestone
+                </span>
+                <h3 class="text-xl sm:text-2xl font-bold font-heading text-midnight">
+                  {item.period}
+                </h3>
+                <p class="text-sm font-semibold text-amethyst font-heading mt-1">
+                  {item.title}
+                </p>
+              </div>
+
+              <div class="lg:col-span-8 text-slate-700 text-sm sm:text-base leading-relaxed space-y-4">
+                <p>{item.description}</p>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Section 4: Mission CTA -->
+    <section class="bg-gradient-to-br from-slate-900 via-midnight to-slate-950 rounded-3xl p-8 sm:p-12 text-white border border-slate-800 shadow-xl text-center relative overflow-hidden">
+      <div class="max-w-2xl mx-auto space-y-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading block">
+          Montreal, Canada • Serving Worldwide
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold font-heading">
+          Built with Dignity, Built for Everyone
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Solutions Zip is proudly based near Montreal, Quebec, Canada. Have an idea, need event support, or want to collaborate with our advisory board?
+        </p>
+        <div class="pt-4 flex flex-wrap justify-center gap-4">
+          <a 
+            href="/about-us" 
+            class="px-8 py-3.5 rounded-xl font-heading font-bold text-sm text-midnight bg-white hover:bg-alabaster shadow-md transition-all"
+          >
+            Meet the Team
+          </a>
+          <a 
+            href="/contact-us" 
+            class="px-7 py-3.5 rounded-xl font-heading font-bold text-sm text-white border border-slate-700 hover:bg-slate-800 transition-all"
+          >
+            Contact Our Team
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

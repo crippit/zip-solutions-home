@@ -18,6 +18,16 @@ Communication tools should never make a person feel singled out, burdened by com
 
 ---
 
+## Designed for Universal Inclusion Across Every Setting
+
+True accessibility requires solutions tailored to how people gather, communicate, and learn. We engineer specialized tools and services that eliminate barriers across three core environments:
+
+* **Classrooms & Higher Ed:** Empowering deaf and hard-of-hearing students with real-time browser captions ([Zip Captions](/zipcaptions)), non-verbal communication tools ([EasySpeak AAC](/easyspeak)), and multi-screen classroom displays.
+* **Worship & Community Broadcast:** Providing low-latency live captions for sanctuary projection, OBS Studio, and cable television feeds ([ZipVMix](/zipvmix)) so remote and in-person congregants stay connected.
+* **Conferences & Conventions:** Full in-person event organisation, hybrid convention streaming management, and synchronized live captioning deployments that ensure total attendee participation.
+
+---
+
 ## How Zip Solutions Began
 
 ### 2013–2020: Educators & Builders
