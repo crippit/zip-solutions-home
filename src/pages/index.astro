@@ -8,6 +8,8 @@ const features = [
     icon: "captions",
     badge: "Flagship",
     color: "bg-amethyst",
+    href: "/zipcaptions",
+    linkText: "Explore Zip Captions",
   },
   {
     title: "Privacy Focused",
@@ -15,6 +17,8 @@ const features = [
     icon: "shield",
     badge: "Core Value",
     color: "bg-teal-brand",
+    href: "/privacy",
+    linkText: "Read our Privacy Architecture",
   },
   {
     title: "Dignity",
@@ -22,6 +26,8 @@ const features = [
     icon: "heart",
     badge: "Philosophy",
     color: "bg-coral",
+    href: "/story",
+    linkText: "Discover our Story & Philosophy",
   },
   {
     title: "Inclusivity & Accessibility",
@@ -29,6 +35,8 @@ const features = [
     icon: "users",
     badge: "Mission",
     color: "bg-indigo-600",
+    href: "/products",
+    linkText: "Explore Accessibility Solutions",
   },
   {
     title: "Community",
@@ -36,6 +44,8 @@ const features = [
     icon: "messages",
     badge: "Open Source",
     color: "bg-teal-dark",
+    href: "/advisory",
+    linkText: "Meet our Advisory Board",
   },
   {
     title: "Respect",
@@ -43,6 +53,8 @@ const features = [
     icon: "check",
     badge: "Commitment",
     color: "bg-amethyst-dark",
+    href: "/contact-us#accommodations",
+    linkText: "Request Custom Accommodations",
   }
 ];
 ---
@@ -160,9 +172,13 @@ const features = [
             </p>
           </div>
 
-          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center text-xs font-bold text-teal-brand">
-            <span>Learn how we uphold this &rarr;</span>
-          </div>
+          <a 
+            href={feature.href} 
+            class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-teal-brand group-hover:text-midnight transition-colors"
+          >
+            <span>{feature.linkText}</span>
+            <span class="text-base leading-none group-hover:translate-x-1 transition-transform">&rarr;</span>
+          </a>
         </div>
       ))}
     </div>

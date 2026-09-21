@@ -1,35 +1,30 @@
 ---
-title: 'Privacy'
+title: 'Privacy Policy & Data Architecture'
+description: 'How Zip Solutions safeguards student, broadcast, and community data with zero audio retention and local-first architecture.'
 sidebar: false
 ---
 
-# Privacy Matters
+# Our Privacy Architecture: Zero Retention & Local-First
 
-We built Zip Captions to ensure that user privacy was at the forefront of what we did, and that is why we only collect an email address when you register so that we can personalise the services that we offer you. 
+Zip Solutions was engineered around a core tenet: **essential accessibility tools must never compromise human dignity or privacy.** We design every tool—including Zip Captions, EasySpeak, and our classroom integrations—so that your personal audio and spoken conversations remain strictly your own.
 
-We also built Zip Captions for the Classroom, and we wanted to make sure that we safeguarded student data as much as possible. That is why we:
+### Our 4 Unbreakable Privacy Guarantees
 
-* Collect as little information as possible - only your email address
-* Use a third party sign in service so we don't store your password
-* Will never sell our information to other companies
-* Delete inactive accounts after 30 days
-* Encrypt your data on your local device for transcripts
-* Do not use trackers, analytics or other tools to identify your browsing habits on our main sites
-* Do not display or use ad's on our main sites
+1. **Zero Audio Stored or Retained**  
+   Your spoken audio is never recorded, never stored on remote disks, and never fed into generalized AI training sets. Speech-to-text processing occurs transiently in memory or on-device.
 
-We know that you don't want to read all the way through here, so:
+2. **Transcripts Stay on Your Device**  
+   Live transcripts and conversation history live exclusively in your local browser storage. When you close or clear your browser session, they do not remain on our servers.
 
-* We comply with GDPR
-* We will never sell your data
-* Transcripts are only stored on your local machine!
-* Your data (email address and settings preferences are stored with Azure in a data bucket in the USA)
-* You can use Zip Captions without logging in, in which case we store ZERO data about you.
+3. **Zero Behavioral Trackers or Ad Tech**  
+   We do not use surveillance pixels, tracking cookies, or advertising frameworks to profile your browsing habits. We do not display ads and will never sell user data to data brokers or third parties.
 
-These are just a few of the ways that we help to protect your data, and your privacy. 
+4. **Anonymous & Free by Default**  
+   You can use core live captioning in Zip Captions without logging in or providing an email address. If you do not sign in, we collect **zero** identifying information about you.
 
-Keep reading to see our full privacy policy
+---
 
-## Privacy Policy
+### Complete Privacy Policy
 Last updated February 10, 2025
 
 This Privacy Notice for Solutions Zip (doing business as Zip Captions) ("we," "us," or "our"), describes how and why we might access, collect, store, use, and/or share ("process") your personal information when you use our services ("Services"), including when you:

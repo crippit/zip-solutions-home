@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const inquiryTypes = [
+  { id: "accommodations", label: "Accessibility Adaptation / Accommodation", value: "Accessibility Adaptation / Accommodation" },
   { id: "partnership", label: "Partnership Inquiry", value: "Partnership Inquiry" },
   { id: "product", label: "Product or Service Inquiry", value: "Product or service Inquiry" },
   { id: "advisory-board", label: "Interested in Advisory Board", value: "Interested in Advisory Board" },
@@ -30,7 +31,25 @@ const inquiryTypes = [
     </div>
   </section>
 
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-10">
+    
+    <!-- Respect & Accommodations Overview (Connecting from Homepage) -->
+    <div id="accommodations" class="bg-gradient-to-br from-slate-900 via-midnight to-slate-950 rounded-3xl p-8 sm:p-10 text-white border border-slate-800 shadow-xl scroll-mt-24">
+      <div class="space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading block">
+          Our Core Commitment
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold font-heading tracking-tight">
+          Respecting Every Unique Accessibility Need
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          No two classrooms, congregations, or community workflows are identical. If your students, attendees, or broadcast team require a specific adaptation—such as custom keyboard shortcuts, high-contrast layouts, bespoke WebSocket hooks, or unique classroom hardware integrations—we are here to support you.
+        </p>
+        <p class="text-xs text-slate-400 font-mono pt-1">
+          Select <span class="text-teal-brand font-semibold">"Accessibility Adaptation / Accommodation"</span> below to route your request directly to our advisory and product teams.
+        </p>
+      </div>
+    </div>
     
     <!-- Hidden iframe for background submission to Google Forms without page redirect -->
     <iframe 
