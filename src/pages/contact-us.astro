@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '0x4AAAAAAFBlnTxyYW0fzpJV';
+
 const inquiryTypes = [
   { id: "accommodations", label: "Accessibility Adaptation / Accommodation", value: "Accessibility Adaptation / Accommodation" },
   { id: "partnership", label: "Partnership Inquiry", value: "Partnership Inquiry" },
@@ -16,6 +18,9 @@ const inquiryTypes = [
   title="Contact Us & Event Quotes" 
   description="Get in touch with the Zip Solutions team for custom live event captioning quotes, in-person and hybrid event organisation, custom professional development, or partnerships."
 >
+  <Fragment slot="head">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  </Fragment>
 
   <section class="bg-gradient-to-b from-white to-slate-50 border-b border-slate-200/80 pt-14 pb-16 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto text-center">
@@ -86,10 +91,16 @@ const inquiryTypes = [
       <form 
         id="zip-contact-form"
         target="hidden_gform_iframe"
-        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeat_QYrLNUwVb37U-qYQvWAlhKns2xs9zd_gnsZvI6XmgYow/formResponse"
+        action=""
+        data-action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeat_QYrLNUwVb37U-qYQvWAlhKns2xs9zd_gnsZvI6XmgYow/formResponse"
         method="POST"
         class="space-y-6"
       >
+        <!-- Honeypot Field for Spambots (hidden from sighted users and assistive tech) -->
+        <div class="hidden" aria-hidden="true" style="display: none !important;">
+          <label for="company_url_hp">Please leave this blank</label>
+          <input type="text" name="company_url_hp" id="company_url_hp" tabindex="-1" autocomplete="off" />
+        </div>
         
         <!-- Name Field -->
         <div>
@@ -161,8 +172,23 @@ const inquiryTypes = [
           ></textarea>
         </div>
 
+        <!-- Cloudflare Turnstile Captcha -->
+        <div class="pt-2 flex flex-col items-center sm:items-start">
+          <div 
+            class="cf-turnstile" 
+            data-sitekey={turnstileSiteKey}
+            data-theme="light"
+            data-callback="onTurnstileSuccess"
+            data-expired-callback="onTurnstileExpired"
+            data-error-callback="onTurnstileError"
+          ></div>
+          <p id="turnstile-error-msg" class="hidden text-xs text-coral mt-1.5 font-semibold">
+            Please complete the verification checkbox above before sending your message.
+          </p>
+        </div>
+
         <!-- Submit Button -->
-        <div class="pt-2">
+        <div class="pt-1">
           <button 
             id="submit-btn"
             type="submit" 
@@ -198,14 +224,67 @@ const inquiryTypes = [
 </BaseLayout>
 
 <script>
+  // Turnstile callbacks on window
+  (window as any).onTurnstileSuccess = () => {
+    const errorMsg = document.getElementById('turnstile-error-msg');
+    if (errorMsg) errorMsg.classList.add('hidden');
+  };
+
+  (window as any).onTurnstileExpired = () => {
+    // When expired, user will need to re-verify if they try submitting
+  };
+
+  (window as any).onTurnstileError = () => {
+    const errorMsg = document.getElementById('turnstile-error-msg');
+    if (errorMsg) {
+      errorMsg.textContent = 'Verification service encountered an issue. Please try refreshing.';
+      errorMsg.classList.remove('hidden');
+    }
+  };
+
   const form = document.getElementById('zip-contact-form') as HTMLFormElement;
   const successBanner = document.getElementById('form-success-banner');
   const resetBtn = document.getElementById('reset-form-btn');
   const submitBtn = document.getElementById('submit-btn');
+  const turnstileErrorMsg = document.getElementById('turnstile-error-msg');
 
   let isSubmitting = false;
 
-  form?.addEventListener('submit', () => {
+  form?.addEventListener('submit', (e) => {
+    if (isSubmitting) {
+      e.preventDefault();
+      return;
+    }
+
+    // 1. Honeypot check: If filled, bot submitted -> silently pretend success without posting to Google Forms
+    const honeypot = (document.getElementById('company_url_hp') as HTMLInputElement)?.value;
+    if (honeypot) {
+      e.preventDefault();
+      form.classList.add('hidden');
+      successBanner?.classList.remove('hidden');
+      return;
+    }
+
+    // 2. Cloudflare Turnstile token validation
+    const turnstileToken = (form.querySelector('[name="cf-turnstile-response"]') as HTMLInputElement)?.value 
+      || (window as any).turnstile?.getResponse();
+
+    if (!turnstileToken) {
+      e.preventDefault();
+      if (turnstileErrorMsg) {
+        turnstileErrorMsg.textContent = 'Please complete the verification checkbox above before sending your message.';
+        turnstileErrorMsg.classList.remove('hidden');
+      }
+      return;
+    }
+
+    if (turnstileErrorMsg) {
+      turnstileErrorMsg.classList.add('hidden');
+    }
+
+    // 3. Populate action dynamically right before submission to protect endpoint from static crawlers
+    form.action = form.dataset.action || "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeat_QYrLNUwVb37U-qYQvWAlhKns2xs9zd_gnsZvI6XmgYow/formResponse";
+
     isSubmitting = true;
     if (submitBtn) {
       submitBtn.setAttribute('disabled', 'true');
@@ -230,6 +309,16 @@ const inquiryTypes = [
     form?.reset();
     form?.classList.remove('hidden');
     successBanner?.classList.add('hidden');
+    if (turnstileErrorMsg) {
+      turnstileErrorMsg.classList.add('hidden');
+    }
+    if ((window as any).turnstile) {
+      try {
+        (window as any).turnstile.reset();
+      } catch (err) {
+        // ignore
+      }
+    }
     if (submitBtn) {
       submitBtn.removeAttribute('disabled');
       submitBtn.innerHTML = `
