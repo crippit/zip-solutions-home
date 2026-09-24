@@ -1,0 +1,459 @@
+---
+interface Props {
+  id?: string;
+  class?: string;
+}
+
+const { id = "quote-request-form", class: className = "" } = Astro.props;
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '0x4AAAAAAFBlnTxyYW0fzpJV';
+
+const eventFormats = [
+  { id: "fmt-conference", label: "In-Person Conference / Assembly", value: "In-Person Conference / Assembly" },
+  { id: "fmt-hybrid", label: "Hybrid Session (In-Person + Stream)", value: "Hybrid Session (In-Person + Stream)" },
+  { id: "fmt-theatre", label: "Theatrical / Stage Performance", value: "Theatrical / Stage Performance" },
+  { id: "fmt-school", label: "School / Academic Gathering", value: "School / Academic Gathering" },
+  { id: "fmt-community", label: "Community / Worship Event", value: "Community / Worship Event" },
+  { id: "fmt-other", label: "Other / Custom Production", value: "Other / Custom Production" }
+];
+
+const audienceSizes = [
+  "Under 50 attendees",
+  "50 - 200 attendees",
+  "200 - 500 attendees",
+  "500+ attendees"
+];
+
+const technicalNeeds = [
+  { id: "need-qr", label: "Attendee Personal Device Relay (via QR Code)", value: "Attendee Personal Device Relay (via QR Code)" },
+  { id: "need-projector", label: "Stage Projector / Confidence Monitor Captions", value: "Stage Projector / Confidence Monitor Captions" },
+  { id: "need-broadcast", label: "Live Stream / Broadcast Graphics (vMix or OBS)", value: "Live Stream / Broadcast Graphics (vMix or OBS)" },
+  { id: "need-theatre", label: "Scripted Theatre Surtitles", value: "Scripted Theatre Surtitles" },
+  { id: "need-hardware", label: "Audio Hardware & Microphone Guidance", value: "Audio Hardware & Microphone Guidance" },
+  { id: "need-hybrid", label: "Hybrid Room Coordination & Speaker Relays", value: "Hybrid Room Coordination & Speaker Relays" }
+];
+---
+
+<div id={id} class={`bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm scroll-mt-24 ${className}`}>
+  
+  <!-- Submission Success Banner -->
+  <div id="quote-success-banner" class="hidden text-center py-10 space-y-4">
+    <div class="w-16 h-16 mx-auto rounded-2xl bg-teal-50 text-teal-brand flex items-center justify-center border border-teal-200">
+      <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+      </svg>
+    </div>
+    <h3 class="text-2xl font-bold font-heading text-midnight">Quote Request Received!</h3>
+    <p class="text-slate-600 max-w-md mx-auto text-sm sm:text-base leading-relaxed">
+      Thank you for sharing your event details. Our team will review your venue specifications and respond with a tailored proposal.
+    </p>
+    <button 
+      id="quote-reset-btn" 
+      type="button" 
+      class="inline-block mt-4 px-6 py-2.5 bg-slate-100 hover:bg-slate-200 text-midnight text-xs font-bold rounded-xl transition-colors font-heading"
+    >
+      Submit Another Quote Request
+    </button>
+  </div>
+
+  <!-- Hidden iframe for background submission to Google Forms without page redirect -->
+  <iframe 
+    name="hidden_quote_gform_iframe" 
+    id="hidden_quote_gform_iframe" 
+    class="hidden" 
+    title="Background Quote Form Target"
+  ></iframe>
+
+  <!-- Quote Request Form -->
+  <form 
+    id="zip-quote-form"
+    target="hidden_quote_gform_iframe"
+    action=""
+    data-action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeat_QYrLNUwVb37U-qYQvWAlhKns2xs9zd_gnsZvI6XmgYow/formResponse"
+    method="POST"
+    class="space-y-8"
+  >
+    <!-- Honeypot Field for Spambots -->
+    <div class="hidden" aria-hidden="true" style="display: none !important;">
+      <label for="quote_website_hp">Please leave this blank</label>
+      <input type="text" name="quote_website_hp" id="quote_website_hp" tabindex="-1" autocomplete="off" />
+    </div>
+
+    <!-- Hidden fields that match the Google Form entry points -->
+    <input type="hidden" name="entry.862584966" id="gform-name" value="" />
+    <input type="hidden" name="entry.578521937" id="gform-email" value="" />
+    <input type="hidden" name="entry.1361511396" id="gform-inquiry-type" value="Product or service Inquiry" />
+    <input type="hidden" name="entry.433641966" id="gform-message" value="" />
+
+    <!-- Section 1: Contact Information -->
+    <div>
+      <div class="border-b border-slate-200 pb-3 mb-6">
+        <span class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading block mb-1">
+          Step 1 of 3
+        </span>
+        <h3 class="text-lg sm:text-xl font-bold font-heading text-midnight">
+          Contact Information
+        </h3>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div>
+          <label for="quote-user-name" class="block text-sm font-semibold text-midnight mb-1.5 font-heading">
+            Your Name <span class="text-coral">*</span>
+          </label>
+          <input 
+            type="text" 
+            id="quote-user-name" 
+            required 
+            placeholder="Jane Doe"
+            class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-midnight placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-brand text-sm transition-all"
+          />
+        </div>
+
+        <div>
+          <label for="quote-user-email" class="block text-sm font-semibold text-midnight mb-1.5 font-heading">
+            Email Address <span class="text-coral">*</span>
+          </label>
+          <input 
+            type="email" 
+            id="quote-user-email" 
+            required 
+            placeholder="jane@organization.org"
+            class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-midnight placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-brand text-sm transition-all"
+          />
+        </div>
+
+        <div>
+          <label for="quote-org-name" class="block text-sm font-semibold text-midnight mb-1.5 font-heading">
+            Organization or School Name
+          </label>
+          <input 
+            type="text" 
+            id="quote-org-name" 
+            placeholder="e.g. Pearson District, Community Theatre"
+            class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-midnight placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-brand text-sm transition-all"
+          />
+        </div>
+
+        <div>
+          <label for="quote-phone" class="block text-sm font-semibold text-midnight mb-1.5 font-heading">
+            Phone Number (Optional)
+          </label>
+          <input 
+            type="tel" 
+            id="quote-phone" 
+            placeholder="(555) 000-0000"
+            class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-midnight placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-brand text-sm transition-all"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: Event Details -->
+    <div>
+      <div class="border-b border-slate-200 pb-3 mb-6">
+        <span class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading block mb-1">
+          Step 2 of 3
+        </span>
+        <h3 class="text-lg sm:text-xl font-bold font-heading text-midnight">
+          Event Logistics
+        </h3>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Event Format -->
+        <div>
+          <label class="block text-sm font-semibold text-midnight mb-2.5 font-heading">
+            Event Format <span class="text-coral">*</span>
+          </label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            {eventFormats.map((format, idx) => (
+              <label 
+                for={format.id}
+                class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 hover:border-teal-brand/60 hover:bg-slate-50 cursor-pointer transition-colors"
+              >
+                <input 
+                  type="radio" 
+                  name="quote_event_format" 
+                  value={format.value} 
+                  id={format.id} 
+                  checked={idx === 0}
+                  class="w-4 h-4 text-teal-brand focus:ring-teal-brand border-slate-300"
+                />
+                <span class="text-xs sm:text-sm font-medium text-slate-700">{format.label}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <!-- Target Date or Timeline -->
+          <div>
+            <label for="quote-date" class="block text-sm font-semibold text-midnight mb-1.5 font-heading">
+              Target Date or Timeline <span class="text-coral">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="quote-date" 
+              required
+              placeholder="e.g. October 24, 2026 or Spring 2027"
+              class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-midnight placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-brand text-sm transition-all"
+            />
+          </div>
+
+          <!-- Estimated Attendance -->
+          <div>
+            <label for="quote-attendance" class="block text-sm font-semibold text-midnight mb-1.5 font-heading">
+              Estimated In-Person Attendance <span class="text-coral">*</span>
+            </label>
+            <select 
+              id="quote-attendance" 
+              required
+              class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-midnight focus:outline-none focus:ring-2 focus:ring-teal-brand text-sm transition-all"
+            >
+              {audienceSizes.map((size) => (
+                <option value={size}>{size}</option>
+              ))}
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: Technical & Captioning Requirements -->
+    <div>
+      <div class="border-b border-slate-200 pb-3 mb-6">
+        <span class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading block mb-1">
+          Step 3 of 3
+        </span>
+        <h3 class="text-lg sm:text-xl font-bold font-heading text-midnight">
+          Technical Needs &amp; Additional Context
+        </h3>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Checklist of technical services -->
+        <div>
+          <label class="block text-sm font-semibold text-midnight mb-2 font-heading">
+            Captioning &amp; Technical Services Desired (Select all that apply)
+          </label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            {technicalNeeds.map((need, idx) => (
+              <label 
+                for={need.id}
+                class="flex items-start gap-3 p-3 rounded-xl border border-slate-200 hover:border-teal-brand/60 hover:bg-slate-50 cursor-pointer transition-colors"
+              >
+                <input 
+                  type="checkbox" 
+                  name="quote_technical_needs" 
+                  value={need.value} 
+                  id={need.id} 
+                  checked={idx === 0}
+                  class="w-4 h-4 text-teal-brand focus:ring-teal-brand border-slate-300 rounded mt-0.5"
+                />
+                <span class="text-xs sm:text-sm font-medium text-slate-700 leading-snug">{need.label}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <!-- Venue Details / Message Textarea -->
+        <div>
+          <label for="quote-additional-details" class="block text-sm font-semibold text-midnight mb-1.5 font-heading">
+            Venue Setup, Audio Equipment, or Specific Questions
+          </label>
+          <textarea 
+            id="quote-additional-details" 
+            rows="4" 
+            placeholder="Tell us about the venue, stage microphones, room acoustics, or any specific accommodations your attendees need..."
+            class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-midnight placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-brand text-sm transition-all resize-y"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Turnstile Verification -->
+    <div class="pt-2 flex flex-col items-center sm:items-start">
+      <div 
+        class="cf-turnstile" 
+        data-sitekey={turnstileSiteKey}
+        data-theme="light"
+        data-callback="onQuoteTurnstileSuccess"
+        data-expired-callback="onQuoteTurnstileExpired"
+        data-error-callback="onQuoteTurnstileError"
+      ></div>
+      <p id="quote-turnstile-error" class="hidden text-xs text-coral mt-1.5 font-semibold">
+        Please complete the verification checkbox above before sending your quote request.
+      </p>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="pt-2">
+      <button 
+        id="quote-submit-btn"
+        type="submit" 
+        class="w-full py-4 px-6 rounded-xl font-heading font-bold text-white bg-teal-brand hover:bg-teal-dark shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-teal-brand text-base flex items-center justify-center gap-2 cursor-pointer"
+      >
+        <span>Submit Quote Request</span>
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </button>
+      <p class="text-center text-xs text-slate-500 mt-3">
+        Submissions go directly to the Zip Solutions coordination team. Your event details remain confidential.
+      </p>
+    </div>
+
+  </form>
+</div>
+
+<script>
+  // Turnstile callbacks on window
+  (window as any).onQuoteTurnstileSuccess = () => {
+    const errorMsg = document.getElementById('quote-turnstile-error');
+    if (errorMsg) errorMsg.classList.add('hidden');
+  };
+
+  (window as any).onQuoteTurnstileExpired = () => {
+    // Requires re-verification
+  };
+
+  (window as any).onQuoteTurnstileError = () => {
+    const errorMsg = document.getElementById('quote-turnstile-error');
+    if (errorMsg) {
+      errorMsg.textContent = 'Verification service encountered an issue. Please try refreshing.';
+      errorMsg.classList.remove('hidden');
+    }
+  };
+
+  const quoteForm = document.getElementById('zip-quote-form') as HTMLFormElement;
+  const quoteSuccessBanner = document.getElementById('quote-success-banner');
+  const quoteResetBtn = document.getElementById('quote-reset-btn');
+  const quoteSubmitBtn = document.getElementById('quote-submit-btn');
+  const quoteTurnstileError = document.getElementById('quote-turnstile-error');
+
+  let isSubmittingQuote = false;
+
+  quoteForm?.addEventListener('submit', (e) => {
+    if (isSubmittingQuote) {
+      e.preventDefault();
+      return;
+    }
+
+    // 1. Honeypot check
+    const honeypot = (document.getElementById('quote_website_hp') as HTMLInputElement)?.value;
+    if (honeypot) {
+      e.preventDefault();
+      quoteForm.classList.add('hidden');
+      quoteSuccessBanner?.classList.remove('hidden');
+      return;
+    }
+
+    // 2. Turnstile verification
+    const turnstileToken = (quoteForm.querySelector('[name="cf-turnstile-response"]') as HTMLInputElement)?.value 
+      || (window as any).turnstile?.getResponse();
+
+    if (!turnstileToken) {
+      e.preventDefault();
+      if (quoteTurnstileError) {
+        quoteTurnstileError.textContent = 'Please complete the verification checkbox above before sending your quote request.';
+        quoteTurnstileError.classList.remove('hidden');
+      }
+      return;
+    }
+
+    if (quoteTurnstileError) {
+      quoteTurnstileError.classList.add('hidden');
+    }
+
+    // 3. Compile values into Google Form fields
+    const userName = (document.getElementById('quote-user-name') as HTMLInputElement)?.value.trim() || '';
+    const userEmail = (document.getElementById('quote-user-email') as HTMLInputElement)?.value.trim() || '';
+    const orgName = (document.getElementById('quote-org-name') as HTMLInputElement)?.value.trim() || 'Not specified';
+    const phone = (document.getElementById('quote-phone') as HTMLInputElement)?.value.trim() || 'Not provided';
+    const targetDate = (document.getElementById('quote-date') as HTMLInputElement)?.value.trim() || 'Not specified';
+    const attendance = (document.getElementById('quote-attendance') as HTMLSelectElement)?.value || 'Not specified';
+    
+    // Selected format
+    const formatRadio = quoteForm.querySelector('input[name="quote_event_format"]:checked') as HTMLInputElement;
+    const eventFormat = formatRadio ? formatRadio.value : 'Not specified';
+
+    // Selected technical needs
+    const checkedNeeds: string[] = [];
+    quoteForm.querySelectorAll('input[name="quote_technical_needs"]:checked').forEach((checkbox) => {
+      checkedNeeds.push((checkbox as HTMLInputElement).value);
+    });
+    const needsList = checkedNeeds.length > 0 ? checkedNeeds.join(', ') : 'None selected';
+
+    const additionalNotes = (document.getElementById('quote-additional-details') as HTMLTextAreaElement)?.value.trim() || 'No additional notes provided.';
+
+    // Construct the formatted message block
+    const compiledMessage = [
+      '[CUSTOM LIVE EVENT QUOTE REQUEST]',
+      `Organization / School: ${orgName}`,
+      `Phone: ${phone}`,
+      `Event Format: ${eventFormat}`,
+      `Estimated Attendance: ${attendance}`,
+      `Target Date / Timeline: ${targetDate}`,
+      `Services Needed: ${needsList}`,
+      '',
+      'Additional Venue & Equipment Notes:',
+      additionalNotes
+    ].join('\n');
+
+    // Populate the hidden Google Form inputs
+    const gName = document.getElementById('gform-name') as HTMLInputElement;
+    const gEmail = document.getElementById('gform-email') as HTMLInputElement;
+    const gMessage = document.getElementById('gform-message') as HTMLInputElement;
+
+    if (gName) gName.value = userName;
+    if (gEmail) gEmail.value = userEmail;
+    if (gMessage) gMessage.value = compiledMessage;
+
+    // Set action URL right before sending
+    quoteForm.action = quoteForm.dataset.action || "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeat_QYrLNUwVb37U-qYQvWAlhKns2xs9zd_gnsZvI6XmgYow/formResponse";
+
+    isSubmittingQuote = true;
+    if (quoteSubmitBtn) {
+      quoteSubmitBtn.setAttribute('disabled', 'true');
+      quoteSubmitBtn.innerHTML = `
+        <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+        </svg>
+        <span>Submitting Quote Request...</span>
+      `;
+    }
+
+    // Display confirmation after submission is processed by hidden iframe
+    setTimeout(() => {
+      quoteForm.classList.add('hidden');
+      quoteSuccessBanner?.classList.remove('hidden');
+      isSubmittingQuote = false;
+    }, 1200);
+  });
+
+  quoteResetBtn?.addEventListener('click', () => {
+    quoteForm?.reset();
+    quoteForm?.classList.remove('hidden');
+    quoteSuccessBanner?.classList.add('hidden');
+    if (quoteTurnstileError) {
+      quoteTurnstileError.classList.add('hidden');
+    }
+    if ((window as any).turnstile) {
+      try {
+        (window as any).turnstile.reset();
+      } catch (err) {
+        // ignore
+      }
+    }
+    if (quoteSubmitBtn) {
+      quoteSubmitBtn.removeAttribute('disabled');
+      quoteSubmitBtn.innerHTML = `
+        <span>Submit Quote Request</span>
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      `;
+    }
+  });
+</script>

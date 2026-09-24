@@ -1,23 +1,95 @@
 ---
 const products = [
+  // --- Family 1: Live Captioning & Broadcast (Theme: bg-amethyst) ---
   {
     id: 1,
     name: "Zip Captions",
     appUrl: "https://zipcaptions.app",
     learnUrl: "/zipcaptions",
     description: "Zip Captions is a free, easy-to-use live captioning tool that works directly in your web browser. It provides real-time text transcription of audio content, making it accessible to people who are deaf or hard of hearing.",
-    categories: ["Web App"],
-    icon: "message-square",
+    family: "Live Captioning & Broadcast",
+    type: "Flagship Web App",
+    categories: ["Live Captioning & Broadcast", "Web App"],
+    icon: "ear",
     color: "bg-amethyst",
     borderColor: "border-purple-200",
   },
+  {
+    id: 7,
+    name: "Zip Captions for VMix",
+    appUrl: "https://www.zipsolutions.org/zipvmix",
+    learnUrl: "/zipvmix",
+    description: "Professional Zip Captions live captioning integration directly into your VMix broadcasting workflow.",
+    family: "Live Captioning & Broadcast",
+    type: "Broadcast Integration",
+    categories: ["Live Captioning & Broadcast", "Integration"],
+    icon: "video",
+    color: "bg-amethyst",
+    borderColor: "border-purple-200",
+  },
+  {
+    id: 9,
+    name: "Zip Captions Companion",
+    appUrl: "https://chromewebstore.google.com/detail/zip-captions-companion-ad/chcflkiceakimokommplmfpcpodabdcg",
+    learnUrl: "/zipcaptionscompanion",
+    description: "Companion Chrome extension designed to enhance and expand your Zip Captions experience with Stream Deck and tactile hardware triggers.",
+    family: "Live Captioning & Broadcast",
+    type: "Stream Deck Bridge",
+    categories: ["Live Captioning & Broadcast", "Extension"],
+    icon: "grid",
+    color: "bg-amethyst",
+    borderColor: "border-purple-200",
+  },
+  {
+    id: 6,
+    name: "ZipPanel",
+    appUrl: "https://www.zipsolutions.org/zippanel",
+    learnUrl: "/zippanel",
+    description: "Show your Zip Captions in a persistent floating overlay across all Google Chrome tabs and desktop windows.",
+    family: "Live Captioning & Broadcast",
+    type: "Overlay Extension",
+    categories: ["Live Captioning & Broadcast", "Extension"],
+    icon: "layers",
+    color: "bg-amethyst",
+    borderColor: "border-purple-200",
+  },
+  {
+    id: 5,
+    name: "Zip Connect",
+    appUrl: "https://www.zipsolutions.org/zipconnect",
+    learnUrl: "/zipconnect",
+    description: "Seamlessly connect and integrate your communication tools into one unified multi-device workspace.",
+    family: "Live Captioning & Broadcast",
+    type: "Integration Bridge",
+    categories: ["Live Captioning & Broadcast", "Integration"],
+    icon: "link",
+    color: "bg-amethyst",
+    borderColor: "border-purple-200",
+  },
+  {
+    id: 17,
+    name: "Custom Zip Captions Live Event Solutions",
+    appUrl: null,
+    learnUrl: "/live-event-quotes",
+    description: "Customized live event captioning solutions for auditorium keynotes, theater surtitles, multi-track conferences, and live broadcasts with dedicated SLA engineering.",
+    family: "Live Captioning & Broadcast",
+    type: "Stage & Live Surtitles",
+    categories: ["Live Captioning & Broadcast", "Events"],
+    icon: "tv",
+    color: "bg-amethyst",
+    borderColor: "border-purple-200",
+  },
+
+  // --- Family 2: AAC & Speech Synthesis (Theme: bg-teal-brand) ---
   {
     id: 2,
     name: "Zip EasySpeak",
     appUrl: "https://easyspeak.zipsolutions.org",
     learnUrl: "/easyspeak",
     description: "Intuitive AAC (Augmentative and Alternative Communication) web application. Runs right in the browser, available for iOS, Android and more!",
-    categories: ["Web App"],
+    family: "AAC & Speech Synthesis",
+    type: "Web & Mobile App",
+    categories: ["AAC & Speech Synthesis", "Web App"],
     icon: "layout",
     color: "bg-teal-brand",
     borderColor: "border-teal-200",
@@ -28,10 +100,12 @@ const products = [
     appUrl: "https://easyspeakai.zipsolutions.org",
     learnUrl: "/easyspeak",
     description: "Next-generation AI Powered AAC communication powered by advanced Artificial Intelligence. Runs right from your browser, available for iOS, Android and more!",
-    categories: ["AI Tool", "Web App"],
+    family: "AAC & Speech Synthesis",
+    type: "AI Speech App",
+    categories: ["AAC & Speech Synthesis", "AI Tool"],
     icon: "brain",
-    color: "bg-amethyst",
-    borderColor: "border-purple-200",
+    color: "bg-teal-brand",
+    borderColor: "border-teal-200",
   },
   {
     id: 4,
@@ -39,157 +113,133 @@ const products = [
     appUrl: "https://easyspeakforedu.zipsolutions.org/",
     learnUrl: "/easyspeak",
     description: "Manage EasySpeak AI from a centralized dashboard designed for educational settings, allowing educators to easily oversee and support their students' communication needs.",
-    categories: ["Education", "Admin Dashboard"],
+    family: "AAC & Speech Synthesis",
+    type: "Educator Dashboard",
+    categories: ["AAC & Speech Synthesis", "Education"],
     icon: "graduation-cap",
-    color: "bg-emerald-600",
-    borderColor: "border-emerald-200",
-  },
-  {
-    id: 5,
-    name: "Zip Connect",
-    appUrl: "https://www.zipsolutions.org/zipconnect",
-    learnUrl: "/zipconnect",
-    description: "Seamlessly connect and integrate your communication tools into one unified space.",
-    categories: ["Integration"],
-    icon: "link",
-    color: "bg-indigo-600",
-    borderColor: "border-indigo-200",
-  },
-  {
-    id: 6,
-    name: "ZipPanel",
-    appUrl: "https://www.zipsolutions.org/zippanel",
-    learnUrl: "/zippanel",
-    description: "Show your Zip Captions in a persistent overlay in Google Chrome.",
-    categories: ["Extension", "Integration"],
-    icon: "layers",
-    color: "bg-amber-600",
-    borderColor: "border-amber-200",
-  },
-  {
-    id: 7,
-    name: "Zip Captions for VMix",
-    appUrl: "https://www.zipsolutions.org/zipvmix",
-    learnUrl: "/zipvmix",
-    description: "Professional Zip Captions live captioning integration directly into your VMix broadcasting workflow.",
-    categories: ["Integration"],
-    icon: "video",
-    color: "bg-indigo-600",
-    borderColor: "border-indigo-200",
+    color: "bg-teal-brand",
+    borderColor: "border-teal-200",
   },
   {
     id: 8,
     name: "Zip Speech",
     appUrl: "https://chromewebstore.google.com/detail/zip-speech/abmneamgapjekkemjihkhokdgpdeejff",
     learnUrl: "/zipspeech",
-    description: "A browser extension which brings AAC accessibility to Google Meet.",
-    categories: ["Extension"],
+    description: "A browser extension which brings AAC accessibility and direct microphone speech injection to Google Meet.",
+    family: "AAC & Speech Synthesis",
+    type: "Google Meet Extension",
+    categories: ["AAC & Speech Synthesis", "Extension"],
     icon: "mic",
-    color: "bg-amber-600",
-    borderColor: "border-amber-200",
+    color: "bg-teal-brand",
+    borderColor: "border-teal-200",
   },
-  {
-    id: 9,
-    name: "Zip Captions Companion",
-    appUrl: "https://chromewebstore.google.com/detail/zip-captions-companion-ad/chcflkiceakimokommplmfpcpodabdcg",
-    learnUrl: "/zipcaptionscompanion",
-    description: "Companion Chrome extension designed to enhance and expand your Zip Captions experience.",
-    categories: ["Extension"],
-    icon: "grid",
-    color: "bg-amber-600",
-    borderColor: "border-amber-200",
-  },
-  {
-    id: 10,
-    name: "EquiAssess",
-    appUrl: "https://equiassess.zipsolutions.org",
-    learnUrl: null,
-    description: "A secure platform for educational establishments to administer accessible summative assessments. Designed to be easy to set up and use, EquiAssess provides a range of accessibility features to ensure that all students can demonstrate their knowledge and skills on an equal footing.",
-    categories: ["Education"],
-    icon: "shield-check",
-    color: "bg-emerald-600",
-    borderColor: "border-emerald-200",
-  },
+
+  // --- Family 3: Equitable Reading & Learning (Theme: bg-indigo-600) ---
   {
     id: 11,
     name: "EquiBrowse",
     appUrl: "https://chromewebstore.google.com/detail/equibrowse-by-zip-solutio/alahhcjbblegneebpjehobaiemckblhl?authuser=0&hl=en-GB",
     learnUrl: "/equibrowse",
     description: "Accessibility built right into your browser. Read text aloud, highlight as you read, get definitions and access the picture dictionary!",
-    categories: ["Education", "Extension"],
+    family: "Equitable Reading & Learning",
+    type: "Reading Extension",
+    categories: ["Equitable Reading & Learning", "Extension"],
     icon: "book-open",
-    color: "bg-emerald-600",
-    borderColor: "border-emerald-200",
+    color: "bg-indigo-600",
+    borderColor: "border-indigo-200",
   },
+  {
+    id: 10,
+    name: "EquiAssess",
+    appUrl: "https://equiassess.zipsolutions.org",
+    learnUrl: null,
+    description: "A secure platform for educational establishments to administer accessible summative assessments with built-in accessibility safeguards.",
+    family: "Equitable Reading & Learning",
+    type: "Assessment Platform",
+    categories: ["Equitable Reading & Learning", "Education"],
+    icon: "shield-check",
+    color: "bg-indigo-600",
+    borderColor: "border-indigo-200",
+  },
+
+  // --- Family 4: Event Organisation & PD (Theme: bg-coral) ---
+  {
+    id: 16,
+    name: "In-Person & Hybrid Event Organisation",
+    appUrl: null,
+    learnUrl: "/events",
+    description: "Turnkey in-person, hybrid, and virtual event organisation for educational institutions and conventions, complete with multi-room streaming, remote presenter integration, and Custom Professional Development (PD) workshops.",
+    family: "Event Organisation & PD",
+    type: "Production & PD Service",
+    categories: ["Event Organisation & PD", "Events"],
+    icon: "calendar",
+    color: "bg-coral",
+    borderColor: "border-rose-200",
+  },
+
+  // --- Family 5: AV Consultancy & Open Guides (Theme: bg-teal-dark) ---
   {
     id: 12,
     name: "Assistive Listening System Consultancy",
     appUrl: null,
     learnUrl: "/contact-us",
-    description: "Assistive Listening provides those with hearing loss the ability to have better access to sound. Get in touch to learn about our innovative install your own system model, where we send you detailed instructions and a shopping list.",
-    categories: ["Consulting"],
+    description: "Assistive Listening provides those with hearing loss the ability to have better access to sound. Get in touch to learn about our innovative install-your-own-system model with detailed shopping lists and design blueprints.",
+    family: "AV Consultancy & Open Guides",
+    type: "Acoustic Consultancy",
+    categories: ["AV Consultancy & Open Guides", "Consulting"],
     icon: "headphones",
-    color: "bg-teal-brand",
-    borderColor: "border-teal-200",
+    color: "bg-teal-dark",
+    borderColor: "border-teal-300",
   },
   {
     id: 13,
     name: "Digital Sound & Lighting Systems",
     appUrl: null,
     learnUrl: "/contact-us",
-    description: "Get in touch to learn about how we can help to integrate systems in professional theatre spaces, as well as AV systems in conference and educational settings. We also have experience with architectural lighting systems such as ETC Mosaic as well as the integration and automation of these systems with others.",
-    categories: ["Consulting"],
+    description: "Professional theatre sound, architectural lighting systems (such as ETC Mosaic), and conference AV system integration and automation.",
+    family: "AV Consultancy & Open Guides",
+    type: "Venue Systems & AV",
+    categories: ["AV Consultancy & Open Guides", "Consulting"],
     icon: "sliders",
-    color: "bg-teal-brand",
-    borderColor: "border-teal-200",
-  },
-  {
-    id: 14,
-    name: "Free Resources for Listening Accessibility",
-    appUrl: "https://resources.zipsolutions.org",
-    learnUrl: "https://resources.zipsolutions.org",
-    description: "We have a whole set of resources dedicated to getting started with listening accessibility, including: Setting up SMART Technologies products with Assistive Listening products such as Phonak Roger, Setting up Interactive Flat Panel & TVs with Assistive Listening products, Understanding the Roger Inspiro, Using the Roger Touchscreen & Roger Media Hub in the classroom, WiFi based assistive listening systems, Getting started with Surtitles for Theatre captioning, and many more.",
-    categories: ["Consulting"],
-    icon: "library",
-    color: "bg-teal-brand",
-    borderColor: "border-teal-200",
+    color: "bg-teal-dark",
+    borderColor: "border-teal-300",
   },
   {
     id: 15,
     name: "Captioning Consultancy",
     appUrl: null,
     learnUrl: "/contact-us",
-    description: "As the creators of ZipCaptions we have considerable experience with Live Captions. We can help you to integrate live captions at your next event. We also have experience with the implementation of Surtitles, the captioning used in live theatre based on a script. We can help you to set up surtitles for your event, as well as with how to best display the surtitles on your stage.",
-    categories: ["Consulting"],
+    description: "Expert guidance for integrating live captions and theatre surtitles. We advise on stage positioning, LED wall displays, attendee relay apps, and script synchronization.",
+    family: "AV Consultancy & Open Guides",
+    type: "Captioning Advisory",
+    categories: ["AV Consultancy & Open Guides", "Consulting"],
     icon: "users",
-    color: "bg-teal-brand",
-    borderColor: "border-teal-200",
+    color: "bg-teal-dark",
+    borderColor: "border-teal-300",
   },
   {
-    id: 16,
-    name: "In-Person & Hybrid Event Organisation",
-    appUrl: null,
-    learnUrl: "/contact-us",
-    description: "Turnkey in-person, hybrid, and virtual event organisation for educational institutions and organizations, complete with multi-room streaming, remote presenter integration, and accompanying Custom Professional Development (PD) workshops.",
-    categories: ["Education", "Consulting", "Events & PD"],
-    icon: "calendar",
-    color: "bg-amethyst",
-    borderColor: "border-purple-200",
-  },
-  {
-    id: 17,
-    name: "Custom Zip Captions Live Event Solutions",
-    appUrl: null,
-    learnUrl: "/contact-us",
-    description: "Customized live event captioning solutions for auditorium keynotes, theater surtitles, multi-track conferences, and live broadcasts. We provide customized quotes, tailored display setups, and dedicated SLA engineering.",
-    categories: ["Consulting", "Integration", "Events & PD"],
-    icon: "video",
-    color: "bg-teal-brand",
-    borderColor: "border-teal-200",
+    id: 14,
+    name: "Free Resources for Listening Accessibility",
+    appUrl: "https://resources.zipsolutions.org",
+    learnUrl: "https://resources.zipsolutions.org",
+    description: "Comprehensive guides on Phonak Roger setups, SMART Flat Panels, WiFi assistive listening, classroom media hubs, and theatre surtitles.",
+    family: "AV Consultancy & Open Guides",
+    type: "Open Knowledge Base",
+    categories: ["AV Consultancy & Open Guides", "Resources"],
+    icon: "library",
+    color: "bg-teal-dark",
+    borderColor: "border-teal-300",
   }
 ];
 
-const allCategories = ["All", "Events & PD", "Web App", "AI Tool", "Education", "Integration", "Extension", "Consulting", "Admin Dashboard"];
+const allCategories = [
+  "All",
+  "Live Captioning & Broadcast",
+  "AAC & Speech Synthesis",
+  "Equitable Reading & Learning",
+  "Event Organisation & PD",
+  "AV Consultancy & Open Guides"
+];
 ---
 
 <div class="w-full">
@@ -255,14 +305,104 @@ const allCategories = ["All", "Events & PD", "Web App", "AI Tool", "Education", 
         <!-- Top row: Icon and Category text (No pills) -->
         <div class="flex items-start justify-between mb-5 relative z-10">
           <div class={`p-3.5 rounded-2xl text-white shadow-md ${product.color}`}>
-            <!-- Icon SVG fallback -->
-            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
+            {product.icon === 'ear' && (
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 10c0-3.6 2.7-6.5 6-6.5s6 2.9 6 6.5c0 3.2-1.8 5.2-3 6.5-.8.8-1.5 1.8-1.5 2.8a2.2 2.2 0 1 1-4.4 0" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.5 8a2 2 0 0 1 2 2c0 1-.6 1.7-1.3 2.2" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.5 7a5 5 0 0 1 0 6" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 4.5a8.5 8.5 0 0 1 0 11" />
+              </svg>
+            )}
+            {product.icon === 'layout' && (
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <rect x="3" y="3" width="18" height="18" rx="2" stroke-width="2" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9h18M9 21V9" />
+              </svg>
+            )}
+            {product.icon === 'brain' && (
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.5a2.5 2.5 0 00-4.96-.46 2.5 2.5 0 00-1.98 3 2.5 2.5 0 00-1.32 4.24 3 3 0 00.34 4.58 2.5 2.5 0 002.92 3.14M12 4.5a2.5 2.5 0 014.96-.46 2.5 2.5 0 011.98 3 2.5 2.5 0 011.32 4.24 3 3 0 01-.34 4.58 2.5 2.5 0 01-2.92 3.14M12 4.5V20" />
+              </svg>
+            )}
+            {product.icon === 'graduation-cap' && (
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14v7" />
+              </svg>
+            )}
+            {product.icon === 'link' && (
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+              </svg>
+            )}
+            {product.icon === 'layers' && (
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+            )}
+            {product.icon === 'video' && (
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+            )}
+            {product.icon === 'mic' && (
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+              </svg>
+            )}
+            {product.icon === 'grid' && (
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+              </svg>
+            )}
+            {product.icon === 'shield-check' && (
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+              </svg>
+            )}
+            {product.icon === 'book-open' && (
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            )}
+            {product.icon === 'headphones' && (
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 18v-6a9 9 0 0118 0v6M3 18a3 3 0 003 3h1a1 1 0 001-1v-4a1 1 0 00-1-1H4a1 1 0 00-1 1zm18 0a3 3 0 01-3 3h-1a1 1 0 01-1-1v-4a1 1 0 011-1h3a1 1 0 011 1z" />
+              </svg>
+            )}
+            {product.icon === 'sliders' && (
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+              </svg>
+            )}
+            {product.icon === 'library' && (
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+              </svg>
+            )}
+            {product.icon === 'users' && (
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            )}
+            {product.icon === 'calendar' && (
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            )}
+            {product.icon === 'tv' && (
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            )}
           </div>
-          <div class="flex justify-end max-w-[65%] text-right">
-            <span class="text-xs font-semibold text-slate-500 tracking-wide uppercase">
-              {product.categories.join(' · ')}
+          <div class="flex flex-col items-end max-w-[65%] text-right">
+            <span class="text-xs font-bold text-midnight tracking-tight font-heading leading-tight">
+              {product.family}
+            </span>
+            <span class="text-[11px] font-medium text-slate-500 mt-0.5">
+              {product.type}
             </span>
           </div>
         </div>

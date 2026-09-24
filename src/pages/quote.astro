@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+---
+
+<BaseLayout 
+  title="Request a Custom Live Event Quote | Zip Solutions" 
+  description="Request a tailored quote for live event captioning, attendee QR code relays, auditorium display setups, vMix stream integrations, or theatrical surtitles."
+>
+  <Fragment slot="head">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  </Fragment>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-b from-white to-slate-50 border-b border-slate-200/80 pt-14 pb-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm font-bold text-teal-brand tracking-wide uppercase mb-3 font-heading">
+        Custom Solutions
+      </p>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-midnight font-heading leading-tight">
+        Request a Live Event Quote
+      </h1>
+      <p class="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        Tell us about your upcoming event, venue requirements, and captioning setup. We will provide a transparent, personalized estimate.
+      </p>
+    </div>
+  </section>
+
+  <!-- Form Container -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-10">
+    <QuoteForm id="quote-page-form" />
+
+    <div class="text-center text-xs text-slate-500 pt-2 space-y-1">
+      <p>
+        Looking for technical documentation or product details? Explore our <a href="/live-event-quotes" class="text-teal-brand font-semibold hover:underline">Live Event Overview</a>.
+      </p>
+      <p>
+        General inquiry? Visit our <a href="/contact-us" class="text-teal-brand font-semibold hover:underline">General Contact Form</a>.
+      </p>
+    </div>
+  </div>
+
+</BaseLayout>
