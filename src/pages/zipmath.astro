@@ -1,0 +1,282 @@
+---
+import ProductLayout from '../layouts/ProductLayout.astro';
+
+const capabilities = [
+  {
+    title: "MathLive LaTeX Equation Input",
+    description: "Students easily type complex algebraic LaTeX expressions (fractions, square roots, exponents, inequalities) using an intuitive, touch-friendly math keyboard."
+  },
+  {
+    title: "Interactive MathCanvas",
+    description: "Students physically plot points, draw boundary lines, and shade inequality regions directly on a responsive digital coordinate plane."
+  },
+  {
+    title: "Deterministic Vector Grading",
+    description: "The engine translates student drawings into mathematical vectors (extracting slope, intercepts, and shaded regions) with built-in variance tolerance so minor click offsets are never penalized."
+  },
+  {
+    title: "Multimodal Gemini Vision Evaluator",
+    description: "If an answer is ambiguous or incorrect, Google Gemini Vision examines snapshots of student drawings and written reasoning, delivering targeted feedback and recognizing conceptual understanding."
+  },
+  {
+    title: "Print-to-Digital Classroom Slips",
+    description: "Teachers click once to produce printable 8.5\"x11\" exit tickets (4, 6, or 8 per sheet) with scannable QR codes and clean short URLs for fast student access."
+  },
+  {
+    title: "Zero Student Logins & Total Data Sovereignty",
+    description: "Students jump into assignments with a simple 6-digit Join Code and school email. The entire database lives in your Google Sheet, with Bring-Your-Own-Key privacy and zero district fees."
+  }
+];
+
+const specs = [
+  { label: "Host platform", value: "Native Google Workspace integration. All rosters, assignments, and student responses reside in your private Google Sheet." },
+  { label: "Teacher interface", value: "Rich, interactive React dashboard operating directly within the Google Sheets sidebar." },
+  { label: "Student web app", value: "Lightweight, mobile-responsive web application requiring zero accounts, passwords, or app installations." },
+  { label: "AI engine", value: "Google Gemini Flash multimodal vision model supporting Bring-Your-Own-Key (BYOK) architecture." },
+  { label: "Mathematical standards", value: "Full LaTeX equation formatting via MathLive and coordinate plane graphing via MathCanvas." },
+  { label: "Distribution formats", value: "Printable 8.5\"x11\" remediation slips, dynamic QR codes, direct links, and 6-digit Join Codes." }
+];
+---
+
+<ProductLayout
+  title="Zip Solutions Remediator"
+  subtitle="AI-Powered Formative Math Assessment in Google Workspace"
+  description="Bridge the gap between physical classroom assignments and advanced digital auto-grading. Generate, distribute, and automatically evaluate complex math assignments (including coordinate graphs, LaTeX expressions, and written reasoning) directly within Google Sheets without requiring student logins."
+  actions={[
+    { text: "Request Classroom Demo", url: "/contact-us", primary: true },
+    { text: "Explore Key Features", url: "#features" },
+    { text: "Architecture & Privacy", url: "#architecture" }
+  ]}
+  heroImage="/images/zip-math-remediator.png"
+  heroImageAlt="Zip Solutions Remediator logo featuring a coordinate plane grid and cyan zipper"
+  capabilities={capabilities}
+  specs={specs}
+  specsTitle="Built for Real Classrooms"
+  specsSubtitle="Technical Specifications"
+  ctaTitle="Bring Smarter Math Remediation to Your School"
+  ctaDescription="Empower educators with instant formative assessment, multimodal AI grading, and complete Google Workspace data ownership."
+  ctaAction={{ text: "Contact Our Education Team", url: "/contact-us" }}
+>
+
+  <!-- Deep Dive: Architecture & Ecosystem -->
+  <div id="architecture" class="space-y-12 mt-8 scroll-mt-24">
+    
+    <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-6">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading block mb-2">
+          Invisible to IT Departments
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-bold font-heading text-midnight">
+          Three Integrated Components, Zero Server Headaches
+        </h2>
+        <p class="text-slate-600 leading-relaxed text-sm sm:text-base mt-2">
+          Zip Solutions Remediator is engineered to fit seamlessly into existing school technology without complex IT procurement, external database maintenance, or student privacy compliance hurdles.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+        <!-- Component 1 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <div class="w-12 h-12 rounded-xl bg-teal-50 text-teal-brand flex items-center justify-center font-bold text-xl border border-teal-200">
+            📊
+          </div>
+          <h3 class="font-bold font-heading text-midnight text-lg">
+            Google Sheets Database
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            The entire backend (Rosters, Assignments, Submissions, and Scores) lives in a standard Google Sheet. No SQL databases, external servers, or proprietary silos. Teachers retain 100% data ownership.
+          </p>
+        </div>
+
+        <!-- Component 2 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <div class="w-12 h-12 rounded-xl bg-purple-50 text-amethyst flex items-center justify-center font-bold text-xl border border-purple-200">
+            💻
+          </div>
+          <h3 class="font-bold font-heading text-midnight text-lg">
+            Teacher React Sidebar
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            A responsive React dashboard opens directly within Google Sheets. Teachers generate questions, set mathematical tolerances, print student slips, and review live submissions in one unified window.
+          </p>
+        </div>
+
+        <!-- Component 3 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-xl border border-indigo-200">
+            ✏️
+          </div>
+          <h3 class="font-bold font-heading text-midnight text-lg">
+            Student Web App
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            A standalone, mobile-responsive web application where students complete tasks. Features an interactive coordinate canvas and MathLive keyboard on Chromebooks, iPads, and phones.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Deep Dive: Dual-Engine Auto-Marking -->
+    <div id="features" class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-8 scroll-mt-24">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-wider text-amethyst font-heading block mb-2">
+          Intelligent Assessment
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-bold font-heading text-midnight">
+          Dual-Engine Auto-Marking: Precision Meets Human-Like Insight
+        </h2>
+        <p class="text-slate-600 leading-relaxed text-sm sm:text-base mt-2">
+          Mathematical learning is nuanced. Rather than relying solely on strict binary matching or unpredictable AI guessing, Zip Solutions Remediator uses a balanced, hybrid evaluation system.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Engine 1 -->
+        <div class="p-8 rounded-3xl bg-gradient-to-br from-slate-50 to-indigo-50/40 border border-indigo-100 space-y-4">
+          <div class="inline-flex items-center gap-2 text-indigo-700 font-bold font-heading text-sm uppercase tracking-wide">
+            <span class="w-2.5 h-2.5 rounded-full bg-indigo-600"></span>
+            Engine 1: Deterministic Vector Mathematics
+          </div>
+          <h3 class="text-xl font-bold font-heading text-midnight">
+            Exact Geometric &amp; Algebraic Validation
+          </h3>
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+            The platform instantly converts student drawings into pure mathematical vectors, extracting slope, intercepts, boundary line styles (solid vs dashed), and shaded regions.
+          </p>
+          <div class="bg-white/80 p-4 rounded-2xl border border-indigo-100 text-xs sm:text-sm text-slate-700 space-y-2">
+            <p class="font-semibold text-midnight">Built-In Variance Tolerance:</p>
+            <p>
+              Students are not penalized for slight finger or trackpad slips. Configurable coordinate thresholds ensure that valid mathematical concepts receive full marks without requiring pixel-perfect drawing.
+            </p>
+          </div>
+        </div>
+
+        <!-- Engine 2 -->
+        <div class="p-8 rounded-3xl bg-gradient-to-br from-slate-50 to-purple-50/40 border border-purple-100 space-y-4">
+          <div class="inline-flex items-center gap-2 text-amethyst font-bold font-heading text-sm uppercase tracking-wide">
+            <span class="w-2.5 h-2.5 rounded-full bg-amethyst"></span>
+            Engine 2: Multimodal Gemini Vision Evaluator
+          </div>
+          <h3 class="text-xl font-bold font-heading text-midnight">
+            Contextual Insight for Written Work &amp; Ambiguity
+          </h3>
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+            When a student response is incorrect or falls outside standard parameters, the app submits a snapshot of their coordinate plane and written scratchpad notes to Google Gemini Flash.
+          </p>
+          <div class="bg-white/80 p-4 rounded-2xl border border-purple-100 text-xs sm:text-sm text-slate-700 space-y-2">
+            <p class="font-semibold text-midnight">Human-Like Diagnostic Feedback:</p>
+            <p>
+              The AI examines student steps just like a teacher, identifies specific conceptual misconceptions, provides helpful guidance, and can override grades if valid mathematical reasoning was demonstrated.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Classroom Distribution Workflow -->
+    <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-wider text-coral font-heading block mb-2">
+          Classroom Logistics
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-bold font-heading text-midnight">
+          From Topic Prompt to Graded Work in Four Steps
+        </h2>
+        <p class="text-slate-600 leading-relaxed text-sm sm:text-base mt-2">
+          Designed for busy teachers who need fast, targeted remediation without spending hours preparing question variations or chasing student password resets.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Step 1 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3 relative">
+          <span class="text-3xl font-black text-teal-brand/30 font-mono block">01</span>
+          <h3 class="font-bold font-heading text-midnight text-base">Generate Assignment</h3>
+          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+            Type any topic (such as "Factoring quadratics with a=1" or "System of inequalities") into the sidebar. Gemini AI creates questions, coordinate targets, and model solutions.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3 relative">
+          <span class="text-3xl font-black text-amethyst/30 font-mono block">02</span>
+          <h3 class="font-bold font-heading text-midnight text-base">Print Exit Slips</h3>
+          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+            Click one button to print customized 8.5"x11" paper slips (4, 6, or 8 per sheet). Each slip contains a unique, scannable QR code and clean short URL.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3 relative">
+          <span class="text-3xl font-black text-indigo-600/30 font-mono block">03</span>
+          <h3 class="font-bold font-heading text-midnight text-base">Scan &amp; Solve</h3>
+          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+            Students scan the QR code with their Chromebook or phone camera and enter a 6-digit Join Code. No accounts, passwords, or login friction.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3 relative">
+          <span class="text-3xl font-black text-coral/30 font-mono block">04</span>
+          <h3 class="font-bold font-heading text-midnight text-base">Live Sheet Analytics</h3>
+          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+            Student drawings and equations are instantly evaluated. Scores, vector analytics, and AI reasoning diagnostics stream directly into the teacher's Google Sheet.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Privacy & Cost Controls: Bring Your Own Key -->
+    <div class="bg-gradient-to-br from-slate-900 via-midnight to-slate-950 rounded-3xl p-8 sm:p-12 text-white border border-slate-800 shadow-xl space-y-6">
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading block">
+          School District Privacy &amp; Sustainability
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold font-heading tracking-tight">
+          Bring Your Own Key (BYOK): Free, Secure, and Scalable
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Traditional ed-tech platforms lock schools into costly per-student subscriptions and store student work on third-party servers. Zip Solutions Remediator is built on a fundamentally different, educator-first philosophy:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-2">
+          <h3 class="font-bold font-heading text-white text-base">Zero Subscription Fees</h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            Teachers or districts paste their own free Google Gemini API key directly into the sidebar dashboard, delivering high-performance AI grading with zero ongoing platform costs.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-2">
+          <h3 class="font-bold font-heading text-white text-base">Complete Data Privacy</h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            Because student data flows directly between the student web app, the Gemini API, and your private Google Sheet, student rosters and grades are never monetized, stored, or sold.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-2">
+          <h3 class="font-bold font-heading text-white text-base">Accessible for All Learners</h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            Special education coordinators and math interventionists gain multimodal pathways for students with dysgraphia, processing needs, or language barriers to demonstrate mastery.
+          </p>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-slate-400">
+          Interested in bringing Zip Solutions Remediator to your school or district?
+        </p>
+        <a 
+          href="/contact-us" 
+          class="inline-flex items-center gap-2 px-6 py-2.5 bg-teal-brand hover:bg-teal-dark text-white font-heading font-bold text-xs rounded-xl shadow-sm transition-all"
+        >
+          <span>Connect With Our Team</span>
+          <span class="text-base leading-none">→</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</ProductLayout>
