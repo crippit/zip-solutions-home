@@ -1,0 +1,100 @@
+{
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/privacy.html",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/terms.html",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/terms-of-service.html",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/cookies.html",
+      "destination": "/cookies",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/contact-us",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us.html",
+      "destination": "/contact-us",
+      "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/about-us.html",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/testimonials.html",
+      "destination": "/testimonial",
+      "permanent": true
+    },
+    {
+      "source": "/remediator.html",
+      "destination": "/zipmath",
+      "permanent": true
+    },
+    {
+      "source": "/math-remediation.html",
+      "destination": "/zipmath",
+      "permanent": true
+    },
+    {
+      "source": "/zip-math-remediator.html",
+      "destination": "/zipmath",
+      "permanent": true
+    },
+    {
+      "source": "/zip-solutions-remediator.html",
+      "destination": "/zipmath",
+      "permanent": true
+    },
+    {
+      "source": "/terms-of-service",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/remediator",
+      "destination": "/zipmath",
+      "permanent": true
+    },
+    {
+      "source": "/math-remediation",
+      "destination": "/zipmath",
+      "permanent": true
+    },
+    {
+      "source": "/zip-math-remediator",
+      "destination": "/zipmath",
+      "permanent": true
+    },
+    {
+      "source": "/zip-solutions-remediator",
+      "destination": "/zipmath",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)\\.html",
+      "destination": "/$1",
+      "permanent": true
+    }
+  ]
+}
