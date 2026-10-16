@@ -163,7 +163,7 @@ const features = [
                   {feat.name}
                 </td>
                 {feat.values.map((val, idx) => (
-                  <td class={`p-4 text-center text-slate-600 ${tiers[idx].highlight ? 'bg-purple-50/30 font-semibold text-midnight' : ''}`}>
+                  <td class={`p-4 text-center ${tiers[idx].highlight ? 'bg-purple-50/30 font-semibold text-midnight' : 'text-slate-600'}`}>
                     {val === "Yes" ? (
                       <span class="inline-flex items-center text-teal-brand font-semibold">
                         <svg class="w-4 h-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">

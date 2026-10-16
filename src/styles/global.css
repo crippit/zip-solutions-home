@@ -56,6 +56,19 @@
   code, pre, kbd {
     font-family: 'JetBrains Mono', monospace;
   }
+
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-slate-200, currentColor);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
 }
 
 /* Custom focus styles for high-standard accessibility */
