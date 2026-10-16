@@ -1,0 +1,282 @@
+---
+import ProductLayout from '../../layouts/ProductLayout.astro';
+
+const capabilities = [
+  {
+    title: "Saisie d'équations LaTeX MathLive",
+    description: "Les élèves saisissent facilement des expressions algébriques LaTeX complexes (fractions, racines carrées, exposants, inéquations) à l'aide d'un clavier mathématique tactile et intuitif."
+  },
+  {
+    title: "MathCanvas interactif",
+    description: "Les élèves placent des points, tracent des droites frontières et hachurent des zones d'inéquations directement sur un plan cartésien numérique adapté à tous les écrans."
+  },
+  {
+    title: "Correction vectorielle déterministe",
+    description: "Le moteur convertit les tracés d'élèves en vecteurs mathématiques (pente, ordonnée à l'origine, zones hachurées) avec une tolérance intégrée pour ne jamais pénaliser un léger décalage au doigt ou au pavé tactile."
+  },
+  {
+    title: "Évaluateur multimodal Gemini Vision",
+    description: "Lorsqu'une réponse est ambiguë ou erronée, Google Gemini Vision analyse les captures des tracés et des raisonnements écrits, fournissant un retour ciblé et valorisant la démarche mathématique."
+  },
+  {
+    title: "Billets de sortie imprimables vers le numérique",
+    description: "L'enseignant génère en un clic des fiches de remédiation imprimables (4, 6 ou 8 par page) comportant des codes QR uniques et des URL courtes pour un accès immédiat en classe."
+  },
+  {
+    title: "Zéro compte élève et souveraineté totale des données",
+    description: "Les élèves accèdent à leurs exercices avec un simple code à 6 chiffres et leur courriel scolaire. Toute la base de données réside dans votre feuille Google Sheets, sans frais d'abonnement ni collecte de données."
+  }
+];
+
+const specs = [
+  { label: "Plateforme d'accueil", value: "Intégration native Google Workspace. Vos listes, devoirs et réponses d'élèves restent dans votre propre feuille Google Sheets." },
+  { label: "Interface enseignant", value: "Tableau de bord React riche et interactif s'ouvrant directement dans le panneau latéral de Google Sheets." },
+  { label: "Application web élève", value: "Application web légère et adaptée aux mobiles, sans compte, sans mot de passe et sans installation." },
+  { label: "Moteur d'IA", value: "Modèle multimodal Google Gemini Flash prenant en charge l'architecture Bring-Your-Own-Key (BYOK)." },
+  { label: "Normes mathématiques", value: "Formatage complet d'équations LaTeX via MathLive et tracés cartésiens précis via MathCanvas." },
+  { label: "Modes de distribution", value: "Billets imprimables, codes QR dynamiques, liens directs et codes d'accès à 6 chiffres." }
+];
+---
+
+<ProductLayout
+  title="Zip Solutions Remediator"
+  subtitle="Évaluation formative en mathématiques assistée par IA dans Google Workspace"
+  description="Faites le pont entre les exercices sur papier et la correction automatique numérique avancée. Générez, distribuez et évaluez automatiquement des devoirs de mathématiques complexes (graphiques cartésiens, expressions LaTeX et raisonnements écrits) directement dans Google Sheets, sans aucun compte élève requis."
+  actions={[
+    { text: "Demander une démonstration en classe", url: "/fr/contact-us", primary: true },
+    { text: "Découvrir les fonctionnalités clés", url: "#features" },
+    { text: "Architecture et confidentialité", url: "#architecture" }
+  ]}
+  heroImage="/images/zip-math-remediator.png"
+  heroImageAlt="Logo de Zip Solutions Remediator avec repère cartésien et fermeture éclair cyan"
+  capabilities={capabilities}
+  specs={specs}
+  specsTitle="Conçu pour la réalité de la classe"
+  specsSubtitle="Spécifications techniques"
+  ctaTitle="Adoptez une remédiation mathématique plus intelligente dans votre établissement"
+  ctaDescription="Offrez aux équipes pédagogiques une évaluation formative instantanée, une correction par IA multimodale et la pleine maîtrise de leurs données dans Google Workspace."
+  ctaAction={{ text: "Contacter notre équipe éducative", url: "/fr/contact-us" }}
+>
+
+  <!-- Approfondissement : Architecture et écosystème -->
+  <div id="architecture" class="space-y-12 mt-8 scroll-mt-24">
+    
+    <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-6">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading block mb-2">
+          Transparent pour les services informatiques
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-bold font-heading text-midnight">
+          Trois composantes intégrées, zéro complication de serveur
+        </h2>
+        <p class="text-slate-600 leading-relaxed text-sm sm:text-base mt-2">
+          Zip Solutions Remediator s'intègre harmonieusement dans l'environnement numérique existant de l'école sans déploiement informatique lourd, sans gestion de serveur externe et sans enjeu de conformité sur les comptes d'élèves.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+        <!-- Composante 1 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <div class="w-12 h-12 rounded-xl bg-teal-50 text-teal-brand flex items-center justify-center font-bold text-xl border border-teal-200">
+            📊
+          </div>
+          <h3 class="font-bold font-heading text-midnight text-lg">
+            Base de données Google Sheets
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            L'ensemble des données (listes de classe, devoirs, réponses et notes) réside dans une feuille Google Sheets standard. Aucun serveur SQL externe ni stockage propriétaire. Les enseignants conservent 100% de la propriété de leurs données.
+          </p>
+        </div>
+
+        <!-- Composante 2 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <div class="w-12 h-12 rounded-xl bg-purple-50 text-amethyst flex items-center justify-center font-bold text-xl border border-purple-200">
+            💻
+          </div>
+          <h3 class="font-bold font-heading text-midnight text-lg">
+            Volet latéral React pour l'enseignant
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Un panneau React interactif s'ouvre directement dans Google Sheets. L'enseignant génère des questions, règle la tolérance mathématique, imprime les billets de sortie et suit les soumissions en direct dans une même fenêtre.
+          </p>
+        </div>
+
+        <!-- Composante 3 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-xl border border-indigo-200">
+            ✏️
+          </div>
+          <h3 class="font-bold font-heading text-midnight text-lg">
+            Application web élève
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Une interface web légère et réactive où les élèves effectuent leurs tâches. Elle comprend un plan cartésien interactif et un clavier MathLive sur Chromebooks, iPads et téléphones.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Double moteur de correction automatique -->
+    <div id="features" class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-8 scroll-mt-24">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-wider text-amethyst font-heading block mb-2">
+          Évaluation intelligente
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-bold font-heading text-midnight">
+          Correction à double moteur : la rigueur mathématique alliée à l'analyse bienveillante
+        </h2>
+        <p class="text-slate-600 leading-relaxed text-sm sm:text-base mt-2">
+          L'apprentissage des mathématiques est tout en nuances. Plutôt que de s'en remettre à une comparaison binaire rigide ou à une intuition artificielle imprévisible, Remediator utilise un système d'évaluation hybride équilibré.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Moteur 1 -->
+        <div class="p-8 rounded-3xl bg-gradient-to-br from-slate-50 to-indigo-50/40 border border-indigo-100 space-y-4">
+          <div class="inline-flex items-center gap-2 text-indigo-700 font-bold font-heading text-sm uppercase tracking-wide">
+            <span class="w-2 h-2 rounded-sm bg-indigo-600"></span>
+            Moteur 1 : Mathématiques vectorielles déterministes
+          </div>
+          <h3 class="text-xl font-bold font-heading text-midnight">
+            Validation géométrique et algébrique exacte
+          </h3>
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+            La plateforme convertit instantanément les tracés des élèves en vecteurs mathématiques purs, extrayant la pente, les points de rencontre avec les axes, le style de tracé (continu ou tireté) et les zones hachurées.
+          </p>
+          <div class="bg-white/80 p-4 rounded-2xl border border-indigo-100 text-xs sm:text-sm text-slate-700 space-y-2">
+            <p class="font-semibold text-midnight">Tolérance intégrée aux petits écarts :</p>
+            <p>
+              Les élèves ne sont pas pénalisés pour un léger glissement de doigt ou de souris. Des seuils de tolérance configurables garantissent qu'un raisonnement mathématique correct reçoit tous ses points sans exiger une précision graphique millimétrique.
+            </p>
+          </div>
+        </div>
+
+        <!-- Moteur 2 -->
+        <div class="p-8 rounded-3xl bg-gradient-to-br from-slate-50 to-purple-50/40 border border-purple-100 space-y-4">
+          <div class="inline-flex items-center gap-2 text-amethyst font-bold font-heading text-sm uppercase tracking-wide">
+            <span class="w-2 h-2 rounded-sm bg-amethyst"></span>
+            Moteur 2 : Évaluateur multimodal Gemini Vision
+          </div>
+          <h3 class="text-xl font-bold font-heading text-midnight">
+            Compréhension contextuelle des démarches écrites et des ambiguïtés
+          </h3>
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+            Lorsqu'une réponse d'élève est incomplète ou s'écarte des paramètres habituels, l'application transmet un instantané du plan cartésien et des notes du brouillon à Google Gemini Flash.
+          </p>
+          <div class="bg-white/80 p-4 rounded-2xl border border-purple-100 text-xs sm:text-sm text-slate-700 space-y-2">
+            <p class="font-semibold text-midnight">Rétroaction diagnostique humaine :</p>
+            <p>
+              L'IA examine la démarche à la manière d'un enseignant, identifie les idées maîtresses ou les erreurs conceptuelles précises, et peut accorder les points si la logique mathématique fondamentale est démontrée.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Déroulement de la distribution en classe -->
+    <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-wider text-coral font-heading block mb-2">
+          Logistique de classe
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-bold font-heading text-midnight">
+          Du choix du thème au travail corrigé en quatre étapes
+        </h2>
+        <p class="text-slate-600 leading-relaxed text-sm sm:text-base mt-2">
+          Pensé pour les enseignants qui ont besoin d'une remédiation rapide et ciblée, sans passer des heures à rédiger des variantes ou à réinitialiser des mots de passe d'élèves.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Étape 1 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3 relative">
+          <span class="text-3xl font-black text-teal-brand/30 font-mono block">01</span>
+          <h3 class="font-bold font-heading text-midnight text-base">Générer le devoir</h3>
+          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+            Indiquez un sujet (ex. « Factorisation de quadratiques » ou « Systèmes d'inéquations ») dans le volet latéral. L'IA Gemini crée les questions, cibles graphiques et corrigés types.
+          </p>
+        </div>
+
+        <!-- Étape 2 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3 relative">
+          <span class="text-3xl font-black text-amethyst/30 font-mono block">02</span>
+          <h3 class="font-bold font-heading text-midnight text-base">Imprimer les billets</h3>
+          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+            Cliquez sur un bouton pour imprimer des fiches papier personnalisées (4, 6 ou 8 par page). Chaque billet contient un code QR unique et une URL courte.
+          </p>
+        </div>
+
+        <!-- Étape 3 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3 relative">
+          <span class="text-3xl font-black text-indigo-600/30 font-mono block">03</span>
+          <h3 class="font-bold font-heading text-midnight text-base">Scanner et résoudre</h3>
+          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+            Les élèves scannent le code QR avec leur Chromebook ou téléphone et saisissent un code d'accès à 6 chiffres. Aucun compte ni mot de passe à retenir.
+          </p>
+        </div>
+
+        <!-- Étape 4 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3 relative">
+          <span class="text-3xl font-black text-coral/30 font-mono block">04</span>
+          <h3 class="font-bold font-heading text-midnight text-base">Résultats en direct</h3>
+          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+            Les graphiques et équations sont évalués immédiatement. Les notes, analyses vectorielles et diagnostics d'IA sont reportés directement dans votre feuille Google Sheets.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Confidentialité et autonomie : Bring Your Own Key -->
+    <div class="bg-gradient-to-br from-slate-900 via-midnight to-slate-950 rounded-3xl p-8 sm:p-12 text-white border border-slate-800 shadow-xl space-y-6">
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading block">
+          Pérennité et respect de la vie privée en milieu scolaire
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold font-heading tracking-tight">
+          Votre propre clé API (BYOK) : gratuit, sécurisé et évolutif
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Les plateformes éducatives commerciales enferment trop souvent les écoles dans des abonnements annuels onéreux par élève et stockent leurs travaux sur des serveurs tiers. Zip Solutions Remediator repose sur une philosophie axée sur l'autonomie des enseignants :
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-2">
+          <h3 class="font-bold font-heading text-white text-base">Aucun coût d'abonnement</h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            L'enseignant ou le centre de services scolaire colle sa propre clé gratuite Google Gemini API dans le tableau de bord, bénéficiant d'une correction IA puissante sans frais récurrents.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-2">
+          <h3 class="font-bold font-heading text-white text-base">Confidentialité intégrale</h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            Les données transitent directement entre l'application de l'élève, l'API Gemini et votre feuille Google Sheets privée. Aucune donnée d'élève n'est stockée, revendue ou exploitée à des fins publicitaires.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-2">
+          <h3 class="font-bold font-heading text-white text-base">Accessible à tous les apprenants</h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            Les orthopédagogues et enseignants ressources disposent de modes d'expression multimodaux permettant aux élèves ayant des troubles d'apprentissage (dysgraphie, traitement visuo-spatial) de faire valoir leurs compétences.
+          </p>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-slate-400">
+          Vous souhaitez déployer Zip Solutions Remediator dans votre école ou votre centre de services scolaire ?
+        </p>
+        <a 
+          href="/fr/contact-us" 
+          class="inline-flex items-center gap-2 px-6 py-2.5 bg-teal-brand hover:bg-teal-dark text-white font-heading font-bold text-xs rounded-xl shadow-sm transition-all"
+        >
+          <span>Échanger avec notre équipe</span>
+          <span class="text-base leading-none">&rarr;</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</ProductLayout>

@@ -12,12 +12,17 @@ export const GET: APIRoute = async ({ site }) => {
     'easyspeak',
     'pricing',
     'contact-us',
+    'events',
+    'quote',
+    'live-event-quotes',
+    'zipmath',
     'testimonial',
     'testimonials',
     'press',
     'pressrelease',
     'press-releases',
     'about-us',
+    'story',
     'team',
     'advisory',
     'zippanel',
@@ -29,15 +34,19 @@ export const GET: APIRoute = async ({ site }) => {
   ];
 
   const docSlugs = docs.map((doc) => doc.id.replace(/\.md$/, ''));
-  const allPaths = Array.from(new Set([...staticPages, ...docSlugs]));
+  const allEnPaths = Array.from(new Set([...staticPages, ...docSlugs]));
+  const allFrPaths = allEnPaths.map((path) => (path === '' ? 'fr' : `fr/${path}`));
+  const allPaths = [...allEnPaths, ...allFrPaths];
 
   const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${allPaths
   .map((path) => {
     const url = path === '' ? `${baseUrl}/` : `${baseUrl}/${path}/`;
-    const priority = path === '' ? '1.0' : path === 'products' || path === 'zipcaptions' || path === 'easyspeak' ? '0.9' : '0.8';
-    const changefreq = path === '' ? 'daily' : 'weekly';
+    const isHome = path === '' || path === 'fr';
+    const isPriorityProduct = path === 'products' || path === 'zipcaptions' || path === 'easyspeak' || path === 'fr/products' || path === 'fr/zipcaptions' || path === 'fr/easyspeak';
+    const priority = isHome ? '1.0' : isPriorityProduct ? '0.9' : '0.8';
+    const changefreq = isHome ? 'daily' : 'weekly';
     return `  <url>
     <loc>${url}</loc>
     <changefreq>${changefreq}</changefreq>

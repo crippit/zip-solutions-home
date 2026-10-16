@@ -1,0 +1,331 @@
+---
+import ProductLayout from '../../layouts/ProductLayout.astro';
+
+const zipCaptionsSchema = {
+  "@type": "SoftwareApplication",
+  "name": "Zip Captions",
+  "description": "Sous-titrage en direct gratuit et basé sur navigateur pour les salles de classe, les lieux de culte, les conférences et la diffusion en direct.",
+  "applicationCategory": "EducationalApplication, UtilitiesApplication, MultimediaApplication",
+  "operatingSystem": "All (Web, Windows, macOS, Linux, ChromeOS, iOS, Android)",
+  "url": "https://zipsolutions.org/fr/zipcaptions",
+  "award": [
+    "Lauréat de l'Alumni Impact Award 2025 de l'Université de Portsmouth",
+    "Gagnant du Demo Slam Accessibilité de la Virginia Society for Technology in Education (VSTE)"
+  ],
+  "funder": [
+    {
+      "@type": "Organization",
+      "name": "Dell Technologies Education Canada Innovation Accelerator"
+    },
+    {
+      "@type": "Organization",
+      "name": "Microsoft for Startups Founders Hub"
+    }
+  ],
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Dr. Brian Friedlander"
+      },
+      "reviewBody": "ZipCaptions est un outil de sous-titrage gratuit qui s'avère particulièrement précieux pour les élèves ayant des troubles d'apprentissage du langage, des difficultés de traitement auditif ou une déficience auditive."
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Tracey Green"
+      },
+      "reviewBody": "Pour les personnes malentendantes, cela donne du pouvoir. Cela favorise l'autonomie et l'indépendance, évitant d'avoir à demander de l'aide constamment."
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Kevin Bouwman"
+      },
+      "reviewBody": "Zip Captions facilite grandement l'ajout de sous-titres ouverts en direct à nos diffusions de culte pour le web et notre chaîne câblée."
+    }
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "0.00",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  }
+};
+
+const capabilities = [
+  {
+    title: "100% gratuit et sur navigateur",
+    description: "Aucun abonnement, aucune installation de logiciel ni inscription requise. Fonctionne directement dans tout navigateur moderne sur ordinateur, tablette et mobile."
+  },
+  {
+    title: "Diffusion en temps réel",
+    description: "Partagez des sous-titres en direct avec des participants distants partout dans le monde à l'aide de codes de partage statiques sur leurs appareils personnels."
+  },
+  {
+    title: "Confidentialité et stockage local",
+    description: "Vos transcriptions restent dans votre navigateur et ne sont jamais enregistrées sur des serveurs externes. Respect total de la vie privée pour les écoles et institutions."
+  },
+  {
+    title: "Intégration OBS et vMix",
+    description: "Connectez-vous via WebSockets directement à OBS Studio et vMix pour superposer des sous-titres à vos flux vidéo en direct en temps réel."
+  },
+  {
+    title: "Exportation instantanée",
+    description: "Téléchargez instantanément vos transcriptions aux formats standard SRT, VTT ou texte brut, prêts pour les résumés IA et la post-production vidéo."
+  },
+  {
+    title: "Multilingue et dialectes",
+    description: "Prise en charge de dizaines de langues et de variantes régionales, avec moteur de transcription assisté par IA en option pour une précision inégalée."
+  }
+];
+
+const specs = [
+  { label: "Où il fonctionne", value: "Directement dans votre navigateur web sur ordinateurs portables, téléphones et tablettes, sans aucun logiciel à installer." },
+  { label: "Compatibilité des navigateurs", value: "Entièrement testé et pris en charge sur Chrome, Safari, Edge, Brave et Opera." },
+  { label: "Configurations de streaming en direct", value: "Connexion via WebSockets directement à OBS Studio, vMix et commutateurs vidéo numériques." },
+  { label: "Sauvegarde des transcriptions", value: "Téléchargez des transcriptions complètes à tout moment aux formats SRT, VTT ou texte brut." }
+];
+---
+
+<ProductLayout
+  title="Zip Captions"
+  subtitle="Notre solution phare de sous-titrage en direct"
+  description="Un outil de sous-titrage en direct gratuit et simple d'utilisation qui fonctionne directement dans votre navigateur web. Une transcription vocale en temps réel conçue pour rendre la communication accessible à tous."
+  actions={[
+    { text: "Lancer Zip Captions", url: "https://zipcaptions.app", primary: true, external: true },
+    { text: "Voir les tarifs IA", url: "/fr/pricing" },
+    { text: "Aide et communauté", url: "https://help.zipcaptions.app", external: true }
+  ]}
+  heroImage="/images/zippreview.png"
+  heroImageAlt="Zip Captions en action sur ordinateur portable et mobile"
+  capabilities={capabilities}
+  specs={specs}
+  ctaTitle="Faites l'expérience d'un sous-titrage en direct sans effort"
+  ctaDescription="Commencez à sous-titrer votre classe, réunion, service communautaire ou diffusion en direct en quelques secondes, sans configuration complexe."
+  ctaAction={{ text: "Lancer Zip Captions gratuitement", url: "https://zipcaptions.app", external: true }}
+  schema={zipCaptionsSchema}
+>
+  
+  <!-- Aperçu de la mission et de l'architecture (zéro pilule) -->
+  <div class="bg-gradient-to-br from-slate-900 via-midnight to-slate-950 rounded-3xl p-8 sm:p-12 text-white border border-slate-800 shadow-xl mt-8">
+    <div class="max-w-3xl space-y-4">
+      <span class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading block">
+        Notre architecture phare
+      </span>
+      <h2 class="text-2xl sm:text-3xl font-extrabold font-heading tracking-tight">
+        Des sous-titres gratuits, privés et dignes pour tous
+      </h2>
+      <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+        Zip Captions est né directement d'un besoin concret en classe. Les systèmes traditionnels de reconnaissance vocale imposent souvent des frais de licence élevés, un matériel propriétaire complexe et une télémétrie audio intrusive. Nous croyons que l'accès à la communication en direct est un droit universel, et non une option de luxe.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 border-t border-slate-800">
+        <div>
+          <h3 class="text-sm font-bold font-heading text-white mb-1">Aucune barrière de coût</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">100% gratuit pour le sous-titrage en direct de base, sans abonnement ni carte de crédit requise.</p>
+        </div>
+        <div>
+          <h3 class="text-sm font-bold font-heading text-white mb-1">Fonctionne partout</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Aucune installation requise. Se lance instantanément dans tout navigateur moderne sur ordinateurs portables, Chromebooks et téléphones.</p>
+        </div>
+        <div>
+          <h3 class="text-sm font-bold font-heading text-white mb-1">Confidentialité totale</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Le son est traité de manière éphémère et les transcriptions sont conservées localement dans la mémoire de votre navigateur.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reconnaissance et distinctions (zéro pilule) -->
+  <div class="mt-12 bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-10 space-y-8">
+    <div class="border-b border-slate-100 pb-4">
+      <span class="text-xs font-bold font-mono text-amethyst uppercase tracking-wider block mb-1">
+        Reconnu pour son impact éducatif
+      </span>
+      <h2 class="text-2xl sm:text-3xl font-bold font-heading text-midnight">
+        Une accessibilité primée, soutenue par les pédagogues
+      </h2>
+      <p class="text-xs sm:text-sm text-slate-600 mt-1">
+        Célébré par les universités, les commissions scolaires et les spécialistes des technologies d'assistance dans le monde entier.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Distiction 1: Portsmouth -->
+      <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-3 flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-bold font-mono text-amethyst uppercase tracking-wider block">
+            Innovation universitaire
+          </span>
+          <h3 class="text-base font-bold font-heading text-midnight mt-1">
+            Prix Alumni Impact 2025
+          </h3>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Les Student Impact Awards de l'Université de Portsmouth ont récompensé Zip Captions pour avoir révolutionné l'accessibilité dans l'éducation auprès de plus de 1 500 utilisateurs à travers le monde.
+          </p>
+        </div>
+        <a href="/fr/press" class="text-xs font-bold text-teal-brand hover:text-teal-700 transition-colors inline-flex items-center gap-1 pt-2">
+          <span>Lire l'éloge officiel &rarr;</span>
+        </a>
+      </div>
+
+      <!-- Distinction 2: VSTE Demo Slam -->
+      <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-3 flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-bold font-mono text-teal-brand uppercase tracking-wider block">
+            Gagnant VSTE
+          </span>
+          <h3 class="text-base font-bold font-heading text-midnight mt-1">
+            Demo Slam Accessibilité
+          </h3>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Présentation lauréate animée par Katie Fielding (Book Creator), démontrant la police Lexend et le contraste en mode sombre pour les lecteurs débutants et les élèves malentendants.
+          </p>
+        </div>
+        <a href="/fr/testimonial" class="text-xs font-bold text-teal-brand hover:text-teal-700 transition-colors inline-flex items-center gap-1 pt-2">
+          <span>Voir la démonstration &rarr;</span>
+        </a>
+      </div>
+
+      <!-- Témoignage 3: Autonomie en classe -->
+      <div class="p-5 rounded-2xl bg-purple-50/40 border border-purple-100 space-y-3 flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-bold font-mono text-amethyst uppercase tracking-wider block">
+            Enseignante pour élèves sourds
+          </span>
+          <h3 class="text-base font-bold font-heading text-midnight mt-1">
+            Indépendance des élèves
+          </h3>
+          <p class="text-xs text-slate-700 mt-2 italic leading-relaxed">
+            "Pour les personnes ayant une perte auditive, cela leur redonne le pouvoir. Cela favorise l'autonomie et l'indépendance, pour ne pas avoir à demander de l'aide constamment."
+          </p>
+          <p class="text-xs text-slate-500 font-semibold mt-1">
+            : Tracey Green, MOSD
+          </p>
+        </div>
+        <a href="/fr/press" class="text-xs font-bold text-amethyst hover:text-amethyst-dark transition-colors inline-flex items-center gap-1 pt-2">
+          <span>Publié dans Inspirations &rarr;</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Démonstrations vidéo -->
+  <div class="space-y-16 mt-12">
+    
+    <!-- Vidéo 1: Diffusion -->
+    <div class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div class="space-y-4">
+        <h2 class="text-2xl font-bold font-heading text-midnight">
+          Diffusez vos sous-titres n'importe où
+        </h2>
+        <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+          La diffusion permet aux participants présents dans la même salle ou à l'autre bout du monde de suivre vos propos en direct sur leurs propres téléphones, tablettes ou ordinateurs portables.
+        </p>
+        <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+          Chaque participant peut personnaliser individuellement la taille du texte, le contraste et la mise en page selon ses besoins d'accessibilité sans affecter l'écran principal.
+        </p>
+      </div>
+      <div class="aspect-video rounded-2xl overflow-hidden border border-slate-200 shadow-md">
+        <iframe 
+          class="w-full h-full"
+          src="https://www.youtube.com/embed/OXpaiEtECmI?si=f2T4ORGnv7TEPyf9" 
+          title="Diffuser des sous-titres avec Zip Captions" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Vidéo 2: Transcrire et archiver -->
+    <div class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div class="order-2 lg:order-1 aspect-video rounded-2xl overflow-hidden border border-slate-200 shadow-md">
+        <iframe 
+          class="w-full h-full"
+          src="https://www.youtube.com/embed/sF7n1X1oIFY?si=v1gFJ-SZGtZjVd9c" 
+          title="Transcrire la parole en texte" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div class="order-1 lg:order-2 space-y-4">
+        <h2 class="text-2xl font-bold font-heading text-midnight">
+          Transcrivez et archivez vos propos
+        </h2>
+        <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+          Que vous ayez besoin de procès-verbaux de réunion, de transcriptions de cours ou de notes d'étude, Zip Captions génère des transcriptions continues conservées en toute sécurité dans la mémoire locale de votre navigateur.
+        </p>
+        <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+          À la fin de votre session, téléchargez votre transcription aux formats de sous-titres standard (SRT, VTT) ou en texte brut en un clic, ou exportez-la vers des outils d'IA comme ChatGPT ou NotebookLM pour générer des synthèses d'étude immédiates.
+        </p>
+      </div>
+    </div>
+
+    <!-- Vidéo 3: Diffusion en direct avec OBS -->
+    <div class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div class="space-y-4">
+        <h2 class="text-2xl font-bold font-heading text-midnight">
+          Diffusion en direct native avec OBS Studio
+        </h2>
+        <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+          Intégrez directement Zip Captions à OBS Studio à l'aide de WebSockets. Les sous-titres s'affichent automatiquement sur votre flux de diffusion en direct sans aucune latence.
+        </p>
+        <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+          Rejoignez facilement les spectateurs sourds et malentendants sur Twitch, YouTube Live et les réseaux sociaux, avec une prise en charge complète des pupitres de commande matériels via Bitfocus Companion.
+        </p>
+      </div>
+      <div class="aspect-video rounded-2xl overflow-hidden border border-slate-200 shadow-md">
+        <iframe 
+          class="w-full h-full"
+          src="https://www.youtube.com/embed/QYz4Brh66YA?si=SuBN-KoPIw7t6YdA" 
+          title="Streaming en direct avec OBS et Zip Captions" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Capacités supplémentaires -->
+    <div class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-sm space-y-6">
+      <h2 class="text-2xl font-bold font-heading text-midnight">
+        Zip Captions en fait encore plus
+      </h2>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-slate-700 font-medium">
+        <li class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-sm bg-amethyst"></span>
+          Sélectionnez une variante régionale ou un dialecte pour un sous-titrage plus précis
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-sm bg-amethyst"></span>
+          Activez notre moteur de transcription assisté par IA pour une exactitude maximale
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-sm bg-amethyst"></span>
+          Personnalisez la mise en page selon vos préférences visuelles
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-sm bg-amethyst"></span>
+          Sous-titrez dans de nombreuses langues internationales
+        </li>
+      </ul>
+      <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4 text-sm font-semibold">
+        <a href="https://help.zipcaptions.app" target="_blank" rel="noopener noreferrer" class="text-amethyst hover:text-amethyst-dark inline-flex items-center gap-1">
+          <span>Découvrir les nouveautés et obtenir de l'aide sur Zip Captions &rarr;</span>
+        </a>
+        <a href="/fr/pricing" class="text-teal-brand hover:text-teal-dark inline-flex items-center gap-1">
+          <span>Consulter nos forfaits pour les sous-titres IA &rarr;</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</ProductLayout>

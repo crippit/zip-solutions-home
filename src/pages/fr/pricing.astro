@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const tiers = [
+  {
+    name: "Standard",
+    price: "0 $",
+    period: "pour toujours",
+    description: "Sous-titrage standard direct dans le navigateur pour un usage individuel.",
+    highlight: false,
+    ctaText: "Commencer",
+    ctaLink: "https://zipcaptions.app",
+    external: true,
+  },
+  {
+    name: "Communautaire",
+    price: "0 $",
+    period: "via Patreon",
+    description: "Rejoignez notre communauté Patreon gratuite pour les mises à jour et l'assistance.",
+    highlight: false,
+    ctaText: "Rejoindre gratuitement",
+    ctaLink: "https://patreon.com/zipcaptions",
+    external: true,
+  },
+  {
+    name: "Essentiel",
+    price: "5 $",
+    period: "par mois",
+    description: "Débloquez 5 heures de sous-titrage assisté par IA chaque mois.",
+    highlight: false,
+    ctaText: "Choisir Essentiel",
+    ctaLink: "https://www.patreon.com/zipcaptions/membership",
+    external: true,
+  },
+  {
+    name: "Premium",
+    price: "15 $",
+    period: "par mois",
+    description: "Idéal pour les réunions régulières, les cours et les cultes diffusés (10 heures d'IA).",
+    highlight: true,
+    badge: "Le plus populaire",
+    ctaText: "Choisir Premium",
+    ctaLink: "https://patreon.com/zipcaptions/membership",
+    external: true,
+  },
+  {
+    name: "Platine",
+    price: "30 $",
+    period: "par mois",
+    description: "Capacité maximale de sous-titrage IA (25 heures), articles exclusifs et priorité dédiée.",
+    highlight: false,
+    ctaText: "Choisir Platine",
+    ctaLink: "https://patreon.com/zipcaptions/membership",
+    external: true,
+  },
+];
+
+const features = [
+  { name: "Sous-titrage standard", values: ["Illimité", "Illimité", "Illimité", "Illimité", "Illimité"] },
+  { name: "Navigateurs compatibles", values: ["Chrome / Safari²", "Chrome / Safari²", "Chromium et Safari¹", "Chromium et Safari¹", "Chromium et Safari¹"] },
+  { name: "Sous-titres IA (/mois)³", values: ["-", "Sur demande⁷", "5 heures³", "10 heures³", "25 heures³"] },
+  { name: "Transcription et exportation", values: ["Oui", "Oui", "Oui", "Oui", "Oui"] },
+  { name: "Apparence personnalisable", values: ["Oui", "Oui", "Oui", "Oui", "Oui"] },
+  { name: "Application mobile Android⁴", values: ["Oui", "Oui", "Oui", "Oui", "Oui"] },
+  { name: "Navigateur mobile compatible", values: ["Oui", "Oui", "Oui", "Oui", "Oui"] },
+  { name: "Application Windows disponible²", values: ["Oui", "Oui", "Oui", "Oui", "Oui"] },
+  { name: "Assistance disponible⁵", values: ["Groupe Discord", "Groupe Discord", "Assistance prioritaire", "Assistance prioritaire", "Assistance prioritaire"] },
+  { name: "Conforme au RGPD", values: ["Oui", "Oui", "Oui", "Oui", "Oui"] },
+  { name: "Pack d'articles exclusifs", values: ["-", "-", "-", "-", "Oui"] },
+];
+---
+
+<BaseLayout 
+  title="Tarifs de Zip Captions" 
+  description="Des forfaits équitables et transparents pour la transcription IA de Zip Captions et le soutien communautaire."
+>
+  
+  <section class="bg-gradient-to-b from-white to-slate-50 border-b border-slate-200/80 pt-12 pb-14 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm font-bold text-amethyst tracking-wide uppercase mb-3 font-heading">
+        Équitable et transparent
+      </p>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-midnight font-heading">
+        Tarifs de Zip Captions
+      </h1>
+      <p class="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        Zip Captions proposera toujours une version de base 100% gratuite. Choisissez une formule de soutien optionnelle pour débloquer les moteurs de sous-titrage IA avancés et soutenir le développement.
+      </p>
+    </div>
+  </section>
+
+  <!-- Cartes de tarification -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
+      {tiers.map((tier) => (
+        <div class={`rounded-3xl p-6 flex flex-col justify-between transition-all duration-200 ${
+          tier.highlight 
+            ? 'bg-midnight text-white ring-2 ring-amethyst shadow-xl relative' 
+            : 'bg-white text-midnight border border-slate-200 shadow-sm hover:shadow-md'
+        }`}>
+          <div>
+            {tier.badge && (
+              <span class="inline-block mb-3 px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-amethyst text-white">
+                {tier.badge}
+              </span>
+            )}
+            <h3 class={`text-lg font-bold font-heading mb-1 ${tier.highlight ? 'text-white' : 'text-midnight'}`}>
+              {tier.name}
+            </h3>
+            <p class={`text-xs mb-4 min-h-[32px] ${tier.highlight ? 'text-slate-300' : 'text-slate-500'}`}>
+              {tier.description}
+            </p>
+            <div class="mb-6">
+              <span class={`text-3xl sm:text-4xl font-extrabold font-heading ${tier.highlight ? 'text-white' : 'text-midnight'}`}>
+                {tier.price}
+              </span>
+              <span class={`text-xs ml-1 ${tier.highlight ? 'text-slate-300' : 'text-slate-500'}`}>
+                / {tier.period}
+              </span>
+            </div>
+          </div>
+
+          <a 
+            href={tier.ctaLink}
+            target={tier.external ? "_blank" : undefined}
+            rel={tier.external ? "noopener noreferrer" : undefined}
+            class={`w-full py-2.5 px-4 rounded-xl text-center text-xs font-bold font-heading transition-colors ${
+              tier.highlight
+                ? 'bg-amethyst hover:bg-amethyst-dark text-white'
+                : 'bg-slate-100 hover:bg-slate-200 text-midnight'
+            }`}
+          >
+            {tier.ctaText}
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <!-- Tableau comparatif -->
+    <div class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden mb-12">
+      <div class="px-6 py-5 border-b border-slate-100 bg-slate-50/50 flex items-center justify-between">
+        <h2 class="text-xl font-bold font-heading text-midnight">Matrice comparative des fonctionnalités</h2>
+        <span class="text-xs text-slate-500">Faites défiler horizontalement sur petit écran</span>
+      </div>
+      
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse min-w-[700px]">
+          <thead>
+            <tr class="bg-slate-50 border-b border-slate-200 text-xs uppercase tracking-wider text-slate-500">
+              <th class="p-4 font-bold">Fonctionnalité</th>
+              {tiers.map((t) => (
+                <th class={`p-4 font-bold text-center ${t.highlight ? 'bg-purple-50/60 text-amethyst' : ''}`}>
+                  {t.name}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 text-sm">
+            {features.map((feat) => (
+              <tr class="hover:bg-slate-50/60 transition-colors">
+                <td class="p-4 font-medium text-slate-800">
+                  {feat.name}
+                </td>
+                {feat.values.map((val, idx) => (
+                  <td class={`p-4 text-center ${tiers[idx].highlight ? 'bg-purple-50/30 font-semibold text-midnight' : 'text-slate-600'}`}>
+                    {val === "Oui" ? (
+                      <span class="inline-flex items-center text-teal-brand font-semibold">
+                        <svg class="w-4 h-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                        </svg>
+                        Oui
+                      </span>
+                    ) : (
+                      val
+                    )}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Notes explicatives -->
+    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 text-xs text-slate-600 space-y-2 leading-relaxed">
+      <p><b>1.</b> Tout navigateur basé sur Chromium fonctionne avec le sous-titrage IA. Safari est également pris en charge.</p>
+      <p><b>2.</b> Tout navigateur prenant en charge l'API WebSpeech est compatible. Edge est pris en charge lorsque ZipCaptions est installé depuis le Microsoft Store.</p>
+      <p><b>3.</b> Le nombre d'heures est calculé sur l'utilisation de jetons attribués selon votre palier Patreon, sous réserve d'un abonnement actif. L'attribution des jetons peut évoluer et bénéficie du soutien de Microsoft Founders Hub.</p>
+      <p><b>4.</b> Zip Captions est installable depuis Google Play Store, et fonctionne également sur iOS via le navigateur ou en application web progressive (PWA).</p>
+      <p><b>5.</b> Une assistance est disponible pour tous les forfaits. Les délais de réponse varient et les formules d'entrée de gamme s'appuient principalement sur la communauté.</p>
+      <p><b>6.</b> Les tarifs sont exprimés en dollars américains (USD) et peuvent être révisés à tout moment.</p>
+      <p><b>7.</b> Des demandes d'accès gratuit peuvent être formulées à tout moment par les organismes et établissements admissibles. <a href="/fr/contact-us" class="text-teal-brand font-medium underline">En savoir plus sur notre engagement solidaire</a>.</p>
+    </div>
+
+  </div>
+
+</BaseLayout>

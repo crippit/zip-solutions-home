@@ -1,0 +1,223 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="Notre équipe | Solutions Zip" 
+  description="Faites connaissance avec les éducateurs, développeurs et spécialistes de l'accessibilité derrière Solutions Zip et Zip Captions."
+>
+  <!-- En-tête -->
+  <section class="relative bg-gradient-to-b from-white via-alabaster to-slate-100 border-b border-slate-200/80 pt-16 pb-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <!-- Onglets de navigation secondaire (zéro pilule) -->
+      <div class="inline-flex p-1 bg-slate-200/70 rounded-xl mb-8">
+        <a 
+          href="/fr/story" 
+          class="px-5 py-2 rounded-lg text-xs font-bold font-heading text-slate-600 hover:text-midnight transition-colors"
+        >
+          Notre histoire
+        </a>
+        <a 
+          href="/fr/about-us" 
+          class="px-5 py-2 rounded-lg text-xs font-bold font-heading bg-white text-midnight shadow-sm"
+        >
+          Équipe principale
+        </a>
+        <a 
+          href="/fr/advisory" 
+          class="px-5 py-2 rounded-lg text-xs font-bold font-heading text-slate-600 hover:text-midnight transition-colors"
+        >
+          Conseil consultatif
+        </a>
+      </div>
+
+      <p class="text-xs font-bold uppercase tracking-wider text-amethyst font-heading mb-4">
+        Éducateurs • Ingénieurs • Défenseurs de l'accessibilité
+      </p>
+
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-midnight font-heading tracking-tight leading-tight">
+        L'équipe derrière Solutions Zip
+      </h1>
+      <p class="mt-4 text-base sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        Nous sommes un collectif d'enseignants et d'ingénieurs logiciels engagés dans la création d'un monde plus accessible. Nous pensons que les technologies d'assistance doivent être privées, fiables et universellement accessibles.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contenu principal -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 space-y-20">
+
+    <!-- Valeurs fondamentales -->
+    <section>
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading block mb-1">
+          Nos fondations
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-midnight">
+          Ce qui guide chacune de nos créations
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-purple-50 border border-purple-100 flex items-center justify-center text-amethyst">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold font-heading text-midnight">Dignité universelle et accès</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Les outils de communication essentiels ne doivent jamais être verrouillés derrière des abonnements coûteux. Notre sous-titrage en direct restera 100% gratuit pour toujours.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-teal-50 border border-teal-100 flex items-center justify-center text-teal-brand">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold font-heading text-midnight">Confidentialité stricte dès la conception</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Aucun enregistrement audio, aucune collecte de données télémétriques et aucune revente de données d'élèves ou d'utilisateurs. Le traitement se fait localement ou via des canaux sécurisés et chiffrés.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-slate-100 border border-slate-200 flex items-center justify-center text-midnight">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold font-heading text-midnight">Éprouvé en classe et sur le terrain</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Chaque fonctionnalité est orientée par des enseignants en exercice, des spécialistes de l'éducation des élèves sourds et des personnes vivant avec une perte auditive.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Membres de l'équipe -->
+    <section class="space-y-12">
+      <div class="border-b border-slate-200 pb-4">
+        <h2 class="text-2xl sm:text-3xl font-bold font-heading text-midnight">
+          Direction et spécialistes
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 mt-1">
+          Des professionnels passionnés qui allient pédagogie éducative, architecture logicielle et accessibilité auditive.
+        </p>
+      </div>
+
+      <div class="space-y-8">
+
+        <!-- Membre 1: Chris Webb -->
+        <article class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-10 lg:p-12 transition-all hover:border-amethyst/40">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-4 flex flex-col items-center sm:items-start text-center sm:text-left space-y-4">
+              <div class="relative">
+                <img 
+                  src="/images/Chris_Circle.png" 
+                  alt="Chris Webb" 
+                  class="w-36 h-36 sm:w-44 sm:h-44 rounded-2xl object-cover border-2 border-purple-100 shadow-md"
+                  loading="lazy"
+                />
+              </div>
+
+              <div>
+                <h3 class="text-2xl font-bold font-heading text-midnight">Chris Webb</h3>
+                <p class="text-amethyst font-semibold text-sm font-heading mt-0.5">PDG et cofondateur</p>
+                <p class="text-xs text-slate-500 font-mono mt-1">Québec, Canada</p>
+              </div>
+
+              <ul class="text-xs font-medium text-slate-500 font-mono space-y-1 pt-1 text-left inline-block sm:block">
+                <li>• Innovateur certifié Google</li>
+                <li>• Informatique scolaire (M-13)</li>
+              </ul>
+            </div>
+
+            <div class="lg:col-span-8 space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed">
+              <p>
+                Chris est un enseignant du secondaire originaire du Royaume-Uni, fort d'une riche expérience pédagogique acquise au Royaume-Uni et au Canada, de la maternelle à la fin du secondaire. Diplômé en informatique, Chris s'attache sans relâche à intégrer les technologies numériques de façon porteuse de sens et à concevoir des solutions concrètes permettant à chaque élève de participer pleinement.
+              </p>
+              <p>
+                Innovateur et formateur certifié Google pour l'éducation, Chris intervient régulièrement dans des colloques et conférences en technologie éducative. Il a présenté des recommandations directement au ministère de l'Éducation sur les aménagements en classe pour les élèves ayant une déficience auditive. Ses analyses ont été reprises dans diverses publications de référence et ont fait l'objet d'un portrait officiel de Google pour la Journée mondiale de sensibilisation à l'accessibilité.
+              </p>
+              <p>
+                Chris est à l'origine du projet Zip Captions, né dans le cadre de l'accélérateur d'innovation de Dell Éducation Canada. En collaborant étroitement avec la communauté des personnes sourdes et malentendantes et en constatant les limites des outils existants, il a identifié l'urgence d'une solution de sous-titrage direct, gratuite, respectueuse et sans installation. Chris vit au Québec avec sa famille et ses trois chats.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Membre 2: James Petersen -->
+        <article class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-10 lg:p-12 transition-all hover:border-teal-200">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-4 flex flex-col items-center sm:items-start text-center sm:text-left space-y-4">
+              <div class="relative">
+                <img 
+                  src="/images/James_Circle.png" 
+                  alt="James Petersen" 
+                  class="w-36 h-36 sm:w-44 sm:h-44 rounded-2xl object-cover border-2 border-teal-100 shadow-md"
+                  loading="lazy"
+                />
+              </div>
+
+              <div>
+                <h3 class="text-2xl font-bold font-heading text-midnight">James Petersen</h3>
+                <p class="text-teal-brand font-semibold text-sm font-heading mt-0.5">Directeur technique et cofondateur</p>
+                <p class="text-xs text-slate-500 font-mono mt-1">Québec, Canada</p>
+              </div>
+
+              <ul class="text-xs font-medium text-slate-500 font-mono space-y-1 pt-1 text-left inline-block sm:block">
+                <li>• Architecte infonuagique</li>
+                <li>• Défenseur de l'open source</li>
+              </ul>
+            </div>
+
+            <div class="lg:col-span-8 space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed">
+              <p>
+                James est un ingénieur logiciel polyvalent cumulant plus de dix ans d'expérience dans le développement infonuagique. Ancien enseignant, James apporte une perspective pédagogique rare à l'architecture logicielle, guidé par la conviction que la technologie doit permettre d'accéder librement à l'information sans friction technique.
+              </p>
+              <p>
+                Défenseur résolu des logiciels libres, des outils décentralisés et du respect de la vie privée, il considère la communauté comme la véritable force du web moderne. Il conçoit les flux de données temps réel haute performance et les moteurs web sans installation qui animent Zip Captions, EasySpeak et notre gamme d'extensions d'assistance.
+              </p>
+              <p>
+                Lorsqu'il ne déploie pas de nouvelles fonctionnalités pour Solutions Zip, James s'adonne à la domotique et aux objets connectés, entre impression 3D et projets électroniques. Amoureux de plein air, il aime promener son chien dans les paysages ruraux québécois, pagayer sur les lacs canadiens et travailler le bois.
+              </p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Conseil consultatif -->
+    <section class="bg-gradient-to-br from-slate-900 via-midnight to-slate-950 rounded-3xl p-8 sm:p-12 text-white border border-slate-800 shadow-xl">
+      <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+        <div class="space-y-3 max-w-2xl">
+          <span class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading block">
+            Notre vision guidée
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold font-heading">
+            Accompagnés par notre conseil consultatif
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Notre conseil consultatif réunit des spécialistes de l'éducation des élèves sourds, des dirigeants associatifs et des personnes vivant avec une déficience auditive qui orientent notre feuille de route avec rigueur et bienveillance.
+          </p>
+        </div>
+        <div class="shrink-0 w-full sm:w-auto">
+          <a 
+            href="/fr/advisory" 
+            class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-xl font-heading font-bold text-sm text-midnight bg-white hover:bg-alabaster shadow-lg transition-all"
+          >
+            <span>Découvrir le conseil consultatif</span>
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

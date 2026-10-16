@@ -1,0 +1,203 @@
+---
+import ProductLayout from '../../layouts/ProductLayout.astro';
+
+const capabilities = [
+  {
+    title: "Lecture à voix haute (synthèse vocale)",
+    description: "Écoutez tout texte sélectionné grâce à notre moteur de synthèse vocale intégré. Facilite la prononciation, réduit la fatigue visuelle et soutient l'apprentissage multimodal."
+  },
+  {
+    title: "Dictionnaire intelligent",
+    description: "Accès instantané aux définitions. Sélectionnez un mot pour afficher sa signification sans quitter votre page, renforçant le vocabulaire et la compréhension en direct."
+  },
+  {
+    title: "Dictionnaire en images",
+    description: "Symboles visuels pour les termes choisis : un atout précieux pour les apprenants visuels, les élèves allophones et les personnes ayant des besoins de traitement du langage."
+  },
+  {
+    title: "Simplification de texte par IA",
+    description: "Clarifie les phrases complexes, les articles denses et le jargon technique en un langage accessible tout en expliquant les concepts exigeants."
+  },
+  {
+    title: "Surlignage multicolore",
+    description: "Structurez vos recherches grâce à des surligneurs multicolores permanents. Les annotations restent enregistrées sur le web et au sein de Google Docs."
+  },
+  {
+    title: "Bloc-notes intégré",
+    description: "Consignez vos réflexions, notes et extraits cités dans un carnet intégré qui vous suit d'onglet en onglet au fil de vos lectures."
+  },
+  {
+    title: "Mode concentration (masque de lecture)",
+    description: "Atténuez les distractions avec un masque de lecture réglable qui estompe la page environnante pour mettre en valeur uniquement la zone lue."
+  },
+  {
+    title: "Typographie sur mesure et OpenDyslexic",
+    description: "Adaptez votre confort de lecture. Ajustez la taille des polices et activez OpenDyslexic, une typographie adaptée pour réduire les confusions visuelles."
+  },
+  {
+    title: "Intégration fluide à Google Docs",
+    description: "Comprend un moteur spécialisé pour le canevas de Google Docs, garantissant une extraction de texte stable, un surlignage précis et une compatibilité complète."
+  }
+];
+
+const specs = [
+  { label: "Lecture web au quotidien", value: "Fonctionne sur les sites ordinaires, manuels numériques, articles en ligne, fichiers PDF et directement dans Google Docs." },
+  { label: "Outils multisensoriels", value: "Lecture vocale avec suivi synchronisé du mot, définitions instantanées, pictogrammes et simplification de phrases par IA." },
+  { label: "Ergonomie visuelle", value: "Activation de la police OpenDyslexic, agrandissement immédiat du texte et mode concentration estompant l'environnement." },
+  { label: "Adapté à vos habitudes d'étude", value: "Ancrez les outils discrètement en haut de votre navigateur ou conservez-les dans un volet latéral pendant vos recherches." }
+];
+---
+
+<ProductLayout
+  title="Extension de navigateur EquiBrowse"
+  subtitle="Lecture et apprentissage équitables"
+  description="EquiBrowse est une puissante extension d'accessibilité et d'aide à la lecture conçue pour offrir une expérience web équitable à chaque utilisateur. Que vous soyez élève, étudiant, professionnel ou désireux de lire avec plus d'aisance, EquiBrowse fournit une panoplie complète d'outils pour mieux comprendre, structurer et assimiler les contenus numériques."
+  actions={[
+    { 
+      text: "Installer depuis le Chrome Web Store", 
+      url: "https://chromewebstore.google.com/detail/equibrowse-by-zip-solutio/alahhcjbblegneebpjehobaiemckblhl?authuser=0&hl=en-GB", 
+      primary: true, 
+      external: true 
+    },
+    { text: "Nous contacter pour les écoles", url: "/fr/contact-us" }
+  ]}
+  capabilities={capabilities}
+  specs={specs}
+  ctaTitle="Rendez la lecture web fluide et accessible"
+  ctaDescription="Offrez dès aujourd'hui EquiBrowse à vos élèves, à votre équipe ou à votre poste de travail."
+  ctaAction={{ 
+    text: "Obtenir EquiBrowse sur le Chrome Web Store", 
+    url: "https://chromewebstore.google.com/detail/equibrowse-by-zip-solutio/alahhcjbblegneebpjehobaiemckblhl?authuser=0&hl=en-GB", 
+    external: true 
+  }}
+>
+
+  <!-- Deep Dive Showcase -->
+  <div class="space-y-12 mt-8">
+    
+    <!-- Key Feature Breakdown -->
+    <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-8">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-bold font-heading text-midnight">
+          Conçu pour la neurodiversité, la réussite scolaire et la concentration
+        </h2>
+        <p class="mt-3 text-slate-600 text-sm sm:text-base max-w-3xl leading-relaxed">
+          Le web regorge de stimulations superflues, de textes trop petits et de structures denses. EquiBrowse offre à chaque personne une boîte à outils personnalisée pour ajuster n'importe quelle page web à ses forces cognitives.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Feature 1 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <h3 class="font-bold font-heading text-midnight text-lg flex items-center gap-2">
+            <span>🔊</span>
+            <span>Lecture à voix haute</span>
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Écoutez tout passage sélectionné grâce à notre moteur vocal intégré. Cet outil soutient la prononciation, limite l'épuisement oculaire et facilite l'apprentissage multimodal.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <h3 class="font-bold font-heading text-midnight text-lg flex items-center gap-2">
+            <span>📖</span>
+            <span>Dictionnaire intelligent</span>
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Consultez instantanément les définitions. Sélectionnez un mot pour découvrir son sens sans quitter votre page, enrichissant le vocabulaire au cours de la lecture.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <h3 class="font-bold font-heading text-midnight text-lg flex items-center gap-2">
+            <span>🖼️</span>
+            <span>Dictionnaire en images</span>
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Une image vaut souvent mille mots. Notre dictionnaire visuel propose des pictogrammes symboliques pour illustrer les termes, particulièrement adapté aux personnes allophones ou avec des besoins d'intégration lexicale.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <h3 class="font-bold font-heading text-midnight text-lg flex items-center gap-2">
+            <span>🪄</span>
+            <span>Simplification par IA</span>
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Alimenté par une IA avancée, cet outil clarifie les tournures complexes et les jargons spécialisés en phrases limpides. Il peut également éclairer le contexte de notions difficiles.
+          </p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <h3 class="font-bold font-heading text-midnight text-lg flex items-center gap-2">
+            <span>🖍️</span>
+            <span>Surlignage multicolore</span>
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Structurez vos synthèses avec des repères colorés persistants. Choisissez parmi plusieurs teintes pour hiérarchiser les idées sur le web et dans Google Docs.
+          </p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <h3 class="font-bold font-heading text-midnight text-lg flex items-center gap-2">
+            <span>📝</span>
+            <span>Bloc-notes intégré</span>
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Notez vos remarques et conservez des citations clés dans un volet embarqué. Vos notes demeurent accessibles tout au long de votre navigation pour faciliter la rédaction.
+          </p>
+        </div>
+
+        <!-- Feature 7 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <h3 class="font-bold font-heading text-midnight text-lg flex items-center gap-2">
+            <span>🔍</span>
+            <span>Mode concentration</span>
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Minimisez les éléments distrayants avec un masque de lecture adapté. Ce mode assombrit le fond de la page et éclaire seulement la ligne en cours de lecture pour stabiliser l'attention.
+          </p>
+        </div>
+
+        <!-- Feature 8 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <h3 class="font-bold font-heading text-midnight text-lg flex items-center gap-2">
+            <span>🔡</span>
+            <span>Typographie personnalisée</span>
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Prenez la main sur l'affichage visuel. Augmentez la taille des caractères à volonté et basculez vers <strong>OpenDyslexic</strong>, une police conçue pour rehausser la lisibilité en cas de dyslexie.
+          </p>
+        </div>
+
+        <!-- Feature 9 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <h3 class="font-bold font-heading text-midnight text-lg flex items-center gap-2">
+            <span>⚡</span>
+            <span>Conception centrée sur l'humain</span>
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            L'interface reste discrète, fluide et intuitive. Elle peut être positionnée en haut de votre écran ou ancrée dans un panneau latéral selon vos préférences de travail.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Google Docs Integration Highlight -->
+    <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-4">
+      <h2 class="text-2xl font-bold font-heading text-midnight">
+        Intégration complète à Google Docs
+      </h2>
+      <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+        EquiBrowse embarque un composant dédié à Google Docs. Contrairement aux extensions standard qui peinent à interagir avec le canevas de Google Docs, EquiBrowse assure une sélection textuelle rigoureuse, un surlignage fiable et un accès sans accroc à tous les outils au sein de vos documents.
+      </p>
+    </div>
+
+  </div>
+
+</ProductLayout>

@@ -1,0 +1,150 @@
+---
+import ProductLayout from '../../layouts/ProductLayout.astro';
+
+const capabilities = [
+  {
+    title: "Affichage universel des sous-titres",
+    description: "Consultez les sous-titres en temps réel de Zip Captions sur n'importe quel autre onglet Chrome sans changer de fenêtre."
+  },
+  {
+    title: "Bandeau permanent discret",
+    description: "Un bandeau épuré s'affiche au bas de votre écran, retranscrivant le discours en direct pendant que vous naviguez."
+  },
+  {
+    title: "Mode fenêtre flottante",
+    description: "Détachez le panneau de sous-titrage dans une fenêtre distincte et compacte, repositionnable n'importe où sur votre écran."
+  },
+  {
+    title: "Fonction de réancrage",
+    description: "Réancrez instantanément la fenêtre flottante pour revenir au mode bandeau intégré à la page quand vous le souhaitez."
+  },
+  {
+    title: "Opacité de l'arrière-plan",
+    description: "Ajustez la transparence du bandeau pour une lisibilité parfaite sans jamais masquer les contenus web sous-jacents."
+  },
+  {
+    title: "Détection automatique de la source",
+    description: "Reconnaît et capte directement les sous-titres émis par le site Zip Captions, sans aucune configuration manuelle."
+  }
+];
+
+const specs = [
+  { label: "Compatibilité des navigateurs", value: "Fonctionne sur Google Chrome et les navigateurs Chromium comme Microsoft Edge, Brave et Opera." },
+  { label: "Mode d'appairage", value: "Reconnaissance automatique des sous-titres émis depuis un onglet Zip Captions actif, sans code ni clé." },
+  { label: "Souplesse d'affichage", value: "Conservez les sous-titres ancrés en bas de vos fenêtres ou détachez-les dans une fenêtre flottante libre." },
+  { label: "Confort de lecture", value: "Curseurs rapides pour adapter la taille du texte et le degré de transparence afin de préserver votre espace de travail." }
+];
+---
+
+<ProductLayout
+  title="Extension Chrome Zip Panel"
+  subtitle="Bandeau persistant pour navigateur"
+  description="Vous ne voulez plus manquer le moindre échange audio pendant vos sessions de travail ? L'extension Chrome Zip Panel affiche les sous-titres de Zip Captions dans une interface élégante et accessible en continu sur tous vos onglets ou dans une fenêtre volante détachable."
+  actions={[
+    { 
+      text: "Installer depuis le Chrome Web Store", 
+      url: "https://chromewebstore.google.com/detail/zipcaptions-persistent-ca/ibkgpkncdmagdcbmnnekjikiaijfioma?authuser=0&hl=en-GB", 
+      primary: true, 
+      external: true 
+    },
+    { text: "Ouvrir Zip Captions", url: "https://zipcaptions.app", external: true },
+    { text: "Aide et assistance", url: "https://help.zipcaptions.app", external: true }
+  ]}
+  heroImage="/images/zippanel.png"
+  heroImageAlt="Le bandeau persistant de sous-titrage Zip Captions"
+  capabilities={capabilities}
+  specs={specs}
+  ctaTitle="Ne perdez plus un seul mot pendant votre navigation"
+  ctaDescription="Installez l'extension Zip Panel et intégrez le sous-titrage direct et constant à votre quotidien informatique."
+  ctaAction={{ 
+    text: "Obtenir Zip Panel sur le Chrome Web Store", 
+    url: "https://chromewebstore.google.com/detail/zipcaptions-persistent-ca/ibkgpkncdmagdcbmnnekjikiaijfioma?authuser=0&hl=en-GB", 
+    external: true 
+  }}
+>
+
+  <!-- Complete Feature Breakdown -->
+  <div class="space-y-12 mt-8">
+    
+    <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-6">
+      <h2 class="text-2xl sm:text-3xl font-bold font-heading text-midnight">
+        Travaillez en multitâche sans perdre le fil des discussions
+      </h2>
+      <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+        L'extension vous permet d'accomplir plusieurs tâches en parallèle sans jamais sacrifier la compréhension des paroles prononcées. Réglez l'apparence du panneau selon votre confort visuel grâce à l'ajustement de la taille de police et de la transparence de fond. Affichez les sous-titres discrètement au bas de la page ou détachez-les dans une fenêtre redimensionnable pour une liberté maximale. Restez informé, productif et attentif en toutes circonstances.
+      </p>
+    </div>
+
+    <!-- Key Features & Full Customization Grids -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      <!-- Key Features -->
+      <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-4">
+        <h3 class="text-xl font-bold font-heading text-midnight">
+          Fonctionnalités clés
+        </h3>
+        <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+          <li class="flex items-start gap-2">
+            <span class="text-amethyst font-bold">•</span>
+            <span><strong>Affichage universel :</strong> Consultez le sous-titrage direct de Zip Captions sur chaque onglet que vous parcourez.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-amethyst font-bold">•</span>
+            <span><strong>Bandeau persistant :</strong> Une zone propre et sobre reste présente au bas de l'écran pour afficher le texte en direct.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-amethyst font-bold">•</span>
+            <span><strong>Fenêtre volante détachable :</strong> Isolez le bandeau dans une mini-fenêtre flottante, facile à positionner sous vos documents de travail.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-amethyst font-bold">•</span>
+            <span><strong>Réancrage instantané :</strong> Remettez en un clic la fenêtre dans le bandeau inférieur intégré à la page courante.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Full Customization -->
+      <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-4">
+        <h3 class="text-xl font-bold font-heading text-midnight">
+          Personnalisation complète
+        </h3>
+        <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+          <li class="flex items-start gap-2">
+            <span class="text-teal-brand font-bold">•</span>
+            <span><strong>Activation globale :</strong> Activez ou désactivez l'affichage en un clic.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-teal-brand font-bold">•</span>
+            <span><strong>Opacité de l'arrière-plan :</strong> Modifiez la transparence pour lire sans obscurcir la page.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-teal-brand font-bold">•</span>
+            <span><strong>Taille de texte :</strong> Augmentez ou diminuez la taille de police selon vos yeux.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-teal-brand font-bold">•</span>
+            <span><strong>Détection intelligente :</strong> Synchronisation automatique avec votre session Zip Captions ouverte.</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Help & Support Banner -->
+    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="text-sm text-slate-600">
+        Besoin d'aide pour configurer l'extension ou des interrogations ? Visitez notre centre de documentation dédié.
+      </div>
+      <a 
+        href="https://help.zipcaptions.app" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="text-sm font-bold text-amethyst hover:text-amethyst-dark shrink-0"
+      >
+        Consulter le centre d'aide &rarr;
+      </a>
+    </div>
+
+  </div>
+
+</ProductLayout>

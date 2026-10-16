@@ -3,6 +3,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
+import { getEquivalentUrl, useTranslations } from '../i18n/ui';
+
 interface Props {
   title?: string;
   description?: string;
@@ -10,9 +12,14 @@ interface Props {
   schema?: any;
 }
 
+const currentLocale = (Astro.currentLocale || (Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en')) as 'en' | 'fr';
+const t = useTranslations(currentLocale);
+
 const { 
-  title = 'Zip Solutions', 
-  description = 'The Home of Accessibility - Empowering connection with live captioning, AAC tools, in-person and hybrid event organisation, and accessible learning.',
+  title = currentLocale === 'fr' ? 'Zip Solutions' : 'Zip Solutions', 
+  description = currentLocale === 'fr' 
+    ? "La maison de l'accessibilité: Renforcer les liens grâce au sous-titrage en direct, aux outils de CAA, à l'organisation d'événements inclusifs et à l'apprentissage accessible."
+    : 'The Home of Accessibility - Empowering connection with live captioning, AAC tools, in-person and hybrid event organisation, and accessible learning.',
   image = '/images/zipsolutions_logo.png',
   schema
 } = Astro.props;
@@ -21,6 +28,9 @@ const siteTitle = title.includes('Zip Solutions') ? title : `${title} | Zip Solu
 const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://zipsolutions.org');
 const imageUrl = new URL(image, canonicalURL);
 
+const canonicalEn = new URL(getEquivalentUrl(Astro.url.pathname, 'en'), Astro.site || 'https://zipsolutions.org');
+const canonicalFr = new URL(getEquivalentUrl(Astro.url.pathname, 'fr'), Astro.site || 'https://zipsolutions.org');
+
 const graphItems: any[] = [
   {
     "@type": "Organization",
@@ -28,7 +38,9 @@ const graphItems: any[] = [
     "name": "Zip Solutions",
     "url": "https://zipsolutions.org",
     "logo": "https://zipsolutions.org/images/zipsolutions_logo.png",
-    "description": "The Home of Accessibility - Empowering connection with live captioning, AAC tools, in-person event organisation, hybrid session production, and custom professional development.",
+    "description": currentLocale === 'fr'
+      ? "La maison de l'accessibilité: Sous-titrage en direct, outils de CAA, organisation d'événements hybrides et formation professionnelle personnalisée."
+      : "The Home of Accessibility - Empowering connection with live captioning, AAC tools, in-person event organisation, hybrid session production, and custom professional development.",
     "sameAs": [
       "https://bsky.app/profile/zipcaptions.app",
       "https://github.com/crippit",
@@ -61,7 +73,7 @@ const schemaOrgJson = {
 ---
 
 <!doctype html>
-<html lang="en" class="h-full scroll-smooth">
+<html lang={currentLocale} class="h-full scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -70,8 +82,11 @@ const schemaOrgJson = {
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Canonical URL -->
+    <!-- Canonical & Alternate Hreflang URLs -->
     <link rel="canonical" href={canonicalURL} />
+    <link rel="alternate" hreflang="en" href={canonicalEn} />
+    <link rel="alternate" hreflang="fr" href={canonicalFr} />
+    <link rel="alternate" hreflang="x-default" href={canonicalEn} />
 
     <!-- Primary Meta Tags -->
     <title>{siteTitle}</title>
@@ -89,7 +104,7 @@ const schemaOrgJson = {
     <meta property="og:description" content={description} />
     <meta property="og:image" content={imageUrl} />
     <meta property="og:site_name" content="Zip Solutions" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content={currentLocale === 'fr' ? 'fr_CA' : 'en_US'} />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -111,7 +126,7 @@ const schemaOrgJson = {
       href="#main-content" 
       class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2.5 focus:bg-amethyst focus:text-white focus:font-semibold focus:rounded-xl focus:shadow-xl focus:outline-none"
     >
-      Skip to main content
+      {t('skipToContent')}
     </a>
 
     <Header />

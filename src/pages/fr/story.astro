@@ -1,0 +1,298 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const dignityPillars = [
+  {
+    title: "Autonomie de l'utilisateur et contrôle personnel",
+    description: "Chaque personne possède des préférences visuelles et cognitives distinctes. En permettant aux participants de consulter les sous-titres en direct sur leur propre téléphone ou tablette, chacun règle la taille des caractères, le contraste des couleurs et la langue de son choix, en toute discrétion et sans modifier l'écran principal.",
+    icon: "user",
+    accent: "text-amethyst",
+    bgAccent: "bg-purple-50",
+    borderAccent: "border-purple-100"
+  },
+  {
+    title: "Un accès transparent et sans friction",
+    description: "Les aménagements traditionnels exigent souvent du matériel spécialisé complexe, des autorisations administratives d'installation ou des coûts prohibitifs de transcription à la minute. Nous développons des outils web légers et immédiats sur tout appareil, sans la moindre friction.",
+    icon: "sparkles",
+    accent: "text-teal-brand",
+    bgAccent: "bg-teal-50",
+    borderAccent: "border-teal-100"
+  },
+  {
+    title: "La confidentialité comme marque de dignité",
+    description: "Les conversations personnelles et les besoins d'adaptation relèvent d'une stricte confidentialité. Nous n'enregistrons jamais le signal audio, ne créons aucun profil publicitaire et conservons l'ensemble des transcriptions uniquement dans la mémoire locale de votre appareil.",
+    icon: "shield",
+    accent: "text-coral",
+    bgAccent: "bg-orange-50",
+    borderAccent: "border-orange-100"
+  }
+];
+
+const environments = [
+  {
+    step: "01",
+    title: "Salles de classe et enseignement supérieur",
+    tag: "Éducation",
+    description: "Donner aux élèves sourds, malentendants et neurodivergents les moyens d'apprendre grâce à des sous-titres web immédiats, des outils de communication non verbale et la synchronisation multi-écrans en classe.",
+    tools: [
+      { name: "Zip Captions", href: "/fr/zipcaptions" },
+      { name: "EasySpeak CAA", href: "/fr/easyspeak" },
+      { name: "Solutions Zip", href: "/fr/products" }
+    ],
+    color: "border-amethyst/30 hover:border-amethyst"
+  },
+  {
+    step: "02",
+    title: "Lieux de culte et diffusion communautaire",
+    tag: "Foi et médias",
+    description: "Offrir des sous-titres en direct très fiables et à faible latence pour la projection en salle, les régies OBS Studio et les retransmissions télévisées communautaires hebdomadaires.",
+    tools: [
+      { name: "Zip Captions", href: "/fr/zipcaptions" },
+      { name: "Passerelle ZipVMix", href: "/fr/zipvmix" },
+      { name: "Relais de flux WebSockets", href: "/fr/zipconnect" }
+    ],
+    color: "border-teal-brand/30 hover:border-teal-brand"
+  },
+  {
+    step: "03",
+    title: "Événements en direct et congrès",
+    tag: "Conférences",
+    description: "Accompagnement technique complet, diffusion hybride multi-salles et surtitrage synchronisé sur scène pour assurer l'inclusion intégrale de tous les participants.",
+    tools: [
+      { name: "Gestion d'événements en direct", href: "/fr/products" },
+      { name: "Surtitrage sur mesure", href: "/fr/contact-us" },
+      { name: "Assistance et entente de service", href: "/fr/contact-us" }
+    ],
+    color: "border-coral/30 hover:border-coral"
+  }
+];
+
+const timeline = [
+  {
+    period: "2013 - 2020",
+    title: "Éducateurs et concepteurs passionnés",
+    description: "James et Chris se sont rencontrés en 2013 lors d'un atelier en technologie éducative. Plutôt que de suivre passivement les présentations, ils ont collaboré sur un outil permettant aux enseignants de synchroniser des plannings dynamiques dans Google Agenda. Au fil des années suivantes, ils ont conçu des scripts d'assistance, des modules domotiques et des solutions logicielles éducatives, intervenant lors de symposiums en Amérique du Nord et contribuant au blogue officiel de Google pour l'éducation à l'occasion de la Journée mondiale de sensibilisation à l'accessibilité."
+  },
+  {
+    period: "2020 - 2023",
+    title: "Le tournant en salle de classe",
+    description: "Au cours de l'année scolaire 2020-2021, Chris a accueilli dans sa classe un élève ayant une déficience auditive et a rapidement mesuré les obstacles constants auxquels font face les élèves dans le milieu scolaire ordinaire. Des alarmes incendie aux annonces matinales, en passant par les assemblées et les représentations théâtrales, les solutions habituelles étaient insuffisantes. Chris et James ont développé SlidesCaptions pour afficher et agrandir les sous-titres de présentations, tandis que Chris déployait des systèmes d'écoute assistée et collaborait avec l'éducatrice spécialisée Tracey Green sur les bonnes pratiques d'accessibilité en classe."
+  },
+  {
+    period: "2023 - Présent",
+    title: "De l'accélérateur d'innovation à une communauté mondiale",
+    description: "En 2023, Chris a été sélectionné dans la première cohorte du Dell Education Innovation Accelerator. En associant les enseignements de l'accélérateur et de la communauté des Innovateurs Google certifiés, Zip Captions a été officiellement lancé. Ce qui avait commencé comme une initiative de terrain pour soutenir des élèves est devenu une plateforme internationale au service de milliers d'enseignants, de diffuseurs associatifs, de conférences et de particuliers à travers le monde."
+  }
+];
+---
+
+<BaseLayout 
+  title="Notre histoire et notre philosophie | Solutions Zip" 
+  description="Comment un défi en classe du secondaire a inspiré une mission internationale pour bâtir des outils d'accessibilité gratuits, privés et respectueux de la dignité."
+>
+  <!-- En-tête -->
+  <section class="relative bg-gradient-to-b from-white via-alabaster to-slate-100 border-b border-slate-200/80 pt-16 pb-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      
+      <!-- Onglets de navigation secondaire (zéro pilule) -->
+      <div class="inline-flex p-1 bg-slate-200/70 rounded-xl mb-8">
+        <a 
+          href="/fr/story" 
+          class="px-5 py-2 rounded-lg text-xs font-bold font-heading bg-white text-midnight shadow-sm"
+        >
+          Notre histoire
+        </a>
+        <a 
+          href="/fr/about-us" 
+          class="px-5 py-2 rounded-lg text-xs font-bold font-heading text-slate-600 hover:text-midnight transition-colors"
+        >
+          Équipe principale
+        </a>
+        <a 
+          href="/fr/advisory" 
+          class="px-5 py-2 rounded-lg text-xs font-bold font-heading text-slate-600 hover:text-midnight transition-colors"
+        >
+          Conseil consultatif
+        </a>
+      </div>
+
+      <p class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading mb-4">
+        Notre mission • Notre parcours • La dignité universelle
+      </p>
+
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-midnight font-heading tracking-tight leading-tight">
+        Le chemin vers une accessibilité respectueuse
+      </h1>
+      <p class="mt-4 text-base sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        Comment un défi concret en salle de classe a donné naissance à une mission internationale pour concevoir des outils de communication gratuits, privés et universels.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contenu principal -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 space-y-20">
+
+    <!-- Section 1: La dignité comme repère -->
+    <section class="space-y-10">
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-amethyst font-heading block">
+          Philosophie fondatrice
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold font-heading text-midnight">
+          La dignité comme repère fondamental
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+          Chez Solutions Zip, nous croyons que <strong class="text-midnight font-semibold">la dignité est le critère premier d'une véritable accessibilité.</strong> Lorsqu'un élève, un étudiant ou un participant peine à suivre les échanges oraux, la défaillance ne lui incombe pas : c'est l'environnement qui doit s'adapter.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {dignityPillars.map((pillar) => (
+          <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-md transition-shadow">
+            <div class="space-y-4">
+              <div class={`w-12 h-12 rounded-2xl ${pillar.bgAccent} border ${pillar.borderAccent} flex items-center justify-center ${pillar.accent}`}>
+                {pillar.icon === "user" && (
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                )}
+                {pillar.icon === "sparkles" && (
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                  </svg>
+                )}
+                {pillar.icon === "shield" && (
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                )}
+              </div>
+
+              <h3 class="text-xl font-bold font-heading text-midnight">
+                {pillar.title}
+              </h3>
+
+              <p class="text-slate-600 text-sm leading-relaxed">
+                {pillar.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Section 2: Inclusion dans tous les environnements -->
+    <section class="bg-gradient-to-br from-slate-900 via-midnight to-slate-950 rounded-3xl p-8 sm:p-12 text-white border border-slate-800 shadow-xl space-y-10">
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading block">
+          Inclusion universelle
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold font-heading tracking-tight">
+          Pensé pour l'inclusion dans tous les contextes
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Une accessibilité authentique ne peut pas être uniforme. Nous concevons des logiciels spécialisés qui éliminent les obstacles à la communication dans trois grands domaines :
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-slate-800">
+        {environments.map((env) => (
+          <div class="bg-slate-900/80 rounded-2xl p-6 border border-slate-800 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <span class="text-xs font-mono font-bold uppercase tracking-wider text-teal-brand">
+                {env.step} • {env.tag}
+              </span>
+              <h3 class="text-lg font-bold font-heading text-white">
+                {env.title}
+              </h3>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                {env.description}
+              </p>
+            </div>
+
+            <div class="pt-3 border-t border-slate-800 flex flex-wrap gap-2 text-xs">
+              {env.tools.map((tool) => (
+                <a 
+                  href={tool.href} 
+                  class="text-teal-brand hover:text-white font-medium transition-colors inline-flex items-center gap-0.5"
+                >
+                  <span>{tool.name}</span>
+                  <span class="text-xs leading-none">→</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Section 3: Historique et jalons -->
+    <section class="space-y-10">
+      <div class="border-b border-slate-200 pb-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-amethyst font-heading block mb-1">
+          Notre parcours
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-bold font-heading text-midnight">
+          Aux origines de Solutions Zip
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 mt-1">
+          D'un outil d'aménagement scolaire sur le terrain à une plateforme internationale d'accessibilité.
+        </p>
+      </div>
+
+      <div class="space-y-8">
+        {timeline.map((item) => (
+          <article class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-10 transition-all hover:border-amethyst/30">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+              <div class="lg:col-span-4">
+                <span class="text-xs font-mono font-bold uppercase tracking-wider text-teal-brand block mb-1">
+                  Étape marquante
+                </span>
+                <h3 class="text-xl sm:text-2xl font-bold font-heading text-midnight">
+                  {item.period}
+                </h3>
+                <p class="text-sm font-semibold text-amethyst font-heading mt-1">
+                  {item.title}
+                </p>
+              </div>
+
+              <div class="lg:col-span-8 text-slate-700 text-sm sm:text-base leading-relaxed space-y-4">
+                <p>{item.description}</p>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Section 4: Appel à l'action -->
+    <section class="bg-gradient-to-br from-slate-900 via-midnight to-slate-950 rounded-3xl p-8 sm:p-12 text-white border border-slate-800 shadow-xl text-center relative overflow-hidden">
+      <div class="max-w-2xl mx-auto space-y-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading block">
+          Montréal, Canada • Portée internationale
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold font-heading">
+          Créé dans la dignité, conçu pour tous
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Solutions Zip est fièrement établi près de Montréal, au Québec (Canada). Vous avez une idée, besoin d'un accompagnement pour un événement ou souhaitez échanger avec notre conseil consultatif ?
+        </p>
+        <div class="pt-4 flex flex-wrap justify-center gap-4">
+          <a 
+            href="/fr/about-us" 
+            class="px-8 py-3.5 rounded-xl font-heading font-bold text-sm text-midnight bg-white hover:bg-alabaster shadow-md transition-all"
+          >
+            Découvrir l'équipe
+          </a>
+          <a 
+            href="/fr/contact-us" 
+            class="px-7 py-3.5 rounded-xl font-heading font-bold text-sm text-white border border-slate-700 hover:bg-slate-800 transition-all"
+          >
+            Contacter notre équipe
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

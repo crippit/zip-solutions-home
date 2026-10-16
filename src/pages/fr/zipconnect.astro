@@ -1,0 +1,120 @@
+---
+import ProductLayout from '../../layouts/ProductLayout.astro';
+
+const capabilities = [
+  {
+    title: "Relais de sous-titres en temps réel",
+    description: "Capture les sous-titres de zipcaptions.app au fur et à mesure qu'ils sont prononcés pour les transmettre instantanément dans le flux de clavardage."
+  },
+  {
+    title: "Intégration directe avec Twitch",
+    description: "Diffuse automatiquement les sous-titres directement dans le clavardage Twitch choisi sans requérir de robot externe ni de serveur tiers."
+  },
+  {
+    title: "Contrôle simple et immédiat",
+    description: "Une fenêtre contextuelle sobre dotée d'un bouton « Démarrer / Arrêter » vous offre une maîtrise totale sur la diffusion active des sous-titres."
+  },
+  {
+    title: "Accessibilité renforcée",
+    description: "Rend les diffusions en direct sur Twitch accessibles aux personnes sourdes ou malentendantes, ainsi qu'à tous ceux qui préfèrent lire les échanges."
+  },
+  {
+    title: "Confidentialité préservée",
+    description: "Exploite votre session personnelle de Zip Captions, garantissant que vous ne relayez que les propos expressément choisis."
+  },
+  {
+    title: "Pour les spectateurs et les diffuseurs",
+    description: "Idéal pour les spectateurs qui s'appuient sur les sous-titres, les créateurs soucieux d'accessibilité ou toute personne souhaitant ne rien rater d'une retransmission."
+  }
+];
+
+const specs = [
+  { label: "Compatible avec Twitch", value: "Diffuse les sous-titres en direct dans le clavardage de tout stream Twitch où vous participez ou modérez." },
+  { label: "Mise en route express", value: "Prêt en moins d'une minute : lancez Zip Captions et activez la transmission depuis l'icône de l'extension." },
+  { label: "Contrôle et vie privée", value: "Vous décidez précisément des moments de diffusion, avec mise en pause immédiate dès que nécessaire." },
+  { label: "Ultra-léger pour le jeu vidéo", value: "S'exécute discrètement dans votre navigateur sans grever les ressources de votre carte graphique ou processeur." }
+];
+---
+
+<ProductLayout
+  title="Extension Chrome Zip Connect"
+  subtitle="ZipCaptions vers Twitch : les sous-titres en direct dans votre clavardage"
+  description="Vous souhaitez suivre les dialogues essentiels d'un stream Twitch sans basculer constamment d'une fenêtre à l'autre ? L'extension Zip Connect apporte directement les sous-titres de Zip Captions dans le fil de discussion de votre chaîne."
+  actions={[
+    { 
+      text: "Installer depuis le Chrome Web Store", 
+      url: "https://chromewebstore.google.com/detail/zip-connect/fgfmfpnphfpiafhipdhjdlfakepdopga?authuser=0&hl=en-GB", 
+      primary: true, 
+      external: true 
+    },
+    { text: "Ouvrir Zip Captions", url: "https://zipcaptions.app", external: true },
+    { text: "Aide et assistance", url: "https://help.zipcaptions.app", external: true }
+  ]}
+  heroImage="/images/zipconnect.png"
+  heroImageAlt="Extension Chrome Zip Connect"
+  capabilities={capabilities}
+  specs={specs}
+  ctaTitle="Rendez votre stream Twitch accessible à tous"
+  ctaDescription="Enrichissez vos diffusions en direct avec un sous-titrage instantané dans le clavardage pour inclure l'ensemble de votre communauté."
+  ctaAction={{ 
+    text: "Ajouter Zip Connect à Chrome", 
+    url: "https://chromewebstore.google.com/detail/zip-connect/fgfmfpnphfpiafhipdhjdlfakepdopga?authuser=0&hl=en-GB", 
+    external: true 
+  }}
+>
+
+  <!-- In-Depth Overview & Features -->
+  <div class="space-y-12 mt-8">
+    <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-6">
+      <h2 class="text-2xl sm:text-3xl font-bold font-heading text-midnight">
+        Les sous-titres en direct directement dans votre clavardage Twitch
+      </h2>
+      <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+        Cette extension légère et performante achemine sans friction les sous-titres de <a href="https://zipcaptions.app" target="_blank" rel="noopener noreferrer" class="text-amethyst underline font-semibold">zipcaptions.app</a> dans l'espace de discussion de Twitch. Renforcez l'accessibilité, enrichissez la compréhension et assurez-vous que votre communauté ne manque aucun échange décisif.
+      </p>
+      <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+        Pensé aussi bien pour les passionnés qui s'appuient sur les sous-titres que pour les diffuseurs désireux d'élargir leur audience avec une accessibilité exemplaire.
+      </p>
+    </div>
+
+    <!-- How It Works Step-by-Step -->
+    <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-8">
+      <h3 class="text-2xl font-bold font-heading text-midnight">
+        Comment utiliser Zip Connect
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <div class="w-8 h-8 rounded-xl bg-purple-100 text-amethyst font-bold flex items-center justify-center font-heading text-sm">
+            1
+          </div>
+          <h4 class="font-bold font-heading text-midnight text-lg">Lancer Zip Captions</h4>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Ouvrez <a href="https://zipcaptions.app" target="_blank" rel="noopener noreferrer" class="text-amethyst underline font-medium">zipcaptions.app</a> dans Google Chrome et activez la transcription vocale.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <div class="w-8 h-8 rounded-xl bg-purple-100 text-amethyst font-bold flex items-center justify-center font-heading text-sm">
+            2
+          </div>
+          <h4 class="font-bold font-heading text-midnight text-lg">Ouvrir le stream Twitch</h4>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Rendez-vous sur le tableau de bord de votre chaîne ou sur la page de diffusion où vous voulez intégrer les sous-titres.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <div class="w-8 h-8 rounded-xl bg-purple-100 text-amethyst font-bold flex items-center justify-center font-heading text-sm">
+            3
+          </div>
+          <h4 class="font-bold font-heading text-midnight text-lg">Activer la transmission</h4>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Cliquez sur l'icône de Zip Connect, appuyez sur <strong>Démarrer</strong> et regardez les sous-titres s'inscrire en temps réel dans le clavardage !
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</ProductLayout>

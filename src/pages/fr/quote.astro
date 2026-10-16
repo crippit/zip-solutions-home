@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+---
+
+<BaseLayout 
+  title="Demande de devis pour événement en direct | Solutions Zip" 
+  description="Demandez un devis sur mesure pour le sous-titrage d'événements en direct, le relais par code QR, la projection en auditorium, l'intégration vMix ou le surtitrage théâtral."
+>
+  <Fragment slot="head">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  </Fragment>
+
+  <!-- En-tête -->
+  <section class="bg-gradient-to-b from-white to-slate-50 border-b border-slate-200/80 pt-14 pb-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm font-bold text-teal-brand tracking-wide uppercase mb-3 font-heading">
+        Solutions sur mesure
+      </p>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-midnight font-heading leading-tight">
+        Demander un devis pour événement en direct
+      </h1>
+      <p class="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        Présentez-nous votre événement à venir, les spécificités de la salle et vos souhaits de sous-titrage. Nous vous transmettrons une estimation personnalisée et transparente.
+      </p>
+    </div>
+  </section>
+
+  <!-- Conteneur du formulaire -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-10">
+    <QuoteForm id="quote-page-form" />
+
+    <div class="text-center text-xs text-slate-500 pt-2 space-y-1">
+      <p>
+        Vous recherchez la documentation technique ou les détails produit ? Consultez notre <a href="/fr/live-event-quotes" class="text-teal-brand font-semibold hover:underline">Présentation des événements en direct</a>.
+      </p>
+      <p>
+        Pour toute autre question, visitez notre <a href="/fr/contact-us" class="text-teal-brand font-semibold hover:underline">Formulaire de contact général</a>.
+      </p>
+    </div>
+  </div>
+
+</BaseLayout>

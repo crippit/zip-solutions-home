@@ -1,4 +1,25 @@
 ---
+import { getEquivalentUrl, useTranslations } from '../i18n/ui';
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.replace(/\/$/, '') || '/';
+const currentLocale = (Astro.currentLocale || (currentPath.startsWith('/fr') ? 'fr' : 'en')) as 'en' | 'fr';
+const t = useTranslations(currentLocale);
+const isFr = currentLocale === 'fr';
+
+const homeUrl = isFr ? '/fr' : '/';
+const targetLang = isFr ? 'en' : 'fr';
+const switchLangUrl = getEquivalentUrl(currentPath, targetLang);
+const switchLangText = isFr ? 'English' : 'Français';
+const switchLangShort = isFr ? 'EN' : 'FR';
+
+function l(path: string): string {
+  if (path.startsWith('http')) return path;
+  if (!isFr) return path;
+  if (path === '/') return '/fr';
+  return `/fr${path}`;
+}
+
 const currentYear = new Date().getFullYear();
 ---
 
@@ -8,7 +29,7 @@ const currentYear = new Date().getFullYear();
       
       <!-- Brand & Mission Column -->
       <div class="lg:col-span-2 space-y-4">
-        <a href="/" class="flex items-center gap-3" aria-label="Zip Solutions - Home">
+        <a href={homeUrl} class="flex items-center gap-3" aria-label={isFr ? "Zip Solutions - Accueil" : "Zip Solutions - Home"}>
           <img 
             src="/images/zipsolutions_logo.svg" 
             alt="Zip Solutions" 
@@ -18,48 +39,48 @@ const currentYear = new Date().getFullYear();
           />
         </a>
         <p class="text-slate-400 text-sm leading-relaxed max-w-sm">
-          The Home of Accessibility. Creating private, intuitive, and dignified tools that empower individuals and organizations to communicate and learn freely.
+          {t('footer.mission')}
         </p>
         <div class="pt-2 flex items-center gap-2 text-xs font-medium text-slate-400">
           <span class="text-sm select-none" aria-hidden="true">🍁</span>
-          <span>Built with <span class="text-coral">❤️</span> near Montreal, Canada</span>
+          <span>{t('footer.madeIn')} <span class="text-coral">❤️</span> {t('footer.nearMontreal')}</span>
         </div>
       </div>
 
       <!-- Quick Links: Products -->
       <div>
         <h3 class="text-white font-heading font-bold text-sm tracking-wider uppercase mb-4">
-          Products & Tools
+          {isFr ? "Produits et outils" : "Products & Tools"}
         </h3>
         <ul class="space-y-2.5 text-sm">
           <li>
-            <a href="/products" class="text-slate-400 hover:text-white transition-colors">
-              Services Overview
+            <a href={l('/products')} class="text-slate-400 hover:text-white transition-colors">
+              {isFr ? "Aperçu des services" : "Services Overview"}
             </a>
           </li>
           <li>
-            <a href="/zipcaptions" class="text-slate-400 hover:text-white transition-colors">
+            <a href={l('/zipcaptions')} class="text-slate-400 hover:text-white transition-colors">
               Zip Captions
             </a>
           </li>
           <li>
-            <a href="/easyspeak" class="text-slate-400 hover:text-white transition-colors">
-              Easy Speak AAC
+            <a href={l('/easyspeak')} class="text-slate-400 hover:text-white transition-colors">
+              {isFr ? "EasySpeak CAA" : "Easy Speak AAC"}
             </a>
           </li>
           <li>
-            <a href="/zippanel" class="text-slate-400 hover:text-white transition-colors">
-              Zip Panel Extension
+            <a href={l('/zippanel')} class="text-slate-400 hover:text-white transition-colors">
+              {isFr ? "Extension Zip Panel" : "Zip Panel Extension"}
             </a>
           </li>
           <li>
-            <a href="/zipconnect" class="text-slate-400 hover:text-white transition-colors">
-              Zip Connect Extension
+            <a href={l('/zipconnect')} class="text-slate-400 hover:text-white transition-colors">
+              {isFr ? "Extension Zip Connect" : "Zip Connect Extension"}
             </a>
           </li>
           <li>
-            <a href="/zipvmix" class="text-slate-400 hover:text-white transition-colors">
-              vMix Live Bridge
+            <a href={l('/zipvmix')} class="text-slate-400 hover:text-white transition-colors">
+              {isFr ? "Passerelle vMix en direct" : "vMix Live Bridge"}
             </a>
           </li>
         </ul>
@@ -68,42 +89,42 @@ const currentYear = new Date().getFullYear();
       <!-- Quick Links: Organization -->
       <div>
         <h3 class="text-white font-heading font-bold text-sm tracking-wider uppercase mb-4">
-          Organization
+          {isFr ? "Organisation" : "Organization"}
         </h3>
         <ul class="space-y-2.5 text-sm">
           <li>
-            <a href="/story" class="text-slate-400 hover:text-white transition-colors">
-              Our Story
+            <a href={l('/story')} class="text-slate-400 hover:text-white transition-colors">
+              {isFr ? "Notre histoire" : "Our Story"}
             </a>
           </li>
           <li>
-            <a href="/about-us" class="text-slate-400 hover:text-white transition-colors">
-              Our Team
+            <a href={l('/about-us')} class="text-slate-400 hover:text-white transition-colors">
+              {isFr ? "Notre équipe" : "Our Team"}
             </a>
           </li>
           <li>
-            <a href="/advisory" class="text-slate-400 hover:text-white transition-colors">
-              Advisory Board
+            <a href={l('/advisory')} class="text-slate-400 hover:text-white transition-colors">
+              {isFr ? "Comité consultatif" : "Advisory Board"}
             </a>
           </li>
           <li>
-            <a href="/testimonial" class="text-slate-400 hover:text-white transition-colors">
-              Testimonials
+            <a href={l('/testimonial')} class="text-slate-400 hover:text-white transition-colors">
+              {isFr ? "Témoignages" : "Testimonials"}
             </a>
           </li>
           <li>
-            <a href="/press" class="text-slate-400 hover:text-white transition-colors">
-              In the Press
+            <a href={l('/press')} class="text-slate-400 hover:text-white transition-colors">
+              {isFr ? "Presse et prix" : "In the Press"}
             </a>
           </li>
           <li>
-            <a href="/pricing" class="text-slate-400 hover:text-white transition-colors">
-              Pricing Plans
+            <a href={l('/pricing')} class="text-slate-400 hover:text-white transition-colors">
+              {isFr ? "Tarifs et forfaits" : "Pricing Plans"}
             </a>
           </li>
           <li>
-            <a href="/contact-us" class="text-slate-400 hover:text-white transition-colors">
-              Contact Us
+            <a href={l('/contact-us')} class="text-slate-400 hover:text-white transition-colors">
+              {isFr ? "Contactez-nous" : "Contact Us"}
             </a>
           </li>
         </ul>
@@ -112,47 +133,47 @@ const currentYear = new Date().getFullYear();
       <!-- Quick Links: Community & Legal -->
       <div>
         <h3 class="text-white font-heading font-bold text-sm tracking-wider uppercase mb-4">
-          Community & Trust
+          {isFr ? "Communauté et confiance" : "Community & Trust"}
         </h3>
         <ul class="space-y-2.5 text-sm">
           <li>
             <a href="https://zipcaptions.app" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors">
-              Launch ZipCaptions ↗
+              {isFr ? "Lancer Zip Captions ↗" : "Launch ZipCaptions ↗"}
             </a>
           </li>
           <li>
             <a href="https://patreon.com/zipcaptions" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors">
-              Patreon Community ↗
+              {isFr ? "Communauté Patreon ↗" : "Patreon Community ↗"}
             </a>
           </li>
           <li>
             <a href="https://discord.gg/5Hyu7sQTHv" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors">
-              Discord Server ↗
+              {isFr ? "Serveur Discord ↗" : "Discord Server ↗"}
             </a>
           </li>
           <li>
             <a href="https://help.zipcaptions.app" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors">
-              Help & Docs ↗
+              {isFr ? "Aide et documentation ↗" : "Help & Docs ↗"}
             </a>
           </li>
           <li>
-            <a href="/privacy" class="text-slate-400 hover:text-white transition-colors">
-              Privacy Policy
+            <a href={l('/privacy')} class="text-slate-400 hover:text-white transition-colors">
+              {isFr ? "Politique de confidentialité" : "Privacy Policy"}
             </a>
           </li>
           <li>
-            <a href="/terms" class="text-slate-400 hover:text-white transition-colors">
-              Terms of Service
+            <a href={l('/terms')} class="text-slate-400 hover:text-white transition-colors">
+              {isFr ? "Conditions d'utilisation" : "Terms of Service"}
             </a>
           </li>
           <li>
-            <a href="/cookies" class="text-slate-400 hover:text-white transition-colors">
-              Cookie Policy
+            <a href={l('/cookies')} class="text-slate-400 hover:text-white transition-colors">
+              {isFr ? "Politique des témoins" : "Cookie Policy"}
             </a>
           </li>
           <li>
-            <a href="/pressrelease" class="text-slate-400 hover:text-white transition-colors">
-              Press Releases
+            <a href={l('/pressrelease')} class="text-slate-400 hover:text-white transition-colors">
+              {isFr ? "Communiqués de presse" : "Press Releases"}
             </a>
           </li>
         </ul>
@@ -163,13 +184,21 @@ const currentYear = new Date().getFullYear();
     <!-- Bottom Bar -->
     <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
       <p>
-        Zip Solutions | Copyright &copy; 2023–{currentYear} Solutions Zip. All rights reserved.
+        Zip Solutions | Copyright &copy; 2023-{currentYear} Solutions Zip. {isFr ? "Tous droits réservés." : "All rights reserved."}
       </p>
       <div class="flex items-center space-x-6">
-        <a href="/privacy" class="hover:text-slate-300 transition-colors">Privacy</a>
-        <a href="/terms" class="hover:text-slate-300 transition-colors">Terms</a>
-        <a href="/cookies" class="hover:text-slate-300 transition-colors">Cookies</a>
-        <a href="/contact-us" class="hover:text-slate-300 transition-colors">Contact</a>
+        <a href={l('/privacy')} class="hover:text-slate-300 transition-colors">{isFr ? "Confidentialité" : "Privacy"}</a>
+        <a href={l('/terms')} class="hover:text-slate-300 transition-colors">{isFr ? "Conditions" : "Terms"}</a>
+        <a href={l('/cookies')} class="hover:text-slate-300 transition-colors">{isFr ? "Témoins" : "Cookies"}</a>
+        <a href={l('/contact-us')} class="hover:text-slate-300 transition-colors">Contact</a>
+        <a 
+          href={switchLangUrl} 
+          class="px-2 py-1 rounded-md border border-slate-700 bg-slate-900 text-slate-300 hover:text-white hover:border-amethyst transition-colors font-mono font-bold flex items-center gap-1"
+          title={isFr ? "Switch to English" : "Passer en Français"}
+        >
+          <span>🌐</span>
+          <span>{switchLangShort}</span>
+        </a>
       </div>
     </div>
   </div>

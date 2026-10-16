@@ -4,10 +4,19 @@ interface Props {
   class?: string;
 }
 
+const isFr = Astro.currentLocale === 'fr' || Astro.url.pathname.startsWith('/fr');
+
 const { id = "quote-request-form", class: className = "" } = Astro.props;
 const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '0x4AAAAAAFBlnTxyYW0fzpJV';
 
-const eventFormats = [
+const eventFormats = isFr ? [
+  { id: "fmt-conference", label: "Conférence / Assemblée en présentiel", value: "In-Person Conference / Assembly" },
+  { id: "fmt-hybrid", label: "Session hybride (Présentiel + Webdiffusion)", value: "Hybrid Session (In-Person + Stream)" },
+  { id: "fmt-theatre", label: "Représentation théâtrale / Spectacle sur scène", value: "Theatrical / Stage Performance" },
+  { id: "fmt-school", label: "Rassemblement scolaire / Universitaire", value: "School / Academic Gathering" },
+  { id: "fmt-community", label: "Événement communautaire / Culte", value: "Community / Worship Event" },
+  { id: "fmt-other", label: "Autre / Production sur mesure", value: "Other / Custom Production" }
+] : [
   { id: "fmt-conference", label: "In-Person Conference / Assembly", value: "In-Person Conference / Assembly" },
   { id: "fmt-hybrid", label: "Hybrid Session (In-Person + Stream)", value: "Hybrid Session (In-Person + Stream)" },
   { id: "fmt-theatre", label: "Theatrical / Stage Performance", value: "Theatrical / Stage Performance" },
@@ -16,14 +25,26 @@ const eventFormats = [
   { id: "fmt-other", label: "Other / Custom Production", value: "Other / Custom Production" }
 ];
 
-const audienceSizes = [
+const audienceSizes = isFr ? [
+  "Moins de 50 participants",
+  "50 à 200 participants",
+  "200 à 500 participants",
+  "Plus de 500 participants"
+] : [
   "Under 50 attendees",
   "50 - 200 attendees",
   "200 - 500 attendees",
   "500+ attendees"
 ];
 
-const technicalNeeds = [
+const technicalNeeds = isFr ? [
+  { id: "need-qr", label: "Relais sur appareils personnels des participants (code QR)", value: "Attendee Personal Device Relay (via QR Code)" },
+  { id: "need-projector", label: "Sous-titres sur projecteur de scène ou retour d'auditorium", value: "Stage Projector / Confidence Monitor Captions" },
+  { id: "need-broadcast", label: "Habillage graphique pour webdiffusion (vMix ou OBS)", value: "Live Stream / Broadcast Graphics (vMix or OBS)" },
+  { id: "need-theatre", label: "Surtitrage scénique synchronisé pour le théâtre", value: "Scripted Theatre Surtitles" },
+  { id: "need-hardware", label: "Conseils sur le matériel audio et les microphones", value: "Audio Hardware & Microphone Guidance" },
+  { id: "need-hybrid", label: "Coordination de salle hybride et relais d'intervenants", value: "Hybrid Room Coordination & Speaker Relays" }
+] : [
   { id: "need-qr", label: "Attendee Personal Device Relay (via QR Code)", value: "Attendee Personal Device Relay (via QR Code)" },
   { id: "need-projector", label: "Stage Projector / Confidence Monitor Captions", value: "Stage Projector / Confidence Monitor Captions" },
   { id: "need-broadcast", label: "Live Stream / Broadcast Graphics (vMix or OBS)", value: "Live Stream / Broadcast Graphics (vMix or OBS)" },
@@ -42,16 +63,18 @@ const technicalNeeds = [
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
       </svg>
     </div>
-    <h3 class="text-2xl font-bold font-heading text-midnight">Quote Request Received!</h3>
+    <h3 class="text-2xl font-bold font-heading text-midnight">
+      {isFr ? "Demande de devis reçue !" : "Quote Request Received!"}
+    </h3>
     <p class="text-slate-600 max-w-md mx-auto text-sm sm:text-base leading-relaxed">
-      Thank you for sharing your event details. Our team will review your venue specifications and respond with a tailored proposal.
+      {isFr ? "Merci d'avoir partagé les détails de votre événement. Notre équipe étudiera vos besoins techniques et vous transmettra une proposition personnalisée." : "Thank you for sharing your event details. Our team will review your venue specifications and respond with a tailored proposal."}
     </p>
     <button 
       id="quote-reset-btn" 
       type="button" 
       class="inline-block mt-4 px-6 py-2.5 bg-slate-100 hover:bg-slate-200 text-midnight text-xs font-bold rounded-xl transition-colors font-heading"
     >
-      Submit Another Quote Request
+      {isFr ? "Soumettre une autre demande de devis" : "Submit Another Quote Request"}
     </button>
   </div>
 
@@ -88,55 +111,55 @@ const technicalNeeds = [
     <div>
       <div class="border-b border-slate-200 pb-3 mb-6">
         <span class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading block mb-1">
-          Step 1 of 3
+          {isFr ? "Étape 1 sur 3" : "Step 1 of 3"}
         </span>
         <h3 class="text-lg sm:text-xl font-bold font-heading text-midnight">
-          Contact Information
+          {isFr ? "Coordonnées" : "Contact Information"}
         </h3>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label for="quote-user-name" class="block text-sm font-semibold text-midnight mb-1.5 font-heading">
-            Your Name <span class="text-coral">*</span>
+            {isFr ? "Votre nom" : "Your Name"} <span class="text-coral">*</span>
           </label>
           <input 
             type="text" 
             id="quote-user-name" 
             required 
-            placeholder="Jane Doe"
+            placeholder={isFr ? "Marie Tremblay" : "Jane Doe"}
             class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-midnight placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-brand text-sm transition-all"
           />
         </div>
 
         <div>
           <label for="quote-user-email" class="block text-sm font-semibold text-midnight mb-1.5 font-heading">
-            Email Address <span class="text-coral">*</span>
+            {isFr ? "Adresse courriel" : "Email Address"} <span class="text-coral">*</span>
           </label>
           <input 
             type="email" 
             id="quote-user-email" 
             required 
-            placeholder="jane@organization.org"
+            placeholder={isFr ? "marie@organisation.ca" : "jane@organization.org"}
             class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-midnight placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-brand text-sm transition-all"
           />
         </div>
 
         <div>
           <label for="quote-org-name" class="block text-sm font-semibold text-midnight mb-1.5 font-heading">
-            Organization or School Name
+            {isFr ? "Nom de l'organisme ou de l'établissement" : "Organization or School Name"}
           </label>
           <input 
             type="text" 
             id="quote-org-name" 
-            placeholder="e.g. Pearson District, Community Theatre"
+            placeholder={isFr ? "ex. Centre de services scolaire, Théâtre communautaire" : "e.g. Pearson District, Community Theatre"}
             class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-midnight placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-brand text-sm transition-all"
           />
         </div>
 
         <div>
           <label for="quote-phone" class="block text-sm font-semibold text-midnight mb-1.5 font-heading">
-            Phone Number (Optional)
+            {isFr ? "Numéro de téléphone (optionnel)" : "Phone Number (Optional)"}
           </label>
           <input 
             type="tel" 
@@ -152,10 +175,10 @@ const technicalNeeds = [
     <div>
       <div class="border-b border-slate-200 pb-3 mb-6">
         <span class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading block mb-1">
-          Step 2 of 3
+          {isFr ? "Étape 2 sur 3" : "Step 2 of 3"}
         </span>
         <h3 class="text-lg sm:text-xl font-bold font-heading text-midnight">
-          Event Logistics
+          {isFr ? "Logistique de l'événement" : "Event Logistics"}
         </h3>
       </div>
 
@@ -163,7 +186,7 @@ const technicalNeeds = [
         <!-- Event Format -->
         <div>
           <label class="block text-sm font-semibold text-midnight mb-2.5 font-heading">
-            Event Format <span class="text-coral">*</span>
+            {isFr ? "Format de l'événement" : "Event Format"} <span class="text-coral">*</span>
           </label>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
             {eventFormats.map((format, idx) => (
@@ -189,13 +212,13 @@ const technicalNeeds = [
           <!-- Target Date or Timeline -->
           <div>
             <label for="quote-date" class="block text-sm font-semibold text-midnight mb-1.5 font-heading">
-              Target Date or Timeline <span class="text-coral">*</span>
+              {isFr ? "Date prévue ou échéancier" : "Target Date or Timeline"} <span class="text-coral">*</span>
             </label>
             <input 
               type="text" 
               id="quote-date" 
               required
-              placeholder="e.g. October 24, 2026 or Spring 2027"
+              placeholder={isFr ? "ex. 24 octobre 2026 ou Printemps 2027" : "e.g. October 24, 2026 or Spring 2027"}
               class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-midnight placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-brand text-sm transition-all"
             />
           </div>
@@ -203,7 +226,7 @@ const technicalNeeds = [
           <!-- Estimated Attendance -->
           <div>
             <label for="quote-attendance" class="block text-sm font-semibold text-midnight mb-1.5 font-heading">
-              Estimated In-Person Attendance <span class="text-coral">*</span>
+              {isFr ? "Nombre estimé de participants en personne" : "Estimated In-Person Attendance"} <span class="text-coral">*</span>
             </label>
             <select 
               id="quote-attendance" 
@@ -223,10 +246,10 @@ const technicalNeeds = [
     <div>
       <div class="border-b border-slate-200 pb-3 mb-6">
         <span class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading block mb-1">
-          Step 3 of 3
+          {isFr ? "Étape 3 sur 3" : "Step 3 of 3"}
         </span>
         <h3 class="text-lg sm:text-xl font-bold font-heading text-midnight">
-          Technical Needs &amp; Additional Context
+          {isFr ? "Besoins techniques et contexte" : "Technical Needs & Additional Context"}
         </h3>
       </div>
 
@@ -234,7 +257,7 @@ const technicalNeeds = [
         <!-- Checklist of technical services -->
         <div>
           <label class="block text-sm font-semibold text-midnight mb-2 font-heading">
-            Captioning &amp; Technical Services Desired (Select all that apply)
+            {isFr ? "Services de sous-titrage et techniques souhaités (Sélectionnez toutes les options applicables)" : "Captioning & Technical Services Desired (Select all that apply)"}
           </label>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
             {technicalNeeds.map((need, idx) => (
@@ -259,12 +282,12 @@ const technicalNeeds = [
         <!-- Venue Details / Message Textarea -->
         <div>
           <label for="quote-additional-details" class="block text-sm font-semibold text-midnight mb-1.5 font-heading">
-            Venue Setup, Audio Equipment, or Specific Questions
+            {isFr ? "Configuration de la salle, matériel audio ou questions précises" : "Venue Setup, Audio Equipment, or Specific Questions"}
           </label>
           <textarea 
             id="quote-additional-details" 
             rows="4" 
-            placeholder="Tell us about the venue, stage microphones, room acoustics, or any specific accommodations your attendees need..."
+            placeholder={isFr ? "Parlez-nous de la salle, des micros de scène, de l'acoustique ou des besoins d'aménagement de vos participants..." : "Tell us about the venue, stage microphones, room acoustics, or any specific accommodations your attendees need..."}
             class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-midnight placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-brand text-sm transition-all resize-y"
           ></textarea>
         </div>
@@ -282,7 +305,7 @@ const technicalNeeds = [
         data-error-callback="onQuoteTurnstileError"
       ></div>
       <p id="quote-turnstile-error" class="hidden text-xs text-coral mt-1.5 font-semibold">
-        Please complete the verification checkbox above before sending your quote request.
+        {isFr ? "Veuillez compléter la vérification ci-dessus avant d'envoyer votre demande de devis." : "Please complete the verification checkbox above before sending your quote request."}
       </p>
     </div>
 
@@ -293,13 +316,13 @@ const technicalNeeds = [
         type="submit" 
         class="w-full py-4 px-6 rounded-xl font-heading font-bold text-white bg-teal-brand hover:bg-teal-dark shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-teal-brand text-base flex items-center justify-center gap-2 cursor-pointer"
       >
-        <span>Submit Quote Request</span>
+        <span>{isFr ? "Soumettre la demande de devis" : "Submit Quote Request"}</span>
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
         </svg>
       </button>
       <p class="text-center text-xs text-slate-500 mt-3">
-        Submissions go directly to the Zip Solutions coordination team. Your event details remain confidential.
+        {isFr ? "Les demandes sont transmises directement à l'équipe de coordination de Solutions Zip. Les renseignements de votre événement restent confidentiels." : "Submissions go directly to the Zip Solutions coordination team. Your event details remain confidential."}
       </p>
     </div>
 
@@ -413,6 +436,7 @@ const technicalNeeds = [
     quoteForm.action = quoteForm.dataset.action || "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeat_QYrLNUwVb37U-qYQvWAlhKns2xs9zd_gnsZvI6XmgYow/formResponse";
 
     isSubmittingQuote = true;
+    const isFrench = document.documentElement.lang === 'fr';
     if (quoteSubmitBtn) {
       quoteSubmitBtn.setAttribute('disabled', 'true');
       quoteSubmitBtn.innerHTML = `
@@ -420,7 +444,7 @@ const technicalNeeds = [
           <circle class="opacity-25" cx="12" cy="12" r="10" stroke-width="4"></circle>
           <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
         </svg>
-        <span>Submitting Quote Request...</span>
+        <span>${isFrench ? "Envoi de la demande en cours..." : "Submitting Quote Request..."}</span>
       `;
     }
 
@@ -436,6 +460,7 @@ const technicalNeeds = [
     quoteForm?.reset();
     quoteForm?.classList.remove('hidden');
     quoteSuccessBanner?.classList.add('hidden');
+    const isFrench = document.documentElement.lang === 'fr';
     if (quoteTurnstileError) {
       quoteTurnstileError.classList.add('hidden');
     }
@@ -449,7 +474,7 @@ const technicalNeeds = [
     if (quoteSubmitBtn) {
       quoteSubmitBtn.removeAttribute('disabled');
       quoteSubmitBtn.innerHTML = `
-        <span>Submit Quote Request</span>
+        <span>${isFrench ? "Soumettre la demande de devis" : "Submit Quote Request"}</span>
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
         </svg>

@@ -27,6 +27,8 @@ interface Props {
   heroImage?: string;
   heroImageAlt?: string;
   capabilities?: Capability[];
+  capabilitiesTitle?: string;
+  capabilitiesSubtitle?: string;
   specs?: SpecItem[];
   specsTitle?: string;
   specsSubtitle?: string;
@@ -36,6 +38,8 @@ interface Props {
   schema?: any;
 }
 
+const isFr = Astro.currentLocale === 'fr' || Astro.url.pathname.startsWith('/fr');
+
 const {
   title,
   subtitle,
@@ -44,11 +48,13 @@ const {
   heroImage,
   heroImageAlt = title,
   capabilities = [],
+  capabilitiesTitle = isFr ? "Fonctionnalités clés" : "Key Capabilities",
+  capabilitiesSubtitle = isFr ? "Conçu pour une accessibilité sans effort, la fiabilité et la rapidité." : "Engineered for effortless accessibility, reliability, and speed.",
   specs = [],
-  specsTitle = "Good to know before you start",
-  specsSubtitle = "At a Glance",
-  ctaTitle = "Ready to get started?",
-  ctaDescription = "Join thousands of users making communication more accessible today.",
+  specsTitle = isFr ? "Bon à savoir avant de commencer" : "Good to know before you start",
+  specsSubtitle = isFr ? "En un coup d'œil" : "At a Glance",
+  ctaTitle = isFr ? "Prêt à commencer ?" : "Ready to get started?",
+  ctaDescription = isFr ? "Rejoignez des milliers d'utilisateurs qui rendent la communication plus accessible dès aujourd'hui." : "Join thousands of users making communication more accessible today.",
   ctaAction,
   schema,
 } = Astro.props;
@@ -134,10 +140,10 @@ const softwareSchema = schema || {
     <section class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto mb-14">
         <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-midnight">
-          Key Capabilities
+          {capabilitiesTitle}
         </h2>
         <p class="mt-3 text-slate-600 text-base">
-          Engineered for effortless accessibility, reliability, and speed.
+          {capabilitiesSubtitle}
         </p>
       </div>
 
@@ -218,10 +224,10 @@ const softwareSchema = schema || {
           </a>
         ) : (
           <a 
-            href="/contact-us"
+            href={isFr ? "/fr/contact-us" : "/contact-us"}
             class="px-8 py-4 rounded-2xl font-heading font-bold text-sm sm:text-base text-midnight bg-white hover:bg-alabaster shadow-lg transition-all"
           >
-            Get In Touch
+            {isFr ? "Contactez-nous" : "Get In Touch"}
           </a>
         )}
       </div>

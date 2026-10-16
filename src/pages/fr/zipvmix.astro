@@ -1,0 +1,158 @@
+---
+import ProductLayout from '../../layouts/ProductLayout.astro';
+
+const capabilities = [
+  {
+    title: "Intégration numérique directe",
+    description: "Fini les captures d'écran approximatives ! Les sous-titres sont envoyés sous forme de données textuelles pures directement à l'API vMix, générant des titrages nets et professionnels adaptés à votre charte graphique."
+  },
+  {
+    title: "Automatisation intégrale",
+    description: "Détecte chaque mot et phrase depuis zipcaptions.app et actualise le titrage vMix en continu sans intervention manuelle. Vous parlez, et le texte s'affiche."
+  },
+  {
+    title: "Léger et optimisé",
+    description: "S'exécute discrètement en arrière-plan avec une consommation minimale de ressources. Aucun ralentissement de votre machine de diffusion pendant la régie."
+  },
+  {
+    title: "Configuration simple et rapide",
+    description: "Une page d'options claire permet d'associer l'extension à votre régie vMix en moins de soixante secondes."
+  },
+  {
+    title: "Prise en charge boucle locale ou réseau local",
+    description: "Connexion via localhost (127.0.0.1) sur la même machine de streaming ou à travers votre réseau de production local depuis un ordinateur de transcription dédié."
+  },
+  {
+    title: "Indépendant du matériel audio",
+    description: "Fonctionne avec n'importe quelle interface audio PC, microphone USB ou sortie de console de mixage configurée dans Google Chrome."
+  }
+];
+
+const specs = [
+  { label: "Éditions vMix compatibles", value: "Prend en charge toute édition vMix disposant du contrôleur web (HD, 4K, Pro ou Max)." },
+  { label: "Navigateurs requis", value: "S'exécute dans Google Chrome ou tout navigateur Chromium tel que Microsoft Edge ou Brave." },
+  { label: "Passerelle réseau directe", value: "Envoie les données textuelles à vMix sur la même machine ou à travers le réseau local du studio." },
+  { label: "Graphismes irréprochables", value: "Actualise le titre assigné en temps réel en préservant votre typographie de diffusion sans capture d'écran imprécise." }
+];
+---
+
+<ProductLayout
+  title="Extension Zip Captions pour vMix"
+  subtitle="Sous-titres fluides en temps réel pour vos régies de diffusion vMix"
+  description="Notre extension Chrome crée une passerelle professionnelle et automatique entre la puissance des sous-titres en ligne et votre régie de diffusion. Transformez les paroles prononcées en titrages à l'écran de qualité audiovisuelle en quelques secondes."
+  actions={[
+    { 
+      text: "Télécharger depuis le Chrome Web Store", 
+      url: "https://chromewebstore.google.com/detail/zip-captions-vmix-caption/lbmofcdefajmlgdkccabpofoonmdfjao?hl=en-GB&authuser=0", 
+      primary: true, 
+      external: true 
+    },
+    { text: "Ouvrir Zip Captions", url: "https://zipcaptions.app", external: true },
+    { text: "Centre d'aide", url: "https://help.zipcaptions.app", external: true }
+  ]}
+  capabilities={capabilities}
+  specs={specs}
+  ctaTitle="Rehaussez l'accessibilité de vos émissions"
+  ctaDescription="Dites adieu aux bricolages de capture d'écran. Diffusez des sous-titres nets et professionnels directement dans vMix."
+  ctaAction={{ 
+    text: "Obtenir l'extension vMix sur le Chrome Web Store", 
+    url: "https://chromewebstore.google.com/detail/zip-captions-vmix-caption/lbmofcdefajmlgdkccabpofoonmdfjao?hl=en-GB&authuser=0", 
+    external: true 
+  }}
+>
+
+  <!-- Problem & Solution Overview -->
+  <div class="space-y-12 mt-8">
+    <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-4">
+      <h2 class="text-2xl sm:text-3xl font-bold font-heading text-midnight">
+        Un titrage d'excellence sans capture d'écran fastidieuse
+      </h2>
+      <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+        Intégrer des sous-titres fiables et fidèles en direct à une production audiovisuelle s'avère souvent complexe et onéreux. Les méthodes habituelles reposent fréquemment sur des captures de fenêtres contraignantes ou des logiciels tiers lourds. Nous avons conçu une extension Chrome à la fois simple et performante qui transforme cette démarche.
+      </p>
+      <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+        Cet outil reçoit la transcription instantanée de <a href="https://zipcaptions.app" target="_blank" rel="noopener noreferrer" class="text-amethyst underline font-semibold">zipcaptions.app</a> et la transmet directement à un titre de votre projet vMix de façon totalement automatisée. Vos prises de parole deviennent des incrustations graphiques élégantes, rendant vos contenus plus captivants et inclusifs.
+      </p>
+    </div>
+
+    <!-- Getting Started in 3 Simple Steps -->
+    <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-8">
+      <div>
+        <h3 class="text-2xl font-bold font-heading text-midnight">
+          Mise en route en trois étapes élémentaires
+        </h3>
+        <p class="mt-2 text-slate-600 text-sm sm:text-base">
+          Diffusez vos premiers sous-titres en direct en quelques minutes seulement.
+        </p>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Step 1 -->
+        <div class="flex flex-col md:flex-row gap-6 p-6 rounded-2xl bg-slate-50 border border-slate-200 items-start">
+          <div class="w-10 h-10 rounded-xl bg-purple-100 text-amethyst font-bold flex items-center justify-center font-heading text-base shrink-0">
+            1
+          </div>
+          <div class="space-y-2">
+            <h4 class="font-bold font-heading text-midnight text-lg">Installer et configurer l'extension</h4>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Installez l'extension depuis le Chrome Web Store. Faites un clic droit sur son icône, accédez aux <strong>Options</strong> et saisissez l'adresse IP de votre vMix (le plus souvent <code class="px-2 py-0.5 rounded bg-slate-200 font-mono text-xs text-midnight">127.0.0.1</code>). Donnez un nom à votre entrée de titrage vMix, par exemple <code class="px-2 py-0.5 rounded bg-slate-200 font-mono text-xs text-midnight">LiveCaptions</code>, puis enregistrez.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="flex flex-col md:flex-row gap-6 p-6 rounded-2xl bg-slate-50 border border-slate-200 items-start">
+          <div class="w-10 h-10 rounded-xl bg-purple-100 text-amethyst font-bold flex items-center justify-center font-heading text-base shrink-0">
+            2
+          </div>
+          <div class="space-y-2">
+            <h4 class="font-bold font-heading text-midnight text-lg">Préparer votre titre dans vMix</h4>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Dans vMix, cliquez sur <strong>« Add Input »</strong> et choisissez la catégorie <strong>« Title »</strong>. Sélectionnez un modèle épuré convenant à votre charte (un bandeau inférieur ou téléscripteur fait merveille). Renommez cette entrée avec la désignation exacte spécifiée dans les options de l'extension (ex. : <code class="px-2 py-0.5 rounded bg-slate-200 font-mono text-xs text-midnight">LiveCaptions</code>).
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="flex flex-col md:flex-row gap-6 p-6 rounded-2xl bg-slate-50 border border-slate-200 items-start">
+          <div class="w-10 h-10 rounded-xl bg-purple-100 text-amethyst font-bold flex items-center justify-center font-heading text-base shrink-0">
+            3
+          </div>
+          <div class="space-y-2">
+            <h4 class="font-bold font-heading text-midnight text-lg">Lancez la diffusion avec sous-titres !</h4>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Ouvrez <a href="https://zipcaptions.app" target="_blank" rel="noopener noreferrer" class="text-amethyst underline font-medium">zipcaptions.app</a> dans un onglet Chrome, démarrez une session et commencez à parler. Le texte apparaît aussitôt dans votre titre vMix. Vous pouvez dès lors superposer cette entrée <code class="px-2 py-0.5 rounded bg-slate-200 font-mono text-xs text-midnight">LiveCaptions</code> sur votre signal d'antenne comme n'importe quel élément graphique !
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Requirements Checklist -->
+    <div class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-sm space-y-4">
+      <h3 class="text-xl font-bold font-heading text-midnight">
+        Configuration requise
+      </h3>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-700">
+        <li class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-sm bg-teal-brand"></span>
+          Navigateur Google Chrome ou basé sur Chromium
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-sm bg-teal-brand"></span>
+          Extension d'envoi de sous-titres pour vMix
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-sm bg-teal-brand"></span>
+          Logiciel vMix (éditions HD, 4K, Pro ou Max avec contrôleur web)
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-sm bg-teal-brand"></span>
+          Un microphone fonctionnel relié à votre ordinateur
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+</ProductLayout>

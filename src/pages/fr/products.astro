@@ -1,0 +1,150 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ZipDashboard from '../../components/ZipDashboard.astro';
+---
+
+<BaseLayout 
+  title="Nos produits et services | Solutions Zip"
+  description="Découvrez l'ensemble des outils d'accessibilité de Solutions Zip, nos moteurs de sous-titrage en direct, notre accompagnement d'événements hybrides et nos formations sur mesure."
+>
+  <!-- En-tête -->
+  <section class="bg-gradient-to-b from-white to-slate-50 border-b border-slate-200/80 pt-12 pb-14 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm font-bold text-amethyst tracking-wide uppercase mb-3 font-heading">
+        Écosystème et services
+      </p>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-midnight font-heading">
+        Produits, services et solutions événementielles
+      </h1>
+      <p class="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        Des logiciels d'accessibilité novateurs à l'organisation complète d'événements, en passant par la webdiffusion de congrès hybrides et le sous-titrage en direct sur mesure, nous offrons des solutions d'accessibilité intégrales.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services en vedette : Organisation d'événements et sous-titres sur mesure -->
+  <section class="py-12 bg-white border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <p class="text-xs sm:text-sm font-bold text-teal-brand tracking-wide uppercase mb-2 font-heading">
+          Services institutionnels et professionnels
+        </p>
+        <h2 class="text-2xl sm:text-4xl font-extrabold font-heading text-midnight">
+          Nos services événementiels et de formation
+        </h2>
+        <p class="mt-3 text-slate-600 text-sm sm:text-base">
+          Direction technique spécialisée, gestion d'événements en présentiel et infrastructure de sous-titrage dédiée, appuyées par un soutien technique expert.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- Service 1: Organisation d'événements en présentiel et hybrides -->
+        <div class="bg-gradient-to-br from-slate-50 to-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-4 mb-5">
+              <span class="p-3.5 rounded-2xl bg-amethyst text-white shadow-md shrink-0">
+                <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              </span>
+              <h3 class="text-xl sm:text-2xl font-bold font-heading text-midnight leading-snug">
+                Organisation d'événements en présentiel et hybrides
+              </h3>
+            </div>
+
+            <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
+              Nous assurons l'organisation complète d'événements pour les établissements d'enseignement, congrès et organismes sans but lucratif. De l'infrastructure technique à la webdiffusion et à l'interaction des participants, nous prenons en charge chaque détail afin que votre équipe puisse se consacrer au contenu.
+            </p>
+
+            <div class="space-y-3 mb-6">
+              <div class="p-4 rounded-2xl bg-white border border-slate-200 text-xs sm:text-sm text-slate-700">
+                <strong class="text-midnight block mb-1">Conférences hybrides et virtuelles d'envergure :</strong>
+                Gestion de sessions complexes multi-salles, intégration d'intervenants distants et synchronisation des flux d'accessibilité en temps réel.
+              </div>
+
+              <div class="p-4 rounded-2xl bg-white border border-slate-200 text-xs sm:text-sm text-slate-700">
+                <strong class="text-midnight block mb-1">Développement professionnel sur mesure :</strong>
+                Nos forfaits d'organisation comprennent des ateliers de formation adaptés pour enseignants, personnel administratif et équipes audiovisuelles sur les outils pédagogiques inclusifs.
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4">
+            <a 
+              href="/fr/events" 
+              class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-coral hover:bg-rose-600 text-white font-heading font-bold text-sm rounded-xl shadow-sm transition-all"
+            >
+              <span>En savoir plus et planifier</span>
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+            <span class="text-xs font-semibold text-slate-500">Hybride • Virtuel • Présentiel</span>
+          </div>
+        </div>
+
+        <!-- Service 2: Solutions personnalisées Zip Captions pour événements en direct -->
+        <div class="bg-gradient-to-br from-slate-50 to-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-4 mb-5">
+              <span class="p-3.5 rounded-2xl bg-teal-brand text-white shadow-md shrink-0">
+                <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+              </span>
+              <h3 class="text-xl sm:text-2xl font-bold font-heading text-midnight leading-snug">
+                Sous-titres sur mesure pour événements
+              </h3>
+            </div>
+
+            <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
+              Besoin d'un sous-titrage en direct fiable et flexible pour une conférence en auditorium, une pièce de théâtre, un rassemblement communautaire ou un colloque ? Nous déployons Zip Captions selon les exigences de votre salle.
+            </p>
+
+            <div class="space-y-3 mb-6">
+              <div class="p-4 rounded-2xl bg-white border border-slate-200 text-xs sm:text-sm text-slate-700">
+                <strong class="text-midnight block mb-1">Surtitrage scénique et affichage de diffusion :</strong>
+                Personnalisation visuelle pour écrans de salle, retours de scène, bandeaux de diffusion ou relais web sur smartphones des participants.
+              </div>
+
+              <div class="p-4 rounded-2xl bg-white border border-slate-200 text-xs sm:text-sm text-slate-700">
+                <strong class="text-midnight block mb-1">Devis personnalisés :</strong>
+                Nous établissons des devis clairs et adaptés selon la durée de votre événement, la taille de l'auditoire et les besoins techniques.
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4">
+            <a 
+              href="/fr/live-event-quotes" 
+              class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-teal-brand hover:bg-teal-dark text-white font-heading font-bold text-sm rounded-xl shadow-sm transition-all"
+            >
+              <span>Découvrir les sous-titres et devis</span>
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+            <span class="text-xs font-semibold text-slate-500">Auditoriums • Théâtre • Webdiffusion</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Répertoire interactif complet -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+    <div class="mb-8">
+      <h2 class="text-2xl sm:text-3xl font-bold font-heading text-midnight">
+        Explorer tous nos produits et solutions
+      </h2>
+      <p class="text-slate-600 text-sm sm:text-base mt-1">
+        Recherchez et filtrez l'ensemble de notre catalogue d'applications web, d'outils d'IA, d'extensions et de programmes d'accompagnement.
+      </p>
+    </div>
+    <ZipDashboard />
+  </section>
+</BaseLayout>

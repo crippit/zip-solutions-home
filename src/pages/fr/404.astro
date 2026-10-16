@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Page introuvable" description="La page demandée est introuvable ou a été déplacée.">
+  <div class="max-w-3xl mx-auto px-4 py-24 text-center">
+    <div class="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-amethyst/10 text-amethyst mb-8">
+      <span class="text-3xl font-extrabold font-mono">404</span>
+    </div>
+    <h1 class="text-3xl sm:text-5xl font-extrabold font-heading text-midnight mb-4">
+      Page introuvable
+    </h1>
+    <p class="text-slate-600 text-lg mb-8 max-w-md mx-auto">
+      Désolé, nous ne parvenons pas à trouver la page que vous recherchez. Elle a peut-être été déplacée ou supprimée.
+    </p>
+    <div class="flex flex-wrap items-center justify-center gap-4">
+      <a 
+        href="/fr" 
+        class="px-6 py-3 rounded-xl bg-midnight text-white text-sm font-bold font-heading hover:bg-slate-800 transition-colors shadow-sm"
+      >
+        Retour à l'accueil
+      </a>
+      <a 
+        href="/fr/products" 
+        class="px-6 py-3 rounded-xl bg-slate-100 text-midnight text-sm font-bold font-heading hover:bg-slate-200 transition-colors"
+      >
+        Découvrir les solutions
+      </a>
+    </div>
+  </div>
+
+  <script is:inline>
+    // Redirection automatique pour les anciennes adresses en .html
+    const path = window.location.pathname;
+    if (path.endsWith('.html')) {
+      const cleanPath = path.slice(0, -5);
+      window.location.replace(cleanPath + window.location.search + window.location.hash);
+    }
+  </script>
+</BaseLayout>

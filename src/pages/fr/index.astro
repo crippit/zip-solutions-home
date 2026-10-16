@@ -1,0 +1,633 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const homeSchema = [
+  {
+    "@type": "WebSite",
+    "@id": "https://zipsolutions.org/#website",
+    "url": "https://zipsolutions.org/fr",
+    "name": "Zip Solutions",
+    "description": "La maison de l'accessibilité: Renforcer les liens grâce au sous-titrage en direct, aux outils de CAA, à l'organisation d'événements hybrides et à l'apprentissage accessible.",
+    "publisher": {
+      "@id": "https://zipsolutions.org/#organization"
+    },
+    "inLanguage": "fr"
+  },
+  {
+    "@type": "EducationalOrganization",
+    "@id": "https://zipsolutions.org/#organization",
+    "name": "Zip Solutions",
+    "url": "https://zipsolutions.org/fr",
+    "award": [
+      "Lauréat de l'Alumni Impact Award 2025 de l'Université de Portsmouth",
+      "Lauréat de l'Accessibility Demo Slam de la Virginia Society for Technology in Education (VSTE)"
+    ],
+    "funder": [
+      {
+        "@type": "Organization",
+        "name": "Dell Technologies Education Canada Innovation Accelerator"
+      },
+      {
+        "@type": "Organization",
+        "name": "Microsoft for Startups Founders Hub"
+      }
+    ]
+  }
+];
+
+const features = [
+  {
+    title: "Zip Captions",
+    details: "Nous sommes les créateurs de Zip Captions: un outil de sous-titrage en direct entièrement gratuit, axé sur la confidentialité, qui fonctionne dans n'importe quel navigateur moderne.",
+    icon: "ear",
+    badge: "Outil phare",
+    color: "bg-amethyst",
+    href: "/fr/zipcaptions",
+    linkText: "Découvrir Zip Captions",
+  },
+  {
+    title: "Confidentialité absolue",
+    details: "Nous ne recueillons que les données strictement indispensables, et rien de plus. Nous ne pistons personne et ne vendons aucune donnée. Vos flux audio restent entièrement privés.",
+    icon: "shield",
+    badge: "Valeur fondamentale",
+    color: "bg-teal-brand",
+    href: "/fr/privacy",
+    linkText: "Lire notre architecture de confidentialité",
+  },
+  {
+    title: "Dignité",
+    details: "Zip Solutions s'engage à offrir une expérience de communication et de sous-titrage fluide, confidentielle et digne à chaque personne, sans compromis.",
+    icon: "heart",
+    badge: "Philosophie",
+    color: "bg-coral",
+    href: "/fr/story",
+    linkText: "Découvrir notre histoire et notre vision",
+  },
+  {
+    title: "Inclusion et accessibilité universelle",
+    details: "Concevoir des solutions qui permettent à tous de participer pleinement: en classe, en amphithéâtre, au théâtre, dans les lieux de culte ou au sein de la collectivité.",
+    icon: "users",
+    badge: "Mission",
+    color: "bg-indigo-600",
+    href: "/fr/products",
+    linkText: "Explorer nos solutions d'accessibilité",
+  },
+  {
+    title: "Communauté ouverte",
+    details: "Bâtir une communauté bienveillante est tout aussi crucial que développer du code. Nous collaborons étroitement avec des éducateurs, des mentors sourds et malentendants et des spécialistes en adaptation.",
+    icon: "chat",
+    badge: "Open Source",
+    color: "bg-teal-dark",
+    href: "/fr/advisory",
+    linkText: "Rencontrer notre comité consultatif",
+    secondaryHref: "https://discord.gg/5Hyu7sQTHv",
+    secondaryLinkText: "Forum Discord",
+  },
+  {
+    title: "Respect et écoute",
+    details: "Nous respectons nos utilisateurs et leurs besoins singuliers. Partagez vos suggestions, vos retours d'expérience et vos demandes d'adaptation directement sur notre forum communautaire.",
+    icon: "hand",
+    badge: "Engagement",
+    color: "bg-amethyst-dark",
+    href: "https://discord.gg/5Hyu7sQTHv",
+    linkText: "Rejoindre le forum Discord",
+    external: true,
+  }
+];
+---
+
+<BaseLayout 
+  title="Zip Solutions | La maison de l'accessibilité"
+  description="Faciliter la communication grâce au sous-titrage en direct gratuit, aux outils de CAA et aux technologies éducatives inclusives. Lauréat de l'Alumni Impact Award 2025 de l'Université de Portsmouth."
+  schema={homeSchema}
+>
+  
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden pt-12 sm:pt-20 pb-16 sm:pb-24 bg-gradient-to-b from-white via-slate-50 to-alabaster border-b border-slate-200/80">
+    
+    <!-- Subtle background pattern accents -->
+    <div class="absolute inset-0 pointer-events-none opacity-40">
+      <div class="absolute -top-40 -right-40 w-96 h-96 rounded-3xl bg-amethyst/10 blur-3xl"></div>
+      <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-3xl bg-teal-brand/10 blur-3xl"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      
+      <!-- Main Logo Banner -->
+      <div class="flex justify-center mb-8">
+        <img 
+          src="/images/zipsolutions_logo.svg" 
+          alt="Zip Solutions" 
+          class="h-16 sm:h-24 md:h-28 w-auto object-contain drop-shadow-sm" 
+          width="400"
+          height="96"
+        />
+      </div>
+
+      <!-- Hero Heading -->
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-midnight font-heading max-w-4xl mx-auto leading-[1.1]">
+        La maison de <span class="bg-gradient-to-r from-amethyst via-purple-600 to-teal-brand bg-clip-text text-transparent">l'accessibilité</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="mt-6 text-lg sm:text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        Faciliter la communication avec le sous-titrage en direct en temps réel, les outils de CAA et les technologies éducatives inclusives.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+        <a 
+          href="/fr/products" 
+          class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-2xl font-heading font-bold text-base text-white bg-midnight hover:bg-slate-800 shadow-md hover:shadow-xl transition-all duration-200 focus-visible:ring-2 focus-visible:ring-midnight"
+        >
+          Découvrir tous les outils
+        </a>
+        <a 
+          href="https://zipcaptions.app" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-2xl font-heading font-bold text-base text-amethyst hover:text-white bg-purple-50 hover:bg-amethyst border border-amethyst/30 hover:border-amethyst transition-all duration-200 focus-visible:ring-2 focus-visible:ring-amethyst"
+        >
+          <span>Lancer Zip Captions</span>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Quick Trust Indicators -->
+      <div class="mt-12 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-semibold uppercase tracking-wider text-slate-500">
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-teal-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+          Sous-titrage en direct 100% gratuit
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-teal-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+          Zéro traçage des utilisateurs
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-teal-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+          Prêt pour la classe et la diffusion
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Institutional Accolades & Partners Section (Two-Tier, Zero Pills) -->
+  <section class="bg-slate-50/80 border-b border-slate-200 py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto space-y-12">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs font-bold font-mono text-amethyst uppercase tracking-wider block">
+          Distinctions et partenaires institutionnels
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-midnight tracking-tight font-heading">
+          Reconnu dans l'enseignement supérieur, les commissions scolaires et les programmes d'innovation
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+          Des distinctions universitaires aux conseils scolaires provinciaux et aux communautés de diffusion en direct, découvrez comment Zip Captions favorise l'égalité des chances.
+        </p>
+      </div>
+
+      <!-- Tier 1: Two Featured Award Cards (Zero Pills) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        
+        <!-- Card 1: University of Portsmouth -->
+        <div class="bg-white border border-slate-200 hover:border-amethyst/50 rounded-2xl p-6 sm:p-8 transition-all shadow-sm hover:shadow-md flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="flex items-center gap-4">
+              <a 
+                href="https://myport.port.ac.uk/news-events-and-blogs/news/students-contribution-to-the-community-celebrated-at-the-2025-student-impact-awards" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="w-16 h-16 rounded-2xl bg-white p-2.5 border border-slate-200 flex items-center justify-center shadow-xs shrink-0 hover:border-amethyst/50 transition-colors"
+                title="Lire la citation officielle de l'Université de Portsmouth"
+              >
+                <img src="/images/logos/portsmouth.svg" alt="Logo officiel de l'Université de Portsmouth" class="h-11 w-auto object-contain" loading="lazy" />
+              </a>
+              <div>
+                <span class="text-xs font-bold font-mono text-amethyst uppercase tracking-wider block">
+                  Lauréat de l'Alumni Impact Award (Mai 2025)
+                </span>
+                <h3 class="text-lg font-bold text-midnight font-heading leading-tight">
+                  <a 
+                    href="https://myport.port.ac.uk/news-events-and-blogs/news/students-contribution-to-the-community-celebrated-at-the-2025-student-impact-awards" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="hover:text-amethyst transition-colors"
+                  >
+                    Université de Portsmouth
+                  </a>
+                </h3>
+                <p class="text-xs text-slate-500 font-medium mt-0.5">
+                  Student Impact Awards
+                </p>
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <h4 class="text-base font-bold text-midnight font-heading">
+                Révolutionner l'accessibilité dans l'éducation
+              </h4>
+              <p class="text-slate-600 text-xs sm:text-sm mt-1 leading-relaxed">
+                Hommage rendu pour innovation et service exceptionnels. Attribué au cofondateur Chris Webb pour la création de Zip Captions: un outil libre offrant un sous-titrage en direct en temps réel à plus de 1 500 utilisateurs dans le monde.
+              </p>
+            </div>
+
+            <blockquote class="border-l-4 border-amethyst pl-3 py-1.5 text-xs text-slate-600 italic bg-purple-50/50 rounded-r-xl">
+              "Le travail innovant de Chris incarne les valeurs de l'Université, rendant l'éducation accessible à tous."
+            </blockquote>
+          </div>
+
+          <div class="pt-5 mt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+            <a href="/fr/press#portsmouth" class="text-xs text-slate-500 hover:text-midnight font-medium transition-colors">
+              Impact universitaire &bull; Presse
+            </a>
+            <a 
+              href="https://myport.port.ac.uk/news-events-and-blogs/news/students-contribution-to-the-community-celebrated-at-the-2025-student-impact-awards" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="text-xs font-bold text-teal-brand hover:text-teal-700 inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform"
+            >
+              <span>Lire la citation officielle</span>
+              <svg class="w-3.5 h-3.5 ml-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: VSTE Accessibility Demo Slam -->
+        <div class="bg-white border border-slate-200 hover:border-teal-300 rounded-2xl p-6 sm:p-8 transition-all shadow-sm hover:shadow-md flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="flex items-center gap-4">
+              <a 
+                href="https://www.youtube.com/watch?v=u2wNoSQz0Zk" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="w-16 h-16 rounded-2xl bg-white p-2.5 border border-slate-200 flex items-center justify-center shadow-xs shrink-0 hover:border-teal-300 transition-colors"
+                title="Regarder la démonstration gagnante de VSTE sur YouTube"
+              >
+                <img src="/images/logos/vste.png" alt="Logo de la Virginia Society for Technology in Education" class="h-8 w-auto object-contain" loading="lazy" />
+              </a>
+              <div>
+                <span class="text-xs font-bold font-mono text-teal-brand uppercase tracking-wider block">
+                  Lauréat de l'Accessibility Demo Slam
+                </span>
+                <h3 class="text-lg font-bold text-midnight font-heading leading-tight">
+                  <a 
+                    href="https://www.youtube.com/watch?v=u2wNoSQz0Zk" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="hover:text-teal-brand transition-colors"
+                  >
+                    Virginia Society for Tech in Ed
+                  </a>
+                </h3>
+                <p class="text-xs text-slate-500 font-medium mt-0.5">
+                  Conception universelle de l'apprentissage (CUA)
+                </p>
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <h4 class="text-base font-bold text-midnight font-heading">
+                Conception universelle de l'apprentissage en classe
+              </h4>
+              <p class="text-slate-600 text-xs sm:text-sm mt-1 leading-relaxed">
+                Présenté par Katie Fielding (Book Creator, Coach VSTE de l'année) montrant comment Zip Captions soutient les lecteurs émergents, les élèves allophones (FLE/ALS) et les apprenants malentendants avec les polices Lexend et le contraste sombre.
+              </p>
+            </div>
+
+            <blockquote class="border-l-4 border-teal-brand pl-3 py-1.5 text-xs text-slate-600 italic bg-teal-50/50 rounded-r-xl">
+              "Un moyen particulièrement puissant de sous-titrer votre cours en direct pour soutenir tous les élèves de la classe."
+            </blockquote>
+          </div>
+
+          <div class="pt-5 mt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+            <a href="/fr/testimonial#katie-fielding" class="text-xs text-slate-500 hover:text-midnight font-medium transition-colors">
+              Katie Fielding &bull; Témoignage
+            </a>
+            <a 
+              href="https://www.youtube.com/watch?v=u2wNoSQz0Zk" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="text-xs font-bold text-teal-brand hover:text-teal-700 inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform"
+            >
+              <span>Voir la démonstration primée</span>
+              <svg class="w-3.5 h-3.5 ml-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tier 2: Institutional & Program Partners Logo Bar (Zero Pills) -->
+      <div class="pt-8 border-t border-slate-200 space-y-6">
+        <div class="text-center">
+          <span class="text-xs font-bold font-mono text-slate-400 uppercase tracking-wider">
+            Accélérateurs d'innovation, conseils scolaires partenaires et publications
+          </span>
+        </div>
+
+        <!-- 6-Logo Clean Grid with Official Sourced Logos -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 items-stretch">
+          
+          <!-- Logo 1: Dell Technologies -->
+          <div class="p-4 rounded-2xl border border-slate-200 bg-white hover:border-slate-300 hover:shadow-xs transition-all flex flex-col items-center justify-between text-center group">
+            <div class="h-12 w-full flex items-center justify-center">
+              <img src="/images/logos/dell.svg" alt="Logo officiel de Dell Technologies" class="h-6 max-w-[80%] object-contain opacity-75 group-hover:opacity-100 transition-opacity" loading="lazy" />
+            </div>
+            <span class="text-xs text-slate-500 font-medium mt-2">Accélérateur d'innovation</span>
+          </div>
+
+          <!-- Logo 2: Microsoft for Startups -->
+          <div class="p-4 rounded-2xl border border-slate-200 bg-white hover:border-slate-300 hover:shadow-xs transition-all flex flex-col items-center justify-between text-center group">
+            <div class="h-12 w-full flex items-center justify-center">
+              <img src="/images/logos/microsoft.svg" alt="Logo officiel de Microsoft" class="h-6 max-w-[80%] object-contain opacity-75 group-hover:opacity-100 transition-opacity" loading="lazy" />
+            </div>
+            <span class="text-xs text-slate-500 font-medium mt-2">Programme Founders</span>
+          </div>
+
+          <!-- Logo 3: EMSB Inspirations -->
+          <div class="p-4 rounded-2xl border border-slate-200 bg-white hover:border-slate-300 hover:shadow-xs transition-all flex flex-col items-center justify-between text-center group">
+            <div class="h-12 w-full flex items-center justify-center">
+              <img src="/images/logos/emsb.svg" alt="Logo de la Commission scolaire English-Montréal" class="h-8 max-w-[90%] object-contain opacity-80 group-hover:opacity-100 transition-opacity" loading="lazy" />
+            </div>
+            <span class="text-xs text-slate-500 font-medium mt-2">Journal Inspirations</span>
+          </div>
+
+          <!-- Logo 4: Lester B. Pearson -->
+          <div class="p-4 rounded-2xl border border-slate-200 bg-white hover:border-slate-300 hover:shadow-xs transition-all flex flex-col items-center justify-between text-center group">
+            <div class="h-12 w-full flex items-center justify-center">
+              <img src="/images/logos/pearson.svg" alt="Logo de la Commission scolaire Lester-B.-Pearson" class="h-9 max-w-[80%] object-contain opacity-75 group-hover:opacity-100 transition-opacity" loading="lazy" />
+            </div>
+            <span class="text-xs text-slate-500 font-medium mt-2">The Pearson News</span>
+          </div>
+
+          <!-- Logo 5: Hear Entendre Quebec -->
+          <div class="p-4 rounded-2xl border border-slate-200 bg-white hover:border-slate-300 hover:shadow-xs transition-all flex flex-col items-center justify-between text-center group">
+            <div class="h-12 w-full flex items-center justify-center">
+              <img src="/images/logos/hear_quebec.png" alt="Logo de Hear Entendre Québec" class="h-8 max-w-[90%] object-contain opacity-75 group-hover:opacity-100 transition-opacity" loading="lazy" />
+            </div>
+            <span class="text-xs text-slate-500 font-medium mt-2">Revue Hear Hear!</span>
+          </div>
+
+          <!-- Logo 6: Audition Quebec -->
+          <div class="p-4 rounded-2xl border border-slate-200 bg-white hover:border-slate-300 hover:shadow-xs transition-all flex flex-col items-center justify-between text-center group">
+            <div class="h-12 w-full flex items-center justify-center">
+              <img src="/images/logos/audition_quebec.png" alt="Logo d'Audition Québec" class="h-9 max-w-[80%] object-contain opacity-75 group-hover:opacity-100 transition-opacity" loading="lazy" />
+            </div>
+            <span class="text-xs text-slate-500 font-medium mt-2">Revue Technologique</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Core Features / Pillars Section -->
+  <section class="py-20 sm:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-midnight">
+        Fondé sur des valeurs essentielles
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-slate-600">
+        Chaque outil que nous concevons est pensé pour respecter la vie privée, la dignité et l'accès universel sans barrière financière.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {features.map((feature) => (
+        <div class="group bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class={`w-12 h-12 rounded-2xl ${feature.color} text-white flex items-center justify-center shadow-md`}>
+                {feature.icon === 'ear' && (
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z" />
+                  </svg>
+                )}
+                {feature.icon === 'shield' && (
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                )}
+                {feature.icon === 'heart' && (
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                )}
+                {feature.icon === 'users' && (
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                )}
+                {feature.icon === 'chat' && (
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                )}
+                {feature.icon === 'hand' && (
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
+                  </svg>
+                )}
+              </span>
+              <span class="text-xs font-bold font-mono tracking-wider text-slate-400 uppercase">
+                {feature.badge}
+              </span>
+            </div>
+
+            <h3 class="text-xl font-bold font-heading text-midnight group-hover:text-amethyst transition-colors">
+              {feature.title}
+            </h3>
+            
+            <p class="mt-3 text-slate-600 text-sm leading-relaxed">
+              {feature.details}
+            </p>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2">
+            <a 
+              href={feature.href} 
+              class="inline-flex items-center text-xs font-bold text-teal-brand hover:text-teal-700 transition-colors"
+            >
+              <span>{feature.linkText}</span>
+              <svg class="w-3.5 h-3.5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+            {feature.secondaryHref && (
+              <a 
+                href={feature.secondaryHref} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="inline-flex items-center text-xs font-medium text-slate-400 hover:text-midnight transition-colors"
+              >
+                <span>{feature.secondaryLinkText}</span>
+              </a>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Featured Product Teaser: Zip Captions -->
+  <section class="py-16 bg-white border-y border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        <!-- Left: Image / Preview Card -->
+        <div class="relative bg-slate-50 rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm overflow-hidden">
+          <div class="absolute -right-8 -bottom-8 w-48 h-48 rounded-3xl bg-teal-brand/10 blur-2xl"></div>
+          <img 
+            src="/images/zippreview.png" 
+            alt="Zip Captions en action sur écran d'ordinateur portable et mobile" 
+            class="rounded-2xl shadow-md border border-slate-200 w-full h-auto object-cover" 
+          />
+        </div>
+
+        <!-- Right: Description & Highlights -->
+        <div class="space-y-6">
+          <p class="text-sm font-bold text-teal-brand tracking-wide uppercase font-heading">
+            Outil en vedette
+          </p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-midnight">
+            Zip Captions: Le sous-titrage en direct pour tous
+          </h2>
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+            Zip Captions transforme tout navigateur web en une plateforme de transcription en direct privée et de haute précision. Grâce à des liens de partage statiques, vos participants peuvent suivre la transcription en temps réel directement sur leur propre téléphone, tablette ou ordinateur.
+          </p>
+          <ul class="space-y-3 text-sm sm:text-base text-slate-700">
+            <li class="flex items-center gap-3">
+              <span class="w-5 h-5 rounded-lg bg-teal-brand/10 text-teal-brand flex items-center justify-center text-xs font-bold">✓</span>
+              Diffusion instantanée des sous-titres aux spectateurs distants via un code unique
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-5 h-5 rounded-lg bg-teal-brand/10 text-teal-brand flex items-center justify-center text-xs font-bold">✓</span>
+              Intégration native avec OBS Studio via websockets pour le streaming en direct
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-5 h-5 rounded-lg bg-teal-brand/10 text-teal-brand flex items-center justify-center text-xs font-bold">✓</span>
+              Téléchargement instantané des transcriptions aux formats SRT, VTT ou texte brut
+            </li>
+          </ul>
+          <div class="pt-2 flex flex-wrap gap-4">
+            <a 
+              href="/fr/zipcaptions" 
+              class="px-6 py-3 rounded-xl bg-midnight text-white text-sm font-bold font-heading hover:bg-slate-800 transition-colors"
+            >
+              Découvrir Zip Captions
+            </a>
+            <a 
+              href="/fr/pricing" 
+              class="px-6 py-3 rounded-xl bg-slate-100 text-slate-800 text-sm font-bold font-heading hover:bg-slate-200 transition-colors"
+            >
+              Consulter nos forfaits IA
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Impact Callout: Dual Perspective (Zero Pills) -->
+  <section class="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-10">
+      <span class="text-xs font-bold font-mono text-amethyst uppercase tracking-wider block">
+        Impact communautaire avéré
+      </span>
+      <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-midnight mt-1">
+        Transformer la communication en classe et au quotidien
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      <!-- Card 1: Doris (Faith Community) -->
+      <div class="bg-gradient-to-br from-purple-50/60 to-slate-50 rounded-3xl p-8 border border-purple-100 shadow-sm flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-bold font-heading text-amethyst uppercase tracking-wider block mb-3">
+            Lieux de culte et diffusion en direct
+          </span>
+          <blockquote class="text-base sm:text-lg font-medium text-slate-800 leading-relaxed mb-6 italic">
+            "Lorsque le son est présent mais incompris, c'est comme écouter une langue étrangère. Grâce à ce sous-titrage, je peux suivre l'office et entendre le message. Quelle expérience merveilleuse!"
+          </blockquote>
+        </div>
+        <div class="pt-4 border-t border-purple-200/60 flex items-center justify-between">
+          <div>
+            <p class="font-heading font-bold text-midnight text-sm">Doris</p>
+            <p class="text-xs text-slate-500">Membre de la congrégation, Rock Valley First Reformed Church</p>
+          </div>
+          <a href="/fr/testimonial" class="text-xs font-bold text-amethyst hover:text-amethyst-dark transition-colors">
+            Lire le témoignage &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2: Tracey Green (Education) -->
+      <div class="bg-gradient-to-br from-teal-50/60 to-slate-50 rounded-3xl p-8 border border-teal-100 shadow-sm flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-bold font-heading text-teal-brand uppercase tracking-wider block mb-3">
+            Autonomie en classe
+          </span>
+          <blockquote class="text-base sm:text-lg font-medium text-slate-800 leading-relaxed mb-6 italic">
+            "Ce site apporte un réel bénéfice à de nombreuses personnes, y compris celles ayant un TDAH ou des difficultés de langage. Pour les personnes malentendantes, cela leur redonne le pouvoir. Cela favorise l'autonomie et l'indépendance, évitant de devoir demander de l'aide en permanence."
+          </blockquote>
+        </div>
+        <div class="pt-4 border-t border-teal-200/60 flex items-center justify-between">
+          <div>
+            <p class="font-heading font-bold text-midnight text-sm">Tracey Green</p>
+            <p class="text-xs text-slate-500">Enseignante spécialisée pour élèves sourds et malentendants, Montreal Oral School for the Deaf</p>
+          </div>
+          <a href="/fr/press" class="text-xs font-bold text-teal-brand hover:text-teal-700 transition-colors">
+            Voir l'article &rarr;
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Consultation & Event Services Banner (Zero Pills) -->
+  <section class="py-16 bg-midnight text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
+        <div class="space-y-3">
+          <p class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading">
+            Événements en direct • Production hybride • Perfectionnement professionnel
+          </p>
+          <h2 class="text-2xl sm:text-4xl font-extrabold font-heading text-white">
+            Vous organisez un événement en présentiel ou hybride?
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base max-w-2xl leading-relaxed">
+            Nous assurons l'organisation complète d'événements accessibles pour les établissements d'enseignement et les organisations, incluant des sessions virtuelles multicanaux accompagnées de <strong>formations professionnelles sur mesure</strong>. Nous concevons également des architectures de sous-titrage personnalisées avec Zip Captions.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3.5 shrink-0">
+          <a 
+            href="/fr/contact-us" 
+            class="inline-flex items-center justify-center px-8 py-4 rounded-2xl font-heading font-bold text-sm sm:text-base text-midnight bg-white hover:bg-alabaster shadow-lg transition-all"
+          >
+            Obtenir un devis personnalisé
+          </a>
+          <a 
+            href="/fr/products" 
+            class="inline-flex items-center justify-center px-7 py-4 rounded-2xl font-heading font-bold text-sm sm:text-base text-white border border-slate-700 hover:bg-slate-800/80 transition-all"
+          >
+            Découvrir nos services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

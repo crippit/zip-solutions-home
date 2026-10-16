@@ -1,0 +1,114 @@
+---
+import ProductLayout from '../../layouts/ProductLayout.astro';
+
+const capabilities = [
+  {
+    title: "Démarrage et arrêt du sous-titrage",
+    description: "Assignez des boutons physiques ou des touches virtuelles pour déclencher et couper instantanément vos sessions de sous-titrage en direct."
+  },
+  {
+    title: "Commandes de lecture et pause",
+    description: "Suspendez et reprenez la reconnaissance vocale pendant les pauses, les intermèdes musicaux ou les échanges informels."
+  },
+  {
+    title: "Retour d'état vers Companion",
+    description: "Transmet en temps réel le statut de la session à Companion pour que vos touches changent de couleur et signalent l'état actif."
+  },
+  {
+    title: "Affichage du dernier mot prononcé",
+    description: "Affiche le mot ou l'expression la plus récente directement sur l'écran LCD de votre touche Stream Deck pour un contrôle visuel immédiat."
+  },
+  {
+    title: "Sécurité sur boucle locale",
+    description: "Opère exclusivement en local sur la même machine que Bitfocus Companion : aucun passage par des serveurs distants ou le cloud."
+  },
+  {
+    title: "Automatisation de régie",
+    description: "Associez les fonctions de Zip Captions à vos macros de production complexes aux côtés des caméras et mélangeurs audio."
+  }
+];
+
+const specs = [
+  { label: "Surfaces de contrôle", value: "Prend en charge Elgato Stream Deck, Loupedeck et toute surface gérée par Bitfocus Companion." },
+  { label: "Configuration logicielle", value: "S'exécute aux côtés de Bitfocus Companion sur le même poste pour une communication directe et sécurisée." },
+  { label: "Touches tactiles", value: "Déclenchez, interrompez et reprenez vos sessions avec retour visuel dynamique par couleur sur chaque touche." },
+  { label: "Téléprompteur sur touche", value: "Présente les derniers mots transcrits sur l'écran miniature de votre Stream Deck pour garder vos repères visuels." }
+];
+---
+
+<ProductLayout
+  title="Extension Zip Captions Companion"
+  subtitle="Passerelle matérielle Bitfocus Companion"
+  description="Fait office de pont pour permettre à Bitfocus Companion de commander et de superviser un onglet Zip Captions actif. Intégrez le contrôle tactile de Bitfocus Companion avec Zip Captions directement sur votre machine de régie."
+  actions={[
+    { 
+      text: "Installer depuis le Chrome Web Store", 
+      url: "https://chromewebstore.google.com/detail/zip-captions-companion-ad/chcflkiceakimokommplmfpcpodabdcg", 
+      primary: true, 
+      external: true 
+    },
+    { text: "Ouvrir Zip Captions", url: "https://zipcaptions.app", external: true },
+    { text: "Centre d'aide", url: "https://help.zipcaptions.app", external: true }
+  ]}
+  capabilities={capabilities}
+  specs={specs}
+  ctaTitle="Prenez le contrôle tactile de votre sous-titrage direct"
+  ctaDescription="Pilotez votre régie de diffusion avec des commandes matérielles fiables pour Zip Captions."
+  ctaAction={{ 
+    text: "Obtenir l'extension sur le Chrome Web Store", 
+    url: "https://chromewebstore.google.com/detail/zip-captions-companion-ad/chcflkiceakimokommplmfpcpodabdcg", 
+    external: true 
+  }}
+>
+
+  <!-- Video Walkthrough & Feature Breakdown -->
+  <div class="space-y-12 mt-8">
+    <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div class="space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-bold font-heading text-midnight">
+          Contrôle matériel pour Zip Captions
+        </h2>
+        <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+          Établit une passerelle robuste pour permettre à Bitfocus Companion d'adresser des commandes et de lire l'état de transcription d'un onglet Zip Captions ouvert.
+        </p>
+        <div class="p-4 bg-amber-50 border border-amber-200 rounded-2xl text-xs sm:text-sm text-amber-900 font-medium">
+          <strong>Remarque :</strong> Cette extension doit s'exécuter sur le même ordinateur que votre instance Bitfocus Companion.
+        </div>
+        <div class="pt-2">
+          <h3 class="font-bold font-heading text-midnight mb-2">Commandes et états pris en charge :</h3>
+          <ul class="space-y-2 text-sm text-slate-700 font-medium">
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-sm bg-amethyst"></span>
+              Démarrer / Arrêter le sous-titrage
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-sm bg-amethyst"></span>
+              Pause / Reprise des sessions actives
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-sm bg-amethyst"></span>
+              Renvoyer l'état du sous-titrage vers Companion
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-sm bg-amethyst"></span>
+              Afficher le dernier mot sous-titré dans Companion
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="aspect-video rounded-2xl overflow-hidden border border-slate-200 shadow-md">
+        <iframe 
+          class="w-full h-full"
+          src="https://www.youtube.com/embed/xMFm8ToDeU4?si=yghqvetmTaj_MltP" 
+          title="Présentation vidéo" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+
+</ProductLayout>
