@@ -1,35 +1,134 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const testimonialSchema = [
+  {
+    "@type": "CollectionPage",
+    "@id": "https://zipsolutions.org/testimonial#webpage",
+    "url": "https://zipsolutions.org/testimonial",
+    "name": "Testimonials and Community Stories | Zip Solutions",
+    "description": "Hear directly from educators, faith communities, streamers, and accessibility specialists about the real-world impact of Zip Captions.",
+    "isPartOf": {
+      "@id": "https://zipsolutions.org/#website"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "itemReviewed": {
+          "@type": "SoftwareApplication",
+          "name": "Zip Captions",
+          "applicationCategory": "EducationalApplication, UtilitiesApplication",
+          "operatingSystem": "All modern web browsers"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Dr. Brian Friedlander",
+          "jobTitle": "Assistive Technology Specialist and Associate Professor of Education"
+        },
+        "reviewBody": "ZipCaptions is a free captioning tool that could be really helpful for students with language-based learning disabilities, auditory processing disabilities, or students who are hard of hearing.",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        }
+      },
+      {
+        "@type": "Review",
+        "itemReviewed": {
+          "@type": "SoftwareApplication",
+          "name": "Zip Captions",
+          "applicationCategory": "EducationalApplication"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Katie Fielding",
+          "jobTitle": "VSTE Coach of the Year and Educational Content Manager at Book Creator"
+        },
+        "reviewBody": "A really powerful way to live caption your class that supports all learners in your classroom: from ELL students, our emerging readers, and our hearing-impaired students.",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        }
+      },
+      {
+        "@type": "Review",
+        "itemReviewed": {
+          "@type": "SoftwareApplication",
+          "name": "Zip Captions",
+          "applicationCategory": "BroadcastApplication"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Kevin Bouwman",
+          "jobTitle": "AV Coordinator, Rock Valley First Reformed Church"
+        },
+        "reviewBody": "Zip Captions makes it very easy to add live open captions to our service broadcasts for our livestream and our leased cable tv channel. We also incorporate live open captions on our in-person presentation screen.",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        }
+      },
+      {
+        "@type": "Review",
+        "itemReviewed": {
+          "@type": "SoftwareApplication",
+          "name": "Zip Captions",
+          "applicationCategory": "AccessibilityApplication"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Tracey Green",
+          "jobTitle": "Teacher of the Deaf, Montreal Oral School for the Deaf"
+        },
+        "reviewBody": "The website can benefit many people, including those with ADHD or struggling with language. But for those with hearing loss, it empowers them. This fosters autonomy and independence, so you do not have to ask for help all the time.",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        }
+      }
+    ]
+  }
+];
 ---
 
 <BaseLayout 
-  title="Testimonials & Community Stories | Zip Solutions" 
-  description="Hear directly from educators, faith communities, streamers, and individuals about the real-world impact of Zip Captions and Zip Solutions."
+  title="Testimonials and Community Stories | Zip Solutions" 
+  description="Hear directly from educators, faith communities, streamers, and accessibility specialists about the real-world impact of Zip Captions."
+  schema={testimonialSchema}
 >
   <!-- Hero Section -->
   <section class="relative bg-gradient-to-b from-white via-alabaster to-slate-100 border-b border-slate-200/80 pt-16 pb-20 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto text-center">
-      <p class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading mb-4">
+      <span class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading block mb-4">
         Verified Community Stories
-      </p>
+      </span>
       <h1 class="text-3xl sm:text-5xl font-extrabold text-midnight font-heading tracking-tight leading-tight">
         Real Voices. Real Impact.
       </h1>
       <p class="mt-5 text-base sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
-        Don’t just take our word for it. Discover how Zip Captions and our accessibility tools empower worship communities, classrooms, live streamers, and families around the world.
+        Discover how Zip Captions and our accessibility tools empower worship communities, classrooms, live streamers, and civic organizations around the world.
       </p>
     </div>
   </section>
 
   <!-- Main Content -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 space-y-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 space-y-20">
 
     <!-- Featured Spotlight: Rock Valley First Reformed Church -->
     <section class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-10 lg:p-12">
-      <div class="flex items-center gap-2 mb-6">
-        <span class="text-xs font-bold uppercase tracking-wider text-amethyst font-heading">
-          Faith & Community Broadcast Spotlight
+      <div class="mb-6">
+        <span class="text-xs font-bold uppercase tracking-wider text-amethyst font-heading block mb-1">
+          Faith and Community Broadcast Spotlight
         </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-midnight">
+          Rock Valley First Reformed Church
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1">
+          Rock Valley, Iowa: Full-sanctuary screen captioning, live stream integration, and leased cable TV broadcast.
+        </p>
       </div>
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
@@ -38,36 +137,33 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="flex items-center gap-4">
             <img 
               src="/images/Kevin_Circle.png" 
-              alt="Kevin Bouwman" 
+              alt="Kevin Bouwman AV Coordinator Rock Valley First Reformed Church" 
               class="w-16 h-16 rounded-2xl object-cover border-2 border-purple-100 shadow-sm"
               loading="lazy"
             />
             <div>
-              <h2 class="text-lg sm:text-xl font-bold font-heading text-midnight">
+              <h3 class="text-lg sm:text-xl font-bold font-heading text-midnight">
                 Kevin Bouwman
-              </h2>
+              </h3>
               <p class="text-xs sm:text-sm text-slate-500">
-                Rock Valley First Reformed Church & Advisory Board Member
+                Community Broadcast Accessibility Lead and Advisory Board Member
               </p>
             </div>
           </div>
 
           <div class="relative pl-6 border-l-4 border-amethyst space-y-3">
-            <svg class="w-8 h-8 text-purple-200 mb-1 -ml-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-            </svg>
             <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
               "Zip Captions makes it very easy to add live open captions to our service broadcasts for our livestream and our leased cable tv channel. We also incorporate live open captions on our in-person presentation screen."
             </p>
             <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
-              "We have people with hearing loss who appreciate the captions and people without hearing loss who’ve said they find the captions helpful. The support team is very responsive when we needed help, and the development team has been very receptive to our feedback about how to improve and enhance the software."
+              "We have people with hearing loss who appreciate the captions and people without hearing loss who have said they find the captions helpful. The support team is very responsive when we needed help, and the development team has been very receptive to our feedback about how to improve and enhance the software."
             </p>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t border-slate-100">
             <div class="p-3 bg-alabaster rounded-xl border border-slate-200/70">
               <span class="block text-xs text-slate-500 font-medium">Distribution</span>
-              <strong class="text-xs text-midnight font-bold">Cable TV & Stream</strong>
+              <strong class="text-xs text-midnight font-bold">Cable TV and Stream</strong>
             </div>
             <div class="p-3 bg-alabaster rounded-xl border border-slate-200/70">
               <span class="block text-xs text-slate-500 font-medium">In-Person</span>
@@ -84,12 +180,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="lg:col-span-5 bg-gradient-to-br from-slate-50 to-purple-50/40 p-6 sm:p-8 rounded-2xl border border-purple-100/80 flex flex-col justify-between">
           <div>
             <div class="mb-4">
-              <span class="text-xs font-bold font-heading text-amethyst uppercase tracking-wider">
+              <span class="text-xs font-bold font-heading text-amethyst uppercase tracking-wider block">
                 Congregation Voice
               </span>
             </div>
             <p class="text-midnight text-base sm:text-lg font-medium italic leading-relaxed mb-6">
-              "When sound is available but not understood, it’s as if you are listening to a foreign language. With this closed caption I can follow the service and hear The Message. What a wonderful experience!"
+              "When sound is available but not understood, it is as if you are listening to a foreign language. With this closed caption I can follow the service and hear The Message. What a wonderful experience!"
             </p>
           </div>
           <div class="pt-4 border-t border-purple-200/60">
@@ -101,114 +197,228 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </section>
 
     <!-- Assistive Tech & Education Section -->
-    <section class="space-y-6">
+    <section class="space-y-8">
       <div class="border-b border-slate-200 pb-4">
+        <span class="text-xs font-bold font-mono text-teal-brand uppercase tracking-wider block mb-1">
+          Specialists and Classroom Evaluators
+        </span>
         <h2 class="text-2xl sm:text-3xl font-bold font-heading text-midnight">
-          Assistive Technology & Education Specialists
+          Assistive Technology and Education Leaders
         </h2>
         <p class="text-sm sm:text-base text-slate-600 mt-1">
-          How leading educators and assistive technology experts evaluate Zip Captions in academic and professional settings.
+          How leading educators, speech specialists, and assistive technology consultants evaluate Zip Captions in classrooms.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        <!-- Brian Friedlander Card -->
-        <div class="lg:col-span-7 bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-8">
-          <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
-            <div>
-              <span class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading block mb-1">
-                Expert Review & Demonstration
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+        
+        <!-- Card 1: Dr. Brian Friedlander -->
+        <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-8 flex flex-col justify-between hover:border-amethyst/50 transition-all">
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-teal-brand/10 text-teal-brand flex items-center justify-center font-bold font-heading text-lg shrink-0">
+                BF
+              </div>
+              <div>
+                <h3 class="text-lg font-bold font-heading text-midnight">
+                  Dr. Brian Friedlander
+                </h3>
+                <p class="text-xs text-slate-500">
+                  Assistive Technology Specialist and Professor of Education
+                </p>
+              </div>
+            </div>
+
+            <p class="text-slate-700 text-sm leading-relaxed">
+              "This is a free captioning tool that could be really helpful for students with language-based learning disabilities, auditory processing disabilities, or students who are hard of hearing. They can access ZipCaptions and have live captioning appear on their screen."
+            </p>
+
+            <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200/80 space-y-1.5">
+              <span class="text-xs font-bold text-teal-brand font-heading block">
+                AI Transcription Workflow
               </span>
-              <h3 class="text-xl font-bold font-heading text-midnight">
-                Dr. Brian Friedlander
-              </h3>
-              <p class="text-xs sm:text-sm text-slate-500">
-                Assistive Technology Specialist & Associate Professor of Education
+              <p class="text-xs text-slate-600 leading-relaxed">
+                "Another feature allows you to save the transcript and then take the transcript and run it through ChatGPT for summaries... looking at a higher level than what we have as standard closed captioning."
               </p>
             </div>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
             <a 
               href="https://www.linkedin.com/feed/update/urn:li:share:7298110392227016704" 
               target="_blank" 
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-alabaster hover:bg-slate-200/80 border border-slate-200 text-xs font-bold text-midnight transition-colors"
+              class="text-xs font-bold text-teal-brand hover:text-teal-700 transition-colors inline-flex items-center gap-1"
             >
-              <span>View on LinkedIn</span>
-              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
+              <span>Watch on LinkedIn</span>
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
             </a>
-          </div>
-
-          <!-- Responsive LinkedIn Embed -->
-          <div class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 flex justify-center p-2">
-            <iframe 
-              src="https://www.linkedin.com/embed/feed/update/urn:li:share:7298110392227016704" 
-              height="620" 
-              width="504" 
-              frameborder="0" 
-              allowfullscreen="" 
-              title="Dr. Brian Friedlander on LinkedIn"
-              class="w-full max-w-full rounded-xl"
-              loading="lazy"
-            ></iframe>
+            <span class="text-xs text-slate-400 font-medium">AssistiveTek</span>
           </div>
         </div>
 
-        <!-- Hadley Media Showcase -->
-        <div class="lg:col-span-5 bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-8 flex flex-col justify-between h-full">
-          <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-amethyst font-heading block mb-1">
-              Production & Accessibility Feature
-            </span>
-            <h3 class="text-xl font-bold font-heading text-midnight mb-2">
-              Hadley Media
-            </h3>
-            <p class="text-xs sm:text-sm text-slate-600 mb-6">
-              Showcasing practical accessibility workflows and real-time caption integration for modern media.
-            </p>
-
-            <div class="rounded-2xl border border-slate-200 overflow-hidden bg-slate-50 shadow-inner">
+        <!-- Card 2: Katie Fielding -->
+        <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-8 flex flex-col justify-between hover:border-amethyst/50 transition-all">
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
               <img 
-                src="/images/hadley.png" 
-                alt="Hadley Media Instagram Feature on Zip Captions" 
-                class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
+                src="/images/Katie_Circle.png" 
+                alt="Katie Fielding VSTE Coach of the Year and Accessibility Demo Slam Winner" 
+                class="w-12 h-12 rounded-2xl object-cover border border-purple-100 shadow-sm shrink-0"
                 loading="lazy"
               />
+              <div>
+                <h3 class="text-lg font-bold font-heading text-midnight">
+                  Katie Fielding
+                </h3>
+                <p class="text-xs text-slate-500">
+                  VSTE Coach of the Year and Educational Content Manager
+                </p>
+              </div>
+            </div>
+
+            <p class="text-slate-700 text-sm leading-relaxed">
+              "A really powerful way to live caption your class that supports all learners in your classroom: from ELL students, our emerging readers, and our hearing-impaired students."
+            </p>
+
+            <div class="p-3.5 bg-purple-50/50 rounded-xl border border-purple-100 space-y-1.5">
+              <span class="text-xs font-bold text-amethyst font-heading block">
+                UDL and Visual Flexibility
+              </span>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                "Lexend is a great font for our emerging readers who need special font support. And you can even change the colors and themes: that is what accessibility is all about, having choices for what we use."
+              </p>
             </div>
           </div>
 
-          <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-            <span>Featured on Instagram</span>
-            <span class="font-medium text-slate-700">Digital Accessibility Media</span>
+          <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
+            <a 
+              href="https://www.youtube.com/watch?v=u2wNoSQz0Zk" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="text-xs font-bold text-teal-brand hover:text-teal-700 transition-colors inline-flex items-center gap-1"
+            >
+              <span>Watch VSTE Demo on YouTube</span>
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
+            <span class="text-xs text-slate-400 font-medium">VSTE Demo Slam Winner</span>
           </div>
+        </div>
+
+        <!-- Card 3: Tracey Green -->
+        <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-8 flex flex-col justify-between hover:border-amethyst/50 transition-all">
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <img 
+                src="/images/Tracey_Circle.png" 
+                alt="Tracey Green Teacher of the Deaf Montreal Oral School for the Deaf" 
+                class="w-12 h-12 rounded-2xl object-cover border border-purple-100 shadow-sm shrink-0"
+                loading="lazy"
+              />
+              <div>
+                <h3 class="text-lg font-bold font-heading text-midnight">
+                  Tracey Green
+                </h3>
+                <p class="text-xs text-slate-500">
+                  Teacher of the Deaf, Montreal Oral School for the Deaf
+                </p>
+              </div>
+            </div>
+
+            <p class="text-slate-700 text-sm leading-relaxed">
+              "The website can benefit many people, including those with attention-deficit hyperactivity disorder or who are struggling to understand French or English."
+            </p>
+
+            <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200/80 space-y-1.5">
+              <span class="text-xs font-bold text-slate-700 font-heading block">
+                Dignity and Independence
+              </span>
+              <p class="text-xs text-slate-600 leading-relaxed italic">
+                "For those with hearing loss, it empowers them. This fosters autonomy and independence, so you do not have to ask for help all the time."
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
+            <a 
+              href="/press" 
+              class="text-xs font-bold text-teal-brand hover:text-teal-700 transition-colors inline-flex items-center gap-1"
+            >
+              <span>Featured in Inspirations</span>
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+            </a>
+            <span class="text-xs text-slate-400 font-medium">MOSD / Résonance</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Civic Accessibility & Senior Engagement Showcase -->
+    <section class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-7 space-y-4">
+          <span class="text-xs font-bold uppercase tracking-wider text-amethyst font-heading block">
+            Civic Inclusion and Municipal Government
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-midnight">
+            Hadley Media and Senior Center
+          </h2>
+          <p class="text-xs font-semibold text-slate-500 font-heading">
+            Coffee with a Cop Live Event (Hadley, Massachusetts)
+          </p>
+          <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+            Hadley Media utilized Zip Captions on laptops during public meetings at the Hadley Senior Center to ensure municipal and police information was directly readable for hearing-impaired residents:
+          </p>
+          <blockquote class="border-l-4 border-amethyst pl-4 py-2 text-sm text-slate-700 italic bg-purple-50/30 rounded-r-xl">
+            "Hadley Media was at the Senior Center today for Coffee with a Cop with Lt. Mitch Kuc to provide captioning for residents who are hearing impaired. Using a free app called Zip Captions, we are able to provide another way for residents to participate in events going on in town. Everyone deserves equitable access no matter who you are."
+          </blockquote>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="rounded-2xl border border-slate-200 overflow-hidden bg-slate-50 shadow-sm">
+            <img 
+              src="/images/hadley.png" 
+              alt="Hadley Media laptop setup running Zip Captions at the Hadley Senior Center Coffee with a Cop event" 
+              class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+            />
+          </div>
+          <p class="text-xs text-slate-400 mt-2 text-center">
+            Zip Captions active during senior public forum in Hadley, MA
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Community & Creator Quotes Grid -->
-    <section class="space-y-6">
+    <!-- Broadcasters, Live Streamers & Community Engineers Grid -->
+    <section class="space-y-8">
       <div class="border-b border-slate-200 pb-4">
+        <span class="text-xs font-bold font-mono text-amethyst uppercase tracking-wider block mb-1">
+          Open Source and Broadcast Engineers
+        </span>
         <h2 class="text-2xl sm:text-3xl font-bold font-heading text-midnight">
-          Broadcasters, Creators & Streamers
+          Broadcasters, Streamers and Community Engineers
         </h2>
         <p class="text-sm sm:text-base text-slate-600 mt-1">
-          Simple real-time setup for OBS, live streams, and community events.
+          Simple real-time setup for OBS Studio, vMix, video switchers, and live streams across sports, gaming, and tech forums.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
         <!-- Chicago Knockouts / Necrohell -->
         <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-8 flex flex-col justify-between">
           <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-bold font-heading text-slate-500 uppercase tracking-wider">
-                Live Stream Integration
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-bold font-mono text-slate-600 uppercase tracking-wider">
+                Live Stream Broadcast
               </span>
               <a 
-                href="https://bsky.app" 
+                href="https://bsky.app/profile/necrohell.bsky.social/post/3m4ofld4pus2m" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                class="text-xs text-slate-400 hover:text-midnight font-medium"
+                class="text-slate-400 hover:text-midnight font-medium"
               >
                 Bluesky
               </a>
@@ -224,22 +434,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <p class="font-bold text-sm text-midnight font-heading">The Goat of Menendez</p>
               <p class="text-xs text-slate-500 font-mono">@necrohell.bsky.social</p>
             </div>
-            <span class="text-xs font-semibold text-slate-400">Chicago Knockouts</span>
+            <span class="text-xs font-semibold text-slate-400">Chicago Knockouts Roller Derby</span>
           </div>
         </div>
 
         <!-- Mia -->
         <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-8 flex flex-col justify-between">
           <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-bold font-heading text-amethyst uppercase tracking-wider">
-                User Love
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-bold font-mono text-amethyst uppercase tracking-wider">
+                Inclusive EdTech
               </span>
               <a 
                 href="https://bsky.app/profile/techmia.bsky.social" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                class="text-xs text-amethyst hover:text-midnight font-medium"
+                class="text-amethyst hover:text-midnight font-medium"
               >
                 @techmia.bsky.social
               </a>
@@ -250,14 +460,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </p>
             
             <p class="text-slate-600 text-sm leading-relaxed">
-              Real-time, zero-friction live captioning right inside the browser that just works when you need it most.
+              "No ads, just accessibility." Real-time, zero-friction live captioning right inside the browser that works when you need it most.
             </p>
           </div>
 
           <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
             <div>
               <p class="font-bold text-sm text-midnight font-heading">Mia</p>
-              <p class="text-xs text-slate-500">Tech & Accessibility Enthusiast</p>
+              <p class="text-xs text-slate-500">Tech and Accessibility Enthusiast</p>
             </div>
             <a 
               href="https://bsky.app/profile/techmia.bsky.social" 
@@ -265,14 +475,98 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               rel="noopener noreferrer"
               class="text-xs text-slate-500 hover:text-midnight font-mono"
             >
-              techmia.bsky.social ↗
+              techmia.bsky.social
             </a>
+          </div>
+        </div>
+
+        <!-- Reddit r/deaf Community -->
+        <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-8 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-bold font-mono text-slate-600 uppercase tracking-wider">
+                Deaf Community Recommendation
+              </span>
+              <span class="text-slate-400 font-medium">Reddit r/deaf</span>
+            </div>
+
+            <p class="text-slate-800 text-sm sm:text-base leading-relaxed">
+              "There is zipcaptions.app. It works really well, uses Google's API, lots of neat features and completely free... came about after WebCaptioner was sunset."
+            </p>
+
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Recommended across multiple community threads as the go-to WebCaptioner replacement for connecting auxiliary patch cables and streaming speech to text.
+            </p>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
+            <div>
+              <p class="font-bold text-sm text-midnight font-heading">u/surdophobe</p>
+              <p class="text-xs text-slate-500">Active Contributor, r/deaf</p>
+            </div>
+            <span class="text-xs font-semibold text-slate-400">Speech to Text Solutions</span>
+          </div>
+        </div>
+
+        <!-- Broadcast Engineers r/VIDEOENGINEERING -->
+        <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-8 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-bold font-mono text-teal-brand uppercase tracking-wider">
+                Video Engineering Forum
+              </span>
+              <span class="text-slate-400 font-medium">r/VIDEOENGINEERING</span>
+            </div>
+
+            <p class="text-slate-800 text-sm sm:text-base leading-relaxed">
+              "Just cause I have not seen it recommended yet, but also because you did not list too many requirements: https://zipcaptions.app/."
+            </p>
+
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Recommended by live production and video switcher engineers looking for low-latency browser feeds to display on live event stage monitors and video switchers.
+            </p>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
+            <div>
+              <p class="font-bold text-sm text-midnight font-heading">Live Production Engineers</p>
+              <p class="text-xs text-slate-500">r/VIDEOENGINEERING Community</p>
+            </div>
+            <span class="text-xs font-semibold text-slate-400">Live Event AV</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- OBS Ecosystem Stats Block -->
+      <div class="bg-slate-900 rounded-3xl p-6 sm:p-8 text-white border border-slate-800">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
+          <div>
+            <span class="text-xs font-bold font-mono text-teal-brand uppercase tracking-wider block mb-1">
+              OBS Forum Resource
+            </span>
+            <p class="text-2xl sm:text-3xl font-extrabold font-heading text-white">2,780+ Downloads</p>
+            <p class="text-xs text-slate-400 mt-1">Official OBS Project live captioning resource with 11,490+ views</p>
+          </div>
+          <div>
+            <span class="text-xs font-bold font-mono text-teal-brand uppercase tracking-wider block mb-1">
+              Hardware Automation
+            </span>
+            <p class="text-2xl sm:text-3xl font-extrabold font-heading text-white">Bitfocus Companion</p>
+            <p class="text-xs text-slate-400 mt-1">Official module for Elgato Stream Deck and production switcher automation</p>
+          </div>
+          <div>
+            <span class="text-xs font-bold font-mono text-teal-brand uppercase tracking-wider block mb-1">
+              Browser Extensions
+            </span>
+            <p class="text-2xl sm:text-3xl font-extrabold font-heading text-white">840+ Active Users</p>
+            <p class="text-xs text-slate-400 mt-1">Chrome Web Store extensions for vMix and persistent screen overlays</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Share Your Story CTA -->
+    <!-- Share Your Story CTA (Zero Pills) -->
     <section class="bg-midnight rounded-3xl p-8 sm:p-12 text-white text-center shadow-xl relative overflow-hidden">
       <div class="max-w-2xl mx-auto space-y-4">
         <span class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading block">
@@ -282,7 +576,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           Using Zip Solutions in Your Organization?
         </h2>
         <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-          Whether you’re an educator using EasySpeak, a house of worship running Zip Captions, or a broadcaster using Zip vMix, we’d love to hear how our tools are making a difference.
+          Whether you are an educator using EasySpeak, a house of worship running Zip Captions, or a broadcaster using Zip vMix, we would love to hear how our tools are making a difference.
         </p>
         <div class="pt-4 flex flex-wrap justify-center gap-4">
           <a 

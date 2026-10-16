@@ -1,9 +1,64 @@
 ---
 import ProductLayout from '../layouts/ProductLayout.astro';
 
+const zipCaptionsSchema = {
+  "@type": "SoftwareApplication",
+  "name": "Zip Captions",
+  "description": "Free, browser-based real-time speech-to-text live captioning for classrooms, places of worship, conferences, and live streaming.",
+  "applicationCategory": "EducationalApplication, UtilitiesApplication, MultimediaApplication",
+  "operatingSystem": "All (Web, Windows, macOS, Linux, ChromeOS, iOS, Android)",
+  "url": "https://zipsolutions.org/zipcaptions",
+  "award": [
+    "University of Portsmouth 2025 Alumni Impact Award Winner",
+    "Virginia Society for Technology in Education (VSTE) Accessibility Demo Slam Winner"
+  ],
+  "funder": [
+    {
+      "@type": "Organization",
+      "name": "Dell Technologies Education Canada Innovation Accelerator"
+    },
+    {
+      "@type": "Organization",
+      "name": "Microsoft for Startups Founders Hub"
+    }
+  ],
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Dr. Brian Friedlander"
+      },
+      "reviewBody": "ZipCaptions is a free captioning tool that could be really helpful for students with language-based learning disabilities, auditory processing disabilities, or students who are hard of hearing."
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Tracey Green"
+      },
+      "reviewBody": "For those with hearing loss, it empowers them. This fosters autonomy and independence, so you do not have to ask for help all the time."
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Kevin Bouwman"
+      },
+      "reviewBody": "Zip Captions makes it very easy to add live open captions to our service broadcasts for our livestream and our leased cable tv channel."
+    }
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "0.00",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  }
+};
+
 const capabilities = [
   {
-    title: "100% Free & Browser-Based",
+    title: "100% Free and Browser-Based",
     description: "No subscription, software installation, or sign-up required. Works directly in any modern browser on desktop, tablet, and mobile."
   },
   {
@@ -11,19 +66,19 @@ const capabilities = [
     description: "Share live captions with remote viewers anywhere in the world using static share codes on their personal devices."
   },
   {
-    title: "Private & On-Device Storage",
-    description: "Your transcripts stay in your browser—never saved on external servers. Full privacy for schools, healthcare, and boardrooms."
+    title: "Private and On-Device Storage",
+    description: "Your transcripts stay in your browser and are never saved on external servers. Full privacy for schools, healthcare, and boardrooms."
   },
   {
-    title: "OBS & Stream Integration",
-    description: "Connect via WebSockets directly into OBS Studio and vMix to overlay captions onto your live streams in real-time."
+    title: "OBS and Stream Integration",
+    description: "Connect via WebSockets directly into OBS Studio and vMix to overlay captions onto your live streams in real time."
   },
   {
     title: "Instant Exporting",
-    description: "Save transcripts instantly formatted as industry-standard SRT, VTT, or plain text files ready for video post-production."
+    description: "Save transcripts instantly formatted as industry-standard SRT, VTT, or plain text files ready for AI summaries and video post-production."
   },
   {
-    title: "Multi-Language & Dialects",
+    title: "Multi-Language and Dialects",
     description: "Support for dozens of languages and regional dialects, plus optional AI-powered transcription for unmatched precision."
   }
 ];
@@ -52,9 +107,10 @@ const specs = [
   ctaTitle="Experience effortless live captioning"
   ctaDescription="Start captioning your classroom, meeting, church service, or livestream in seconds with no setup required."
   ctaAction={{ text: "Launch Zip Captions Free", url: "https://zipcaptions.app", external: true }}
+  schema={zipCaptionsSchema}
 >
   
-  <!-- Mission & Architecture Overview (Connecting from Homepage) -->
+  <!-- Mission & Architecture Overview (Zero Pills) -->
   <div class="bg-gradient-to-br from-slate-900 via-midnight to-slate-950 rounded-3xl p-8 sm:p-12 text-white border border-slate-800 shadow-xl mt-8">
     <div class="max-w-3xl space-y-4">
       <span class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading block">
@@ -80,6 +136,82 @@ const specs = [
           <p class="text-xs text-slate-400 leading-relaxed">Audio is processed transiently and transcripts are held locally in your browser memory.</p>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- Award-Winning Recognition & Social Proof Grid (Zero Pills) -->
+  <div class="mt-12 bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-10 space-y-8">
+    <div class="border-b border-slate-100 pb-4">
+      <span class="text-xs font-bold font-mono text-amethyst uppercase tracking-wider block mb-1">
+        Recognized for Educational Impact
+      </span>
+      <h2 class="text-2xl sm:text-3xl font-bold font-heading text-midnight">
+        Award-Winning Accessibility, Backed by Educators
+      </h2>
+      <p class="text-xs sm:text-sm text-slate-600 mt-1">
+        Celebrated by universities, school boards, and assistive technology consultants worldwide.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Award 1: Portsmouth -->
+      <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-3 flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-bold font-mono text-amethyst uppercase tracking-wider block">
+            Higher Ed Innovation
+          </span>
+          <h3 class="text-base font-bold font-heading text-midnight mt-1">
+            2025 Alumni Impact Award
+          </h3>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            University of Portsmouth Student Impact Awards honored Zip Captions for revolutionizing accessibility in education, aiding over 1,500 users worldwide.
+          </p>
+        </div>
+        <a href="/press" class="text-xs font-bold text-teal-brand hover:text-teal-700 transition-colors inline-flex items-center gap-1 pt-2">
+          <span>Read Award Citation &rarr;</span>
+        </a>
+      </div>
+
+      <!-- Award 2: VSTE Demo Slam -->
+      <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-3 flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-bold font-mono text-teal-brand uppercase tracking-wider block">
+            VSTE Winner
+          </span>
+          <h3 class="text-base font-bold font-heading text-midnight mt-1">
+            Accessibility Demo Slam
+          </h3>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Winning presentation by Katie Fielding (Book Creator) showcasing Lexend font support and dark mode contrast for emerging readers and deaf students.
+          </p>
+        </div>
+        <a href="/testimonial" class="text-xs font-bold text-teal-brand hover:text-teal-700 transition-colors inline-flex items-center gap-1 pt-2">
+          <span>Watch Showcase &rarr;</span>
+        </a>
+      </div>
+
+      <!-- Endorsement 3: Classroom Autonomy -->
+      <div class="p-5 rounded-2xl bg-purple-50/40 border border-purple-100 space-y-3 flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-bold font-mono text-amethyst uppercase tracking-wider block">
+            Teacher of the Deaf
+          </span>
+          <h3 class="text-base font-bold font-heading text-midnight mt-1">
+            Student Independence
+          </h3>
+          <p class="text-xs text-slate-700 mt-2 italic leading-relaxed">
+            "For those with hearing loss, it empowers them. This fosters autonomy and independence, so you do not have to ask for help all the time."
+          </p>
+          <p class="text-xs text-slate-500 font-semibold mt-1">
+            : Tracey Green, MOSD
+          </p>
+        </div>
+        <a href="/press" class="text-xs font-bold text-amethyst hover:text-amethyst-dark transition-colors inline-flex items-center gap-1 pt-2">
+          <span>Featured in Inspirations &rarr;</span>
+        </a>
+      </div>
+
     </div>
   </div>
 
@@ -125,13 +257,13 @@ const specs = [
       </div>
       <div class="order-1 lg:order-2 space-y-4">
         <h2 class="text-2xl font-bold font-heading text-midnight">
-          Transcribe & Archive Your Words
+          Transcribe and Archive Your Words
         </h2>
         <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
           Whether you need meeting minutes, lecture transcripts, or study notes, Zip Captions creates continuous transcripts stored securely in local browser memory.
         </p>
         <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
-          When your session finishes, download your transcription in standard subtitle formats (SRT, VTT) or plain text with one click.
+          When your session finishes, download your transcription in standard subtitle formats (SRT, VTT) or plain text with one click, or export into AI tools like ChatGPT or NotebookLM for instant study summaries.
         </p>
       </div>
     </div>
@@ -143,10 +275,10 @@ const specs = [
           Native Live Streaming with OBS Studio
         </h2>
         <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
-          Integrate directly with OBS Studio using WebSockets. Captions appear automatically on your live stream stream output with zero latency.
+          Integrate directly with OBS Studio using WebSockets. Captions appear automatically on your live stream output with zero latency.
         </p>
         <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
-          Reach deaf and hard-of-hearing viewers on Twitch, YouTube Live, and Facebook Gaming effortlessly.
+          Reach deaf and hard-of-hearing viewers on Twitch, YouTube Live, and social streams effortlessly, with full support for hardware switchers via Bitfocus Companion.
         </p>
       </div>
       <div class="aspect-video rounded-2xl overflow-hidden border border-slate-200 shadow-md">
@@ -186,7 +318,7 @@ const specs = [
       </ul>
       <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4 text-sm font-semibold">
         <a href="https://help.zipcaptions.app" target="_blank" rel="noopener noreferrer" class="text-amethyst hover:text-amethyst-dark inline-flex items-center gap-1">
-          <span>See what's new and get help with Zip Captions &rarr;</span>
+          <span>See what is new and get help with Zip Captions &rarr;</span>
         </a>
         <a href="/pricing" class="text-teal-brand hover:text-teal-dark inline-flex items-center gap-1">
           <span>Check out our Pricing for AI based captions &rarr;</span>

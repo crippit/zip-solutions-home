@@ -33,6 +33,7 @@ interface Props {
   ctaTitle?: string;
   ctaDescription?: string;
   ctaAction?: ActionButton;
+  schema?: any;
 }
 
 const {
@@ -49,9 +50,10 @@ const {
   ctaTitle = "Ready to get started?",
   ctaDescription = "Join thousands of users making communication more accessible today.",
   ctaAction,
+  schema,
 } = Astro.props;
 
-const softwareSchema = {
+const softwareSchema = schema || {
   "@type": "SoftwareApplication",
   "name": title,
   "description": description,

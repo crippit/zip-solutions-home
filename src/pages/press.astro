@@ -1,10 +1,83 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pressSchema = [
+  {
+    "@type": "CollectionPage",
+    "@id": "https://zipsolutions.org/press#webpage",
+    "url": "https://zipsolutions.org/press",
+    "name": "In the Press and Awards | Zip Solutions",
+    "description": "Explore institutional awards, featured news coverage, magazine articles, and media reports about Zip Captions and accessible educational technology.",
+    "isPartOf": {
+      "@id": "https://zipsolutions.org/#website"
+    },
+    "about": [
+      {
+        "@type": "Award",
+        "name": "University of Portsmouth Alumni Impact Award 2025",
+        "description": "Celebrating alumni who have shown exceptional leadership, innovation, and community service. Awarded to Chris Webb for creating Zip Captions.",
+        "funder": {
+          "@type": "EducationalOrganization",
+          "name": "University of Portsmouth",
+          "url": "https://www.port.ac.uk"
+        }
+      },
+      {
+        "@type": "Award",
+        "name": "Virginia Society for Technology in Education (VSTE) Accessibility Demo Slam Winner",
+        "description": "Winning presentation by Katie Fielding demonstrating how Zip Captions supports inclusive classrooms and emerging readers."
+      }
+    ],
+    "hasPart": [
+      {
+        "@type": "NewsArticle",
+        "headline": "Live captioning web tool available free for those with hearing loss",
+        "publisher": {
+          "@type": "Organization",
+          "name": "English Montreal School Board (Inspirations Newspaper)"
+        },
+        "url": "https://az184419.vo.msecnd.net/emsb/inspirations/editions/inspirations-news-s24-webfinal-v2.pdf",
+        "inLanguage": "en"
+      },
+      {
+        "@type": "NewsArticle",
+        "headline": "Zipping Through Barriers to Inclusive Learning with Zip Captions",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Lester B. Pearson School Board (The Pearson News)"
+        },
+        "url": "https://pearsonnews.ca/zipping-through-barriers-to-inclusive-learning-with-zip-captions/",
+        "inLanguage": "en"
+      },
+      {
+        "@type": "Article",
+        "headline": "Hear Entendre Québec Magazine Feature",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Hear Entendre Québec"
+        },
+        "url": "https://hearhear.org/wp-content/uploads/2024/08/Fall-2024-Magazine-web-1.pdf",
+        "inLanguage": "en"
+      },
+      {
+        "@type": "Article",
+        "headline": "Un nouvel outil de sous-titrage en direct",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Audition Québec"
+        },
+        "url": "https://auditionquebec.org/un-nouvel-outil-de-sous-titrage-en-direct/",
+        "inLanguage": "fr"
+      }
+    ]
+  }
+];
 ---
 
 <BaseLayout 
-  title="In the Press | Zip Solutions" 
-  description="Explore featured news coverage, magazine articles, and media reports about Zip Captions and accessible educational technology."
+  title="In the Press and Awards | Zip Solutions" 
+  description="Explore institutional awards, featured news coverage, magazine articles, and media reports about Zip Captions and accessible educational technology."
+  schema={pressSchema}
 >
   <!-- Hero Section -->
   <section class="relative bg-gradient-to-b from-white via-alabaster to-slate-100 border-b border-slate-200/80 pt-16 pb-16 px-4 sm:px-6 lg:px-8">
@@ -15,7 +88,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           href="/press" 
           class="px-5 py-2 rounded-lg text-xs font-bold font-heading bg-white text-midnight shadow-sm"
         >
-          Featured News Coverage
+          Awards and News Coverage
         </a>
         <a 
           href="/pressrelease" 
@@ -26,254 +99,395 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
 
       <h1 class="text-3xl sm:text-5xl font-extrabold text-midnight font-heading tracking-tight leading-tight">
-        Zip Solutions in the News
+        Honors, Awards and News Coverage
       </h1>
       <p class="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-        Discover articles, interviews, and deep dives exploring our open-source accessibility tools, school district deployments, and real-time captioning innovations in English and French.
+        Discover articles, independent reviews, and institutional awards recognizing Zip Captions, our school district partnerships, and real-time accessibility innovations in English and French.
       </p>
     </div>
   </section>
 
-  <!-- Media Coverage Grid -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 space-y-16">
+  <!-- Main Content Area -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 space-y-20">
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+    <!-- Section 1: Honors & Institutional Accolades (Zero Pills) -->
+    <section class="space-y-8">
+      <div class="border-b border-slate-200 pb-4">
+        <span class="text-xs font-bold font-mono text-amethyst uppercase tracking-wider block mb-1">
+          Peer and Institutional Recognition
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-midnight">
+          Awards and Honors
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 mt-1">
+          Formal recognition from higher education institutions and educational technology organizations.
+        </p>
+      </div>
 
-      <!-- Article 1: Inspirations Newspaper -->
-      <article class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-amethyst/50 transition-all group">
-        <div>
-          <a 
-            href="https://az184419.vo.msecnd.net/emsb/inspirations/editions/inspirations-news-s24-webfinal-v2.pdf" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="block overflow-hidden bg-slate-100 border-b border-slate-100 relative aspect-[16/10]"
-          >
-            <img 
-              src="/images/inspirations.png" 
-              alt="English Montreal School Board Inspirations Newspaper Spring 2024 Feature" 
-              class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
-              loading="lazy"
-            />
-          </a>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
 
-          <div class="p-6 sm:p-8 space-y-4">
-            <div class="flex items-center justify-between text-xs">
-              <span class="font-bold font-mono text-slate-600 uppercase tracking-wider">
-                Spring 2024 Edition
-              </span>
-              <span class="font-medium text-slate-500">English</span>
-            </div>
-
-            <h2 class="text-xl sm:text-2xl font-bold font-heading text-midnight group-hover:text-amethyst transition-colors">
-              English Montreal School Board (EMSB)
-            </h2>
-
-            <p class="text-xs font-semibold text-slate-500 font-heading">
-              Inspirations Newspaper: Special Needs Community
-            </p>
-
-            <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Featured in Inspirations Newspaper, Quebec's premier publication for the special needs community, spotlighting how Zip Captions levels the playing field for students with hearing and auditory processing needs.
-            </p>
-          </div>
-        </div>
-
-        <div class="p-6 sm:p-8 pt-0">
-          <a 
-            href="https://az184419.vo.msecnd.net/emsb/inspirations/editions/inspirations-news-s24-webfinal-v2.pdf" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 text-sm font-bold text-teal-brand hover:text-teal-700 transition-colors"
-          >
-            <span>Read Original Newspaper (PDF)</span>
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </a>
-        </div>
-      </article>
-
-      <!-- Article 2: Pearson News -->
-      <article class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-amethyst/50 transition-all group">
-        <div>
-          <a 
-            href="https://pearsonnews.ca/zipping-through-barriers-to-inclusive-learning-with-zip-captions/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="block overflow-hidden bg-slate-100 border-b border-slate-100 relative aspect-[16/10]"
-          >
-            <img 
-              src="/images/pearson.png" 
-              alt="Pearson News Feature: Zipping through barriers to inclusive learning with Zip Captions" 
-              class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
-              loading="lazy"
-            />
-          </a>
-
-          <div class="p-6 sm:p-8 space-y-4">
-            <div class="flex items-center justify-between text-xs">
-              <span class="font-bold font-mono text-amethyst uppercase tracking-wider">
-                District Spotlight
-              </span>
-              <span class="font-medium text-slate-500">English</span>
-            </div>
-
-            <h2 class="text-xl sm:text-2xl font-bold font-heading text-midnight group-hover:text-amethyst transition-colors">
-              Zipping Through Barriers to Inclusive Learning
-            </h2>
-
-            <p class="text-xs font-semibold text-slate-500 font-heading">
-              Lester B. Pearson School Board — Pearson News
-            </p>
-
-            <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-              An in-depth article discussing the real-world deployment of Zip Captions in elementary and high school classrooms to support inclusive learning and universal design for learning (UDL).
-            </p>
-          </div>
-        </div>
-
-        <div class="p-6 sm:p-8 pt-0">
-          <a 
-            href="https://pearsonnews.ca/zipping-through-barriers-to-inclusive-learning-with-zip-captions/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 text-sm font-bold text-teal-brand hover:text-teal-700 transition-colors"
-          >
-            <span>Read Pearson News Article</span>
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </a>
-        </div>
-      </article>
-
-      <!-- Article 3: Hear Entendre Quebec -->
-      <article class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-amethyst/50 transition-all group">
-        <div>
-          <a 
-            href="https://hearhear.org/wp-content/uploads/2024/08/Fall-2024-Magazine-web-1.pdf" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="block overflow-hidden bg-slate-100 border-b border-slate-100 p-3"
-          >
-            <div class="grid grid-cols-2 gap-2 aspect-[16/10] overflow-hidden rounded-xl">
+        <!-- Award Card 1: University of Portsmouth -->
+        <article class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-amethyst/50 transition-all group">
+          <div class="p-6 sm:p-8 space-y-5">
+            <div class="flex items-center gap-4">
               <img 
-                src="/images/hear-pg1.png" 
-                alt="Hear Entendre Quebec Magazine Page 1" 
+                src="/images/Chris_Circle.png" 
+                alt="Chris Webb recipient of University of Portsmouth 2025 Alumni Impact Award" 
+                class="w-16 h-16 rounded-2xl object-cover border-2 border-purple-100 shadow-sm shrink-0"
+                loading="lazy"
+              />
+              <div>
+                <span class="text-xs font-bold font-mono text-amethyst uppercase tracking-wider block">
+                  Higher Education Award (May 2025)
+                </span>
+                <h3 class="text-lg sm:text-xl font-bold font-heading text-midnight group-hover:text-amethyst transition-colors">
+                  University of Portsmouth
+                </h3>
+                <p class="text-xs text-slate-500 font-medium">
+                  Student Impact Awards: Alumni Impact Award Winner
+                </p>
+              </div>
+            </div>
+
+            <div class="space-y-3 pt-2">
+              <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+                Celebrating alumni who have demonstrated exceptional leadership, innovation, and service in their field. Co-founder Chris Webb was honored for revolutionizing accessibility in education with Zip Captions.
+              </p>
+              <blockquote class="border-l-4 border-amethyst pl-4 py-1 text-xs sm:text-sm text-slate-600 italic bg-purple-50/40 rounded-r-xl">
+                "Chris Webb has revolutionized accessibility in education with his creation, Zip Captions: an open-source tool providing real-time captioning and transcription aiding over 1,500 users worldwide."
+              </blockquote>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-8 pt-0">
+            <a 
+              href="https://myport.port.ac.uk/news-events-and-blogs/news/students-contribution-to-the-community-celebrated-at-the-2025-student-impact-awards" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-sm font-bold text-teal-brand hover:text-teal-700 transition-colors"
+            >
+              <span>Read University Announcement</span>
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Award Card 2: VSTE Accessibility Demo Slam -->
+        <article class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-amethyst/50 transition-all group">
+          <div class="p-6 sm:p-8 space-y-5">
+            <div class="flex items-center gap-4">
+              <img 
+                src="/images/Katie_Circle.png" 
+                alt="Katie Fielding VSTE Coach of the Year and Accessibility Demo Slam Winner" 
+                class="w-16 h-16 rounded-2xl object-cover border-2 border-teal-100 shadow-sm shrink-0"
+                loading="lazy"
+              />
+              <div>
+                <span class="text-xs font-bold font-mono text-teal-brand uppercase tracking-wider block">
+                  EdTech Presentation Winner
+                </span>
+                <h3 class="text-lg sm:text-xl font-bold font-heading text-midnight group-hover:text-amethyst transition-colors">
+                  VSTE Accessibility Demo Slam
+                </h3>
+                <p class="text-xs text-slate-500 font-medium">
+                  Virginia Society for Technology in Education
+                </p>
+              </div>
+            </div>
+
+            <div class="space-y-3 pt-2">
+              <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+                Presented by Katie Fielding (Educational Content Manager at Book Creator and 2018/2019 VSTE Coach of the Year), demonstrating how Zip Captions supports emerging readers, English Language Learners, and hearing-impaired students in classrooms with Lexend font options and high-contrast styling.
+              </p>
+              <blockquote class="border-l-4 border-teal-brand pl-4 py-1 text-xs sm:text-sm text-slate-600 italic bg-teal-50/40 rounded-r-xl">
+                "A really powerful way to live caption your class that supports all learners in your classroom: from ELL students, our emerging readers, and our hearing-impaired students."
+              </blockquote>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-8 pt-0">
+            <a 
+              href="https://www.youtube.com/watch?v=u2wNoSQz0Zk" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-sm font-bold text-teal-brand hover:text-teal-700 transition-colors"
+            >
+              <span>Watch Winning Demo Slam on YouTube</span>
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Section 2: Media Coverage Grid -->
+    <section class="space-y-8">
+      <div class="border-b border-slate-200 pb-4">
+        <span class="text-xs font-bold font-mono text-slate-600 uppercase tracking-wider block mb-1">
+          Publications and Case Studies
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-midnight">
+          Featured Press Articles
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 mt-1">
+          Read in-depth articles published across school districts, provincial associations, and regional accessibility magazines.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+
+        <!-- Article 1: Inspirations Newspaper -->
+        <article class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-amethyst/50 transition-all group">
+          <div>
+            <a 
+              href="https://az184419.vo.msecnd.net/emsb/inspirations/editions/inspirations-news-s24-webfinal-v2.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="block overflow-hidden bg-slate-100 border-b border-slate-100 relative aspect-[16/10]"
+            >
+              <img 
+                src="/images/inspirations.png" 
+                alt="English Montreal School Board Inspirations Newspaper Spring 2024 Feature on Zip Captions" 
                 class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                 loading="lazy"
               />
+            </a>
+
+            <div class="p-6 sm:p-8 space-y-4">
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-bold font-mono text-slate-600 uppercase tracking-wider">
+                  Spring 2024 Edition
+                </span>
+                <span class="font-medium text-slate-500">English</span>
+              </div>
+
+              <h3 class="text-xl sm:text-2xl font-bold font-heading text-midnight group-hover:text-amethyst transition-colors">
+                English Montreal School Board (EMSB)
+              </h3>
+
+              <p class="text-xs font-semibold text-slate-500 font-heading">
+                Inspirations Newspaper: Special Needs Community (Sue Montgomery)
+              </p>
+
+              <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                Featured in Inspirations Newspaper, Quebec's premier publication for the special needs community, spotlighting how Zip Captions was built from classroom need through the Dell Canada Innovation Accelerator.
+              </p>
+
+              <blockquote class="border-l-4 border-amethyst pl-4 py-1 text-xs sm:text-sm text-slate-700 italic bg-slate-50 rounded-r-xl">
+                "The website can benefit many people, including those with ADHD or struggling with language. But for those with hearing loss, it empowers them. This fosters autonomy and independence, so you do not have to ask for help all the time."
+                <span class="block mt-1 font-semibold text-slate-600 not-italic font-heading">
+                  : Tracey Green, Teacher of the Deaf, Montreal Oral School for the Deaf
+                </span>
+              </blockquote>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-8 pt-0">
+            <a 
+              href="https://az184419.vo.msecnd.net/emsb/inspirations/editions/inspirations-news-s24-webfinal-v2.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-sm font-bold text-teal-brand hover:text-teal-700 transition-colors"
+            >
+              <span>Read Original Newspaper (PDF, Page 13)</span>
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Article 2: Pearson News -->
+        <article class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-amethyst/50 transition-all group">
+          <div>
+            <a 
+              href="https://pearsonnews.ca/zipping-through-barriers-to-inclusive-learning-with-zip-captions/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="block overflow-hidden bg-slate-100 border-b border-slate-100 relative aspect-[16/10]"
+            >
               <img 
-                src="/images/hear-pg2.png" 
-                alt="Hear Entendre Quebec Magazine Page 2" 
+                src="/images/pearson.png" 
+                alt="Pearson News Feature: Zipping through barriers to inclusive learning with Zip Captions" 
                 class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                 loading="lazy"
               />
+            </a>
+
+            <div class="p-6 sm:p-8 space-y-4">
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-bold font-mono text-amethyst uppercase tracking-wider">
+                  District Spotlight
+                </span>
+                <span class="font-medium text-slate-500">English</span>
+              </div>
+
+              <h3 class="text-xl sm:text-2xl font-bold font-heading text-midnight group-hover:text-amethyst transition-colors">
+                Zipping Through Barriers to Inclusive Learning
+              </h3>
+
+              <p class="text-xs font-semibold text-slate-500 font-heading">
+                Lester B. Pearson School Board: Pearson News (Dan Mullins)
+              </p>
+
+              <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                An in-depth article discussing real-world classroom deployment across elementary and high schools to support universal design for learning (UDL), and highlighting international adoption through the Microsoft Founders Program.
+              </p>
+
+              <blockquote class="border-l-4 border-amethyst pl-4 py-1 text-xs sm:text-sm text-slate-700 italic bg-slate-50 rounded-r-xl">
+                "It distinguishes itself by its ability to broadcast captions to personal devices, enhancing the accuracy and discretion of live captioning in various settings, including classrooms, places of worship, and conference venues."
+              </blockquote>
             </div>
-          </a>
-
-          <div class="p-6 sm:p-8 space-y-4">
-            <div class="flex items-center justify-between text-xs">
-              <span class="font-bold font-mono text-teal-brand uppercase tracking-wider">
-                Fall 2024 Magazine
-              </span>
-              <span class="font-medium text-slate-500">Bilingual</span>
-            </div>
-
-            <h2 class="text-xl sm:text-2xl font-bold font-heading text-midnight group-hover:text-amethyst transition-colors">
-              Hear Entendre Québec
-            </h2>
-
-            <p class="text-xs font-semibold text-slate-500 font-heading">
-              Two-Page Magazine Feature
-            </p>
-
-            <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Hear Entendre Québec featured a two-page spread exploring the practical impact of browser-based real-time speech-to-text accessibility for seniors and deaf/hard-of-hearing adults across Quebec.
-            </p>
           </div>
-        </div>
 
-        <div class="p-6 sm:p-8 pt-0">
-          <a 
-            href="https://hearhear.org/wp-content/uploads/2024/08/Fall-2024-Magazine-web-1.pdf" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 text-sm font-bold text-teal-brand hover:text-teal-700 transition-colors"
-          >
-            <span>View Magazine Feature (PDF)</span>
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </a>
-        </div>
-      </article>
-
-      <!-- Article 4: Audition Quebec -->
-      <article class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-amethyst/50 transition-all group">
-        <div>
-          <a 
-            href="https://auditionquebec.org/un-nouvel-outil-de-sous-titrage-en-direct/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="block overflow-hidden bg-slate-100 border-b border-slate-100 relative aspect-[16/10]"
-          >
-            <img 
-              src="/images/audition.png" 
-              alt="Audition Quebec Article: Un nouvel outil de sous-titrage en direct" 
-              class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
-              loading="lazy"
-            />
-          </a>
-
-          <div class="p-6 sm:p-8 space-y-4">
-            <div class="flex items-center justify-between text-xs">
-              <span class="font-bold font-mono text-slate-600 uppercase tracking-wider">
-                Revue Technologique
-              </span>
-              <span class="font-medium text-slate-500">Français</span>
-            </div>
-
-            <h2 class="text-xl sm:text-2xl font-bold font-heading text-midnight group-hover:text-amethyst transition-colors">
-              Un nouvel outil de sous-titrage en direct
-            </h2>
-
-            <p class="text-xs font-semibold text-slate-500 font-heading">
-              Audition Québec
-            </p>
-
-            <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Audition Québec présente et analyse l'application Zip Captions en tant que solution libre et gratuite pour améliorer l'accès aux communications en direct pour les personnes malentendantes au Québec.
-            </p>
+          <div class="p-6 sm:p-8 pt-0">
+            <a 
+              href="https://pearsonnews.ca/zipping-through-barriers-to-inclusive-learning-with-zip-captions/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-sm font-bold text-teal-brand hover:text-teal-700 transition-colors"
+            >
+              <span>Read Pearson News Article</span>
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
           </div>
-        </div>
+        </article>
 
-        <div class="p-6 sm:p-8 pt-0">
-          <a 
-            href="https://auditionquebec.org/un-nouvel-outil-de-sous-titrage-en-direct/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 text-sm font-bold text-teal-brand hover:text-teal-700 transition-colors"
-          >
-            <span>Lire l'article sur Audition Québec</span>
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </a>
-        </div>
-      </article>
+        <!-- Article 3: Hear Entendre Quebec -->
+        <article class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-amethyst/50 transition-all group">
+          <div>
+            <a 
+              href="https://hearhear.org/wp-content/uploads/2024/08/Fall-2024-Magazine-web-1.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="block overflow-hidden bg-slate-100 border-b border-slate-100 p-3"
+            >
+              <div class="grid grid-cols-2 gap-2 aspect-[16/10] overflow-hidden rounded-xl">
+                <img 
+                  src="/images/hear-pg1.png" 
+                  alt="Hear Entendre Quebec Magazine Fall 2024 Page 1 feature on Zip Captions" 
+                  class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+                <img 
+                  src="/images/hear-pg2.png" 
+                  alt="Hear Entendre Quebec Magazine Fall 2024 Page 2 feature on Zip Captions" 
+                  class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+            </a>
 
-    </div>
+            <div class="p-6 sm:p-8 space-y-4">
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-bold font-mono text-teal-brand uppercase tracking-wider">
+                  Fall 2024 Magazine
+                </span>
+                <span class="font-medium text-slate-500">Bilingual</span>
+              </div>
 
-    <!-- Media Inquiry Callout -->
+              <h3 class="text-xl sm:text-2xl font-bold font-heading text-midnight group-hover:text-amethyst transition-colors">
+                Hear Entendre Québec
+              </h3>
+
+              <p class="text-xs font-semibold text-slate-500 font-heading">
+                Two-Page Feature: Hear Hear! Magazine
+              </p>
+
+              <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                Hear Entendre Québec published a two-page profile exploring the practical impact of browser-based real-time speech-to-text accessibility for seniors and deaf or hard-of-hearing adults across Quebec.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-8 pt-0">
+            <a 
+              href="https://hearhear.org/wp-content/uploads/2024/08/Fall-2024-Magazine-web-1.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-sm font-bold text-teal-brand hover:text-teal-700 transition-colors"
+            >
+              <span>View Magazine Feature (PDF, Pages 8-9)</span>
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Article 4: Audition Quebec -->
+        <article class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-amethyst/50 transition-all group">
+          <div>
+            <a 
+              href="https://auditionquebec.org/un-nouvel-outil-de-sous-titrage-en-direct/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="block overflow-hidden bg-slate-100 border-b border-slate-100 relative aspect-[16/10]"
+            >
+              <img 
+                src="/images/audition.png" 
+                alt="Audition Quebec Article: Un nouvel outil de sous-titrage en direct pour Zip Captions" 
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+            </a>
+
+            <div class="p-6 sm:p-8 space-y-4">
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-bold font-mono text-slate-600 uppercase tracking-wider">
+                  Revue Technologique
+                </span>
+                <span class="font-medium text-slate-500">Français</span>
+              </div>
+
+              <h3 class="text-xl sm:text-2xl font-bold font-heading text-midnight group-hover:text-amethyst transition-colors">
+                Un nouvel outil de sous-titrage en direct
+              </h3>
+
+              <p class="text-xs font-semibold text-slate-500 font-heading">
+                Audition Québec: Sourdine Express
+              </p>
+
+              <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                Audition Québec présente et analyse l'application Zip Captions en tant que solution libre et gratuite pour améliorer l'accès aux communications en direct pour les personnes malentendantes au Québec.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-8 pt-0">
+            <a 
+              href="https://auditionquebec.org/un-nouvel-outil-de-sous-titrage-en-direct/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-sm font-bold text-teal-brand hover:text-teal-700 transition-colors"
+            >
+              <span>Lire l'article sur Audition Québec</span>
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Media Inquiry Callout (Zero Pills) -->
     <section class="bg-gradient-to-r from-slate-900 to-midnight rounded-3xl p-8 sm:p-12 text-white border border-slate-800 shadow-lg">
       <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
         <div class="space-y-2 max-w-2xl">
           <span class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading">
-            Press & Media Relations
+            Press and Media Relations
           </span>
           <h2 class="text-2xl sm:text-3xl font-bold font-heading">
-            Covering Accessibility or Educational Tech?
+            Covering Accessibility or Educational Technology?
           </h2>
           <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
             We are always delighted to speak with journalists, educational researchers, and podcasters about open-source accessibility, real-time captioning, and AAC tools.
