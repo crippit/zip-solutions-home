@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
+import tailwindcss from '@tailwindcss/vite';
+import { unified } from '@astrojs/markdown-remark';
 
 function remarkRewriteLinks() {
   return (tree) => {
@@ -34,9 +35,11 @@ function remarkRewriteLinks() {
 
 export default defineConfig({
   site: 'https://zipsolutions.org',
-  integrations: [tailwind()],
+  vite: {
+    plugins: [tailwindcss()],
+  },
   markdown: {
-    remarkPlugins: [remarkRewriteLinks],
+    processor: unified({ remarkPlugins: [remarkRewriteLinks] }),
   },
   redirects: {
     '/privacy.html': '/privacy',

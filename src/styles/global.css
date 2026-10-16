@@ -11,9 +11,25 @@
 @import "@fontsource/jetbrains-mono/400.css";
 @import "@fontsource/jetbrains-mono/500.css";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-midnight: #0F172A;
+  --color-alabaster: #F8FAFC;
+  --color-amethyst: #8B5CF6;
+  --color-amethyst-light: #A78BFA;
+  --color-amethyst-dark: #7C3AED;
+  --color-teal-brand: #0D9488;
+  --color-teal-light: #14B8A6;
+  --color-teal-dark: #0F766E;
+  --color-coral: #FB7185;
+  --color-coral-light: #FDA4AF;
+  --color-coral-dark: #F43F5E;
+
+  --font-heading: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
 
 @layer base {
   :root {
