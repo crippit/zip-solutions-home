@@ -19,8 +19,8 @@ const pillars = [
     icon: "accessibility"
   },
   {
-    title: "Custom Professional Development (PD) Workshops",
-    description: "Beyond day-of event tech, we deliver customized, practical PD sessions for teachers, administrators, and tech staff on assistive tools, AAC in the classroom, and inclusive educational technology.",
+    title: "Google for Education & Custom PD Workshops",
+    description: "Beyond day-of event tech, we deliver customized, practical PD sessions for teachers, administrators, and business teams on Google Workspace, Gemini AI, assistive tools, and inclusive educational technology.",
     icon: "graduation"
   }
 ];
@@ -62,24 +62,32 @@ const faqs = [
   {
     question: "Do you offer custom Professional Development (PD) workshops for schools and districts?",
     answer: "Yes. We deliver practical, hands-on PD sessions for educators, speech-language pathologists, and school IT teams covering classroom captioning, AAC implementation, and universal design for learning (UDL)."
+  },
+  {
+    question: "Who leads your Google for Education and custom PD sessions?",
+    answer: "Sessions are directly designed and facilitated by Chris Webb (Google for Education Certified Trainer, Certified Innovator, GEG Leader, and Champions Ambassador) and James Petersen (Google for Education Certified Innovator), bringing decades of combined classroom teaching and cloud software engineering experience."
+  },
+  {
+    question: "Do you deliver training for both schools and corporate teams?",
+    answer: "Yes. For schools and districts, we focus on classroom pedagogy, Google Classroom, Gemini AI lesson preparation, and accessibility. For businesses, we focus on Google Workspace collaboration, Sheets data workflows, and practical AI productivity."
   }
 ];
 
 const eventServiceSchema = {
   "@type": "Service",
-  "name": "In-Person & Hybrid Event Organisation & Custom Professional Development",
+  "name": "In-Person & Hybrid Event Organisation & Google for Education PD",
   "provider": {
     "@id": "https://zipsolutions.org/#organization"
   },
   "serviceType": "Hybrid Conference Production, Multi-Room Streaming & Educator Professional Development",
-  "description": "Practical technical production, multi-room hybrid streaming, live event accessibility, and tailored professional development workshops for schools, conferences, and non-profits.",
+  "description": "Practical technical production, multi-room hybrid streaming, live event accessibility, and tailored Google for Education training workshops for schools, conferences, and businesses.",
   "url": "https://zipsolutions.org/events"
 };
 ---
 
 <BaseLayout 
   title="In-Person & Hybrid Event Production & Educator PD | Zip Solutions" 
-  description="Practical technical production, multi-room hybrid conference streaming, live captions, and tailored professional development workshops for schools, universities, and non-profits."
+  description="Practical technical production, multi-room hybrid conference streaming, live captions, and tailored Google for Education training workshops for schools and businesses."
   schema={eventServiceSchema}
   faqs={faqs}
 >
@@ -166,14 +174,224 @@ const eventServiceSchema = {
             <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
               {pillar.description}
             </p>
+
+            {pillar.icon === 'graduation' && (
+              <div class="mt-4 pt-4 border-t border-slate-100">
+                <a href="#training" class="text-xs font-bold text-teal-brand hover:text-teal-dark inline-flex items-center gap-1 transition-colors">
+                  <span>View Workshop Topics &amp; Facilitators</span>
+                  <span>&darr;</span>
+                </a>
+              </div>
+            )}
           </div>
         </div>
       ))}
     </div>
   </section>
 
+  <!-- Google for Education Training & Custom Workshops (Zero Pills) -->
+  <section id="training" class="py-16 sm:py-20 bg-slate-50 border-t border-slate-200/80 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs font-bold font-mono text-amethyst uppercase tracking-wider block">
+          Practical Training &amp; Professional Development
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold font-heading text-midnight">
+          Google for Education Training &amp; Custom Workshops
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+          Real, practical training led by working educators and Google certified specialists. Whether you need a focused pedagogical day for your school staff, a hands-on session on Gemini AI, or practical Google Workspace training for your business team, we tailor sessions to what you actually need.
+        </p>
+      </div>
+
+      <!-- Facilitators & Credentials (Zero Pills) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+        
+        <!-- Chris Webb -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xs flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center gap-4">
+              <img 
+                src="/images/Chris_Circle.png" 
+                alt="Chris Webb" 
+                class="w-16 h-16 rounded-2xl object-cover border border-purple-100 shadow-xs shrink-0"
+                loading="lazy"
+              />
+              <div>
+                <h3 class="text-lg font-bold font-heading text-midnight">Chris Webb</h3>
+                <p class="text-xs text-amethyst font-semibold font-heading">Co-Founder &amp; High School Computer Science Teacher</p>
+              </div>
+            </div>
+            
+            <div class="pt-2 border-t border-slate-100">
+              <span class="text-xs font-bold font-mono text-slate-400 uppercase tracking-wider block mb-2">
+                Google for Education Credentials
+              </span>
+              <ul class="text-xs font-mono text-slate-600 space-y-1.5">
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amethyst shrink-0"></span>
+                  <span>Google for Education Certified Trainer</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amethyst shrink-0"></span>
+                  <span>Google for Education Certified Innovator</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amethyst shrink-0"></span>
+                  <span>Google Educator Group (GEG) Leader</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amethyst shrink-0"></span>
+                  <span>Google Certified Educator (Level 1 &amp; Level 2)</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amethyst shrink-0"></span>
+                  <span>Google for Education Gemini Certified</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amethyst shrink-0"></span>
+                  <span>Google for Education Champions Ambassador</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- James Petersen -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xs flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center gap-4">
+              <img 
+                src="/images/James_Circle.png" 
+                alt="James Petersen" 
+                class="w-16 h-16 rounded-2xl object-cover border border-teal-100 shadow-xs shrink-0"
+                loading="lazy"
+              />
+              <div>
+                <h3 class="text-lg font-bold font-heading text-midnight">James Petersen</h3>
+                <p class="text-xs text-teal-brand font-semibold font-heading">Co-Founder, Cloud Architect &amp; Former Educator</p>
+              </div>
+            </div>
+            
+            <div class="pt-2 border-t border-slate-100">
+              <span class="text-xs font-bold font-mono text-slate-400 uppercase tracking-wider block mb-2">
+                Specialization &amp; Credentials
+              </span>
+              <ul class="text-xs font-mono text-slate-600 space-y-1.5">
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-teal-brand shrink-0"></span>
+                  <span>Google for Education Certified Innovator</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-teal-brand shrink-0"></span>
+                  <span>Cloud Architecture &amp; Secure Data Pipelines</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-teal-brand shrink-0"></span>
+                  <span>Open Source &amp; User Privacy Advocate</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-teal-brand shrink-0"></span>
+                  <span>Practical Automation &amp; Google Apps Script</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Workshop Focus Areas: Schools vs. Businesses -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto pt-4">
+        
+        <!-- For Schools -->
+        <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-xs space-y-5">
+          <div class="space-y-1">
+            <span class="text-xs font-bold font-mono text-coral uppercase tracking-wider block">
+              Education Sector
+            </span>
+            <h3 class="text-xl font-bold font-heading text-midnight">
+              For Schools &amp; School Boards
+            </h3>
+          </div>
+          <ul class="space-y-3 text-sm text-slate-600">
+            <li class="flex items-start gap-2.5">
+              <span class="text-teal-brand font-bold mt-0.5">✓</span>
+              <span><strong class="text-midnight">Google Classroom &amp; Workspace in Practice:</strong> Streamlining day-to-day teaching, assignments, student feedback, and reducing administrative load.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-teal-brand font-bold mt-0.5">✓</span>
+              <span><strong class="text-midnight">Gemini AI for Educators:</strong> Thoughtful, practical use of generative AI for lesson design, differentiated resources, rubrics, and time-saving workflows while respecting student privacy.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-teal-brand font-bold mt-0.5">✓</span>
+              <span><strong class="text-midnight">Built-In Accessibility:</strong> Leveraging ChromeOS and Google Workspace accessibility features (screen readers, dictation, captions, reading aids) under Universal Design for Learning (UDL).</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-teal-brand font-bold mt-0.5">✓</span>
+              <span><strong class="text-midnight">Custom PD Days:</strong> Flexible half-day or full-day hands-on sessions aligned directly with your school or district priorities.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- For Businesses -->
+        <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-xs space-y-5">
+          <div class="space-y-1">
+            <span class="text-xs font-bold font-mono text-teal-brand uppercase tracking-wider block">
+              Corporate &amp; Non-Profit
+            </span>
+            <h3 class="text-xl font-bold font-heading text-midnight">
+              For Businesses &amp; Organizations
+            </h3>
+          </div>
+          <ul class="space-y-3 text-sm text-slate-600">
+            <li class="flex items-start gap-2.5">
+              <span class="text-teal-brand font-bold mt-0.5">✓</span>
+              <span><strong class="text-midnight">Google Workspace Collaboration:</strong> Helping teams get the most out of Google Docs, Drive, Sheets, and Meet for efficient, organized daily teamwork.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-teal-brand font-bold mt-0.5">✓</span>
+              <span><strong class="text-midnight">Practical Gemini Workflows:</strong> Introducing staff to AI tools for drafting, synthesizing information, meeting summaries, and everyday productivity.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-teal-brand font-bold mt-0.5">✓</span>
+              <span><strong class="text-midnight">Connected Spreadsheets &amp; Dashboards:</strong> Building straightforward data views and tracking sheets without complex enterprise software.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-teal-brand font-bold mt-0.5">✓</span>
+              <span><strong class="text-midnight">Tailored Team Coaching:</strong> Targeted sessions focused on your team's specific bottlenecks, whether in-person or remote.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Delivery Formats & Action Callout -->
+      <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xs">
+        <div class="space-y-1 text-center sm:text-left">
+          <p class="text-sm font-bold font-heading text-midnight">
+            Flexible In-Person or Virtual Delivery • Fully Bilingual (EN / FR)
+          </p>
+          <p class="text-xs sm:text-sm text-slate-500">
+            We deliver on-site sessions across Quebec and Canada, or interactive virtual workshops via Google Meet.
+          </p>
+        </div>
+        <a 
+          href="/contact-us" 
+          class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-xl font-heading font-bold text-sm text-white bg-amethyst hover:bg-amethyst-dark transition-all shadow-xs"
+        >
+          <span>Discuss Training for Your Team</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
   <!-- How It Works Timeline -->
-  <section class="py-16 bg-slate-50 border-y border-slate-200/80">
+  <section class="py-16 bg-white border-y border-slate-200/80">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto mb-12">
         <p class="text-xs font-bold uppercase tracking-wider text-amethyst font-heading mb-2">
