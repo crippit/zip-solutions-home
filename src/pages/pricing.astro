@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import FaqSection from '../components/FaqSection.astro';
 
 const tiers = [
   {
@@ -68,11 +69,27 @@ const features = [
   { name: "GDPR Compliant", values: ["Yes", "Yes", "Yes", "Yes", "Yes"] },
   { name: "Exclusive SWAG Pack", values: ["—", "—", "—", "—", "Yes"] },
 ];
+
+const faqs = [
+  {
+    question: "What is the difference between Regular Captioning ($0) and AI Captioning?",
+    answer: "Regular Captioning uses your browser's built-in WebSpeech API and is 100% free and unlimited forever. AI Captioning uses advanced cloud speech recognition models for higher accuracy with specialized vocabulary, noisy rooms, and additional Chromium browsers."
+  },
+  {
+    question: "Do schools, churches, or non-profits qualify for donated AI captioning hours?",
+    answer: "Yes. Through our Giving Back initiative, qualifying classrooms, non-profits, and community groups can request donated AI captioning tokens at no cost."
+  },
+  {
+    question: "What happens if I run out of AI captioning hours during the month?",
+    answer: "You are never cut off from live captioning. If your monthly AI token allocation is reached, you can immediately continue captioning with unlimited Regular browser-based captioning at zero cost."
+  }
+];
 ---
 
 <BaseLayout 
   title="Zip Captions Pricing — Free Browser Live Captions & AI Transcription Plans" 
   description="Zip Captions is 100% free forever for standard browser-based live captioning. Explore affordable monthly Patreon tiers starting at $5/mo for enhanced AI transcription."
+  faqs={faqs}
 >
   
   <section class="bg-gradient-to-b from-white to-slate-50 border-b border-slate-200/80 pt-12 pb-14 px-4 sm:px-6 lg:px-8">
@@ -195,5 +212,7 @@ const features = [
     </div>
 
   </div>
+
+  <FaqSection faqs={faqs} groupName="faq-pricing" />
 
 </BaseLayout>

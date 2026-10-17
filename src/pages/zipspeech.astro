@@ -34,6 +34,17 @@ const specs = [
   { label: "Echo-free speech", value: "Audio injects directly into the call's microphone stream so everyone hears you clearly without speaker feedback." },
   { label: "Quick communication", value: "Pre-defined AAC phrases let you contribute immediately, with automatic translation across languages." }
 ];
+
+const faqs = [
+  {
+    question: "How does Zip Speech speak into Google Meet without causing microphone echo?",
+    answer: "Zip Speech routes synthesized speech directly into Google Meet's WebRTC outgoing microphone stream inside the browser, so participants hear your spoken voice clearly without needing external speakers or virtual audio cables."
+  },
+  {
+    question: "Which browsers support the Zip Speech extension?",
+    answer: "Zip Speech is available as a free native extension for Google Chrome, Apple Safari on macOS, Microsoft Edge, and Mozilla Firefox."
+  }
+];
 ---
 
 <ProductLayout
@@ -61,6 +72,7 @@ const specs = [
   ]}
   capabilities={capabilities}
   specs={specs}
+  faqs={faqs}
   ctaTitle="Be heard clearly in every virtual meeting"
   ctaDescription="Install Zip Speech today and experience effortless, echo-free voice communication in Google Meet."
   ctaAction={{ 

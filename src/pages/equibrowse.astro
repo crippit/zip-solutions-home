@@ -46,6 +46,17 @@ const specs = [
   { label: "Visual ergonomics", value: "Toggle the OpenDyslexic typeface, enlarge text instantly, and use Focus Mode to dim surrounding distractions." },
   { label: "Fits your study flow", value: "Dock the tools neatly at the top of your browser or keep them as a quiet sidebar while writing and researching." }
 ];
+
+const faqs = [
+  {
+    question: "Does EquiBrowse work inside Google Docs?",
+    answer: "Yes. EquiBrowse includes a dedicated canvas engine for Google Docs that supports word-by-word read-aloud tracking, multi-color highlighting, dictionary lookup, and one-click vocabulary list export."
+  },
+  {
+    question: "How does EquiBrowse support students with dyslexia or ADHD?",
+    answer: "EquiBrowse lets students toggle the OpenDyslexic font across any webpage, use a Focus Mode reading mask to reduce visual crowding, simplify dense academic text with AI, and listen to natural text-to-speech with synchronized word highlighting."
+  }
+];
 ---
 
 <ProductLayout
@@ -64,6 +75,7 @@ const specs = [
   ]}
   capabilities={capabilities}
   specs={specs}
+  faqs={faqs}
   ctaTitle="Unlock effortless reading on the web"
   ctaDescription="Equip your students, team, or personal workstation with EquiBrowse today."
   ctaAction={{ 

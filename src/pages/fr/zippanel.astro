@@ -34,6 +34,21 @@ const specs = [
   { label: "Souplesse d'affichage", value: "Conservez les sous-titres ancrés en bas de vos fenêtres ou détachez-les dans une fenêtre flottante libre." },
   { label: "Confort de lecture", value: "Curseurs rapides pour adapter la taille du texte et le degré de transparence afin de préserver votre espace de travail." }
 ];
+
+const faqs = [
+  {
+    question: "Comment l'extension Chrome Zip Panel se connecte-t-elle à Zip Captions ?",
+    answer: "Gardez simplement Zip Captions ouvert dans un onglet de votre navigateur et activez Zip Panel. L'extension détecte automatiquement l'onglet Zip Captions actif et affiche les sous-titres en direct sur tous les autres onglets que vous consultez ou dans une fenêtre flottante."
+  },
+  {
+    question: "Puis-je afficher les sous-titres par-dessus Google Slides ou Canva ?",
+    answer: "Oui. Comme Zip Panel superpose un bandeau persistant sur n'importe quel onglet Chrome ou dans une fenêtre détachable, vous pouvez présenter vos diaporamas Google Slides ou Canva tout en gardant les sous-titres en direct visibles."
+  },
+  {
+    question: "Est-ce que Zip Panel fonctionne sur Microsoft Edge ou Chromebook ?",
+    answer: "Oui. L'extension s'installe depuis le Chrome Web Store sur Google Chrome, Microsoft Edge, Brave, Opera ainsi que sur tous les Chromebooks scolaires."
+  }
+];
 ---
 
 <ProductLayout
@@ -55,6 +70,7 @@ const specs = [
   heroImageAlt="Le bandeau persistant de sous-titrage Zip Captions"
   capabilities={capabilities}
   specs={specs}
+  faqs={faqs}
   ctaTitle="Ne perdez plus un seul mot pendant votre navigation"
   ctaDescription="Installez l'extension Zip Panel et intégrez le sous-titrage direct et constant à votre quotidien informatique."
   ctaAction={{ 

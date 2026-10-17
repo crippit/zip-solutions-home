@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import FaqSection from '../../components/FaqSection.astro';
 
 const tiers = [
   {
@@ -68,11 +69,27 @@ const features = [
   { name: "Conforme au RGPD", values: ["Oui", "Oui", "Oui", "Oui", "Oui"] },
   { name: "Pack d'articles exclusifs", values: ["-", "-", "-", "-", "Oui"] },
 ];
+
+const faqs = [
+  {
+    question: "Quelle est la différence entre le sous-titrage Standard (0 $) et le sous-titrage IA ?",
+    answer: "Le sous-titrage Standard utilise l'API WebSpeech intégrée au navigateur et reste 100 % gratuit et illimité pour toujours. Le sous-titrage IA mobilise des modèles avancés de reconnaissance vocale offrant une précision supérieure pour le vocabulaire spécialisé, les environnements bruyants et tous les navigateurs Chromium."
+  },
+  {
+    question: "Les écoles et organismes à but non lucratif peuvent-ils obtenir des heures d'IA gratuites ?",
+    answer: "Oui. Grâce à notre programme d'engagement solidaire (Giving Back), les classes, établissements scolaires et organismes communautaires admissibles peuvent demander des heures de sous-titrage IA offertes gratuitement."
+  },
+  {
+    question: "Que se passe-t-il si j'épuise mes heures de sous-titrage IA avant la fin du mois ?",
+    answer: "Vous n'êtes jamais privé de sous-titrage. Si votre quota mensuel d'heures IA est atteint, vous pouvez immédiatement poursuivre vos sessions avec le sous-titrage Standard gratuit et illimité."
+  }
+];
 ---
 
 <BaseLayout 
   title="Tarifs de Zip Captions — Sous-titrage en direct gratuit et forfaits IA" 
   description="Zip Captions est 100 % gratuit pour le sous-titrage standard sur navigateur. Découvrez nos forfaits mensuels accessibles dès 5 $/mois pour la transcription par intelligence artificielle."
+  faqs={faqs}
 >
   
   <section class="bg-gradient-to-b from-white to-slate-50 border-b border-slate-200/80 pt-12 pb-14 px-4 sm:px-6 lg:px-8">
@@ -195,5 +212,7 @@ const features = [
     </div>
 
   </div>
+
+  <FaqSection faqs={faqs} groupName="faq-fr-pricing" />
 
 </BaseLayout>

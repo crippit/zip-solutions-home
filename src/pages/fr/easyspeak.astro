@@ -35,6 +35,25 @@ const specs = [
   { label: "Symboles et visuels", value: "Intègre gratuitement les bibliothèques ARASAAC et OpenSymbols, avec prise en charge des émojis et de vos propres images." },
   { label: "Gratuit et à code source ouvert", value: "Totalement gratuit, sans publicité ni abonnement. Conçu ouvertement pour les familles, les spécialistes de l'éducation et les professionnels." }
 ];
+
+const faqs = [
+  {
+    question: "Est-ce que Zip EasySpeak AI fonctionne entièrement hors ligne sans Wi-Fi ?",
+    answer: "Oui. Une fois Zip EasySpeak ou EasySpeakAI chargé dans votre navigateur ou installé comme application, tous les tableaux de communication, photos personnalisées, voix de synthèse et le modèle d'IA prédictif s'exécutent à 100 % hors ligne sur votre appareil sans nécessiter de connexion internet."
+  },
+  {
+    question: "L'application Zip EasySpeak est-elle vraiment gratuite et sans abonnement ?",
+    answer: "Oui. Zip EasySpeak et EasySpeakAI sont 100 % gratuits et à code source ouvert, sans aucun abonnement, sans vocabulaire verrouillé, sans publicité et sans création de compte obligatoire."
+  },
+  {
+    question: "Sur quels appareils puis-je installer Zip EasySpeak ?",
+    answer: "Contrairement aux applications CAA limitées à l'iPad, Zip EasySpeak fonctionne sur iPad, iPhone, tablettes Android, Chromebooks, PC Windows et Mac — via l'App Store d'Apple, le Google Play Store ou comme application web progressive (PWA) installable hors ligne."
+  },
+  {
+    question: "Les orthophonistes et enseignants peuvent-ils partager des grilles de communication ?",
+    answer: "Oui. Vous pouvez exporter une sauvegarde complète ou utiliser l'importation par fusion (Merge Import) pour partager une page thématique précise (comme un tableau de cours) sans écraser les tableaux personnalisés de l'élève."
+  }
+];
 ---
 
 <ProductLayout
@@ -51,6 +70,7 @@ const specs = [
   heroImageAlt="Zip EasySpeak fonctionnant sur plusieurs appareils"
   capabilities={capabilities}
   specs={specs}
+  faqs={faqs}
   ctaTitle="Donnez une voix à chaque échange"
   ctaDescription="Commencez avec Zip EasySpeak dès aujourd'hui : gratuit, ouvert et accessible sur tous vos écrans."
   ctaAction={{ text: "Lancer EasySpeak maintenant", url: "https://easyspeak.zipsolutions.org", external: true }}
@@ -257,6 +277,51 @@ const specs = [
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
         </svg>
       </a>
+    </div>
+  </div>
+
+  <!-- Tableau comparatif CAA -->
+  <div class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden mb-16">
+    <div class="px-6 sm:px-8 py-6 border-b border-slate-100 bg-slate-50/60">
+      <span class="text-xs font-bold uppercase tracking-wider text-amethyst font-heading block mb-1">
+        Une CAA sans barrières financières
+      </span>
+      <h2 class="text-xl sm:text-2xl font-extrabold font-heading text-midnight">
+        Comparaison entre Zip EasySpeak et les applications CAA classiques
+      </h2>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="w-full text-left border-collapse min-w-[620px]">
+        <thead>
+          <tr class="bg-slate-50 border-b border-slate-200 text-xs uppercase tracking-wider text-slate-500">
+            <th class="p-4 sm:px-6 font-bold">Fonctionnalité</th>
+            <th class="p-4 sm:px-6 font-bold text-amethyst bg-purple-50/50">Zip EasySpeak et EasySpeakAI</th>
+            <th class="p-4 sm:px-6 font-bold">Applications CAA payantes classiques</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100 text-xs sm:text-sm">
+          <tr>
+            <td class="p-4 sm:px-6 font-semibold text-midnight">Tarif et licence</td>
+            <td class="p-4 sm:px-6 font-bold text-teal-brand bg-purple-50/20">100 % gratuit et open-source (0 $)</td>
+            <td class="p-4 sm:px-6 text-slate-600">150 $ à 300 $ à l'achat ou abonnements récurrents</td>
+          </tr>
+          <tr>
+            <td class="p-4 sm:px-6 font-semibold text-midnight">Compatibilité matérielle</td>
+            <td class="p-4 sm:px-6 font-semibold text-midnight bg-purple-50/20">iPad, Android, Chromebook, Windows, Mac et Web</td>
+            <td class="p-4 sm:px-6 text-slate-600">Souvent restreint à iOS / iPad uniquement</td>
+          </tr>
+          <tr>
+            <td class="p-4 sm:px-6 font-semibold text-midnight">Prédiction de mots par IA</td>
+            <td class="p-4 sm:px-6 font-semibold text-midnight bg-purple-50/20">LLM 100 % hors ligne sur l'appareil (zéro télémétrie)</td>
+            <td class="p-4 sm:px-6 text-slate-600">Listes statiques ou IA dépendante du nuage</td>
+          </tr>
+          <tr>
+            <td class="p-4 sm:px-6 font-semibold text-midnight">Partage et fusion de tableaux</td>
+            <td class="p-4 sm:px-6 font-semibold text-midnight bg-purple-50/20">Fichiers JSON portables et fusion sans écrasement</td>
+            <td class="p-4 sm:px-6 text-slate-600">Nécessite des comptes propriétaires payants</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import FaqSection from '../../components/FaqSection.astro';
 
 const pillars = [
   {
@@ -48,6 +49,22 @@ const idealAudiences = [
   "Assemblées citoyennes et congrès d'organismes à but non lucratif",
   "Rencontres hybrides d'associations et assemblées générales annuelles"
 ];
+
+const faqs = [
+  {
+    question: "Pouvez-vous gérer des congrès hybrides multi-salles avec conférenciers sur place et à distance ?",
+    answer: "Oui. Nous concevons et opérons des régies de diffusion multi-salles permettant aux intervenants présents et aux invités en visioconférence d'échanger de façon fluide, tout en offrant un son clair, une vidéo stable et un sous-titrage en direct à tous les participants."
+  },
+  {
+    question: "Comment le sous-titrage en direct est-il intégré lors des événements ?",
+    answer: "Nous diffusons les sous-titres en direct simultanément sur les écrans géants de la salle, en incrustation vidéo (via OBS Studio ou vMix) et sur les téléphones intelligents des participants grâce à un code QR."
+  },
+  {
+    question: "Offrez-vous des ateliers de perfectionnement professionnel pour les écoles et centres de services scolaires ?",
+    answer: "Oui. Nous animons des formations pratiques sur mesure pour le personnel enseignant, les orthophonistes et les équipes TI sur le sous-titrage en classe, l'implantation de la CAA et la conception universelle de l'apprentissage (CUA)."
+  }
+];
+
 const eventServiceSchema = {
   "@type": "Service",
   "name": "Organisation d'événements en présentiel et hybrides et formation professionnelle",
@@ -64,6 +81,7 @@ const eventServiceSchema = {
   title="Organisation d'événements hybrides, webdiffusion et formation | Solutions Zip" 
   description="Production technique concrète, webdiffusion hybride multi-salles, sous-titrage en direct et ateliers de formation sur mesure pour écoles, congrès et associations."
   schema={eventServiceSchema}
+  faqs={faqs}
 >
 
   <!-- En-tête -->
@@ -230,5 +248,7 @@ const eventServiceSchema = {
       </div>
     </div>
   </section>
+
+  <FaqSection faqs={faqs} groupName="faq-fr-events" />
 
 </BaseLayout>

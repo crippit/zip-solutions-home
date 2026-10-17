@@ -46,6 +46,17 @@ const specs = [
   { label: "Ergonomie visuelle", value: "Activation de la police OpenDyslexic, agrandissement immédiat du texte et mode concentration estompant l'environnement." },
   { label: "Adapté à vos habitudes d'étude", value: "Ancrez les outils discrètement en haut de votre navigateur ou conservez-les dans un volet latéral pendant vos recherches." }
 ];
+
+const faqs = [
+  {
+    question: "Est-ce qu'EquiBrowse fonctionne directement dans Google Docs ?",
+    answer: "Oui. EquiBrowse intègre un moteur dédié au canevas Google Docs permettant la lecture à voix haute avec suivi mot à mot, le surlignage multicolore, les définitions instantanées et l'exportation de listes de vocabulaire."
+  },
+  {
+    question: "Comment EquiBrowse aide-t-il les élèves ayant une dyslexie ou un TDAH ?",
+    answer: "EquiBrowse permet d'activer la police OpenDyslexic sur n'importe quelle page web, d'utiliser un masque de lecture (Mode concentration) pour réduire la surcharge visuelle, de simplifier les textes complexes par IA et d'écouter la synthèse vocale naturelle."
+  }
+];
 ---
 
 <ProductLayout
@@ -64,6 +75,7 @@ const specs = [
   ]}
   capabilities={capabilities}
   specs={specs}
+  faqs={faqs}
   ctaTitle="Rendez la lecture web fluide et accessible"
   ctaDescription="Offrez dès aujourd'hui EquiBrowse à vos élèves, à votre équipe ou à votre poste de travail."
   ctaAction={{ 

@@ -115,6 +115,29 @@ const specs = [
   { label: "Live stream setups", value: "Connects via WebSockets straight into OBS Studio, vMix, and digital video switchers." },
   { label: "Saving transcripts", value: "Download complete transcripts whenever you finish as industry-standard SRT, VTT, or plain text files." }
 ];
+
+const faqs = [
+  {
+    question: "Is Zip Captions really 100% free?",
+    answer: "Yes. Standard browser-based live captioning in Zip Captions is 100% free forever with unlimited usage, no account registration required, and no credit card needed. Optional monthly Patreon tiers starting at $5/month are available if you want access to enhanced cloud AI transcription engines."
+  },
+  {
+    question: "How do I add live captions to OBS Studio or vMix?",
+    answer: "Zip Captions integrates directly with OBS Studio via WebSockets to send real-time closed or open captions to Twitch and YouTube Live. For vMix productions, our free Zip vMix Connector bridges real-time caption text directly into any vMix title graphic or lower-third overlay."
+  },
+  {
+    question: "Can students or event attendees view live captions on their own phones?",
+    answer: "Yes. Using Zip Captions Broadcast mode, you can share a static room code or QR link so students, congregation members, or conference attendees can follow live captions on their own smartphones, tablets, or laptops—and customize their own font size, Lexend dyslexia-friendly typeface, and high-contrast colors."
+  },
+  {
+    question: "Are my classroom or meeting transcripts kept private?",
+    answer: "Yes. Zip Captions processes speech transiently and holds your running transcript locally inside your web browser memory. We do not store or archive your transcripts on external servers, making it safe for schools, universities, healthcare settings, and boardrooms."
+  },
+  {
+    question: "What file formats can I export my transcripts to?",
+    answer: "At the end of any session, you can download your transcript with a single click as time-coded SRT subtitles, WebVTT (.vtt) captions for video post-production, or clean plain text (.txt) ready for study notes and AI summaries."
+  }
+];
 ---
 
 <ProductLayout
@@ -131,6 +154,7 @@ const specs = [
   heroImageAlt="Zip Captions in action on laptop and mobile"
   capabilities={capabilities}
   specs={specs}
+  faqs={faqs}
   ctaTitle="Experience effortless live captioning"
   ctaDescription="Start captioning your classroom, meeting, church service, or livestream in seconds with no setup required."
   ctaAction={{ text: "Launch Zip Captions Free", url: "https://zipcaptions.app", external: true }}
@@ -317,6 +341,62 @@ const specs = [
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
           allowfullscreen
         ></iframe>
+      </div>
+    </div>
+
+    <!-- Comparison Table: Zip Captions vs Traditional Solutions -->
+    <div class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+      <div class="px-6 sm:px-8 py-6 border-b border-slate-100 bg-slate-50/60">
+        <span class="text-xs font-bold uppercase tracking-wider text-amethyst font-heading block mb-1">
+          Why Educators &amp; Producers Switch
+        </span>
+        <h2 class="text-xl sm:text-2xl font-extrabold font-heading text-midnight">
+          How Zip Captions Compares to Traditional Live Captioning
+        </h2>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse min-w-[640px]">
+          <thead>
+            <tr class="bg-slate-50 border-b border-slate-200 text-xs uppercase tracking-wider text-slate-500">
+              <th class="p-4 sm:px-6 font-bold">Capability</th>
+              <th class="p-4 sm:px-6 font-bold text-amethyst bg-purple-50/50">Zip Captions</th>
+              <th class="p-4 sm:px-6 font-bold">Paid Cloud Captioning SaaS</th>
+              <th class="p-4 sm:px-6 font-bold">Hardware Caption Encoders</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 text-xs sm:text-sm">
+            <tr>
+              <td class="p-4 sm:px-6 font-semibold text-midnight">Core Live Captioning Cost</td>
+              <td class="p-4 sm:px-6 font-bold text-teal-brand bg-purple-50/20">100% Free Forever ($0)</td>
+              <td class="p-4 sm:px-6 text-slate-600">Per-minute or high monthly seat fees</td>
+              <td class="p-4 sm:px-6 text-slate-600">Thousands in upfront hardware costs</td>
+            </tr>
+            <tr>
+              <td class="p-4 sm:px-6 font-semibold text-midnight">Setup &amp; Installation</td>
+              <td class="p-4 sm:px-6 font-semibold text-midnight bg-purple-50/20">Instant in any web browser (Zero install)</td>
+              <td class="p-4 sm:px-6 text-slate-600">Account registration &amp; desktop agents</td>
+              <td class="p-4 sm:px-6 text-slate-600">Dedicated SDI/HDMI rack integration</td>
+            </tr>
+            <tr>
+              <td class="p-4 sm:px-6 font-semibold text-midnight">Personal Device Broadcasting</td>
+              <td class="p-4 sm:px-6 font-semibold text-midnight bg-purple-50/20">Built-in room codes with user font/contrast controls</td>
+              <td class="p-4 sm:px-6 text-slate-600">Often locked to enterprise tiers</td>
+              <td class="p-4 sm:px-6 text-slate-600">In-room screen display only</td>
+            </tr>
+            <tr>
+              <td class="p-4 sm:px-6 font-semibold text-midnight">OBS Studio, vMix &amp; Stream Deck</td>
+              <td class="p-4 sm:px-6 font-semibold text-midnight bg-purple-50/20">Native WebSockets, vMix Connector &amp; Companion</td>
+              <td class="p-4 sm:px-6 text-slate-600">Requires paid API keys or plugins</td>
+              <td class="p-4 sm:px-6 text-slate-600">Hardware SDI closed captions only</td>
+            </tr>
+            <tr>
+              <td class="p-4 sm:px-6 font-semibold text-midnight">Transcript Privacy</td>
+              <td class="p-4 sm:px-6 font-semibold text-midnight bg-purple-50/20">Held locally in browser memory (GDPR friendly)</td>
+              <td class="p-4 sm:px-6 text-slate-600">Stored on third-party cloud servers</td>
+              <td class="p-4 sm:px-6 text-slate-600">Varies by vendor</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
 

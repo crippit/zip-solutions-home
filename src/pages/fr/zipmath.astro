@@ -36,6 +36,21 @@ const specs = [
   { label: "Normes mathématiques", value: "Formatage complet d'équations LaTeX via MathLive et tracés cartésiens précis via MathCanvas." },
   { label: "Modes de distribution", value: "Billets imprimables, codes QR dynamiques, liens directs et codes d'accès à 6 chiffres." }
 ];
+
+const faqs = [
+  {
+    question: "Où sont conservées les données des élèves dans Zip Solutions Remediator ?",
+    answer: "100 % des listes de classe, des exercices et des réponses des élèves demeurent exclusivement dans votre propre feuille Google Sheets au sein du domaine Google Workspace de votre école — jamais sur des serveurs tiers."
+  },
+  {
+    question: "Les élèves ont-ils besoin d'un compte ou d'un mot de passe pour répondre ?",
+    answer: "Non. Les élèves balaient simplement le code QR imprimé ou saisissent un code d'accès à 6 chiffres avec leur adresse courriel scolaire pour tracer leurs graphiques cartésiens et saisir leurs équations LaTeX."
+  },
+  {
+    question: "Comment le moteur hybride corrige-t-il les graphiques et équations algébriques ?",
+    answer: "Un moteur vectoriel déterministe vérifie d'abord les droites, pentes, ordonnées à l'origine et régions hachurées. Lorsqu'une réponse est partielle ou ambiguë, Google Gemini Vision analyse le tracé et l'explication écrite pour attribuer des points partiels et une rétroaction formative ciblée."
+  }
+];
 ---
 
 <ProductLayout
@@ -52,6 +67,7 @@ const specs = [
   heroImageAlt="Logo de Zip Solutions Remediator avec repère cartésien et fermeture éclair cyan"
   capabilities={capabilities}
   specs={specs}
+  faqs={faqs}
   specsTitle="Conçu pour la réalité de la classe"
   specsSubtitle="Spécifications techniques"
   ctaTitle="Adoptez une remédiation mathématique plus intelligente dans votre établissement"

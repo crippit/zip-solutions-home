@@ -34,6 +34,17 @@ const specs = [
   { label: "Parole limpide sans écho", value: "Le signal audio s'insère directement dans le flux du microphone sans larsen ni retour de haut-parleur." },
   { label: "Communication spontanée", value: "Des phrases CAA prêtes à l'emploi vous permettent d'intervenir sans délai, avec traduction multilingue instantanée." }
 ];
+
+const faqs = [
+  {
+    question: "Comment Zip Speech vocalise-t-il dans Google Meet sans provoquer d'écho ?",
+    answer: "Zip Speech injecte la voix de synthèse directement dans le flux audio WebRTC du microphone à l'intérieur du navigateur, permettant aux participants d'entendre une voix claire sans haut-parleur externe ni câble audio virtuel."
+  },
+  {
+    question: "Sur quels navigateurs l'extension Zip Speech est-elle disponible ?",
+    answer: "Zip Speech est proposé gratuitement comme extension native pour Google Chrome, Apple Safari sur macOS, Microsoft Edge et Mozilla Firefox."
+  }
+];
 ---
 
 <ProductLayout
@@ -61,6 +72,7 @@ const specs = [
   ]}
   capabilities={capabilities}
   specs={specs}
+  faqs={faqs}
   ctaTitle="Faites entendre votre voix dans chaque rencontre virtuelle"
   ctaDescription="Installez Zip Speech dès aujourd'hui et profitez d'une communication vocale naturelle et sans écho dans Google Meet."
   ctaAction={{ 

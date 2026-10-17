@@ -34,6 +34,21 @@ const specs = [
   { label: "Display flexibility", value: "Keep captions fixed discreetly at the bottom of your pages, or pop them out into a floating window anywhere on screen." },
   { label: "Reading comfort", value: "Quick sliders let you change text size and tweak background opacity so captions never block your work." }
 ];
+
+const faqs = [
+  {
+    question: "How does the Zip Panel Chrome Extension connect to Zip Captions?",
+    answer: "Simply keep Zip Captions open in one browser tab and enable Zip Panel. The extension automatically detects your active Zip Captions tab and mirrors the live captions onto any other tab you browse—or into a movable pop-out window."
+  },
+  {
+    question: "Can I use Zip Panel over Google Slides, Canva, or web apps?",
+    answer: "Yes. Because Zip Panel renders a persistent caption bar across any Chrome tab or as a detached floating window, teachers and presenters can display live captions over Google Slides, Canva, or web documents."
+  },
+  {
+    question: "Does Zip Panel work on Microsoft Edge or Brave?",
+    answer: "Yes. Zip Panel can be installed directly from the Chrome Web Store on Google Chrome, Microsoft Edge, Brave, Opera, and Chromebooks."
+  }
+];
 ---
 
 <ProductLayout
@@ -55,6 +70,7 @@ const specs = [
   heroImageAlt="The Zip Captions Persistent Overlay"
   capabilities={capabilities}
   specs={specs}
+  faqs={faqs}
   ctaTitle="Never miss a word while browsing"
   ctaDescription="Install the Zip Panel extension today and bring always-on live captions into your daily browser workflow."
   ctaAction={{ 

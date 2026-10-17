@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import QuoteForm from '../components/QuoteForm.astro';
+import FaqSection from '../components/FaqSection.astro';
 
 const displayOptions = [
   {
@@ -43,12 +44,28 @@ const liveCaptionsServiceSchema = {
   "description": "Flexible, browser-powered live captions for conferences, auditorium presentations, QR code personal device relays, broadcast streams (vMix & OBS), and scripted theatre surtitles.",
   "url": "https://zipsolutions.org/live-event-quotes"
 };
+
+const quoteFaqs = [
+  {
+    question: "How quickly do you respond to live event captioning quote requests?",
+    answer: "We typically respond within one business day with a tailored recommendation and transparent pricing estimate based on your venue setup, display preferences, and event duration."
+  },
+  {
+    question: "Can we combine QR code personal device relays with a stage screen or vMix stream?",
+    answer: "Yes! Because our captioning tools are browser-powered, we can simultaneously feed an auditorium projector or vMix/OBS broadcast overlay while allowing attendees to scan a QR code to follow along on their own smartphones."
+  },
+  {
+    question: "How do scripted theatre surtitles differ from automated live captions?",
+    answer: "For live theatre and musical performances, we pre-load your script and manually cue surtitles in real time to match actors' exact pacing and dramatic timing—preventing spoilers or speech-to-text errors during artistic performances."
+  }
+];
 ---
 
 <BaseLayout 
   title="Live Event Captions, QR Relay & Theatre Surtitles Quotes | Zip Solutions" 
   description="Request a custom quote for browser-powered live event captions: conference QR code phone relays, auditorium screens, vMix/OBS broadcast streams, and theatre surtitles."
   schema={liveCaptionsServiceSchema}
+  faqs={quoteFaqs}
 >
   <Fragment slot="head">
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
@@ -206,5 +223,11 @@ const liveCaptionsServiceSchema = {
 
     </div>
   </section>
+
+  <FaqSection 
+    title="Live Event Captioning & Surtitling FAQ"
+    subtitle="Quick answers on quote turnaround times, display combinations, and theatrical surtitling."
+    faqs={quoteFaqs}
+  />
 
 </BaseLayout>

@@ -5,12 +5,18 @@ import '../styles/global.css';
 
 import { getEquivalentUrl, useTranslations } from '../i18n/ui';
 
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
 interface Props {
   title?: string;
   description?: string;
   image?: string;
   imageAlt?: string;
   schema?: any;
+  faqs?: FaqItem[];
   canonicalPath?: string;
   noindex?: boolean;
   hasFrTranslation?: boolean;
@@ -24,11 +30,12 @@ const {
   description = currentLocale === 'fr' 
     ? "La maison de l'accessibilité : sous-titrage en direct gratuit sur navigateur, outils de CAA hors ligne, organisation d'événements hybrides et technologies éducatives inclusives."
     : 'The Home of Accessibility — Empowering connection with free browser-based live captioning, offline AI AAC tools, hybrid event production, and accessible learning.',
-  image = '/images/og-share-card.jpg',
+  image = '/images/zippreview.png',
   imageAlt = currentLocale === 'fr'
     ? "Zip Solutions — La maison de l'accessibilité, sous-titrage en direct et outils de CAA"
     : 'Zip Solutions — The Home of Accessibility, live captions and AAC tools',
   schema,
+  faqs = [],
   canonicalPath,
   noindex = false,
   hasFrTranslation = true,
@@ -119,6 +126,21 @@ if (schema) {
       extraGraphItems.push(item);
     }
   }
+}
+
+if (faqs && faqs.length > 0) {
+  extraGraphItems.push({
+    "@type": "FAQPage",
+    "@id": `${canonicalURL}#faq`,
+    "mainEntity": faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  });
 }
 
 const isHomePage = cleanPathname === '/' || cleanPathname === '/fr';

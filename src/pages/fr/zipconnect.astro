@@ -34,6 +34,17 @@ const specs = [
   { label: "Contrôle et vie privée", value: "Vous décidez précisément des moments de diffusion, avec mise en pause immédiate dès que nécessaire." },
   { label: "Ultra-léger pour le jeu vidéo", value: "S'exécute discrètement dans votre navigateur sans grever les ressources de votre carte graphique ou processeur." }
 ];
+
+const faqs = [
+  {
+    question: "Comment Zip Connect publie-t-il les sous-titres en direct dans le clavardage Twitch ?",
+    answer: "Zip Connect capte automatiquement les sous-titres produits dans votre onglet Zip Captions et les relaie en temps réel dans la fenêtre de clavardage Twitch ouverte — sans jeton de robot tiers ni serveur externe."
+  },
+  {
+    question: "Est-ce que Zip Connect ralentit mon jeu ou ma diffusion OBS ?",
+    answer: "Non. Zip Connect est une extension Chrome ultra-légère qui consomme très peu de mémoire et laisse toute la puissance de votre processeur et de votre carte graphique à vos jeux et à votre encodage vidéo."
+  }
+];
 ---
 
 <ProductLayout
@@ -55,6 +66,7 @@ const specs = [
   heroImageAlt="Extension Chrome Zip Connect"
   capabilities={capabilities}
   specs={specs}
+  faqs={faqs}
   ctaTitle="Rendez votre stream Twitch accessible à tous"
   ctaDescription="Enrichissez vos diffusions en direct avec un sous-titrage instantané dans le clavardage pour inclure l'ensemble de votre communauté."
   ctaAction={{ 

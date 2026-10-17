@@ -34,6 +34,17 @@ const specs = [
   { label: "Passerelle réseau directe", value: "Envoie les données textuelles à vMix sur la même machine ou à travers le réseau local du studio." },
   { label: "Graphismes irréprochables", value: "Actualise le titre assigné en temps réel en préservant votre typographie de diffusion sans capture d'écran imprécise." }
 ];
+
+const faqs = [
+  {
+    question: "Comment Zip Captions transmet-il les sous-titres en direct dans vMix ?",
+    answer: "L'extension Zip Captions pour vMix communique directement avec l'API du contrôleur web vMix (Web Controller) en local ou sur le réseau de votre studio, mettant à jour votre titre GT ou synthé XAML en temps réel sans incrustation fond vert ni capture de fenêtre."
+  },
+  {
+    question: "Puis-je exécuter Zip Captions sur un autre ordinateur que la régie vMix principale ?",
+    answer: "Oui. Comme l'extension utilise le réseau HTTP du contrôleur web vMix, vous pouvez faire tourner Zip Captions sur un ordinateur portable dédié au sous-titrage connecté au même réseau local en indiquant l'adresse IP et le port de votre station vMix."
+  }
+];
 ---
 
 <ProductLayout
@@ -53,6 +64,7 @@ const specs = [
   ]}
   capabilities={capabilities}
   specs={specs}
+  faqs={faqs}
   ctaTitle="Rehaussez l'accessibilité de vos émissions"
   ctaDescription="Dites adieu aux bricolages de capture d'écran. Diffusez des sous-titres nets et professionnels directement dans vMix."
   ctaAction={{ 

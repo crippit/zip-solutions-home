@@ -1,0 +1,59 @@
+---
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  faqs: FaqItem[];
+  title?: string;
+  subtitle?: string;
+  groupName?: string;
+}
+
+const isFr = Astro.currentLocale === 'fr' || Astro.url.pathname.startsWith('/fr');
+
+const {
+  faqs = [],
+  title = isFr ? "Questions fréquemment posées" : "Frequently Asked Questions",
+  subtitle = isFr ? "Réponses claires" : "Clear Answers",
+  groupName = "faq-accordion",
+} = Astro.props;
+---
+
+{faqs.length > 0 && (
+  <section class="py-16 bg-white border-t border-slate-200/80">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <p class="text-xs sm:text-sm font-bold text-amethyst tracking-wide uppercase mb-2 font-heading">
+          {subtitle}
+        </p>
+        <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-midnight">
+          {title}
+        </h2>
+      </div>
+
+      <div class="accordion-group space-y-4">
+        {faqs.map((faq, idx) => (
+          <details
+            class="disclosure group bg-slate-50 rounded-2xl border border-slate-200/80 open:bg-white open:border-amethyst/40 open:shadow-sm transition-all"
+            name={groupName}
+            open={idx === 0}
+          >
+            <summary class="flex items-center justify-between gap-4 p-5 sm:p-6 cursor-pointer list-none font-heading font-bold text-midnight text-base sm:text-lg select-none">
+              <span>{faq.question}</span>
+              <span class="w-7 h-7 rounded-lg bg-slate-200/70 group-open:bg-amethyst group-open:text-white text-slate-600 flex items-center justify-center shrink-0 transition-colors">
+                <svg class="w-4 h-4 transition-transform duration-200 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <div class="px-5 sm:px-6 pb-5 sm:pb-6 pt-1 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100">
+              <p>{faq.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

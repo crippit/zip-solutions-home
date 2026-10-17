@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import FaqSection from '../components/FaqSection.astro';
 
 const pillars = [
   {
@@ -49,6 +50,21 @@ const idealAudiences = [
   "Hybrid Association Meetings & Annual Conventions"
 ];
 
+const faqs = [
+  {
+    question: "Can you support multi-room hybrid conferences with both in-person and virtual speakers?",
+    answer: "Yes. We design and operate multi-room streaming setups where in-room presenters and remote guest speakers can interact seamlessly, while both in-person and online audiences receive clear audio, video, and live captions."
+  },
+  {
+    question: "How is live captioning integrated into in-person and hybrid events?",
+    answer: "We integrate live captions directly onto main auditorium projection screens, lower-third video stream overlays (via OBS Studio or vMix), and personal attendee smartphones using QR codes so every participant can read comfortably."
+  },
+  {
+    question: "Do you offer custom Professional Development (PD) workshops for schools and districts?",
+    answer: "Yes. We deliver practical, hands-on PD sessions for educators, speech-language pathologists, and school IT teams covering classroom captioning, AAC implementation, and universal design for learning (UDL)."
+  }
+];
+
 const eventServiceSchema = {
   "@type": "Service",
   "name": "In-Person & Hybrid Event Organisation & Custom Professional Development",
@@ -65,6 +81,7 @@ const eventServiceSchema = {
   title="In-Person & Hybrid Event Production & Educator PD | Zip Solutions" 
   description="Practical technical production, multi-room hybrid conference streaming, live captions, and tailored professional development workshops for schools, universities, and non-profits."
   schema={eventServiceSchema}
+  faqs={faqs}
 >
 
   <!-- Hero Section -->
@@ -231,5 +248,7 @@ const eventServiceSchema = {
       </div>
     </div>
   </section>
+
+  <FaqSection faqs={faqs} groupName="faq-events" />
 
 </BaseLayout>

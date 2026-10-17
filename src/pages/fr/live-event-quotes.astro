@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import QuoteForm from '../../components/QuoteForm.astro';
+import FaqSection from '../../components/FaqSection.astro';
 
 const displayOptions = [
   {
@@ -42,12 +43,28 @@ const liveCaptionsServiceSchema = {
   "description": "Sous-titres en direct flexibles sur le web pour conférences, présentations en auditorium, relais par code QR, webdiffusions vMix/OBS et pièces de théâtre.",
   "url": "https://zipsolutions.org/fr/live-event-quotes"
 };
+
+const quoteFaqs = [
+  {
+    question: "Dans quel délai répondez-vous aux demandes de devis pour un événement en direct ?",
+    answer: "Nous répondons généralement sous un jour ouvrable avec une recommandation sur mesure et une estimation tarifaire transparente selon la configuration de votre salle, les modes d'affichage choisis et la durée de l'événement."
+  },
+  {
+    question: "Peut-on combiner le relais par code QR avec un écran de scène ou un flux vMix ?",
+    answer: "Oui ! Nos outils étant basés sur le web, nous pouvons alimenter simultanément un projecteur de salle ou une incrustation vidéo vMix/OBS tout en permettant aux participants de scanner un code QR pour lire sur leur propre téléphone."
+  },
+  {
+    question: "Quelle est la différence entre le surtitrage théâtral et le sous-titrage automatique en direct ?",
+    answer: "Pour le théâtre et les spectacles vivants, nous préchargeons votre texte et déclenchons manuellement chaque réplique en temps réel au rythme exact des comédiens, évitant ainsi tout décalage dramatique ou erreur de reconnaissance vocale."
+  }
+];
 ---
 
 <BaseLayout 
   title="Devis sous-titrage d'événements en direct, relais QR et surtitrage | Solutions Zip" 
   description="Demandez un devis pour le sous-titrage en direct de conférences, relais sur téléphone par code QR, écrans d'auditorium, webdiffusions vMix/OBS et surtitrage de théâtre."
   schema={liveCaptionsServiceSchema}
+  faqs={quoteFaqs}
 >
   <Fragment slot="head">
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
@@ -205,5 +222,11 @@ const liveCaptionsServiceSchema = {
 
     </div>
   </section>
+
+  <FaqSection 
+    title="Questions fréquentes sur les devis d'événements en direct"
+    subtitle="Réponses rapides sur nos délais de réponse, les combinaisons d'affichage et le surtitrage théâtral."
+    faqs={quoteFaqs}
+  />
 
 </BaseLayout>

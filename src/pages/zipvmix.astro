@@ -34,6 +34,17 @@ const specs = [
   { label: "Direct network bridge", value: "Sends text data directly to vMix over your local machine or across your studio's local production network." },
   { label: "Clean graphics output", value: "Updates your designated Title input in real time, matching your broadcast typography without fuzzy screen scraping." }
 ];
+
+const faqs = [
+  {
+    question: "How does Zip Captions send live captions into vMix?",
+    answer: "The Zip Captions vMix Extension connects directly to the vMix Web Controller API over localhost or your local studio network, updating your designated GT Title or XAML lower-third text field in real time without chroma-keying or window capture."
+  },
+  {
+    question: "Can Zip Captions run on a separate computer from the main vMix production machine?",
+    answer: "Yes. Because the extension communicates with vMix over HTTP via the vMix Web Controller, you can run Zip Captions on a dedicated captioning laptop on the same local network and point it to your vMix machine's IP address and port."
+  }
+];
 ---
 
 <ProductLayout
@@ -53,6 +64,7 @@ const specs = [
   ]}
   capabilities={capabilities}
   specs={specs}
+  faqs={faqs}
   ctaTitle="Elevate your broadcast accessibility"
   ctaDescription="Stop struggling with clunky screen captures. Deliver crisp, professional on-screen captions directly in vMix."
   ctaAction={{ 

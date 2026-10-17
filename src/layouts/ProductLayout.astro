@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import FaqSection, { type FaqItem } from '../components/FaqSection.astro';
 
 interface ActionButton {
   text: string;
@@ -33,6 +34,9 @@ interface Props {
   specs?: SpecItem[];
   specsTitle?: string;
   specsSubtitle?: string;
+  faqs?: FaqItem[];
+  faqTitle?: string;
+  faqSubtitle?: string;
   ctaTitle?: string;
   ctaDescription?: string;
   ctaAction?: ActionButton;
@@ -55,6 +59,9 @@ const {
   specs = [],
   specsTitle = isFr ? "Bon à savoir avant de commencer" : "Good to know before you start",
   specsSubtitle = isFr ? "En un coup d'œil" : "At a Glance",
+  faqs = [],
+  faqTitle,
+  faqSubtitle,
   ctaTitle = isFr ? "Prêt à commencer ?" : "Ready to get started?",
   ctaDescription = isFr ? "Rejoignez des milliers d'utilisateurs qui rendent la communication plus accessible dès aujourd'hui." : "Join thousands of users making communication more accessible today.",
   ctaAction,
@@ -78,7 +85,7 @@ const softwareSchema = schema || {
 };
 ---
 
-<BaseLayout title={seoTitle || title} description={description} image={heroImage} imageAlt={heroImageAlt} schema={softwareSchema}>
+<BaseLayout title={seoTitle || title} description={description} image={heroImage} imageAlt={heroImageAlt} schema={softwareSchema} faqs={faqs}>
   
   <!-- Hero Section -->
   <section class="relative overflow-hidden pt-12 sm:pt-16 pb-16 sm:pb-20 bg-gradient-to-b from-white via-slate-50 to-alabaster border-b border-slate-200/80">
@@ -206,6 +213,8 @@ const softwareSchema = schema || {
       </div>
     </section>
   )}
+
+  <FaqSection faqs={faqs} title={faqTitle} subtitle={faqSubtitle} groupName={`faq-${cleanPath.replace(/\W+/g, '-')}`} />
 
   <!-- Bottom CTA Banner -->
   <section class="py-16 bg-midnight text-white">

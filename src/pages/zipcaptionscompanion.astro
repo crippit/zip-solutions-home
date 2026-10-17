@@ -34,6 +34,17 @@ const specs = [
   { label: "Tactile buttons", value: "Start, stop, pause, and resume captioning sessions with live color status feedback right on your keys." },
   { label: "On-key teleprompter", value: "Displays the most recently spoken words directly on your Stream Deck LCD screen so you never lose your place." }
 ];
+
+const faqs = [
+  {
+    question: "How do I control Zip Captions from an Elgato Stream Deck?",
+    answer: "Install the Zip Captions Companion Chrome Extension on the computer running Bitfocus Companion and Zip Captions. You can then assign physical Stream Deck buttons to start, pause, or stop captioning and view live status feedback directly on your keys."
+  },
+  {
+    question: "Can I see live caption text on my Stream Deck buttons?",
+    answer: "Yes. The Companion module receives real-time status and recent caption words from Zip Captions so operators can verify that audio is being transcribed right on the Stream Deck LCD keys."
+  }
+];
 ---
 
 <ProductLayout
@@ -53,6 +64,7 @@ const specs = [
   ]}
   capabilities={capabilities}
   specs={specs}
+  faqs={faqs}
   ctaTitle="Take physical control of your live captions"
   ctaDescription="Streamline your live production desk with tactile hardware controls for Zip Captions."
   ctaAction={{ 

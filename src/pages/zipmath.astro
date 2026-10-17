@@ -36,6 +36,21 @@ const specs = [
   { label: "Mathematical standards", value: "Full LaTeX equation formatting via MathLive and coordinate plane graphing via MathCanvas." },
   { label: "Distribution formats", value: "Printable 8.5\"x11\" remediation slips, dynamic QR codes, direct links, and 6-digit Join Codes." }
 ];
+
+const faqs = [
+  {
+    question: "Where is student math assessment data stored in Zip Solutions Remediator?",
+    answer: "100% of your class rosters, assignments, and student responses are stored directly inside your own private Google Sheet within your school's Google Workspace—never on third-party external databases."
+  },
+  {
+    question: "Do students need accounts or passwords to complete a math remediation slip?",
+    answer: "No. Students simply scan the printed QR code or enter a 6-digit Join Code along with their school email address to complete coordinate plane graphing, LaTeX equations, and written explanations in their browser."
+  },
+  {
+    question: "How does the hybrid grading engine evaluate coordinate graphs and algebraic equations?",
+    answer: "A deterministic vector engine checks student-drawn lines, slopes, intercepts, and shaded regions first. When an answer is partial or ambiguous, Google Gemini Vision analyzes the student's visual graph and written reasoning to award partial credit and targeted formative feedback."
+  }
+];
 ---
 
 <ProductLayout
@@ -52,6 +67,7 @@ const specs = [
   heroImageAlt="Zip Solutions Remediator logo featuring a coordinate plane grid and cyan zipper"
   capabilities={capabilities}
   specs={specs}
+  faqs={faqs}
   specsTitle="Built for Real Classrooms"
   specsSubtitle="Technical Specifications"
   ctaTitle="Bring Smarter Math Remediation to Your School"

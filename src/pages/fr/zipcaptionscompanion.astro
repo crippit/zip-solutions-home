@@ -34,6 +34,17 @@ const specs = [
   { label: "Touches tactiles", value: "Déclenchez, interrompez et reprenez vos sessions avec retour visuel dynamique par couleur sur chaque touche." },
   { label: "Téléprompteur sur touche", value: "Présente les derniers mots transcrits sur l'écran miniature de votre Stream Deck pour garder vos repères visuels." }
 ];
+
+const faqs = [
+  {
+    question: "Comment piloter Zip Captions depuis un pupitre Elgato Stream Deck ?",
+    answer: "Installez l'extension Chrome Zip Captions Companion sur l'ordinateur exécutant Bitfocus Companion et Zip Captions. Vous pourrez alors assigner des boutons physiques Stream Deck pour démarrer, mettre en pause ou arrêter le sous-titrage avec retour d'état lumineux."
+  },
+  {
+    question: "Puis-je visualiser le texte des sous-titres directement sur les touches du Stream Deck ?",
+    answer: "Oui. Le module Companion reçoit l'état en direct ainsi que les derniers mots transcrits par Zip Captions, permettant au technicien de régie de contrôler la transcription directement sur l'écran LCD des touches."
+  }
+];
 ---
 
 <ProductLayout
@@ -53,6 +64,7 @@ const specs = [
   ]}
   capabilities={capabilities}
   specs={specs}
+  faqs={faqs}
   ctaTitle="Prenez le contrôle tactile de votre sous-titrage direct"
   ctaDescription="Pilotez votre régie de diffusion avec des commandes matérielles fiables pour Zip Captions."
   ctaAction={{ 

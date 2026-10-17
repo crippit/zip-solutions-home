@@ -35,6 +35,25 @@ const specs = [
   { label: "Symbols & imagery", value: "Includes free integrated ARASAAC and OpenSymbols libraries, with support for emojis and your own uploaded pictures." },
   { label: "Free & open source", value: "Completely free, with zero ads or subscriptions. Designed openly for teachers, families, and individuals." }
 ];
+
+const faqs = [
+  {
+    question: "Does Zip EasySpeak AI work completely offline without Wi-Fi?",
+    answer: "Yes. Once Zip EasySpeak or EasySpeakAI loads in your browser or is installed as an app, all communication boards, custom photos, speech synthesis, and the on-device AI next-word prediction engine run 100% offline on your device without requiring an internet connection."
+  },
+  {
+    question: "Is Zip EasySpeak really free with no subscriptions?",
+    answer: "Yes. Zip EasySpeak and EasySpeakAI are 100% free and open-source with zero subscriptions, no locked vocabulary tiers, no advertisements, and no mandatory account creation."
+  },
+  {
+    question: "What devices can run Zip EasySpeak?",
+    answer: "Unlike iOS-only AAC apps, Zip EasySpeak runs across iPads, iPhones, Android tablets, Chromebooks, Windows PCs, and Macs—either as a native download from the Apple App Store and Google Play Store or as an installable offline Progressive Web App (PWA)."
+  },
+  {
+    question: "Can teachers or speech-language pathologists share custom AAC boards?",
+    answer: "Yes. Educators, SLPs, and parents can export a complete board backup file or use the Merge Import feature to share individual topic pages (such as a classroom lesson board) without overwriting a student's personalized communication setup."
+  }
+];
 ---
 
 <ProductLayout
@@ -51,6 +70,7 @@ const specs = [
   heroImageAlt="Zip EasySpeak running on multiple devices"
   capabilities={capabilities}
   specs={specs}
+  faqs={faqs}
   ctaTitle="Give voice to communication"
   ctaDescription="Get started with Zip EasySpeak today—free, open-source, and accessible everywhere."
   ctaAction={{ text: "Launch EasySpeak Now", url: "https://easyspeak.zipsolutions.org", external: true }}
@@ -257,6 +277,51 @@ const specs = [
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
         </svg>
       </a>
+    </div>
+  </div>
+
+  <!-- AAC Comparison Matrix -->
+  <div class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden mb-16">
+    <div class="px-6 sm:px-8 py-6 border-b border-slate-100 bg-slate-50/60">
+      <span class="text-xs font-bold uppercase tracking-wider text-amethyst font-heading block mb-1">
+        Accessible AAC Without Barriers
+      </span>
+      <h2 class="text-xl sm:text-2xl font-extrabold font-heading text-midnight">
+        How Zip EasySpeak Compares to Traditional AAC Apps
+      </h2>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="w-full text-left border-collapse min-w-[620px]">
+        <thead>
+          <tr class="bg-slate-50 border-b border-slate-200 text-xs uppercase tracking-wider text-slate-500">
+            <th class="p-4 sm:px-6 font-bold">Feature</th>
+            <th class="p-4 sm:px-6 font-bold text-amethyst bg-purple-50/50">Zip EasySpeak &amp; EasySpeakAI</th>
+            <th class="p-4 sm:px-6 font-bold">Legacy Paid AAC Apps</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100 text-xs sm:text-sm">
+          <tr>
+            <td class="p-4 sm:px-6 font-semibold text-midnight">Price &amp; Licensing</td>
+            <td class="p-4 sm:px-6 font-bold text-teal-brand bg-purple-50/20">100% Free &amp; Open Source ($0)</td>
+            <td class="p-4 sm:px-6 text-slate-600">$150–$300 upfront or recurring subscriptions</td>
+          </tr>
+          <tr>
+            <td class="p-4 sm:px-6 font-semibold text-midnight">Device Compatibility</td>
+            <td class="p-4 sm:px-6 font-semibold text-midnight bg-purple-50/20">iPad, Android, Chromebook, Windows, Mac &amp; Web</td>
+            <td class="p-4 sm:px-6 text-slate-600">Often locked to iOS/iPad only</td>
+          </tr>
+          <tr>
+            <td class="p-4 sm:px-6 font-semibold text-midnight">AI Word Prediction</td>
+            <td class="p-4 sm:px-6 font-semibold text-midnight bg-purple-50/20">100% On-device offline LLM (Zero cloud telemetry)</td>
+            <td class="p-4 sm:px-6 text-slate-600">Static frequency lists or cloud-dependent AI</td>
+          </tr>
+          <tr>
+            <td class="p-4 sm:px-6 font-semibold text-midnight">Board Sharing &amp; Merging</td>
+            <td class="p-4 sm:px-6 font-semibold text-midnight bg-purple-50/20">Portable JSON files &amp; non-destructive page merging</td>
+            <td class="p-4 sm:px-6 text-slate-600">Proprietary cloud accounts required</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 

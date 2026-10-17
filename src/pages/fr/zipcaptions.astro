@@ -89,6 +89,29 @@ const specs = [
   { label: "Configurations de streaming en direct", value: "Connexion via WebSockets directement à OBS Studio, vMix et commutateurs vidéo numériques." },
   { label: "Sauvegarde des transcriptions", value: "Téléchargez des transcriptions complètes à tout moment aux formats SRT, VTT ou texte brut." }
 ];
+
+const faqs = [
+  {
+    question: "Est-ce que Zip Captions est vraiment 100 % gratuit ?",
+    answer: "Oui. Le sous-titrage en direct standard sur navigateur dans Zip Captions est 100 % gratuit pour toujours, avec une utilisation illimitée, sans création de compte et sans carte de crédit. Des forfaits mensuels optionnels sur Patreon (à partir de 5 $/mois) sont proposés si vous souhaitez accéder à nos moteurs de transcription IA avancés."
+  },
+  {
+    question: "Comment ajouter des sous-titres en direct dans OBS Studio ou vMix ?",
+    answer: "Zip Captions s'intègre directement à OBS Studio via WebSockets pour envoyer des sous-titres en temps réel sur Twitch et YouTube Live. Pour les productions vMix, notre connecteur gratuit Zip vMix transmet le texte en direct directement vers n'importe quel titre ou synthé vMix."
+  },
+  {
+    question: "Les élèves ou participants peuvent-ils lire les sous-titres sur leur propre téléphone ?",
+    answer: "Oui. Grâce au mode Diffusion (Broadcast) de Zip Captions, vous partagez un code de salle fixe permettant aux élèves, fidèles ou congressistes de suivre les sous-titres en temps réel sur leur propre téléphone, tablette ou ordinateur portable, tout en ajustant la taille du texte, la police Lexend adaptée à la dyslexie et le contraste."
+  },
+  {
+    question: "Mes transcriptions de cours ou de réunions restent-elles confidentielles ?",
+    answer: "Oui. Zip Captions traite la voix de manière éphémère et conserve votre transcription localement dans la mémoire de votre navigateur. Nous ne stockons pas vos transcriptions sur des serveurs externes, garantissant une confidentialité optimale pour les écoles, universités, hôpitaux et conseils d'administration."
+  },
+  {
+    question: "Dans quels formats puis-je exporter mes transcriptions ?",
+    answer: "À la fin de chaque session, vous pouvez télécharger votre transcription en un clic au format de sous-titres horodatés SRT, WebVTT (.vtt) pour le montage vidéo, ou en texte brut (.txt) prêt pour vos notes de cours et synthèses IA."
+  }
+];
 ---
 
 <ProductLayout
@@ -105,6 +128,7 @@ const specs = [
   heroImageAlt="Zip Captions en action sur ordinateur portable et mobile"
   capabilities={capabilities}
   specs={specs}
+  faqs={faqs}
   ctaTitle="Faites l'expérience d'un sous-titrage en direct sans effort"
   ctaDescription="Commencez à sous-titrer votre classe, réunion, service communautaire ou diffusion en direct en quelques secondes, sans configuration complexe."
   ctaAction={{ text: "Lancer Zip Captions gratuitement", url: "https://zipcaptions.app", external: true }}
@@ -291,6 +315,62 @@ const specs = [
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
           allowfullscreen
         ></iframe>
+      </div>
+    </div>
+
+    <!-- Tableau comparatif : Zip Captions vs Solutions traditionnelles -->
+    <div class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+      <div class="px-6 sm:px-8 py-6 border-b border-slate-100 bg-slate-50/60">
+        <span class="text-xs font-bold uppercase tracking-wider text-amethyst font-heading block mb-1">
+          Pourquoi les écoles et producteurs adoptent Zip Captions
+        </span>
+        <h2 class="text-xl sm:text-2xl font-extrabold font-heading text-midnight">
+          Comparaison entre Zip Captions et les solutions de sous-titrage traditionnelles
+        </h2>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse min-w-[640px]">
+          <thead>
+            <tr class="bg-slate-50 border-b border-slate-200 text-xs uppercase tracking-wider text-slate-500">
+              <th class="p-4 sm:px-6 font-bold">Critère</th>
+              <th class="p-4 sm:px-6 font-bold text-amethyst bg-purple-50/50">Zip Captions</th>
+              <th class="p-4 sm:px-6 font-bold">Logiciels SaaS payants</th>
+              <th class="p-4 sm:px-6 font-bold">Encodeurs matériels</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 text-xs sm:text-sm">
+            <tr>
+              <td class="p-4 sm:px-6 font-semibold text-midnight">Coût du sous-titrage de base</td>
+              <td class="p-4 sm:px-6 font-bold text-teal-brand bg-purple-50/20">100 % gratuit pour toujours (0 $)</td>
+              <td class="p-4 sm:px-6 text-slate-600">Facturation à la minute ou abonnements élevés</td>
+              <td class="p-4 sm:px-6 text-slate-600">Milliers de dollars en matériel spécialisé</td>
+            </tr>
+            <tr>
+              <td class="p-4 sm:px-6 font-semibold text-midnight">Installation et déploiement</td>
+              <td class="p-4 sm:px-6 font-semibold text-midnight bg-purple-50/20">Instantané dans tout navigateur (zéro installation)</td>
+              <td class="p-4 sm:px-6 text-slate-600">Création de compte et agents logiciels requis</td>
+              <td class="p-4 sm:px-6 text-slate-600">Intégration câblée SDI/HDMI en régie</td>
+            </tr>
+            <tr>
+              <td class="p-4 sm:px-6 font-semibold text-midnight">Diffusion sur appareils personnels</td>
+              <td class="p-4 sm:px-6 font-semibold text-midnight bg-purple-50/20">Codes de salle inclus avec réglage police/contraste</td>
+              <td class="p-4 sm:px-6 text-slate-600">Souvent réservé aux forfaits entreprise</td>
+              <td class="p-4 sm:px-6 text-slate-600">Affichage sur écran principal uniquement</td>
+            </tr>
+            <tr>
+              <td class="p-4 sm:px-6 font-semibold text-midnight">OBS Studio, vMix et Stream Deck</td>
+              <td class="p-4 sm:px-6 font-semibold text-midnight bg-purple-50/20">WebSockets natifs, connecteur vMix et Companion</td>
+              <td class="p-4 sm:px-6 text-slate-600">Nécessite des clés API ou extensions payantes</td>
+              <td class="p-4 sm:px-6 text-slate-600">Sous-titres codés SDI uniquement</td>
+            </tr>
+            <tr>
+              <td class="p-4 sm:px-6 font-semibold text-midnight">Confidentialité des transcriptions</td>
+              <td class="p-4 sm:px-6 font-semibold text-midnight bg-purple-50/20">Conservées dans la mémoire locale du navigateur</td>
+              <td class="p-4 sm:px-6 text-slate-600">Stockées sur des serveurs infonuagiques tiers</td>
+              <td class="p-4 sm:px-6 text-slate-600">Variable selon le fournisseur</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
 

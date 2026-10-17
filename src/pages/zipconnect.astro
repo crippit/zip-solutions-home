@@ -34,6 +34,17 @@ const specs = [
   { label: "Full control & privacy", value: "You decide exactly when captions are posted, with instant pause controls whenever you need a break." },
   { label: "Lightweight on gaming rigs", value: "Runs quietly in your browser without eating up GPU or CPU resources while gaming or streaming." }
 ];
+
+const faqs = [
+  {
+    question: "How does Zip Connect post live captions to Twitch chat?",
+    answer: "Zip Connect reads live captions from your open Zip Captions browser tab and automatically relays them into your open Twitch stream chat window—without requiring third-party Twitch bot tokens or external servers."
+  },
+  {
+    question: "Does Zip Connect slow down gaming or OBS streaming performance?",
+    answer: "No. Zip Connect is a lightweight Chrome extension that runs inside your browser with negligible CPU and memory usage, leaving your GPU and encoder completely free for gaming and streaming."
+  }
+];
 ---
 
 <ProductLayout
@@ -55,6 +66,7 @@ const specs = [
   heroImageAlt="Zip Connect Chrome Extension"
   capabilities={capabilities}
   specs={specs}
+  faqs={faqs}
   ctaTitle="Make your Twitch stream accessible to everyone"
   ctaDescription="Level up your live stream with real-time chat captions that engage every single viewer in your community."
   ctaAction={{ 
