@@ -1,5 +1,6 @@
 ---
-title: Giveaways | Cadeaux
+title: 'Community Giveaways | Cadeaux'
+description: 'Join Zip Solutions community giveaways celebrating educators, accessibility advocates, and Zip Captions supporters with wireless microphones and swag.'
 sidebar: false
 ---
 ![](/images/giveaway.png)

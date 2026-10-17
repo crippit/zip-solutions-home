@@ -1,5 +1,6 @@
 ---
-title: 'Giving Back - Token Request'
+title: 'Giving Back — Free AI Captioning Token Requests'
+description: 'Request free monthly AI captioning tokens from Zip Solutions for educator training sessions, non-profit accessibility events, and classroom trials.'
 sidebar: false
 ---
 # Giving Back

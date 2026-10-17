@@ -9,66 +9,143 @@ interface Props {
   title?: string;
   description?: string;
   image?: string;
+  imageAlt?: string;
   schema?: any;
+  canonicalPath?: string;
+  noindex?: boolean;
+  hasFrTranslation?: boolean;
 }
 
 const currentLocale = (Astro.currentLocale || (Astro.url.pathname.startsWith('/fr') ? 'fr' : 'en')) as 'en' | 'fr';
 const t = useTranslations(currentLocale);
 
 const { 
-  title = currentLocale === 'fr' ? 'Zip Solutions' : 'Zip Solutions', 
+  title = currentLocale === 'fr' ? "Zip Solutions | La maison de l'accessibilité" : 'Zip Solutions | The Home of Accessibility', 
   description = currentLocale === 'fr' 
-    ? "La maison de l'accessibilité: Renforcer les liens grâce au sous-titrage en direct, aux outils de CAA, à l'organisation d'événements inclusifs et à l'apprentissage accessible."
-    : 'The Home of Accessibility - Empowering connection with live captioning, AAC tools, in-person and hybrid event organisation, and accessible learning.',
-  image = '/images/zipsolutions_logo.png',
-  schema
+    ? "La maison de l'accessibilité : sous-titrage en direct gratuit sur navigateur, outils de CAA hors ligne, organisation d'événements hybrides et technologies éducatives inclusives."
+    : 'The Home of Accessibility — Empowering connection with free browser-based live captioning, offline AI AAC tools, hybrid event production, and accessible learning.',
+  image = '/images/og-share-card.jpg',
+  imageAlt = currentLocale === 'fr'
+    ? "Zip Solutions — La maison de l'accessibilité, sous-titrage en direct et outils de CAA"
+    : 'Zip Solutions — The Home of Accessibility, live captions and AAC tools',
+  schema,
+  canonicalPath,
+  noindex = false,
+  hasFrTranslation = true,
 } = Astro.props;
 
-const siteTitle = title.includes('Zip Solutions') ? title : `${title} | Zip Solutions`;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://zipsolutions.org');
-const imageUrl = new URL(image, canonicalURL);
+const siteTitle = (title.includes('Zip Solutions') || title.includes('Solutions Zip'))
+  ? title
+  : `${title} | Zip Solutions`;
 
-const canonicalEn = new URL(getEquivalentUrl(Astro.url.pathname, 'en'), Astro.site || 'https://zipsolutions.org');
-const canonicalFr = new URL(getEquivalentUrl(Astro.url.pathname, 'fr'), Astro.site || 'https://zipsolutions.org');
+const siteOrigin = (Astro.site ? Astro.site.toString() : 'https://zipsolutions.org').replace(/\/$/, '');
+const cleanPathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const effectiveCanonicalPath = (canonicalPath || cleanPathname).replace(/\/$/, '') || '/';
 
-const graphItems: any[] = [
-  {
-    "@type": "Organization",
-    "@id": "https://zipsolutions.org/#organization",
-    "name": "Zip Solutions",
-    "url": "https://zipsolutions.org",
-    "logo": "https://zipsolutions.org/images/zipsolutions_logo.png",
-    "description": currentLocale === 'fr'
-      ? "La maison de l'accessibilité: Sous-titrage en direct, outils de CAA, organisation d'événements hybrides et formation professionnelle personnalisée."
-      : "The Home of Accessibility - Empowering connection with live captioning, AAC tools, in-person event organisation, hybrid session production, and custom professional development.",
-    "sameAs": [
-      "https://bsky.app/profile/zipcaptions.app",
-      "https://github.com/crippit",
-      "https://patreon.com/zipcaptions"
-    ]
+const canonicalURL = effectiveCanonicalPath === '/' ? `${siteOrigin}/` : `${siteOrigin}${effectiveCanonicalPath}`;
+const imageUrl = new URL(image, `${siteOrigin}/`).toString();
+
+const enEquivPath = getEquivalentUrl(effectiveCanonicalPath, 'en');
+const frEquivPath = getEquivalentUrl(effectiveCanonicalPath, 'fr');
+const canonicalEn = enEquivPath === '/' ? `${siteOrigin}/` : `${siteOrigin}${enEquivPath}`;
+const canonicalFr = `${siteOrigin}${frEquivPath}`;
+
+const keywordsContent = currentLocale === 'fr'
+  ? "sous-titrage en direct, sous-titres gratuits navigateur, CAA, communication améliorée et alternative, accessibilité, technologie d'assistance, sous-titres vMix, sous-titres OBS, synthèse vocale, événements hybrides, surtitrage théâtre, éducation inclusive"
+  : "free live captions, browser live captioning, speech to text, AAC app, augmentative alternative communication, assistive technology, vMix live captions, OBS closed captions, Twitch captions, classroom captioning, church live captions, theatre surtitles, hybrid event production";
+
+const baseOrgNode: Record<string, any> = {
+  "@type": ["Organization", "EducationalOrganization"],
+  "@id": "https://zipsolutions.org/#organization",
+  "name": "Zip Solutions",
+  "alternateName": "Solutions Zip",
+  "url": "https://zipsolutions.org",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://zipsolutions.org/images/zipsolutions_logo.png"
   },
-  {
-    "@type": "WebSite",
-    "@id": "https://zipsolutions.org/#website",
-    "url": "https://zipsolutions.org",
-    "name": "Zip Solutions",
-    "publisher": {
-      "@id": "https://zipsolutions.org/#organization"
+  "foundingDate": "2023",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "QC",
+    "addressCountry": "CA"
+  },
+  "description": currentLocale === 'fr'
+    ? "La maison de l'accessibilité : sous-titrage en direct, outils de CAA, organisation d'événements hybrides et formation professionnelle personnalisée."
+    : "The Home of Accessibility — Empowering connection with live captioning, AAC tools, in-person event organisation, hybrid session production, and custom professional development.",
+  "award": [
+    "University of Portsmouth 2025 Alumni Impact Award Winner",
+    "Virginia Society for Technology in Education (VSTE) Accessibility Demo Slam Winner"
+  ],
+  "funder": [
+    {
+      "@type": "Organization",
+      "name": "Dell Technologies Education Canada Innovation Accelerator"
+    },
+    {
+      "@type": "Organization",
+      "name": "Microsoft for Startups Founders Hub"
+    }
+  ],
+  "sameAs": [
+    "https://zipcaptions.app",
+    "https://bsky.app/profile/zipcaptions.app",
+    "https://github.com/crippit",
+    "https://patreon.com/zipcaptions"
+  ]
+};
+
+const baseWebsiteNode: Record<string, any> = {
+  "@type": "WebSite",
+  "@id": "https://zipsolutions.org/#website",
+  "url": "https://zipsolutions.org",
+  "name": "Zip Solutions",
+  "inLanguage": currentLocale === 'fr' ? "fr-CA" : "en-US",
+  "publisher": {
+    "@id": "https://zipsolutions.org/#organization"
+  }
+};
+
+const extraGraphItems: any[] = [];
+if (schema) {
+  const incoming = Array.isArray(schema) ? schema : [schema];
+  for (const item of incoming) {
+    if (!item) continue;
+    if (item["@id"] === "https://zipsolutions.org/#organization") {
+      Object.assign(baseOrgNode, item, { "@type": baseOrgNode["@type"] });
+    } else if (item["@id"] === "https://zipsolutions.org/#website") {
+      Object.assign(baseWebsiteNode, item);
+    } else {
+      extraGraphItems.push(item);
     }
   }
-];
+}
 
-if (schema) {
-  if (Array.isArray(schema)) {
-    graphItems.push(...schema);
-  } else {
-    graphItems.push(schema);
-  }
+const isHomePage = cleanPathname === '/' || cleanPathname === '/fr';
+if (!isHomePage) {
+  extraGraphItems.push({
+    "@type": "BreadcrumbList",
+    "@id": `${canonicalURL}#breadcrumb`,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": currentLocale === 'fr' ? "Accueil" : "Home",
+        "item": currentLocale === 'fr' ? `${siteOrigin}/fr` : `${siteOrigin}/`
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": title.replace(/\s*\|\s*(Zip Solutions|Solutions Zip).*$/, ''),
+        "item": canonicalURL
+      }
+    ]
+  });
 }
 
 const schemaOrgJson = {
   "@context": "https://schema.org",
-  "@graph": graphItems
+  "@graph": [baseOrgNode, baseWebsiteNode, ...extraGraphItems]
 };
 ---
 
@@ -85,7 +162,7 @@ const schemaOrgJson = {
     <!-- Canonical & Alternate Hreflang URLs -->
     <link rel="canonical" href={canonicalURL} />
     <link rel="alternate" hreflang="en" href={canonicalEn} />
-    <link rel="alternate" hreflang="fr" href={canonicalFr} />
+    {hasFrTranslation && <link rel="alternate" hreflang="fr" href={canonicalFr} />}
     <link rel="alternate" hreflang="x-default" href={canonicalEn} />
 
     <!-- Primary Meta Tags -->
@@ -93,9 +170,9 @@ const schemaOrgJson = {
     <meta name="title" content={siteTitle} />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#0F172A" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="robots" content={noindex ? "noindex, follow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"} />
     <meta name="author" content="Zip Solutions" />
-    <meta name="keywords" content="live captions, AAC, augmentative alternative communication, accessibility, assistive technology, vMix captions, twitch captions, speech to text, educational consultancy, event organisation, hybrid sessions, professional development, live event captions quote" />
+    <meta name="keywords" content={keywordsContent} />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -103,15 +180,23 @@ const schemaOrgJson = {
     <meta property="og:title" content={siteTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:alt" content={imageAlt} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="669" />
+    <meta property="og:image:type" content={imageUrl.endsWith('.png') ? 'image/png' : 'image/jpeg'} />
     <meta property="og:site_name" content="Zip Solutions" />
     <meta property="og:locale" content={currentLocale === 'fr' ? 'fr_CA' : 'en_US'} />
+    {hasFrTranslation && (
+      <meta property="og:locale:alternate" content={currentLocale === 'fr' ? 'en_US' : 'fr_CA'} />
+    )}
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={canonicalURL} />
-    <meta property="twitter:title" content={siteTitle} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={imageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={siteTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+    <meta name="twitter:image:alt" content={imageAlt} />
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json" set:html={JSON.stringify(schemaOrgJson)} />

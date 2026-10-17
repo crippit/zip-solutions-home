@@ -1,60 +1,86 @@
 ---
 import ProductLayout from '../layouts/ProductLayout.astro';
 
-const zipCaptionsSchema = {
-  "@type": "SoftwareApplication",
-  "name": "Zip Captions",
-  "description": "Free, browser-based real-time speech-to-text live captioning for classrooms, places of worship, conferences, and live streaming.",
-  "applicationCategory": "EducationalApplication, UtilitiesApplication, MultimediaApplication",
-  "operatingSystem": "All (Web, Windows, macOS, Linux, ChromeOS, iOS, Android)",
-  "url": "https://zipsolutions.org/zipcaptions",
-  "award": [
-    "University of Portsmouth 2025 Alumni Impact Award Winner",
-    "Virginia Society for Technology in Education (VSTE) Accessibility Demo Slam Winner"
-  ],
-  "funder": [
-    {
-      "@type": "Organization",
-      "name": "Dell Technologies Education Canada Innovation Accelerator"
-    },
-    {
-      "@type": "Organization",
-      "name": "Microsoft for Startups Founders Hub"
+const zipCaptionsSchema = [
+  {
+    "@type": "SoftwareApplication",
+    "name": "Zip Captions",
+    "description": "Free, browser-based real-time speech-to-text live captioning for classrooms, places of worship, conferences, OBS Studio, vMix, and live streaming.",
+    "applicationCategory": "EducationalApplication, UtilitiesApplication, MultimediaApplication",
+    "operatingSystem": "All (Web, Windows, macOS, Linux, ChromeOS, iOS, Android)",
+    "url": "https://zipsolutions.org/zipcaptions",
+    "award": [
+      "University of Portsmouth 2025 Alumni Impact Award Winner",
+      "Virginia Society for Technology in Education (VSTE) Accessibility Demo Slam Winner"
+    ],
+    "funder": [
+      {
+        "@type": "Organization",
+        "name": "Dell Technologies Education Canada Innovation Accelerator"
+      },
+      {
+        "@type": "Organization",
+        "name": "Microsoft for Startups Founders Hub"
+      }
+    ],
+    "review": [
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Dr. Brian Friedlander"
+        },
+        "reviewBody": "ZipCaptions is a free captioning tool that could be really helpful for students with language-based learning disabilities, auditory processing disabilities, or students who are hard of hearing."
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Tracey Green"
+        },
+        "reviewBody": "For those with hearing loss, it empowers them. This fosters autonomy and independence, so you do not have to ask for help all the time."
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Kevin Bouwman"
+        },
+        "reviewBody": "Zip Captions makes it very easy to add live open captions to our service broadcasts for our livestream and our leased cable tv channel."
+      }
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "0.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
     }
-  ],
-  "review": [
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Dr. Brian Friedlander"
-      },
-      "reviewBody": "ZipCaptions is a free captioning tool that could be really helpful for students with language-based learning disabilities, auditory processing disabilities, or students who are hard of hearing."
-    },
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Tracey Green"
-      },
-      "reviewBody": "For those with hearing loss, it empowers them. This fosters autonomy and independence, so you do not have to ask for help all the time."
-    },
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Kevin Bouwman"
-      },
-      "reviewBody": "Zip Captions makes it very easy to add live open captions to our service broadcasts for our livestream and our leased cable tv channel."
-    }
-  ],
-  "offers": {
-    "@type": "Offer",
-    "price": "0.00",
-    "priceCurrency": "USD",
-    "availability": "https://schema.org/InStock"
+  },
+  {
+    "@type": "VideoObject",
+    "name": "Broadcast Live Captions Anywhere with Zip Captions",
+    "description": "How to broadcast real-time captions to personal smartphones, tablets, and laptops using static share codes in Zip Captions.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/OXpaiEtECmI/hqdefault.jpg",
+    "uploadDate": "2024-06-01",
+    "embedUrl": "https://www.youtube.com/embed/OXpaiEtECmI"
+  },
+  {
+    "@type": "VideoObject",
+    "name": "Transcribe and Export SRT/VTT Transcripts with Zip Captions",
+    "description": "How to transcribe speech in your browser and export instant SRT, VTT, or plain text transcripts with Zip Captions.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/sF7n1X1oIFY/hqdefault.jpg",
+    "uploadDate": "2024-06-01",
+    "embedUrl": "https://www.youtube.com/embed/sF7n1X1oIFY"
+  },
+  {
+    "@type": "VideoObject",
+    "name": "Live Streaming with OBS Studio and Zip Captions",
+    "description": "How to connect Zip Captions directly into OBS Studio via WebSockets for real-time open captions on Twitch and YouTube Live.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/QYz4Brh66YA/hqdefault.jpg",
+    "uploadDate": "2024-06-01",
+    "embedUrl": "https://www.youtube.com/embed/QYz4Brh66YA"
   }
-};
+];
 
 const capabilities = [
   {
@@ -93,8 +119,9 @@ const specs = [
 
 <ProductLayout
   title="Zip Captions"
+  seoTitle="Zip Captions — Free Browser-Based Live Captioning & Speech-to-Text"
   subtitle="Flagship Live Captioning"
-  description="A free, easy-to-use live captioning tool that works directly in your web browser. Real-time text transcription designed to make communication accessible for everyone."
+  description="Free, private, browser-based live captioning and real-time speech-to-text transcription for classrooms, churches, conferences, OBS Studio, and vMix."
   actions={[
     { text: "Launch Zip Captions", url: "https://zipcaptions.app", primary: true, external: true },
     { text: "View AI Pricing", url: "/pricing" },

@@ -6,12 +6,14 @@ interface Props {
   description?: string;
   heroBadge?: string;
   date?: string;
+  canonicalPath?: string;
+  hasFrTranslation?: boolean;
 }
 
-const { title, description, heroBadge, date } = Astro.props;
+const { title, description, heroBadge, date, canonicalPath, hasFrTranslation = true } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} canonicalPath={canonicalPath} hasFrTranslation={hasFrTranslation}>
   <!-- Header Banner -->
   <section class="bg-gradient-to-b from-white to-slate-50 border-b border-slate-200/80 pt-12 pb-14 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto text-center">

@@ -1,5 +1,6 @@
 ---
-title: 'Classroom Studio Sync'
+title: 'Classroom Studio Sync — Google Classroom to Sheets AI Database'
+description: 'Turn Google Classroom into a live, structured database inside Google Sheets to power custom Gemini Gems, Google Workspace Studio, and NotebookLM interventions.'
 sidebar: false
 ---
 

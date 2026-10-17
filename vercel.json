@@ -92,6 +92,41 @@
       "permanent": true
     },
     {
+      "source": "/testimonials",
+      "destination": "/testimonial",
+      "permanent": true
+    },
+    {
+      "source": "/fr/testimonials",
+      "destination": "/fr/testimonial",
+      "permanent": true
+    },
+    {
+      "source": "/press-releases",
+      "destination": "/pressrelease",
+      "permanent": true
+    },
+    {
+      "source": "/fr/press-releases",
+      "destination": "/fr/pressrelease",
+      "permanent": true
+    },
+    {
+      "source": "/team",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/fr/team",
+      "destination": "/fr/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/get-started",
+      "destination": "/easyspeakguide",
+      "permanent": true
+    },
+    {
       "source": "/(.*)\\.html",
       "destination": "/$1",
       "permanent": true

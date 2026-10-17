@@ -48,11 +48,23 @@ const idealAudiences = [
   "Non-Profit Summits & Community Assemblies",
   "Hybrid Association Meetings & Annual Conventions"
 ];
+
+const eventServiceSchema = {
+  "@type": "Service",
+  "name": "In-Person & Hybrid Event Organisation & Custom Professional Development",
+  "provider": {
+    "@id": "https://zipsolutions.org/#organization"
+  },
+  "serviceType": "Hybrid Conference Production, Multi-Room Streaming & Educator Professional Development",
+  "description": "Practical technical production, multi-room hybrid streaming, live event accessibility, and tailored professional development workshops for schools, conferences, and non-profits.",
+  "url": "https://zipsolutions.org/events"
+};
 ---
 
 <BaseLayout 
-  title="In-Person & Hybrid Event Organisation | Zip Solutions" 
-  description="Practical technical production, multi-room hybrid streaming, and tailored professional development workshops for schools, conferences, and non-profits."
+  title="In-Person & Hybrid Event Production & Educator PD | Zip Solutions" 
+  description="Practical technical production, multi-room hybrid conference streaming, live captions, and tailored professional development workshops for schools, universities, and non-profits."
+  schema={eventServiceSchema}
 >
 
   <!-- Hero Section -->

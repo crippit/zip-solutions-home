@@ -1,5 +1,6 @@
 ---
-title: 'Cookies'
+title: 'Cookie Policy'
+description: 'Learn how Zip Solutions and Zip Captions use minimal, privacy-respecting cookies to store your accessibility preferences without tracking or advertising.'
 sidebar: false
 ---
 

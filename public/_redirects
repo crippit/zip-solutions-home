@@ -27,9 +27,14 @@
 /live-event-quotes.html /live-event-quotes 301
 /quote.html /quote 301
 /story.html /story 301
-/team.html /team 301
+/team.html /about-us 301
+/team /about-us 301
+/testimonials /testimonial 301
 /advisory.html /advisory 301
 /press.html /press 301
 /pressrelease.html /pressrelease 301
-/press-releases.html /press-releases 301
+/press-releases.html /pressrelease 301
+/press-releases /pressrelease 301
+/get-started.html /easyspeakguide 301
+/get-started /easyspeakguide 301
 /*.html /:splat 301

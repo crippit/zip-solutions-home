@@ -32,11 +32,23 @@ const quoteChecklist = [
   "How you want captions displayed (QR attendee relay, projector screen, vMix stream, or theatre surtitles)",
   "Venue location and any specific audio-visual questions"
 ];
+
+const liveCaptionsServiceSchema = {
+  "@type": "Service",
+  "name": "Custom Live Event Captions, QR Code Relay & Theatre Surtitles",
+  "provider": {
+    "@id": "https://zipsolutions.org/#organization"
+  },
+  "serviceType": "Live Event Captioning & Theatrical Surtitling",
+  "description": "Flexible, browser-powered live captions for conferences, auditorium presentations, QR code personal device relays, broadcast streams (vMix & OBS), and scripted theatre surtitles.",
+  "url": "https://zipsolutions.org/live-event-quotes"
+};
 ---
 
 <BaseLayout 
-  title="Live Event Captions & Surtitles | Zip Solutions" 
-  description="Flexible, browser-powered live captions for conferences, auditorium presentations, broadcast streams, and scripted theatre."
+  title="Live Event Captions, QR Relay & Theatre Surtitles Quotes | Zip Solutions" 
+  description="Request a custom quote for browser-powered live event captions: conference QR code phone relays, auditorium screens, vMix/OBS broadcast streams, and theatre surtitles."
+  schema={liveCaptionsServiceSchema}
 >
   <Fragment slot="head">
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>

@@ -48,11 +48,22 @@ const idealAudiences = [
   "Assemblées citoyennes et congrès d'organismes à but non lucratif",
   "Rencontres hybrides d'associations et assemblées générales annuelles"
 ];
+const eventServiceSchema = {
+  "@type": "Service",
+  "name": "Organisation d'événements en présentiel et hybrides et formation professionnelle",
+  "provider": {
+    "@id": "https://zipsolutions.org/#organization"
+  },
+  "serviceType": "Production de congrès hybrides, webdiffusion multi-salles et formation continue en éducation",
+  "description": "Production technique concrète, webdiffusion hybride multi-salles et ateliers de formation sur mesure pour écoles, congrès et associations.",
+  "url": "https://zipsolutions.org/fr/events"
+};
 ---
 
 <BaseLayout 
-  title="Organisation d'événements en présentiel et hybrides | Solutions Zip" 
-  description="Production technique concrète, webdiffusion hybride multi-salles et ateliers de formation sur mesure pour écoles, congrès et associations."
+  title="Organisation d'événements hybrides, webdiffusion et formation | Solutions Zip" 
+  description="Production technique concrète, webdiffusion hybride multi-salles, sous-titrage en direct et ateliers de formation sur mesure pour écoles, congrès et associations."
+  schema={eventServiceSchema}
 >
 
   <!-- En-tête -->

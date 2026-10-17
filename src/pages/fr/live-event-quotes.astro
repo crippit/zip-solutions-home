@@ -32,11 +32,22 @@ const quoteChecklist = [
   "Mode d'affichage des sous-titres souhaité (code QR pour participants, projecteur de salle, flux vMix ou surtitres théâtraux)",
   "Emplacement de la salle et particularités audiovisuelles"
 ];
+const liveCaptionsServiceSchema = {
+  "@type": "Service",
+  "name": "Sous-titrage en direct d'événements, relais QR et surtitrage théâtral",
+  "provider": {
+    "@id": "https://zipsolutions.org/#organization"
+  },
+  "serviceType": "Sous-titrage en direct et surtitrage de spectacle",
+  "description": "Sous-titres en direct flexibles sur le web pour conférences, présentations en auditorium, relais par code QR, webdiffusions vMix/OBS et pièces de théâtre.",
+  "url": "https://zipsolutions.org/fr/live-event-quotes"
+};
 ---
 
 <BaseLayout 
-  title="Sous-titres et surtitrage pour événements en direct | Solutions Zip" 
-  description="Des sous-titres en direct flexibles sur le web pour conférences, présentations en auditorium, webdiffusions et pièces de théâtre."
+  title="Devis sous-titrage d'événements en direct, relais QR et surtitrage | Solutions Zip" 
+  description="Demandez un devis pour le sous-titrage en direct de conférences, relais sur téléphone par code QR, écrans d'auditorium, webdiffusions vMix/OBS et surtitrage de théâtre."
+  schema={liveCaptionsServiceSchema}
 >
   <Fragment slot="head">
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>

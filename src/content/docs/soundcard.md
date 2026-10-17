@@ -1,5 +1,6 @@
 ---
-title: Zip Captions Sound Card
+title: 'Zip Captions USB Sound Card Setup Guide'
+description: 'Setup and troubleshooting guide for the plug-and-play Zip Captions USB Sound Card to add a dedicated microphone audio input on Windows, macOS, and Linux.'
 sidebar: false
 ---
 

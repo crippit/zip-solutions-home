@@ -1,5 +1,6 @@
 ---
-title: Slide'o'matic
+title: "Slide'o'matic — Automated Google Slides Visibility Scheduler"
+description: "Schedule individual Google Slides to automatically show or hide based on calendar dates with Slide'o'matic, a free Google Workspace add-on by Zip Solutions."
 sidebar: false
 ---
 # Slide Visibility Scheduler

@@ -4,8 +4,9 @@ import type { APIRoute } from 'astro';
 export const GET: APIRoute = async ({ site }) => {
   const baseUrl = site ? site.toString().replace(/\/$/, '') : 'https://zipsolutions.org';
   const docs = await getCollection('docs');
+  const lastmod = '2026-10-16';
 
-  const staticPages = [
+  const bilingualStaticPages = [
     '',
     'products',
     'zipcaptions',
@@ -13,17 +14,13 @@ export const GET: APIRoute = async ({ site }) => {
     'pricing',
     'contact-us',
     'events',
-    'quote',
     'live-event-quotes',
     'zipmath',
     'testimonial',
-    'testimonials',
     'press',
     'pressrelease',
-    'press-releases',
     'about-us',
     'story',
-    'team',
     'advisory',
     'zippanel',
     'zipconnect',
@@ -33,27 +30,52 @@ export const GET: APIRoute = async ({ site }) => {
     'equibrowse',
   ];
 
-  const docSlugs = docs.map((doc) => doc.id.replace(/\.md$/, ''));
-  const allEnPaths = Array.from(new Set([...staticPages, ...docSlugs]));
-  const allFrPaths = allEnPaths.map((path) => (path === '' ? 'fr' : `fr/${path}`));
-  const allPaths = [...allEnPaths, ...allFrPaths];
+  const bilingualSet = new Set(bilingualStaticPages);
+  const docSlugs = docs
+    .map((doc) => doc.id.replace(/\.md$/, ''))
+    .filter((slug) => !bilingualSet.has(slug));
 
-  const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${allPaths
-  .map((path) => {
-    const url = path === '' ? `${baseUrl}/` : `${baseUrl}/${path}/`;
-    const isHome = path === '' || path === 'fr';
-    const isPriorityProduct = path === 'products' || path === 'zipcaptions' || path === 'easyspeak' || path === 'fr/products' || path === 'fr/zipcaptions' || path === 'fr/easyspeak';
+  const formatUrl = (path: string) => (path === '' ? `${baseUrl}/` : `${baseUrl}/${path}`);
+
+  const urlEntries: string[] = [];
+
+  // 1. Bilingual static pages (EN + FR with reciprocal xhtml:link hreflang tags)
+  for (const enSlug of bilingualStaticPages) {
+    const frSlug = enSlug === '' ? 'fr' : `fr/${enSlug}`;
+    const enUrl = formatUrl(enSlug);
+    const frUrl = formatUrl(frSlug);
+    const isHome = enSlug === '';
+    const isPriorityProduct = ['products', 'zipcaptions', 'easyspeak', 'zipmath', 'live-event-quotes', 'events'].includes(enSlug);
     const priority = isHome ? '1.0' : isPriorityProduct ? '0.9' : '0.8';
     const changefreq = isHome ? 'daily' : 'weekly';
-    return `  <url>
-    <loc>${url}</loc>
+
+    for (const currentUrl of [enUrl, frUrl]) {
+      urlEntries.push(`  <url>
+    <loc>${currentUrl}</loc>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
-  </url>`;
-  })
-  .join('\n')}
+    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}" />
+    <xhtml:link rel="alternate" hreflang="fr" href="${frUrl}" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="${enUrl}" />
+  </url>`);
+    }
+  }
+
+  // 2. English-only markdown documentation pages
+  for (const slug of docSlugs) {
+    const docUrl = formatUrl(slug);
+    urlEntries.push(`  <url>
+    <loc>${docUrl}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>`);
+  }
+
+  const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${urlEntries.join('\n')}
 </urlset>`;
 
   return new Response(sitemapXml, {

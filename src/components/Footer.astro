@@ -33,6 +33,7 @@ const currentYear = new Date().getFullYear();
           <img 
             src="/images/zipsolutions_logo.svg" 
             alt="Zip Solutions" 
+            loading="lazy"
             class="h-8 w-auto bg-white/90 rounded-lg p-1.5 object-contain"
             width="150"
             height="34"
@@ -55,7 +56,7 @@ const currentYear = new Date().getFullYear();
         <ul class="space-y-2.5 text-sm">
           <li>
             <a href={l('/products')} class="text-slate-400 hover:text-white transition-colors">
-              {isFr ? "Aperçu des services" : "Services Overview"}
+              {isFr ? "Tous les outils et services" : "All Tools & Services"}
             </a>
           </li>
           <li>
@@ -65,7 +66,22 @@ const currentYear = new Date().getFullYear();
           </li>
           <li>
             <a href={l('/easyspeak')} class="text-slate-400 hover:text-white transition-colors">
-              {isFr ? "EasySpeak CAA" : "Easy Speak AAC"}
+              {isFr ? "EasySpeak CAA" : "EasySpeak AAC"}
+            </a>
+          </li>
+          <li>
+            <a href={l('/zipmath')} class="text-slate-400 hover:text-white transition-colors">
+              Zip Math Remediator
+            </a>
+          </li>
+          <li>
+            <a href={l('/equibrowse')} class="text-slate-400 hover:text-white transition-colors">
+              EquiBrowse
+            </a>
+          </li>
+          <li>
+            <a href={l('/zipspeech')} class="text-slate-400 hover:text-white transition-colors">
+              {isFr ? "Zip Speech (Google Meet)" : "Zip Speech for Meet"}
             </a>
           </li>
           <li>
@@ -75,7 +91,7 @@ const currentYear = new Date().getFullYear();
           </li>
           <li>
             <a href={l('/zipconnect')} class="text-slate-400 hover:text-white transition-colors">
-              {isFr ? "Extension Zip Connect" : "Zip Connect Extension"}
+              {isFr ? "Zip Connect (Twitch)" : "Zip Connect for Twitch"}
             </a>
           </li>
           <li>
@@ -83,15 +99,30 @@ const currentYear = new Date().getFullYear();
               {isFr ? "Passerelle vMix en direct" : "vMix Live Bridge"}
             </a>
           </li>
+          <li>
+            <a href={l('/zipcaptionscompanion')} class="text-slate-400 hover:text-white transition-colors">
+              {isFr ? "Companion Stream Deck" : "Stream Deck Companion"}
+            </a>
+          </li>
         </ul>
       </div>
 
-      <!-- Quick Links: Organization -->
+      <!-- Quick Links: Organization & Events -->
       <div>
         <h3 class="text-white font-heading font-bold text-sm tracking-wider uppercase mb-4">
-          {isFr ? "Organisation" : "Organization"}
+          {isFr ? "Organisation et services" : "Organization & Events"}
         </h3>
         <ul class="space-y-2.5 text-sm">
+          <li>
+            <a href={l('/events')} class="text-slate-400 hover:text-white transition-colors">
+              {isFr ? "Organisation d'événements hybrides" : "Hybrid Event Production"}
+            </a>
+          </li>
+          <li>
+            <a href={l('/live-event-quotes')} class="text-slate-400 hover:text-white transition-colors">
+              {isFr ? "Devis événements en direct" : "Live Event Captions Quotes"}
+            </a>
+          </li>
           <li>
             <a href={l('/story')} class="text-slate-400 hover:text-white transition-colors">
               {isFr ? "Notre histoire" : "Our Story"}

@@ -26,6 +26,7 @@ export async function getStaticPaths() {
 }
 
 const { doc } = Astro.props;
+const slug = doc.id.replace(/\.md$/, '');
 const { Content } = await render(doc);
 ---
 
@@ -33,6 +34,8 @@ const { Content } = await render(doc);
   title={doc.data.title || 'Zip Solutions'} 
   description={doc.data.description}
   heroBadge={doc.data.badge}
+  canonicalPath={`/${slug}`}
+  hasFrTranslation={false}
 >
   <Content />
 </PageLayout>

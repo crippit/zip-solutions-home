@@ -1,5 +1,6 @@
 ---
-title: EasySpeak Getting Started
+title: 'EasySpeak & EasySpeak AI Getting Started Guide'
+description: 'Step-by-step guide to setting up and using Zip EasySpeak AAC: sentence building, AI Magic Bar predictions, board customization, and offline backup.'
 sidebar: false
 ---
 
