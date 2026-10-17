@@ -11,7 +11,7 @@ Zip Solutions was engineered around a core tenet: **essential accessibility tool
 ## Our 4 Unbreakable Privacy Guarantees
 
 1. **Zero Audio Stored or Retained**  
-   Your spoken audio is never recorded, never stored on remote disks, and never fed into generalized AI training sets. Speech-to-text processing occurs transiently in memory or on-device.
+   Your spoken audio is never recorded, never stored on remote disks, and never fed into generalized AI training sets. Speech-to-text processing occurs transiently in memory or via secure encrypted channels, with zero audio retention on Zip Solutions servers.
 
 2. **Transcripts Stay on Your Device**  
    Live transcripts and conversation history live exclusively in your local browser storage. When you close or clear your browser session, they do not remain on our servers.

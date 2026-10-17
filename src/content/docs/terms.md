@@ -47,7 +47,7 @@ We believe in fostering inclusive, safe, and respectful environments. When using
 
 Human dignity and privacy are central to our software architecture. 
 
-* **On-Device and Browser Processing:** Many of our tools, including core speech capture in Zip Captions and local phrase prediction in EasySpeak, are engineered to run locally inside your browser or device without transmitting raw audio to external Zip Solutions servers.
+* **Local Browser and Ephemeral Processing:** Many of our tools, including core speech capture in Zip Captions and local phrase prediction in EasySpeak, are engineered to run inside your browser or device without transmitting raw audio to external Zip Solutions servers or retaining audio logs.
 * **Transient Relays:** When using room relay features (such as QR attendee captions or vMix bridges), text data is processed transiently in memory to synchronize screens and is not permanently retained or archived by Zip Solutions.
 * **Full Privacy Notice:** For complete details regarding our data collection practices, retention commitments, and your privacy rights, please consult our [Privacy Policy](/privacy).
 
