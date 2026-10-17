@@ -108,7 +108,34 @@ const pressSchema = [
   </section>
 
   <!-- Contenu principal -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 space-y-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 space-y-16">
+
+    <!-- Bannière du dernier communiqué de presse -->
+    <div class="bg-gradient-to-r from-purple-50 via-teal-50/50 to-white rounded-3xl border border-amethyst/20 p-6 sm:p-8 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div class="space-y-2">
+        <div class="flex items-center gap-2">
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold font-mono bg-amethyst text-white uppercase tracking-wider">
+            Dernier communiqué
+          </span>
+          <span class="text-xs text-slate-500 font-medium">Octobre 2026</span>
+        </div>
+        <h3 class="text-lg sm:text-xl font-bold font-heading text-midnight">
+          Solutions Zip lance le mode Image dans l'image (Picture-in-Picture) pour Zip Captions
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-600 max-w-2xl leading-relaxed">
+          Des sous-titres flottants, redimensionnables et toujours au premier plan au-dessus de n'importe quelle application, sans téléchargement, extension ni autorisation d'administrateur.
+        </p>
+      </div>
+      <a 
+        href="/fr/pressrelease#picture-in-picture" 
+        class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-midnight hover:bg-slate-800 text-white text-xs font-bold font-heading shrink-0 shadow-sm transition-all self-start md:self-auto"
+      >
+        <span>Lire le communiqué</span>
+        <svg class="w-4 h-4 text-teal-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </a>
+    </div>
 
     <!-- Section 1: Prix et reconnaissance institutionnelle (zéro pilule) -->
     <section class="space-y-8">
