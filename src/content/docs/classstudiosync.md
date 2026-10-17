@@ -7,12 +7,12 @@ sidebar: false
 # Classroom Sync by ZipSolutions
 
 <div style="display: grid;  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  gap: 15px;  padding: 15px;">
-  <img style= "width: 100%; height: 200px; object-fit: cover; border-radius: 8px;  cursor: pointer;  transition: transform 0.2s ease;" src="/images/Classroom Assistant At Risk of failure.png">
-  <img style= "width: 100%; height: 200px; object-fit: cover; border-radius: 8px;  cursor: pointer;  transition: transform 0.2s ease;" src="/images/Classroom Assistant Email.png">
-  <img style= "width: 100%; height: 200px; object-fit: cover; border-radius: 8px;  cursor: pointer;  transition: transform 0.2s ease;" src="/images/Classroom Assistant Gem.png">
-  <img style= "width: 100%; height: 200px; object-fit: cover; border-radius: 8px;  cursor: pointer;  transition: transform 0.2s ease;" src="/images/Classroom Assistant Missing Work.png">
-  <img style= "width: 100%; height: 200px; object-fit: cover; border-radius: 8px;  cursor: pointer;  transition: transform 0.2s ease;" src="/images/Classroom Studio NotebookLM Risk.png">
-  <img style= "width: 100%; height: 200px; object-fit: cover; border-radius: 8px;  cursor: pointer;  transition: transform 0.2s ease;" src="/images/Classroom Studio NotebookLM.png">
+  <img style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; cursor: pointer; transition: transform 0.2s ease;" src="/images/Classroom Assistant At Risk of failure.png" alt="Classroom Assistant dashboard showing students at risk of failure with predictive academic metrics">
+  <img style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; cursor: pointer; transition: transform 0.2s ease;" src="/images/Classroom Assistant Email.png" alt="Classroom Assistant automated personalized parent and student catch-up email generation">
+  <img style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; cursor: pointer; transition: transform 0.2s ease;" src="/images/Classroom Assistant Gem.png" alt="Custom Gemini Gem integration interface for Google Classroom database querying">
+  <img style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; cursor: pointer; transition: transform 0.2s ease;" src="/images/Classroom Assistant Missing Work.png" alt="Classroom Assistant automated missing work tracking across student rosters">
+  <img style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; cursor: pointer; transition: transform 0.2s ease;" src="/images/Classroom Studio NotebookLM Risk.png" alt="NotebookLM cross-curricular student risk profile synthesized from synced classroom sheets">
+  <img style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; cursor: pointer; transition: transform 0.2s ease;" src="/images/Classroom Studio NotebookLM.png" alt="Classroom Studio integration overview inside Google NotebookLM">
 </div>
 
 **Turn your Google Classroom into a live, structured database inside Google Sheets—built specifically to power your AI workflows.**
@@ -51,7 +51,7 @@ Because Classroom Sync formats your data predictably, it unlocks incredible use-
 ### Ready to Supercharge Your Classroom?
 **[Get the Template / Copy the Sheet](https://bit.ly/class-sync)** *No Add-on store installations required. Runs 100% locally and securely in your own Google Workspace account.*
 
-# Classroom Studio Sync: Turn Google Classroom Data into an AI-Powered Teaching Assistant
+## Classroom Studio Sync: Turn Google Classroom Data into an AI-Powered Teaching Assistant
 
 Managing student data across multiple classes, tracking missing work, and drafting parent communications consumes hours of an educator’s week. **Classroom Studio Sync** bridges the gap between your learning management system and next-generation language models. 
 

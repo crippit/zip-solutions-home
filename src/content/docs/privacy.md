@@ -8,7 +8,7 @@ sidebar: false
 
 Zip Solutions was engineered around a core tenet: **essential accessibility tools must never compromise human dignity or privacy.** We design every tool—including Zip Captions, EasySpeak, and our classroom integrations—so that your personal audio and spoken conversations remain strictly your own.
 
-### Our 4 Unbreakable Privacy Guarantees
+## Our 4 Unbreakable Privacy Guarantees
 
 1. **Zero Audio Stored or Retained**  
    Your spoken audio is never recorded, never stored on remote disks, and never fed into generalized AI training sets. Speech-to-text processing occurs transiently in memory or on-device.
@@ -24,7 +24,7 @@ Zip Solutions was engineered around a core tenet: **essential accessibility tool
 
 ---
 
-### Complete Privacy Policy
+## Complete Privacy Policy
 Last updated February 10, 2025
 
 This Privacy Notice for Solutions Zip (doing business as Zip Captions) ("we," "us," or "our"), describes how and why we might access, collect, store, use, and/or share ("process") your personal information when you use our services ("Services"), including when you:
@@ -35,7 +35,7 @@ Engage with us in other related ways, including any sales, marketing, or events
 Questions or concerns? Reading this Privacy Notice will help you understand your privacy rights and choices. We are responsible for making decisions about how your personal information is processed. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at data-privacy@zipsolutions.org.
 
 
-#### SUMMARY OF KEY POINTS
+### SUMMARY OF KEY POINTS
 
 This summary provides key points from our Privacy Notice, but you can find out more details about any of these topics by clicking the link following each key point or by using our table of contents below to find the section you are looking for.
 

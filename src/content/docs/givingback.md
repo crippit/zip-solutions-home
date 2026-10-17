@@ -5,7 +5,7 @@ sidebar: false
 ---
 # Giving Back
 
-### Giving back to our community is important
+## Giving back to our community is important
 
 Each month we re-distribute the unused tokens from the previous month. Tokens are allocated to the following people:
 - People who want to run a training session on Zip Captions (1 hour of tokens per month)

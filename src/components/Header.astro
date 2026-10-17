@@ -230,7 +230,8 @@ function l(path: string): string {
           id="mobile-menu-btn" 
           type="button" 
           class="p-2.5 rounded-xl text-slate-700 hover:text-midnight hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-amethyst" 
-          aria-label="Toggle navigation menu"
+          aria-label={isFr ? "Basculer le menu de navigation" : "Toggle navigation menu"}
+          aria-controls="mobile-menu"
           aria-expanded="false"
         >
           <svg id="hamburger-icon" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -396,6 +397,16 @@ function l(path: string): string {
       group.addEventListener('mouseenter', openMenu);
       group.addEventListener('mouseleave', closeMenu);
 
+      // Close dropdown when focus moves out of the group (WCAG keyboard navigation)
+      group.addEventListener('focusout', (e) => {
+        const focusEvent = e as FocusEvent;
+        if (!group.contains(focusEvent.relatedTarget as Node)) {
+          menu.classList.add('hidden');
+          btn.setAttribute('aria-expanded', 'false');
+          arrow?.classList.remove('rotate-180');
+        }
+      });
+
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
         const isOpen = !menu.classList.contains('hidden');
@@ -421,19 +432,25 @@ function l(path: string): string {
     });
   });
 
-  // ESC key to close open menus
+  // ESC key to close open menus and return focus (W3C APG menu pattern)
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       dropdownGroups.forEach((group) => {
-        group.querySelector('.dropdown-menu')?.classList.add('hidden');
-        group.querySelector('.dropdown-btn')?.setAttribute('aria-expanded', 'false');
-        group.querySelector('.dropdown-arrow')?.classList.remove('rotate-180');
+        const menu = group.querySelector('.dropdown-menu');
+        const btn = group.querySelector('.dropdown-btn') as HTMLElement;
+        if (menu && !menu.classList.contains('hidden')) {
+          menu.classList.add('hidden');
+          btn?.setAttribute('aria-expanded', 'false');
+          group.querySelector('.dropdown-arrow')?.classList.remove('rotate-180');
+          btn?.focus();
+        }
       });
       if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
         mobileMenu.classList.add('hidden');
         menuBtn?.setAttribute('aria-expanded', 'false');
         hamburgerIcon?.classList.remove('hidden');
         closeIcon?.classList.add('hidden');
+        menuBtn?.focus();
       }
     }
   });

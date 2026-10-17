@@ -89,7 +89,7 @@ const inquiryTypes = [
     <div class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm">
       
       <!-- Submission Success Card -->
-      <div id="form-success-banner" class="hidden text-center py-10 space-y-4">
+      <div id="form-success-banner" class="hidden text-center py-10 space-y-4" role="status" aria-live="polite" tabindex="-1">
         <div class="w-16 h-16 mx-auto rounded-2xl bg-teal-50 text-teal-brand flex items-center justify-center border border-teal-200">
           <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
@@ -203,7 +203,7 @@ const inquiryTypes = [
             data-expired-callback="onTurnstileExpired"
             data-error-callback="onTurnstileError"
           ></div>
-          <p id="turnstile-error-msg" class="hidden text-xs text-coral mt-1.5 font-semibold">
+          <p id="turnstile-error-msg" class="hidden text-xs text-coral mt-1.5 font-semibold" role="alert" aria-live="assertive">
             Please complete the verification checkbox above before sending your message.
           </p>
         </div>
@@ -319,6 +319,7 @@ const inquiryTypes = [
     setTimeout(() => {
       form.classList.add('hidden');
       successBanner?.classList.remove('hidden');
+      (successBanner as HTMLElement)?.focus();
       isSubmitting = false;
     }, 1200);
   });

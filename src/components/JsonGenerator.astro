@@ -23,21 +23,31 @@ const successTemplate = isFr ? "Téléchargement de {filename} réussi !" : "Dow
   </p>
   
   <div class="space-y-4" data-err-empty={errEmpty} data-err-invalid={errInvalid} data-success={successTemplate}>
-    <textarea 
-      id="json-input" 
-      rows="6" 
-      placeholder={placeholder} 
-      class="w-full font-mono text-xs p-3.5 rounded-xl border border-slate-300 bg-white text-midnight focus:outline-none focus:ring-2 focus:ring-amethyst"
-    ></textarea>
+    <div>
+      <label for="json-input" class="block text-xs font-bold uppercase tracking-wider text-slate-700 font-heading mb-1.5">
+        {isFr ? "Code JSON de la page" : "Page JSON Code"}
+      </label>
+      <textarea 
+        id="json-input" 
+        rows="6" 
+        placeholder={placeholder} 
+        class="w-full font-mono text-xs p-3.5 rounded-xl border border-slate-300 bg-white text-midnight focus:outline-none focus:ring-2 focus:ring-amethyst"
+      ></textarea>
+    </div>
 
     <div class="flex flex-col sm:flex-row gap-3 items-center">
-      <input 
-        id="file-name-input" 
-        type="text" 
-        value="page.json" 
-        placeholder="filename.json" 
-        class="w-full sm:w-64 px-4 py-2 text-sm rounded-xl border border-slate-300 bg-white text-midnight focus:outline-none focus:ring-2 focus:ring-amethyst font-mono"
-      />
+      <div class="w-full sm:w-64">
+        <label for="file-name-input" class="sr-only">
+          {isFr ? "Nom du fichier JSON" : "JSON Filename"}
+        </label>
+        <input 
+          id="file-name-input" 
+          type="text" 
+          value="page.json" 
+          placeholder="filename.json" 
+          class="w-full px-4 py-2 text-sm rounded-xl border border-slate-300 bg-white text-midnight focus:outline-none focus:ring-2 focus:ring-amethyst font-mono"
+        />
+      </div>
       <button 
         id="json-download-btn" 
         type="button" 
@@ -46,7 +56,7 @@ const successTemplate = isFr ? "Téléchargement de {filename} réussi !" : "Dow
         {buttonText}
       </button>
     </div>
-    <div id="json-status" class="text-xs font-semibold hidden"></div>
+    <div id="json-status" class="text-xs font-semibold hidden" role="status" aria-live="polite"></div>
   </div>
 </div>
 

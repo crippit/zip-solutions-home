@@ -3,7 +3,7 @@ title: 'Community Giveaways | Cadeaux'
 description: 'Join Zip Solutions community giveaways celebrating educators, accessibility advocates, and Zip Captions supporters with wireless microphones and swag.'
 sidebar: false
 ---
-![](/images/giveaway.png)
+![The 10 Days of Giveaways — Zip Solutions](/images/giveaway.png)
 # The 10 Days of Giveaways 
 To celebrate our supporters and our users, join us for our 10 days of giveaways. 
 
@@ -17,7 +17,7 @@ To enter our giveaway you need to simply:
 4. Sit back and wait
 
 ---
-# Les 10 jours de cadeaux
+## Les 10 jours de cadeaux
 
 Pour célébrer nos supporters et nos utilisateurs, rejoignez-nous pour nos 10 jours de concours.
 
@@ -34,7 +34,7 @@ Pour participer à notre concours, il vous suffit de :
 
 <sub>
 
-### Rules:
+## Rules:
 
 **Prize Information:**
 
@@ -69,7 +69,7 @@ Successful winners will be required to give consent for their posts and photos t
 
 ---
 
-### Règles
+## Règles
 
 **Informations sur les prix :**
 

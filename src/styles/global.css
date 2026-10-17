@@ -77,6 +77,18 @@
   outline-offset: 2px;
 }
 
+/* Reduced motion accessibility support (WCAG 2.2.2 / 2.3.3) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* Markdown prose enhancements */
 .prose-custom h1 {
   @apply text-3xl sm:text-4xl font-extrabold tracking-tight text-midnight mb-6 pb-3 border-b border-slate-200;
