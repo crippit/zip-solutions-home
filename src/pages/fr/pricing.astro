@@ -58,7 +58,8 @@ const tiers = [
 
 const features = [
   { name: "Sous-titrage standard", values: ["Illimité", "Illimité", "Illimité", "Illimité", "Illimité"] },
-  { name: "Navigateurs compatibles", values: ["Chrome / Safari²", "Chrome / Safari²", "Chromium et Safari¹", "Chromium et Safari¹", "Chromium et Safari¹"] },
+  { name: "Navigateurs compatibles", values: ["Navigateurs WebSpeech²", "Navigateurs WebSpeech²", "Tous navigateurs¹", "Tous navigateurs¹", "Tous navigateurs¹"] },
+  { name: "Mode Image dans l'image (PiP)", values: ["Chromium (Chrome, Edge)⁸", "Chromium (Chrome, Edge)⁸", "Chromium (Chrome, Edge)⁸", "Chromium (Chrome, Edge)⁸", "Chromium (Chrome, Edge)⁸"] },
   { name: "Sous-titres IA (/mois)³", values: ["-", "Sur demande⁷", "5 heures³", "10 heures³", "25 heures³"] },
   { name: "Transcription et exportation", values: ["Oui", "Oui", "Oui", "Oui", "Oui"] },
   { name: "Apparence personnalisable", values: ["Oui", "Oui", "Oui", "Oui", "Oui"] },
@@ -73,7 +74,7 @@ const features = [
 const faqs = [
   {
     question: "Quelle est la différence entre le sous-titrage Standard (0 $) et le sous-titrage IA ?",
-    answer: "Le sous-titrage Standard utilise l'API WebSpeech intégrée au navigateur et reste 100 % gratuit et illimité pour toujours. Le sous-titrage IA mobilise des modèles avancés de reconnaissance vocale offrant une précision supérieure pour le vocabulaire spécialisé, les environnements bruyants et tous les navigateurs Chromium."
+    answer: "Le sous-titrage Standard utilise l'API WebSpeech intégrée au navigateur (compatible Chrome, Safari et Edge via le Store) et reste 100 % gratuit et illimité pour toujours. Le sous-titrage IA traite la parole dans le nuage via Azure AI, offrant une précision supérieure dans les environnements bruyants et fonctionnant techniquement sur n'importe quel navigateur web moderne."
   },
   {
     question: "Les écoles et organismes à but non lucratif peuvent-ils obtenir des heures d'IA gratuites ?",
@@ -202,13 +203,14 @@ const faqs = [
 
     <!-- Notes explicatives -->
     <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 text-xs text-slate-600 space-y-2 leading-relaxed">
-      <p><b>1.</b> Tout navigateur basé sur Chromium fonctionne avec le sous-titrage IA. Safari est également pris en charge.</p>
-      <p><b>2.</b> Tout navigateur prenant en charge l'API WebSpeech est compatible. Edge est pris en charge lorsque ZipCaptions est installé depuis le Microsoft Store.</p>
+      <p><b>1.</b> Les formules payantes prennent techniquement en charge tous les navigateurs modernes (notamment Chrome, Edge, Safari, Firefox, Opera et Brave) car l'audio des sous-titres est traité dans le nuage par Azure AI plutôt que par les moteurs vocaux intégrés du navigateur.</p>
+      <p><b>2.</b> Le sous-titrage standard gratuit fonctionne dans tout navigateur prenant en charge l'API WebSpeech (comme Google Chrome et Safari; Edge est pris en charge lorsque Zip Captions est installé depuis le Microsoft Store).</p>
       <p><b>3.</b> Le nombre d'heures est calculé sur l'utilisation de jetons attribués selon votre palier Patreon, sous réserve d'un abonnement actif. L'attribution des jetons peut évoluer et bénéficie du soutien de Microsoft Founders Hub.</p>
       <p><b>4.</b> Zip Captions est installable depuis Google Play Store, et fonctionne également sur iOS via le navigateur ou en application web progressive (PWA).</p>
       <p><b>5.</b> Une assistance est disponible pour tous les forfaits. Les délais de réponse varient et les formules d'entrée de gamme s'appuient principalement sur la communauté.</p>
       <p><b>6.</b> Les tarifs sont exprimés en dollars américains (USD) et peuvent être révisés à tout moment.</p>
-      <p><b>7.</b> Des demandes d'accès gratuit peuvent être formulées à tout moment par les organismes et établissements admissibles. <a href="/fr/contact-us" class="text-teal-brand font-medium underline">En savoir plus sur notre engagement solidaire</a>.</p>
+      <p><b>7.</b> Des demandes d'accès gratuit peuvent être formulées à tout moment par les organismes et établissements admissibles. <a href="/fr/givingback" class="text-teal-brand font-medium underline">En savoir plus sur notre engagement solidaire</a>.</p>
+      <p><b>8.</b> Le mode flottant Image dans l'image (Picture-in-Picture) est pris en charge sur les navigateurs Chromium pour ordinateur (Google Chrome, Microsoft Edge, Brave, Opera) via l'API Document Picture-in-Picture. Des navigateurs comme Firefox et Safari ne prennent pas actuellement en charge cette norme Document Picture-in-Picture.</p>
     </div>
 
   </div>

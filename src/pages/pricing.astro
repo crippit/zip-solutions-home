@@ -58,7 +58,8 @@ const tiers = [
 
 const features = [
   { name: "Regular Captioning", values: ["Unlimited", "Unlimited", "Unlimited", "Unlimited", "Unlimited"] },
-  { name: "Browser Support", values: ["Chrome / Safari²", "Chrome / Safari²", "Chromium & Safari¹", "Chromium & Safari¹", "Chromium & Safari¹"] },
+  { name: "Browser Support", values: ["WebSpeech Browsers²", "WebSpeech Browsers²", "Any Browser¹", "Any Browser¹", "Any Browser¹"] },
+  { name: "Picture-in-Picture (PiP) Mode", values: ["Chromium (Chrome, Edge)⁸", "Chromium (Chrome, Edge)⁸", "Chromium (Chrome, Edge)⁸", "Chromium (Chrome, Edge)⁸", "Chromium (Chrome, Edge)⁸"] },
   { name: "AI Captioning (/month)³", values: ["—", "Request⁷", "5 hours³", "10 hours³", "25 hours³"] },
   { name: "Transcription & Export", values: ["Yes", "Yes", "Yes", "Yes", "Yes"] },
   { name: "Customizable Appearance", values: ["Yes", "Yes", "Yes", "Yes", "Yes"] },
@@ -73,7 +74,7 @@ const features = [
 const faqs = [
   {
     question: "What is the difference between Regular Captioning ($0) and AI Captioning?",
-    answer: "Regular Captioning uses your browser's built-in WebSpeech API and is 100% free and unlimited forever. AI Captioning uses advanced cloud speech recognition models for higher accuracy with specialized vocabulary, noisy rooms, and additional Chromium browsers."
+    answer: "Regular Captioning uses your browser's built-in WebSpeech API (supported in browsers like Chrome, Safari, and Edge via Store) and is 100% free and unlimited forever. AI Captioning processes speech in the cloud via Azure AI, delivering higher accuracy for accents and noisy rooms, and technically working across any modern web browser."
   },
   {
     question: "Do schools, churches, or non-profits qualify for donated AI captioning hours?",
@@ -202,13 +203,14 @@ const faqs = [
 
     <!-- Footnotes -->
     <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 text-xs text-slate-600 space-y-2 leading-relaxed">
-      <p><b>1.</b> Any Chromium based browser will work with the AI Captioning. Safari is also supported.</p>
-      <p><b>2.</b> Any browser which supports the WebSpeech API will work. Edge is supported when ZipCaptions is installed from the Microsoft Store.</p>
+      <p><b>1.</b> The paid tiers technically support any modern browser (including Chrome, Edge, Safari, Firefox, Opera, and Brave) because caption audio is processed in the cloud by Azure AI rather than browser-specific speech engines.</p>
+      <p><b>2.</b> Regular free captioning works in any browser that supports the WebSpeech API (such as Google Chrome and Safari; Edge is supported when Zip Captions is installed from the Microsoft Store).</p>
       <p><b>3.</b> The number of hours are based on token usage. The tokens are awarded based on your Patreon tier, and are reliant upon you having an active Patreon subscription. Token allocation is subject to change at any point and is currently subsidized by our membership to the Microsoft Founders Hub.</p>
       <p><b>4.</b> You can install Zip Captions from the Google Play Store, but it will also run on iOS, either as an installable Progressive Web App, or in the browser.</p>
       <p><b>5.</b> Dedicated support is available for all tiers, however, response times will vary, and the lower tiers rely mainly on community support.</p>
       <p><b>6.</b> The price is stated in USD. The price can be changed at any time.</p>
       <p><b>7.</b> Requests can be made at any time by qualifying groups. <a href="/givingback" class="text-teal-brand font-medium underline">Read more about our giving back initiative</a>.</p>
+      <p><b>8.</b> Picture-in-Picture (PiP) floating captions are supported in desktop Chromium-based browsers (Google Chrome, Microsoft Edge, Brave, and Opera) via the native Document Picture-in-Picture API. Browsers such as Firefox and Safari do not currently support Document Picture-in-Picture.</p>
     </div>
 
   </div>
