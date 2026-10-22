@@ -4,7 +4,7 @@ import type { APIRoute } from 'astro';
 export const GET: APIRoute = async ({ site }) => {
   const baseUrl = site ? site.toString().replace(/\/$/, '') : 'https://zipsolutions.org';
   const docs = await getCollection('docs');
-  const lastmod = '2026-10-17';
+  const lastmod = '2026-10-21';
 
   const bilingualStaticPages = [
     '',
