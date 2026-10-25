@@ -1,0 +1,8 @@
+---
+import SectorPage from '../../../components/SectorPage.astro';
+import { getSectorData } from '../../../data/useCasesData';
+
+const sector = getSectorData('fr', 'broadcast-and-streaming')!;
+---
+
+<SectorPage sector={sector} locale="fr" />

@@ -1,0 +1,89 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Length 3853 >>
+stream
+0.98 0.98 0.99 rg 24 24 564 744 re f
+0.82 0.85 0.90 RG 1.5 w 24 24 564 744 re S
+0.06 0.09 0.16 rg 24 654 564 114 re f
+0.05 0.58 0.53 rg 24 648 564 6 re f
+BT /F2 10 Tf 0.20 0.83 0.75 rg 44 742 Td (MUNICIPAL CLERK & COMMUNITY MEDIA GUIDE) Tj ET
+BT /F2 22 Tf 1 1 1 rg 44 716 Td (Town Hall Setup & Transcript Export Guide) Tj ET
+BT /F2 22 Tf 1 1 1 rg 44 690 Td (\(.SRT / .VTT / .TXT\)) Tj ET
+BT /F1 11 Tf 0.80 0.85 0.92 rg 44 668 Td (How to display live captions during public meetings and export) Tj ET
+BT /F1 11 Tf 0.80 0.85 0.92 rg 44 653 Td (transcripts for municipal records.) Tj ET
+BT /F1 12 Tf 0.15 0.20 0.28 rg 44 620 Td (Zip Captions helps local governments, libraries, and public-access media teams) Tj ET
+BT /F1 12 Tf 0.15 0.20 0.28 rg 44 602 Td (provide live in-room captions and save instant text or subtitle files at zero) Tj ET
+BT /F1 12 Tf 0.15 0.20 0.28 rg 44 584 Td (software cost.) Tj ET
+BT /F2 14 Tf 0.06 0.09 0.16 rg 44 558 Td (Meeting Setup & Post-Meeting Archiving) Tj ET
+1 1 1 rg 44 484 524 62 re f
+0.85 0.88 0.92 RG 1 w 44 484 524 62 re S
+0.42 0.16 0.85 rg 56 524 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 530 Td (1) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 532 Td (1. In-Room Display: Connect a laptop to the council chamber or senior) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 517 Td (center TV/projector and open https://zipcaptions.app in full-screen) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 502 Td (high-contrast mode.) Tj ET
+1 1 1 rg 44 438 524 46 re f
+0.85 0.88 0.92 RG 1 w 44 438 524 46 re S
+0.42 0.16 0.85 rg 56 462 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 468 Td (2) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 470 Td (2. Audio Connection: Feed the room PA mixer output into the laptop via a) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 455 Td (USB Sound Card so all council microphones are captured cleanly.) Tj ET
+1 1 1 rg 44 376 524 62 re f
+0.85 0.88 0.92 RG 1 w 44 376 524 62 re S
+0.42 0.16 0.85 rg 56 416 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 422 Td (3) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 424 Td (3. Public-Access Cable & YouTube Live: If broadcasting via OBS Studio or) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 409 Td (vMix, connect Zip Captions directly via WebSockets or the vMix) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 394 Td (Extension.) Tj ET
+1 1 1 rg 44 314 524 62 re f
+0.85 0.88 0.92 RG 1 w 44 314 524 62 re S
+0.42 0.16 0.85 rg 56 354 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 360 Td (4) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 362 Td (4. Export Plain Text \(.TXT\) for Meeting Notes: Before closing the) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 347 Td (browser tab at the end of the meeting, click Export and choose Plain) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 332 Td (Text \(.txt\) to assist the clerk with drafting meeting minutes.) Tj ET
+1 1 1 rg 44 252 524 62 re f
+0.85 0.88 0.92 RG 1 w 44 252 524 62 re S
+0.42 0.16 0.85 rg 56 292 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 298 Td (5) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 300 Td (5. Export Time-Coded Subtitles \(.SRT / .VTT\): Click Export and download) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 285 Td (SRT or WebVTT files to upload directly alongside your recorded town hall) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 270 Td (video archive.) Tj ET
+BT /F2 12 Tf 0.05 0.58 0.53 rg 44 236 Td (Data Governance & Local Privacy) Tj ET
+BT /F1 10.5 Tf 0.25 0.30 0.38 rg 48 218 Td (* Transcripts are held solely in local browser memory during the session and) Tj ET
+BT /F1 10.5 Tf 0.25 0.30 0.38 rg 48 204 Td (are not stored on external cloud servers.) Tj ET
+BT /F1 10.5 Tf 0.25 0.30 0.38 rg 48 187 Td (* Always download your exported files before closing or refreshing the browser) Tj ET
+BT /F1 10.5 Tf 0.25 0.30 0.38 rg 48 173 Td (tab.) Tj ET
+0.06 0.09 0.16 rg 24 24 564 32 re f
+BT /F2 9.5 Tf 1 1 1 rg 44 36 Td (Zip Solutions | Free Browser Live Captioning at https://zipcaptions.app) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000348 00000 n 
+0000000450 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+4355
+%%EOF

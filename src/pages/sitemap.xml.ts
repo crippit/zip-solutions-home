@@ -10,6 +10,13 @@ export const GET: APIRoute = async ({ site }) => {
     '',
     'products',
     'zipcaptions',
+    'use-cases',
+    'use-cases/education',
+    'use-cases/places-of-worship',
+    'use-cases/healthcare',
+    'use-cases/live-events',
+    'use-cases/public-sector',
+    'use-cases/broadcast-and-streaming',
     'easyspeak',
     'pricing',
     'contact-us',
@@ -45,7 +52,7 @@ export const GET: APIRoute = async ({ site }) => {
     const enUrl = formatUrl(enSlug);
     const frUrl = formatUrl(frSlug);
     const isHome = enSlug === '';
-    const isPriorityProduct = ['products', 'zipcaptions', 'easyspeak', 'zipmath', 'live-event-quotes', 'events'].includes(enSlug);
+    const isPriorityProduct = ['products', 'zipcaptions', 'use-cases', 'easyspeak', 'zipmath', 'live-event-quotes', 'events'].includes(enSlug) || enSlug.startsWith('use-cases/');
     const priority = isHome ? '1.0' : isPriorityProduct ? '0.9' : '0.8';
     const changefreq = isHome ? 'daily' : 'weekly';
 

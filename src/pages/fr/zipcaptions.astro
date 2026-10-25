@@ -150,6 +150,7 @@ const faqs = [
   description="Outil de sous-titrage en direct gratuit, privé et sans installation dans votre navigateur web. Transcription vocale en temps réel pour salles de classe, lieux de culte, conférences, OBS Studio et vMix."
   actions={[
     { text: "Lancer Zip Captions", url: "https://zipcaptions.app", primary: true, external: true },
+    { text: "Secteurs et affiches gratuites", url: "/fr/use-cases" },
     { text: "Voir les tarifs IA", url: "/fr/pricing" },
     { text: "Aide et communauté", url: "https://help.zipcaptions.app", external: true }
   ]}
@@ -432,6 +433,53 @@ const faqs = [
         </a>
         <a href="/fr/pricing" class="text-teal-brand hover:text-teal-dark inline-flex items-center gap-1">
           <span>Consulter nos forfaits pour les sous-titres IA &rarr;</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Guides par secteur et affiches gratuites (zéro pilule) -->
+    <div class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-sm space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-100 pb-4">
+        <div>
+          <span class="text-xs font-bold font-mono text-teal-brand uppercase tracking-wider block mb-1">
+            Guides par secteur et affiches à imprimer
+          </span>
+          <h2 class="text-2xl font-bold font-heading text-midnight">
+            Découvrez comment chaque secteur utilise Zip Captions
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 mt-1">
+            Chaque page comprend des étapes d’installation simples, des vidéos YouTube et des affiches, cartes de bancs et listes de contrôle PDF gratuites.
+          </p>
+        </div>
+        <a href="/fr/use-cases" class="text-xs font-bold text-amethyst hover:text-amethyst-dark shrink-0 inline-flex items-center gap-1">
+          <span>Voir tous les secteurs et affiches &rarr;</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <a href="/fr/use-cases/education" class="p-5 rounded-2xl bg-slate-50 hover:bg-purple-50/40 border border-slate-200 hover:border-amethyst/50 transition-all group">
+          <h3 class="text-base font-bold font-heading text-midnight group-hover:text-amethyst">Éducation et écoles</h3>
+          <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Diffusion sur Chromebooks, police Lexend, traduction locale, affiches de classe et fiches de pupitre.</p>
+        </a>
+        <a href="/fr/use-cases/places-of-worship" class="p-5 rounded-2xl bg-slate-50 hover:bg-purple-50/40 border border-slate-200 hover:border-amethyst/50 transition-all group">
+          <h3 class="text-base font-bold font-heading text-midnight group-hover:text-amethyst">Lieux de culte</h3>
+          <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Écrans du sanctuaire, lecture sur téléphone depuis les bancs, affiches d’accueil et listes de contrôle AV.</p>
+        </a>
+        <a href="/fr/use-cases/healthcare" class="p-5 rounded-2xl bg-slate-50 hover:bg-purple-50/40 border border-slate-200 hover:border-amethyst/50 transition-all group">
+          <h3 class="text-base font-bold font-heading text-midnight group-hover:text-amethyst">Santé et cliniques</h3>
+          <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Sous-titres privés en mémoire locale pour les comptoirs d’accueil et consultations avec chevalets.</p>
+        </a>
+        <a href="/fr/use-cases/live-events" class="p-5 rounded-2xl bg-slate-50 hover:bg-purple-50/40 border border-slate-200 hover:border-amethyst/50 transition-all group">
+          <h3 class="text-base font-bold font-heading text-midnight group-hover:text-amethyst">Événements et conférences</h3>
+          <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Relais mobile par code QR, écrans de scène, affiches de salle, cartes de table et diapositives d’accueil.</p>
+        </a>
+        <a href="/fr/use-cases/public-sector" class="p-5 rounded-2xl bg-slate-50 hover:bg-purple-50/40 border border-slate-200 hover:border-amethyst/50 transition-all group">
+          <h3 class="text-base font-bold font-heading text-midnight group-hover:text-amethyst">Secteur public et aînés</h3>
+          <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Conseils municipaux, bibliothèques et centres des aînés avec fiches en gros caractères et exportation SRT/TXT.</p>
+        </a>
+        <a href="/fr/use-cases/broadcast-and-streaming" class="p-5 rounded-2xl bg-slate-50 hover:bg-purple-50/40 border border-slate-200 hover:border-amethyst/50 transition-all group">
+          <h3 class="text-base font-bold font-heading text-midnight group-hover:text-amethyst">Diffusion et streaming</h3>
+          <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">OBS WebSockets, titres vMix, clavardage Twitch, boutons Stream Deck et aide-mémoire réseau.</p>
         </a>
       </div>
     </div>

@@ -121,27 +121,52 @@ function l(path: string): string {
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
-          <div class="dropdown-menu hidden absolute left-0 mt-2 w-60 rounded-2xl bg-white border border-slate-200/90 shadow-xl py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
-            <a href={l('/zipcaptions')} class="flex items-center px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-teal-brand hover:bg-teal-50/70 transition-colors">
+          <div class="dropdown-menu hidden absolute left-0 mt-2 w-68 rounded-2xl bg-white border border-slate-200/90 shadow-xl py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+            <a href={l('/zipcaptions')} class="flex items-center px-4 py-2 text-sm font-medium text-slate-700 hover:text-teal-brand hover:bg-teal-50/70 transition-colors">
               {isFr ? "À propos de Zip Captions" : "About Zip Captions"}
             </a>
-            <a href={l('/pricing')} class="flex items-center px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-teal-brand hover:bg-teal-50/70 transition-colors">
+            <a href={l('/pricing')} class="flex items-center px-4 py-2 text-sm font-medium text-slate-700 hover:text-teal-brand hover:bg-teal-50/70 transition-colors">
               {isFr ? "Tarifs et forfaits" : "Pricing Plans"}
             </a>
             <hr class="my-1.5 border-slate-100" />
-            <a href="https://zipcaptions.app" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-teal-brand hover:bg-teal-50/70 transition-colors">
+            <div class="px-4 py-1 text-[11px] font-bold font-mono uppercase tracking-wider text-slate-400">
+              {isFr ? "Secteurs et ressources" : "Sectors & Printables"}
+            </div>
+            <a href={l('/use-cases')} class="flex items-center px-4 py-2 text-sm font-semibold text-midnight hover:text-teal-brand hover:bg-teal-50/70 transition-colors">
+              {isFr ? "Tous les secteurs et affiches" : "All Sectors & Printables"}
+            </a>
+            <a href={l('/use-cases/education')} class="flex items-center px-4 py-1.5 text-xs font-medium text-slate-600 hover:text-teal-brand hover:bg-teal-50/70 transition-colors">
+              {isFr ? "Éducation et écoles" : "Education & Classrooms"}
+            </a>
+            <a href={l('/use-cases/places-of-worship')} class="flex items-center px-4 py-1.5 text-xs font-medium text-slate-600 hover:text-teal-brand hover:bg-teal-50/70 transition-colors">
+              {isFr ? "Lieux de culte" : "Places of Worship"}
+            </a>
+            <a href={l('/use-cases/healthcare')} class="flex items-center px-4 py-1.5 text-xs font-medium text-slate-600 hover:text-teal-brand hover:bg-teal-50/70 transition-colors">
+              {isFr ? "Santé et cliniques" : "Healthcare & Clinics"}
+            </a>
+            <a href={l('/use-cases/live-events')} class="flex items-center px-4 py-1.5 text-xs font-medium text-slate-600 hover:text-teal-brand hover:bg-teal-50/70 transition-colors">
+              {isFr ? "Événements et conférences" : "Live Events & Conferences"}
+            </a>
+            <a href={l('/use-cases/public-sector')} class="flex items-center px-4 py-1.5 text-xs font-medium text-slate-600 hover:text-teal-brand hover:bg-teal-50/70 transition-colors">
+              {isFr ? "Secteur public et aînés" : "Public Sector & Seniors"}
+            </a>
+            <a href={l('/use-cases/broadcast-and-streaming')} class="flex items-center px-4 py-1.5 text-xs font-medium text-slate-600 hover:text-teal-brand hover:bg-teal-50/70 transition-colors">
+              {isFr ? "Diffusion et streaming" : "Broadcast & Streaming"}
+            </a>
+            <hr class="my-1.5 border-slate-100" />
+            <a href="https://zipcaptions.app" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between px-4 py-2 text-sm font-medium text-slate-700 hover:text-teal-brand hover:bg-teal-50/70 transition-colors">
               <span>{isFr ? "Lancer le sous-titrage" : "Start Captioning"}</span>
               <svg class="w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
             </a>
-            <a href="https://help.zipcaptions.app" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-teal-brand hover:bg-teal-50/70 transition-colors">
+            <a href="https://help.zipcaptions.app" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between px-4 py-2 text-sm font-medium text-slate-700 hover:text-teal-brand hover:bg-teal-50/70 transition-colors">
               <span>{isFr ? "Centre d'aide" : "Help Center"}</span>
               <svg class="w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
             </a>
-            <a href="https://discord.gg/5Hyu7sQTHv" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-teal-brand hover:bg-teal-50/70 transition-colors">
+            <a href="https://discord.gg/5Hyu7sQTHv" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between px-4 py-2 text-sm font-medium text-slate-700 hover:text-teal-brand hover:bg-teal-50/70 transition-colors">
               <span>{isFr ? "Communauté Discord" : "Community Discord"}</span>
               <svg class="w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
             </a>
-            <a href="https://patreon.com/zipcaptions" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-teal-brand hover:bg-teal-50/70 transition-colors">
+            <a href="https://patreon.com/zipcaptions" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between px-4 py-2 text-sm font-medium text-slate-700 hover:text-teal-brand hover:bg-teal-50/70 transition-colors">
               <span>{isFr ? "Soutenir sur Patreon" : "Support on Patreon"}</span>
               <svg class="w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
             </a>
@@ -304,6 +329,13 @@ function l(path: string): string {
       </summary>
       <div class="pl-4 pr-2 py-1 space-y-1">
         <a href={l('/zipcaptions')} class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-teal-brand hover:bg-teal-50">{isFr ? 'À propos de Zip Captions' : 'About Zip Captions'}</a>
+        <a href={l('/use-cases')} class="block px-3 py-2 rounded-lg text-sm font-semibold text-midnight hover:text-teal-brand hover:bg-teal-50">{isFr ? 'Secteurs et affiches à imprimer' : 'Sectors & Printable Signs'}</a>
+        <a href={l('/use-cases/education')} class="block px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:text-teal-brand hover:bg-teal-50">{isFr ? '• Éducation et écoles' : '• Education & Classrooms'}</a>
+        <a href={l('/use-cases/places-of-worship')} class="block px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:text-teal-brand hover:bg-teal-50">{isFr ? '• Lieux de culte' : '• Places of Worship'}</a>
+        <a href={l('/use-cases/healthcare')} class="block px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:text-teal-brand hover:bg-teal-50">{isFr ? '• Santé et cliniques' : '• Healthcare & Clinics'}</a>
+        <a href={l('/use-cases/live-events')} class="block px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:text-teal-brand hover:bg-teal-50">{isFr ? '• Événements et conférences' : '• Live Events & Conferences'}</a>
+        <a href={l('/use-cases/public-sector')} class="block px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:text-teal-brand hover:bg-teal-50">{isFr ? '• Secteur public et aînés' : '• Public Sector & Seniors'}</a>
+        <a href={l('/use-cases/broadcast-and-streaming')} class="block px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:text-teal-brand hover:bg-teal-50">{isFr ? '• Diffusion et streaming' : '• Broadcast & Streaming'}</a>
         <a href={l('/pricing')} class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-teal-brand hover:bg-teal-50">{isFr ? 'Tarifs et forfaits' : 'Pricing Plans'}</a>
         <a href="https://zipcaptions.app" target="_blank" rel="noopener noreferrer" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-teal-brand hover:bg-teal-50">{isFr ? 'Lancer le sous-titrage ↗' : 'Start Captioning ↗'}</a>
         <a href="https://help.zipcaptions.app" target="_blank" rel="noopener noreferrer" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-teal-brand hover:bg-teal-50">{isFr ? "Centre d'aide ↗" : 'Help Center ↗'}</a>

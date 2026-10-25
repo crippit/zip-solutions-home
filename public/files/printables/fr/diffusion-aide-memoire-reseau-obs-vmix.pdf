@@ -1,0 +1,89 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Length 4068 >>
+stream
+0.98 0.98 0.99 rg 24 24 564 744 re f
+0.82 0.85 0.90 RG 1.5 w 24 24 564 744 re S
+0.06 0.09 0.16 rg 24 654 564 114 re f
+0.05 0.58 0.53 rg 24 648 564 6 re f
+BT /F2 10 Tf 0.20 0.83 0.75 rg 44 742 Td (AIDE-M\311MOIRE TECHNIQUE DE DIFFUSION) Tj ET
+BT /F2 22 Tf 1 1 1 rg 44 716 Td (Aide-m\351moire : Int\351gration OBS Studio,) Tj ET
+BT /F2 22 Tf 1 1 1 rg 44 690 Td (vMix, Twitch et Stream Deck) Tj ET
+BT /F1 11 Tf 0.80 0.85 0.92 rg 44 668 Td (R\351f\351rence de configuration r\351seau \(localhost et LAN\) pour relier Zip) Tj ET
+BT /F1 11 Tf 0.80 0.85 0.92 rg 44 653 Td (Captions \340 votre r\351gie vid\351o.) Tj ET
+BT /F1 12 Tf 0.15 0.20 0.28 rg 44 620 Td (Conservez cette fiche technique en r\351gie pour configurer rapidement OBS) Tj ET
+BT /F1 12 Tf 0.15 0.20 0.28 rg 44 602 Td (Studio, vMix, le clavardage Twitch et Bitfocus Companion.) Tj ET
+BT /F2 14 Tf 0.06 0.09 0.16 rg 44 576 Td (R\351f\351rence de configuration par plateforme) Tj ET
+1 1 1 rg 44 502 524 62 re f
+0.85 0.88 0.92 RG 1 w 44 502 524 62 re S
+0.42 0.16 0.85 rg 56 542 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 548 Td (1) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 550 Td (1. OBS Studio \(WebSockets natif\) : Dans OBS, ouvrez Outils > Param\350tres) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 535 Td (du serveur WebSocket. Activez le serveur \(port par d\351faut 4455\), copiez) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 520 Td (le mot de passe et entrez ces informations dans Zip Captions.) Tj ET
+1 1 1 rg 44 424 524 78 re f
+0.85 0.88 0.92 RG 1 w 44 424 524 78 re S
+0.42 0.16 0.85 rg 56 480 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 486 Td (2) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 488 Td (2. vMix \(Extension Chrome Zip Captions vMix\) : Activez le contr\364leur Web) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 473 Td (dans vMix. Ajoutez une entr\351e Titre nomm\351e LiveCaptions. Dans les) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 458 Td (options de l'extension, indiquez l'adresse IP \(127.0.0.1 ou IP LAN\) et) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 443 Td (le port \(8088\).) Tj ET
+1 1 1 rg 44 362 524 62 re f
+0.85 0.88 0.92 RG 1 w 44 362 524 62 re S
+0.42 0.16 0.85 rg 56 402 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 408 Td (3) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 410 Td (3. Clavardage Twitch \(Extension Zip Connect\) : Ouvrez zipcaptions.app) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 395 Td (dans un onglet Chrome et votre clavardage Twitch dans un autre. Cliquez) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 380 Td (sur Zip Connect puis sur Start.) Tj ET
+1 1 1 rg 44 300 524 62 re f
+0.85 0.88 0.92 RG 1 w 44 300 524 62 re S
+0.42 0.16 0.85 rg 56 340 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 346 Td (4) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 348 Td (4. Elgato Stream Deck \(Bitfocus Companion\) : Ajoutez le module officiel) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 333 Td (Zip Captions dans Bitfocus Companion pour contr\364ler le d\351marrage,) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 318 Td (l'arr\352t et l'effacement sur vos boutons mat\351riels.) Tj ET
+1 1 1 rg 44 238 524 62 re f
+0.85 0.88 0.92 RG 1 w 44 238 524 62 re S
+0.42 0.16 0.85 rg 56 278 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 284 Td (5) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 286 Td (5. Sous-titres de postproduction \(.SRT / .VTT\) : En fin de direct,) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 271 Td (cliquez sur Exporter dans Zip Captions pour obtenir un fichier SRT ou) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 256 Td (VTT horodat\351.) Tj ET
+BT /F2 12 Tf 0.05 0.58 0.53 rg 44 222 Td (Astuce audio pour configurations \340 deux ordinateurs) Tj ET
+BT /F1 10.5 Tf 0.25 0.30 0.38 rg 48 204 Td (* Ex\351cutez Zip Captions sur un portable secondaire reli\351 \340 votre console via) Tj ET
+BT /F1 10.5 Tf 0.25 0.30 0.38 rg 48 190 Td (une carte son USB, et transmettez les sous-titres vers votre machine) Tj ET
+BT /F1 10.5 Tf 0.25 0.30 0.38 rg 48 176 Td (principale OBS ou vMix sur le r\351seau local \(LAN\).) Tj ET
+0.06 0.09 0.16 rg 24 24 564 32 re f
+BT /F2 9.5 Tf 1 1 1 rg 44 36 Td (Solutions Zip | Sous-titrage en direct gratuit sur https://zipcaptions.app) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000348 00000 n 
+0000000450 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+4570
+%%EOF

@@ -1,0 +1,270 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FaqSection from './FaqSection.astro';
+import { generalPrintable, sectorsData } from '../data/useCasesData';
+
+interface Props {
+  locale: 'en' | 'fr';
+}
+
+const { locale } = Astro.props;
+const isFr = locale === 'fr';
+const basePrefix = isFr ? '/fr' : '';
+const sectors = sectorsData[locale];
+const universalSign = generalPrintable[locale];
+
+const pageTitle = isFr
+  ? 'Cas d’utilisation par secteur et ressources imprimables | Solutions Zip'
+  : 'Zip Captions Sector Use Cases & Free Printable Signs | Zip Solutions';
+
+const pageDescription = isFr
+  ? 'Découvrez comment Zip Captions soutient l’éducation, les lieux de culte, la santé, les événements en direct, le secteur public et la diffusion vidéo avec des affiches et guides gratuits.'
+  : 'Explore how Zip Captions is used in education, places of worship, healthcare clinics, live events, public meetings, and broadcasting, complete with free printable posters, signs, and checklists.';
+
+const hubFaqs = isFr
+  ? [
+      {
+        question: 'Les affiches et guides PDF à imprimer sont-ils gratuits ?',
+        answer: 'Oui. Toutes les affiches, cartes de bancs, fiches de pupitre et listes de contrôle techniques sont téléchargeables gratuitement en format PDF et peuvent être personnalisées avec votre propre code de diffusion.'
+      },
+      {
+        question: 'Comment fonctionne le code de diffusion (Broadcast Code) sur les affiches ?',
+        answer: 'Dans Zip Captions, vous activez le mode diffusion (Broadcast) pour obtenir un code de salle. Vous inscrivez ce code sur votre affiche afin que les élèves, fidèles ou participants puissent suivre les sous-titres sur leur propre téléphone ou ordinateur.'
+      },
+      {
+        question: 'Zip Captions nécessite-t-il l’installation d’un logiciel dans notre organisation ?',
+        answer: 'Non. Zip Captions fonctionne directement dans les navigateurs web modernes (Chrome, Safari, Edge, Brave) sur ordinateur, Chromebook, tablette et téléphone intelligent.'
+      }
+    ]
+  : [
+      {
+        question: 'Are all the printable posters, desk cards, and checklists free to download?',
+        answer: 'Yes. Every poster, pew card, reception tent card, and technical setup checklist is 100% free to download as a print-ready PDF, and you can also customize posters with your own room name and broadcast code right on each sector page.'
+      },
+      {
+        question: 'How does the Broadcast Room Code on the printable posters work?',
+        answer: 'When you turn on Broadcast mode inside Zip Captions, you set a static room code. You write or print that room code on your wall poster or table card so students, congregation members, or event attendees can read live captions on their own phones or laptops.'
+      },
+      {
+        question: 'Does our organization need to install software to use Zip Captions?',
+        answer: 'No. Zip Captions runs directly inside modern web browsers (Chrome, Safari, Edge, Brave, and Opera) on laptops, Chromebooks, tablets, and smartphones.'
+      }
+    ];
+
+const siteOrigin = 'https://zipsolutions.org';
+const hubUrl = `${siteOrigin}${basePrefix}/use-cases`;
+
+const hubSchema = {
+  "@type": "CollectionPage",
+  "@id": `${hubUrl}#webpage`,
+  "url": hubUrl,
+  "name": pageTitle,
+  "description": pageDescription,
+  "inLanguage": isFr ? "fr-CA" : "en-US",
+  "isPartOf": {
+    "@id": "https://zipsolutions.org/#website"
+  },
+  "hasPart": sectors.map((s) => ({
+    "@type": "WebPage",
+    "name": s.title,
+    "description": s.description,
+    "url": `${siteOrigin}${basePrefix}/use-cases/${s.slug}`
+  }))
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  faqs={hubFaqs}
+  schema={hubSchema}
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-b from-white via-slate-50 to-alabaster border-b border-slate-200/80 pt-14 sm:pt-18 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-xs sm:text-sm font-bold text-amethyst tracking-wider uppercase mb-3 font-heading">
+        {isFr ? 'Solutions par secteur d’activité' : 'Zip Captions Across Sectors'}
+      </p>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-midnight font-heading leading-tight">
+        {isFr
+          ? 'Comment chaque secteur utilise Zip Captions au quotidien'
+          : 'How Different Sectors Use Zip Captions Every Day'}
+      </h1>
+      <p class="mt-4 text-base sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        {isFr
+          ? 'Choisissez votre secteur ci-dessous pour découvrir les cas d’utilisation concrets, les vidéos explicatives YouTube et les affiches, chevalets et guides PDF gratuits à imprimer.'
+          : 'Select your sector below to explore practical setups, YouTube video walkthroughs, and free printable posters, counter signs, pew cards, and checklists.'}
+      </p>
+
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-3.5">
+        <a
+          href="https://zipcaptions.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-heading font-bold text-sm sm:text-base bg-amethyst hover:bg-amethyst-dark text-white shadow-md transition-all"
+        >
+          <span>{isFr ? 'Lancer Zip Captions gratuitement' : 'Launch Zip Captions Free'}</span>
+          <svg aria-hidden="true" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+        <a
+          href="#all-printables"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-heading font-bold text-sm sm:text-base bg-white hover:bg-slate-100 text-midnight border border-slate-300 shadow-xs transition-all"
+        >
+          <span>{isFr ? 'Voir toutes les ressources à imprimer' : 'Browse All Printable PDFs'}</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sectors Grid -->
+  <section class="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <p class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading mb-2">
+        {isFr ? '6 guides sectoriels dédiés' : '6 Dedicated Sector Guides'}
+      </p>
+      <h2 class="text-2xl sm:text-4xl font-extrabold font-heading text-midnight">
+        {isFr ? 'Choisissez votre milieu' : 'Explore Use Cases and Printables by Sector'}
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      {sectors.map((s) => (
+        <article class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs hover:border-amethyst/60 hover:shadow-md transition-all flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold font-mono text-amethyst uppercase tracking-wider block mb-2">
+              {s.categoryLabel}
+            </span>
+            <h3 class="text-xl font-extrabold font-heading text-midnight mb-3">
+              <a href={`${basePrefix}/use-cases/${s.slug}`} class="hover:text-amethyst transition-colors">
+                {s.navLabel}
+              </a>
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+              {s.summaryCardDescription}
+            </p>
+
+            <div class="space-y-2 pt-4 border-t border-slate-100 text-xs text-slate-600">
+              <p class="font-bold text-midnight font-heading">
+                {isFr ? 'Ressources incluses sur cette page :' : 'Included on this sector page:'}
+              </p>
+              <ul class="space-y-1.5">
+                {s.printables.map((p) => (
+                  <li class="flex items-start gap-2">
+                    <span class="text-teal-brand font-bold shrink-0">✓</span>
+                    <span>{p.title}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-slate-100">
+            <a
+              href={`${basePrefix}/use-cases/${s.slug}`}
+              class="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-midnight hover:bg-slate-800 text-white text-xs sm:text-sm font-bold font-heading transition-colors"
+            >
+              <span>{isFr ? `Explorer : ${s.navLabel}` : `View ${s.navLabel} Guide & Printables`}</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- Universal Sign Spotlight -->
+  <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-gradient-to-br from-slate-900 via-midnight to-slate-950 rounded-3xl p-8 sm:p-10 text-white border border-slate-800 shadow-lg flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+      <div class="max-w-2xl space-y-2">
+        <span class="text-xs font-bold font-mono text-teal-brand uppercase tracking-wider block">
+          {universalSign.typeLabel}
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-white">
+          {universalSign.title}
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          {universalSign.description}
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-3 shrink-0">
+        <a
+          href={universalSign.fileUrl}
+          download
+          class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-teal-brand hover:bg-teal-dark text-white font-heading font-bold text-sm shadow-sm transition-all"
+        >
+          <svg aria-hidden="true" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+          </svg>
+          <span>{isFr ? 'Télécharger l’affiche universelle (PDF)' : 'Download Universal Sign (PDF)'}</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete Printable Resource Directory Table -->
+  <section id="all-printables" class="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-20">
+    <div class="bg-white rounded-3xl border border-slate-200 shadow-xs overflow-hidden">
+      <div class="px-6 sm:px-8 py-6 border-b border-slate-200 bg-slate-50">
+        <span class="text-xs font-bold uppercase tracking-wider text-amethyst font-heading block mb-1">
+          {isFr ? 'Bibliothèque complète de PDF' : 'Complete Printable Library'}
+        </span>
+        <h2 class="text-xl sm:text-2xl font-extrabold font-heading text-midnight">
+          {isFr ? 'Toutes les affiches, fiches et listes de contrôle par secteur' : 'All Printable Signs, Posters, Cards, and Checklists'}
+        </h2>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse min-w-[640px]">
+          <caption class="sr-only">
+            {isFr ? 'Liste de toutes les ressources PDF imprimables par secteur' : 'Directory of all printable PDF resources by sector'}
+          </caption>
+          <thead>
+            <tr class="bg-slate-100 border-b border-slate-200 text-xs uppercase tracking-wider text-slate-600">
+              <th scope="col" class="p-4 sm:px-6 font-bold">{isFr ? 'Secteur' : 'Sector'}</th>
+              <th scope="col" class="p-4 sm:px-6 font-bold">{isFr ? 'Ressource imprimable' : 'Printable Resource'}</th>
+              <th scope="col" class="p-4 sm:px-6 font-bold">{isFr ? 'Format' : 'Type'}</th>
+              <th scope="col" class="p-4 sm:px-6 font-bold text-right">{isFr ? 'Téléchargement' : 'Download'}</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200 text-xs sm:text-sm">
+            {sectors.map((s) =>
+              s.printables.map((p) => (
+                <tr class="hover:bg-slate-50/80 transition-colors">
+                  <td class="p-4 sm:px-6 font-bold text-midnight whitespace-nowrap">
+                    <a href={`${basePrefix}/use-cases/${s.slug}`} class="hover:text-amethyst underline">
+                      {s.navLabel}
+                    </a>
+                  </td>
+                  <td class="p-4 sm:px-6 text-slate-800 font-medium">
+                    {p.title}
+                  </td>
+                  <td class="p-4 sm:px-6 text-slate-600">
+                    {p.typeLabel}
+                  </td>
+                  <td class="p-4 sm:px-6 text-right whitespace-nowrap">
+                    <a
+                      href={p.fileUrl}
+                      download
+                      class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-midnight text-midnight hover:text-white font-bold font-heading text-xs transition-colors"
+                    >
+                      <span>PDF</span>
+                      <span aria-hidden="true">&darr;</span>
+                    </a>
+                  </td>
+                </tr>
+              ))
+            )}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <FaqSection
+    faqs={hubFaqs}
+    title={isFr ? 'Questions fréquentes sur les cas d’utilisation et affiches' : 'Use Cases & Printables FAQ'}
+    groupName="faq-use-cases-hub"
+  />
+</BaseLayout>

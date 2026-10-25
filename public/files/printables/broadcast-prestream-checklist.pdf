@@ -1,0 +1,87 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Length 3604 >>
+stream
+0.98 0.98 0.99 rg 24 24 564 744 re f
+0.82 0.85 0.90 RG 1.5 w 24 24 564 744 re S
+0.06 0.09 0.16 rg 24 654 564 114 re f
+0.05 0.58 0.53 rg 24 648 564 6 re f
+BT /F2 10 Tf 0.20 0.83 0.75 rg 44 742 Td (STREAMER & BROADCAST PRODUCER CHECKLIST) Tj ET
+BT /F2 22 Tf 1 1 1 rg 44 716 Td (Pre-Stream Live Captioning Verification) Tj ET
+BT /F2 22 Tf 1 1 1 rg 44 690 Td (Checklist) Tj ET
+BT /F1 11 Tf 0.80 0.85 0.92 rg 44 668 Td (5-minute pre-flight check before going live on Twitch, YouTube, cable) Tj ET
+BT /F1 11 Tf 0.80 0.85 0.92 rg 44 653 Td (TV, or webcasts.) Tj ET
+BT /F1 12 Tf 0.15 0.20 0.28 rg 44 620 Td (Run through these five checks before hitting Start Streaming so your deaf and) Tj ET
+BT /F1 12 Tf 0.15 0.20 0.28 rg 44 602 Td (hard-of-hearing viewers get clean, reliable captions from the very first) Tj ET
+BT /F1 12 Tf 0.15 0.20 0.28 rg 44 584 Td (minute.) Tj ET
+BT /F2 14 Tf 0.06 0.09 0.16 rg 44 558 Td (5-Minute Pre-Flight Checklist) Tj ET
+1 1 1 rg 44 484 524 62 re f
+0.85 0.88 0.92 RG 1 w 44 484 524 62 re S
+0.42 0.16 0.85 rg 56 524 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 530 Td (1) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 532 Td (1. Isolate the Voice Audio Input: Confirm Zip Captions is listening only) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 517 Td (to your microphone or commentary bus, not desktop game audio or) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 502 Td (background music tracks.) Tj ET
+1 1 1 rg 44 422 524 62 re f
+0.85 0.88 0.92 RG 1 w 44 422 524 62 re S
+0.42 0.16 0.85 rg 56 462 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 468 Td (2) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 470 Td (2. Check Dialect & Language Settings: Verify the correct language and) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 455 Td (regional dialect \(for example, EN-CA, EN-US, EN-GB, or FR-CA\) are) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 440 Td (selected in Zip Captions.) Tj ET
+1 1 1 rg 44 360 524 62 re f
+0.85 0.88 0.92 RG 1 w 44 360 524 62 re S
+0.42 0.16 0.85 rg 56 400 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 406 Td (3) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 408 Td (3. Verify OBS / vMix / Twitch Connection: Speak a test sentence and) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 393 Td (confirm live text updates inside your OBS caption preview, vMix Title) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 378 Td (overlay, or Twitch chat.) Tj ET
+1 1 1 rg 44 314 524 46 re f
+0.85 0.88 0.92 RG 1 w 44 314 524 46 re S
+0.42 0.16 0.85 rg 56 338 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 344 Td (4) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 346 Td (4. Check Safe-Area Positioning: Ensure on-screen open captions do not) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 331 Td (cover lower-third graphics, scoreboards, or webcam frames.) Tj ET
+1 1 1 rg 44 252 524 62 re f
+0.85 0.88 0.92 RG 1 w 44 252 524 62 re S
+0.42 0.16 0.85 rg 56 292 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 298 Td (5) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 300 Td (5. Enable Transcript Saving: Keep the Zip Captions browser tab open) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 285 Td (until the stream ends so you can export your .SRT or .VTT file for the) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 270 Td (VOD archive.) Tj ET
+BT /F2 12 Tf 0.05 0.58 0.53 rg 44 236 Td (Zero CPU Overhead) Tj ET
+BT /F1 10.5 Tf 0.25 0.30 0.38 rg 48 218 Td (* Zip Captions runs lightly inside your browser and sends pure text data over) Tj ET
+BT /F1 10.5 Tf 0.25 0.30 0.38 rg 48 204 Td (WebSockets or HTTP, keeping your GPU encoder free for high-framerate video.) Tj ET
+0.06 0.09 0.16 rg 24 24 564 32 re f
+BT /F2 9.5 Tf 1 1 1 rg 44 36 Td (Zip Solutions | Free Browser Live Captioning at https://zipcaptions.app) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000348 00000 n 
+0000000450 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+4106
+%%EOF

@@ -1,0 +1,8 @@
+---
+import SectorPage from '../../components/SectorPage.astro';
+import { getSectorData } from '../../data/useCasesData';
+
+const sector = getSectorData('en', 'places-of-worship')!;
+---
+
+<SectorPage sector={sector} locale="en" />

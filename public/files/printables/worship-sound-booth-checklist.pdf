@@ -1,0 +1,93 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Length 3984 >>
+stream
+0.98 0.98 0.99 rg 24 24 564 744 re f
+0.82 0.85 0.90 RG 1.5 w 24 24 564 744 re S
+0.06 0.09 0.16 rg 24 654 564 114 re f
+0.05 0.58 0.53 rg 24 648 564 6 re f
+BT /F2 10 Tf 0.20 0.83 0.75 rg 44 742 Td (AV VOLUNTEER OPERATIONS GUIDE) Tj ET
+BT /F2 22 Tf 1 1 1 rg 44 716 Td (Sound Booth Volunteer Checklist for Weekly) Tj ET
+BT /F2 22 Tf 1 1 1 rg 44 690 Td (Services) Tj ET
+BT /F1 11 Tf 0.80 0.85 0.92 rg 44 668 Td (Step-by-step routine for running sanctuary screen captions, phone) Tj ET
+BT /F1 11 Tf 0.80 0.85 0.92 rg 44 653 Td (broadcast, and livestream captions.) Tj ET
+BT /F1 12 Tf 0.15 0.20 0.28 rg 44 620 Td (Keep this sheet at the sound desk so any volunteer operator can start and) Tj ET
+BT /F1 12 Tf 0.15 0.20 0.28 rg 44 602 Td (verify live captions in under two minutes.) Tj ET
+BT /F2 14 Tf 0.06 0.09 0.16 rg 44 576 Td (15 Minutes Before the Service Starts) Tj ET
+1 1 1 rg 44 502 524 62 re f
+0.85 0.88 0.92 RG 1 w 44 502 524 62 re S
+0.42 0.16 0.85 rg 56 542 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 548 Td (1) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 550 Td (Check Audio Input: Confirm the aux/line-out cable from the sanctuary) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 535 Td (soundboard is plugged into the caption laptop \(via USB Sound Card or) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 520 Td (audio interface\).) Tj ET
+1 1 1 rg 44 440 524 62 re f
+0.85 0.88 0.92 RG 1 w 44 440 524 62 re S
+0.42 0.16 0.85 rg 56 480 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 486 Td (2) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 488 Td (Mute Music Channels in Aux Send: Make sure only speaking microphones) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 473 Td (\(pulpit, lectern, wireless pastor mic\) are routed to the caption feed,) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 458 Td (not instruments or choir mics.) Tj ET
+1 1 1 rg 44 394 524 46 re f
+0.85 0.88 0.92 RG 1 w 44 394 524 46 re S
+0.42 0.16 0.85 rg 56 418 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 424 Td (3) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 426 Td (Open Zip Captions: Launch https://zipcaptions.app in Chrome and select) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 411 Td (the USB Sound Card as the microphone input.) Tj ET
+1 1 1 rg 44 348 524 46 re f
+0.85 0.88 0.92 RG 1 w 44 348 524 46 re S
+0.42 0.16 0.85 rg 56 372 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 378 Td (4) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 380 Td (Start Broadcast Room: Enable Broadcast mode using your congregation's) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 365 Td (static room code so pew cards and QR codes connect automatically.) Tj ET
+1 1 1 rg 44 286 524 62 re f
+0.85 0.88 0.92 RG 1 w 44 286 524 62 re S
+0.42 0.16 0.85 rg 56 326 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 332 Td (5) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 334 Td (Verify Sanctuary & Stream Outputs: Check that captions appear on the) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 319 Td (main projection screen and in OBS Studio \(WebSockets\) or vMix \(Zip vMix) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 304 Td (Extension\).) Tj ET
+1 1 1 rg 44 240 524 46 re f
+0.85 0.88 0.92 RG 1 w 44 240 524 46 re S
+0.42 0.16 0.85 rg 56 264 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 270 Td (6) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 272 Td (Do a 10-Second Mic Check: Speak into the lectern mic and verify words) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 257 Td (appear cleanly on screen and on a test phone.) Tj ET
+BT /F2 12 Tf 0.05 0.58 0.53 rg 44 224 Td (Troubleshooting Quick Tips) Tj ET
+BT /F1 10.5 Tf 0.25 0.30 0.38 rg 48 206 Td (* If no text appears, check that Chrome has permission to use the USB audio) Tj ET
+BT /F1 10.5 Tf 0.25 0.30 0.38 rg 48 192 Td (input and that the mixer aux send is unmuted.) Tj ET
+BT /F1 10.5 Tf 0.25 0.30 0.38 rg 48 175 Td (* Pause captioning during musical worship sets, and resume when readings or) Tj ET
+BT /F1 10.5 Tf 0.25 0.30 0.38 rg 48 161 Td (announcements begin.) Tj ET
+0.06 0.09 0.16 rg 24 24 564 32 re f
+BT /F2 9.5 Tf 1 1 1 rg 44 36 Td (Zip Solutions | Free Browser Live Captioning at https://zipcaptions.app) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000348 00000 n 
+0000000450 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+4486
+%%EOF

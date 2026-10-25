@@ -1,0 +1,966 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FaqSection from './FaqSection.astro';
+import { generalPrintable, sectorsData, type SectorData } from '../data/useCasesData';
+
+interface Props {
+  sector: SectorData;
+  locale: 'en' | 'fr';
+}
+
+const { sector, locale } = Astro.props;
+const isFr = locale === 'fr';
+const basePrefix = isFr ? '/fr' : '';
+const allSectors = sectorsData[locale];
+const universalSign = generalPrintable[locale];
+const allPrintables = [...sector.printables, universalSign];
+const customizableTemplates = allPrintables.filter((p) => p.hasQrAndRoomBox);
+
+const siteOrigin = 'https://zipsolutions.org';
+const pageUrl = `${siteOrigin}${basePrefix}/use-cases/${sector.slug}`;
+const hubUrl = `${siteOrigin}${basePrefix}/use-cases`;
+
+const sectorSchema = [
+  {
+    "@type": "WebPage",
+    "@id": `${pageUrl}#webpage`,
+    "url": pageUrl,
+    "name": sector.seoTitle,
+    "description": sector.description,
+    "inLanguage": isFr ? "fr-CA" : "en-US",
+    "isPartOf": {
+      "@id": "https://zipsolutions.org/#website"
+    },
+    "hasPart": allPrintables.map((item) => ({
+      "@type": "DigitalDocument",
+      "name": item.title,
+      "description": item.description,
+      "url": `${siteOrigin}${item.fileUrl}`,
+      "encodingFormat": "application/pdf",
+      "isAccessibleForFree": true
+    }))
+  },
+  ...sector.videos.map((vid) => ({
+    "@type": "VideoObject",
+    "name": vid.title,
+    "description": vid.description,
+    "thumbnailUrl": `https://i.ytimg.com/vi/${vid.youtubeId}/hqdefault.jpg`,
+    "uploadDate": vid.uploadDate,
+    "embedUrl": `https://www.youtube.com/embed/${vid.youtubeId}`
+  }))
+];
+---
+
+<BaseLayout
+  title={sector.seoTitle}
+  description={sector.description}
+  faqs={sector.faqs}
+  schema={sectorSchema}
+>
+  <Fragment slot="head">
+    <meta name="keywords" content={sector.keywords} />
+  </Fragment>
+
+  <!-- Sector Navigation Bar (No Pills) -->
+  <div class="bg-slate-100 border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-3">
+      <a
+        href={`${basePrefix}/use-cases`}
+        class="inline-flex items-center gap-1.5 text-xs font-bold font-heading text-slate-700 hover:text-amethyst transition-colors"
+      >
+        <svg aria-hidden="true" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        <span>{isFr ? 'Tous les secteurs d’utilisation' : 'All Sector Use Cases'}</span>
+      </a>
+
+      <nav aria-label={isFr ? 'Secteurs Zip Captions' : 'Zip Captions Sectors'} class="flex flex-wrap items-center gap-1.5">
+        {allSectors.map((s) => {
+          const active = s.slug === sector.slug;
+          return (
+            <a
+              href={`${basePrefix}/use-cases/${s.slug}`}
+              aria-current={active ? 'page' : undefined}
+              class={`px-3 py-1.5 rounded-lg text-xs font-bold font-heading transition-colors ${
+                active
+                  ? 'bg-midnight text-white shadow-xs'
+                  : 'bg-white text-slate-700 hover:text-amethyst border border-slate-200/80'
+              }`}
+            >
+              {s.navLabel}
+            </a>
+          );
+        })}
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-b from-white via-slate-50 to-alabaster border-b border-slate-200/80 pt-12 sm:pt-16 pb-14 sm:pb-18 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-xs sm:text-sm font-bold text-teal-brand tracking-wider uppercase mb-3 font-heading">
+        {sector.categoryLabel}
+      </p>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-midnight font-heading leading-tight">
+        {sector.title}
+      </h1>
+      <p class="mt-4 text-base sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        {sector.description}
+      </p>
+
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-3.5">
+        <a
+          href="https://zipcaptions.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-heading font-bold text-sm sm:text-base bg-amethyst hover:bg-amethyst-dark text-white shadow-md transition-all"
+        >
+          <span>{isFr ? 'Lancer Zip Captions gratuitement' : 'Launch Zip Captions Free'}</span>
+          <svg aria-hidden="true" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+        <a
+          href="#printables"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-heading font-bold text-sm sm:text-base bg-white hover:bg-slate-100 text-midnight border border-slate-300 shadow-xs transition-all"
+        >
+          <svg aria-hidden="true" class="w-4 h-4 text-teal-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+          </svg>
+          <span>{isFr ? 'Affiches et ressources imprimables' : 'Free Printables & Signs'}</span>
+        </a>
+        <a
+          href="#videos"
+          class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-heading font-semibold text-sm sm:text-base text-slate-700 hover:text-midnight bg-slate-200/60 hover:bg-slate-200 transition-colors"
+        >
+          <span>{isFr ? 'Voir les vidéos' : 'Watch Videos'}</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Why Zip Captions Is Used in This Sector -->
+  <section class="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <p class="text-xs font-bold uppercase tracking-wider text-amethyst font-heading mb-2">
+        {isFr ? 'Cas d’utilisation concrets' : 'Practical Use Cases'}
+      </p>
+      <h2 class="text-2xl sm:text-4xl font-extrabold font-heading text-midnight">
+        {sector.reasonsTitle}
+      </h2>
+      <p class="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
+        {sector.reasonsSubtitle}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      {sector.reasons.map((reason) => (
+        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs hover:border-slate-300 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-purple-50 text-amethyst flex items-center justify-center mb-4 border border-purple-100">
+              <svg aria-hidden="true" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold font-heading text-midnight mb-2">
+              {reason.title}
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              {reason.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {sector.disclaimerNote && (
+      <div class="mt-10 bg-slate-100 rounded-2xl p-5 sm:p-6 border border-slate-300 text-xs sm:text-sm text-slate-700 leading-relaxed">
+        {sector.disclaimerNote}
+      </div>
+    )}
+  </section>
+
+  <!-- Section 2: How Setup Works in 3 Steps -->
+  <section class="py-16 bg-white border-y border-slate-200/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <p class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading mb-2">
+          {isFr ? 'Mise en route simple' : 'Simple Workflow'}
+        </p>
+        <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-midnight">
+          {sector.setupTitle}
+        </h2>
+        <p class="mt-2 text-slate-600 text-sm sm:text-base">
+          {sector.setupSubtitle}
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        {sector.setupSteps.map((st) => (
+          <div class="bg-alabaster rounded-2xl p-6 sm:p-8 border border-slate-200">
+            <span class="text-2xl font-extrabold font-mono text-teal-brand block mb-2">
+              {st.step}
+            </span>
+            <h3 class="text-lg font-bold font-heading text-midnight mb-2">
+              {st.title}
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              {st.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Printable Posters, Signs, and Checklists (Deferred rendering below the fold) -->
+  <section id="printables" class="deferred-below-fold py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-20">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <p class="text-xs font-bold uppercase tracking-wider text-amethyst font-heading mb-2">
+        {isFr ? 'Ressources gratuites à imprimer' : 'Free Printable Resources'}
+      </p>
+      <h2 class="text-2xl sm:text-4xl font-extrabold font-heading text-midnight">
+        {isFr ? 'Affiches, chevalets et listes de contrôle' : 'Posters, Signs, Cards, and Checklists'}
+      </h2>
+      <p class="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
+        {isFr
+          ? 'Téléchargez nos modèles PDF prêts à imprimer (avec code QR intégré vers zipcaptions.app) ou personnalisez une affiche avec votre propre code de diffusion ci-dessous.'
+          : 'Download ready-to-print PDF files (with a built-in QR code for zipcaptions.app) or use the customizer below to add your own room name and broadcast code before printing.'}
+      </p>
+    </div>
+
+    <!-- Downloadable PDF Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
+      {allPrintables.map((item) => (
+        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs flex flex-col justify-between gap-6">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="text-xs font-bold font-mono text-teal-brand uppercase tracking-wider">
+                {item.typeLabel}
+              </span>
+              <span class="text-xs font-mono text-slate-500 bg-slate-100 px-2.5 py-1 rounded-md border border-slate-200">
+                US Letter / A4
+              </span>
+            </div>
+            <h3 class="text-xl font-bold font-heading text-midnight mb-2">
+              {item.title}
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              {item.description}
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center gap-3">
+            <a
+              href={item.fileUrl}
+              download
+              class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-midnight hover:bg-slate-800 text-white text-xs sm:text-sm font-bold font-heading transition-colors shadow-2xs"
+            >
+              <svg aria-hidden="true" class="w-4 h-4 text-teal-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              <span>{isFr ? 'Télécharger le PDF' : 'Download PDF'}</span>
+            </a>
+            <a
+              href={item.fileUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs sm:text-sm font-bold font-heading transition-colors"
+            >
+              <span>{isFr ? 'Ouvrir et imprimer' : 'View & Print'}</span>
+              <svg aria-hidden="true" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Interactive Browser Sign Customizer -->
+    {customizableTemplates.length > 0 && (
+      <div class="bg-white rounded-3xl border-2 border-slate-200 shadow-sm p-6 sm:p-10">
+        <div class="max-w-3xl mb-8">
+          <span class="text-xs font-bold font-mono text-amethyst uppercase tracking-wider block mb-1">
+            {isFr ? 'Outil d’impression personnalisée' : 'Custom Sign & Poster Builder'}
+          </span>
+          <h3 class="text-xl sm:text-2xl font-extrabold font-heading text-midnight">
+            {isFr
+              ? 'Personnalisez votre affiche avec votre nom et code de diffusion'
+              : 'Customize a Poster with Your Organization Name and Broadcast Code'}
+          </h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+            {isFr
+              ? 'Choisissez un modèle, inscrivez le nom de votre salle ou organisation ainsi que votre code de diffusion Zip Captions, puis cliquez sur Imprimer l’affiche.'
+              : 'Pick a sign template, type in your room or organization name and your Zip Captions broadcast room code, and click Print Custom Sign.'}
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <!-- Left Form Controls -->
+          <div class="lg:col-span-5 space-y-5 bg-slate-50 p-6 rounded-2xl border border-slate-200">
+            <div>
+              <label for="sign-template-select" class="block text-xs font-bold font-heading text-midnight uppercase tracking-wider mb-1">
+                {isFr ? '1. Modèle d’affiche' : '1. Sign Template'}
+              </label>
+              <span id="sign-template-hint" class="block text-xs text-slate-500 mb-2">
+                {isFr ? 'Sélectionnez le texte prérempli adapté à votre lieu.' : 'Choose the pre-written sign wording that fits your space.'}
+              </span>
+              <select
+                id="sign-template-select"
+                aria-describedby="sign-template-hint"
+                class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-300 text-sm text-midnight font-medium focus:outline-none focus:ring-2 focus:ring-amethyst"
+              >
+                {customizableTemplates.map((tpl, idx) => (
+                  <option
+                    value={tpl.id}
+                    selected={idx === 0}
+                    data-headline={tpl.defaultPosterHeadline}
+                    data-subtitle={tpl.defaultPosterSubtitle}
+                    data-steps={JSON.stringify(tpl.defaultSteps || [])}
+                  >
+                    {tpl.title}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+              <label for="sign-org-input" class="block text-xs font-bold font-heading text-midnight uppercase tracking-wider mb-1">
+                {isFr ? '2. Nom du lieu, de la salle ou de l’organisation' : '2. Organization or Room Name'}
+              </label>
+              <span id="sign-org-hint" class="block text-xs text-slate-500 mb-2">
+                {isFr ? 'Apparaît en haut de votre affiche imprimée.' : 'Appears at the top of your printed poster.'}
+              </span>
+              <input
+                id="sign-org-input"
+                type="text"
+                aria-describedby="sign-org-hint"
+                value={sector.defaultOrgPlaceholder}
+                class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-300 text-sm text-midnight font-medium focus:outline-none focus:ring-2 focus:ring-amethyst"
+              />
+            </div>
+
+            <div>
+              <label for="sign-code-input" class="block text-xs font-bold font-heading text-midnight uppercase tracking-wider mb-1">
+                {isFr ? '3. Code de diffusion (Broadcast Code)' : '3. Broadcast Room Code'}
+              </label>
+              <span id="sign-code-hint" class="block text-xs text-slate-500 mb-2">
+                {isFr ? 'Laissez vide si vous souhaitez écrire le code à la main après impression.' : 'Leave blank if you prefer to write the code by hand after printing.'}
+              </span>
+              <input
+                id="sign-code-input"
+                type="text"
+                aria-describedby="sign-code-hint"
+                value={sector.defaultRoomCodePlaceholder}
+                class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-300 text-sm font-mono font-bold text-midnight focus:outline-none focus:ring-2 focus:ring-amethyst"
+              />
+            </div>
+
+            <div class="pt-2">
+              <button
+                id="print-custom-sign-btn"
+                type="button"
+                class="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-teal-brand hover:bg-teal-dark text-white font-heading font-bold text-sm shadow-sm transition-all cursor-pointer"
+              >
+                <svg aria-hidden="true" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                </svg>
+                <span>{isFr ? 'Imprimer cette affiche personnalisée' : 'Print Custom Sign'}</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Live Printable Poster Preview -->
+          <div class="lg:col-span-7">
+            <div
+              id="printable-poster-preview"
+              class="bg-white rounded-2xl border-2 border-slate-300 overflow-hidden shadow-xs"
+            >
+              <!-- Poster Header -->
+              <div class="bg-midnight text-white p-6 sm:p-8 border-b-4 border-teal-brand">
+                <p
+                  id="preview-org-name"
+                  class="text-xs font-bold font-mono text-teal-brand uppercase tracking-wider mb-1.5"
+                >
+                  {sector.defaultOrgPlaceholder}
+                </p>
+                <h4
+                  id="preview-headline"
+                  class="text-xl sm:text-2xl font-extrabold font-heading text-white leading-snug"
+                >
+                  {customizableTemplates[0]?.defaultPosterHeadline}
+                </h4>
+                <p
+                  id="preview-subtitle"
+                  class="mt-2 text-xs sm:text-sm text-slate-300 leading-relaxed"
+                >
+                  {customizableTemplates[0]?.defaultPosterSubtitle}
+                </p>
+              </div>
+
+              <!-- Poster Body -->
+              <div class="p-6 sm:p-8 space-y-6">
+                <!-- Room Code + QR Box -->
+                <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 p-5 rounded-xl bg-slate-50 border-2 border-amethyst/40 items-center">
+                  <div class="sm:col-span-7 space-y-1.5">
+                    <span class="text-xs font-bold font-heading text-slate-600 uppercase tracking-wider block">
+                      {isFr ? 'Code de diffusion sur zipcaptions.app' : 'Broadcast Room Code at zipcaptions.app'}
+                    </span>
+                    <div
+                      id="preview-room-code"
+                      class="px-4 py-3 rounded-lg bg-white border-2 border-dashed border-slate-300 font-mono text-xl sm:text-2xl font-extrabold text-midnight tracking-wider min-h-[3.25rem] flex items-center"
+                    >
+                      {sector.defaultRoomCodePlaceholder}
+                    </div>
+                    <span class="text-[11px] text-slate-500 block">
+                      {isFr ? 'Aucun compte ni téléchargement requis' : 'No app download or account sign-up needed'}
+                    </span>
+                  </div>
+
+                  <div class="sm:col-span-5 flex flex-col items-center justify-center bg-white p-3 rounded-lg border border-slate-200">
+                    <div id="preview-qr-svg-container" class="w-24 h-24 flex items-center justify-center" aria-label="QR Code for zipcaptions.app"></div>
+                    <span class="text-[11px] font-mono font-bold text-teal-brand mt-1">
+                      zipcaptions.app
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Steps List -->
+                <div>
+                  <p class="text-xs font-bold font-heading text-midnight uppercase tracking-wider mb-3">
+                    {isFr ? 'Comment suivre les sous-titres en direct :' : 'How to Follow Live Captions:'}
+                  </p>
+                  <ol id="preview-steps-list" class="space-y-2.5 text-xs sm:text-sm text-slate-700">
+                    {(customizableTemplates[0]?.defaultSteps || []).map((stepText, idx) => (
+                      <li class="flex items-start gap-3 p-3 rounded-lg bg-slate-50 border border-slate-200">
+                        <span class="w-5 h-5 rounded-md bg-amethyst text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
+                          {idx + 1}
+                        </span>
+                        <span>{stepText}</span>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              </div>
+
+              <!-- Poster Footer -->
+              <div class="bg-slate-900 text-white px-6 py-3 flex items-center justify-between text-[11px] font-mono">
+                <span>Zip Solutions | https://zipcaptions.app</span>
+                <span>{isFr ? 'Sous-titrage en direct gratuit' : 'Free Browser Live Captioning'}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )}
+  </section>
+
+  <!-- Section 4: Embedded YouTube Videos (Deferred below the fold) -->
+  <section id="videos" class="deferred-below-fold py-16 sm:py-20 bg-slate-50 border-t border-slate-200/80 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading mb-2">
+          {isFr ? 'Tutoriels vidéo YouTube' : 'YouTube Video Guides'}
+        </p>
+        <h2 class="text-2xl sm:text-4xl font-extrabold font-heading text-midnight">
+          {isFr ? 'Voir Zip Captions en action' : 'See Zip Captions in Action'}
+        </h2>
+        <p class="mt-3 text-slate-600 text-sm sm:text-base">
+          {isFr
+            ? 'Courtes démonstrations tirées de la chaîne YouTube officielle de Zip Captions.'
+            : 'Short step-by-step demonstrations from the official Zip Captions YouTube channel.'}
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {sector.videos.map((vid) => (
+          <div class="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden flex flex-col justify-between">
+            <div>
+              <div class="aspect-video w-full bg-slate-900 border-b border-slate-200">
+                <iframe
+                  class="w-full h-full"
+                  src={`https://www.youtube.com/embed/${vid.youtubeId}`}
+                  title={vid.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
+              </div>
+              <div class="p-6">
+                <h3 class="text-lg font-bold font-heading text-midnight mb-2">
+                  {vid.title}
+                </h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                  {vid.description}
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-5 pt-3 border-t border-slate-100">
+              <a
+                href={`https://www.youtube.com/watch?v=${vid.youtubeId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-xs font-bold text-teal-brand hover:text-teal-dark inline-flex items-center gap-1"
+              >
+                <span>{isFr ? 'Regarder sur YouTube' : 'Watch on YouTube'}</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Real Community Examples & Related Tools -->
+  <section class="deferred-below-fold py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    <!-- Community Stories -->
+    {sector.stories.length > 0 && (
+      <div>
+        <div class="border-b border-slate-200 pb-4 mb-8">
+          <span class="text-xs font-bold font-mono text-amethyst uppercase tracking-wider block mb-1">
+            {isFr ? 'Retours du terrain' : 'Real-World Experience'}
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-midnight">
+            {sector.storiesTitle}
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {sector.stories.map((st) => (
+            <blockquote class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs flex flex-col justify-between">
+              <p class="text-slate-700 text-sm sm:text-base italic leading-relaxed mb-6">
+                "{st.quote}"
+              </p>
+              <div class="pt-4 border-t border-slate-100">
+                <p class="font-bold font-heading text-sm text-midnight">{st.author}</p>
+                <p class="text-xs text-slate-500 mt-0.5">{st.role}</p>
+                {st.linkUrl && st.linkText && (
+                  <a
+                    href={st.linkUrl}
+                    target={st.linkUrl.startsWith('http') ? '_blank' : undefined}
+                    rel={st.linkUrl.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    class="inline-flex items-center gap-1 text-xs font-bold text-teal-brand hover:text-teal-dark mt-3"
+                  >
+                    <span>{st.linkText}</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                )}
+              </div>
+            </blockquote>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- Related Ecosystem Tools -->
+    {sector.relatedLinks.length > 0 && (
+      <div class="bg-slate-900 rounded-3xl p-6 sm:p-10 text-white border border-slate-800">
+        <div class="max-w-2xl mb-8">
+          <span class="text-xs font-bold font-mono text-teal-brand uppercase tracking-wider block mb-1">
+            {isFr ? 'Outils et services complémentaires' : 'Companion Tools & Services'}
+          </span>
+          <h2 class="text-xl sm:text-2xl font-extrabold font-heading text-white">
+            {isFr ? 'Aller plus loin avec l’écosystème Solutions Zip' : 'Helpful Extensions, Guides, and Services for This Sector'}
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {sector.relatedLinks.map((rel) => (
+            <a
+              href={rel.url}
+              target={rel.external ? '_blank' : undefined}
+              rel={rel.external ? 'noopener noreferrer' : undefined}
+              class="p-5 rounded-2xl bg-slate-800/90 hover:bg-slate-800 border border-slate-700 hover:border-teal-brand transition-all flex flex-col justify-between group"
+            >
+              <div>
+                <h3 class="text-base font-bold font-heading text-white group-hover:text-teal-brand transition-colors mb-1.5">
+                  {rel.title}
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  {rel.description}
+                </p>
+              </div>
+              <span class="text-xs font-bold text-teal-brand mt-4 inline-flex items-center gap-1">
+                <span>{isFr ? 'Découvrir' : 'Explore'}</span>
+                <span aria-hidden="true">&rarr;</span>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+  </section>
+
+  <!-- Section 6: Sector FAQ -->
+  <FaqSection
+    faqs={sector.faqs}
+    title={isFr ? `Questions fréquentes : ${sector.navLabel}` : `Frequently Asked Questions: ${sector.navLabel}`}
+    subtitle={isFr ? 'Réponses pratiques' : 'Practical Answers'}
+    groupName={`faq-sector-${sector.slug}`}
+  />
+
+  <!-- Bottom CTA -->
+  <section class="py-16 bg-midnight text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5">
+      <h2 class="text-2xl sm:text-4xl font-extrabold font-heading text-white">
+        {isFr ? 'Prêt à essayer Zip Captions dans votre milieu ?' : 'Ready to Use Zip Captions in Your Space?'}
+      </h2>
+      <p class="text-slate-300 text-sm sm:text-lg max-w-2xl mx-auto">
+        {isFr
+          ? 'Lancez Zip Captions gratuitement dans votre navigateur ou contactez notre équipe pour toute question sur votre installation.'
+          : 'Launch Zip Captions for free right in your web browser, or get in touch with our team if you have questions about your setup.'}
+      </p>
+      <div class="pt-2 flex flex-wrap justify-center gap-4">
+        <a
+          href="https://zipcaptions.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-7 py-3.5 rounded-xl font-heading font-bold text-sm sm:text-base text-midnight bg-white hover:bg-alabaster shadow-md transition-all"
+        >
+          {isFr ? 'Lancer Zip Captions gratuitement' : 'Launch Zip Captions Free'}
+        </a>
+        <a
+          href={`${basePrefix}/contact-us`}
+          class="px-7 py-3.5 rounded-xl font-heading font-bold text-sm sm:text-base text-white border border-slate-700 hover:bg-slate-800 transition-all"
+        >
+          {isFr ? 'Nous contacter' : 'Contact Our Team'}
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .deferred-below-fold {
+    content-visibility: auto;
+    contain-intrinsic-size: auto none auto 500px;
+  }
+</style>
+
+<script>
+  // Minimal self-contained ISO/IEC 18004 QR Code SVG generator for zipcaptions.app
+  function buildQrSvg(text: string): string {
+    const data = new TextEncoder().encode(text);
+    const V_TABLE: Array<[number, number, number, number] | null> = [
+      null,
+      [1, 26, 7, 1],
+      [2, 44, 10, 1],
+      [3, 70, 15, 1],
+      [4, 100, 20, 1]
+    ];
+    let ver = 2;
+    for (let v = 1; v <= 4; v++) {
+      const entry = V_TABLE[v]!;
+      const dataCap = entry[1] - entry[2] * entry[3] - 2;
+      if (data.length <= dataCap) {
+        ver = v;
+        break;
+      }
+      if (v === 4) ver = 4;
+    }
+    const [, totalCw, ecCw, numBlocks] = V_TABLE[ver]!;
+    const dataCwCount = totalCw - ecCw * numBlocks;
+
+    const bits: number[] = [];
+    const pushBits = (val: number, len: number) => {
+      for (let i = len - 1; i >= 0; i--) bits.push((val >> i) & 1);
+    };
+    pushBits(0b0100, 4);
+    const clipped = data.slice(0, dataCwCount - 2);
+    pushBits(clipped.length, 8);
+    for (const b of clipped) pushBits(b, 8);
+    const maxBits = dataCwCount * 8;
+    for (let i = 0; i < 4 && bits.length < maxBits; i++) bits.push(0);
+    while (bits.length % 8 !== 0) bits.push(0);
+    const padBytes = [0xec, 0x11];
+    let padIdx = 0;
+    while (bits.length < maxBits) {
+      pushBits(padBytes[padIdx % 2], 8);
+      padIdx++;
+    }
+
+    const codewords: number[] = [];
+    for (let i = 0; i < bits.length; i += 8) {
+      let b = 0;
+      for (let j = 0; j < 8; j++) b = (b << 1) | bits[i + j];
+      codewords.push(b);
+    }
+
+    const exp = new Uint8Array(512);
+    const log = new Uint8Array(256);
+    let x = 1;
+    for (let i = 0; i < 255; i++) {
+      exp[i] = x;
+      log[x] = i;
+      x <<= 1;
+      if (x & 0x100) x ^= 0x11d;
+    }
+    for (let i = 255; i < 512; i++) exp[i] = exp[i - 255];
+    const gfMul = (a: number, b: number) => (a === 0 || b === 0 ? 0 : exp[log[a] + log[b]]);
+
+    const polyMul = (p: Uint8Array, q: Uint8Array) => {
+      const res = new Uint8Array(p.length + q.length - 1);
+      for (let i = 0; i < p.length; i++) {
+        for (let j = 0; j < q.length; j++) {
+          res[i + j] ^= gfMul(p[i], q[j]);
+        }
+      }
+      return res;
+    };
+    let gen: Uint8Array = new Uint8Array([1]);
+    for (let i = 0; i < ecCw; i++) {
+      gen = polyMul(gen, new Uint8Array([1, exp[i]]));
+    }
+    const rsEncode = (msg: number[]) => {
+      const rem = new Uint8Array(msg.length + ecCw);
+      rem.set(msg);
+      for (let i = 0; i < msg.length; i++) {
+        const coef = rem[i];
+        if (coef !== 0) {
+          for (let j = 1; j < gen.length; j++) {
+            rem[i + j] ^= gfMul(gen[j], coef);
+          }
+        }
+      }
+      return rem.slice(msg.length);
+    };
+
+    const ecBlock = rsEncode(codewords);
+    const finalBytes = [...codewords, ...ecBlock];
+
+    const size = ver * 4 + 17;
+    const grid = Array.from({ length: size }, () => new Int8Array(size).fill(-1));
+    const reserved = Array.from({ length: size }, () => new Uint8Array(size));
+
+    const setFinder = (r: number, c: number) => {
+      for (let dr = -1; dr <= 7; dr++) {
+        for (let dc = -1; dc <= 7; dc++) {
+          const rr = r + dr;
+          const cc = c + dc;
+          if (rr < 0 || rr >= size || cc < 0 || cc >= size) continue;
+          const inOuter = (dr >= 0 && dr <= 6 && (dc === 0 || dc === 6)) || (dc >= 0 && dc <= 6 && (dr === 0 || dr === 6));
+          const inInner = dr >= 2 && dr <= 4 && dc >= 2 && dc <= 4;
+          grid[rr][cc] = inOuter || inInner ? 1 : 0;
+          reserved[rr][cc] = 1;
+        }
+      }
+    };
+    setFinder(0, 0);
+    setFinder(0, size - 7);
+    setFinder(size - 7, 0);
+
+    const alignMap: Record<number, number[]> = { 1: [], 2: [6, 18], 3: [6, 22], 4: [6, 26] };
+    const alignPos = alignMap[ver] || [];
+    for (const ar of alignPos) {
+      for (const ac of alignPos) {
+        if (reserved[ar][ac]) continue;
+        for (let dr = -2; dr <= 2; dr++) {
+          for (let dc = -2; dc <= 2; dc++) {
+            grid[ar + dr][ac + dc] = Math.max(Math.abs(dr), Math.abs(dc)) !== 1 ? 1 : 0;
+            reserved[ar + dr][ac + dc] = 1;
+          }
+        }
+      }
+    }
+
+    for (let i = 8; i < size - 8; i++) {
+      if (!reserved[6][i]) {
+        grid[6][i] = i % 2 === 0 ? 1 : 0;
+        reserved[6][i] = 1;
+      }
+      if (!reserved[i][6]) {
+        grid[i][6] = i % 2 === 0 ? 1 : 0;
+        reserved[i][6] = 1;
+      }
+    }
+
+    for (let i = 0; i < 9; i++) {
+      reserved[8][i] = 1;
+      reserved[i][8] = 1;
+    }
+    for (let i = 0; i < 8; i++) {
+      reserved[8][size - 1 - i] = 1;
+      reserved[size - 1 - i][8] = 1;
+    }
+    grid[size - 8][8] = 1;
+    reserved[size - 8][8] = 1;
+
+    const allBits: number[] = [];
+    for (const b of finalBytes) {
+      for (let i = 7; i >= 0; i--) allBits.push((b >> i) & 1);
+    }
+    let bitIdx = 0;
+    let upward = true;
+    for (let right = size - 1; right >= 1; right -= 2) {
+      if (right === 6) right = 5;
+      for (let vert = 0; vert < size; vert++) {
+        const r = upward ? size - 1 - vert : vert;
+        for (let j = 0; j < 2; j++) {
+          const c = right - j;
+          if (!reserved[r][c]) {
+            const bit = bitIdx < allBits.length ? allBits[bitIdx++] : 0;
+            const mask = (r + c) % 2 === 0 ? 1 : 0;
+            grid[r][c] = bit ^ mask;
+          }
+        }
+      }
+      upward = !upward;
+    }
+
+    const fmt = 0x77c4;
+    const fmtCoords1 = [
+      [8, 0], [8, 1], [8, 2], [8, 3], [8, 4], [8, 5], [8, 7], [8, 8],
+      [7, 8], [5, 8], [4, 8], [3, 8], [2, 8], [1, 8], [0, 8]
+    ];
+    const fmtCoords2 = [
+      [size - 1, 8], [size - 2, 8], [size - 3, 8], [size - 4, 8], [size - 5, 8], [size - 6, 8], [size - 7, 8],
+      [8, size - 8], [8, size - 7], [8, size - 6], [8, size - 5], [8, size - 4], [8, size - 3], [8, size - 2], [8, size - 1]
+    ];
+    for (let i = 0; i < 15; i++) {
+      const bit = (fmt >> i) & 1;
+      grid[fmtCoords1[i][0]][fmtCoords1[i][1]] = bit;
+      grid[fmtCoords2[i][0]][fmtCoords2[i][1]] = bit;
+    }
+
+    let rects = '';
+    for (let r = 0; r < size; r++) {
+      for (let c = 0; c < size; c++) {
+        if (grid[r][c] === 1) {
+          rects += `<rect x="${c}" y="${r}" width="1" height="1" fill="#0F172A"/>`;
+        }
+      }
+    }
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" width="92" height="92" role="img" aria-label="QR Code for zipcaptions.app">${rects}</svg>`;
+  }
+
+  const qrContainer = document.getElementById('preview-qr-svg-container');
+  if (qrContainer) {
+    qrContainer.innerHTML = buildQrSvg('https://zipcaptions.app');
+  }
+
+  const templateSelect = document.getElementById('sign-template-select') as HTMLSelectElement | null;
+  const orgInput = document.getElementById('sign-org-input') as HTMLInputElement | null;
+  const codeInput = document.getElementById('sign-code-input') as HTMLInputElement | null;
+  const printBtn = document.getElementById('print-custom-sign-btn');
+
+  const previewOrg = document.getElementById('preview-org-name');
+  const previewHeadline = document.getElementById('preview-headline');
+  const previewSubtitle = document.getElementById('preview-subtitle');
+  const previewCode = document.getElementById('preview-room-code');
+  const previewSteps = document.getElementById('preview-steps-list');
+
+  function updateSignPreview() {
+    if (orgInput && previewOrg) {
+      previewOrg.textContent = orgInput.value.trim() || 'Zip Captions';
+    }
+    if (codeInput && previewCode) {
+      previewCode.textContent = codeInput.value.trim() || '____________________';
+    }
+    if (templateSelect) {
+      const selectedOpt = templateSelect.options[templateSelect.selectedIndex];
+      if (selectedOpt) {
+        const headline = selectedOpt.getAttribute('data-headline') || '';
+        const subtitle = selectedOpt.getAttribute('data-subtitle') || '';
+        const stepsRaw = selectedOpt.getAttribute('data-steps') || '[]';
+        if (previewHeadline) previewHeadline.textContent = headline;
+        if (previewSubtitle) previewSubtitle.textContent = subtitle;
+        if (previewSteps) {
+          try {
+            const steps: string[] = JSON.parse(stepsRaw);
+            previewSteps.innerHTML = steps
+              .map(
+                (st, idx) =>
+                  `<li class="flex items-start gap-3 p-3 rounded-lg bg-slate-50 border border-slate-200"><span class="w-5 h-5 rounded-md bg-amethyst text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">${idx + 1}</span><span>${st}</span></li>`
+              )
+              .join('');
+          } catch {
+            // ignore parse error
+          }
+        }
+      }
+    }
+  }
+
+  templateSelect?.addEventListener('change', updateSignPreview);
+  orgInput?.addEventListener('input', updateSignPreview);
+  codeInput?.addEventListener('input', updateSignPreview);
+
+  printBtn?.addEventListener('click', () => {
+    const posterEl = document.getElementById('printable-poster-preview');
+    if (!posterEl) return;
+    const printWin = window.open('', '_blank', 'width=850,height=1050');
+    if (!printWin) {
+      window.print();
+      return;
+    }
+    const orgText = previewOrg?.textContent || '';
+    const headlineText = previewHeadline?.textContent || '';
+    const subtitleText = previewSubtitle?.textContent || '';
+    const roomCodeText = previewCode?.textContent || '';
+    const qrSvgHtml = qrContainer?.innerHTML || '';
+    const stepItems = Array.from(previewSteps?.querySelectorAll('li span:last-child') || []).map(
+      (el) => el.textContent || ''
+    );
+
+    printWin.document.write(`<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>${headlineText}</title>
+  <style>
+    @page { size: letter portrait; margin: 0.5in; }
+    * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #0F172A; margin: 0; padding: 0; }
+    .poster { border: 2px solid #CBD5E1; border-radius: 16px; overflow: hidden; }
+    .header { background: #0F172A; color: #FFFFFF; padding: 28px 32px; border-bottom: 6px solid #0D9488; }
+    .org { color: #2DD4BF; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 8px 0; }
+    .headline { font-size: 28px; font-weight: 800; margin: 0 0 10px 0; line-height: 1.2; }
+    .subtitle { font-size: 15px; color: #E2E8F0; margin: 0; line-height: 1.5; }
+    .body { padding: 28px 32px; }
+    .code-grid { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 22px; border: 2px solid #7C3AED; border-radius: 14px; background: #F8FAFC; margin-bottom: 26px; }
+    .code-left { flex: 1; }
+    .code-label { font-size: 12px; font-weight: 700; text-transform: uppercase; color: #475569; margin-bottom: 8px; }
+    .code-box { background: #FFFFFF; border: 2px dashed #94A3B8; border-radius: 10px; padding: 14px 18px; font-family: monospace; font-size: 28px; font-weight: 800; letter-spacing: 0.08em; color: #0F172A; }
+    .qr-box { background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 10px; padding: 12px 16px; text-align: center; }
+    .qr-caption { font-family: monospace; font-size: 12px; font-weight: 700; color: #0D9488; margin-top: 6px; display: block; }
+    .steps-title { font-size: 15px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 14px 0; }
+    .step-item { display: flex; align-items: flex-start; gap: 14px; padding: 14px 16px; border: 1px solid #E2E8F0; border-radius: 10px; margin-bottom: 10px; font-size: 15px; line-height: 1.45; }
+    .step-num { background: #7C3AED; color: #FFFFFF; font-weight: 700; font-size: 13px; width: 24px; height: 24px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .footer { background: #0F172A; color: #FFFFFF; padding: 14px 32px; font-family: monospace; font-size: 12px; display: flex; justify-content: space-between; }
+  </style>
+</head>
+<body>
+  <div class="poster">
+    <div class="header">
+      <p class="org">${orgText}</p>
+      <h1 class="headline">${headlineText}</h1>
+      <p class="subtitle">${subtitleText}</p>
+    </div>
+    <div class="body">
+      <div class="code-grid">
+        <div class="code-left">
+          <div class="code-label">Broadcast Room Code (https://zipcaptions.app)</div>
+          <div class="code-box">${roomCodeText}</div>
+        </div>
+        <div class="qr-box">
+          ${qrSvgHtml}
+          <span class="qr-caption">zipcaptions.app</span>
+        </div>
+      </div>
+      <h2 class="steps-title">How to Connect</h2>
+      ${stepItems.map((st, idx) => `<div class="step-item"><span class="step-num">${idx + 1}</span><span>${st}</span></div>`).join('')}
+    </div>
+    <div class="footer">
+      <span>Zip Solutions | https://zipcaptions.app</span>
+      <span>Free Browser Live Captioning</span>
+    </div>
+  </div>
+  <script>window.onload = () => { window.print(); };<\/script>
+</body>
+</html>`);
+    printWin.document.close();
+  });
+</script>

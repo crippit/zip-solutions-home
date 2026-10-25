@@ -1,0 +1,89 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Length 4055 >>
+stream
+0.98 0.98 0.99 rg 24 24 564 744 re f
+0.82 0.85 0.90 RG 1.5 w 24 24 564 744 re S
+0.06 0.09 0.16 rg 24 654 564 114 re f
+0.05 0.58 0.53 rg 24 648 564 6 re f
+BT /F2 10 Tf 0.20 0.83 0.75 rg 44 742 Td (BROADCAST ENGINEERING QUICK REFERENCE) Tj ET
+BT /F2 22 Tf 1 1 1 rg 44 716 Td (OBS Studio, vMix, Twitch & Stream Deck) Tj ET
+BT /F2 22 Tf 1 1 1 rg 44 690 Td (Integration Cheat Sheet) Tj ET
+BT /F1 11 Tf 0.80 0.85 0.92 rg 44 668 Td (Localhost and LAN setup reference for connecting Zip Captions to your) Tj ET
+BT /F1 11 Tf 0.80 0.85 0.92 rg 44 653 Td (broadcast workflow.) Tj ET
+BT /F1 12 Tf 0.15 0.20 0.28 rg 44 620 Td (Keep this technical reference sheet in your production rack or control room) Tj ET
+BT /F1 12 Tf 0.15 0.20 0.28 rg 44 602 Td (for fast setup across OBS Studio, vMix, Twitch chat, and Bitfocus Companion.) Tj ET
+BT /F2 14 Tf 0.06 0.09 0.16 rg 44 576 Td (Integration Configuration Reference) Tj ET
+1 1 1 rg 44 502 524 62 re f
+0.85 0.88 0.92 RG 1 w 44 502 524 62 re S
+0.42 0.16 0.85 rg 56 542 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 548 Td (1) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 550 Td (1. OBS Studio \(Native WebSockets\): In OBS, go to Tools > WebSocket) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 535 Td (Server Settings. Enable the WebSocket server \(default port 4455\), copy) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 520 Td (the password, and paste the IP/Port/Password into Zip Captions Settings.) Tj ET
+1 1 1 rg 44 424 524 78 re f
+0.85 0.88 0.92 RG 1 w 44 424 524 78 re S
+0.42 0.16 0.85 rg 56 480 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 486 Td (2) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 488 Td (2. vMix \(Zip Captions vMix Chrome Extension\): Enable the vMix Web) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 473 Td (Controller in vMix Settings. Add a Title input named LiveCaptions. In) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 458 Td (the Chrome Extension options, enter the vMix IP \(127.0.0.1 for same PC,) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 443 Td (or LAN IP\) and port \(default 8088\).) Tj ET
+1 1 1 rg 44 362 524 62 re f
+0.85 0.88 0.92 RG 1 w 44 362 524 62 re S
+0.42 0.16 0.85 rg 56 402 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 408 Td (3) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 410 Td (3. Twitch Chat Relay \(Zip Connect Extension\): Open zipcaptions.app in) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 395 Td (one Chrome tab and your Twitch channel chat in another tab. Click the) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 380 Td (Zip Connect icon and press Start to post captions straight into chat.) Tj ET
+1 1 1 rg 44 300 524 62 re f
+0.85 0.88 0.92 RG 1 w 44 300 524 62 re S
+0.42 0.16 0.85 rg 56 340 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 346 Td (4) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 348 Td (4. Elgato Stream Deck \(Bitfocus Companion\): Search for the official Zip) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 333 Td (Captions module inside Bitfocus Companion to add physical hardware) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 318 Td (buttons for Start, Stop, Clear, and Broadcast toggle.) Tj ET
+1 1 1 rg 44 238 524 62 re f
+0.85 0.88 0.92 RG 1 w 44 238 524 62 re S
+0.42 0.16 0.85 rg 56 278 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 284 Td (5) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 286 Td (5. Post-Production Subtitles \(.SRT / .VTT\): At the end of your) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 271 Td (broadcast, click Export in Zip Captions to download time-coded SRT or) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 256 Td (WebVTT files for Premiere Pro, DaVinci Resolve, or YouTube.) Tj ET
+BT /F2 12 Tf 0.05 0.58 0.53 rg 44 222 Td (Audio Routing Tip for Multi-PC Rigs) Tj ET
+BT /F1 10.5 Tf 0.25 0.30 0.38 rg 48 204 Td (* Run Zip Captions on a lightweight secondary laptop connected to your mixer) Tj ET
+BT /F1 10.5 Tf 0.25 0.30 0.38 rg 48 190 Td (via a USB Sound Card, and send caption text to your main vMix or OBS machine) Tj ET
+BT /F1 10.5 Tf 0.25 0.30 0.38 rg 48 176 Td (over your studio LAN.) Tj ET
+0.06 0.09 0.16 rg 24 24 564 32 re f
+BT /F2 9.5 Tf 1 1 1 rg 44 36 Td (Zip Solutions | Free Browser Live Captioning at https://zipcaptions.app) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000348 00000 n 
+0000000450 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+4557
+%%EOF

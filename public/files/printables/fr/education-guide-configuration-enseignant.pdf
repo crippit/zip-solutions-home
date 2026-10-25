@@ -1,0 +1,92 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Length 4041 >>
+stream
+0.98 0.98 0.99 rg 24 24 564 744 re f
+0.82 0.85 0.90 RG 1.5 w 24 24 564 744 re S
+0.06 0.09 0.16 rg 24 654 564 114 re f
+0.05 0.58 0.53 rg 24 648 564 6 re f
+BT /F2 10 Tf 0.20 0.83 0.75 rg 44 742 Td (LISTE DE CONTR\324LE POUR LES ENSEIGNANTS) Tj ET
+BT /F2 22 Tf 1 1 1 rg 44 716 Td (Guide rapide d'installation pour le) Tj ET
+BT /F2 22 Tf 1 1 1 rg 44 690 Td (sous-titrage en classe) Tj ET
+BT /F1 11 Tf 0.80 0.85 0.92 rg 44 668 Td (\311tapes pratiques pour afficher les sous-titres sur vos diapositives,) Tj ET
+BT /F1 11 Tf 0.80 0.85 0.92 rg 44 653 Td (diffuser aux \351l\350ves et sauvegarder les notes.) Tj ET
+BT /F1 12 Tf 0.15 0.20 0.28 rg 44 620 Td (Zip Captions fonctionne directement dans votre navigateur web sans) Tj ET
+BT /F1 12 Tf 0.15 0.20 0.28 rg 44 602 Td (installation informatique. Suivez ces \351tapes avant le d\351but du cours.) Tj ET
+BT /F2 14 Tf 0.06 0.09 0.16 rg 44 576 Td (Liste de v\351rification avant et pendant le cours) Tj ET
+1 1 1 rg 44 518 524 46 re f
+0.85 0.88 0.92 RG 1 w 44 518 524 46 re S
+0.42 0.16 0.85 rg 56 542 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 548 Td (1) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 550 Td (Branchez votre microphone : Utilisez un micro-cravate sans fil ou un) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 535 Td (casque USB pour capter clairement votre voix dans la classe.) Tj ET
+1 1 1 rg 44 472 524 46 re f
+0.85 0.88 0.92 RG 1 w 44 472 524 46 re S
+0.42 0.16 0.85 rg 56 496 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 502 Td (2) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 504 Td (Ouvrez Zip Captions : Allez sur https://zipcaptions.app dans Chrome,) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 489 Td (Edge ou Safari et autorisez l'acc\350s au microphone.) Tj ET
+1 1 1 rg 44 410 524 62 re f
+0.85 0.88 0.92 RG 1 w 44 410 524 62 re S
+0.42 0.16 0.85 rg 56 450 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 456 Td (3) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 458 Td (Affichez par-dessus vos diapositives : Activez le mode image dans) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 443 Td (l'image ou l'extension Chrome Zip Panel pour superposer les sous-titres) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 428 Td (sur Google Slides ou PowerPoint.) Tj ET
+1 1 1 rg 44 348 524 62 re f
+0.85 0.88 0.92 RG 1 w 44 348 524 62 re S
+0.42 0.16 0.85 rg 56 388 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 394 Td (4) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 396 Td (Diffusez sur les appareils des \351l\350ves : Activez le mode diffusion) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 381 Td (\(Broadcast\) et inscrivez le code au tableau pour les Chromebooks des) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 366 Td (\351l\350ves.) Tj ET
+1 1 1 rg 44 302 524 46 re f
+0.85 0.88 0.92 RG 1 w 44 302 524 46 re S
+0.42 0.16 0.85 rg 56 326 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 332 Td (5) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 334 Td (Activez la traduction pour les \351l\350ves allophones : Dans Chrome, chaque) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 319 Td (\351l\350ve peut activer la traduction locale sur son propre appareil.) Tj ET
+1 1 1 rg 44 256 524 46 re f
+0.85 0.88 0.92 RG 1 w 44 256 524 46 re S
+0.42 0.16 0.85 rg 56 280 20 20 re f
+BT /F2 11 Tf 1 1 1 rg 62 286 Td (6) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 288 Td (Exportez les notes de cours : \300 la fin de la p\351riode, t\351l\351chargez le) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.23 rg 86 273 Td (fichier texte \(.txt\) pour le partager dans Google Classroom.) Tj ET
+BT /F2 12 Tf 0.05 0.58 0.53 rg 44 240 Td (Conseils p\351dagogiques) Tj ET
+BT /F1 10.5 Tf 0.25 0.30 0.38 rg 48 222 Td (* Utilisez la police Lexend lorsque vous projetez les sous-titres au tableau) Tj ET
+BT /F1 10.5 Tf 0.25 0.30 0.38 rg 48 208 Td (pour soutenir les lecteurs d\351butants.) Tj ET
+BT /F1 10.5 Tf 0.25 0.30 0.38 rg 48 191 Td (* La fermeture de l'onglet efface imm\351diatement la transcription de la m\351moire) Tj ET
+BT /F1 10.5 Tf 0.25 0.30 0.38 rg 48 177 Td (locale du navigateur.) Tj ET
+0.06 0.09 0.16 rg 24 24 564 32 re f
+BT /F2 9.5 Tf 1 1 1 rg 44 36 Td (Solutions Zip | Sous-titrage en direct gratuit sur https://zipcaptions.app) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000348 00000 n 
+0000000450 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+4543
+%%EOF
