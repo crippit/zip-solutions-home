@@ -222,7 +222,7 @@ export const sectorsData: Record<'en' | 'fr', SectorData[]> = {
         }
       ],
       defaultOrgPlaceholder: 'Room 204 Science Class',
-      defaultRoomCodePlaceholder: 'ROOM204',
+      defaultRoomCodePlaceholder: '76-aqz5-pf77',
       videos: [
         {
           youtubeId: 'OXpaiEtECmI',
@@ -402,7 +402,7 @@ export const sectorsData: Record<'en' | 'fr', SectorData[]> = {
         }
       ],
       defaultOrgPlaceholder: 'Grace Community Sanctuary',
-      defaultRoomCodePlaceholder: 'WORSHIP1',
+      defaultRoomCodePlaceholder: '76-aqz5-pf77',
       videos: [
         {
           youtubeId: 'OXpaiEtECmI',
@@ -569,7 +569,7 @@ export const sectorsData: Record<'en' | 'fr', SectorData[]> = {
         }
       ],
       defaultOrgPlaceholder: 'Main Street Clinic Reception',
-      defaultRoomCodePlaceholder: 'DESK1',
+      defaultRoomCodePlaceholder: '76-aqz5-pf77',
       videos: [
         {
           youtubeId: 'sF7n1X1oIFY',
@@ -751,7 +751,7 @@ export const sectorsData: Record<'en' | 'fr', SectorData[]> = {
         }
       ],
       defaultOrgPlaceholder: 'Main Keynote Auditorium',
-      defaultRoomCodePlaceholder: 'KEYNOTE1',
+      defaultRoomCodePlaceholder: '76-aqz5-pf77',
       videos: [
         {
           youtubeId: 'OXpaiEtECmI',
@@ -925,7 +925,7 @@ export const sectorsData: Record<'en' | 'fr', SectorData[]> = {
         }
       ],
       defaultOrgPlaceholder: 'Town Hall Council Chambers',
-      defaultRoomCodePlaceholder: 'TOWNHALL',
+      defaultRoomCodePlaceholder: '76-aqz5-pf77',
       videos: [
         {
           youtubeId: 'OXpaiEtECmI',
@@ -1073,7 +1073,7 @@ export const sectorsData: Record<'en' | 'fr', SectorData[]> = {
         }
       ],
       defaultOrgPlaceholder: 'Studio A Control Room',
-      defaultRoomCodePlaceholder: 'STUDIOA',
+      defaultRoomCodePlaceholder: '76-aqz5-pf77',
       videos: [
         {
           youtubeId: 'QYz4Brh66YA',
@@ -1266,7 +1266,7 @@ export const sectorsData: Record<'en' | 'fr', SectorData[]> = {
         }
       ],
       defaultOrgPlaceholder: 'Classe de sciences - Local 204',
-      defaultRoomCodePlaceholder: 'CLASSE204',
+      defaultRoomCodePlaceholder: '76-aqz5-pf77',
       videos: [
         {
           youtubeId: 'OXpaiEtECmI',
@@ -1446,7 +1446,7 @@ export const sectorsData: Record<'en' | 'fr', SectorData[]> = {
         }
       ],
       defaultOrgPlaceholder: 'Sanctuaire communautaire',
-      defaultRoomCodePlaceholder: 'CULTE1',
+      defaultRoomCodePlaceholder: '76-aqz5-pf77',
       videos: [
         {
           youtubeId: 'OXpaiEtECmI',
@@ -1613,7 +1613,7 @@ export const sectorsData: Record<'en' | 'fr', SectorData[]> = {
         }
       ],
       defaultOrgPlaceholder: 'Accueil de la clinique',
-      defaultRoomCodePlaceholder: 'ACCUEIL1',
+      defaultRoomCodePlaceholder: '76-aqz5-pf77',
       videos: [
         {
           youtubeId: 'sF7n1X1oIFY',
@@ -1795,7 +1795,7 @@ export const sectorsData: Record<'en' | 'fr', SectorData[]> = {
         }
       ],
       defaultOrgPlaceholder: 'Auditorium principal',
-      defaultRoomCodePlaceholder: 'PLENIERE1',
+      defaultRoomCodePlaceholder: '76-aqz5-pf77',
       videos: [
         {
           youtubeId: 'OXpaiEtECmI',
@@ -1969,7 +1969,7 @@ export const sectorsData: Record<'en' | 'fr', SectorData[]> = {
         }
       ],
       defaultOrgPlaceholder: 'Salle du conseil municipal',
-      defaultRoomCodePlaceholder: 'CONSEIL1',
+      defaultRoomCodePlaceholder: '76-aqz5-pf77',
       videos: [
         {
           youtubeId: 'OXpaiEtECmI',
@@ -2117,7 +2117,7 @@ export const sectorsData: Record<'en' | 'fr', SectorData[]> = {
         }
       ],
       defaultOrgPlaceholder: 'Régie Studio A',
-      defaultRoomCodePlaceholder: 'STUDIOA',
+      defaultRoomCodePlaceholder: '76-aqz5-pf77',
       videos: [
         {
           youtubeId: 'QYz4Brh66YA',

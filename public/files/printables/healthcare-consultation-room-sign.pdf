@@ -1,4 +1,5 @@
 %PDF-1.4
+%‚„œ”
 1 0 obj
 << /Type /Catalog /Pages 2 0 R >>
 endobj
@@ -6,7 +7,7 @@ endobj
 << /Type /Pages /Kids [3 0 R] /Count 1 >>
 endobj
 3 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R /F3 6 0 R /F4 7 0 R >> >> /Contents 8 0 R >>
 endobj
 4 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
@@ -15,63 +16,154 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
 endobj
 6 0 obj
-<< /Length 2892 >>
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier-Bold /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding >>
+endobj
+8 0 obj
+<< /Length 10328 >>
 stream
-0.98 0.98 0.99 rg 24 24 564 744 re f
-0.82 0.85 0.90 RG 1.5 w 24 24 564 744 re S
-0.06 0.09 0.16 rg 24 654 564 114 re f
-0.05 0.58 0.53 rg 24 648 564 6 re f
-BT /F2 10 Tf 0.20 0.83 0.75 rg 44 742 Td (CLINIC CONSULTATION & EXAM ROOM SIGN) Tj ET
-BT /F2 22 Tf 1 1 1 rg 44 716 Td (Clear Communication: Live Screen Captions) Tj ET
-BT /F2 22 Tf 1 1 1 rg 44 690 Td (Available) Tj ET
-BT /F1 11 Tf 0.80 0.85 0.92 rg 44 668 Td (Follow your appointment in real time with large, easy-to-read live) Tj ET
-BT /F1 11 Tf 0.80 0.85 0.92 rg 44 653 Td (captions.) Tj ET
-BT /F1 12 Tf 0.15 0.20 0.28 rg 44 620 Td (Understanding health information clearly is important. Your clinician can turn) Tj ET
-BT /F1 12 Tf 0.15 0.20 0.28 rg 44 602 Td (on Zip Captions on the room computer or tablet so you can read spoken words in) Tj ET
-BT /F1 12 Tf 0.15 0.20 0.28 rg 44 584 Td (real time.) Tj ET
-BT /F2 14 Tf 0.06 0.09 0.16 rg 44 558 Td (What You Should Know About Privacy & Comfort) Tj ET
-1 1 1 rg 44 500 524 46 re f
-0.85 0.88 0.92 RG 1 w 44 500 524 46 re S
-0.42 0.16 0.85 rg 56 524 20 20 re f
-BT /F2 11 Tf 1 1 1 rg 62 530 Td (1) Tj ET
-BT /F1 11 Tf 0.12 0.16 0.23 rg 86 532 Td (No Recording or Storage: Zip Captions processes speech transiently and) Tj ET
-BT /F1 11 Tf 0.12 0.16 0.23 rg 86 517 Td (holds text only in local browser memory during your conversation.) Tj ET
-1 1 1 rg 44 454 524 46 re f
-0.85 0.88 0.92 RG 1 w 44 454 524 46 re S
-0.42 0.16 0.85 rg 56 478 20 20 re f
-BT /F2 11 Tf 1 1 1 rg 62 484 Td (2) Tj ET
-BT /F1 11 Tf 0.12 0.16 0.23 rg 86 486 Td (Erased Before You Leave: When the browser tab is closed or refreshed at) Tj ET
-BT /F1 11 Tf 0.12 0.16 0.23 rg 86 471 Td (the end of your visit, the transcript is permanently gone.) Tj ET
-1 1 1 rg 44 408 524 46 re f
-0.85 0.88 0.92 RG 1 w 44 408 524 46 re S
-0.42 0.16 0.85 rg 56 432 20 20 re f
-BT /F2 11 Tf 1 1 1 rg 62 438 Td (3) Tj ET
-BT /F1 11 Tf 0.12 0.16 0.23 rg 86 440 Td (Easy-to-Read Display: Ask your clinician to increase the font size or) Tj ET
-BT /F1 11 Tf 0.12 0.16 0.23 rg 86 425 Td (switch to high-contrast mode at any time.) Tj ET
-1 1 1 rg 44 362 524 46 re f
-0.85 0.88 0.92 RG 1 w 44 362 524 46 re S
-0.42 0.16 0.85 rg 56 386 20 20 re f
-BT /F2 11 Tf 1 1 1 rg 62 392 Td (4) Tj ET
-BT /F1 11 Tf 0.12 0.16 0.23 rg 86 394 Td (Bring a Family Member or Caregiver: You can also view the captions on a) Tj ET
-BT /F1 11 Tf 0.12 0.16 0.23 rg 86 379 Td (second tablet or smartphone in the room.) Tj ET
-BT /F2 12 Tf 0.05 0.58 0.53 rg 44 346 Td (Clinical Communication Standards) Tj ET
-BT /F1 10.5 Tf 0.25 0.30 0.38 rg 48 328 Td (* Automated speech-to-text supports clear everyday conversation and does not) Tj ET
-BT /F1 10.5 Tf 0.25 0.30 0.38 rg 48 314 Td (replace certified medical interpreters when required.) Tj ET
-0.06 0.09 0.16 rg 24 24 564 32 re f
-BT /F2 9.5 Tf 1 1 1 rg 44 36 Td (Zip Solutions | Free Browser Live Captioning at https://zipcaptions.app) Tj ET
+0.941 0.992 0.980 rg
+0.00 0.00 612.00 792.00 re f
+1.000 1.000 1.000 rg
+0.051 0.580 0.533 RG 3 w
+34.00 20.00 m 578.00 20.00 l 585.73 20.00 592.00 26.27 592.00 34.00 c 592.00 758.00 l 592.00 765.73 585.73 772.00 578.00 772.00 c 34.00 772.00 l 26.27 772.00 20.00 765.73 20.00 758.00 c 20.00 34.00 l 20.00 26.27 26.27 20.00 34.00 20.00 c h B
+0.067 0.369 0.349 rg
+42.00 576.00 m 570.00 576.00 l 575.52 576.00 580.00 580.48 580.00 586.00 c 580.00 746.00 l 580.00 751.52 575.52 756.00 570.00 756.00 c 42.00 756.00 l 36.48 756.00 32.00 751.52 32.00 746.00 c 32.00 586.00 l 32.00 580.48 36.48 576.00 42.00 576.00 c h f
+0.176 0.831 0.749 rg
+32.00 576.00 548.00 8.00 re f
+0.118 0.161 0.231 rg
+0.200 0.255 0.333 RG 1 w
+52.00 718.00 m 176.00 718.00 l 178.21 718.00 180.00 719.79 180.00 722.00 c 180.00 740.00 l 180.00 742.21 178.21 744.00 176.00 744.00 c 52.00 744.00 l 49.79 744.00 48.00 742.21 48.00 740.00 c 48.00 722.00 l 48.00 719.79 49.79 718.00 52.00 718.00 c h B
+0.486 0.227 0.929 rg
+55.00 722.00 m 75.00 722.00 l 76.66 722.00 78.00 723.34 78.00 725.00 c 78.00 737.00 l 78.00 738.66 76.66 740.00 75.00 740.00 c 55.00 740.00 l 53.34 740.00 52.00 738.66 52.00 737.00 c 52.00 725.00 l 52.00 723.34 53.34 722.00 55.00 722.00 c h f
+BT /F2 10 Tf 1.000 1.000 1.000 rg 58.07 727.00 Td (CC) Tj ET
+BT /F2 12 Tf 0.655 0.545 0.980 rg 83.00 726.00 Td (Zip) Tj ET
+BT /F2 12 Tf 0.176 0.831 0.749 rg 104.00 726.00 Td (Captions) Tj ET
+0.059 0.463 0.431 rg
+0.369 0.918 0.831 RG 2.24 w
+504.00 715.28 m 531.22 715.28 553.28 693.22 553.28 666.00 c 553.28 638.78 531.22 616.72 504.00 616.72 c 476.78 616.72 454.72 638.78 454.72 666.00 c 454.72 693.22 476.78 715.28 504.00 715.28 c h B
+1.000 1.000 1.000 rg
+0.078 0.722 0.651 RG 1.6800000000000002 w
+490.56 697.36 m 502.93 697.36 512.96 687.33 512.96 674.96 c 512.96 662.59 502.93 652.56 490.56 652.56 c 478.19 652.56 468.16 662.59 468.16 674.96 c 468.16 687.33 478.19 697.36 490.56 697.36 c h B
+0.051 0.580 0.533 rg
+487.20 662.64 7.84 24.64 re f
+0.051 0.580 0.533 rg
+478.24 671.60 24.64 7.84 re f
+0.059 0.090 0.165 rg
+1.000 1.000 1.000 RG 2.24 w
+505.12 639.12 m 534.24 639.12 l 536.71 639.12 538.72 641.13 538.72 643.60 c 538.72 681.68 l 538.72 684.15 536.71 686.16 534.24 686.16 c 505.12 686.16 l 502.65 686.16 500.64 684.15 500.64 681.68 c 500.64 643.60 l 500.64 641.13 502.65 639.12 505.12 639.12 c h B
+0.176 0.831 0.749 rg
+506.24 672.72 17.92 3.92 re f
+1.000 1.000 1.000 rg
+506.24 664.88 24.64 3.92 re f
+0.600 0.965 0.894 rg
+506.24 657.04 20.16 3.92 re f
+BT /F2 9.520000000000001 Tf 0.176 0.831 0.749 rg 513.08 644.72 Td (CC) Tj ET
+BT /F2 10 Tf 0.369 0.918 0.831 rg 48.00 700.00 Td (CLINIC CONSULTATION & EXAM ROOM SIGN) Tj ET
+BT /F2 23 Tf 1.000 1.000 1.000 rg 48.00 674.00 Td (Clear Communication: Live) Tj ET
+BT /F2 23 Tf 1.000 1.000 1.000 rg 48.00 646.00 Td (Screen Captions Available) Tj ET
+BT /F1 11.5 Tf 0.800 0.984 0.945 rg 48.00 616.00 Td (Follow your appointment in real time with large, easy-to-read live) Tj ET
+BT /F1 11.5 Tf 0.800 0.984 0.945 rg 48.00 601.00 Td (captions.) Tj ET
+0.941 0.992 0.980 rg
+0.078 0.722 0.651 RG 2 w
+42.00 412.00 m 570.00 412.00 l 575.52 412.00 580.00 416.48 580.00 422.00 c 580.00 550.00 l 580.00 555.52 575.52 560.00 570.00 560.00 c 42.00 560.00 l 36.48 560.00 32.00 555.52 32.00 550.00 c 32.00 422.00 l 32.00 416.48 36.48 412.00 42.00 412.00 c h B
+BT /F2 11.5 Tf 0.059 0.463 0.431 rg 158.08 540.00 Td (HOW YOUR PRIVACY IS PROTECTED IN THIS ROOM) Tj ET
+1.000 1.000 1.000 rg
+0.600 0.965 0.894 RG 1.5 w
+56.00 426.00 m 200.00 426.00 l 204.42 426.00 208.00 429.58 208.00 434.00 c 208.00 520.00 l 208.00 524.42 204.42 528.00 200.00 528.00 c 56.00 528.00 l 51.58 528.00 48.00 524.42 48.00 520.00 c 48.00 434.00 l 48.00 429.58 51.58 426.00 56.00 426.00 c h B
+0.051 0.580 0.533 rg
+128.00 518.00 m 136.84 518.00 144.00 510.84 144.00 502.00 c 144.00 493.16 136.84 486.00 128.00 486.00 c 119.16 486.00 112.00 493.16 112.00 502.00 c 112.00 510.84 119.16 518.00 128.00 518.00 c h f
+1.000 1.000 1.000 rg
+128.00 500.00 m 128.00 500.00 l 130.21 500.00 132.00 501.79 132.00 504.00 c 132.00 508.00 l 132.00 510.21 130.21 512.00 128.00 512.00 c 128.00 512.00 l 125.79 512.00 124.00 510.21 124.00 508.00 c 124.00 504.00 l 124.00 501.79 125.79 500.00 128.00 500.00 c h f
+1.000 1.000 1.000 RG 2 w
+128.00 500.00 m 128.00 493.00 l S
+1.000 1.000 1.000 RG 2 w
+122.00 493.00 m 134.00 493.00 l S
+BT /F2 10 Tf 0.059 0.090 0.165 rg 80.86 470.00 Td (1. Live Speech Only) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 63.74 454.00 Td (Spoken words turn into live text) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 97.91 443.00 Td (right on screen) Tj ET
+BT /F2 12 Tf 0.051 0.580 0.533 rg 206.17 476.00 Td (-->) Tj ET
+1.000 1.000 1.000 rg
+0.600 0.965 0.894 RG 1.5 w
+232.00 426.00 m 376.00 426.00 l 380.42 426.00 384.00 429.58 384.00 434.00 c 384.00 520.00 l 384.00 524.42 380.42 528.00 376.00 528.00 c 232.00 528.00 l 227.58 528.00 224.00 524.42 224.00 520.00 c 224.00 434.00 l 224.00 429.58 227.58 426.00 232.00 426.00 c h B
+0.051 0.580 0.533 rg
+304.00 518.00 m 312.84 518.00 320.00 510.84 320.00 502.00 c 320.00 493.16 312.84 486.00 304.00 486.00 c 295.16 486.00 288.00 493.16 288.00 502.00 c 288.00 510.84 295.16 518.00 304.00 518.00 c h f
+1.000 1.000 1.000 rg
+304.00 512.00 m 313.00 507.00 l 311.00 495.00 l 304.00 491.00 l 297.00 495.00 l 295.00 507.00 l h f
+BT /F2 6.5 Tf 0.051 0.580 0.533 rg 299.09 499.00 Td (OK) Tj ET
+BT /F2 10 Tf 0.059 0.090 0.165 rg 241.95 470.00 Td (2. Local Browser Memory) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 243.23 454.00 Td (Zero external cloud storage or) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 273.91 443.00 Td (audio recording) Tj ET
+BT /F2 12 Tf 0.051 0.580 0.533 rg 382.17 476.00 Td (-->) Tj ET
+1.000 1.000 1.000 rg
+0.600 0.965 0.894 RG 1.5 w
+408.00 426.00 m 552.00 426.00 l 556.42 426.00 560.00 429.58 560.00 434.00 c 560.00 520.00 l 560.00 524.42 556.42 528.00 552.00 528.00 c 408.00 528.00 l 403.58 528.00 400.00 524.42 400.00 520.00 c 400.00 434.00 l 400.00 429.58 403.58 426.00 408.00 426.00 c h B
+0.051 0.580 0.533 rg
+480.00 518.00 m 488.84 518.00 496.00 510.84 496.00 502.00 c 496.00 493.16 488.84 486.00 480.00 486.00 c 471.16 486.00 464.00 493.16 464.00 502.00 c 464.00 510.84 471.16 518.00 480.00 518.00 c h f
+1.000 1.000 1.000 rg
+472.00 496.00 m 488.00 496.00 l 489.10 496.00 490.00 496.90 490.00 498.00 c 490.00 506.00 l 490.00 507.10 489.10 508.00 488.00 508.00 c 472.00 508.00 l 470.90 508.00 470.00 507.10 470.00 506.00 c 470.00 498.00 l 470.00 496.90 470.90 496.00 472.00 496.00 c h f
+BT /F3 9 Tf 0.051 0.580 0.533 rg 471.90 498.00 Td (***) Tj ET
+BT /F2 10 Tf 0.059 0.090 0.165 rg 428.03 470.00 Td (3. Erased After Visit) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 422.46 454.00 Td (Closing or refreshing the tab) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 451.95 443.00 Td (clears all text) Tj ET
+BT /F2 12.5 Tf 0.067 0.369 0.349 rg 128.42 388.00 Td (WHAT YOU SHOULD KNOW ABOUT PRIVACY & COMFORT) Tj ET
+0.973 0.980 0.988 rg
+0.796 0.835 0.882 RG 1.5 w
+40.00 264.00 m 290.00 264.00 l 294.42 264.00 298.00 267.58 298.00 272.00 c 298.00 366.00 l 298.00 370.42 294.42 374.00 290.00 374.00 c 40.00 374.00 l 35.58 374.00 32.00 370.42 32.00 366.00 c 32.00 272.00 l 32.00 267.58 35.58 264.00 40.00 264.00 c h B
+0.051 0.580 0.533 rg
+32.00 368.00 266.00 6.00 re f
+BT /F2 11.5 Tf 0.059 0.463 0.431 rg 48.00 348.00 Td (No Recording or Storage) Tj ET
+BT /F1 9.8 Tf 0.200 0.255 0.333 rg 48.00 328.00 Td (Zip Captions processes speech transiently and) Tj ET
+BT /F1 9.8 Tf 0.200 0.255 0.333 rg 48.00 314.50 Td (holds text only in local browser memory during) Tj ET
+BT /F1 9.8 Tf 0.200 0.255 0.333 rg 48.00 301.00 Td (your conversation.) Tj ET
+0.973 0.980 0.988 rg
+0.796 0.835 0.882 RG 1.5 w
+322.00 264.00 m 572.00 264.00 l 576.42 264.00 580.00 267.58 580.00 272.00 c 580.00 366.00 l 580.00 370.42 576.42 374.00 572.00 374.00 c 322.00 374.00 l 317.58 374.00 314.00 370.42 314.00 366.00 c 314.00 272.00 l 314.00 267.58 317.58 264.00 322.00 264.00 c h B
+0.051 0.580 0.533 rg
+314.00 368.00 266.00 6.00 re f
+BT /F2 11.5 Tf 0.059 0.463 0.431 rg 330.00 348.00 Td (Erased Before You Leave) Tj ET
+BT /F1 9.8 Tf 0.200 0.255 0.333 rg 330.00 328.00 Td (When the browser tab is closed or refreshed at) Tj ET
+BT /F1 9.8 Tf 0.200 0.255 0.333 rg 330.00 314.50 Td (the end of your visit, the transcript is) Tj ET
+BT /F1 9.8 Tf 0.200 0.255 0.333 rg 330.00 301.00 Td (permanently gone.) Tj ET
+0.973 0.980 0.988 rg
+0.796 0.835 0.882 RG 1.5 w
+40.00 140.00 m 290.00 140.00 l 294.42 140.00 298.00 143.58 298.00 148.00 c 298.00 242.00 l 298.00 246.42 294.42 250.00 290.00 250.00 c 40.00 250.00 l 35.58 250.00 32.00 246.42 32.00 242.00 c 32.00 148.00 l 32.00 143.58 35.58 140.00 40.00 140.00 c h B
+0.051 0.580 0.533 rg
+32.00 244.00 266.00 6.00 re f
+BT /F2 11.5 Tf 0.059 0.463 0.431 rg 48.00 224.00 Td (Easy-to-Read Display) Tj ET
+BT /F1 9.8 Tf 0.200 0.255 0.333 rg 48.00 204.00 Td (Ask your clinician to increase the font size or) Tj ET
+BT /F1 9.8 Tf 0.200 0.255 0.333 rg 48.00 190.50 Td (switch to high-contrast mode at any time.) Tj ET
+0.973 0.980 0.988 rg
+0.796 0.835 0.882 RG 1.5 w
+322.00 140.00 m 572.00 140.00 l 576.42 140.00 580.00 143.58 580.00 148.00 c 580.00 242.00 l 580.00 246.42 576.42 250.00 572.00 250.00 c 322.00 250.00 l 317.58 250.00 314.00 246.42 314.00 242.00 c 314.00 148.00 l 314.00 143.58 317.58 140.00 322.00 140.00 c h B
+0.051 0.580 0.533 rg
+314.00 244.00 266.00 6.00 re f
+BT /F2 11.5 Tf 0.059 0.463 0.431 rg 330.00 224.00 Td (Bring a Family Member or Caregiver) Tj ET
+BT /F1 9.8 Tf 0.200 0.255 0.333 rg 330.00 204.00 Td (You can also view the captions on a second tablet) Tj ET
+BT /F1 9.8 Tf 0.200 0.255 0.333 rg 330.00 190.50 Td (or smartphone in the room.) Tj ET
+0.067 0.369 0.349 rg
+40.00 58.00 m 572.00 58.00 l 576.42 58.00 580.00 61.58 580.00 66.00 c 580.00 116.00 l 580.00 120.42 576.42 124.00 572.00 124.00 c 40.00 124.00 l 35.58 124.00 32.00 120.42 32.00 116.00 c 32.00 66.00 l 32.00 61.58 35.58 58.00 40.00 58.00 c h f
+BT /F2 10 Tf 0.369 0.918 0.831 rg 48.00 104.00 Td (CLINICAL COMMUNICATION STANDARDS) Tj ET
+BT /F1 9.5 Tf 1.000 1.000 1.000 rg 48.00 88.00 Td (Automated speech-to-text supports clear everyday conversation and does not replace certified medical) Tj ET
+BT /F1 9.5 Tf 1.000 1.000 1.000 rg 48.00 75.00 Td (interpreters when required.) Tj ET
+BT /F2 9.5 Tf 0.059 0.463 0.431 rg 216.62 36.00 Td (Zip Solutions | https://zipcaptions.app) Tj ET
 endstream
 endobj
 xref
-0 7
+0 9
 0000000000 65535 f 
-0000000009 00000 n 
-0000000058 00000 n 
-0000000115 00000 n 
-0000000251 00000 n 
-0000000348 00000 n 
-0000000450 00000 n 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000277 00000 n 
+0000000374 00000 n 
+0000000476 00000 n 
+0000000576 00000 n 
+0000000681 00000 n 
 trailer
-<< /Size 7 /Root 1 0 R >>
+<< /Size 9 /Root 1 0 R >>
 startxref
-3394
+11062
 %%EOF

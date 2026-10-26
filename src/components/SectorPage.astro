@@ -343,18 +343,25 @@ const sectorSchema = [
 
             <div>
               <label for="sign-code-input" class="block text-xs font-bold font-heading text-midnight uppercase tracking-wider mb-1">
-                {isFr ? '3. Code de diffusion (Broadcast Code)' : '3. Broadcast Room Code'}
+                {isFr ? '3. Code de diffusion ou lien direct' : '3. Broadcast Join Code or Stream Link'}
               </label>
               <span id="sign-code-hint" class="block text-xs text-slate-500 mb-2">
-                {isFr ? 'Laissez vide si vous souhaitez écrire le code à la main après impression.' : 'Leave blank if you prefer to write the code by hand after printing.'}
+                {isFr
+                  ? 'Entrez votre code (ex. 76-aqz5-pf77) ou collez le lien https://zipcaptions.app/stream/76-aqz5-pf77. Le code QR se met à jour automatiquement.'
+                  : 'Enter your join code (for example, 76-aqz5-pf77) or paste https://zipcaptions.app/stream/76-aqz5-pf77. The QR code updates automatically.'}
               </span>
               <input
                 id="sign-code-input"
                 type="text"
                 aria-describedby="sign-code-hint"
                 value={sector.defaultRoomCodePlaceholder}
+                placeholder="76-aqz5-pf77"
                 class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-300 text-sm font-mono font-bold text-midnight focus:outline-none focus:ring-2 focus:ring-amethyst"
               />
+              <p class="mt-2 text-[11px] font-mono text-slate-600 bg-white px-3 py-1.5 rounded-lg border border-slate-200 truncate">
+                <span class="font-bold text-teal-brand">{isFr ? 'Lien QR :' : 'QR Link:'}</span>{' '}
+                <span id="resolved-stream-url-hint">{`https://zipcaptions.app/stream/${sector.defaultRoomCodePlaceholder}`}</span>
+              </p>
             </div>
 
             <div class="pt-2">
@@ -375,79 +382,107 @@ const sectorSchema = [
           <div class="lg:col-span-7">
             <div
               id="printable-poster-preview"
-              class="bg-white rounded-2xl border-2 border-slate-300 overflow-hidden shadow-xs"
+              class="bg-slate-950 rounded-2xl border-2 border-teal-brand p-3 sm:p-4 overflow-hidden shadow-md"
             >
-              <!-- Poster Header -->
-              <div class="bg-midnight text-white p-6 sm:p-8 border-b-4 border-teal-brand">
-                <p
-                  id="preview-org-name"
-                  class="text-xs font-bold font-mono text-teal-brand uppercase tracking-wider mb-1.5"
-                >
-                  {sector.defaultOrgPlaceholder}
-                </p>
-                <h4
-                  id="preview-headline"
-                  class="text-xl sm:text-2xl font-extrabold font-heading text-white leading-snug"
-                >
-                  {customizableTemplates[0]?.defaultPosterHeadline}
-                </h4>
-                <p
-                  id="preview-subtitle"
-                  class="mt-2 text-xs sm:text-sm text-slate-300 leading-relaxed"
-                >
-                  {customizableTemplates[0]?.defaultPosterSubtitle}
-                </p>
+              <!-- Poster Hero Banner -->
+              <div class="bg-[#1E1B4B] text-white p-6 sm:p-7 rounded-xl border-b-4 border-teal-brand relative">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                  <span
+                    id="preview-org-name"
+                    class="inline-block px-3 py-1 rounded-md bg-amethyst text-white text-xs font-bold font-mono uppercase tracking-wider"
+                  >
+                    {sector.defaultOrgPlaceholder}
+                  </span>
+                  <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900 border border-slate-700 text-xs font-bold font-heading">
+                    <span class="px-1.5 py-0.5 rounded-xs bg-amethyst text-white text-[10px]">CC</span>
+                    <span class="text-purple-300">Zip</span>
+                    <span class="text-teal-300">Captions</span>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
+                  <div class="sm:col-span-9">
+                    <h4
+                      id="preview-headline"
+                      class="text-xl sm:text-2xl font-extrabold font-heading text-white uppercase tracking-tight leading-snug"
+                    >
+                      {customizableTemplates[0]?.defaultPosterHeadline}
+                    </h4>
+                    <p
+                      id="preview-subtitle"
+                      class="mt-2 text-xs sm:text-sm text-slate-200 leading-relaxed"
+                    >
+                      {customizableTemplates[0]?.defaultPosterSubtitle}
+                    </p>
+                  </div>
+                  <div class="hidden sm:flex sm:col-span-3 justify-end">
+                    <div class="w-20 h-20 rounded-xl bg-slate-900/90 border-2 border-teal-brand flex flex-col items-center justify-center p-2 text-center">
+                      <span class="text-lg font-extrabold font-mono text-teal-300 leading-none">CC</span>
+                      <span class="text-[9px] font-mono text-slate-300 uppercase mt-1">Live Text</span>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <!-- Poster Body -->
-              <div class="p-6 sm:p-8 space-y-6">
-                <!-- Room Code + QR Box -->
-                <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 p-5 rounded-xl bg-slate-50 border-2 border-amethyst/40 items-center">
-                  <div class="sm:col-span-7 space-y-1.5">
-                    <span class="text-xs font-bold font-heading text-slate-600 uppercase tracking-wider block">
+              <!-- Poster Centerpiece: Room Code + Giant QR Card -->
+              <div class="mt-3 bg-white rounded-xl border-2 border-teal-brand p-5 sm:p-6">
+                <div class="grid grid-cols-1 sm:grid-cols-12 gap-5 items-center">
+                  <div class="sm:col-span-7 space-y-2">
+                    <div class="bg-[#1E1B4B] text-white text-[11px] font-bold font-heading uppercase tracking-wider px-3 py-1.5 rounded-md text-center">
                       {isFr ? 'Code de diffusion sur zipcaptions.app' : 'Broadcast Room Code at zipcaptions.app'}
-                    </span>
+                    </div>
                     <div
                       id="preview-room-code"
-                      class="px-4 py-3 rounded-lg bg-white border-2 border-dashed border-slate-300 font-mono text-xl sm:text-2xl font-extrabold text-midnight tracking-wider min-h-[3.25rem] flex items-center"
+                      class="px-4 py-4 rounded-lg bg-slate-50 border-2 border-dashed border-amethyst font-mono text-2xl sm:text-3xl font-extrabold text-midnight tracking-wider min-h-[4.25rem] flex items-center justify-center text-center"
                     >
                       {sector.defaultRoomCodePlaceholder}
                     </div>
-                    <span class="text-[11px] text-slate-500 block">
-                      {isFr ? 'Aucun compte ni téléchargement requis' : 'No app download or account sign-up needed'}
-                    </span>
+                    <div class="flex items-center justify-between text-[11px] font-mono text-slate-600 pt-0.5 gap-2">
+                      <span id="preview-stream-url" class="truncate">{`https://zipcaptions.app/stream/${sector.defaultRoomCodePlaceholder}`}</span>
+                      <span class="shrink-0">{isFr ? 'Aucun compte requis' : 'No app or login needed'}</span>
+                    </div>
                   </div>
 
-                  <div class="sm:col-span-5 flex flex-col items-center justify-center bg-white p-3 rounded-lg border border-slate-200">
-                    <div id="preview-qr-svg-container" class="w-24 h-24 flex items-center justify-center" aria-label="QR Code for zipcaptions.app"></div>
-                    <span class="text-[11px] font-mono font-bold text-teal-brand mt-1">
-                      zipcaptions.app
+                  <div class="sm:col-span-5 flex flex-col items-center justify-center sm:border-l sm:border-slate-200 sm:pl-4">
+                    <div
+                      id="preview-qr-svg-container"
+                      class="p-2.5 bg-white rounded-lg border-2 border-amethyst flex items-center justify-center"
+                      aria-label="Custom QR Code for Zip Captions Broadcast"
+                    ></div>
+                    <span class="mt-2 px-3 py-1 rounded-md bg-amethyst text-white text-[10px] font-bold font-heading uppercase tracking-wider">
+                      {isFr ? 'Balayez avec la caméra' : 'Scan with Phone Camera'}
+                    </span>
+                    <span
+                      id="preview-qr-target-label"
+                      class="mt-1 text-[10px] font-mono text-slate-500 max-w-[11rem] truncate text-center"
+                    >
+                      {`zipcaptions.app/stream/${sector.defaultRoomCodePlaceholder}`}
                     </span>
                   </div>
-                </div>
-
-                <!-- Steps List -->
-                <div>
-                  <p class="text-xs font-bold font-heading text-midnight uppercase tracking-wider mb-3">
-                    {isFr ? 'Comment suivre les sous-titres en direct :' : 'How to Follow Live Captions:'}
-                  </p>
-                  <ol id="preview-steps-list" class="space-y-2.5 text-xs sm:text-sm text-slate-700">
-                    {(customizableTemplates[0]?.defaultSteps || []).map((stepText, idx) => (
-                      <li class="flex items-start gap-3 p-3 rounded-lg bg-slate-50 border border-slate-200">
-                        <span class="w-5 h-5 rounded-md bg-amethyst text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
-                          {idx + 1}
-                        </span>
-                        <span>{stepText}</span>
-                      </li>
-                    ))}
-                  </ol>
                 </div>
               </div>
 
+              <!-- Poster 2x2 Visual Step Grid -->
+              <div class="mt-3 p-4 sm:p-5 rounded-xl bg-slate-900 border border-slate-800">
+                <p class="text-xs font-bold font-heading text-teal-300 uppercase tracking-wider text-center mb-3">
+                  {isFr ? 'Comment suivre les sous-titres en direct' : 'How to Read Live Captions on Your Device'}
+                </p>
+                <ol id="preview-steps-list" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-slate-100">
+                  {(customizableTemplates[0]?.defaultSteps || []).map((stepText, idx) => (
+                    <li class="flex items-start gap-2.5 p-3 rounded-lg bg-slate-800/90 border border-slate-700">
+                      <span class="w-6 h-6 rounded-md bg-amethyst text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
+                        {idx + 1}
+                      </span>
+                      <span class="leading-snug">{stepText}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+
               <!-- Poster Footer -->
-              <div class="bg-slate-900 text-white px-6 py-3 flex items-center justify-between text-[11px] font-mono">
+              <div class="mt-3 px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 flex items-center justify-between text-[11px] font-mono">
                 <span>Zip Solutions | https://zipcaptions.app</span>
-                <span>{isFr ? 'Sous-titrage en direct gratuit' : 'Free Browser Live Captioning'}</span>
+                <span class="text-teal-300 font-bold">{isFr ? 'Sous-titrage en direct gratuit' : 'Free Browser Live Captioning'}</span>
               </div>
             </div>
           </div>
@@ -641,7 +676,7 @@ const sectorSchema = [
 </style>
 
 <script>
-  // Minimal self-contained ISO/IEC 18004 QR Code SVG generator for zipcaptions.app
+  // Self-contained ISO/IEC 18004 QR Code SVG generator (Versions 1-8, Byte mode, ECC Level L)
   function buildQrSvg(text: string): string {
     const data = new TextEncoder().encode(text);
     const V_TABLE: Array<[number, number, number, number] | null> = [
@@ -649,17 +684,21 @@ const sectorSchema = [
       [1, 26, 7, 1],
       [2, 44, 10, 1],
       [3, 70, 15, 1],
-      [4, 100, 20, 1]
+      [4, 100, 20, 1],
+      [5, 134, 26, 1],
+      [6, 172, 18, 2],
+      [7, 196, 20, 2],
+      [8, 242, 24, 2]
     ];
     let ver = 2;
-    for (let v = 1; v <= 4; v++) {
+    for (let v = 1; v <= 8; v++) {
       const entry = V_TABLE[v]!;
       const dataCap = entry[1] - entry[2] * entry[3] - 2;
       if (data.length <= dataCap) {
         ver = v;
         break;
       }
-      if (v === 4) ver = 4;
+      if (v === 8) ver = 8;
     }
     const [, totalCw, ecCw, numBlocks] = V_TABLE[ver]!;
     const dataCwCount = totalCw - ecCw * numBlocks;
@@ -728,8 +767,24 @@ const sectorSchema = [
       return rem.slice(msg.length);
     };
 
-    const ecBlock = rsEncode(codewords);
-    const finalBytes = [...codewords, ...ecBlock];
+    const dataBlocks: number[][] = [];
+    const ecBlocks: Uint8Array[] = [];
+    const blockSize = Math.floor(dataCwCount / numBlocks);
+    let offset = 0;
+    for (let b = 0; b < numBlocks; b++) {
+      const blk = codewords.slice(offset, offset + blockSize);
+      offset += blockSize;
+      dataBlocks.push(blk);
+      ecBlocks.push(rsEncode(blk));
+    }
+
+    const finalBytes: number[] = [];
+    for (let i = 0; i < blockSize; i++) {
+      for (let b = 0; b < numBlocks; b++) finalBytes.push(dataBlocks[b][i]);
+    }
+    for (let i = 0; i < ecCw; i++) {
+      for (let b = 0; b < numBlocks; b++) finalBytes.push(ecBlocks[b][i]);
+    }
 
     const size = ver * 4 + 17;
     const grid = Array.from({ length: size }, () => new Int8Array(size).fill(-1));
@@ -752,7 +807,16 @@ const sectorSchema = [
     setFinder(0, size - 7);
     setFinder(size - 7, 0);
 
-    const alignMap: Record<number, number[]> = { 1: [], 2: [6, 18], 3: [6, 22], 4: [6, 26] };
+    const alignMap: Record<number, number[]> = {
+      1: [],
+      2: [6, 18],
+      3: [6, 22],
+      4: [6, 26],
+      5: [6, 30],
+      6: [6, 34],
+      7: [6, 22, 38],
+      8: [6, 24, 42]
+    };
     const alignPos = alignMap[ver] || [];
     for (const ar of alignPos) {
       for (const ac of alignPos) {
@@ -787,6 +851,19 @@ const sectorSchema = [
     }
     grid[size - 8][8] = 1;
     reserved[size - 8][8] = 1;
+
+    if (ver >= 7) {
+      const verInfo = ver === 7 ? 0x07c94 : 0x085bc;
+      for (let i = 0; i < 18; i++) {
+        const bit = (verInfo >> i) & 1;
+        const r = Math.floor(i / 3);
+        const c = size - 11 + (i % 3);
+        grid[r][c] = bit;
+        reserved[r][c] = 1;
+        grid[c][r] = bit;
+        reserved[c][r] = 1;
+      }
+    }
 
     const allBits: number[] = [];
     for (const b of finalBytes) {
@@ -833,13 +910,13 @@ const sectorSchema = [
         }
       }
     }
-    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" width="92" height="92" role="img" aria-label="QR Code for zipcaptions.app">${rects}</svg>`;
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" width="112" height="112" role="img" aria-label="Custom QR Code for ${text}">${rects}</svg>`;
   }
 
   const qrContainer = document.getElementById('preview-qr-svg-container');
-  if (qrContainer) {
-    qrContainer.innerHTML = buildQrSvg('https://zipcaptions.app');
-  }
+  const qrTargetLabel = document.getElementById('preview-qr-target-label');
+  const previewStreamUrl = document.getElementById('preview-stream-url');
+  const resolvedStreamHint = document.getElementById('resolved-stream-url-hint');
 
   const templateSelect = document.getElementById('sign-template-select') as HTMLSelectElement | null;
   const orgInput = document.getElementById('sign-org-input') as HTMLInputElement | null;
@@ -852,12 +929,56 @@ const sectorSchema = [
   const previewCode = document.getElementById('preview-room-code');
   const previewSteps = document.getElementById('preview-steps-list');
 
+  function parseBroadcastInput(rawInput: string): { displayCode: string; targetUrl: string } {
+    const trimmed = rawInput.trim();
+    if (!trimmed) {
+      return {
+        displayCode: '____________________',
+        targetUrl: 'https://zipcaptions.app'
+      };
+    }
+    const streamMatch = trimmed.match(/zipcaptions\.app\/stream\/([^\s/?#]+)/i);
+    if (streamMatch && streamMatch[1]) {
+      const code = streamMatch[1];
+      return {
+        displayCode: code,
+        targetUrl: `https://zipcaptions.app/stream/${code}`
+      };
+    }
+    if (/^https?:\/\//i.test(trimmed)) {
+      const segments = trimmed.replace(/\/+$/, '').split('/');
+      const lastSeg = segments[segments.length - 1] || trimmed;
+      return {
+        displayCode: lastSeg,
+        targetUrl: trimmed
+      };
+    }
+    const cleanCode = trimmed.replace(/^\/?(stream\/)?/i, '');
+    return {
+      displayCode: cleanCode,
+      targetUrl: `https://zipcaptions.app/stream/${encodeURIComponent(cleanCode)}`
+    };
+  }
+
   function updateSignPreview() {
     if (orgInput && previewOrg) {
       previewOrg.textContent = orgInput.value.trim() || 'Zip Captions';
     }
-    if (codeInput && previewCode) {
-      previewCode.textContent = codeInput.value.trim() || '____________________';
+    const { displayCode, targetUrl } = parseBroadcastInput(codeInput?.value || '');
+    if (previewCode) {
+      previewCode.textContent = displayCode;
+    }
+    if (previewStreamUrl) {
+      previewStreamUrl.textContent = targetUrl;
+    }
+    if (resolvedStreamHint) {
+      resolvedStreamHint.textContent = targetUrl;
+    }
+    if (qrContainer) {
+      qrContainer.innerHTML = buildQrSvg(targetUrl);
+    }
+    if (qrTargetLabel) {
+      qrTargetLabel.textContent = targetUrl.replace(/^https?:\/\//i, '');
     }
     if (templateSelect) {
       const selectedOpt = templateSelect.options[templateSelect.selectedIndex];
@@ -873,7 +994,7 @@ const sectorSchema = [
             previewSteps.innerHTML = steps
               .map(
                 (st, idx) =>
-                  `<li class="flex items-start gap-3 p-3 rounded-lg bg-slate-50 border border-slate-200"><span class="w-5 h-5 rounded-md bg-amethyst text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">${idx + 1}</span><span>${st}</span></li>`
+                  `<li class="flex items-start gap-2.5 p-3 rounded-lg bg-slate-800/90 border border-slate-700"><span class="w-6 h-6 rounded-md bg-amethyst text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">${idx + 1}</span><span class="leading-snug">${st}</span></li>`
               )
               .join('');
           } catch {
@@ -884,6 +1005,7 @@ const sectorSchema = [
     }
   }
 
+  updateSignPreview();
   templateSelect?.addEventListener('change', updateSignPreview);
   orgInput?.addEventListener('input', updateSignPreview);
   codeInput?.addEventListener('input', updateSignPreview);
@@ -901,6 +1023,7 @@ const sectorSchema = [
     const subtitleText = previewSubtitle?.textContent || '';
     const roomCodeText = previewCode?.textContent || '';
     const qrSvgHtml = qrContainer?.innerHTML || '';
+    const qrTargetText = qrTargetLabel?.textContent || 'zipcaptions.app';
     const stepItems = Array.from(previewSteps?.querySelectorAll('li span:last-child') || []).map(
       (el) => el.textContent || ''
     );
@@ -911,51 +1034,69 @@ const sectorSchema = [
   <meta charset="utf-8" />
   <title>${headlineText}</title>
   <style>
-    @page { size: letter portrait; margin: 0.5in; }
+    @page { size: letter portrait; margin: 0.35in; }
     * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #0F172A; margin: 0; padding: 0; }
-    .poster { border: 2px solid #CBD5E1; border-radius: 16px; overflow: hidden; }
-    .header { background: #0F172A; color: #FFFFFF; padding: 28px 32px; border-bottom: 6px solid #0D9488; }
-    .org { color: #2DD4BF; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 8px 0; }
-    .headline { font-size: 28px; font-weight: 800; margin: 0 0 10px 0; line-height: 1.2; }
-    .subtitle { font-size: 15px; color: #E2E8F0; margin: 0; line-height: 1.5; }
-    .body { padding: 28px 32px; }
-    .code-grid { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 22px; border: 2px solid #7C3AED; border-radius: 14px; background: #F8FAFC; margin-bottom: 26px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #0F172A; color: #FFFFFF; margin: 0; padding: 0; }
+    .poster { background: #0F172A; border: 3px solid #2DD4BF; border-radius: 18px; padding: 18px; }
+    .hero { background: #1E1B4B; border-bottom: 6px solid #2DD4BF; border-radius: 14px; padding: 26px 28px; margin-bottom: 18px; }
+    .hero-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .org-badge { background: #7C3AED; color: #FFFFFF; font-family: monospace; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; padding: 6px 14px; border-radius: 6px; }
+    .brand-badge { background: #0F172A; border: 1px solid #334155; padding: 6px 12px; border-radius: 6px; font-weight: 800; font-size: 14px; }
+    .brand-cc { background: #7C3AED; color: #FFFFFF; padding: 2px 6px; border-radius: 4px; margin-right: 6px; font-size: 11px; }
+    .headline { font-size: 32px; font-weight: 900; text-transform: uppercase; margin: 0 0 10px 0; line-height: 1.15; letter-spacing: -0.01em; color: #FFFFFF; }
+    .subtitle { font-size: 16px; color: #E2E8F0; margin: 0; line-height: 1.45; }
+    .centerpiece { background: #FFFFFF; color: #0F172A; border: 3px solid #2DD4BF; border-radius: 14px; padding: 24px 28px; display: flex; align-items: center; justify-content: space-between; gap: 28px; margin-bottom: 18px; }
     .code-left { flex: 1; }
-    .code-label { font-size: 12px; font-weight: 700; text-transform: uppercase; color: #475569; margin-bottom: 8px; }
-    .code-box { background: #FFFFFF; border: 2px dashed #94A3B8; border-radius: 10px; padding: 14px 18px; font-family: monospace; font-size: 28px; font-weight: 800; letter-spacing: 0.08em; color: #0F172A; }
-    .qr-box { background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 10px; padding: 12px 16px; text-align: center; }
-    .qr-caption { font-family: monospace; font-size: 12px; font-weight: 700; color: #0D9488; margin-top: 6px; display: block; }
-    .steps-title { font-size: 15px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 14px 0; }
-    .step-item { display: flex; align-items: flex-start; gap: 14px; padding: 14px 16px; border: 1px solid #E2E8F0; border-radius: 10px; margin-bottom: 10px; font-size: 15px; line-height: 1.45; }
-    .step-num { background: #7C3AED; color: #FFFFFF; font-weight: 700; font-size: 13px; width: 24px; height: 24px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .footer { background: #0F172A; color: #FFFFFF; padding: 14px 32px; font-family: monospace; font-size: 12px; display: flex; justify-content: space-between; }
+    .code-banner { background: #1E1B4B; color: #FFFFFF; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; padding: 8px 14px; border-radius: 6px; text-align: center; margin-bottom: 12px; }
+    .code-box { background: #F8FAFC; border: 3px dashed #7C3AED; border-radius: 10px; padding: 22px 18px; font-family: monospace; font-size: 34px; font-weight: 900; letter-spacing: 0.08em; color: #0F172A; text-align: center; }
+    .code-meta { display: flex; justify-content: space-between; font-family: monospace; font-size: 12px; color: #475569; margin-top: 10px; font-weight: 700; }
+    .qr-right { border-left: 2px solid #E2E8F0; padding-left: 26px; text-align: center; }
+    .qr-frame { border: 2px solid #7C3AED; border-radius: 10px; padding: 10px; background: #FFFFFF; display: inline-block; }
+    .qr-frame svg { width: 148px; height: 148px; display: block; }
+    .qr-cta { display: block; margin-top: 10px; background: #7C3AED; color: #FFFFFF; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; padding: 6px 12px; border-radius: 6px; }
+    .qr-url { display: block; margin-top: 6px; font-family: monospace; font-size: 10px; color: #64748B; max-width: 175px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .steps-panel { background: #1E293B; border: 1px solid #334155; border-radius: 14px; padding: 20px 24px; margin-bottom: 16px; }
+    .steps-title { font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: #2DD4BF; text-align: center; margin: 0 0 14px 0; }
+    .steps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .step-item { display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: #0F172A; border: 1px solid #334155; border-radius: 10px; font-size: 13.5px; line-height: 1.4; color: #F8FAFC; }
+    .step-num { background: #7C3AED; color: #FFFFFF; font-weight: 800; font-size: 13px; width: 26px; height: 26px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .footer { background: #1E293B; border: 1px solid #334155; border-radius: 10px; color: #CBD5E1; padding: 12px 20px; font-family: monospace; font-size: 12px; display: flex; justify-content: space-between; }
   </style>
 </head>
 <body>
   <div class="poster">
-    <div class="header">
-      <p class="org">${orgText}</p>
+    <div class="hero">
+      <div class="hero-top">
+        <span class="org-badge">${orgText}</span>
+        <span class="brand-badge"><span class="brand-cc">CC</span><span style="color:#A78BFA">Zip</span> <span style="color:#2DD4BF">Captions</span></span>
+      </div>
       <h1 class="headline">${headlineText}</h1>
       <p class="subtitle">${subtitleText}</p>
     </div>
-    <div class="body">
-      <div class="code-grid">
-        <div class="code-left">
-          <div class="code-label">Broadcast Room Code (https://zipcaptions.app)</div>
-          <div class="code-box">${roomCodeText}</div>
-        </div>
-        <div class="qr-box">
-          ${qrSvgHtml}
-          <span class="qr-caption">zipcaptions.app</span>
+    <div class="centerpiece">
+      <div class="code-left">
+        <div class="code-banner">Broadcast Room Code at zipcaptions.app</div>
+        <div class="code-box">${roomCodeText}</div>
+        <div class="code-meta">
+          <span>https://${qrTargetText}</span>
+          <span>Free • No App or Account Required</span>
         </div>
       </div>
-      <h2 class="steps-title">How to Connect</h2>
-      ${stepItems.map((st, idx) => `<div class="step-item"><span class="step-num">${idx + 1}</span><span>${st}</span></div>`).join('')}
+      <div class="qr-right">
+        <div class="qr-frame">${qrSvgHtml}</div>
+        <span class="qr-cta">Scan with Phone Camera</span>
+        <span class="qr-url">${qrTargetText}</span>
+      </div>
+    </div>
+    <div class="steps-panel">
+      <h2 class="steps-title">How to Read Live Captions on Your Device</h2>
+      <div class="steps-grid">
+        ${stepItems.map((st, idx) => `<div class="step-item"><span class="step-num">${idx + 1}</span><span>${st}</span></div>`).join('')}
+      </div>
     </div>
     <div class="footer">
       <span>Zip Solutions | https://zipcaptions.app</span>
-      <span>Free Browser Live Captioning</span>
+      <span style="color:#2DD4BF;font-weight:700">100% Local Browser Privacy</span>
     </div>
   </div>
   <script>window.onload = () => { window.print(); };<\/script>
