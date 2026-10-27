@@ -62,24 +62,231 @@ const keywordsContent = currentLocale === 'fr'
   : "free live captions, browser live captioning, speech to text, AAC app, augmentative alternative communication, assistive technology, vMix live captions, OBS closed captions, Twitch captions, classroom captioning, church live captions, theatre surtitles, hybrid event production";
 
 const baseOrgNode: Record<string, any> = {
-  "@type": ["Organization", "EducationalOrganization"],
+  "@type": ["Organization", "EducationalOrganization", "ProfessionalService"],
   "@id": "https://zipsolutions.org/#organization",
   "name": "Zip Solutions",
+  "legalName": "Zip Solutions",
   "alternateName": "Solutions Zip",
   "url": "https://zipsolutions.org",
   "logo": {
     "@type": "ImageObject",
     "url": "https://zipsolutions.org/images/zipsolutions_logo.png"
   },
+  "image": "https://zipsolutions.org/images/zippreview.png",
   "foundingDate": "2023",
+  "priceRange": "$0 - $30 USD/month (Free core web apps; custom quotes for live events & educator PD)",
+  "knowsLanguage": ["en", "fr"],
   "address": {
     "@type": "PostalAddress",
+    "addressLocality": "Montreal",
     "addressRegion": "QC",
     "addressCountry": "CA"
   },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Montreal",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Quebec"
+      }
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Quebec",
+      "containedInPlace": {
+        "@type": "Country",
+        "name": "Canada"
+      }
+    },
+    {
+      "@type": "Country",
+      "name": "Canada"
+    },
+    {
+      "@type": "Country",
+      "name": "United States"
+    },
+    {
+      "@type": "Country",
+      "name": "United Kingdom"
+    },
+    {
+      "@type": "Place",
+      "name": "Worldwide",
+      "description": "Global browser-based accessibility web applications, virtual event captioning, and remote educator professional development."
+    }
+  ],
+  "founder": [
+    {
+      "@type": "Person",
+      "name": "Chris Webb",
+      "jobTitle": "CEO & Co-Founder",
+      "url": "https://zipsolutions.org/about-us"
+    },
+    {
+      "@type": "Person",
+      "name": "James Petersen",
+      "jobTitle": "CTO & Co-Founder",
+      "url": "https://zipsolutions.org/about-us"
+    }
+  ],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "url": "https://zipsolutions.org/contact-us",
+      "availableLanguage": ["English", "French"],
+      "areaServed": ["CA", "US", "GB", "Worldwide"]
+    },
+    {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "name": "Live Event Captioning, Hybrid Event Production & Educator PD Quotes",
+      "url": "https://zipsolutions.org/live-event-quotes",
+      "availableLanguage": ["English", "French"],
+      "areaServed": ["CA", "US", "GB", "Worldwide"]
+    },
+    {
+      "@type": "ContactPoint",
+      "contactType": "public relations",
+      "email": "media@zipcaptions.app",
+      "url": "https://zipsolutions.org/pressrelease",
+      "availableLanguage": ["English", "French"]
+    }
+  ],
   "description": currentLocale === 'fr'
-    ? "La maison de l'accessibilité : sous-titrage en direct, outils de CAA, organisation d'événements hybrides et formation professionnelle personnalisée."
-    : "The Home of Accessibility — Empowering connection with live captioning, AAC tools, in-person event organisation, hybrid session production, and custom professional development.",
+    ? "Solutions Zip (Zip Solutions) : sous-titrage en direct gratuit sur navigateur (Zip Captions), outils de CAA hors ligne (EasySpeak), évaluation mathématique IA (Remediator), organisation d'événements en présentiel et hybrides, surtitrage sur mesure, formation Google pour l'éducation et conseil audiovisuel. Basé dans le Grand Montréal (Québec, Canada) et disponible dans le monde entier."
+    : "Zip Solutions (Solutions Zip) — The Home of Accessibility. Providing free browser-based live captioning (Zip Captions), offline AI AAC tools (EasySpeak), Google Workspace math assessment (Remediator), in-person and hybrid event production, custom live event captioning and theatre surtitles, Google for Education training, and assistive listening AV consultancy. Based in Greater Montreal, Quebec, Canada, serving Montreal, Quebec, and Canada on-site and clients worldwide.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": currentLocale === 'fr'
+      ? "Catalogue des logiciels d'accessibilité et services professionnels de Solutions Zip"
+      : "Zip Solutions Accessibility Software & Professional Services Catalog",
+    "itemListElement": [
+      {
+        "@type": "OfferCatalog",
+        "name": currentLocale === 'fr' ? "Applications web d'accessibilité et logiciels éducatifs" : "Accessibility Web Applications & Educational Software",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "USD",
+            "description": "Free forever browser-based live captioning; optional Patreon AI captioning tiers at $5/month (Essential, 5 hrs AI), $15/month (Premium, 10 hrs AI), and $30/month (Platinum, 25 hrs AI + SWAG).",
+            "itemOffered": {
+              "@type": "SoftwareApplication",
+              "name": "Zip Captions",
+              "url": "https://zipsolutions.org/zipcaptions",
+              "applicationCategory": "EducationalApplication, MultimediaApplication",
+              "operatingSystem": "All (Web Browser)"
+            }
+          },
+          {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "USD",
+            "description": "100% free and open-source offline AI Augmentative and Alternative Communication (AAC) web app and educator dashboard.",
+            "itemOffered": {
+              "@type": "SoftwareApplication",
+              "name": "Zip EasySpeak & EasySpeak AI",
+              "url": "https://zipsolutions.org/easyspeak",
+              "applicationCategory": "EducationalApplication, HealthApplication",
+              "operatingSystem": "All (Web Browser, iOS, Android, ChromeOS)"
+            }
+          },
+          {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "USD",
+            "description": "100% free Google Workspace add-on and web app for AI-powered formative math assessment and remediation (Bring Your Own Gemini API Key).",
+            "itemOffered": {
+              "@type": "SoftwareApplication",
+              "name": "Zip Solutions Remediator (Zip Math)",
+              "url": "https://zipsolutions.org/zipmath",
+              "applicationCategory": "EducationalApplication",
+              "operatingSystem": "Google Workspace, Web Browser"
+            }
+          },
+          {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "USD",
+            "description": "100% free Chrome extension for text-to-speech, synchronized reading highlighting, simplified definitions, and visual picture dictionary.",
+            "itemOffered": {
+              "@type": "SoftwareApplication",
+              "name": "EquiBrowse",
+              "url": "https://zipsolutions.org/equibrowse",
+              "applicationCategory": "EducationalApplication, BrowserApplication",
+              "operatingSystem": "Chrome, Edge, Brave, Chromium"
+            }
+          },
+          {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "USD",
+            "description": "Free broadcast & accessibility integrations including Zip Captions for vMix, Zip Captions Companion for Stream Deck, ZipPanel Floating Overlay, Zip Connect for Twitch, and Zip Speech for Google Meet.",
+            "itemOffered": {
+              "@type": "SoftwareApplication",
+              "name": "Zip Broadcast & Browser Extensions Suite (Zip vMix, Companion, ZipPanel, Zip Connect, Zip Speech)",
+              "url": "https://zipsolutions.org/products",
+              "applicationCategory": "MultimediaApplication, UtilitiesApplication",
+              "operatingSystem": "Web Browser, Windows, macOS, ChromeOS"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": currentLocale === 'fr' ? "Services événementiels, sous-titrage sur mesure, formation PD et conseil AV" : "Live Event Production, Custom Captioning, Educator PD & AV Consultancy Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "url": "https://zipsolutions.org/live-event-quotes",
+            "description": "Custom quote per event. Includes stage/LED wall caption displays, mobile QR code attendee relay, theatre surtitles, and OBS/vMix broadcast encoding.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom Live Event Captioning, QR Mobile Relay & Theatre Surtitles",
+              "url": "https://zipsolutions.org/live-event-quotes",
+              "areaServed": ["Montreal", "Quebec", "Canada", "Worldwide"]
+            }
+          },
+          {
+            "@type": "Offer",
+            "url": "https://zipsolutions.org/events",
+            "description": "Custom quote per project. Turnkey in-person, hybrid, and virtual conference production, multi-room streaming, and technical event management.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "In-Person, Hybrid & Virtual Event Organisation and Production",
+              "url": "https://zipsolutions.org/events",
+              "areaServed": ["Montreal", "Quebec", "Canada", "Worldwide"]
+            }
+          },
+          {
+            "@type": "Offer",
+            "url": "https://zipsolutions.org/events",
+            "description": "Custom quote for schools, boards, and districts. Led by Google for Education Certified Trainers & Innovators (Gemini AI, Google Workspace, and inclusive classroom accessibility).",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Google for Education Training & Custom Educator Professional Development (PD)",
+              "url": "https://zipsolutions.org/events",
+              "areaServed": ["Montreal", "Quebec", "Canada", "United States", "United Kingdom", "Worldwide"]
+            }
+          },
+          {
+            "@type": "Offer",
+            "url": "https://zipsolutions.org/contact-us",
+            "description": "Custom consultation quote. Assistive listening systems (Phonak Roger, Wi-Fi audio), digital theatre sound & architectural lighting (ETC Mosaic), and venue captioning advisory.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Assistive Listening, Digital Sound & Lighting, and Venue Accessibility Consultancy",
+              "url": "https://zipsolutions.org/contact-us",
+              "areaServed": ["Montreal", "Quebec", "Canada", "Worldwide"]
+            }
+          }
+        ]
+      }
+    ]
+  },
   "award": [
     "University of Portsmouth 2025 Alumni Impact Award Winner",
     "Virginia Society for Technology in Education (VSTE) Accessibility Demo Slam Winner"

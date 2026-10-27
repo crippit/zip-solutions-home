@@ -35,27 +35,65 @@ const quoteChecklist = [
 ];
 const liveCaptionsServiceSchema = {
   "@type": "Service",
+  "@id": "https://zipsolutions.org/fr/live-event-quotes#service",
   "name": "Sous-titrage en direct d'événements, relais QR et surtitrage théâtral",
   "provider": {
     "@id": "https://zipsolutions.org/#organization"
   },
   "serviceType": "Sous-titrage en direct et surtitrage de spectacle",
-  "description": "Sous-titres en direct flexibles sur le web pour conférences, présentations en auditorium, relais par code QR, webdiffusions vMix/OBS et pièces de théâtre.",
-  "url": "https://zipsolutions.org/fr/live-event-quotes"
+  "description": "Sous-titres en direct flexibles sur le web pour conférences, présentations en auditorium, relais par code QR, webdiffusions vMix/OBS et pièces de théâtre. Sur place à Montréal, au Québec et au Canada, et à distance dans le monde entier.",
+  "url": "https://zipsolutions.org/fr/live-event-quotes",
+  "areaServed": [
+    { "@type": "City", "name": "Montréal" },
+    { "@type": "AdministrativeArea", "name": "Québec" },
+    { "@type": "Country", "name": "Canada" },
+    { "@type": "Country", "name": "États-Unis" },
+    { "@type": "Country", "name": "Royaume-Uni" },
+    { "@type": "Place", "name": "Dans le monde entier" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Solutions de sous-titrage en direct et de surtitrage",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Relais sur appareils personnels des participants (via code QR)",
+        "description": "Devis événementiel sur mesure. Diffusion des sous-titres en temps réel sur les téléphones, tablettes et ordinateurs portables des participants via code QR."
+      },
+      {
+        "@type": "Offer",
+        "name": "Écrans de scène, affichages de salle et incrustations vMix/OBS",
+        "description": "Devis événementiel sur mesure. Affichage à fort contraste sur écrans d'auditorium et intégration directe dans les flux vidéo vMix et OBS Studio."
+      },
+      {
+        "@type": "Offer",
+        "name": "Surtitrage synchronisé pour le théâtre",
+        "description": "Devis de production sur mesure. Surtitres théâtraux préchargés et déclenchés en direct au rythme exact des comédiens."
+      }
+    ]
+  }
 };
 
 const quoteFaqs = [
   {
-    question: "Dans quel délai répondez-vous aux demandes de devis pour un événement en direct ?",
-    answer: "Nous répondons généralement sous un jour ouvrable avec une recommandation sur mesure et une estimation tarifaire transparente selon la configuration de votre salle, les modes d'affichage choisis et la durée de l'événement."
+    question: "Pourquoi ne peut-on pas simplement utiliser la reconnaissance vocale automatique pour une pièce de théâtre, une comédie musicale ou un gala scénarisé ?",
+    answer: "La reconnaissance vocale automatique échoue souvent au théâtre parce que les comédiens projettent leur voix avec émotion, se coupent la parole, chantent par-dessus la musique et jouent sur un rythme comique ou dramatique précis — un décalage de deux secondes ou un mot mal compris gâche une réplique. Pour le théâtre, nous préchargeons votre texte et déclenchons manuellement chaque surtitre en direct au rythme exact du jeu sur scène ou sur les téléphones du public."
   },
   {
-    question: "Peut-on combiner le relais par code QR avec un écran de scène ou un flux vMix ?",
-    answer: "Oui ! Nos outils étant basés sur le web, nous pouvons alimenter simultanément un projecteur de salle ou une incrustation vidéo vMix/OBS tout en permettant aux participants de scanner un code QR pour lire sur leur propre téléphone."
+    question: "Notre colloque comporte 4 salles d'ateliers simultanées et nous n'avons pas le budget pour louer des écrans géants dédiés aux sous-titres dans chaque salle. Comment rendre chaque atelier accessible ?",
+    answer: "C'est précisément la force de notre relais sur appareils personnels par code QR. Plutôt que de louer des projecteurs et écrans supplémentaires pour chaque salle d'atelier, nous attribuons à chaque salle une affiche avec code QR à l'entrée et sur la diapositive d'accueil. Les participants scannent le code QR avec leur téléphone ou ordinateur portable pour suivre les sous-titres en temps réel depuis leur siège, sans application à installer."
   },
   {
-    question: "Quelle est la différence entre le surtitrage théâtral et le sous-titrage automatique en direct ?",
-    answer: "Pour le théâtre et les spectacles vivants, nous préchargeons votre texte et déclenchons manuellement chaque réplique en temps réel au rythme exact des comédiens, évitant ainsi tout décalage dramatique ou erreur de reconnaissance vocale."
+    question: "De quoi votre équipe a-t-elle concrètement besoin de la part du technicien audiovisuel de la salle le jour de l'événement ?",
+    answer: "Seulement deux éléments : une sortie audio directe des microphones de parole depuis la console de son (XLR, jack 6,35 mm ou interface USB — en excluant la musique d'ambiance) et une prise électrique standard. Si vous souhaitez aussi afficher les sous-titres sur un écran de scène ou dans un flux vMix/OBS, nous nous y connectons en HDMI ou via le réseau local en quelques minutes."
+  },
+  {
+    question: "Comment gérez-vous les conférences bilingues (français/anglais), les acronymes spécialisés et les noms propres des conférenciers ?",
+    answer: "Avant votre événement, transmettez-nous votre programme, la liste des intervenants, vos acronymes et vos présentations. Nous préparons les profils linguistiques (français québécois, français international, anglais) et le vocabulaire personnalisé afin que les noms propres et termes techniques soient retranscrits avec exactitude."
+  },
+  {
+    question: "Dans quel délai répondez-vous aux demandes de devis et quelles régions desservez-vous sur place ou à distance ?",
+    answer: "Nous répondons généralement sous un jour ouvrable avec une recommandation technique claire et un devis transparent. Nous intervenons sur place à Montréal, partout au Québec et au Canada, et assurons le sous-titrage à distance pour les événements virtuels et hybrides dans le monde entier."
   }
 ];
 ---

@@ -39,16 +39,20 @@ const specs = [
 
 const faqs = [
   {
-    question: "Où sont conservées les données des élèves dans Zip Solutions Remediator ?",
-    answer: "100 % des listes de classe, des exercices et des réponses des élèves demeurent exclusivement dans votre propre feuille Google Sheets au sein du domaine Google Workspace de votre école — jamais sur des serveurs tiers."
+    question: "Les quiz mathématiques à choix multiples sur ordinateur cachent l'étape où l'élève s'est trompé, mais corriger 120 billets de sortie sur papier prend toute la fin de semaine. Comment Remediator résout-il ce dilemme ?",
+    answer: "Remediator offre aux élèves un véritable plan cartésien interactif (MathCanvas), un éditeur d'équations LaTeX (MathLive) et une zone de justification écrite accessibles via le code QR d'un billet imprimé ou un code à 6 chiffres. Notre moteur hybride vérifie d'abord mathématiquement les pentes, coordonnées et inéquations, puis utilise Google Gemini Vision pour analyser les démarches partielles et accorder des points partiels avec une rétroaction ciblée."
   },
   {
-    question: "Les élèves ont-ils besoin d'un compte ou d'un mot de passe pour répondre ?",
-    answer: "Non. Les élèves balaient simplement le code QR imprimé ou saisissent un code d'accès à 6 chiffres avec leur adresse courriel scolaire pour tracer leurs graphiques cartésiens et saisir leurs équations LaTeX."
+    question: "Pourquoi Remediator utilise-t-il votre propre clé API Google Gemini (modèle BYOK) plutôt qu'un abonnement payant par élève ?",
+    answer: "Les éditeurs EdTech facturent souvent des licences coûteuses par élève pour encapsuler quelques centimes d'appels IA. Grâce au modèle BYOK (Bring Your Own Key), l'enseignant ou le centre de services scolaire utilise sa propre clé Google AI Studio Gemini (qui offre un niveau gratuit généreux ou coûte quelques centimes pour des milliers de copies), ce qui permet à Solutions Zip d'offrir l'outil à 0 $."
   },
   {
-    question: "Comment le moteur hybride corrige-t-il les graphiques et équations algébriques ?",
-    answer: "Un moteur vectoriel déterministe vérifie d'abord les droites, pentes, ordonnées à l'origine et régions hachurées. Lorsqu'une réponse est partielle ou ambiguë, Google Gemini Vision analyse le tracé et l'explication écrite pour attribuer des points partiels et une rétroaction formative ciblée."
+    question: "Notre centre de services scolaire interdit l'hébergement des noms et notes d'élèves sur des serveurs tiers. Où sont stockées les données dans Remediator ?",
+    answer: "100 % des listes de classe, des exercices, des graphiques tracés et des résultats demeurent exclusivement dans votre propre feuille Google Sheets au sein du domaine Google Workspace de votre école. Solutions Zip n'héberge aucune base de données externe des travaux de vos élèves."
+  },
+  {
+    question: "Comment faire si les élèves oublient leurs mots de passe ou n'ont pas le droit de créer un compte sur un site tiers ?",
+    answer: "Les élèves n'ont aucun compte ni mot de passe à créer. Ils scannent simplement le code QR imprimé sur leur feuille (ou saisissent le code à 6 chiffres) et entrent leur adresse courriel scolaire pour transmettre leur graphique et leurs équations directement dans le Google Sheet de l'enseignant."
   }
 ];
 ---
@@ -59,7 +63,8 @@ const faqs = [
   subtitle="Évaluation formative en mathématiques assistée par IA dans Google Workspace"
   description="Faites le pont entre les exercices sur papier et la correction automatique numérique avancée. Générez, distribuez et évaluez automatiquement des devoirs de mathématiques complexes (graphiques cartésiens, expressions LaTeX et raisonnements écrits) directement dans Google Sheets, sans aucun compte élève requis."
   actions={[
-    { text: "Demander une démonstration en classe", url: "/fr/contact-us", primary: true },
+    { text: "Installer depuis Google Workspace Marketplace", url: "https://workspace.google.com/marketplace/app/zip_solutions_remediator/387054340946?flow_type=2", primary: true, external: true },
+    { text: "Demander une démonstration en classe", url: "/fr/contact-us" },
     { text: "Découvrir les fonctionnalités clés", url: "#features" },
     { text: "Architecture et confidentialité", url: "#architecture" }
   ]}
@@ -72,7 +77,7 @@ const faqs = [
   specsSubtitle="Spécifications techniques"
   ctaTitle="Adoptez une remédiation mathématique plus intelligente dans votre établissement"
   ctaDescription="Offrez aux équipes pédagogiques une évaluation formative instantanée, une correction par IA multimodale et la pleine maîtrise de leurs données dans Google Workspace."
-  ctaAction={{ text: "Contacter notre équipe éducative", url: "/fr/contact-us" }}
+  ctaAction={{ text: "Obtenir sur Google Workspace Marketplace", url: "https://workspace.google.com/marketplace/app/zip_solutions_remediator/387054340946?flow_type=2", external: true }}
 >
 
   <!-- Approfondissement : Architecture et écosystème -->

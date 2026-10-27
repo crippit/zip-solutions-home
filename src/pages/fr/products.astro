@@ -1,11 +1,70 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ZipDashboard from '../../components/ZipDashboard.astro';
+import FaqSection from '../../components/FaqSection.astro';
+
+const productsFaqs = [
+  {
+    question: "Comment savoir si nos équipes peuvent utiliser vos outils web gratuits (0 $) en autonomie ou s'il est préférable de faire appel à votre équipe événementielle ?",
+    answer: "Pour un cours en classe, une célébration hebdomadaire, un comptoir d'accueil clinique ou une diffusion OBS/vMix avec un micro clair, notre application gratuite Zip Captions (0 $ ou 5 $ à 30 $/mois pour l'IA) et nos guides PDF gratuits suffisent amplement. Faites appel à notre service événementiel sur mesure lorsque vous organisez un congrès multi-salles, une conférence hybride avec invités distants ou une pièce de théâtre nécessitant un surtitrage synchronisé par nos techniciens."
+  },
+  {
+    question: "Des intégrateurs audiovisuels nous ont soumis un devis de plus de 15 000 $ pour un système d'aide à l'écoute. Comment fonctionne votre modèle de consultation accompagnée ?",
+    answer: "Beaucoup d'écoles, de lieux de culte et de théâtres communautaires renoncent à l'accessibilité auditive en raison des marges élevées sur le matériel propriétaire. Dans le cadre de notre service de consultation en aide à l'écoute, nous analysons votre salle et votre console existante, puis nous vous fournissons une liste d'achat précise (ex. Phonak Roger ou écoute assistée par Wi-Fi) et un schéma de câblage clair pour que votre équipe locale puisse l'installer à une fraction du coût habituel."
+  },
+  {
+    question: "Notre centre de services scolaire peut-il déployer vos extensions Chrome (EquiBrowse, ZipPanel, Zip Speech) via la console d'administration Google ?",
+    answer: "Oui. Toutes nos extensions sont publiées sur le Chrome Web Store et le Google Workspace Marketplace selon la norme Manifest V3. Les administrateurs TI peuvent les autoriser ou les déployer par unité organisationnelle (UO) sur les Chromebooks scolaires en quelques minutes, sans aucune collecte de données personnelles d'élèves."
+  },
+  {
+    question: "Dans quelles régions offrez-vous vos services sur place par rapport à l'accompagnement à distance ?",
+    answer: "Basés dans le Grand Montréal (Québec, Canada), nous intervenons sur place pour la production d'événements, le sous-titrage et surtitrage, l'éclairage architectural (ETC Mosaic), la sonorisation et les formations Google pour l'éducation à Montréal, partout au Québec et à travers le Canada — et à distance dans le monde entier."
+  }
+];
+
+const productsPageSchema = {
+  "@type": "CollectionPage",
+  "@id": "https://zipsolutions.org/fr/products#collection",
+  "name": "Tous les outils d'accessibilité, logiciels de sous-titrage et services | Solutions Zip",
+  "url": "https://zipsolutions.org/fr/products",
+  "inLanguage": "fr-CA",
+  "description": "Catalogue complet des 18 solutions d'accessibilité de Solutions Zip : sous-titrage en direct gratuit Zip Captions, CAA hors ligne EasySpeak, Remediator mathématique, production d'événements hybrides, formations Google pour l'éducation et conseil AV.",
+  "about": {
+    "@id": "https://zipsolutions.org/#organization"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "Produits et services de Solutions Zip",
+    "numberOfItems": 18,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Zip Captions — Sous-titrage en direct gratuit sur navigateur (0 $ / IA optionnelle 5 $ à 30 $ US/mois)", "url": "https://zipsolutions.org/fr/zipcaptions" },
+      { "@type": "ListItem", "position": 2, "name": "Zip Captions pour vMix — Intégration de diffusion en direct (0 $ Gratuit)", "url": "https://zipsolutions.org/fr/zipvmix" },
+      { "@type": "ListItem", "position": 3, "name": "Zip Captions Companion — Pont Stream Deck et Bitfocus (0 $ Gratuit)", "url": "https://zipsolutions.org/fr/zipcaptionscompanion" },
+      { "@type": "ListItem", "position": 4, "name": "ZipPanel — Superposition flottante de sous-titres Chrome (0 $ Gratuit)", "url": "https://zipsolutions.org/fr/zippanel" },
+      { "@type": "ListItem", "position": 5, "name": "Zip Connect — Pont Twitch et multi-appareils (0 $ Gratuit)", "url": "https://zipsolutions.org/fr/zipconnect" },
+      { "@type": "ListItem", "position": 6, "name": "Sous-titrage sur mesure pour événements en direct et surtitrage (Devis sur mesure — Montréal, Québec, Canada et International)", "url": "https://zipsolutions.org/fr/live-event-quotes" },
+      { "@type": "ListItem", "position": 7, "name": "Zip EasySpeak — Application web et mobile de CAA (0 $ Gratuit et code ouvert)", "url": "https://zipsolutions.org/fr/easyspeak" },
+      { "@type": "ListItem", "position": 8, "name": "Zip EasySpeak AI — CAA hors ligne propulsée par l'IA (0 $ Gratuit)", "url": "https://zipsolutions.org/fr/easyspeak" },
+      { "@type": "ListItem", "position": 9, "name": "Zip EasySpeak for Education — Tableau de bord enseignant (0 $ Gratuit)", "url": "https://zipsolutions.org/fr/easyspeak" },
+      { "@type": "ListItem", "position": 10, "name": "Zip Speech — Injection vocale CAA pour Google Meet (0 $ Gratuit)", "url": "https://zipsolutions.org/fr/zipspeech" },
+      { "@type": "ListItem", "position": 11, "name": "EquiBrowse — Extension Chrome de lecture à voix haute et dictionnaire visuel (0 $ Gratuit)", "url": "https://zipsolutions.org/fr/equibrowse" },
+      { "@type": "ListItem", "position": 12, "name": "EquiAssess — Plateforme d'évaluation sommative accessible (Gratuit pour les enseignants)", "url": "https://equiassess.zipsolutions.org" },
+      { "@type": "ListItem", "position": 13, "name": "Zip Solutions Remediator — Évaluation formative en mathématiques pour Google Workspace (0 $ Gratuit BYOK)", "url": "https://zipsolutions.org/fr/zipmath" },
+      { "@type": "ListItem", "position": 14, "name": "Organisation d'événements en présentiel et hybrides & Formations Google pour l'éducation (Devis sur mesure — Montréal, Québec, Canada et Virtuel)", "url": "https://zipsolutions.org/fr/events" },
+      { "@type": "ListItem", "position": 15, "name": "Consultation en systèmes d'aide à l'écoute (Devis sur mesure — Montréal, Québec, Canada et à distance)", "url": "https://zipsolutions.org/fr/contact-us" },
+      { "@type": "ListItem", "position": 16, "name": "Systèmes numériques de sonorisation et d'éclairage architectural (Devis sur mesure — Montréal, Québec et Canada)", "url": "https://zipsolutions.org/fr/contact-us" },
+      { "@type": "ListItem", "position": 17, "name": "Consultation en sous-titrage et surtitrage (Devis sur mesure — Montréal, Québec, Canada et International)", "url": "https://zipsolutions.org/fr/contact-us" },
+      { "@type": "ListItem", "position": 18, "name": "Ressources gratuites pour l'accessibilité auditive (0 $ Base de connaissances ouverte)", "url": "https://resources.zipsolutions.org" }
+    ]
+  }
+};
 ---
 
 <BaseLayout 
   title="Outils d'accessibilité, applications CAA et services de sous-titrage | Solutions Zip"
   description="Découvrez l'ensemble des outils d'accessibilité de Solutions Zip : sous-titrage en direct gratuit, applications de CAA hors ligne, outils Google Workspace et production d'événements hybrides."
+  schema={productsPageSchema}
+  faqs={productsFaqs}
 >
   <!-- En-tête -->
   <section class="bg-gradient-to-b from-white to-slate-50 border-b border-slate-200/80 pt-12 pb-14 px-4 sm:px-6 lg:px-8">
@@ -147,4 +206,11 @@ import ZipDashboard from '../../components/ZipDashboard.astro';
     </div>
     <ZipDashboard />
   </section>
+
+  <FaqSection
+    faqs={productsFaqs}
+    title="Choisir entre outils gratuits en libre-service, déploiement scolaire et régie sur mesure"
+    subtitle="Questions concrètes de mise en œuvre"
+    groupName="faq-fr-products"
+  />
 </BaseLayout>

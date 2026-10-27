@@ -1,11 +1,69 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ZipDashboard from '../components/ZipDashboard.astro';
+import FaqSection from '../components/FaqSection.astro';
+
+const productsFaqs = [
+  {
+    question: "How do I know whether we can just use your free self-serve web apps ($0) or if we should book your live event team?",
+    answer: "If you are captioning a classroom lesson, weekly church service, clinic desk, or standard OBS/vMix stream with a single clear microphone, our self-serve Zip Captions web app ($0 Free Forever, or $5–$30/mo for AI) and free printable checklists are all you need. Book our Custom Live Event or Hybrid Production team when you have high-stakes auditorium keynotes, multi-track breakout rooms, remote hybrid panelists, or scripted live theatre surtitles where you want dedicated technical engineering."
+  },
+  {
+    question: "Commercial AV integrators quoted us $15,000+ for an assistive listening system. How does your 'install-your-own' AV consultancy model work?",
+    answer: "Many churches, community theatres, and schools get priced out by heavy markups on proprietary hardware racks. Through our Assistive Listening & AV Consultancy, we audit your room acoustics and existing soundboard, then give you an exact off-the-shelf hardware shopping list (such as Phonak Roger or low-latency Wi-Fi assistive listening) and wiring blueprint so your local team or electrician can install it at a fraction of traditional integrator quotes."
+  },
+  {
+    question: "Can our school district push your Chrome extensions (EquiBrowse, ZipPanel, Zip Speech) to student Chromebooks via Google Admin Console?",
+    answer: "Yes. All of our browser extensions are published on the official Chrome Web Store and Google Workspace Marketplace using Manifest V3, so district IT administrators can allowlist or force-install them by extension ID across organizational units (OUs) in minutes—with zero student data collection."
+  },
+  {
+    question: "Where do you provide on-site consultancy and event production versus remote support?",
+    answer: "We are based in Greater Montreal, Quebec, Canada. We provide on-site event production, live captioning/surtitling, digital sound & architectural lighting (ETC Mosaic) integration, and in-person educator PD across Montreal, Quebec, and Canada—and deliver remote consultancy, virtual event production, and browser apps worldwide."
+  }
+];
+
+const productsPageSchema = {
+  "@type": "CollectionPage",
+  "@id": "https://zipsolutions.org/products#collection",
+  "name": "All Accessibility Tools, Captioning Software & Event Services | Zip Solutions",
+  "url": "https://zipsolutions.org/products",
+  "description": "Complete catalog of 18 free browser-based accessibility web apps, AAC communication tools, broadcast integrations, in-person & hybrid event production, custom live event captioning, educator PD, and AV consultancy services by Zip Solutions.",
+  "about": {
+    "@id": "https://zipsolutions.org/#organization"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "Zip Solutions Products & Services",
+    "numberOfItems": 18,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Zip Captions — Free Browser Live Captioning ($0 Free / Optional AI $5-$30 USD/mo)", "url": "https://zipsolutions.org/zipcaptions" },
+      { "@type": "ListItem", "position": 2, "name": "Zip Captions for vMix — Live Broadcast Integration ($0 Free)", "url": "https://zipsolutions.org/zipvmix" },
+      { "@type": "ListItem", "position": 3, "name": "Zip Captions Companion — Stream Deck & Bitfocus Bridge ($0 Free)", "url": "https://zipsolutions.org/zipcaptionscompanion" },
+      { "@type": "ListItem", "position": 4, "name": "ZipPanel — Floating Chrome Caption Overlay ($0 Free)", "url": "https://zipsolutions.org/zippanel" },
+      { "@type": "ListItem", "position": 5, "name": "Zip Connect — Twitch & Multi-Device Caption Bridge ($0 Free)", "url": "https://zipsolutions.org/zipconnect" },
+      { "@type": "ListItem", "position": 6, "name": "Custom Zip Captions Live Event Solutions & Theatre Surtitles (Custom Quote — Montreal, QC, Canada & Worldwide)", "url": "https://zipsolutions.org/live-event-quotes" },
+      { "@type": "ListItem", "position": 7, "name": "Zip EasySpeak — Browser & Mobile AAC App ($0 Free & Open Source)", "url": "https://zipsolutions.org/easyspeak" },
+      { "@type": "ListItem", "position": 8, "name": "Zip EasySpeak AI — Offline On-Device AI AAC App ($0 Free)", "url": "https://zipsolutions.org/easyspeak" },
+      { "@type": "ListItem", "position": 9, "name": "Zip EasySpeak for Education — Educator AAC Dashboard ($0 Free)", "url": "https://zipsolutions.org/easyspeak" },
+      { "@type": "ListItem", "position": 10, "name": "Zip Speech — AAC Microphone Injection for Google Meet ($0 Free)", "url": "https://zipsolutions.org/zipspeech" },
+      { "@type": "ListItem", "position": 11, "name": "EquiBrowse — Text-to-Speech, Highlighting & Picture Dictionary Chrome Extension ($0 Free)", "url": "https://zipsolutions.org/equibrowse" },
+      { "@type": "ListItem", "position": 12, "name": "EquiAssess — Accessible Summative Assessment Platform (Free for Educators)", "url": "https://equiassess.zipsolutions.org" },
+      { "@type": "ListItem", "position": 13, "name": "Zip Solutions Remediator — AI Formative Math Assessment for Google Workspace ($0 Free BYOK)", "url": "https://zipsolutions.org/zipmath" },
+      { "@type": "ListItem", "position": 14, "name": "In-Person & Hybrid Event Organisation & Google for Education Educator PD (Custom Quote — Montreal, QC, Canada & Worldwide)", "url": "https://zipsolutions.org/events" },
+      { "@type": "ListItem", "position": 15, "name": "Assistive Listening System Consultancy (Custom Quote — Montreal, QC, Canada & Remote)", "url": "https://zipsolutions.org/contact-us" },
+      { "@type": "ListItem", "position": 16, "name": "Digital Sound & Architectural Lighting Systems Consultancy (Custom Quote — Montreal, QC & Canada)", "url": "https://zipsolutions.org/contact-us" },
+      { "@type": "ListItem", "position": 17, "name": "Captioning & Theatre Surtitle Consultancy (Custom Quote — Montreal, QC, Canada & Worldwide)", "url": "https://zipsolutions.org/contact-us" },
+      { "@type": "ListItem", "position": 18, "name": "Free Resources for Listening Accessibility ($0 Open Knowledge Base)", "url": "https://resources.zipsolutions.org" }
+    ]
+  }
+};
 ---
 
 <BaseLayout 
   title="Accessibility Tools, AAC Apps & Live Event Captioning Services | Zip Solutions"
   description="Discover Zip Solutions' suite of free accessibility tools, browser live captioning, offline AAC apps, Google Workspace classroom tools, and hybrid event production services."
+  schema={productsPageSchema}
+  faqs={productsFaqs}
 >
   <!-- Hero Section -->
   <section class="bg-gradient-to-b from-white to-slate-50 border-b border-slate-200/80 pt-12 pb-14 px-4 sm:px-6 lg:px-8">
@@ -147,4 +205,11 @@ import ZipDashboard from '../components/ZipDashboard.astro';
     </div>
     <ZipDashboard />
   </section>
+
+  <FaqSection
+    faqs={productsFaqs}
+    title="Choosing Between Self-Serve Tools, School Rollouts & Managed Services"
+    subtitle="Real-World Implementation Questions"
+    groupName="faq-products"
+  />
 </BaseLayout>

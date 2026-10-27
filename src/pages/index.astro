@@ -1,34 +1,66 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import FaqSection from '../components/FaqSection.astro';
 
 const homeSchema = [
   {
-    "@type": "WebSite",
-    "@id": "https://zipsolutions.org/#website",
-    "url": "https://zipsolutions.org",
-    "name": "Zip Solutions",
-    "description": "The Home of Accessibility: Empowering connection with live captioning, AAC tools, in-person and hybrid event organisation, and accessible learning.",
-    "publisher": {
+    "@type": "WebPage",
+    "@id": "https://zipsolutions.org/#webpage",
+    "url": "https://zipsolutions.org/",
+    "name": "Zip Solutions — The Home of Accessibility",
+    "description": "Free browser-based live captioning (Zip Captions), offline AI AAC tools (EasySpeak), formative math assessment (Remediator), hybrid event production, custom live event captioning, Google for Education training, and assistive listening consultancy.",
+    "isPartOf": {
+      "@id": "https://zipsolutions.org/#website"
+    },
+    "about": {
+      "@id": "https://zipsolutions.org/#organization"
+    },
+    "mainEntity": {
       "@id": "https://zipsolutions.org/#organization"
     }
   },
   {
-    "@type": "EducationalOrganization",
-    "@id": "https://zipsolutions.org/#organization",
-    "name": "Zip Solutions",
-    "url": "https://zipsolutions.org",
-    "award": [
-      "University of Portsmouth 2025 Alumni Impact Award Winner",
-      "Virginia Society for Technology in Education (VSTE) Accessibility Demo Slam Winner"
-    ],
-    "funder": [
+    "@type": "SoftwareApplication",
+    "@id": "https://zipsolutions.org/#zipcaptions",
+    "name": "Zip Captions",
+    "url": "https://zipcaptions.app",
+    "applicationCategory": "EducationalApplication, UtilitiesApplication, MultimediaApplication",
+    "operatingSystem": "All (Web Browser, Windows, macOS, Linux, ChromeOS, iOS, Android)",
+    "publisher": {
+      "@id": "https://zipsolutions.org/#organization"
+    },
+    "offers": [
       {
-        "@type": "Organization",
-        "name": "Dell Technologies Education Canada Innovation Accelerator"
+        "@type": "Offer",
+        "name": "Regular Tier — Browser Live Captioning (Free Forever)",
+        "price": "0.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://zipcaptions.app"
       },
       {
-        "@type": "Organization",
-        "name": "Microsoft for Startups Founders Hub"
+        "@type": "Offer",
+        "name": "Essential Tier — 5 Hours/Month AI Captions",
+        "price": "5.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://zipsolutions.org/pricing"
+      },
+      {
+        "@type": "Offer",
+        "name": "Premium Tier — 10 Hours/Month AI Captions",
+        "price": "15.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://zipsolutions.org/pricing"
+      },
+      {
+        "@type": "Offer",
+        "name": "Platinum Tier — 25 Hours/Month AI Captions + SWAG",
+        "price": "30.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://zipsolutions.org/pricing"
       }
     ]
   }
@@ -93,12 +125,40 @@ const features = [
     external: true,
   }
 ];
+
+const homeFaqs = [
+  {
+    question: "Our school board IT department blocks software downloads and refuses to sign vendor student-data agreements. Can teachers still use Zip Captions or EasySpeak?",
+    answer: "Yes. Both Zip Captions and Zip EasySpeak run 100% inside standard web browsers (Chrome, Safari, Edge, Brave) with zero software or MSI packages to install, require zero student accounts or logins, and never store audio or transcripts on external servers. Live transcripts stay in local browser RAM and vanish when the tab closes—meeting strict Quebec Law 25, FIPPA, FERPA, and GDPR privacy rules out of the box."
+  },
+  {
+    question: "Why do live captions miss words when I use my laptop's built-in microphone from across a noisy classroom or church sanctuary?",
+    answer: "A laptop's built-in microphone is engineered for someone sitting 18 inches away, so room echo and background chatter will degrade any speech-to-text engine. In a classroom, clipping on an inexpensive wireless lapel (lavalier) mic or routing your Phonak Roger receiver into the laptop transforms accuracy immediately. In a church sanctuary or auditorium, send an Aux or Line-Out feed of the speaker's vocal mic from your soundboard into your laptop via a simple USB audio interface."
+  },
+  {
+    question: "When I present Google Slides or PowerPoint in full-screen on a projector or SMART Board, it covers up my browser tab. How do I keep captions visible on top?",
+    answer: "Click the Picture-in-Picture (PiP) button inside the Zip Captions toolbar before launching your slideshow. That detaches your live captions into a resizable, always-on-top floating window that hovers cleanly over full-screen PowerPoint, Google Slides, PDFs, or videos. You can also use our free ZipPanel Chrome extension."
+  },
+  {
+    question: "Hard-of-hearing or ESL students often refuse to sit in the front row or wear bulky gear because they don't want to feel singled out. How do you solve that?",
+    answer: "With Zip Captions Broadcast mode, you share a permanent Room Code or QR code with the whole room. Any student can discreetly follow the live transcript on their own Chromebook, tablet, or phone from any desk, adjust font size, switch on the Lexend dyslexia-friendly font, or enable free Chrome On-Device AI translation into their home language on their own screen."
+  },
+  {
+    question: "We used WebCaptioner before it shut down, and our AV booth is run by rotating volunteers. Will they have to set up new links or reconfigure OBS/vMix every week?",
+    answer: "No. Zip Captions gives you a permanent, static Broadcast Room Code. You print your QR code pew cards or lobby posters once, configure your OBS WebSocket or free Zip vMix Title bridge once, and every week your volunteer simply opens zipcaptions.app and clicks Start."
+  },
+  {
+    question: "Where do you provide on-site event production, custom live captioning, and Google for Education PD training versus remote services?",
+    answer: "We are based near Montreal, Quebec, Canada. We provide on-site hybrid event production, live event & theatre surtitling, assistive listening AV consultancy, and in-person Google for Education workshops across Greater Montreal, Quebec, and Canada—while our browser apps, virtual event captioning, and remote PD sessions are available worldwide."
+  }
+];
 ---
 
 <BaseLayout 
   title="Zip Solutions | Free Live Captioning, AAC Tools & Event Accessibility"
   description="Empowering communication with free browser-based live captions, offline AI AAC tools, hybrid event production, and inclusive educational technology. Winner of the 2025 University of Portsmouth Alumni Impact Award."
   schema={homeSchema}
+  faqs={homeFaqs}
 >
   
   <!-- Hero Section -->
@@ -619,6 +679,80 @@ const features = [
       </a>
     </div>
   </section>
+
+  <!-- Clean Raw-Text Overview: Business Name, Services, Pricing & Service Areas -->
+  <section class="py-16 bg-white border-t border-slate-200/80" aria-labelledby="business-summary-heading">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-wider text-amethyst font-heading block mb-1">
+          Company Overview • Services • Pricing • Service Areas
+        </span>
+        <h2 id="business-summary-heading" class="text-2xl sm:text-3xl font-extrabold font-heading text-midnight">
+          Zip Solutions at a Glance: What We Provide, Pricing &amp; Where We Operate
+        </h2>
+        <p class="mt-2 text-sm sm:text-base text-slate-600 leading-relaxed">
+          <strong>Zip Solutions</strong> (French: <strong>Solutions Zip</strong>) is an award-winning educational and assistive technology company founded in 2023 near Montreal, Quebec, Canada by educators and software engineers Chris Webb and James Petersen.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Card 1: Software & Professional Services -->
+        <article class="p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200/90 space-y-3">
+          <span class="text-xs font-bold font-mono text-amethyst uppercase tracking-wider block">
+            1. Products &amp; Services
+          </span>
+          <h3 class="text-lg font-bold font-heading text-midnight">
+            What Zip Solutions Sells &amp; Builds
+          </h3>
+          <ul class="text-xs sm:text-sm text-slate-700 space-y-2 leading-relaxed">
+            <li><strong>Live Captioning &amp; Broadcast Apps:</strong> <a href="/zipcaptions" class="text-amethyst font-semibold hover:underline">Zip Captions</a> (browser live captioning &amp; QR room relay), <a href="/zipvmix" class="text-amethyst font-semibold hover:underline">Zip Captions for vMix</a>, <a href="/zipcaptionscompanion" class="text-amethyst font-semibold hover:underline">Stream Deck Companion</a>, <a href="/zippanel" class="text-amethyst font-semibold hover:underline">ZipPanel</a>, and <a href="/zipconnect" class="text-amethyst font-semibold hover:underline">Zip Connect</a>.</li>
+            <li><strong>AAC &amp; Classroom Learning Tools:</strong> <a href="/easyspeak" class="text-amethyst font-semibold hover:underline">Zip EasySpeak &amp; EasySpeak AI</a> (offline AAC speech synthesis), <a href="/zipspeech" class="text-amethyst font-semibold hover:underline">Zip Speech</a> for Google Meet, <a href="/zipmath" class="text-amethyst font-semibold hover:underline">Zip Solutions Remediator</a> (Google Workspace math assessment), and <a href="/equibrowse" class="text-amethyst font-semibold hover:underline">EquiBrowse</a>.</li>
+            <li><strong>Live Events, Educator PD &amp; AV Consulting:</strong> <a href="/live-event-quotes" class="text-amethyst font-semibold hover:underline">Custom Live Event Captioning &amp; Theatre Surtitles</a>, <a href="/events" class="text-amethyst font-semibold hover:underline">In-Person &amp; Hybrid Event Production</a>, <strong>Google for Education Certified Training &amp; Educator PD</strong>, and Assistive Listening / Venue AV Consultancy.</li>
+          </ul>
+        </article>
+
+        <!-- Card 2: Transparent Pricing -->
+        <article class="p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200/90 space-y-3">
+          <span class="text-xs font-bold font-mono text-teal-brand uppercase tracking-wider block">
+            2. Transparent Pricing (USD)
+          </span>
+          <h3 class="text-lg font-bold font-heading text-midnight">
+            Free Core Apps &amp; Optional AI Plans
+          </h3>
+          <ul class="text-xs sm:text-sm text-slate-700 space-y-2 leading-relaxed">
+            <li><strong>Core Web Apps &amp; Extensions ($0 / Free Forever):</strong> Standard browser captioning in Zip Captions, room broadcast codes, OBS/vMix integration, EasySpeak AAC, EquiBrowse, and Zip Solutions Remediator (BYOK Gemini key) are <strong>100% free ($0.00 USD)</strong> with no account required.</li>
+            <li><strong>Essential AI Tier ($5 USD/month):</strong> Includes 5 hours/month of advanced AI-powered live captioning via Patreon.</li>
+            <li><strong>Premium AI Tier ($15 USD/month):</strong> Includes 10 hours/month of advanced AI-powered live captioning.</li>
+            <li><strong>Platinum AI Tier ($30 USD/month):</strong> Includes 25 hours/month of advanced AI-powered live captioning plus supporter SWAG.</li>
+            <li><strong>Live Events, Educator PD &amp; AV Consulting:</strong> <a href="/live-event-quotes" class="text-teal-brand font-semibold hover:underline">Custom project quotes</a> tailored to venue size, session count, and staffing.</li>
+          </ul>
+        </article>
+
+        <!-- Card 3: Service Areas -->
+        <article class="p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200/90 space-y-3">
+          <span class="text-xs font-bold font-mono text-coral uppercase tracking-wider block">
+            3. Service Areas &amp; Availability
+          </span>
+          <h3 class="text-lg font-bold font-heading text-midnight">
+            Local in Quebec &amp; Canada • Global Online
+          </h3>
+          <ul class="text-xs sm:text-sm text-slate-700 space-y-2 leading-relaxed">
+            <li><strong>Headquarters:</strong> Based near <strong>Montreal, Quebec, Canada</strong>.</li>
+            <li><strong>On-Site Production, Live Event Captioning &amp; AV Consultancy:</strong> Serving schools, school boards, universities, theatres, municipalities, and conferences across <strong>Greater Montreal, Quebec, and Canada</strong>.</li>
+            <li><strong>Google for Education Training &amp; Educator PD:</strong> Delivered <strong>in-person across Montreal, Quebec, and Canada</strong>, and <strong>virtually worldwide</strong> (United States, United Kingdom, Europe, and international schools) in English and French.</li>
+            <li><strong>Browser Software &amp; Virtual Broadcasts:</strong> Available <strong>worldwide</strong> in any modern web browser with zero software installation.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <FaqSection
+    faqs={homeFaqs}
+    title="Real-World Questions from Educators, AV Teams & Event Organizers"
+    subtitle="Solving Real Classroom, Sanctuary & Production Hurdles"
+    groupName="faq-home"
+  />
 
   <!-- CTA Consultation & Event Services Banner (Zero Pills) -->
   <section class="py-16 bg-midnight text-white">

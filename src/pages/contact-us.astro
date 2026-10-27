@@ -13,11 +13,22 @@ const inquiryTypes = [
   { id: "media-press", label: "Media / Press", value: "Media / Press" },
   { id: "general-contact", label: "General Contact", value: "General Contact", defaultChecked: true }
 ];
+const contactSchema = {
+  "@type": "ContactPage",
+  "@id": "https://zipsolutions.org/contact-us#contact",
+  "name": "Contact Us & Event Quotes | Zip Solutions",
+  "url": "https://zipsolutions.org/contact-us",
+  "description": "Contact Zip Solutions (based near Montreal, Quebec, Canada) for custom live event captioning quotes, in-person & hybrid event production, Google for Education PD training, AV consultancy, or accessibility accommodations.",
+  "mainEntity": {
+    "@id": "https://zipsolutions.org/#organization"
+  }
+};
 ---
 
 <BaseLayout 
   title="Contact Us & Event Quotes" 
   description="Get in touch with the Zip Solutions team for custom live event captioning quotes, in-person and hybrid event organisation, custom professional development, or partnerships."
+  schema={contactSchema}
 >
   <Fragment slot="head">
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>

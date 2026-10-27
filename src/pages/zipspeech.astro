@@ -37,12 +37,16 @@ const specs = [
 
 const faqs = [
   {
-    question: "How does Zip Speech speak into Google Meet without causing microphone echo?",
-    answer: "Zip Speech routes synthesized speech directly into Google Meet's WebRTC outgoing microphone stream inside the browser, so participants hear your spoken voice clearly without needing external speakers or virtual audio cables."
+    question: "In Google Meet, typed chat messages get ignored while everyone is talking, and holding an AAC tablet up to a laptop mic gets blocked by noise cancellation. How does Zip Speech fix this?",
+    answer: "Google Meet's aggressive noise suppression filters out external tablet speakers, and busy presenters rarely watch the side chat panel. Zip Speech injects synthesized speech directly into Google Meet's outgoing WebRTC microphone audio stream inside your browser—so when you type or tap a phrase, your voice plays crystal-clear through the meeting as if you spoke into a studio microphone, lighting up your speaker tile automatically."
   },
   {
-    question: "Which browsers support the Zip Speech extension?",
-    answer: "Zip Speech is available as a free native extension for Google Chrome, Apple Safari on macOS, Microsoft Edge, and Mozilla Firefox."
+    question: "Do I need to install complex virtual audio cables (like VB-Cable or Loopback) that school IT departments block?",
+    answer: "No. Virtual audio drivers require administrator privileges and frequently break microphone permissions. Zip Speech handles the audio routing 100% inside the browser extension on Chrome, Safari (macOS), Edge, and Firefox with zero system driver installs."
+  },
+  {
+    question: "Can I still use my physical microphone to laugh or speak briefly while Zip Speech is active?",
+    answer: "Yes. Zip Speech mixes its synthesized voice cleanly with your selected microphone stream, and includes saved quick-response AAC buttons and multi-language voice options so you can jump into fast-moving discussions without delay."
   }
 ];
 ---

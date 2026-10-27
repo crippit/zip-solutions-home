@@ -13,11 +13,23 @@ const inquiryTypes = [
   { id: "media-press", label: "Médias / Presse", value: "Media / Press" },
   { id: "general-contact", label: "Contact général", value: "General Contact", defaultChecked: true }
 ];
+const contactSchema = {
+  "@type": "ContactPage",
+  "@id": "https://zipsolutions.org/fr/contact-us#contact",
+  "name": "Contactez-nous et devis d'événements | Solutions Zip",
+  "url": "https://zipsolutions.org/fr/contact-us",
+  "inLanguage": "fr-CA",
+  "description": "Communiquez avec l'équipe de Solutions Zip (basée près de Montréal, Québec, Canada) pour des devis de sous-titrage sur mesure, l'organisation d'événements en présentiel ou hybrides, des formations Google pour l'éducation ou des partenariats.",
+  "mainEntity": {
+    "@id": "https://zipsolutions.org/#organization"
+  }
+};
 ---
 
 <BaseLayout 
   title="Contactez-nous et devis d'événements | Solutions Zip" 
   description="Communiquez avec l'équipe de Solutions Zip pour des devis de sous-titrage sur mesure, l'organisation d'événements en présentiel ou hybrides, des formations ou des partenariats."
+  schema={contactSchema}
 >
   <Fragment slot="head">
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>

@@ -1,10 +1,23 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const aboutSchema = {
+  "@type": "AboutPage",
+  "@id": "https://zipsolutions.org/fr/about-us#about",
+  "name": "Notre équipe | Solutions Zip",
+  "url": "https://zipsolutions.org/fr/about-us",
+  "inLanguage": "fr-CA",
+  "description": "Faites connaissance avec les éducateurs, développeurs et spécialistes de l'accessibilité derrière Solutions Zip (Zip Solutions) et Zip Captions, basés près de Montréal, Québec, Canada.",
+  "mainEntity": {
+    "@id": "https://zipsolutions.org/#organization"
+  }
+};
 ---
 
 <BaseLayout 
   title="Notre équipe | Solutions Zip" 
   description="Faites connaissance avec les éducateurs, développeurs et spécialistes de l'accessibilité derrière Solutions Zip et Zip Captions."
+  schema={aboutSchema}
 >
   <!-- En-tête -->
   <section class="relative bg-gradient-to-b from-white via-alabaster to-slate-100 border-b border-slate-200/80 pt-16 pb-16 px-4 sm:px-6 lg:px-8">

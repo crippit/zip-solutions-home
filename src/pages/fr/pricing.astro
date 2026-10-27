@@ -74,23 +74,108 @@ const features = [
 
 const faqs = [
   {
-    question: "Quelle est la différence entre le sous-titrage Standard (0 $) et le sous-titrage IA ?",
-    answer: "Le sous-titrage Standard utilise l'API WebSpeech intégrée au navigateur (compatible Chrome, Safari et Edge via le Store) et reste 100 % gratuit et illimité pour toujours. Le sous-titrage IA traite la parole dans le nuage via Azure AI, offrant une précision supérieure dans les environnements bruyants et fonctionnant techniquement sur n'importe quel navigateur web moderne."
+    question: "Que se passe-t-il si nos heures de sous-titrage IA s'épuisent en plein milieu d'un cours, d'une messe ou d'une conférence ? L'écran devient-il noir ?",
+    answer: "Jamais. Nous ne coupons jamais la parole au milieu d'une présentation. Si votre quota mensuel d'heures IA (5 h pour Essentiel, 10 h pour Premium ou 25 h pour Platine) est atteint en cours de séance, vous pouvez basculer instantanément vers le sous-titrage Standard gratuit (0 $) et illimité en un clic, tout en conservant le même code de salle Broadcast et votre connexion OBS ou vMix."
   },
   {
-    question: "Les écoles et organismes à but non lucratif peuvent-ils obtenir des heures d'IA gratuites ?",
-    answer: "Oui. Grâce à notre programme d'engagement solidaire (Giving Back), les classes, établissements scolaires et organismes communautaires admissibles peuvent demander des heures de sous-titrage IA offertes gratuitement."
+    question: "Dans quelles situations ai-je réellement besoin du sous-titrage IA payant (5 $ à 30 $ US/mois) plutôt que du mode Standard à 0 $ ?",
+    answer: "Si vous utilisez Chrome, Safari ou Edge dans un local calme avec un bon micro-cravate ou micro-casque, le mode Standard à 0 $ (API WebSpeech du navigateur) suffit amplement et reste illimité pour toujours. Le moteur IA payant (propulsé par Microsoft Azure AI) répond aux défis acoustiques plus complexes : micros de lutrin éloignés, églises ou salles réverbérantes, accents régionaux marqués, vocabulaire médical, scientifique ou liturgique pointu, ou navigateurs sans WebSpeech natif."
   },
   {
-    question: "Que se passe-t-il si j'épuise mes heures de sous-titrage IA avant la fin du mois ?",
-    answer: "Vous n'êtes jamais privé de sous-titrage. Si votre quota mensuel d'heures IA est atteint, vous pouvez immédiatement poursuivre vos sessions avec le sous-titrage Standard gratuit et illimité."
+    question: "Faut-il payer un supplément lorsque 50 élèves ou 300 congressistes scannent notre code QR pour lire les sous-titres sur leur téléphone ?",
+    answer: "Non. La lecture des sous-titres par les participants via le mode Diffusion (Broadcast) et les codes QR est 100 % gratuite et illimitée dans tous les forfaits, y compris le forfait Standard à 0 $. Vous ne payez jamais au nombre de lecteurs ou d'appareils connectés."
+  },
+  {
+    question: "Notre centre de services scolaire, université ou municipalité ne peut pas payer sur Patreon par carte de crédit. Peut-on procéder par bon de commande (PO) ou obtenir des heures données si nous n'avons aucun budget ?",
+    answer: "Oui aux deux questions. Si votre établissement scolaire, lieu de culte ou organisme a besoin d'une facture officielle, d'un bon de commande ou d'un volume d'heures sur mesure pour un colloque, écrivez-nous via la page Contact ou Devis d'événements pour une facturation directe hors Patreon. Et si votre classe ou organisme à but non lucratif n'a aucun budget, faites une demande à notre programme solidaire Giving Back pour recevoir gratuitement des heures IA financées par la communauté."
+  },
+  {
+    question: "Les outils EasySpeak CAA, EquiBrowse et Zip Solutions Remediator nécessitent-ils un abonnement Patreon ?",
+    answer: "Non. Toutes nos autres applications — incluant Zip EasySpeak et EasySpeak AI (CAA hors ligne), EquiBrowse, Zip Speech pour Google Meet, ZipPanel, Zip Connect et Zip Captions pour vMix — sont 100 % gratuites (0 $) sans abonnement. Zip Solutions Remediator pour Google Workspace est également gratuit et fonctionne avec votre propre clé API Google Gemini (modèle BYOK), évitant tout coût de licence par élève."
   }
 ];
+const pricingSchema = {
+  "@type": "SoftwareApplication",
+  "@id": "https://zipsolutions.org/fr/pricing#software",
+  "name": "Zip Captions",
+  "applicationCategory": "EducationalApplication, UtilitiesApplication, MultimediaApplication",
+  "operatingSystem": "All (Web Browser, Windows, macOS, Linux, ChromeOS, iOS, Android)",
+  "url": "https://zipcaptions.app",
+  "publisher": {
+    "@id": "https://zipsolutions.org/#organization"
+  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Forfait Standard (Sous-titrage en direct sur navigateur)",
+      "price": "0.00",
+      "priceCurrency": "USD",
+      "description": "Sous-titrage en direct sur navigateur 100 % gratuit pour toujours, utilisation illimitée, codes de salle et intégration OBS/vMix.",
+      "availability": "https://schema.org/InStock",
+      "url": "https://zipcaptions.app"
+    },
+    {
+      "@type": "Offer",
+      "name": "Forfait Communautaire (Patreon gratuit)",
+      "price": "0.00",
+      "priceCurrency": "USD",
+      "description": "Adhésion communautaire gratuite sur Patreon avec mises à jour, soutien Discord et accès complet au sous-titrage standard.",
+      "availability": "https://schema.org/InStock",
+      "url": "https://patreon.com/zipcaptions"
+    },
+    {
+      "@type": "Offer",
+      "name": "Forfait Essentiel (5 heures/mois de sous-titrage IA)",
+      "price": "5.00",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "5.00",
+        "priceCurrency": "USD",
+        "billingDuration": "P1M"
+      },
+      "description": "Débloque 5 heures de sous-titrage en direct assisté par intelligence artificielle chaque mois.",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.patreon.com/zipcaptions/membership"
+    },
+    {
+      "@type": "Offer",
+      "name": "Forfait Premium (10 heures/mois de sous-titrage IA)",
+      "price": "15.00",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "15.00",
+        "priceCurrency": "USD",
+        "billingDuration": "P1M"
+      },
+      "description": "Débloque 10 heures de sous-titrage en direct assisté par IA chaque mois pour les cours, réunions et diffusions.",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.patreon.com/zipcaptions/membership"
+    },
+    {
+      "@type": "Offer",
+      "name": "Forfait Platine (25 heures/mois de sous-titrage IA + Articles exclusifs)",
+      "price": "30.00",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "30.00",
+        "priceCurrency": "USD",
+        "billingDuration": "P1M"
+      },
+      "description": "Débloque 25 heures de sous-titrage en direct assisté par IA chaque mois ainsi que des articles exclusifs.",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.patreon.com/zipcaptions/membership"
+    }
+  ]
+};
 ---
 
 <BaseLayout 
   title="Tarifs de Zip Captions — Sous-titrage en direct gratuit et forfaits IA" 
   description="Zip Captions est 100 % gratuit pour le sous-titrage standard sur navigateur. Découvrez nos forfaits mensuels accessibles dès 5 $/mois pour la transcription par intelligence artificielle."
+  schema={pricingSchema}
   faqs={faqs}
 >
   

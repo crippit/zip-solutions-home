@@ -39,16 +39,20 @@ const specs = [
 
 const faqs = [
   {
-    question: "Where is student math assessment data stored in Zip Solutions Remediator?",
-    answer: "100% of your class rosters, assignments, and student responses are stored directly inside your own private Google Sheet within your school's Google Workspace—never on third-party external databases."
+    question: "Multiple-choice math quizzes on computers hide where a student's algebra or graphing went wrong, but grading 120 paper exit tickets takes all weekend. How does Remediator solve both?",
+    answer: "Remediator gives students a real coordinate plane (MathCanvas), a true LaTeX equation editor (MathLive), and a written reasoning box—achievable from a printed paper slip's QR code or a 6-digit Join Code. Our hybrid grading engine checks exact slopes, intercepts, and regions first, then uses Google Gemini Vision to inspect partial graphs and written steps so you see exactly which misconception to remediate on Monday morning."
   },
   {
-    question: "Do students need accounts or passwords to complete a math remediation slip?",
-    answer: "No. Students simply scan the printed QR code or enter a 6-digit Join Code along with their school email address to complete coordinate plane graphing, LaTeX equations, and written explanations in their browser."
+    question: "Why does Remediator use a Bring-Your-Own-Key (BYOK) Google Gemini API key instead of charging schools a per-student subscription?",
+    answer: "EdTech companies typically wrap a 10-cent AI API call inside a $5-per-student annual license that school budgets can't afford. With our BYOK architecture, your teacher or district plugs in their own Google AI Studio Gemini API key (which includes a generous free tier and costs pennies per thousand assessments on pay-as-you-go), meaning Zip Solutions charges you $0."
   },
   {
-    question: "How does the hybrid grading engine evaluate coordinate graphs and algebraic equations?",
-    answer: "A deterministic vector engine checks student-drawn lines, slopes, intercepts, and shaded regions first. When an answer is partial or ambiguous, Google Gemini Vision analyzes the student's visual graph and written reasoning to award partial credit and targeted formative feedback."
+    question: "Our school district refuses to let third-party math platforms store student names, emails, or grades on external servers. Where does Remediator store student data?",
+    answer: "100% of your class rosters, generated assignments, student graphs, and grades live exclusively inside your own Google Sheet inside your school's Google Workspace domain. Zip Solutions never hosts a database of your students' records."
+  },
+  {
+    question: "What happens when students forget their passwords or aren't allowed to create accounts on external math websites?",
+    answer: "Students never create accounts or passwords. They simply scan the QR code printed on their worksheet (or type the 6-digit Join Code at the web portal) and enter their school email address to submit their graph and equation work directly to the teacher's Google Sheet."
   }
 ];
 ---
@@ -59,7 +63,8 @@ const faqs = [
   subtitle="AI-Powered Formative Math Assessment in Google Workspace"
   description="Bridge the gap between physical classroom assignments and advanced digital auto-grading. Generate, distribute, and automatically evaluate complex math assignments (coordinate graphs, LaTeX equations, and written reasoning) directly in Google Sheets without student logins."
   actions={[
-    { text: "Request Classroom Demo", url: "/contact-us", primary: true },
+    { text: "Install from Google Workspace Marketplace", url: "https://workspace.google.com/marketplace/app/zip_solutions_remediator/387054340946?flow_type=2", primary: true, external: true },
+    { text: "Request Classroom Demo", url: "/contact-us" },
     { text: "Explore Key Features", url: "#features" },
     { text: "Architecture & Privacy", url: "#architecture" }
   ]}
@@ -72,7 +77,7 @@ const faqs = [
   specsSubtitle="Technical Specifications"
   ctaTitle="Bring Smarter Math Remediation to Your School"
   ctaDescription="Empower educators with instant formative assessment, multimodal AI grading, and complete Google Workspace data ownership."
-  ctaAction={{ text: "Contact Our Education Team", url: "/contact-us" }}
+  ctaAction={{ text: "Get It on Google Workspace Marketplace", url: "https://workspace.google.com/marketplace/app/zip_solutions_remediator/387054340946?flow_type=2", external: true }}
 >
 
   <!-- Deep Dive: Architecture & Ecosystem -->

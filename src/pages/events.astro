@@ -52,36 +52,63 @@ const idealAudiences = [
 
 const faqs = [
   {
-    question: "Can you support multi-room hybrid conferences with both in-person and virtual speakers?",
-    answer: "Yes. We design and operate multi-room streaming setups where in-room presenters and remote guest speakers can interact seamlessly, while both in-person and online audiences receive clear audio, video, and live captions."
+    question: "Hotel and convention center AV quotes want $5,000+ per room just for hybrid streaming and live captioning. How do you keep event costs realistic for schools, non-profits, and associations?",
+    answer: "Traditional venue AV quotes mark up proprietary hardware encoders, dedicated video trucks, and per-hour stenographer feeds. Because we engineered the Zip Captions broadcast stack ourselves, we tap directly into your venue's existing soundboard, use lightweight vMix/OBS switching, and stream live captions simultaneously to stage projectors and attendee smartphones via QR code—eliminating thousands of dollars in rented hardware."
   },
   {
-    question: "How is live captioning integrated into in-person and hybrid events?",
-    answer: "We integrate live captions directly onto main auditorium projection screens, lower-third video stream overlays (via OBS Studio or vMix), and personal attendee smartphones using QR codes so every participant can read comfortably."
+    question: "When a remote speaker joins our in-person conference over Zoom or Google Meet, why does the room audio often echo—and how do you prevent it?",
+    answer: "Feedback loops happen when a podium laptop's speakers bleed back into the room microphones or when the soundboard sends the remote guest their own voice back. Before your event day, we run a dedicated tech check with every remote presenter and configure a clean 'mix-minus' audio feed into the room PA and livestream so virtual guests sound crisp in the hall with zero echo."
   },
   {
-    question: "Do you offer custom Professional Development (PD) workshops for schools and districts?",
-    answer: "Yes. We deliver practical, hands-on PD sessions for educators, speech-language pathologists, and school IT teams covering classroom captioning, AAC implementation, and universal design for learning (UDL)."
+    question: "What if the hotel or school gymnasium Wi-Fi gets congested once 300 attendees walk into the room?",
+    answer: "Crowded venue Wi-Fi is the #1 killer of amateur hybrid events. We always prioritize hardwired Ethernet for the main production and captioning rigs, bring cellular bonding/failover backups for on-site productions across Montreal, Quebec, and Canada, and use ultra-low-bandwidth WebSocket text streams so attendee QR caption relays stay responsive even on congested mobile networks."
   },
   {
-    question: "Who leads your Google for Education and custom PD sessions?",
-    answer: "Sessions are directly designed and facilitated by Chris Webb (Google for Education Certified Trainer, Certified Innovator, GEG Leader, and Champions Ambassador) and James Petersen (Google for Education Certified Innovator), bringing decades of combined classroom teaching and cloud software engineering experience."
+    question: "Most teacher PD days feel like generic slide decks where staff tune out by 10:00 AM. How are your Google for Education workshops different?",
+    answer: "Our workshops are built and led by practicing educators—Chris Webb (Google for Education Certified Trainer, Certified Innovator, GEG Leader, and Champions Ambassador) and James Petersen (Google for Education Certified Innovator). Instead of abstract lectures, teachers spend the session building real classroom accommodations, Gemini AI lesson workflows, and Google Workspace tools they can use with their students the very next morning."
   },
   {
-    question: "Do you deliver training for both schools and corporate teams?",
-    answer: "Yes. For schools and districts, we focus on classroom pedagogy, Google Classroom, Gemini AI lesson preparation, and accessibility. For businesses, we focus on Google Workspace collaboration, Sheets data workflows, and practical AI productivity."
+    question: "Where can we book your team for on-site event production versus remote support or virtual PD?",
+    answer: "We are based near Montreal, Quebec, Canada. Our team travels on-site for conferences, school conventions, theatre productions, and in-person PD days across Greater Montreal, Quebec, and throughout Canada. We also provide remote technical production direction, custom live captioning rooms, and virtual Google for Education PD workshops for schools and organizations worldwide."
   }
 ];
 
 const eventServiceSchema = {
   "@type": "Service",
+  "@id": "https://zipsolutions.org/events#service",
   "name": "In-Person & Hybrid Event Organisation & Google for Education PD",
   "provider": {
     "@id": "https://zipsolutions.org/#organization"
   },
   "serviceType": "Hybrid Conference Production, Multi-Room Streaming & Educator Professional Development",
-  "description": "Practical technical production, multi-room hybrid streaming, live event accessibility, and tailored Google for Education training workshops for schools, conferences, and businesses.",
-  "url": "https://zipsolutions.org/events"
+  "description": "Practical technical production, multi-room hybrid streaming, live event accessibility, and tailored Google for Education training workshops for schools, conferences, and businesses. On-site across Montreal, Quebec, and Canada; virtual and remote worldwide.",
+  "url": "https://zipsolutions.org/events",
+  "areaServed": [
+    { "@type": "City", "name": "Montreal" },
+    { "@type": "AdministrativeArea", "name": "Quebec" },
+    { "@type": "Country", "name": "Canada" },
+    { "@type": "Country", "name": "United States" },
+    { "@type": "Country", "name": "United Kingdom" },
+    { "@type": "Place", "name": "Worldwide" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Event Production & Educator PD Offerings",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "In-Person & Hybrid Conference Production & Multi-Room Streaming",
+        "description": "Custom quote per event. Turnkey multi-room streaming, remote presenter integration, and accessible stage display management.",
+        "url": "https://zipsolutions.org/contact-us"
+      },
+      {
+        "@type": "Offer",
+        "name": "Google for Education Training & Custom Educator PD Workshops",
+        "description": "Custom quote for schools, school boards, and corporate teams. Led by Google for Education Certified Trainers & Innovators (Gemini AI, Google Workspace, assistive technology).",
+        "url": "https://zipsolutions.org/contact-us"
+      }
+    ]
+  }
 };
 ---
 

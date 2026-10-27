@@ -1,4 +1,6 @@
 ---
+const isFr = Astro.currentLocale === 'fr' || Astro.url.pathname.startsWith('/fr');
+
 const products = [
   // --- Family 1: Live Captioning & Broadcast (Theme: bg-amethyst) ---
   {
@@ -6,9 +8,13 @@ const products = [
     name: "Zip Captions",
     appUrl: "https://zipcaptions.app",
     learnUrl: "/zipcaptions",
-    description: "Zip Captions is a free, easy-to-use live captioning tool that works directly in your web browser. It provides real-time text transcription of audio content, making it accessible to people who are deaf or hard of hearing.",
-    family: "Live Captioning & Broadcast",
-    type: "Flagship Web App",
+    description: isFr
+      ? "Outil de sous-titrage en direct gratuit et facile à utiliser directement dans votre navigateur web. Transcription vocale en temps réel pour rendre vos contenus accessibles aux personnes sourdes et malentendantes."
+      : "Zip Captions is a free, easy-to-use live captioning tool that works directly in your web browser. It provides real-time text transcription of audio content, making it accessible to people who are deaf or hard of hearing.",
+    family: isFr ? "Sous-titrage & Diffusion" : "Live Captioning & Broadcast",
+    type: isFr ? "Application web phare" : "Flagship Web App",
+    pricing: isFr ? "100 % gratuit (0 $) • IA optionnelle de 5 $ à 30 $ US/mois" : "100% Free ($0) • Optional AI $5–$30 USD/mo",
+    area: isFr ? "Dans le monde entier (Navigateur)" : "Worldwide (Browser)",
     categories: ["Live Captioning & Broadcast", "Web App"],
     icon: "ear",
     color: "bg-amethyst",
@@ -16,12 +22,16 @@ const products = [
   },
   {
     id: 7,
-    name: "Zip Captions for VMix",
+    name: isFr ? "Zip Captions pour vMix" : "Zip Captions for VMix",
     appUrl: "https://www.zipsolutions.org/zipvmix",
     learnUrl: "/zipvmix",
-    description: "Professional Zip Captions live captioning integration directly into your VMix broadcasting workflow.",
-    family: "Live Captioning & Broadcast",
-    type: "Broadcast Integration",
+    description: isFr
+      ? "Intégration professionnelle de sous-titrage en direct Zip Captions directement dans votre flux de diffusion vidéo vMix."
+      : "Professional Zip Captions live captioning integration directly into your VMix broadcasting workflow.",
+    family: isFr ? "Sous-titrage & Diffusion" : "Live Captioning & Broadcast",
+    type: isFr ? "Intégration de diffusion" : "Broadcast Integration",
+    pricing: isFr ? "100 % gratuit (0 $)" : "100% Free ($0)",
+    area: isFr ? "Dans le monde entier" : "Worldwide",
     categories: ["Live Captioning & Broadcast", "Integration"],
     icon: "video",
     color: "bg-amethyst",
@@ -32,9 +42,13 @@ const products = [
     name: "Zip Captions Companion",
     appUrl: "https://chromewebstore.google.com/detail/zip-captions-companion-ad/chcflkiceakimokommplmfpcpodabdcg",
     learnUrl: "/zipcaptionscompanion",
-    description: "Companion Chrome extension designed to enhance and expand your Zip Captions experience with Stream Deck and tactile hardware triggers.",
-    family: "Live Captioning & Broadcast",
-    type: "Stream Deck Bridge",
+    description: isFr
+      ? "Extension Chrome compagnon conçue pour enrichir votre expérience Zip Captions avec Elgato Stream Deck, Bitfocus Companion et des déclencheurs matériels tactiles."
+      : "Companion Chrome extension designed to enhance and expand your Zip Captions experience with Stream Deck and tactile hardware triggers.",
+    family: isFr ? "Sous-titrage & Diffusion" : "Live Captioning & Broadcast",
+    type: isFr ? "Pont Stream Deck" : "Stream Deck Bridge",
+    pricing: isFr ? "100 % gratuit (0 $)" : "100% Free ($0)",
+    area: isFr ? "Dans le monde entier" : "Worldwide",
     categories: ["Live Captioning & Broadcast", "Extension"],
     icon: "grid",
     color: "bg-amethyst",
@@ -45,9 +59,13 @@ const products = [
     name: "ZipPanel",
     appUrl: "https://www.zipsolutions.org/zippanel",
     learnUrl: "/zippanel",
-    description: "Show your Zip Captions in a persistent floating overlay across all Google Chrome tabs and desktop windows.",
-    family: "Live Captioning & Broadcast",
-    type: "Overlay Extension",
+    description: isFr
+      ? "Affichez vos sous-titres Zip Captions dans une fenêtre flottante persistante au-dessus de tous vos onglets Google Chrome et fenêtres de bureau."
+      : "Show your Zip Captions in a persistent floating overlay across all Google Chrome tabs and desktop windows.",
+    family: isFr ? "Sous-titrage & Diffusion" : "Live Captioning & Broadcast",
+    type: isFr ? "Extension de superposition" : "Overlay Extension",
+    pricing: isFr ? "100 % gratuit (0 $)" : "100% Free ($0)",
+    area: isFr ? "Dans le monde entier" : "Worldwide",
     categories: ["Live Captioning & Broadcast", "Extension"],
     icon: "layers",
     color: "bg-amethyst",
@@ -58,9 +76,13 @@ const products = [
     name: "Zip Connect",
     appUrl: "https://www.zipsolutions.org/zipconnect",
     learnUrl: "/zipconnect",
-    description: "Seamlessly connect and integrate your communication tools into one unified multi-device workspace.",
-    family: "Live Captioning & Broadcast",
-    type: "Integration Bridge",
+    description: isFr
+      ? "Connectez et intégrez de façon transparente vos outils de communication et de sous-titrage dans un espace de travail multi-appareils unifié."
+      : "Seamlessly connect and integrate your communication tools into one unified multi-device workspace.",
+    family: isFr ? "Sous-titrage & Diffusion" : "Live Captioning & Broadcast",
+    type: isFr ? "Pont d'intégration" : "Integration Bridge",
+    pricing: isFr ? "100 % gratuit (0 $)" : "100% Free ($0)",
+    area: isFr ? "Dans le monde entier" : "Worldwide",
     categories: ["Live Captioning & Broadcast", "Integration"],
     icon: "link",
     color: "bg-amethyst",
@@ -68,12 +90,16 @@ const products = [
   },
   {
     id: 17,
-    name: "Custom Zip Captions Live Event Solutions",
+    name: isFr ? "Sous-titrage sur mesure pour événements en direct" : "Custom Zip Captions Live Event Solutions",
     appUrl: null,
     learnUrl: "/live-event-quotes",
-    description: "Customized live event captioning solutions for auditorium keynotes, theater surtitles, multi-track conferences, and live broadcasts with dedicated SLA engineering.",
-    family: "Live Captioning & Broadcast",
-    type: "Stage & Live Surtitles",
+    description: isFr
+      ? "Solutions personnalisées de sous-titrage en direct pour conférences en auditorium, surtitrage de théâtre, congrès multi-salles, relais mobile par code QR et diffusions en direct."
+      : "Customized live event captioning solutions for auditorium keynotes, theater surtitles, multi-track conferences, and live broadcasts with dedicated SLA engineering.",
+    family: isFr ? "Sous-titrage & Diffusion" : "Live Captioning & Broadcast",
+    type: isFr ? "Scène & Surtitrage en direct" : "Stage & Live Surtitles",
+    pricing: isFr ? "Devis événementiel sur mesure" : "Custom Event Quote",
+    area: isFr ? "Montréal, Québec, Canada & Virtuel mondial" : "Montreal, Quebec, Canada & Virtual Worldwide",
     categories: ["Live Captioning & Broadcast", "Events"],
     icon: "tv",
     color: "bg-amethyst",
@@ -86,9 +112,13 @@ const products = [
     name: "Zip EasySpeak",
     appUrl: "https://easyspeak.zipsolutions.org",
     learnUrl: "/easyspeak",
-    description: "Intuitive AAC (Augmentative and Alternative Communication) web application. Runs right in the browser, available for iOS, Android and more!",
-    family: "AAC & Speech Synthesis",
-    type: "Web & Mobile App",
+    description: isFr
+      ? "Application web intuitive de CAA (Communication Améliorée et Alternative). Fonctionne directement dans le navigateur sur iOS, Android, Chromebook et ordinateur."
+      : "Intuitive AAC (Augmentative and Alternative Communication) web application. Runs right in the browser, available for iOS, Android and more!",
+    family: isFr ? "CAA & Synthèse vocale" : "AAC & Speech Synthesis",
+    type: isFr ? "Application web & mobile" : "Web & Mobile App",
+    pricing: isFr ? "100 % gratuit et code ouvert (0 $)" : "100% Free & Open Source ($0)",
+    area: isFr ? "Dans le monde entier" : "Worldwide",
     categories: ["AAC & Speech Synthesis", "Web App"],
     icon: "layout",
     color: "bg-teal-brand",
@@ -99,9 +129,13 @@ const products = [
     name: "Zip EasySpeak AI",
     appUrl: "https://easyspeakai.zipsolutions.org",
     learnUrl: "/easyspeak",
-    description: "Next-generation AI Powered AAC communication powered by advanced Artificial Intelligence. Runs right from your browser, available for iOS, Android and more!",
-    family: "AAC & Speech Synthesis",
-    type: "AI Speech App",
+    description: isFr
+      ? "Communication CAA de nouvelle génération propulsée par une intelligence artificielle locale sur appareil. Fonctionne hors ligne dans le navigateur sur iOS, Android et ordinateur."
+      : "Next-generation AI Powered AAC communication powered by advanced Artificial Intelligence. Runs right from your browser, available for iOS, Android and more!",
+    family: isFr ? "CAA & Synthèse vocale" : "AAC & Speech Synthesis",
+    type: isFr ? "Application vocale IA" : "AI Speech App",
+    pricing: isFr ? "100 % gratuit et hors ligne (0 $)" : "100% Free & Offline ($0)",
+    area: isFr ? "Dans le monde entier" : "Worldwide",
     categories: ["AAC & Speech Synthesis", "AI Tool"],
     icon: "brain",
     color: "bg-teal-brand",
@@ -112,9 +146,13 @@ const products = [
     name: "Zip EasySpeak for Education",
     appUrl: "https://easyspeakforedu.zipsolutions.org/",
     learnUrl: "/easyspeak",
-    description: "Manage EasySpeak AI from a centralized dashboard designed for educational settings, allowing educators to easily oversee and support their students' communication needs.",
-    family: "AAC & Speech Synthesis",
-    type: "Educator Dashboard",
+    description: isFr
+      ? "Gérez EasySpeak AI depuis un tableau de bord centralisé conçu pour le milieu scolaire, permettant aux éducateurs d'accompagner facilement les besoins de communication de leurs élèves."
+      : "Manage EasySpeak AI from a centralized dashboard designed for educational settings, allowing educators to easily oversee and support their students' communication needs.",
+    family: isFr ? "CAA & Synthèse vocale" : "AAC & Speech Synthesis",
+    type: isFr ? "Tableau de bord enseignant" : "Educator Dashboard",
+    pricing: isFr ? "100 % gratuit pour les écoles (0 $)" : "100% Free for Schools ($0)",
+    area: isFr ? "Dans le monde entier" : "Worldwide",
     categories: ["AAC & Speech Synthesis", "Education"],
     icon: "graduation-cap",
     color: "bg-teal-brand",
@@ -125,9 +163,13 @@ const products = [
     name: "Zip Speech",
     appUrl: "https://chromewebstore.google.com/detail/zip-speech/abmneamgapjekkemjihkhokdgpdeejff",
     learnUrl: "/zipspeech",
-    description: "A browser extension which brings AAC accessibility and direct microphone speech injection to Google Meet.",
-    family: "AAC & Speech Synthesis",
-    type: "Google Meet Extension",
+    description: isFr
+      ? "Extension de navigateur qui apporte l'accessibilité CAA et l'injection vocale directe dans le microphone pour Google Meet."
+      : "A browser extension which brings AAC accessibility and direct microphone speech injection to Google Meet.",
+    family: isFr ? "CAA & Synthèse vocale" : "AAC & Speech Synthesis",
+    type: isFr ? "Extension Google Meet" : "Google Meet Extension",
+    pricing: isFr ? "100 % gratuit (0 $)" : "100% Free ($0)",
+    area: isFr ? "Dans le monde entier" : "Worldwide",
     categories: ["AAC & Speech Synthesis", "Extension"],
     icon: "mic",
     color: "bg-teal-brand",
@@ -140,9 +182,13 @@ const products = [
     name: "EquiBrowse",
     appUrl: "https://chromewebstore.google.com/detail/equibrowse-by-zip-solutio/alahhcjbblegneebpjehobaiemckblhl?authuser=0&hl=en-GB",
     learnUrl: "/equibrowse",
-    description: "Accessibility built right into your browser. Read text aloud, highlight as you read, get definitions and access the picture dictionary!",
-    family: "Equitable Reading & Learning",
-    type: "Reading Extension",
+    description: isFr
+      ? "L'accessibilité intégrée directement à votre navigateur. Lecture à voix haute avec surlignage synchronisé, définitions simplifiées et dictionnaire visuel."
+      : "Accessibility built right into your browser. Read text aloud, highlight as you read, get definitions and access the picture dictionary!",
+    family: isFr ? "Lecture & Apprentissage" : "Equitable Reading & Learning",
+    type: isFr ? "Extension d'aide à la lecture" : "Reading Extension",
+    pricing: isFr ? "100 % gratuit (0 $)" : "100% Free ($0)",
+    area: isFr ? "Dans le monde entier" : "Worldwide",
     categories: ["Equitable Reading & Learning", "Extension"],
     icon: "book-open",
     color: "bg-indigo-600",
@@ -153,9 +199,13 @@ const products = [
     name: "EquiAssess",
     appUrl: "https://equiassess.zipsolutions.org",
     learnUrl: null,
-    description: "A secure platform for educational establishments to administer accessible summative assessments with built-in accessibility safeguards.",
-    family: "Equitable Reading & Learning",
-    type: "Assessment Platform",
+    description: isFr
+      ? "Plateforme sécurisée permettant aux établissements scolaires d'administrer des évaluations sommatives accessibles avec mesures d'adaptation intégrées."
+      : "A secure platform for educational establishments to administer accessible summative assessments with built-in accessibility safeguards.",
+    family: isFr ? "Lecture & Apprentissage" : "Equitable Reading & Learning",
+    type: isFr ? "Plateforme d'évaluation" : "Assessment Platform",
+    pricing: isFr ? "Gratuit pour les enseignants" : "Free for Educators",
+    area: isFr ? "Dans le monde entier" : "Worldwide",
     categories: ["Equitable Reading & Learning", "Education"],
     icon: "shield-check",
     color: "bg-indigo-600",
@@ -164,11 +214,15 @@ const products = [
   {
     id: 18,
     name: "Zip Solutions Remediator",
-    appUrl: null,
+    appUrl: "https://workspace.google.com/marketplace/app/zip_solutions_remediator/387054340946?flow_type=2",
     learnUrl: "/zipmath",
-    description: "Accessible, AI-powered formative math assessment in Google Workspace. Generate, distribute, and auto-grade graphs, equations, and written reasoning without student logins.",
-    family: "Equitable Reading & Learning",
-    type: "Google Workspace & Web App",
+    description: isFr
+      ? "Évaluation formative en mathématiques propulsée par l'IA dans Google Workspace. Générez, distribuez et corrigez graphiques, équations et raisonnements écrits sans compte élève."
+      : "Accessible, AI-powered formative math assessment in Google Workspace. Generate, distribute, and auto-grade graphs, equations, and written reasoning without student logins.",
+    family: isFr ? "Lecture & Apprentissage" : "Equitable Reading & Learning",
+    type: isFr ? "Module Google Workspace & Web" : "Google Workspace & Web App",
+    pricing: isFr ? "100 % gratuit (0 $ • Modèle BYOK Gemini)" : "100% Free ($0 • BYOK Gemini Key)",
+    area: isFr ? "Dans le monde entier" : "Worldwide",
     categories: ["Equitable Reading & Learning", "AI Tool", "Education"],
     icon: "calculator",
     color: "bg-indigo-600",
@@ -178,12 +232,16 @@ const products = [
   // --- Family 4: Event Organisation & PD (Theme: bg-coral) ---
   {
     id: 16,
-    name: "In-Person & Hybrid Event Organisation",
+    name: isFr ? "Organisation d'événements en présentiel, hybrides & Formations PD" : "In-Person & Hybrid Event Organisation & Educator PD",
     appUrl: null,
     learnUrl: "/events",
-    description: "Turnkey in-person, hybrid, and virtual event organisation for educational institutions and conventions, complete with multi-room streaming, remote presenter integration, and Custom Professional Development (PD) workshops.",
-    family: "Event Organisation & PD",
-    type: "Production & PD Service",
+    description: isFr
+      ? "Organisation clé en main d'événements en présentiel, hybrides et virtuels pour établissements scolaires et congrès, diffusion multi-salles et ateliers de perfectionnement professionnel (Google for Education)."
+      : "Turnkey in-person, hybrid, and virtual event organisation for educational institutions and conventions, complete with multi-room streaming, remote presenter integration, and Custom Professional Development (PD) workshops.",
+    family: isFr ? "Événements & Formation" : "Event Organisation & PD",
+    type: isFr ? "Production & Formation PD" : "Production & PD Service",
+    pricing: isFr ? "Devis sur mesure" : "Custom Project Quote",
+    area: isFr ? "Montréal, Québec, Canada & Virtuel mondial" : "Montreal, Quebec, Canada & Virtual Worldwide",
     categories: ["Event Organisation & PD", "Events"],
     icon: "calendar",
     color: "bg-coral",
@@ -193,12 +251,16 @@ const products = [
   // --- Family 5: AV Consultancy & Open Guides (Theme: bg-teal-dark) ---
   {
     id: 12,
-    name: "Assistive Listening System Consultancy",
+    name: isFr ? "Consultation en systèmes d'aide à l'écoute" : "Assistive Listening System Consultancy",
     appUrl: null,
     learnUrl: "/contact-us",
-    description: "Assistive Listening provides those with hearing loss the ability to have better access to sound. Get in touch to learn about our innovative install-your-own-system model with detailed shopping lists and design blueprints.",
-    family: "AV Consultancy & Open Guides",
-    type: "Acoustic Consultancy",
+    description: isFr
+      ? "L'aide à l'écoute offre aux personnes malentendantes un meilleur accès au son. Découvrez notre modèle d'accompagnement avec listes d'achat détaillées et plans d'installation."
+      : "Assistive Listening provides those with hearing loss the ability to have better access to sound. Get in touch to learn about our innovative install-your-own-system model with detailed shopping lists and design blueprints.",
+    family: isFr ? "Conseil audiovisuel & Guides" : "AV Consultancy & Open Guides",
+    type: isFr ? "Conseil acoustique" : "Acoustic Consultancy",
+    pricing: isFr ? "Consultation sur mesure" : "Custom Consultation Quote",
+    area: isFr ? "Montréal, Québec, Canada & Consultation à distance" : "Montreal, Quebec, Canada & Remote Advisory",
     categories: ["AV Consultancy & Open Guides", "Consulting"],
     icon: "headphones",
     color: "bg-teal-dark",
@@ -206,12 +268,16 @@ const products = [
   },
   {
     id: 13,
-    name: "Digital Sound & Lighting Systems",
+    name: isFr ? "Systèmes numériques de sonorisation et d'éclairage" : "Digital Sound & Lighting Systems",
     appUrl: null,
     learnUrl: "/contact-us",
-    description: "Professional theatre sound, architectural lighting systems (such as ETC Mosaic), and conference AV system integration and automation.",
-    family: "AV Consultancy & Open Guides",
-    type: "Venue Systems & AV",
+    description: isFr
+      ? "Sonorisation théâtrale professionnelle, systèmes d'éclairage architectural (tels qu'ETC Mosaic) et intégration et automatisation de systèmes audiovisuels de conférence."
+      : "Professional theatre sound, architectural lighting systems (such as ETC Mosaic), and conference AV system integration and automation.",
+    family: isFr ? "Conseil audiovisuel & Guides" : "AV Consultancy & Open Guides",
+    type: isFr ? "Systèmes de salle & AV" : "Venue Systems & AV",
+    pricing: isFr ? "Devis sur mesure" : "Custom Venue Quote",
+    area: isFr ? "Montréal, Québec & Canada" : "Montreal, Quebec & Canada",
     categories: ["AV Consultancy & Open Guides", "Consulting"],
     icon: "sliders",
     color: "bg-teal-dark",
@@ -219,12 +285,16 @@ const products = [
   },
   {
     id: 15,
-    name: "Captioning Consultancy",
+    name: isFr ? "Consultation en sous-titrage et surtitrage" : "Captioning Consultancy",
     appUrl: null,
     learnUrl: "/contact-us",
-    description: "Expert guidance for integrating live captions and theatre surtitles. We advise on stage positioning, LED wall displays, attendee relay apps, and script synchronization.",
-    family: "AV Consultancy & Open Guides",
-    type: "Captioning Advisory",
+    description: isFr
+      ? "Conseils d'experts pour l'intégration de sous-titres en direct et de surtitres au théâtre : positionnement scénique, écrans DEL, relais mobile et synchronisation de scripts."
+      : "Expert guidance for integrating live captions and theatre surtitles. We advise on stage positioning, LED wall displays, attendee relay apps, and script synchronization.",
+    family: isFr ? "Conseil audiovisuel & Guides" : "AV Consultancy & Open Guides",
+    type: isFr ? "Conseil en sous-titrage" : "Captioning Advisory",
+    pricing: isFr ? "Consultation sur mesure" : "Custom Consultation Quote",
+    area: isFr ? "Montréal, Québec, Canada & International" : "Montreal, Quebec, Canada & Worldwide",
     categories: ["AV Consultancy & Open Guides", "Consulting"],
     icon: "users",
     color: "bg-teal-dark",
@@ -232,20 +302,22 @@ const products = [
   },
   {
     id: 14,
-    name: "Free Resources for Listening Accessibility",
+    name: isFr ? "Ressources gratuites pour l'accessibilité auditive" : "Free Resources for Listening Accessibility",
     appUrl: "https://resources.zipsolutions.org",
     learnUrl: "https://resources.zipsolutions.org",
-    description: "Comprehensive guides on Phonak Roger setups, SMART Flat Panels, WiFi assistive listening, classroom media hubs, and theatre surtitles.",
-    family: "AV Consultancy & Open Guides",
-    type: "Open Knowledge Base",
+    description: isFr
+      ? "Guides complets et gratuits sur les systèmes Phonak Roger, écrans interactifs SMART, aide à l'écoute par Wi-Fi, hubs multimédias de classe et surtitrage."
+      : "Comprehensive guides on Phonak Roger setups, SMART Flat Panels, WiFi assistive listening, classroom media hubs, and theatre surtitles.",
+    family: isFr ? "Conseil audiovisuel & Guides" : "AV Consultancy & Open Guides",
+    type: isFr ? "Base de connaissances ouverte" : "Open Knowledge Base",
+    pricing: isFr ? "100 % gratuit (0 $)" : "100% Free ($0)",
+    area: isFr ? "Dans le monde entier" : "Worldwide",
     categories: ["AV Consultancy & Open Guides", "Resources"],
     icon: "library",
     color: "bg-teal-dark",
     borderColor: "border-teal-300",
   }
 ];
-
-const isFr = Astro.currentLocale === 'fr' || Astro.url.pathname.startsWith('/fr');
 
 function l(path: string | null): string | null {
   if (!path) return null;
@@ -327,11 +399,9 @@ const allCategories = [
   <!-- Product Grid -->
   <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     {products.map((product) => (
-      <div 
+      <article 
         class="product-card group flex flex-col bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
-        data-name={product.name.toLowerCase()}
-        data-desc={product.description.toLowerCase()}
-        data-categories={JSON.stringify(product.categories)}
+        data-categories={product.categories.join('|')}
       >
         <!-- Background Ambient Accent Blob -->
         <div class={`absolute -right-10 -top-10 w-28 h-28 rounded-3xl opacity-10 group-hover:opacity-25 transition-opacity duration-300 ${product.color}`}></div>
@@ -452,9 +522,19 @@ const allCategories = [
         </h2>
 
         <!-- Description -->
-        <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+        <p class="text-slate-600 text-sm leading-relaxed mb-4 flex-grow">
           {product.description}
         </p>
+
+        <!-- Explicit Raw-Text Pricing & Service Area -->
+        <div class="mb-4 pt-2.5 border-t border-slate-100 text-[11px] font-mono text-slate-500 space-y-1">
+          <p>
+            <strong class="text-midnight font-semibold">{isFr ? "Tarif :" : "Pricing:"}</strong> {product.pricing}
+          </p>
+          <p>
+            <strong class="text-midnight font-semibold">{isFr ? "Zone :" : "Service Area:"}</strong> {product.area}
+          </p>
+        </div>
 
         <!-- Actions -->
         <div class="mt-auto flex items-center gap-2.5 pt-2 border-t border-slate-100">
@@ -481,7 +561,7 @@ const allCategories = [
           )}
         </div>
 
-      </div>
+      </article>
     ))}
   </div>
 
@@ -520,11 +600,10 @@ const allCategories = [
 
     productCards.forEach((card) => {
       const el = card as HTMLElement;
-      const name = el.dataset.name || '';
-      const desc = el.dataset.desc || '';
-      const categories: string[] = JSON.parse(el.dataset.categories || '[]');
+      const textContent = (el.textContent || '').toLowerCase();
+      const categories = (el.dataset.categories || '').split('|');
 
-      const matchesSearch = !searchTerm || name.includes(searchTerm) || desc.includes(searchTerm);
+      const matchesSearch = !searchTerm || textContent.includes(searchTerm);
       const matchesCategory = activeCategory === 'All' || categories.includes(activeCategory);
 
       if (matchesSearch && matchesCategory) {

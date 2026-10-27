@@ -1,35 +1,67 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import FaqSection from '../../components/FaqSection.astro';
 
 const homeSchema = [
   {
-    "@type": "WebSite",
-    "@id": "https://zipsolutions.org/#website",
+    "@type": "WebPage",
+    "@id": "https://zipsolutions.org/fr#webpage",
     "url": "https://zipsolutions.org/fr",
-    "name": "Zip Solutions",
-    "description": "La maison de l'accessibilité: Renforcer les liens grâce au sous-titrage en direct, aux outils de CAA, à l'organisation d'événements hybrides et à l'apprentissage accessible.",
+    "name": "Solutions Zip (Zip Solutions) — La maison de l'accessibilité",
+    "inLanguage": "fr-CA",
+    "description": "Sous-titrage en direct gratuit sur navigateur (Zip Captions), outils de CAA hors ligne (EasySpeak), évaluation mathématique IA (Remediator), production d'événements hybrides, surtitrage en direct sur mesure, formation Google pour l'éducation et conseil audiovisuel.",
+    "isPartOf": {
+      "@id": "https://zipsolutions.org/#website"
+    },
+    "about": {
+      "@id": "https://zipsolutions.org/#organization"
+    },
+    "mainEntity": {
+      "@id": "https://zipsolutions.org/#organization"
+    }
+  },
+  {
+    "@type": "SoftwareApplication",
+    "@id": "https://zipsolutions.org/#zipcaptions",
+    "name": "Zip Captions",
+    "url": "https://zipcaptions.app",
+    "applicationCategory": "EducationalApplication, UtilitiesApplication, MultimediaApplication",
+    "operatingSystem": "All (Web Browser, Windows, macOS, Linux, ChromeOS, iOS, Android)",
     "publisher": {
       "@id": "https://zipsolutions.org/#organization"
     },
-    "inLanguage": "fr"
-  },
-  {
-    "@type": "EducationalOrganization",
-    "@id": "https://zipsolutions.org/#organization",
-    "name": "Zip Solutions",
-    "url": "https://zipsolutions.org/fr",
-    "award": [
-      "Lauréat de l'Alumni Impact Award 2025 de l'Université de Portsmouth",
-      "Lauréat de l'Accessibility Demo Slam de la Virginia Society for Technology in Education (VSTE)"
-    ],
-    "funder": [
+    "offers": [
       {
-        "@type": "Organization",
-        "name": "Dell Technologies Education Canada Innovation Accelerator"
+        "@type": "Offer",
+        "name": "Forfait Régulier — Sous-titrage en direct sur navigateur (Gratuit pour toujours)",
+        "price": "0.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://zipcaptions.app"
       },
       {
-        "@type": "Organization",
-        "name": "Microsoft for Startups Founders Hub"
+        "@type": "Offer",
+        "name": "Forfait Essentiel — 5 heures/mois de sous-titrage IA",
+        "price": "5.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://zipsolutions.org/fr/pricing"
+      },
+      {
+        "@type": "Offer",
+        "name": "Forfait Premium — 10 heures/mois de sous-titrage IA",
+        "price": "15.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://zipsolutions.org/fr/pricing"
+      },
+      {
+        "@type": "Offer",
+        "name": "Forfait Platine — 25 heures/mois de sous-titrage IA + Articles exclusifs",
+        "price": "30.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://zipsolutions.org/fr/pricing"
       }
     ]
   }
@@ -94,12 +126,40 @@ const features = [
     external: true,
   }
 ];
+
+const homeFaqs = [
+  {
+    question: "Le service informatique (TI) de notre centre de services scolaire bloque l'installation de logiciels et refuse les ententes de partage de données élèves. Peut-on quand même utiliser Zip Captions ou EasySpeak ?",
+    answer: "Oui. Zip Captions et Zip EasySpeak fonctionnent à 100 % dans le navigateur web (Chrome, Safari, Edge, Brave) sans aucun logiciel à installer, sans création de compte élève et sans aucun stockage audio ou texte sur des serveurs externes. La transcription reste uniquement dans la mémoire vive (RAM) locale du navigateur et disparaît dès la fermeture de l'onglet, respectant ainsi la Loi 25 au Québec, la LPRPDE, la FERPA et le RGPD."
+  },
+  {
+    question: "Pourquoi les sous-titres manquent-ils des mots lorsque j'utilise le micro intégré de mon ordinateur portable au fond d'une classe bruyante ou d'une église ?",
+    answer: "Le micro interne d'un ordinateur portable est conçu pour une personne située à moins de 50 cm ; l'écho et le brouhaha nuisent donc à n'importe quel moteur vocal. En classe, l'utilisation d'un simple micro-cravate sans fil ou le branchement de votre récepteur Phonak Roger à l'ordinateur transforme immédiatement la précision. Dans un lieu de culte ou un auditorium, reliez une sortie auxiliaire (Aux/Line-Out) de votre console de son à l'ordinateur via une carte son USB."
+  },
+  {
+    question: "Lorsque je présente un diaporama Google Slides ou PowerPoint en plein écran sur mon TNI ou projecteur, il cache l'onglet des sous-titres. Comment garder les sous-titres visibles par-dessus ?",
+    answer: "Cliquez sur le bouton Image dans l'image (Picture-in-Picture) dans la barre d'outils de Zip Captions avant de lancer votre présentation. Vos sous-titres se détachent alors dans une fenêtre flottante toujours au premier plan qui reste visible par-dessus PowerPoint, Google Slides, vos PDF ou vos vidéos en plein écran. Vous pouvez aussi utiliser notre extension gratuite ZipPanel."
+  },
+  {
+    question: "Les élèves malentendants ou allophones refusent souvent de s'asseoir au premier rang pour ne pas être stigmatisés. Comment résolvez-vous ce problème ?",
+    answer: "Grâce au mode Diffusion (Broadcast) de Zip Captions, vous partagez un code de salle fixe ou un code QR avec toute la classe. N'importe quel élève peut suivre discrètement les sous-titres en direct sur son propre Chromebook, sa tablette ou son téléphone depuis sa place, ajuster la taille du texte, activer la police Lexend adaptée à la dyslexie ou activer la traduction locale gratuite par l'IA de Chrome dans sa langue maternelle."
+  },
+  {
+    question: "Nous utilisions WebCaptioner avant sa fermeture et notre régie est gérée par des bénévoles chaque semaine. Faut-il créer un nouveau lien ou reconfigurer OBS/vMix à chaque séance ?",
+    answer: "Non. Zip Captions vous attribue un code de salle permanent et fixe. Vous imprimez vos cartes de bancs ou affiches avec code QR une seule fois, vous configurez votre liaison OBS WebSocket ou l'extension gratuite Zip vMix une seule fois, et chaque semaine votre bénévole n'a qu'à ouvrir zipcaptions.app et cliquer sur Démarrer."
+  },
+  {
+    question: "Dans quelles régions intervenez-vous sur place pour la production d'événements, le sous-titrage en direct et les formations Google pour l'éducation ?",
+    answer: "Nous sommes basés dans le Grand Montréal (Québec, Canada). Nous assurons sur place la production d'événements hybrides, le sous-titrage et surtitrage en direct, le conseil audiovisuel et les formations Google pour l'éducation à Montréal, partout au Québec et à travers le Canada — tandis que nos applications web, diffusions virtuelles et formations à distance sont offertes dans le monde entier."
+  }
+];
 ---
 
 <BaseLayout 
   title="Zip Solutions | Sous-titrage en direct gratuit, outils CAA et accessibilité"
   description="Faciliter la communication grâce au sous-titrage en direct gratuit sur navigateur, aux outils de CAA hors ligne, à la production d'événements hybrides et aux technologies éducatives inclusives."
   schema={homeSchema}
+  faqs={homeFaqs}
 >
   
   <!-- Hero Section -->
@@ -620,6 +680,80 @@ const features = [
       </a>
     </div>
   </section>
+
+  <!-- Aperçu en texte clair : Nom de l'entreprise, services, tarifs et zones de service -->
+  <section class="py-16 bg-white border-t border-slate-200/80" aria-labelledby="business-summary-heading-fr">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-wider text-amethyst font-heading block mb-1">
+          Présentation de l'entreprise • Services • Tarification • Zones de service
+        </span>
+        <h2 id="business-summary-heading-fr" class="text-2xl sm:text-3xl font-extrabold font-heading text-midnight">
+          Solutions Zip en un coup d'œil : Nos services, nos tarifs et nos zones d'intervention
+        </h2>
+        <p class="mt-2 text-sm sm:text-base text-slate-600 leading-relaxed">
+          <strong>Solutions Zip</strong> (anglais : <strong>Zip Solutions</strong>) est une entreprise primée de technologies éducatives et d'assistance fondée en 2023 près de Montréal (Québec, Canada) par les enseignants et ingénieurs logiciels Chris Webb et James Petersen.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Carte 1 : Produits et services -->
+        <article class="p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200/90 space-y-3">
+          <span class="text-xs font-bold font-mono text-amethyst uppercase tracking-wider block">
+            1. Produits et services
+          </span>
+          <h3 class="text-lg font-bold font-heading text-midnight">
+            Ce que propose Solutions Zip
+          </h3>
+          <ul class="text-xs sm:text-sm text-slate-700 space-y-2 leading-relaxed">
+            <li><strong>Sous-titrage en direct et diffusion :</strong> <a href="/fr/zipcaptions" class="text-amethyst font-semibold hover:underline">Zip Captions</a> (sous-titrage sur navigateur et relais mobile par code QR), <a href="/fr/zipvmix" class="text-amethyst font-semibold hover:underline">Zip Captions pour vMix</a>, <a href="/fr/zipcaptionscompanion" class="text-amethyst font-semibold hover:underline">Companion Stream Deck</a>, <a href="/fr/zippanel" class="text-amethyst font-semibold hover:underline">ZipPanel</a> et <a href="/fr/zipconnect" class="text-amethyst font-semibold hover:underline">Zip Connect</a>.</li>
+            <li><strong>CAA et apprentissage inclusif :</strong> <a href="/fr/easyspeak" class="text-amethyst font-semibold hover:underline">Zip EasySpeak et EasySpeak AI</a> (synthèse vocale CAA hors ligne), <a href="/fr/zipspeech" class="text-amethyst font-semibold hover:underline">Zip Speech</a> pour Google Meet, <a href="/fr/zipmath" class="text-amethyst font-semibold hover:underline">Zip Solutions Remediator</a> (évaluation mathématique Google Workspace) et <a href="/fr/equibrowse" class="text-amethyst font-semibold hover:underline">EquiBrowse</a>.</li>
+            <li><strong>Événements, formation PD et conseil AV :</strong> <a href="/fr/live-event-quotes" class="text-amethyst font-semibold hover:underline">Sous-titrage événementiel sur mesure et surtitrage</a>, <a href="/fr/events" class="text-amethyst font-semibold hover:underline">Production d'événements en présentiel et hybrides</a>, <strong>Formations certifiées Google pour l'éducation (PD)</strong> et conseil en aide à l'écoute et audiovisuel.</li>
+          </ul>
+        </article>
+
+        <!-- Carte 2 : Tarification transparente -->
+        <article class="p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200/90 space-y-3">
+          <span class="text-xs font-bold font-mono text-teal-brand uppercase tracking-wider block">
+            2. Tarification transparente (USD)
+          </span>
+          <h3 class="text-lg font-bold font-heading text-midnight">
+            Outils gratuits et forfaits IA optionnels
+          </h3>
+          <ul class="text-xs sm:text-sm text-slate-700 space-y-2 leading-relaxed">
+            <li><strong>Applications web de base et extensions (0 $ / Gratuit pour toujours) :</strong> Le sous-titrage standard dans Zip Captions, les codes de salle, l'intégration OBS/vMix, EasySpeak CAA, EquiBrowse et Zip Solutions Remediator (clé Gemini BYOK) sont <strong>100 % gratuits (0,00 $ US)</strong> sans compte requis.</li>
+            <li><strong>Forfait IA Essentiel (5 $ US/mois) :</strong> Inclut 5 heures/mois de sous-titrage en direct propulsé par l'IA via Patreon.</li>
+            <li><strong>Forfait IA Premium (15 $ US/mois) :</strong> Inclut 10 heures/mois de sous-titrage en direct propulsé par l'IA.</li>
+            <li><strong>Forfait IA Platine (30 $ US/mois) :</strong> Inclut 25 heures/mois de sous-titrage en direct IA plus des articles exclusifs.</li>
+            <li><strong>Événements, formations PD et conseil AV :</strong> <a href="/fr/live-event-quotes" class="text-teal-brand font-semibold hover:underline">Devis sur mesure</a> selon la salle, le nombre de séances et l'équipe technique.</li>
+          </ul>
+        </article>
+
+        <!-- Carte 3 : Zones de service -->
+        <article class="p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200/90 space-y-3">
+          <span class="text-xs font-bold font-mono text-coral uppercase tracking-wider block">
+            3. Zones de service et disponibilité
+          </span>
+          <h3 class="text-lg font-bold font-heading text-midnight">
+            Sur place au Québec et au Canada • En ligne partout
+          </h3>
+          <ul class="text-xs sm:text-sm text-slate-700 space-y-2 leading-relaxed">
+            <li><strong>Siège social :</strong> Basé dans la région du <strong>Grand Montréal, Québec, Canada</strong>.</li>
+            <li><strong>Production sur place, sous-titrage événementiel et conseil AV :</strong> Interventions sur site pour les écoles, centres de services scolaires, commissions scolaires, universités, théâtres, municipalités et congrès à <strong>Montréal, partout au Québec et à travers le Canada</strong>.</li>
+            <li><strong>Formations Google pour l'éducation et ateliers PD :</strong> Offerts <strong>en présentiel à Montréal, au Québec et au Canada</strong>, ainsi qu'<strong>en virtuel dans le monde entier</strong> (Canada, États-Unis, Royaume-Uni, Europe et écoles internationales) en français et en anglais.</li>
+            <li><strong>Applications web et diffusions virtuelles :</strong> Accessibles <strong>dans le monde entier</strong> depuis tout navigateur moderne sans installation.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <FaqSection
+    faqs={homeFaqs}
+    title="Questions fréquentes des enseignants, équipes AV et organisateurs d'événements"
+    subtitle="Solutions aux défis concrets des classes, lieux de culte et salles de spectacle"
+    groupName="faq-fr-home"
+  />
 
   <!-- CTA Consultation & Event Services Banner (Zero Pills) -->
   <section class="py-16 bg-midnight text-white">

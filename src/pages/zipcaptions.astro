@@ -74,12 +74,40 @@ const zipCaptionsSchema = [
         "reviewBody": "Zip Captions makes it very easy to add live open captions to our service broadcasts for our livestream and our leased cable tv channel."
       }
     ],
-    "offers": {
-      "@type": "Offer",
-      "price": "0.00",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock"
-    }
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Regular Tier — Browser Live Captioning (Free Forever)",
+        "price": "0.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://zipcaptions.app"
+      },
+      {
+        "@type": "Offer",
+        "name": "Essential Tier — 5 Hours/Month AI Captions",
+        "price": "5.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://zipsolutions.org/pricing"
+      },
+      {
+        "@type": "Offer",
+        "name": "Premium Tier — 10 Hours/Month AI Captions",
+        "price": "15.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://zipsolutions.org/pricing"
+      },
+      {
+        "@type": "Offer",
+        "name": "Platinum Tier — 25 Hours/Month AI Captions + SWAG",
+        "price": "30.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://zipsolutions.org/pricing"
+      }
+    ]
   },
   {
     "@type": "VideoObject",
@@ -147,24 +175,28 @@ const specs = [
 
 const faqs = [
   {
-    question: "Is Zip Captions really 100% free?",
-    answer: "Yes. Standard browser-based live captioning in Zip Captions is 100% free forever with unlimited usage, no account registration required, and no credit card needed. Optional monthly Patreon tiers starting at $5/month are available if you want access to enhanced cloud AI transcription engines."
+    question: "My laptop's built-in microphone misses words in a noisy classroom, church sanctuary, or auditorium. How do I get accurate captions from across the room?",
+    answer: "A laptop's internal microphone is designed for someone sitting 18 inches away, so room echo and background chatter will degrade any speech-to-text tool. In a classroom, clipping on an inexpensive wireless lapel (lavalier) mic or routing your existing Phonak Roger / classroom audio system into the laptop transforms accuracy immediately. In a church sanctuary or auditorium, send an Aux or Line-Out feed of the speaker's isolated vocal mic from your soundboard into your laptop via a simple USB audio interface so Zip Captions hears only the speaker's voice, not the band or crowd."
   },
   {
-    question: "How do I add live captions to OBS Studio or vMix?",
-    answer: "Zip Captions integrates directly with OBS Studio via WebSockets to send real-time closed or open captions to Twitch and YouTube Live. For vMix productions, our free Zip vMix Connector bridges real-time caption text directly into any vMix title graphic or lower-third overlay."
+    question: "Our school board IT department blocks software downloads and refuses to sign vendor student-data agreements. Can teachers still use Zip Captions?",
+    answer: "Yes. Zip Captions runs 100% inside standard web browsers (Chrome, Safari, Edge, Brave) with zero software or MSI packages to install, requires zero student accounts or logins, and never saves audio or transcripts on external servers. Your live transcript exists only in your local browser RAM and vanishes the moment you close the tab—allowing teachers to use it immediately under strict Quebec Law 25, FIPPA, FERPA, and GDPR privacy rules."
   },
   {
-    question: "Can students or event attendees view live captions on their own phones?",
-    answer: "Yes. Using Zip Captions Broadcast mode, you can share a static room code or QR link so students, congregation members, or conference attendees can follow live captions on their own smartphones, tablets, or laptops—and customize their own font size, Lexend dyslexia-friendly typeface, and high-contrast colors."
+    question: "When I present Google Slides or PowerPoint in full-screen on a projector or SMART Board, it covers up my browser tab. How do I keep live captions visible on top?",
+    answer: "Click the Picture-in-Picture (PiP) icon inside the Zip Captions toolbar before starting your slideshow. That pops your live captions out into a resizable, always-on-top floating window that hovers cleanly above full-screen PowerPoint, Google Slides, PDFs, or videos. You can also use our free ZipPanel Chrome extension for persistent tab overlays."
   },
   {
-    question: "Are my classroom or meeting transcripts kept private?",
-    answer: "Yes. Zip Captions processes speech transiently and holds your running transcript locally inside your web browser memory. We do not store or archive your transcripts on external servers, making it safe for schools, universities, healthcare settings, and boardrooms."
+    question: "Hard-of-hearing or ESL students often hate sitting in the front row or using bulky assistive gear that singles them out. How does Broadcast mode help?",
+    answer: "Instead of isolating a student at the front of the room, write your permanent Broadcast Room Code (or display the QR code) on the board. Any student can discreetly open the live caption stream on their own Chromebook, tablet, or phone from any desk, adjust text size, switch on the Lexend dyslexia-friendly font, or turn on free Chrome On-Device AI translation into their home language without changing the main classroom screen."
   },
   {
-    question: "What file formats can I export my transcripts to?",
-    answer: "At the end of any session, you can download your transcript with a single click as time-coded SRT subtitles, WebVTT (.vtt) captions for video post-production, or clean plain text (.txt) ready for study notes and AI summaries."
+    question: "We used WebCaptioner before it shut down, and our AV booth is run by rotating volunteers. Do we have to generate a new room link or reconfigure OBS/vMix every week?",
+    answer: "No. Unlike meeting tools that create a new link for every session, Zip Captions gives you a permanent, static Broadcast Room Code. You print your QR code pew cards or lobby signs once, configure your OBS WebSocket or free Zip vMix Title bridge once, and every Sunday or event day your volunteer simply opens zipcaptions.app and clicks Start."
+  },
+  {
+    question: "When do we need the optional paid AI tiers ($5–$30/mo) instead of the $0 Free Forever browser engine?",
+    answer: "For everyday one-on-one conversations, quiet classrooms, and clear lapel-mic setups, the $0 Regular browser engine (WebSpeech API) works great with unlimited hours. Upgrade to an optional Patreon AI tier ($5/mo for 5 hrs, $15/mo for 10 hrs, or $30/mo for 25 hrs) when you need Azure AI cloud transcription for strong regional accents, technical or liturgical vocabulary, reverberant halls, or browsers without native WebSpeech support."
   }
 ];
 ---

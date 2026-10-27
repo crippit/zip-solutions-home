@@ -37,12 +37,16 @@ const specs = [
 
 const faqs = [
   {
-    question: "Comment Zip Speech vocalise-t-il dans Google Meet sans provoquer d'écho ?",
-    answer: "Zip Speech injecte la voix de synthèse directement dans le flux audio WebRTC du microphone à l'intérieur du navigateur, permettant aux participants d'entendre une voix claire sans haut-parleur externe ni câble audio virtuel."
+    question: "Dans Google Meet, les messages écrits dans le clavardage passent souvent inaperçus et la réduction de bruit bloque le son d'une tablette CAA placée devant le micro. Comment Zip Speech résout-il cela ?",
+    answer: "Le filtre antibruit de Google Meet coupe souvent les haut-parleurs externes, et les participants regardent rarement le volet de clavardage. Zip Speech injecte directement la voix de synthèse dans le flux microphone WebRTC sortant de Google Meet à l'intérieur du navigateur : dès que vous saisissez une phrase, votre vignette s'illumine et tous les participants vous entendent avec une clarté parfaite."
   },
   {
-    question: "Sur quels navigateurs l'extension Zip Speech est-elle disponible ?",
-    answer: "Zip Speech est proposé gratuitement comme extension native pour Google Chrome, Apple Safari sur macOS, Microsoft Edge et Mozilla Firefox."
+    question: "Faut-il installer des pilotes de câbles audio virtuels (comme VB-Cable) souvent bloqués par les services informatiques scolaires ?",
+    answer: "Non. Les pilotes audio virtuels exigent des droits d'administrateur et dérèglent souvent les paramètres de son. Zip Speech gère le routage audio à 100 % à l'intérieur de l'extension sur Chrome, Safari (macOS), Edge et Firefox, sans aucun pilote système à installer."
+  },
+  {
+    question: "Puis-je préparer des phrases rapides à l'avance pour ne pas prendre de retard dans une réunion animée ?",
+    answer: "Oui. Zip Speech permet d'enregistrer des boutons de réponses rapides CAA et de choisir parmi plusieurs voix et langues pour intervenir instantanément au fil de la conversation."
   }
 ];
 ---

@@ -36,27 +36,65 @@ const quoteChecklist = [
 
 const liveCaptionsServiceSchema = {
   "@type": "Service",
+  "@id": "https://zipsolutions.org/live-event-quotes#service",
   "name": "Custom Live Event Captions, QR Code Relay & Theatre Surtitles",
   "provider": {
     "@id": "https://zipsolutions.org/#organization"
   },
   "serviceType": "Live Event Captioning & Theatrical Surtitling",
-  "description": "Flexible, browser-powered live captions for conferences, auditorium presentations, QR code personal device relays, broadcast streams (vMix & OBS), and scripted theatre surtitles.",
-  "url": "https://zipsolutions.org/live-event-quotes"
+  "description": "Flexible, browser-powered live captions for conferences, auditorium presentations, QR code personal device relays, broadcast streams (vMix & OBS), and scripted theatre surtitles. Serving Montreal, Quebec, Canada on-site and events worldwide.",
+  "url": "https://zipsolutions.org/live-event-quotes",
+  "areaServed": [
+    { "@type": "City", "name": "Montreal" },
+    { "@type": "AdministrativeArea", "name": "Quebec" },
+    { "@type": "Country", "name": "Canada" },
+    { "@type": "Country", "name": "United States" },
+    { "@type": "Country", "name": "United Kingdom" },
+    { "@type": "Place", "name": "Worldwide" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Live Event Captioning & Surtitle Packages",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Attendee Personal Device Relay (via QR Code)",
+        "description": "Custom event quote. Real-time live captions streamed directly to attendee smartphones, tablets, and laptops via a scannable QR code."
+      },
+      {
+        "@type": "Offer",
+        "name": "Stage Screens, Venue Displays & vMix/OBS Stream Overlays",
+        "description": "Custom event quote. High-contrast auditorium projection displays and direct digital title overlays for vMix and OBS Studio broadcasts."
+      },
+      {
+        "@type": "Offer",
+        "name": "Scripted Theatre Surtitles",
+        "description": "Custom production quote. Pre-loaded and live-cued theatrical surtitles synchronized with live stage actors and musical performances."
+      }
+    ]
+  }
 };
 
 const quoteFaqs = [
   {
-    question: "How quickly do you respond to live event captioning quote requests?",
-    answer: "We typically respond within one business day with a tailored recommendation and transparent pricing estimate based on your venue setup, display preferences, and event duration."
+    question: "Why can't we just run automatic speech-to-text for a live theatre play, musical, or scripted ceremony?",
+    answer: "Automated speech-to-text struggles in live theatre because actors project dramatically, overlap dialogue, sing over musical accompaniment, and rely on split-second comedic or dramatic timing—a two-second AI lag or misheard word ruins a punchline or spoils a scene. For theatre and scripted shows, we pre-load your script and manually cue surtitles live in real time to match the actors' exact delivery on stage screens or attendee smartphones."
   },
   {
-    question: "Can we combine QR code personal device relays with a stage screen or vMix stream?",
-    answer: "Yes! Because our captioning tools are browser-powered, we can simultaneously feed an auditorium projector or vMix/OBS broadcast overlay while allowing attendees to scan a QR code to follow along on their own smartphones."
+    question: "Our conference has 4 breakout rooms running at the same time and no budget to put giant LED caption screens in every room. How do we make all 4 rooms accessible?",
+    answer: "That is exactly what our QR Code Attendee Personal Device Relay is built for. Instead of renting extra projectors and screens for every breakout room, we assign each room a static QR code poster at the door and on the presenter's opening slide. Attendees scan the room's QR code with their phone or laptop to read real-time captions right at their seat, with zero app downloads."
   },
   {
-    question: "How do scripted theatre surtitles differ from automated live captions?",
-    answer: "For live theatre and musical performances, we pre-load your script and manually cue surtitles in real time to match actors' exact pacing and dramatic timing—preventing spoilers or speech-to-text errors during artistic performances."
+    question: "What does our venue AV tech actually need to hand you on the day of the event?",
+    answer: "Just two things: a clean line-level audio feed of the speaking microphones from the venue soundboard (XLR, 1/4-inch TRS, or USB audio interface—with walk-in music and crowd mics excluded) and a standard power outlet. If you also want captions on a stage monitor or vMix/OBS livestream, we connect via HDMI or local network WebSockets/HTTP in minutes."
+  },
+  {
+    question: "What if our keynote speakers use heavy industry acronyms, French/English bilingual switches, or specialized proper nouns?",
+    answer: "Before your event, send us your agenda, speaker names, organization acronyms, and slide decks. We configure custom vocabulary lists and language profiles (including English and Canadian French) so proper nouns, sponsor names, and technical terms transcribe accurately."
+  },
+  {
+    question: "How quickly do you turn around live event quotes, and what areas do you serve on-site vs. remotely?",
+    answer: "We respond within one business day with a clear setup recommendation and transparent quote. We provide on-site event captioning and theatre surtitling across Greater Montreal, Quebec, and Canada, and support virtual or hybrid conference streams worldwide."
   }
 ];
 ---

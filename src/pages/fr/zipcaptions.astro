@@ -73,12 +73,40 @@ const zipCaptionsSchema = {
       "reviewBody": "Zip Captions facilite grandement l'ajout de sous-titres ouverts en direct à nos diffusions de culte pour le web et notre chaîne câblée."
     }
   ],
-  "offers": {
-    "@type": "Offer",
-    "price": "0.00",
-    "priceCurrency": "USD",
-    "availability": "https://schema.org/InStock"
-  }
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Forfait Standard — Sous-titrage en direct sur navigateur (Gratuit pour toujours)",
+      "price": "0.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://zipcaptions.app"
+    },
+    {
+      "@type": "Offer",
+      "name": "Forfait Essentiel — 5 heures/mois de sous-titrage IA",
+      "price": "5.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://zipsolutions.org/fr/pricing"
+    },
+    {
+      "@type": "Offer",
+      "name": "Forfait Premium — 10 heures/mois de sous-titrage IA",
+      "price": "15.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://zipsolutions.org/fr/pricing"
+    },
+    {
+      "@type": "Offer",
+      "name": "Forfait Platine — 25 heures/mois de sous-titrage IA + Articles exclusifs",
+      "price": "30.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://zipsolutions.org/fr/pricing"
+    }
+  ]
 };
 
 const capabilities = [
@@ -121,24 +149,28 @@ const specs = [
 
 const faqs = [
   {
-    question: "Est-ce que Zip Captions est vraiment 100 % gratuit ?",
-    answer: "Oui. Le sous-titrage en direct standard sur navigateur dans Zip Captions est 100 % gratuit pour toujours, avec une utilisation illimitée, sans création de compte et sans carte de crédit. Des forfaits mensuels optionnels sur Patreon (à partir de 5 $/mois) sont proposés si vous souhaitez accéder à nos moteurs de transcription IA avancés."
+    question: "Le microphone intégré de mon ordinateur capte mal la voix dans une classe bruyante, une église ou un amphithéâtre. Comment obtenir des sous-titres précis à distance ?",
+    answer: "Le micro interne d'un ordinateur portable est conçu pour une personne située à moins de 50 cm ; l'écho et le bruit ambiant nuisent donc à n'importe quel outil de reconnaissance vocale. En classe, l'utilisation d'un simple micro-cravate sans fil ou le branchement de votre système Phonak Roger à l'ordinateur transforme immédiatement la précision. Dans un lieu de culte ou un auditorium, reliez une sortie auxiliaire (Aux/Line-Out) de votre console de son (isolant le micro de l'orateur sans la musique) à l'ordinateur via une carte son USB."
   },
   {
-    question: "Comment ajouter des sous-titres en direct dans OBS Studio ou vMix ?",
-    answer: "Zip Captions s'intègre directement à OBS Studio via WebSockets pour envoyer des sous-titres en temps réel sur Twitch et YouTube Live. Pour les productions vMix, notre connecteur gratuit Zip vMix transmet le texte en direct directement vers n'importe quel titre ou synthé vMix."
+    question: "Le service informatique (TI) de notre centre de services scolaire bloque l'installation de logiciels et refuse les ententes de partage de données élèves. Peut-on quand même utiliser Zip Captions ?",
+    answer: "Oui. Zip Captions fonctionne à 100 % dans le navigateur web (Chrome, Safari, Edge, Brave) sans aucun logiciel à installer, sans création de compte élève et sans aucun stockage audio ou texte sur des serveurs externes. La transcription reste uniquement dans la mémoire vive (RAM) locale de votre navigateur et disparaît dès la fermeture de l'onglet, respectant ainsi la Loi 25 au Québec, la LPRPDE, la FERPA et le RGPD."
   },
   {
-    question: "Les élèves ou participants peuvent-ils lire les sous-titres sur leur propre téléphone ?",
-    answer: "Oui. Grâce au mode Diffusion (Broadcast) de Zip Captions, vous partagez un code de salle fixe permettant aux élèves, fidèles ou congressistes de suivre les sous-titres en temps réel sur leur propre téléphone, tablette ou ordinateur portable, tout en ajustant la taille du texte, la police Lexend adaptée à la dyslexie et le contraste."
+    question: "Lorsque je présente un diaporama Google Slides ou PowerPoint en plein écran sur mon TNI ou projecteur, il cache l'onglet des sous-titres. Comment garder les sous-titres visibles par-dessus ?",
+    answer: "Cliquez sur le bouton Image dans l'image (Picture-in-Picture) dans la barre d'outils de Zip Captions avant de lancer votre diaporama. Vos sous-titres se détachent alors dans une fenêtre flottante toujours au premier plan qui reste visible par-dessus vos présentations PowerPoint, Google Slides, PDF ou vidéos en plein écran. Vous pouvez aussi installer notre extension gratuite ZipPanel."
   },
   {
-    question: "Mes transcriptions de cours ou de réunions restent-elles confidentielles ?",
-    answer: "Oui. Zip Captions traite la voix de manière éphémère et conserve votre transcription localement dans la mémoire de votre navigateur. Nous ne stockons pas vos transcriptions sur des serveurs externes, garantissant une confidentialité optimale pour les écoles, universités, hôpitaux et conseils d'administration."
+    question: "Les élèves malentendants ou allophones refusent souvent de s'asseoir au premier rang pour ne pas être stigmatisés. Comment le mode Diffusion (Broadcast) résout-il ce problème ?",
+    answer: "Plutôt que d'isoler un élève à l'avant, inscrivez votre code de salle fixe (ou affichez le code QR) au tableau. N'importe quel élève peut suivre discrètement les sous-titres en direct sur son propre Chromebook, sa tablette ou son téléphone depuis sa place, ajuster la taille du texte, activer la police Lexend adaptée à la dyslexie ou activer la traduction locale gratuite par l'IA de Chrome dans sa langue maternelle."
   },
   {
-    question: "Dans quels formats puis-je exporter mes transcriptions ?",
-    answer: "À la fin de chaque session, vous pouvez télécharger votre transcription en un clic au format de sous-titres horodatés SRT, WebVTT (.vtt) pour le montage vidéo, ou en texte brut (.txt) prêt pour vos notes de cours et synthèses IA."
+    question: "Nous utilisions WebCaptioner avant sa fermeture et notre régie est gérée par des bénévoles chaque dimanche. Faut-il reconfigurer un nouveau lien ou OBS/vMix chaque semaine ?",
+    answer: "Non. Contrairement aux outils de visioconférence qui changent de lien à chaque réunion, Zip Captions utilise un code de salle permanent et fixe. Vous imprimez vos cartes de bancs ou affiches avec code QR une seule fois, vous configurez votre liaison OBS WebSocket ou l'extension gratuite Zip vMix une seule fois, et chaque semaine votre bénévole n'a qu'à ouvrir zipcaptions.app et cliquer sur Démarrer."
+  },
+  {
+    question: "Dans quels cas faut-il choisir un forfait IA payant (5 $ à 30 $ US/mois) plutôt que le moteur standard gratuit à 0 $ ?",
+    answer: "Pour les échanges quotidiens, les salles de classe calmes et les configurations avec micro-cravate, le moteur standard gratuit à 0 $ (WebSpeech) fonctionne de manière illimitée. Les forfaits optionnels Patreon (5 $/mois pour 5 h, 15 $/mois pour 10 h, 30 $/mois pour 25 h) sont recommandés lorsque vous avez besoin du moteur infonuagique Azure AI pour des accents prononcés, du vocabulaire technique ou liturgique complexe, ou des salles très réverbérantes."
   }
 ];
 ---

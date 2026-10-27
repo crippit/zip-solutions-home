@@ -52,36 +52,63 @@ const idealAudiences = [
 
 const faqs = [
   {
-    question: "Pouvez-vous gérer des congrès hybrides multi-salles avec conférenciers sur place et à distance ?",
-    answer: "Oui. Nous concevons et opérons des régies de diffusion multi-salles permettant aux intervenants présents et aux invités en visioconférence d'échanger de façon fluide, tout en offrant un son clair, une vidéo stable et un sous-titrage en direct à tous les participants."
+    question: "Les devis audiovisuels des hôtels et palais des congrès dépassent souvent 5 000 $ par salle pour la webdiffusion hybride et le sous-titrage. Comment gardez-vous des tarifs réalistes pour les écoles et OBNL ?",
+    answer: "Les fournisseurs AV traditionnels facturent des encodeurs matériels propriétaires coûteux et de la sténotypie à la minute. Parce que nous avons conçu nous-mêmes l'architecture web de Zip Captions, nous nous branchons directement sur la console sonore existante de votre salle, utilisons une régie souple vMix/OBS et diffusons les sous-titres simultanément sur les écrans géants et sur les téléphones des participants par code QR, éliminant ainsi des milliers de dollars de location matérielle."
   },
   {
-    question: "Comment le sous-titrage en direct est-il intégré lors des événements ?",
-    answer: "Nous diffusons les sous-titres en direct simultanément sur les écrans géants de la salle, en incrustation vidéo (via OBS Studio ou vMix) et sur les téléphones intelligents des participants grâce à un code QR."
+    question: "Lorsqu'un panéliste intervient à distance sur Zoom ou Google Meet dans une salle en présentiel, pourquoi y a-t-il souvent de l'écho — et comment l'évitez-vous ?",
+    answer: "Les boucles d'écho surviennent lorsque le son de l'invité à distance repart dans les microphones de la salle ou lui est renvoyé dans son casque. Avant le jour J, nous effectuons un test technique avec chaque conférencier distant et configurons un routage audio « mix-minus » propre vers la sonorisation de la salle et la webdiffusion, garantissant des échanges naturels sans aucun larsen."
   },
   {
-    question: "Offrez-vous des ateliers de perfectionnement professionnel pour les écoles et centres de services scolaires ?",
-    answer: "Oui. Nous animons des formations pratiques sur mesure pour le personnel enseignant, les orthophonistes et les équipes TI sur le sous-titrage en classe, l'implantation de la CAA et la conception universelle de l'apprentissage (CUA)."
+    question: "Que se passe-t-il si le Wi-Fi de l'hôtel ou du gymnase de l'école sature lorsque 300 participants entrent dans la salle ?",
+    answer: "La saturation du Wi-Fi public est le piège numéro un des événements hybrides. Nous privilégions toujours une connexion filaire Ethernet pour la régie principale et le poste de sous-titrage, apportons un relais cellulaire de secours lors de nos productions sur place à Montréal, au Québec et au Canada, et utilisons des flux texte WebSocket ultra-légers pour que le relais par code QR fonctionne même sur un réseau mobile chargé."
   },
   {
-    question: "Qui anime vos formations Google pour l'éducation et ateliers sur mesure ?",
-    answer: "Les sessions sont directement conçues et animées par Chris Webb (formateur et innovateur certifié Google pour l'éducation, responsable GEG et ambassadeur Champions) et James Petersen (innovateur certifié Google pour l'éducation), associant une solide expérience de la classe et de l'ingénierie logicielle."
+    question: "Les journées pédagogiques ressemblent trop souvent à des présentations théoriques où le personnel décroche. En quoi vos ateliers Google pour l'éducation sont-ils différents ?",
+    answer: "Nos ateliers sont conçus et animés par de vrais enseignants de terrain — Chris Webb (formateur et innovateur certifié Google pour l'éducation, responsable GEG et ambassadeur Champions) et James Petersen (innovateur certifié Google pour l'éducation). Plutôt que d'écouter un exposé théorique, vos équipes repartent avec des séquences de cours Gemini AI, des outils Google Workspace et des aménagements d'accessibilité prêts à être utilisés dès le lendemain matin."
   },
   {
-    question: "Offrez-vous des formations pour les écoles ainsi que pour les entreprises ?",
-    answer: "Oui. Pour les écoles et centres de services scolaires, nous abordons la pédagogie en classe, Google Classroom, la préparation de cours avec Gemini et l'accessibilité. Pour les entreprises, nous nous concentrons sur la collaboration avec Google Workspace, les flux de travail Sheets et la productivité avec l'IA."
+    question: "Dans quelles régions intervenez-vous sur place pour la production d'événements par rapport aux formations et régies à distance ?",
+    answer: "Nous sommes basés dans le Grand Montréal (Québec, Canada). Notre équipe se déplace sur site pour les congrès, colloques scolaires, spectacles de théâtre et journées pédagogiques à Montréal, partout au Québec et à travers le Canada. Nous assurons également la direction technique à distance, le sous-titrage virtuel et les formations Google pour l'éducation en ligne dans le monde entier."
   }
 ];
 
 const eventServiceSchema = {
   "@type": "Service",
+  "@id": "https://zipsolutions.org/fr/events#service",
   "name": "Organisation d'événements hybrides et formations Google pour l'éducation",
   "provider": {
     "@id": "https://zipsolutions.org/#organization"
   },
   "serviceType": "Production de congrès hybrides, webdiffusion multi-salles et formation continue en éducation",
-  "description": "Production technique concrète, webdiffusion hybride multi-salles, sous-titrage en direct et ateliers de formation Google pour l'éducation sur mesure pour écoles et entreprises.",
-  "url": "https://zipsolutions.org/fr/events"
+  "description": "Production technique concrète, webdiffusion hybride multi-salles, sous-titrage en direct et ateliers de formation Google pour l'éducation sur mesure pour écoles et entreprises. Sur place à Montréal, au Québec et au Canada ; en virtuel dans le monde entier.",
+  "url": "https://zipsolutions.org/fr/events",
+  "areaServed": [
+    { "@type": "City", "name": "Montréal" },
+    { "@type": "AdministrativeArea", "name": "Québec" },
+    { "@type": "Country", "name": "Canada" },
+    { "@type": "Country", "name": "États-Unis" },
+    { "@type": "Country", "name": "Royaume-Uni" },
+    { "@type": "Place", "name": "Dans le monde entier" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services de production événementielle et de formation PD",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Production d'événements en présentiel et hybrides & Webdiffusion multi-salles",
+        "description": "Devis sur mesure selon l'événement. Webdiffusion multi-salles, intégration de conférenciers à distance et gestion de l'accessibilité en salle.",
+        "url": "https://zipsolutions.org/fr/contact-us"
+      },
+      {
+        "@type": "Offer",
+        "name": "Formations Google pour l'éducation et ateliers de perfectionnement professionnel (PD)",
+        "description": "Devis sur mesure pour écoles, centres de services scolaires, commissions scolaires et entreprises. Animés par des formateurs et innovateurs certifiés Google pour l'éducation.",
+        "url": "https://zipsolutions.org/fr/contact-us"
+      }
+    ]
+  }
 };
 ---
 

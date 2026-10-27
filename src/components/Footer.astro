@@ -46,6 +46,18 @@ const currentYear = new Date().getFullYear();
           <span class="text-sm select-none" aria-hidden="true">🍁</span>
           <span>{t('footer.madeIn')} <span class="text-coral">❤️</span> {t('footer.nearMontreal')}</span>
         </div>
+        <div class="pt-2 text-xs text-slate-400 leading-relaxed space-y-1 border-t border-slate-800/80 max-w-sm">
+          <p>
+            <strong class="text-slate-200">{isFr ? "Zones de service :" : "Service Areas:"}</strong> {isFr
+              ? "Basé dans le Grand Montréal (Québec, Canada). Services sur place à Montréal, au Québec et partout au Canada ; applications web et formations virtuelles disponibles dans le monde entier."
+              : "Based in Greater Montreal, Quebec, Canada. On-site event production, live captioning & AV consultancy across Montreal, Quebec & Canada; browser apps & virtual training available worldwide."}
+          </p>
+          <p>
+            <strong class="text-slate-200">{isFr ? "Tarification :" : "Pricing:"}</strong> {isFr
+              ? "Outils web de base 100 % gratuits (0 $) • Sous-titrage IA optionnel de 5 $ à 30 $ US/mois • Devis sur mesure pour événements et formations PD."
+              : "100% Free ($0) core web tools • Optional AI captioning $5–$30 USD/mo • Custom quotes for live events & educator PD."}
+          </p>
+        </div>
       </div>
 
       <!-- Quick Links: Products -->

@@ -37,12 +37,16 @@ const specs = [
 
 const faqs = [
   {
-    question: "How does Zip Captions send live captions into vMix?",
-    answer: "The Zip Captions vMix Extension connects directly to the vMix Web Controller API over localhost or your local studio network, updating your designated GT Title or XAML lower-third text field in real time without chroma-keying or window capture."
+    question: "Why not just window-capture a browser tab or chroma-key a green box into vMix for live captions?",
+    answer: "Window-capturing a browser tab in vMix looks blurry when scaled, breaks if someone minimizes or resizes the Chrome window during a live show, and chroma-keying leaves ugly green fringes around text edges. The Zip Captions vMix Extension injects pure text strings directly into your native vMix GT Title or XAML input via the vMix Web Controller API—so your captions render with crisp vector broadcast typography, drop shadows, and custom lower-third animations."
   },
   {
-    question: "Can Zip Captions run on a separate computer from the main vMix production machine?",
-    answer: "Yes. Because the extension communicates with vMix over HTTP via the vMix Web Controller, you can run Zip Captions on a dedicated captioning laptop on the same local network and point it to your vMix machine's IP address and port."
+    question: "Our main vMix production PC is already running at 80% GPU load with multi-camera switching. Can we run Zip Captions on a separate laptop?",
+    answer: "Yes. Because the extension talks to vMix over standard HTTP via the vMix Web Controller, you can run Zip Captions on any lightweight laptop on the same studio LAN and point the extension to your vMix machine's IP address and port (default 8088)—putting zero extra CPU or browser load on your main switcher."
+  },
+  {
+    question: "How do we stop long sentences from overflowing off the edge of our vMix lower-third graphic?",
+    answer: "Inside the extension settings, you can set exact character-per-line limits and line counts so incoming caption text automatically wraps and paginates cleanly inside your specific vMix GT Title bounding box."
   }
 ];
 ---
