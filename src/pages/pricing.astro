@@ -37,7 +37,7 @@ const tiers = [
     name: "Premium Tier",
     price: "$15",
     period: "per month",
-    description: "Best for regular meetings, classes, and church broadcasts (10 hours AI).",
+    description: "Best for individual educators, creators, and personal sessions (10 hours AI).",
     highlight: true,
     badge: "Most Popular",
     ctaText: "Choose Premium",
@@ -48,7 +48,7 @@ const tiers = [
     name: "Platinum Tier",
     price: "$30",
     period: "per month",
-    description: "Maximum AI captioning capacity (25 hours) plus SWAG & dedicated priority.",
+    description: "Maximum personal AI captioning capacity (25 hours) plus SWAG & priority.",
     highlight: false,
     ctaText: "Choose Platinum",
     ctaLink: "https://patreon.com/zipcaptions/membership",
@@ -58,7 +58,8 @@ const tiers = [
 
 const features = [
   { name: "Regular Captioning", values: ["Unlimited", "Unlimited", "Unlimited", "Unlimited", "Unlimited"] },
-  { name: "Browser Support", values: ["WebSpeech Browsers²", "WebSpeech Browsers²", "Any Browser¹", "Any Browser¹", "Any Browser¹"] },
+  { name: "Browser Support (Captioning)", values: ["Chrome, Safari & Edge²", "Chrome, Safari & Edge²", "Any Browser¹", "Any Browser¹", "Any Browser¹"] },
+  { name: "Broadcast / QR Viewing", values: ["Any Browser¹", "Any Browser¹", "Any Browser¹", "Any Browser¹", "Any Browser¹"] },
   { name: "Picture-in-Picture (PiP) Mode", values: ["Chromium (Chrome, Edge)⁸", "Chromium (Chrome, Edge)⁸", "Chromium (Chrome, Edge)⁸", "Chromium (Chrome, Edge)⁸", "Chromium (Chrome, Edge)⁸"] },
   { name: "Real-Time Translation", values: ["Chrome On-Device AI⁹", "Chrome On-Device AI⁹", "Chrome On-Device AI⁹", "Chrome On-Device AI⁹", "Chrome On-Device AI⁹"] },
   { name: "AI Captioning (/month)³", values: ["—", "Request⁷", "5 hours³", "10 hours³", "25 hours³"] },
@@ -66,7 +67,7 @@ const features = [
   { name: "Customizable Appearance", values: ["Yes", "Yes", "Yes", "Yes", "Yes"] },
   { name: "Android Mobile App⁴", values: ["Yes", "Yes", "Yes", "Yes", "Yes"] },
   { name: "Mobile Browser Support", values: ["Yes", "Yes", "Yes", "Yes", "Yes"] },
-  { name: "Windows App Available²", values: ["Yes", "Yes", "Yes", "Yes", "Yes"] },
+  { name: "Windows App Available", values: ["Yes", "Yes", "Yes", "Yes", "Yes"] },
   { name: "Support Available⁵", values: ["Discord Group", "Discord Group", "Priority Support", "Priority Support", "Priority Support"] },
   { name: "GDPR Compliant", values: ["Yes", "Yes", "Yes", "Yes", "Yes"] },
   { name: "Exclusive SWAG Pack", values: ["—", "—", "—", "—", "Yes"] },
@@ -75,19 +76,19 @@ const features = [
 const faqs = [
   {
     question: "What happens if our church, classroom, or livestream runs out of AI captioning hours right in the middle of a sermon or lecture? Does the screen go blank?",
-    answer: "Never. We never cut off an active speaker or leave a deaf or hard-of-hearing viewer staring at a blank screen. If your monthly AI hour allocation (5 hrs on Essential, 10 hrs on Premium, or 25 hrs on Platinum) is reached mid-session, you can immediately switch to unlimited $0 Regular browser-based captioning in one click without losing your Broadcast Room Code or OBS/vMix connection."
+    answer: "Never. We never cut off an active speaker or leave a deaf or hard-of-hearing viewer staring at a blank screen. If your monthly AI hour allocation (5 hrs on Essential, 10 hrs on Premium, or 25 hrs on Platinum) is reached mid-session, you can immediately switch to unlimited $0 Regular free captioning in one click (in Chrome, Safari, or Edge) without losing your Broadcast Room Code or OBS/vMix connection."
   },
   {
-    question: "When do I actually need paid AI Captioning ($5–$30/mo) versus the $0 Regular browser engine?",
-    answer: "If you are using Google Chrome, Safari, or Edge in a quiet room with a good lapel or headset microphone, the $0 Regular tier (browser WebSpeech API) gives you unlimited live captions forever at zero cost. Paid AI Captioning (powered by Microsoft Azure AI) is built for tougher real-world conditions: distant podium mics, echoey sanctuaries, speakers with strong regional accents, specialized medical/academic terminology, or browsers that lack built-in WebSpeech support."
+    question: "When do I actually need paid AI Captioning ($5–$30/mo) versus $0 Regular free captioning?",
+    answer: "If you are using Google Chrome, Apple Safari, or Microsoft Edge in a quiet room with a good lapel or headset microphone, the $0 Regular tier gives you unlimited live captions forever at zero cost. Paid AI Captioning (powered by Microsoft Azure AI) is built for tougher real-world conditions: distant podium mics, echoey sanctuaries, speakers with strong regional accents, specialized medical/academic terminology, or capturing captions in browsers that do not support free captioning (such as Firefox, Brave, or Opera). Viewing shared Broadcast or QR code streams works for free in any browser."
   },
   {
     question: "Do we have to pay extra when 50 students or 300 conference attendees scan our Broadcast QR code to read captions on their phones?",
     answer: "No. Audience viewing via Broadcast Room Codes and QR codes is 100% free and unlimited across every tier—including the $0 Regular tier. You never pay per viewer, per student, or per connected mobile device."
   },
   {
-    question: "Our school district, university, or municipality cannot use Patreon or monthly credit cards. Can we purchase via invoice/PO, or get donated hours if we have zero budget?",
-    answer: "Yes to both. If your school board, church, or organization requires an official invoice, purchase order (PO), or custom high-hour allocation for a multi-day conference, contact us directly through our Contact or Live Event Quotes page and we will set it up outside Patreon. And if you are an educator, non-profit, or community group with zero budget, apply to our Giving Back program to receive community-donated AI captioning hours at no cost."
+    question: "Our school district, university, or enterprise cannot use Patreon or needs dedicated event support. How does Enterprise pricing work?",
+    answer: "Patreon memberships are designed for personal or individual usage. For enterprise deployments, multi-room conferences, or institutions requiring dedicated support and official Purchase Order (PO) invoicing, our enterprise pricing is $1,000 for Day 1 (includes 1 room), $250 for each additional day, and $200 per day for each additional room. Use our Enterprise Pricing Calculator (/enterprise-pricing) to configure your exact schedule and submit a custom quote request."
   },
   {
     question: "Are EasySpeak AAC, EquiBrowse, and Zip Solutions Remediator included for free, or do they require a Patreon subscription?",
@@ -188,13 +189,71 @@ const pricingSchema = {
         Zip Captions Pricing
       </h1>
       <p class="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-        Zip Captions will always have a 100% free core tier. Choose an optional paid membership to unlock advanced AI captioning engines and support development.
+        Zip Captions will always have a 100% free core tier. Patreon memberships are designed for <strong>personal or individual usage</strong>, while organizations and events requiring dedicated support can build a tailored quote with our <strong>Enterprise Pricing Calculator</strong>.
       </p>
+
+      <!-- Usage Track Selector Cards -->
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 text-left max-w-3xl mx-auto">
+        <a 
+          href="#personal-plans" 
+          class="p-5 rounded-2xl bg-white border-2 border-amethyst/40 hover:border-amethyst shadow-xs transition-all flex flex-col justify-between group"
+        >
+          <div>
+            <span class="text-xs font-bold font-mono uppercase tracking-wider text-amethyst block mb-1">
+              Personal &amp; Individual Usage
+            </span>
+            <h2 class="text-base sm:text-lg font-bold font-heading text-midnight">
+              Free &amp; Patreon Monthly Tiers ($0–$30/mo)
+            </h2>
+            <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+              Self-serve browser captioning and monthly AI hour packs via Patreon for individual users, solo teachers, and personal streams.
+            </p>
+          </div>
+          <span class="mt-3 text-xs font-bold text-amethyst group-hover:underline inline-flex items-center gap-1">
+            <span>View Individual Plans Below</span>
+            <span aria-hidden="true">&darr;</span>
+          </span>
+        </a>
+
+        <a 
+          href="/enterprise-pricing" 
+          class="p-5 rounded-2xl bg-midnight text-white border-2 border-midnight hover:border-teal-brand shadow-md transition-all flex flex-col justify-between group"
+        >
+          <div>
+            <span class="text-xs font-bold font-mono uppercase tracking-wider text-teal-light block mb-1">
+              Enterprise &amp; Supported Events
+            </span>
+            <h2 class="text-base sm:text-lg font-bold font-heading text-white">
+              Custom Enterprise Quote Calculator
+            </h2>
+            <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+              $1,000 Day 1 • +$250 each additional day • +$200/day per additional room. Includes dedicated support &amp; invoice/PO billing.
+            </p>
+          </div>
+          <span class="mt-3 text-xs font-bold text-teal-light group-hover:underline inline-flex items-center gap-1">
+            <span>Build an Enterprise Quote</span>
+            <span aria-hidden="true">&rarr;</span>
+          </span>
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- Pricing Cards (Mobile & Tablet) -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <div id="personal-plans" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 scroll-mt-20">
+    <div class="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div>
+        <span class="text-xs font-bold font-mono uppercase tracking-wider text-amethyst block mb-1">
+          Self-Serve Individual Memberships
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-midnight">
+          Personal &amp; Individual Usage Plans (via Patreon)
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-600 mt-1">
+          Patreon support tiers are intended for personal or individual usage. Need enterprise deployment, multi-room support, or PO invoicing? <a href="/enterprise-pricing" class="text-teal-brand font-bold underline hover:text-teal-dark">Use the Enterprise Pricing Calculator &rarr;</a>
+        </p>
+      </div>
+    </div>
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
       {tiers.map((tier) => (
@@ -287,10 +346,45 @@ const pricingSchema = {
       </div>
     </div>
 
+    <!-- Enterprise & Supported Events Callout Card -->
+    <div class="bg-gradient-to-br from-midnight to-slate-900 text-white rounded-3xl p-8 sm:p-10 border border-slate-800 shadow-xl mb-12 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+      <div class="space-y-3 max-w-2xl">
+        <span class="text-xs font-bold font-mono uppercase tracking-wider text-teal-light block">
+          Enterprise &amp; Supported Live Events
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-white">
+          Need Zip Captions for Enterprise or Multi-Room Events with Dedicated Support?
+        </h2>
+        <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+          While Patreon tiers are built for personal and individual usage, our Enterprise model includes dedicated technical support, custom AI vocabulary setup, multi-room QR relays, and official Invoice/PO billing:
+        </p>
+        <div class="flex flex-wrap gap-3 pt-1 text-xs font-mono">
+          <span class="px-3 py-1.5 rounded-xl bg-white/10 border border-white/15 text-white font-bold">
+            1 Day = $1,000
+          </span>
+          <span class="px-3 py-1.5 rounded-xl bg-white/10 border border-white/15 text-teal-light font-bold">
+            Each Additional Day = +$250
+          </span>
+          <span class="px-3 py-1.5 rounded-xl bg-white/10 border border-white/15 text-coral-light font-bold">
+            Additional Rooms = +$200 / room / day
+          </span>
+        </div>
+      </div>
+      <div class="shrink-0 w-full lg:w-auto">
+        <a 
+          href="/enterprise-pricing" 
+          class="w-full lg:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl font-heading font-bold text-white bg-teal-brand hover:bg-teal-light hover:text-midnight shadow-md transition-all text-sm sm:text-base"
+        >
+          <span>Open Enterprise Quote Calculator</span>
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </div>
+
     <!-- Footnotes -->
     <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 text-xs text-slate-600 space-y-2 leading-relaxed">
-      <p><b>1.</b> The paid tiers technically support any modern browser (including Chrome, Edge, Safari, Firefox, Opera, and Brave) because caption audio is processed in the cloud by Azure AI rather than browser-specific speech engines.</p>
-      <p><b>2.</b> Regular free captioning works in any browser that supports the WebSpeech API (such as Google Chrome and Safari; Edge is supported when Zip Captions is installed from the Microsoft Store).</p>
+      <p><b>1.</b> Paid AI captioning and Broadcast / QR room viewing work in any modern web browser (including Google Chrome, Microsoft Edge, Apple Safari, Mozilla Firefox, Opera, and Brave).</p>
+      <p><b>2.</b> Regular free captioning (microphone capture) is supported in Google Chrome, Apple Safari, and Microsoft Edge. Browsers such as Firefox, Brave, and Opera require a paid AI tier to capture captions, though viewing shared Broadcast / QR streams works for free in any browser.</p>
       <p><b>3.</b> The number of hours are based on token usage. The tokens are awarded based on your Patreon tier, and are reliant upon you having an active Patreon subscription. Token allocation is subject to change at any point and is currently subsidized by our membership to the Microsoft Founders Hub.</p>
       <p><b>4.</b> You can install Zip Captions from the Google Play Store, but it will also run on iOS, either as an installable Progressive Web App, or in the browser.</p>
       <p><b>5.</b> Dedicated support is available for all tiers, however, response times will vary, and the lower tiers rely mainly on community support.</p>

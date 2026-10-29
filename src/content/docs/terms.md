@@ -65,7 +65,7 @@ Human dignity and privacy are central to our software architecture.
 
 Our web applications may interface with third-party technologies to deliver speech recognition, translation, or media streaming:
 
-* **Browser Speech Engines:** Tools using the browser Web Speech API rely on the speech recognition engine provided by your operating system or browser vendor (such as Google Chrome, Microsoft Edge, or Apple Safari).
+* **Browser Speech Recognition:** Standard free captioning relies on the speech recognition capabilities provided by your operating system or browser vendor (supported in Google Chrome, Apple Safari, and Microsoft Edge). Paid AI captioning and Broadcast viewing are supported across any modern browser.
 * **Optional Cloud Providers:** If you configure optional cloud speech APIs or external language translation keys, your use of those services is subject to the terms and privacy practices of those respective third-party providers.
 * **Third-Party Availability:** Zip Solutions does not control and is not responsible for the uptime, network latency, or policy changes of third-party speech engines, web browsers, or cloud infrastructure.
 

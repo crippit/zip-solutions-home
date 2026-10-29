@@ -112,11 +112,11 @@ const zipCaptionsSchema = {
 const capabilities = [
   {
     title: "100% gratuit et sur navigateur",
-    description: "Aucun abonnement, aucune installation de logiciel ni inscription requise. Fonctionne directement dans tout navigateur moderne sur ordinateur, tablette et mobile."
+    description: "Aucun abonnement, aucune installation ni inscription requise. Le sous-titrage gratuit fonctionne dans Chrome, Safari et Edge, tandis que le sous-titrage IA payant et la lecture Broadcast fonctionnent dans tout navigateur."
   },
   {
     title: "Diffusion en temps réel",
-    description: "Partagez des sous-titres en direct avec des participants distants partout dans le monde à l'aide de codes de partage statiques sur leurs appareils personnels."
+    description: "Partagez des sous-titres en direct avec des participants partout dans le monde via un code de salle statique — les participants suivent le flux depuis n'importe quel navigateur sur leur appareil personnel."
   },
   {
     title: "Confidentialité et stockage local",
@@ -142,7 +142,7 @@ const capabilities = [
 
 const specs = [
   { label: "Où il fonctionne", value: "Directement dans votre navigateur web sur ordinateurs portables, téléphones et tablettes, sans aucun logiciel à installer." },
-  { label: "Compatibilité des navigateurs", value: "Entièrement testé et pris en charge sur Chrome, Safari, Edge, Brave et Opera." },
+  { label: "Compatibilité des navigateurs", value: "Sous-titrage gratuit : Chrome, Safari et Edge. Sous-titrage IA payant et lecture Broadcast/QR : Tous les navigateurs (dont Firefox, Brave et Opera)." },
   { label: "Configurations de streaming en direct", value: "Connexion via WebSockets directement à OBS Studio, vMix et commutateurs vidéo numériques." },
   { label: "Sauvegarde des transcriptions", value: "Téléchargez des transcriptions complètes à tout moment aux formats SRT, VTT ou texte brut." }
 ];
@@ -154,7 +154,7 @@ const faqs = [
   },
   {
     question: "Le service informatique (TI) de notre centre de services scolaire bloque l'installation de logiciels et refuse les ententes de partage de données élèves. Peut-on quand même utiliser Zip Captions ?",
-    answer: "Oui. Zip Captions fonctionne à 100 % dans le navigateur web (Chrome, Safari, Edge, Brave) sans aucun logiciel à installer, sans création de compte élève et sans aucun stockage audio ou texte sur des serveurs externes. La transcription reste uniquement dans la mémoire vive (RAM) locale de votre navigateur et disparaît dès la fermeture de l'onglet, respectant ainsi la Loi 25 au Québec, la LPRPDE, la FERPA et le RGPD."
+    answer: "Oui. Zip Captions fonctionne à 100 % dans le navigateur web (Chrome, Safari et Edge pour le sous-titrage gratuit ; n'importe quel navigateur pour la lecture ou le sous-titrage IA payant) sans aucun logiciel à installer, sans création de compte élève et sans aucun stockage audio ou texte sur des serveurs externes. La transcription reste uniquement dans la mémoire vive (RAM) locale de votre navigateur et disparaît dès la fermeture de l'onglet, respectant ainsi la Loi 25 au Québec, la LPRPDE, la FERPA et le RGPD."
   },
   {
     question: "Lorsque je présente un diaporama Google Slides ou PowerPoint en plein écran sur mon TNI ou projecteur, il cache l'onglet des sous-titres. Comment garder les sous-titres visibles par-dessus ?",
@@ -162,15 +162,15 @@ const faqs = [
   },
   {
     question: "Les élèves malentendants ou allophones refusent souvent de s'asseoir au premier rang pour ne pas être stigmatisés. Comment le mode Diffusion (Broadcast) résout-il ce problème ?",
-    answer: "Plutôt que d'isoler un élève à l'avant, inscrivez votre code de salle fixe (ou affichez le code QR) au tableau. N'importe quel élève peut suivre discrètement les sous-titres en direct sur son propre Chromebook, sa tablette ou son téléphone depuis sa place, ajuster la taille du texte, activer la police Lexend adaptée à la dyslexie ou activer la traduction locale gratuite par l'IA de Chrome dans sa langue maternelle."
+    answer: "Plutôt que d'isoler un élève à l'avant, inscrivez votre code de salle fixe (ou affichez le code QR) au tableau. N'importe quel élève peut suivre discrètement les sous-titres en direct dans n'importe quel navigateur sur son propre Chromebook, sa tablette ou son téléphone depuis sa place, ajuster la taille du texte, activer la police Lexend adaptée à la dyslexie ou activer la traduction locale gratuite par l'IA de Chrome dans sa langue maternelle."
   },
   {
     question: "Nous utilisions WebCaptioner avant sa fermeture et notre régie est gérée par des bénévoles chaque dimanche. Faut-il reconfigurer un nouveau lien ou OBS/vMix chaque semaine ?",
     answer: "Non. Contrairement aux outils de visioconférence qui changent de lien à chaque réunion, Zip Captions utilise un code de salle permanent et fixe. Vous imprimez vos cartes de bancs ou affiches avec code QR une seule fois, vous configurez votre liaison OBS WebSocket ou l'extension gratuite Zip vMix une seule fois, et chaque semaine votre bénévole n'a qu'à ouvrir zipcaptions.app et cliquer sur Démarrer."
   },
   {
-    question: "Dans quels cas faut-il choisir un forfait IA payant (5 $ à 30 $ US/mois) plutôt que le moteur standard gratuit à 0 $ ?",
-    answer: "Pour les échanges quotidiens, les salles de classe calmes et les configurations avec micro-cravate, le moteur standard gratuit à 0 $ (WebSpeech) fonctionne de manière illimitée. Les forfaits optionnels Patreon (5 $/mois pour 5 h, 15 $/mois pour 10 h, 30 $/mois pour 25 h) sont recommandés lorsque vous avez besoin du moteur infonuagique Azure AI pour des accents prononcés, du vocabulaire technique ou liturgique complexe, ou des salles très réverbérantes."
+    question: "Dans quels cas faut-il choisir un forfait IA payant (5 $ à 30 $ US/mois) plutôt que le sous-titrage standard gratuit à 0 $ ?",
+    answer: "Pour les échanges quotidiens, les salles de classe calmes et les configurations avec micro-cravate dans Chrome, Safari ou Edge, le sous-titrage standard gratuit à 0 $ fonctionne de manière illimitée. Les forfaits optionnels Patreon (5 $/mois pour 5 h, 15 $/mois pour 10 h, 30 $/mois pour 25 h) sont recommandés lorsque vous avez besoin du moteur infonuagique Azure AI pour des accents prononcés, du vocabulaire technique ou liturgique complexe, des salles très réverbérantes, ou pour capter la voix dans d'autres navigateurs (comme Firefox, Brave ou Opera). La lecture des sous-titres en mode Broadcast ou code QR fonctionne gratuitement dans n'importe quel navigateur."
   }
 ];
 ---
@@ -215,8 +215,8 @@ const faqs = [
           <p class="text-xs text-slate-400 leading-relaxed">100% gratuit pour le sous-titrage en direct de base, sans abonnement ni carte de crédit requise.</p>
         </div>
         <div>
-          <h3 class="text-sm font-bold font-heading text-white mb-1">Fonctionne partout</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">Aucune installation requise. Se lance instantanément dans tout navigateur moderne sur ordinateurs portables, Chromebooks et téléphones.</p>
+          <h3 class="text-sm font-bold font-heading text-white mb-1">Directement dans le navigateur</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Aucune installation requise. Le sous-titrage gratuit fonctionne dans Chrome, Safari et Edge ; l'IA payante et la lecture Broadcast fonctionnent dans tout navigateur.</p>
         </div>
         <div>
           <h3 class="text-sm font-bold font-heading text-white mb-1">Confidentialité totale</h3>
@@ -408,8 +408,8 @@ const faqs = [
               <td class="p-4 sm:px-6 text-slate-600">Milliers de dollars en matériel spécialisé</td>
             </tr>
             <tr>
-              <td class="p-4 sm:px-6 font-semibold text-midnight">Installation et déploiement</td>
-              <td class="p-4 sm:px-6 font-semibold text-midnight bg-purple-50/20">Instantané dans tout navigateur (zéro installation)</td>
+              <td class="p-4 sm:px-6 font-semibold text-midnight">Navigateurs compatibles</td>
+              <td class="p-4 sm:px-6 font-semibold text-midnight bg-purple-50/20">Gratuit sur Chrome, Safari et Edge ; IA payante et lecture sur tout navigateur (zéro installation)</td>
               <td class="p-4 sm:px-6 text-slate-600">Création de compte et agents logiciels requis</td>
               <td class="p-4 sm:px-6 text-slate-600">Intégration câblée SDI/HDMI en régie</td>
             </tr>

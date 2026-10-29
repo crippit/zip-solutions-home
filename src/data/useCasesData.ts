@@ -124,7 +124,7 @@ export const sectorsData: Record<'en' | 'fr', SectorData[]> = {
       reasons: [
         {
           title: 'Works on Chromebooks with Zero IT Install',
-          description: 'Zip Captions runs inside Chrome, Safari, and Edge. Teachers and students can open it right away without software installers, admin permissions, or student email accounts.'
+          description: 'Free captioning runs inside Chrome, Safari, and Edge, while paid AI captioning and Broadcast viewing work in any browser—with no software installers, admin permissions, or student email accounts.'
         },
         {
           title: 'Supports Diverse Learners in One Room',
@@ -132,7 +132,7 @@ export const sectorsData: Record<'en' | 'fr', SectorData[]> = {
         },
         {
           title: 'Personal Desk View via Broadcast Mode',
-          description: 'Teachers can share a room code so students read captions quietly on their own Chromebook or tablet at their desk, rather than relying only on a front projector.'
+          description: 'Teachers can share a room code so students read captions quietly in any browser on their own Chromebook or tablet at their desk, rather than relying only on a front projector.'
         },
         {
           title: 'Lexend Font and High-Contrast Themes',
@@ -1168,7 +1168,7 @@ export const sectorsData: Record<'en' | 'fr', SectorData[]> = {
       reasons: [
         {
           title: 'Fonctionne sur Chromebook sans installation TI',
-          description: 'Zip Captions fonctionne directement dans Chrome, Safari et Edge. Les enseignants et les élèves l’ouvrent instantanément sans installateur ni création de compte élève.'
+          description: 'Le sous-titrage gratuit fonctionne dans Chrome, Safari et Edge, tandis que le sous-titrage IA payant et la lecture Broadcast fonctionnent dans tout navigateur — sans installateur ni création de compte élève.'
         },
         {
           title: 'Soutient tous les profils d’apprenants',
@@ -1176,7 +1176,7 @@ export const sectorsData: Record<'en' | 'fr', SectorData[]> = {
         },
         {
           title: 'Affichage individuel au pupitre (Mode diffusion)',
-          description: 'L’enseignant partage un code de salle pour que chaque élève suive les sous-titres discrètement sur son propre Chromebook ou sa tablette à son pupitre.'
+          description: 'L’enseignant partage un code de salle pour que chaque élève suive les sous-titres discrètement dans n’importe quel navigateur sur son propre Chromebook ou sa tablette à son pupitre.'
         },
         {
           title: 'Police Lexend et thèmes à contraste élevé',

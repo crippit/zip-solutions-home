@@ -138,11 +138,11 @@ const zipCaptionsSchema = [
 const capabilities = [
   {
     title: "100% Free and Browser-Based",
-    description: "No subscription, software installation, or sign-up required. Works directly in any modern browser on desktop, tablet, and mobile."
+    description: "No subscription, software installation, or sign-up required. Free captioning runs directly in Chrome, Safari, and Edge, while paid AI captioning and Broadcast viewing work in any browser."
   },
   {
     title: "Real-Time Broadcaster",
-    description: "Share live captions with remote viewers anywhere in the world using static share codes on their personal devices."
+    description: "Share live captions with remote viewers anywhere in the world using static share codes—viewers can follow along in any browser on their personal devices."
   },
   {
     title: "Private Local Browser Storage",
@@ -168,7 +168,7 @@ const capabilities = [
 
 const specs = [
   { label: "Where it runs", value: "Works directly in your web browser on laptops, phones, and tablets with zero software to install." },
-  { label: "Browser compatibility", value: "Fully tested and supported on Chrome, Safari, Edge, Brave, and Opera." },
+  { label: "Browser compatibility", value: "Free captioning: Chrome, Safari, and Edge. Paid AI captioning & Broadcast/QR viewing: Any browser (including Firefox, Brave, and Opera)." },
   { label: "Live stream setups", value: "Connects via WebSockets straight into OBS Studio, vMix, and digital video switchers." },
   { label: "Saving transcripts", value: "Download complete transcripts whenever you finish as industry-standard SRT, VTT, or plain text files." }
 ];
@@ -180,7 +180,7 @@ const faqs = [
   },
   {
     question: "Our school board IT department blocks software downloads and refuses to sign vendor student-data agreements. Can teachers still use Zip Captions?",
-    answer: "Yes. Zip Captions runs 100% inside standard web browsers (Chrome, Safari, Edge, Brave) with zero software or MSI packages to install, requires zero student accounts or logins, and never saves audio or transcripts on external servers. Your live transcript exists only in your local browser RAM and vanishes the moment you close the tab—allowing teachers to use it immediately under strict Quebec Law 25, FIPPA, FERPA, and GDPR privacy rules."
+    answer: "Yes. Zip Captions runs 100% inside standard web browsers (Chrome, Safari, and Edge for free captioning; any browser for viewing or paid AI captioning) with zero software or MSI packages to install, requires zero student accounts or logins, and never saves audio or transcripts on external servers. Your live transcript exists only in your local browser RAM and vanishes the moment you close the tab—allowing teachers to use it immediately under strict Quebec Law 25, FIPPA, FERPA, and GDPR privacy rules."
   },
   {
     question: "When I present Google Slides or PowerPoint in full-screen on a projector or SMART Board, it covers up my browser tab. How do I keep live captions visible on top?",
@@ -188,15 +188,15 @@ const faqs = [
   },
   {
     question: "Hard-of-hearing or ESL students often hate sitting in the front row or using bulky assistive gear that singles them out. How does Broadcast mode help?",
-    answer: "Instead of isolating a student at the front of the room, write your permanent Broadcast Room Code (or display the QR code) on the board. Any student can discreetly open the live caption stream on their own Chromebook, tablet, or phone from any desk, adjust text size, switch on the Lexend dyslexia-friendly font, or turn on free Chrome On-Device AI translation into their home language without changing the main classroom screen."
+    answer: "Instead of isolating a student at the front of the room, write your permanent Broadcast Room Code (or display the QR code) on the board. Any student can discreetly open the live caption stream in any browser on their own Chromebook, tablet, or phone from any desk, adjust text size, switch on the Lexend dyslexia-friendly font, or turn on free Chrome On-Device AI translation into their home language without changing the main classroom screen."
   },
   {
     question: "We used WebCaptioner before it shut down, and our AV booth is run by rotating volunteers. Do we have to generate a new room link or reconfigure OBS/vMix every week?",
     answer: "No. Unlike meeting tools that create a new link for every session, Zip Captions gives you a permanent, static Broadcast Room Code. You print your QR code pew cards or lobby signs once, configure your OBS WebSocket or free Zip vMix Title bridge once, and every Sunday or event day your volunteer simply opens zipcaptions.app and clicks Start."
   },
   {
-    question: "When do we need the optional paid AI tiers ($5–$30/mo) instead of the $0 Free Forever browser engine?",
-    answer: "For everyday one-on-one conversations, quiet classrooms, and clear lapel-mic setups, the $0 Regular browser engine (WebSpeech API) works great with unlimited hours. Upgrade to an optional Patreon AI tier ($5/mo for 5 hrs, $15/mo for 10 hrs, or $30/mo for 25 hrs) when you need Azure AI cloud transcription for strong regional accents, technical or liturgical vocabulary, reverberant halls, or browsers without native WebSpeech support."
+    question: "When do we need the optional paid AI tiers ($5–$30/mo) instead of $0 Free Forever captioning?",
+    answer: "For everyday one-on-one conversations, quiet classrooms, and clear lapel-mic setups in Chrome, Safari, or Edge, $0 Regular free captioning works great with unlimited hours. Upgrade to an optional Patreon AI tier ($5/mo for 5 hrs, $15/mo for 10 hrs, or $30/mo for 25 hrs) when you need Azure AI cloud transcription for strong regional accents, technical or liturgical vocabulary, reverberant halls, or capturing captions in other browsers (such as Firefox, Brave, or Opera). Viewing shared Broadcast or QR streams works for free in any browser."
   }
 ];
 ---
@@ -241,8 +241,8 @@ const faqs = [
           <p class="text-xs text-slate-400 leading-relaxed">100% free forever for core live captioning with zero subscriptions or credit card requirements.</p>
         </div>
         <div>
-          <h3 class="text-sm font-bold font-heading text-white mb-1">Runs Everywhere</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">Zero installation needed. Launches instantly inside any modern browser on laptops, Chromebooks, and phones.</p>
+          <h3 class="text-sm font-bold font-heading text-white mb-1">Runs in Your Browser</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Zero installation needed. Free captioning runs in Chrome, Safari, and Edge; paid AI captioning and Broadcast viewing work in any browser.</p>
         </div>
         <div>
           <h3 class="text-sm font-bold font-heading text-white mb-1">Total Privacy</h3>
@@ -434,8 +434,8 @@ const faqs = [
               <td class="p-4 sm:px-6 text-slate-600">Thousands in upfront hardware costs</td>
             </tr>
             <tr>
-              <td class="p-4 sm:px-6 font-semibold text-midnight">Setup &amp; Installation</td>
-              <td class="p-4 sm:px-6 font-semibold text-midnight bg-purple-50/20">Instant in any web browser (Zero install)</td>
+              <td class="p-4 sm:px-6 font-semibold text-midnight">Browser Support</td>
+              <td class="p-4 sm:px-6 font-semibold text-midnight bg-purple-50/20">Free captioning in Chrome, Safari &amp; Edge; Paid AI &amp; viewing in any browser (Zero install)</td>
               <td class="p-4 sm:px-6 text-slate-600">Account registration &amp; desktop agents</td>
               <td class="p-4 sm:px-6 text-slate-600">Dedicated SDI/HDMI rack integration</td>
             </tr>

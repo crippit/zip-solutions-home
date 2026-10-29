@@ -37,7 +37,7 @@ const tiers = [
     name: "Premium",
     price: "15 $",
     period: "par mois",
-    description: "Idéal pour les réunions régulières, les cours et les cultes diffusés (10 heures d'IA).",
+    description: "Idéal pour les enseignants, créateurs et sessions personnelles régulières (10 heures d'IA).",
     highlight: true,
     badge: "Le plus populaire",
     ctaText: "Choisir Premium",
@@ -48,7 +48,7 @@ const tiers = [
     name: "Platine",
     price: "30 $",
     period: "par mois",
-    description: "Capacité maximale de sous-titrage IA (25 heures), articles exclusifs et priorité dédiée.",
+    description: "Capacité maximale pour usage individuel (25 heures d'IA), articles exclusifs et priorité.",
     highlight: false,
     ctaText: "Choisir Platine",
     ctaLink: "https://patreon.com/zipcaptions/membership",
@@ -58,7 +58,8 @@ const tiers = [
 
 const features = [
   { name: "Sous-titrage standard", values: ["Illimité", "Illimité", "Illimité", "Illimité", "Illimité"] },
-  { name: "Navigateurs compatibles", values: ["Navigateurs WebSpeech²", "Navigateurs WebSpeech²", "Tous navigateurs¹", "Tous navigateurs¹", "Tous navigateurs¹"] },
+  { name: "Navigateurs (Sous-titrage)", values: ["Chrome, Safari et Edge²", "Chrome, Safari et Edge²", "Tous navigateurs¹", "Tous navigateurs¹", "Tous navigateurs¹"] },
+  { name: "Lecture Broadcast / Code QR", values: ["Tous navigateurs¹", "Tous navigateurs¹", "Tous navigateurs¹", "Tous navigateurs¹", "Tous navigateurs¹"] },
   { name: "Mode Image dans l'image (PiP)", values: ["Chromium (Chrome, Edge)⁸", "Chromium (Chrome, Edge)⁸", "Chromium (Chrome, Edge)⁸", "Chromium (Chrome, Edge)⁸", "Chromium (Chrome, Edge)⁸"] },
   { name: "Traduction en temps réel", values: ["IA sur appareil Chrome⁹", "IA sur appareil Chrome⁹", "IA sur appareil Chrome⁹", "IA sur appareil Chrome⁹", "IA sur appareil Chrome⁹"] },
   { name: "Sous-titres IA (/mois)³", values: ["-", "Sur demande⁷", "5 heures³", "10 heures³", "25 heures³"] },
@@ -66,7 +67,7 @@ const features = [
   { name: "Apparence personnalisable", values: ["Oui", "Oui", "Oui", "Oui", "Oui"] },
   { name: "Application mobile Android⁴", values: ["Oui", "Oui", "Oui", "Oui", "Oui"] },
   { name: "Navigateur mobile compatible", values: ["Oui", "Oui", "Oui", "Oui", "Oui"] },
-  { name: "Application Windows disponible²", values: ["Oui", "Oui", "Oui", "Oui", "Oui"] },
+  { name: "Application Windows disponible", values: ["Oui", "Oui", "Oui", "Oui", "Oui"] },
   { name: "Assistance disponible⁵", values: ["Groupe Discord", "Groupe Discord", "Assistance prioritaire", "Assistance prioritaire", "Assistance prioritaire"] },
   { name: "Conforme au RGPD", values: ["Oui", "Oui", "Oui", "Oui", "Oui"] },
   { name: "Pack d'articles exclusifs", values: ["-", "-", "-", "-", "Oui"] },
@@ -75,19 +76,19 @@ const features = [
 const faqs = [
   {
     question: "Que se passe-t-il si nos heures de sous-titrage IA s'épuisent en plein milieu d'un cours, d'une messe ou d'une conférence ? L'écran devient-il noir ?",
-    answer: "Jamais. Nous ne coupons jamais la parole au milieu d'une présentation. Si votre quota mensuel d'heures IA (5 h pour Essentiel, 10 h pour Premium ou 25 h pour Platine) est atteint en cours de séance, vous pouvez basculer instantanément vers le sous-titrage Standard gratuit (0 $) et illimité en un clic, tout en conservant le même code de salle Broadcast et votre connexion OBS ou vMix."
+    answer: "Jamais. Nous ne coupons jamais la parole au milieu d'une présentation. Si votre quota mensuel d'heures IA (5 h pour Essentiel, 10 h pour Premium ou 25 h pour Platine) est atteint en cours de séance, vous pouvez basculer instantanément vers le sous-titrage Standard gratuit (0 $) et illimité en un clic (dans Chrome, Safari ou Edge), tout en conservant le même code de salle Broadcast et votre connexion OBS ou vMix."
   },
   {
-    question: "Dans quelles situations ai-je réellement besoin du sous-titrage IA payant (5 $ à 30 $ US/mois) plutôt que du mode Standard à 0 $ ?",
-    answer: "Si vous utilisez Chrome, Safari ou Edge dans un local calme avec un bon micro-cravate ou micro-casque, le mode Standard à 0 $ (API WebSpeech du navigateur) suffit amplement et reste illimité pour toujours. Le moteur IA payant (propulsé par Microsoft Azure AI) répond aux défis acoustiques plus complexes : micros de lutrin éloignés, églises ou salles réverbérantes, accents régionaux marqués, vocabulaire médical, scientifique ou liturgique pointu, ou navigateurs sans WebSpeech natif."
+    question: "Dans quelles situations ai-je réellement besoin du sous-titrage IA payant (5 $ à 30 $ US/mois) plutôt que du mode Standard gratuit à 0 $ ?",
+    answer: "Si vous utilisez Google Chrome, Apple Safari ou Microsoft Edge dans un local calme avec un bon micro-cravate ou micro-casque, le mode Standard à 0 $ suffit amplement et reste illimité pour toujours. Le moteur IA payant (propulsé par Microsoft Azure AI) répond aux défis acoustiques plus complexes : micros de lutrin éloignés, églises ou salles réverbérantes, accents régionaux marqués, vocabulaire médical, scientifique ou liturgique pointu, ou captation dans des navigateurs qui ne prennent pas en charge le sous-titrage gratuit (comme Firefox, Brave ou Opera). La lecture d'un flux partagé par code de salle Broadcast ou code QR fonctionne gratuitement dans n'importe quel navigateur."
   },
   {
     question: "Faut-il payer un supplément lorsque 50 élèves ou 300 congressistes scannent notre code QR pour lire les sous-titres sur leur téléphone ?",
     answer: "Non. La lecture des sous-titres par les participants via le mode Diffusion (Broadcast) et les codes QR est 100 % gratuite et illimitée dans tous les forfaits, y compris le forfait Standard à 0 $. Vous ne payez jamais au nombre de lecteurs ou d'appareils connectés."
   },
   {
-    question: "Notre centre de services scolaire, université ou municipalité ne peut pas payer sur Patreon par carte de crédit. Peut-on procéder par bon de commande (PO) ou obtenir des heures données si nous n'avons aucun budget ?",
-    answer: "Oui aux deux questions. Si votre établissement scolaire, lieu de culte ou organisme a besoin d'une facture officielle, d'un bon de commande ou d'un volume d'heures sur mesure pour un colloque, écrivez-nous via la page Contact ou Devis d'événements pour une facturation directe hors Patreon. Et si votre classe ou organisme à but non lucratif n'a aucun budget, faites une demande à notre programme solidaire Giving Back pour recevoir gratuitement des heures IA financées par la communauté."
+    question: "Notre centre de services scolaire, université ou entreprise ne peut pas utiliser Patreon ou a besoin d'un accompagnement dédié. Comment fonctionne la tarification Entreprise ?",
+    answer: "Les abonnements Patreon sont conçus pour un usage personnel ou individuel. Pour les déploiements en entreprise, les colloques multi-salles ou les établissements nécessitant un soutien dédié et une facturation par bon de commande (PO), notre tarif Entreprise est de 1 000 $ pour 1 jour (1 salle incluse), 250 $ par jour additionnel et 200 $/jour par salle supplémentaire. Utilisez notre calculateur de devis Entreprise (/fr/enterprise-pricing) pour configurer votre événement et soumettre votre demande."
   },
   {
     question: "Les outils EasySpeak CAA, EquiBrowse et Zip Solutions Remediator nécessitent-ils un abonnement Patreon ?",
@@ -188,13 +189,71 @@ const pricingSchema = {
         Tarifs de Zip Captions
       </h1>
       <p class="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-        Zip Captions proposera toujours une version de base 100% gratuite. Choisissez une formule de soutien optionnelle pour débloquer les moteurs de sous-titrage IA avancés et soutenir le développement.
+        Zip Captions proposera toujours une version de base 100 % gratuite. Les abonnements Patreon sont conçus pour un <strong>usage personnel ou individuel</strong>, tandis que les entreprises et événements nécessitant un soutien dédié peuvent créer un devis sur mesure avec notre <strong>calculateur de devis Entreprise</strong>.
       </p>
+
+      <!-- Sélecteur de profil d'utilisation -->
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 text-left max-w-3xl mx-auto">
+        <a 
+          href="#personal-plans" 
+          class="p-5 rounded-2xl bg-white border-2 border-amethyst/40 hover:border-amethyst shadow-xs transition-all flex flex-col justify-between group"
+        >
+          <div>
+            <span class="text-xs font-bold font-mono uppercase tracking-wider text-amethyst block mb-1">
+              Usage personnel et individuel
+            </span>
+            <h2 class="text-base sm:text-lg font-bold font-heading text-midnight">
+              Forfaits gratuits et mensuels Patreon (0 $ à 30 $/mois)
+            </h2>
+            <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+              Sous-titrage en libre-service et forfaits d'heures IA mensuels via Patreon pour utilisateurs individuels, enseignants et créateurs.
+            </p>
+          </div>
+          <span class="mt-3 text-xs font-bold text-amethyst group-hover:underline inline-flex items-center gap-1">
+            <span>Voir les forfaits individuels ci-dessous</span>
+            <span aria-hidden="true">&darr;</span>
+          </span>
+        </a>
+
+        <a 
+          href="/fr/enterprise-pricing" 
+          class="p-5 rounded-2xl bg-midnight text-white border-2 border-midnight hover:border-teal-brand shadow-md transition-all flex flex-col justify-between group"
+        >
+          <div>
+            <span class="text-xs font-bold font-mono uppercase tracking-wider text-teal-light block mb-1">
+              Entreprises et événements avec soutien
+            </span>
+            <h2 class="text-base sm:text-lg font-bold font-heading text-white">
+              Calculateur de devis Entreprise sur mesure
+            </h2>
+            <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+              1 000 $ Jour 1 • +250 $ par jour suppl. • +200 $/jour par salle suppl. Inclut soutien dédié et facturation PO.
+            </p>
+          </div>
+          <span class="mt-3 text-xs font-bold text-teal-light group-hover:underline inline-flex items-center gap-1">
+            <span>Créer un devis Entreprise</span>
+            <span aria-hidden="true">&rarr;</span>
+          </span>
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- Cartes de tarification -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <div id="personal-plans" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 scroll-mt-20">
+    <div class="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div>
+        <span class="text-xs font-bold font-mono uppercase tracking-wider text-amethyst block mb-1">
+          Abonnements individuels en libre-service
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-midnight">
+          Forfaits pour usage personnel et individuel (via Patreon)
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-600 mt-1">
+          Le soutien via Patreon est destiné à un usage personnel ou individuel. Besoin d'un déploiement en entreprise, de plusieurs salles ou d'une facture sur bon de commande ? <a href="/fr/enterprise-pricing" class="text-teal-brand font-bold underline hover:text-teal-dark">Utilisez le calculateur de devis Entreprise &rarr;</a>
+        </p>
+      </div>
+    </div>
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
       {tiers.map((tier) => (
@@ -287,10 +346,45 @@ const pricingSchema = {
       </div>
     </div>
 
+    <!-- Bannière Entreprise et événements accompagnés -->
+    <div class="bg-gradient-to-br from-midnight to-slate-900 text-white rounded-3xl p-8 sm:p-10 border border-slate-800 shadow-xl mb-12 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+      <div class="space-y-3 max-w-2xl">
+        <span class="text-xs font-bold font-mono uppercase tracking-wider text-teal-light block">
+          Entreprises et événements en direct accompagnés
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-white">
+          Besoin de Zip Captions pour une entreprise ou un événement multi-salles avec soutien dédié ?
+        </h2>
+        <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+          Alors que les paliers Patreon sont réservés à un usage personnel et individuel, notre modèle Entreprise comprend l'accompagnement technique dédié, la configuration du vocabulaire IA, les relais QR multi-salles et la facturation officielle (bon de commande / PO) :
+        </p>
+        <div class="flex flex-wrap gap-3 pt-1 text-xs font-mono">
+          <span class="px-3 py-1.5 rounded-xl bg-white/10 border border-white/15 text-white font-bold">
+            1 Jour = 1 000 $
+          </span>
+          <span class="px-3 py-1.5 rounded-xl bg-white/10 border border-white/15 text-teal-light font-bold">
+            Chaque jour suppl. = +250 $
+          </span>
+          <span class="px-3 py-1.5 rounded-xl bg-white/10 border border-white/15 text-coral-light font-bold">
+            Salles suppl. = +200 $ / salle / jour
+          </span>
+        </div>
+      </div>
+      <div class="shrink-0 w-full lg:w-auto">
+        <a 
+          href="/fr/enterprise-pricing" 
+          class="w-full lg:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl font-heading font-bold text-white bg-teal-brand hover:bg-teal-light hover:text-midnight shadow-md transition-all text-sm sm:text-base"
+        >
+          <span>Ouvrir le calculateur de devis Entreprise</span>
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </div>
+
     <!-- Notes explicatives -->
     <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 text-xs text-slate-600 space-y-2 leading-relaxed">
-      <p><b>1.</b> Les formules payantes prennent techniquement en charge tous les navigateurs modernes (notamment Chrome, Edge, Safari, Firefox, Opera et Brave) car l'audio des sous-titres est traité dans le nuage par Azure AI plutôt que par les moteurs vocaux intégrés du navigateur.</p>
-      <p><b>2.</b> Le sous-titrage standard gratuit fonctionne dans tout navigateur prenant en charge l'API WebSpeech (comme Google Chrome et Safari; Edge est pris en charge lorsque Zip Captions est installé depuis le Microsoft Store).</p>
+      <p><b>1.</b> Le sous-titrage IA payant ainsi que la lecture d'une salle Broadcast / code QR fonctionnent dans tous les navigateurs modernes (notamment Google Chrome, Microsoft Edge, Apple Safari, Mozilla Firefox, Opera et Brave).</p>
+      <p><b>2.</b> Le sous-titrage standard gratuit (captation microphone) est pris en charge dans Google Chrome, Apple Safari et Microsoft Edge. Les navigateurs comme Firefox, Brave et Opera nécessitent un forfait IA payant pour capter la voix, mais permettent de suivre gratuitement les sous-titres partagés en mode Broadcast / code QR.</p>
       <p><b>3.</b> Le nombre d'heures est calculé sur l'utilisation de jetons attribués selon votre palier Patreon, sous réserve d'un abonnement actif. L'attribution des jetons peut évoluer et bénéficie du soutien de Microsoft Founders Hub.</p>
       <p><b>4.</b> Zip Captions est installable depuis Google Play Store, et fonctionne également sur iOS via le navigateur ou en application web progressive (PWA).</p>
       <p><b>5.</b> Une assistance est disponible pour tous les forfaits. Les délais de réponse varient et les formules d'entrée de gamme s'appuient principalement sur la communauté.</p>
