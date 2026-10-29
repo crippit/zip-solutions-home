@@ -2,11 +2,12 @@
 interface Props {
   id?: string;
   class?: string;
+  showCalculatorBanner?: boolean;
 }
 
 const isFr = Astro.currentLocale === 'fr' || Astro.url.pathname.startsWith('/fr');
 
-const { id = "quote-request-form", class: className = "" } = Astro.props;
+const { id = "quote-request-form", class: className = "", showCalculatorBanner = true } = Astro.props;
 const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '0x4AAAAAAFBlnTxyYW0fzpJV';
 
 const eventFormats = isFr ? [
@@ -26,15 +27,15 @@ const eventFormats = isFr ? [
 ];
 
 const audienceSizes = isFr ? [
-  "Moins de 50 participants",
-  "50 à 200 participants",
-  "200 à 500 participants",
-  "Plus de 500 participants"
+  { id: "att-under-50", label: "Moins de 50 participants", value: "Moins de 50 participants" },
+  { id: "att-50-200", label: "50 à 200 participants", value: "50 à 200 participants" },
+  { id: "att-200-500", label: "200 à 500 participants", value: "200 à 500 participants" },
+  { id: "att-500-plus", label: "Plus de 500 participants", value: "Plus de 500 participants" }
 ] : [
-  "Under 50 attendees",
-  "50 - 200 attendees",
-  "200 - 500 attendees",
-  "500+ attendees"
+  { id: "att-under-50", label: "Under 50 attendees", value: "Under 50 attendees" },
+  { id: "att-50-200", label: "50 - 200 attendees", value: "50 - 200 attendees" },
+  { id: "att-200-500", label: "200 - 500 attendees", value: "200 - 500 attendees" },
+  { id: "att-500-plus", label: "500+ attendees", value: "500+ attendees" }
 ];
 
 const technicalNeeds = isFr ? [
@@ -72,7 +73,7 @@ const technicalNeeds = isFr ? [
     <button 
       id="quote-reset-btn" 
       type="button" 
-      class="inline-block mt-4 px-6 py-2.5 bg-slate-100 hover:bg-slate-200 text-midnight text-xs font-bold rounded-xl transition-colors font-heading"
+      class="inline-block mt-4 px-6 py-2.5 bg-slate-100 hover:bg-slate-200 text-midnight text-xs font-bold rounded-xl transition-colors font-heading min-h-12"
     >
       {isFr ? "Soumettre une autre demande de devis" : "Submit Another Quote Request"}
     </button>
@@ -90,7 +91,7 @@ const technicalNeeds = isFr ? [
   <form 
     id="zip-quote-form"
     target="hidden_quote_gform_iframe"
-    action=""
+    action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeat_QYrLNUwVb37U-qYQvWAlhKns2xs9zd_gnsZvI6XmgYow/formResponse"
     data-action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeat_QYrLNUwVb37U-qYQvWAlhKns2xs9zd_gnsZvI6XmgYow/formResponse"
     method="POST"
     class="space-y-8"
@@ -107,6 +108,50 @@ const technicalNeeds = isFr ? [
     <input type="hidden" name="entry.1361511396" id="gform-inquiry-type" value="Product or service Inquiry" />
     <input type="hidden" name="entry.433641966" id="gform-message" value="" />
 
+    <!-- Attached Enterprise Quote Estimate Card (Shown automatically when calculator is present) -->
+    <div id="attached-enterprise-quote-box" class="hidden rounded-2xl bg-teal-50/70 border-2 border-teal-brand/40 p-5 space-y-3 transition-all">
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <div class="flex items-center gap-2">
+          <span class="w-6 h-6 rounded-lg bg-teal-brand text-white flex items-center justify-center text-xs font-bold">✓</span>
+          <h3 class="text-sm sm:text-base font-bold font-heading text-midnight">
+            {isFr ? "Estimation du calculateur jointe à votre demande" : "Enterprise Calculator Estimate Attached"}
+          </h3>
+        </div>
+        <span id="attached-quote-total-badge" class="px-3 py-1 rounded-lg bg-midnight text-teal-light font-mono font-bold text-xs sm:text-sm">
+          {isFr ? "1 000 $ CAD" : "$1,000 CAD"}
+        </span>
+      </div>
+      <p class="text-xs text-slate-600 leading-relaxed">
+        {isFr
+          ? "La configuration jour par jour et salle par salle ci-dessous sera automatiquement transmise à l'équipe de Solutions Zip avec votre demande :"
+          : "Your custom day-by-day room configuration below will be automatically included when you submit this quote request to the Zip Solutions team:"}
+      </p>
+      <pre id="attached-quote-preview" class="text-xs font-mono bg-white/90 text-slate-700 p-3.5 rounded-xl border border-slate-200 overflow-x-auto whitespace-pre-wrap leading-relaxed"></pre>
+    </div>
+
+    <!-- Callout Link to Standalone Calculator (Shown when on pages without the calculator) -->
+    {showCalculatorBanner && (
+      <div id="standalone-calculator-callout" class="rounded-2xl bg-purple-50/60 border border-purple-200/80 p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div class="space-y-1">
+          <span class="text-xs font-bold font-mono uppercase tracking-wider text-amethyst block">
+            {isFr ? "Calculateur de tarif Entreprise" : "Instant Enterprise Quote Calculator"}
+          </span>
+          <p class="text-xs sm:text-sm text-slate-700">
+            {isFr
+              ? "Vous souhaitez estimer votre budget par nombre de jours et de salles simultanées avant d'envoyer votre demande ?"
+              : "Want to calculate an instant multi-day, multi-room enterprise estimate before submitting?"}
+          </p>
+        </div>
+        <a
+          href={isFr ? "/fr/enterprise-pricing" : "/enterprise-pricing"}
+          class="shrink-0 inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-amethyst hover:bg-amethyst-dark text-white text-xs font-bold font-heading transition-colors min-h-11"
+        >
+          <span>{isFr ? "Ouvrir le calculateur de devis" : "Use Pricing Calculator"}</span>
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    )}
+
     <!-- Section 1: Contact Information -->
     <div>
       <div class="border-b border-slate-200 pb-3 mb-6">
@@ -118,54 +163,90 @@ const technicalNeeds = isFr ? [
         </h3>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        <div>
-          <label for="quote-user-name" class="block text-sm font-semibold text-midnight mb-1.5 font-heading">
-            {isFr ? "Votre nom" : "Your Name"} <span class="text-coral">*</span>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="field">
+          <label for="quote-user-name" class="block text-sm font-semibold text-midnight mb-1 font-heading">
+            {isFr ? "Votre nom complet" : "Your Full Name"} <span class="text-coral">*</span>
           </label>
+          <span id="quote-name-hint" class="hint">
+            {isFr ? "Prénom et nom de la personne-ressource" : "Primary contact first and last name"}
+          </span>
           <input 
             type="text" 
             id="quote-user-name" 
+            name="quote_user_name"
             required 
+            autocomplete="name"
+            aria-describedby="quote-name-hint"
+            aria-errormessage="quote-name-error"
             placeholder={isFr ? "Marie Tremblay" : "Jane Doe"}
-            class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-midnight placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-brand text-sm transition-all"
+            class="quote-validated-input w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-midnight placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-brand text-base transition-all min-h-12"
           />
+          <div id="quote-name-error" class="error-msg" aria-live="polite">
+            <span aria-hidden="true">❌</span> {isFr ? "Veuillez indiquer votre nom." : "Please enter your full name."}
+          </div>
         </div>
 
-        <div>
-          <label for="quote-user-email" class="block text-sm font-semibold text-midnight mb-1.5 font-heading">
-            {isFr ? "Adresse courriel" : "Email Address"} <span class="text-coral">*</span>
+        <div class="field">
+          <label for="quote-user-email" class="block text-sm font-semibold text-midnight mb-1 font-heading">
+            {isFr ? "Adresse courriel professionnelle" : "Work or Organization Email"} <span class="text-coral">*</span>
           </label>
+          <!-- MANDATORY: Place format hints above the input so autocomplete popovers don't cover them during editing -->
+          <span id="quote-email-hint" class="hint">
+            {isFr ? "Format : nom@organisation.ca" : "Format: name@organization.org"}
+          </span>
           <input 
             type="email" 
             id="quote-user-email" 
+            name="quote_user_email"
             required 
+            autocomplete="email"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+            aria-describedby="quote-email-hint"
+            aria-errormessage="quote-email-error"
             placeholder={isFr ? "marie@organisation.ca" : "jane@organization.org"}
-            class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-midnight placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-brand text-sm transition-all"
+            class="quote-validated-input w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-midnight placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-brand text-base transition-all min-h-12"
           />
+          <div id="quote-email-error" class="error-msg" aria-live="polite">
+            <span aria-hidden="true">❌</span> {isFr ? "Veuillez entrer une adresse courriel valide." : "Please enter a valid email address."}
+          </div>
         </div>
 
-        <div>
-          <label for="quote-org-name" class="block text-sm font-semibold text-midnight mb-1.5 font-heading">
-            {isFr ? "Nom de l'organisme ou de l'établissement" : "Organization or School Name"}
+        <div class="field">
+          <label for="quote-org-name" class="block text-sm font-semibold text-midnight mb-1 font-heading">
+            {isFr ? "Nom de l'entreprise, organisme ou établissement" : "Enterprise, Organization, or School Name"}
           </label>
+          <span id="quote-org-hint" class="hint">
+            {isFr ? "Pour l'émission du devis officiel / bon de commande" : "Used on your formal quote & invoice"}
+          </span>
           <input 
             type="text" 
             id="quote-org-name" 
-            placeholder={isFr ? "ex. Centre de services scolaire, Théâtre communautaire" : "e.g. Pearson District, Community Theatre"}
-            class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-midnight placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-brand text-sm transition-all"
+            name="quote_org_name"
+            autocomplete="organization"
+            aria-describedby="quote-org-hint"
+            placeholder={isFr ? "ex. Centre de services scolaire, Congrès national" : "e.g. Acme Corp, Pearson District"}
+            class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-midnight placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-brand text-base transition-all min-h-12"
           />
         </div>
 
-        <div>
-          <label for="quote-phone" class="block text-sm font-semibold text-midnight mb-1.5 font-heading">
+        <div class="field">
+          <label for="quote-phone" class="block text-sm font-semibold text-midnight mb-1 font-heading">
             {isFr ? "Numéro de téléphone (optionnel)" : "Phone Number (Optional)"}
           </label>
+          <span id="quote-phone-hint" class="hint">
+            {isFr ? "Ligne directe avec indicatif régional" : "Direct number including area code"}
+          </span>
           <input 
             type="tel" 
             id="quote-phone" 
+            name="quote_phone"
+            autocomplete="tel"
+            aria-describedby="quote-phone-hint"
             placeholder="(555) 000-0000"
-            class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-midnight placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-brand text-sm transition-all"
+            class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-midnight placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-brand text-base transition-all min-h-12"
           />
         </div>
       </div>
@@ -192,7 +273,7 @@ const technicalNeeds = isFr ? [
             {eventFormats.map((format, idx) => (
               <label 
                 for={format.id}
-                class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 hover:border-teal-brand/60 hover:bg-slate-50 cursor-pointer transition-colors"
+                class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 hover:border-teal-brand/60 hover:bg-slate-50 cursor-pointer transition-colors min-h-12"
               >
                 <input 
                   type="radio" 
@@ -208,37 +289,53 @@ const technicalNeeds = isFr ? [
           </div>
         </fieldset>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          <!-- Target Date or Timeline -->
-          <div>
-            <label for="quote-date" class="block text-sm font-semibold text-midnight mb-1.5 font-heading">
-              {isFr ? "Date prévue ou échéancier" : "Target Date or Timeline"} <span class="text-coral">*</span>
-            </label>
-            <input 
-              type="text" 
-              id="quote-date" 
-              required
-              placeholder={isFr ? "ex. 24 octobre 2026 ou Printemps 2027" : "e.g. October 24, 2026 or Spring 2027"}
-              class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-midnight placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-brand text-sm transition-all"
-            />
-          </div>
-
-          <!-- Estimated Attendance -->
-          <div>
-            <label for="quote-attendance" class="block text-sm font-semibold text-midnight mb-1.5 font-heading">
-              {isFr ? "Nombre estimé de participants en personne" : "Estimated In-Person Attendance"} <span class="text-coral">*</span>
-            </label>
-            <select 
-              id="quote-attendance" 
-              required
-              class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-midnight focus:outline-none focus:ring-2 focus:ring-teal-brand text-sm transition-all"
-            >
-              {audienceSizes.map((size) => (
-                <option value={size}>{size}</option>
-              ))}
-            </select>
+        <!-- Target Date or Timeline -->
+        <div class="field">
+          <label for="quote-date" class="block text-sm font-semibold text-midnight mb-1 font-heading">
+            {isFr ? "Date(s) prévue(s) ou échéancier" : "Target Event Date(s) or Timeline"} <span class="text-coral">*</span>
+          </label>
+          <span id="quote-date-hint" class="hint">
+            {isFr ? "Indiquez les dates exactes ou la période visée (ex. 12–14 novembre 2026)" : "Provide exact dates or target window (e.g. Nov 12–14, 2026 or Spring 2027)"}
+          </span>
+          <input 
+            type="text" 
+            id="quote-date" 
+            name="quote_date"
+            required
+            aria-describedby="quote-date-hint"
+            aria-errormessage="quote-date-error"
+            placeholder={isFr ? "ex. 12 au 14 novembre 2026" : "e.g. November 12–14, 2026"}
+            class="quote-validated-input w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-midnight placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-brand text-base transition-all min-h-12"
+          />
+          <div id="quote-date-error" class="error-msg" aria-live="polite">
+            <span aria-hidden="true">❌</span> {isFr ? "Veuillez indiquer la date ou la période prévue." : "Please enter your target date or timeline."}
           </div>
         </div>
+
+        <!-- Estimated Attendance (4 mutually exclusive options -> visible radio buttons per modern-web-guidance) -->
+        <fieldset>
+          <legend class="block text-sm font-semibold text-midnight mb-2.5 font-heading">
+            {isFr ? "Nombre estimé de participants en personne" : "Estimated In-Person Attendance"} <span class="text-coral">*</span>
+          </legend>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            {audienceSizes.map((size, idx) => (
+              <label
+                for={size.id}
+                class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 hover:border-teal-brand/60 hover:bg-slate-50 cursor-pointer transition-colors min-h-12"
+              >
+                <input
+                  type="radio"
+                  name="quote_attendance"
+                  value={size.value}
+                  id={size.id}
+                  checked={idx === 0}
+                  class="w-4 h-4 text-teal-brand focus:ring-teal-brand border-slate-300"
+                />
+                <span class="text-xs sm:text-sm font-medium text-slate-700">{size.label}</span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
       </div>
     </div>
 
@@ -257,13 +354,13 @@ const technicalNeeds = isFr ? [
         <!-- Checklist of technical services -->
         <fieldset>
           <legend class="block text-sm font-semibold text-midnight mb-2 font-heading">
-            {isFr ? "Services de sous-titrage et techniques souhaités (Sélectionnez toutes les options applicables)" : "Captioning & Technical Services Desired (Select all that apply)"}
+            {isFr ? "Services de sous-titrage et techniques souhaités" : "Captioning & Technical Services Desired"}
           </legend>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
             {technicalNeeds.map((need, idx) => (
               <label 
                 for={need.id}
-                class="flex items-start gap-3 p-3 rounded-xl border border-slate-200 hover:border-teal-brand/60 hover:bg-slate-50 cursor-pointer transition-colors"
+                class="flex items-start gap-3 p-3 rounded-xl border border-slate-200 hover:border-teal-brand/60 hover:bg-slate-50 cursor-pointer transition-colors min-h-12"
               >
                 <input 
                   type="checkbox" 
@@ -280,15 +377,20 @@ const technicalNeeds = isFr ? [
         </fieldset>
 
         <!-- Venue Details / Message Textarea -->
-        <div>
-          <label for="quote-additional-details" class="block text-sm font-semibold text-midnight mb-1.5 font-heading">
+        <div class="field">
+          <label for="quote-additional-details" class="block text-sm font-semibold text-midnight mb-1 font-heading">
             {isFr ? "Configuration de la salle, matériel audio ou questions précises" : "Venue Setup, Audio Equipment, or Specific Questions"}
           </label>
+          <span id="quote-notes-hint" class="hint">
+            {isFr ? "Mentionnez tout besoin de bon de commande (PO), langues additionnelles ou contraintes AV" : "Mention any PO/procurement requirements, bilingual needs, or AV questions"}
+          </span>
           <textarea 
             id="quote-additional-details" 
+            name="quote_additional_details"
             rows="4" 
+            aria-describedby="quote-notes-hint"
             placeholder={isFr ? "Parlez-nous de la salle, des micros de scène, de l'acoustique ou des besoins d'aménagement de vos participants..." : "Tell us about the venue, stage microphones, room acoustics, or any specific accommodations your attendees need..."}
-            class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-midnight placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-brand text-sm transition-all resize-y"
+            class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-midnight placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-brand text-base transition-all resize-y"
           ></textarea>
         </div>
       </div>
@@ -304,7 +406,7 @@ const technicalNeeds = isFr ? [
         data-expired-callback="onQuoteTurnstileExpired"
         data-error-callback="onQuoteTurnstileError"
       ></div>
-      <p id="quote-turnstile-error" class="hidden text-xs text-coral mt-1.5 font-semibold">
+      <p id="quote-turnstile-error" class="hidden text-xs text-coral mt-1.5 font-semibold" role="alert">
         {isFr ? "Veuillez compléter la vérification ci-dessus avant d'envoyer votre demande de devis." : "Please complete the verification checkbox above before sending your quote request."}
       </p>
     </div>
@@ -314,9 +416,9 @@ const technicalNeeds = isFr ? [
       <button 
         id="quote-submit-btn"
         type="submit" 
-        class="w-full py-4 px-6 rounded-xl font-heading font-bold text-white bg-teal-brand hover:bg-teal-dark shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-teal-brand text-base flex items-center justify-center gap-2 cursor-pointer"
+        class="w-full py-4 px-6 rounded-xl font-heading font-bold text-white bg-teal-brand hover:bg-teal-dark shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-teal-brand text-base flex items-center justify-center gap-2 cursor-pointer min-h-12"
       >
-        <span>{isFr ? "Soumettre la demande de devis" : "Submit Quote Request"}</span>
+        <span id="quote-submit-btn-text">{isFr ? "Soumettre la demande de devis" : "Submit Quote Request"}</span>
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
         </svg>
@@ -328,6 +430,39 @@ const technicalNeeds = isFr ? [
 
   </form>
 </div>
+
+<style>
+  .hint {
+    display: block;
+    color: #5f6368;
+    font-size: 0.75rem;
+    margin-bottom: 0.375rem;
+  }
+
+  .error-msg {
+    display: none;
+    color: #d93025;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    margin-top: 0.375rem;
+  }
+
+  input.quote-validated-input:user-invalid,
+  input.quote-validated-input.user-invalid-fallback {
+    border-color: #d93025;
+    background-color: #fce8e6;
+  }
+
+  input.quote-validated-input:user-invalid + .error-msg,
+  input.quote-validated-input.user-invalid-fallback + .error-msg {
+    display: block;
+  }
+
+  input.quote-validated-input:user-valid,
+  input.quote-validated-input.user-valid-fallback {
+    border-color: #188038;
+  }
+</style>
 
 <script>
   // Turnstile callbacks on window
@@ -348,7 +483,136 @@ const technicalNeeds = isFr ? [
     }
   };
 
+  // Validate Input After Interaction fallback & ARIA sync (modern-web-guidance)
+  const UserInvalidFallback = (() => {
+    const dirtyState = new WeakMap();
+
+    const updateState = (input: HTMLInputElement) => {
+      const isValid = input.checkValidity();
+      input.classList.toggle('user-invalid-fallback', !isValid);
+      input.classList.toggle('user-valid-fallback', isValid);
+
+      if (!isValid) {
+        input.setAttribute('aria-invalid', 'true');
+      } else {
+        input.removeAttribute('aria-invalid');
+      }
+    };
+
+    const handleEvent = (event: Event) => {
+      const input = event.target as HTMLInputElement;
+
+      if (event.type === 'reset') {
+        const formEl = event.target as HTMLFormElement;
+        const controls = formEl.elements || [];
+        for (const control of Array.from(controls) as HTMLElement[]) {
+          dirtyState.delete(control);
+          control.classList.remove('user-invalid-fallback');
+          control.classList.remove('user-valid-fallback');
+          control.removeAttribute('aria-invalid');
+        }
+        return;
+      }
+
+      if (!input || typeof input.checkValidity !== 'function') return;
+
+      if (event.type === 'input' || event.type === 'change') {
+        const state = dirtyState.get(input) || { hasInteracted: false, hasBlurred: false };
+        state.hasInteracted = true;
+        dirtyState.set(input, state);
+        if (state.hasBlurred) {
+          updateState(input);
+        }
+      } else if (event.type === 'blur') {
+        const state = dirtyState.get(input) || { hasInteracted: false, hasBlurred: false };
+        state.hasBlurred = true;
+        dirtyState.set(input, state);
+        if (state.hasInteracted) {
+          updateState(input);
+        }
+      }
+    };
+
+    const init = (root: Document | HTMLElement = document) => {
+      if (CSS.supports('selector(:user-invalid)')) return;
+      root.addEventListener('blur', handleEvent, true);
+      root.addEventListener('input', handleEvent);
+      root.addEventListener('change', handleEvent);
+      root.addEventListener('reset', handleEvent, true);
+    };
+
+    return { init };
+  })();
+
   const quoteForm = document.getElementById('zip-quote-form') as HTMLFormElement;
+  if (quoteForm) {
+    UserInvalidFallback.init(quoteForm);
+
+    // Sync aria-invalid with the CSS :user-invalid state
+    const syncAria = (el: EventTarget | null) => {
+      const htmlEl = el as HTMLElement;
+      if (htmlEl && typeof htmlEl.matches === 'function' && htmlEl.classList.contains('quote-validated-input')) {
+        htmlEl.setAttribute('aria-invalid', htmlEl.matches(':user-invalid') ? 'true' : 'false');
+      }
+    };
+
+    quoteForm.addEventListener('blur', (e) => syncAria(e.target), true);
+    quoteForm.addEventListener('input', (e) => {
+      const target = e.target as HTMLElement;
+      if (target && target.hasAttribute('aria-invalid')) syncAria(target);
+    });
+  }
+
+  // Enterprise Calculator live sync
+  const attachedQuoteBox = document.getElementById('attached-enterprise-quote-box');
+  const attachedQuoteTotalBadge = document.getElementById('attached-quote-total-badge');
+  const attachedQuotePreview = document.getElementById('attached-quote-preview');
+  const standaloneCallout = document.getElementById('standalone-calculator-callout');
+  const quoteSubmitBtnText = document.getElementById('quote-submit-btn-text');
+
+  let currentEnterpriseQuoteSummary = '';
+
+  function syncEnterpriseQuoteToForm(detail: any) {
+    if (!detail || !detail.summaryText) return;
+    currentEnterpriseQuoteSummary = detail.summaryText;
+
+    if (attachedQuoteBox) attachedQuoteBox.classList.remove('hidden');
+    if (standaloneCallout) standaloneCallout.classList.add('hidden');
+    if (attachedQuoteTotalBadge && detail.grandTotalFormatted) {
+      attachedQuoteTotalBadge.textContent = detail.grandTotalFormatted;
+    }
+    if (attachedQuotePreview) {
+      attachedQuotePreview.textContent = detail.summaryText;
+    }
+    const isFrench = document.documentElement.lang === 'fr';
+    if (quoteSubmitBtnText && detail.grandTotalFormatted) {
+      quoteSubmitBtnText.textContent = isFrench
+        ? `Soumettre la demande de devis (${detail.grandTotalFormatted})`
+        : `Submit Official Quote Request (${detail.grandTotalFormatted})`;
+    }
+  }
+
+  if ((window as any).__zipEnterpriseQuote) {
+    syncEnterpriseQuoteToForm((window as any).__zipEnterpriseQuote);
+  }
+
+  window.addEventListener('zip:enterprise-quote-updated', (e: Event) => {
+    syncEnterpriseQuoteToForm((e as CustomEvent).detail);
+  });
+
+  window.addEventListener('zip:enterprise-quote-locked', () => {
+    if (attachedQuoteBox) {
+      attachedQuoteBox.classList.add('ring-4', 'ring-teal-brand/30');
+      setTimeout(() => {
+        attachedQuoteBox.classList.remove('ring-4', 'ring-teal-brand/30');
+      }, 1800);
+    }
+    const nameInput = document.getElementById('quote-user-name') as HTMLInputElement;
+    setTimeout(() => {
+      nameInput?.focus({ preventScroll: true });
+    }, 350);
+  });
+
   const quoteSuccessBanner = document.getElementById('quote-success-banner');
   const quoteResetBtn = document.getElementById('quote-reset-btn');
   const quoteSubmitBtn = document.getElementById('quote-submit-btn');
@@ -378,7 +642,9 @@ const technicalNeeds = isFr ? [
     if (!turnstileToken) {
       e.preventDefault();
       if (quoteTurnstileError) {
-        quoteTurnstileError.textContent = 'Please complete the verification checkbox above before sending your quote request.';
+        quoteTurnstileError.textContent = document.documentElement.lang === 'fr'
+          ? "Veuillez compléter la vérification ci-dessus avant d'envoyer votre demande de devis."
+          : 'Please complete the verification checkbox above before sending your quote request.';
         quoteTurnstileError.classList.remove('hidden');
       }
       return;
@@ -394,7 +660,10 @@ const technicalNeeds = isFr ? [
     const orgName = (document.getElementById('quote-org-name') as HTMLInputElement)?.value.trim() || 'Not specified';
     const phone = (document.getElementById('quote-phone') as HTMLInputElement)?.value.trim() || 'Not provided';
     const targetDate = (document.getElementById('quote-date') as HTMLInputElement)?.value.trim() || 'Not specified';
-    const attendance = (document.getElementById('quote-attendance') as HTMLSelectElement)?.value || 'Not specified';
+    
+    // Selected attendance
+    const attendanceRadio = quoteForm.querySelector('input[name="quote_attendance"]:checked') as HTMLInputElement;
+    const attendance = attendanceRadio ? attendanceRadio.value : 'Not specified';
     
     // Selected format
     const formatRadio = quoteForm.querySelector('input[name="quote_event_format"]:checked') as HTMLInputElement;
@@ -410,18 +679,27 @@ const technicalNeeds = isFr ? [
     const additionalNotes = (document.getElementById('quote-additional-details') as HTMLTextAreaElement)?.value.trim() || 'No additional notes provided.';
 
     // Construct the formatted message block
-    const compiledMessage = [
-      '[CUSTOM LIVE EVENT QUOTE REQUEST]',
+    const messageParts = [
+      currentEnterpriseQuoteSummary ? '[ENTERPRISE CUSTOM PRICING QUOTE REQUEST]' : '[CUSTOM LIVE EVENT QUOTE REQUEST]',
       `Organization / School: ${orgName}`,
       `Phone: ${phone}`,
       `Event Format: ${eventFormat}`,
       `Estimated Attendance: ${attendance}`,
       `Target Date / Timeline: ${targetDate}`,
       `Services Needed: ${needsList}`,
+    ];
+
+    if (currentEnterpriseQuoteSummary) {
+      messageParts.push('', currentEnterpriseQuoteSummary);
+    }
+
+    messageParts.push(
       '',
       'Additional Venue & Equipment Notes:',
       additionalNotes
-    ].join('\n');
+    );
+
+    const compiledMessage = messageParts.join('\n');
 
     // Populate the hidden Google Form inputs
     const gName = document.getElementById('gform-name') as HTMLInputElement;
@@ -475,11 +753,14 @@ const technicalNeeds = isFr ? [
     if (quoteSubmitBtn) {
       quoteSubmitBtn.removeAttribute('disabled');
       quoteSubmitBtn.innerHTML = `
-        <span>${isFrench ? "Soumettre la demande de devis" : "Submit Quote Request"}</span>
+        <span id="quote-submit-btn-text">${isFrench ? "Soumettre la demande de devis" : "Submit Quote Request"}</span>
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
         </svg>
       `;
+    }
+    if ((window as any).__zipEnterpriseQuote) {
+      syncEnterpriseQuoteToForm((window as any).__zipEnterpriseQuote);
     }
   });
 </script>

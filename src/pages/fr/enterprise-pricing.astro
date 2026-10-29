@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import EnterprisePricingCalculator from '../../components/EnterprisePricingCalculator.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+import FaqSection from '../../components/FaqSection.astro';
+
+const enterpriseSchema = {
+  "@type": "Service",
+  "@id": "https://zipsolutions.org/fr/enterprise-pricing#service",
+  "name": "Calculateur de devis sur mesure Zip Captions Entreprise et événements",
+  "provider": {
+    "@id": "https://zipsolutions.org/#organization"
+  },
+  "serviceType": "Sous-titrage en direct pour entreprises, diffusion multi-salles et soutien dédié",
+  "description": "Calculateur de devis pour l'utilisation entreprise et événementielle de Zip Captions avec soutien technique dédié : 1 000 $ CAD pour 1 jour (1 salle incluse), 250 $ CAD par jour additionnel et 200 $ CAD par salle additionnelle par jour.",
+  "url": "https://zipsolutions.org/fr/enterprise-pricing",
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "CAD",
+    "lowPrice": "1000.00",
+    "description": "Jour 1 : 1 000 $ CAD de base (1 salle + soutien dédié). Chaque jour additionnel : 250 $ CAD/jour. Chaque salle additionnelle : 200 $ CAD/salle/jour."
+  }
+};
+
+const faqs = [
+  {
+    question: "Quelle est la différence entre les forfaits Patreon (5 $ à 30 $/mois) et la tarification Entreprise sur mesure ?",
+    answer: "Nos abonnements mensuels Patreon (Essentiel à 5 $, Premium à 15 $ et Platine à 30 $) sont strictement conçus pour un usage personnel ou individuel en libre-service. La tarification Entreprise sur mesure (1 000 $ CAD le Jour 1, 250 $ CAD par jour additionnel et 200 $ CAD/jour par salle supplémentaire) s'adresse aux entreprises, colloques, centres de services scolaires, universités et municipalités nécessitant un accompagnement technique dédié, un vocabulaire IA personnalisé, une gestion multi-salles et une facturation officielle par bon de commande (PO)."
+  },
+  {
+    question: "Comment est calculé le tarif des salles si notre congrès compte 1 salle plénière le Jour 1, 4 salles d'ateliers le Jour 2, et 1 salle plénière le Jour 3 ?",
+    answer: "Chaque journée d'événement inclut 1 salle principale dans le tarif journalier de base (1 000 $ CAD le Jour 1 ; 250 $ CAD pour chaque jour additionnel). Vous ne payez le supplément de 200 $ CAD par salle additionnelle que les jours où ces salles supplémentaires sont actives. Dans cet exemple sur 3 jours : Jour 1 (1 salle) = 1 000 $ CAD ; Jour 2 (4 salles = 250 $ de base + 3 salles suppl. × 200 $) = 850 $ CAD ; Jour 3 (1 salle) = 250 $ CAD, soit un total transparent de 2 100 $ CAD."
+  },
+  {
+    question: "Y a-t-il une limite ou un coût supplémentaire selon le nombre de participants qui scannent les codes QR des salles ?",
+    answer: "Jamais. Que 30 personnes ou 3 000 congressistes scannent le code QR d'une salle pour suivre les sous-titres et traductions en direct sur leur téléphone, tablette ou ordinateur portable, l'accès des spectateurs est 100 % illimité et sans aucuns frais supplémentaires."
+  },
+  {
+    question: "Pouvons-nous recevoir un devis officiel et régler par bon de commande (PO) ou virement bancaire en CAD ou en USD ?",
+    answer: "Oui. Nos tarifs Entreprise de base sont établis en dollars canadiens (CAD), et vous pouvez basculer entre CAD et USD directement dans le calculateur ci-dessus. Soumettez le formulaire pré-rempli ci-dessous et notre équipe vous transmettra un devis officiel pour votre service des achats (bon de commande / PO, virement bancaire ou carte d'entreprise)."
+  }
+];
+---
+
+<BaseLayout
+  title="Calculateur de tarifs Entreprise et événements — Devis Zip Captions | Solutions Zip"
+  description="Calculez instantanément votre devis sur mesure Zip Captions pour les entreprises et événements avec soutien : 1 000 $ CAD pour 1 jour, 250 $ CAD par jour supplémentaire et 200 $ CAD/jour par salle additionnelle."
+  schema={enterpriseSchema}
+  faqs={faqs}
+>
+  <Fragment slot="head">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  </Fragment>
+
+  <!-- En-tête -->
+  <section class="bg-gradient-to-b from-white to-slate-50 border-b border-slate-200/80 pt-12 pb-14 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm font-bold text-teal-brand tracking-wide uppercase mb-3 font-heading">
+        Entreprises et événements accompagnés
+      </p>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-midnight font-heading leading-tight">
+        Calculateur de devis Entreprise Zip Captions
+      </h1>
+      <p class="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        Créez un devis instantané et transparent pour vos déploiements d'entreprise, congrès multi-salles et événements avec soutien technique. Vous cherchez une formule pour un usage personnel ou individuel ? Consultez nos <a href="/fr/pricing#personal-plans" class="text-amethyst font-semibold underline hover:text-amethyst-dark">forfaits individuels Patreon</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section du calculateur interactif -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+    <EnterprisePricingCalculator formTargetId="enterprise-quote-form" />
+  </section>
+
+  <!-- Section du formulaire de demande pré-rempli -->
+  <section id="enterprise-quote-form" class="py-16 bg-slate-50 border-t border-slate-200/80 scroll-mt-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading block mb-2">
+          Étape 3 • Proposition officielle et facturation
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold font-heading text-midnight">
+          Transmettre votre devis personnalisé à notre équipe
+        </h2>
+        <p class="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
+          Votre configuration jour par jour et l'estimation calculée ci-dessus sont automatiquement jointes au formulaire. Complétez vos coordonnées pour recevoir une proposition formelle (facture ou bon de commande / PO).
+        </p>
+      </div>
+
+      <QuoteForm id="enterprise-quote-request-form" showCalculatorBanner={false} />
+
+      <div class="text-center text-xs text-slate-500 pt-2 space-y-1">
+        <p>
+          Vous souhaitez en savoir plus sur les relais par code QR, l'affichage sur scène et le surtitrage théâtral ? Découvrez nos <a href="/fr/live-event-quotes" class="text-teal-brand font-semibold hover:underline">solutions pour événements en direct</a>.
+        </p>
+        <p>
+          Vous recherchez plutôt un forfait pour un usage personnel ou individuel ? Visitez <a href="/fr/pricing" class="text-amethyst font-semibold hover:underline">Tarifs personnels et individuels</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <FaqSection
+    title="Questions fréquentes sur la tarification Entreprise"
+    subtitle="Réponses claires sur le soutien dédié, le calcul multi-salles et les bons de commande."
+    faqs={faqs}
+    groupName="faq-fr-enterprise-pricing"
+  />
+</BaseLayout>

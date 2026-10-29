@@ -19,6 +19,7 @@ export const GET: APIRoute = async ({ site }) => {
     'use-cases/broadcast-and-streaming',
     'easyspeak',
     'pricing',
+    'enterprise-pricing',
     'contact-us',
     'events',
     'live-event-quotes',

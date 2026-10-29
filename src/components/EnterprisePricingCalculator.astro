@@ -1,0 +1,892 @@
+---
+interface Props {
+  formTargetId?: string;
+}
+
+const isFr = Astro.currentLocale === 'fr' || Astro.url.pathname.startsWith('/fr');
+const { formTargetId = "enterprise-quote-form" } = Astro.props;
+
+const enterpriseInclusions = isFr ? [
+  "1 salle principale incluse chaque jour (relais QR illimité pour les participants)",
+  "Accompagnement technique dédié, tests préalables et soutien en direct",
+  "Moteur de sous-titrage IA haute précision avec vocabulaire personnalisé et profils bilingues",
+  "Intégration directe pour écrans de scène, projecteurs, vMix et OBS Studio",
+  "Facturation officielle pour entreprises et établissements (bon de commande / PO, virement, facture)"
+] : [
+  "1 primary room included each day (with unlimited attendee QR code relay)",
+  "Dedicated technical onboarding, pre-event audio testing, and live support",
+  "High-accuracy cloud AI captioning with custom vocabulary & bilingual profiles",
+  "Direct integration for stage projectors, confidence monitors, vMix & OBS Studio",
+  "Enterprise & institutional procurement billing (Official Invoice, Purchase Order / PO)"
+];
+---
+
+<div id="enterprise-calculator-root" class="space-y-8" data-lang={isFr ? "fr" : "en"} data-form-target={formTargetId}>
+  
+  <!-- Personal vs. Enterprise Distinction Banner -->
+  <div class="bg-gradient-to-r from-purple-50 via-white to-teal-50/60 rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xs flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+    <div class="space-y-2 max-w-3xl">
+      <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amethyst font-heading">
+        <span>{isFr ? "Entreprises et événements vs Usage individuel" : "Enterprise & Event Support vs. Individual Usage"}</span>
+      </div>
+      <h2 class="text-xl sm:text-2xl font-bold font-heading text-midnight">
+        {isFr
+          ? "Conçu pour les organisations, colloques et productions avec soutien dédié"
+          : "Built for Organizations, Conferences & Productions Requiring Dedicated Support"}
+      </h2>
+      <p class="text-sm text-slate-600 leading-relaxed">
+        {isFr ? (
+          <>
+            Nos abonnements mensuels <strong>Patreon (5 $ à 30 $ / mois)</strong> sont réservés à un <strong>usage personnel ou individuel</strong> en libre-service. Pour les entreprises, universités, centres de services scolaires et événements nécessitant un soutien technique dédié, la gestion multi-salles et une facturation par bon de commande (PO), utilisez ce calculateur pour générer votre devis sur mesure.
+          </>
+        ) : (
+          <>
+            Our monthly <strong>Patreon tiers ($5–$30/mo)</strong> are designed for self-serve <strong>personal or individual usage</strong>. For enterprises, conferences, school districts, and live productions requiring dedicated technical support, multi-room coordination, and official PO/invoice billing, use the calculator below to build your custom quote.
+          </>
+        )}
+      </p>
+    </div>
+    <div class="shrink-0 flex flex-wrap gap-3">
+      <a 
+        href={isFr ? "/fr/pricing#personal-plans" : "/pricing#personal-plans"} 
+        class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-midnight text-xs font-bold font-heading transition-colors min-h-12"
+      >
+        <span>{isFr ? "Voir les forfaits individuels (Patreon)" : "View Personal / Individual Plans"}</span>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Rate Card Overview Pills/Boxes -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+    <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-xs flex flex-col justify-between">
+      <div>
+        <span class="text-xs font-bold font-mono uppercase tracking-wider text-teal-brand block mb-1">
+          {isFr ? "Jour 1 (Base + Soutien)" : "Day 1 (Base + Support)"}
+        </span>
+        <div class="flex items-baseline gap-1.5 my-2">
+          <span class="text-3xl sm:text-4xl font-extrabold font-heading text-midnight" data-rate-display="day1">{isFr ? "1 000 $" : "$1,000"}</span>
+          <span class="text-xs font-semibold text-slate-500" data-currency-label>CAD</span>
+        </div>
+      </div>
+      <p class="text-xs text-slate-600 leading-relaxed">
+        {isFr
+          ? "Comprend la première journée complète d'événement, 1 salle principale et l'accompagnement technique dédié."
+          : "Includes full first event day, 1 primary room setup, custom vocabulary prep, and dedicated support."}
+      </p>
+    </div>
+
+    <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-xs flex flex-col justify-between">
+      <div>
+        <span class="text-xs font-bold font-mono uppercase tracking-wider text-amethyst block mb-1">
+          {isFr ? "Chaque jour additionnel" : "Each Additional Day"}
+        </span>
+        <div class="flex items-baseline gap-1.5 my-2">
+          <span class="text-3xl sm:text-4xl font-extrabold font-heading text-midnight" data-rate-display="extraDay">{isFr ? "+250 $" : "+$250"}</span>
+          <span class="text-xs font-semibold text-slate-500"><span data-currency-label>CAD</span> / {isFr ? "jour" : "day"}</span>
+        </div>
+      </div>
+      <p class="text-xs text-slate-600 leading-relaxed">
+        {isFr
+          ? "Tarif réduit pour le jour 2 et les jours suivants (inclut 1 salle principale et le soutien continu)."
+          : "Discounted rate for Day 2 and beyond (includes 1 primary room and continuous event support)."}
+      </p>
+    </div>
+
+    <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-xs flex flex-col justify-between">
+      <div>
+        <span class="text-xs font-bold font-mono uppercase tracking-wider text-coral block mb-1">
+          {isFr ? "Salles additionnelles" : "Additional Rooms"}
+        </span>
+        <div class="flex items-baseline gap-1.5 my-2">
+          <span class="text-3xl sm:text-4xl font-extrabold font-heading text-midnight" data-rate-display="extraRoom">{isFr ? "+200 $" : "+$200"}</span>
+          <span class="text-xs font-semibold text-slate-500"><span data-currency-label>CAD</span> / {isFr ? "salle / jour" : "room / day"}</span>
+        </div>
+      </div>
+      <p class="text-xs text-slate-600 leading-relaxed">
+        {isFr
+          ? "Ajoutez des salles d'ateliers ou scènes simultanées jour par jour selon votre programme."
+          : "Add concurrent breakout rooms or secondary stages on any specific day of your schedule."}
+      </p>
+    </div>
+  </div>
+
+  <!-- Main Interactive Calculator Grid -->
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+    
+    <!-- Left Column: Configuration Controls (7 cols) -->
+    <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-8">
+      
+      <!-- Step 1: Currency & Rate Mode Selection -->
+      <div class="space-y-5 border-b border-slate-200 pb-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading block mb-1">
+              {isFr ? "Étape 1" : "Step 1"}
+            </span>
+            <h3 class="text-lg sm:text-xl font-bold font-heading text-midnight">
+              {isFr ? "Devise et durée de l'événement" : "Currency & Event Duration"}
+            </h3>
+          </div>
+
+          <!-- Currency Radio Group (Fewer than 6 options -> visible radio buttons per modern-web-guidance) -->
+          <fieldset aria-label={isFr ? "Sélection de la devise" : "Currency selection"}>
+            <legend class="sr-only">{isFr ? "Devise du devis" : "Quote Currency"}</legend>
+            <div class="inline-flex rounded-2xl bg-slate-100 p-1 border border-slate-200">
+              <label for="calc-currency-cad" class="cursor-pointer">
+                <input 
+                  type="radio" 
+                  name="calc_currency" 
+                  id="calc-currency-cad" 
+                  value="CAD" 
+                  checked 
+                  class="sr-only peer"
+                />
+                <span class="inline-flex items-center justify-center px-4 py-2 rounded-xl text-xs font-bold font-mono text-slate-600 peer-checked:bg-white peer-checked:text-midnight peer-checked:shadow-xs peer-focus-visible:ring-2 peer-focus-visible:ring-amethyst transition-all min-h-10">
+                  🇨🇦 CAD ($)
+                </span>
+              </label>
+              <label for="calc-currency-usd" class="cursor-pointer">
+                <input 
+                  type="radio" 
+                  name="calc_currency" 
+                  id="calc-currency-usd" 
+                  value="USD" 
+                  class="sr-only peer"
+                />
+                <span class="inline-flex items-center justify-center px-4 py-2 rounded-xl text-xs font-bold font-mono text-slate-600 peer-checked:bg-white peer-checked:text-midnight peer-checked:shadow-xs peer-focus-visible:ring-2 peer-focus-visible:ring-amethyst transition-all min-h-10">
+                  🇺🇸 USD ($)
+                </span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- Optional USD Rate Mode Notice (shown when USD is selected) -->
+        <div id="usd-rate-options" class="hidden rounded-2xl bg-slate-50 p-4 border border-slate-200 space-y-2">
+          <fieldset>
+            <legend class="text-xs font-bold text-midnight font-heading mb-2">
+              {isFr ? "Mode d'affichage en dollars américains (USD) :" : "US Dollar (USD) Display Mode:"}
+            </legend>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <label for="usd-mode-converted" class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white border border-slate-200 cursor-pointer hover:border-teal-brand/60 transition-colors min-h-12">
+                <input 
+                  type="radio" 
+                  name="usd_rate_mode" 
+                  id="usd-mode-converted" 
+                  value="converted" 
+                  checked 
+                  class="w-4 h-4 text-teal-brand focus:ring-teal-brand"
+                />
+                <span class="text-xs font-medium text-slate-700">
+                  {isFr ? "Conversion estimée CAD→USD (~0,72x)" : "Estimated CAD→USD Conversion (~0.72x)"}
+                </span>
+              </label>
+              <label for="usd-mode-nominal" class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white border border-slate-200 cursor-pointer hover:border-teal-brand/60 transition-colors min-h-12">
+                <input 
+                  type="radio" 
+                  name="usd_rate_mode" 
+                  id="usd-mode-nominal" 
+                  value="nominal" 
+                  class="w-4 h-4 text-teal-brand focus:ring-teal-brand"
+                />
+                <span class="text-xs font-medium text-slate-700">
+                  {isFr ? "Tarif nominal au pair (1 000 $ / 250 $ / 200 $ USD)" : "Nominal Par Rate ($1,000 / $250 / $200 USD)"}
+                </span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- Number of Days Controls -->
+        <div class="pt-2">
+          <label for="calc-total-days" class="block text-sm font-semibold text-midnight mb-1.5 font-heading">
+            {isFr ? "Nombre total de jours d'événement" : "Total Number of Event Days"}
+          </label>
+          <span id="days-hint" class="block text-xs text-slate-500 mb-3">
+            {isFr
+              ? "Jour 1 = 1 000 $ de base • Chaque jour additionnel = +250 $ de base (1 salle incluse chaque jour)"
+              : "Day 1 = $1,000 base • Each additional day = +$250 base (includes 1 primary room per day)"}
+          </span>
+
+          <div class="flex flex-wrap items-center gap-4">
+            <!-- Stepper for Total Days -->
+            <div class="inline-flex items-center rounded-2xl border border-slate-300 bg-white p-1 shadow-2xs">
+              <button 
+                type="button" 
+                id="btn-days-dec"
+                aria-label={isFr ? "Réduire le nombre de jours" : "Decrease number of days"}
+                class="w-12 h-12 rounded-xl flex items-center justify-center text-lg font-bold text-midnight hover:bg-slate-100 active:bg-slate-200 transition-colors disabled:opacity-40"
+              >
+                &minus;
+              </button>
+              <input 
+                type="text" 
+                inputmode="numeric" 
+                pattern="[0-9]*"
+                id="calc-total-days" 
+                name="calc_total_days"
+                value="1" 
+                aria-describedby="days-hint"
+                class="w-16 text-center font-heading font-extrabold text-xl text-midnight bg-transparent focus:outline-none text-base"
+              />
+              <button 
+                type="button" 
+                id="btn-days-inc"
+                aria-label={isFr ? "Augmenter le nombre de jours" : "Increase number of days"}
+                class="w-12 h-12 rounded-xl flex items-center justify-center text-lg font-bold text-midnight hover:bg-slate-100 active:bg-slate-200 transition-colors"
+              >
+                +
+              </button>
+            </div>
+
+            <!-- Quick Day Presets -->
+            <div class="flex flex-wrap items-center gap-2" role="group" aria-label={isFr ? "Préréglages rapides de durée" : "Quick duration presets"}>
+              {[1, 2, 3, 4, 5].map((d) => (
+                <button
+                  type="button"
+                  data-day-preset={d}
+                  class={`day-preset-btn px-3.5 py-2.5 rounded-xl text-xs font-bold font-heading border transition-all min-h-12 ${
+                    d === 1
+                      ? 'bg-midnight text-white border-midnight'
+                      : 'bg-slate-50 text-slate-700 border-slate-200 hover:border-teal-brand hover:bg-white'
+                  }`}
+                >
+                  {d} {isFr ? (d === 1 ? "Jour" : "Jours") : (d === 1 ? "Day" : "Days")}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2: Per-Day Room Configuration -->
+      <div class="space-y-5">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-amethyst font-heading block mb-1">
+              {isFr ? "Étape 2" : "Step 2"}
+            </span>
+            <h3 class="text-lg sm:text-xl font-bold font-heading text-midnight">
+              {isFr ? "Nombre de salles par jour" : "Configure Rooms for Each Day"}
+            </h3>
+            <p class="text-xs text-slate-500 mt-0.5">
+              {isFr
+                ? "Personnalisez le nombre de salles actives pour chaque journée individuellement (1re salle incluse, +200 $/salle suppl.)."
+                : "Specify the exact number of concurrent rooms needed on each individual day (1st room included, +$200 per extra room)."}
+            </p>
+          </div>
+
+          <!-- Quick Apply Rooms to All Days -->
+          <div class="flex items-center gap-2 bg-slate-50 p-2 rounded-2xl border border-slate-200 self-start sm:self-auto">
+            <label for="bulk-room-select" class="text-xs font-semibold text-slate-600 pl-1">
+              {isFr ? "Appliquer à tous les jours :" : "Set all days to:"}
+            </label>
+            <div class="inline-flex items-center gap-1">
+              {[1, 2, 3, 4, 5].map((r) => (
+                <button
+                  type="button"
+                  data-bulk-rooms={r}
+                  title={isFr ? `Mettre ${r} salle(s) pour tous les jours` : `Set all days to ${r} room(s)`}
+                  class="px-2.5 py-1.5 rounded-lg text-xs font-bold font-mono bg-white border border-slate-200 hover:border-amethyst hover:text-amethyst text-slate-700 transition-colors min-h-9 min-w-9"
+                >
+                  {r}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic List of Days -->
+        <div id="days-schedule-list" class="space-y-3.5" aria-live="polite">
+          <!-- Populated dynamically and initialized with Day 1 -->
+        </div>
+
+        <!-- Add Another Day Button -->
+        <div class="pt-2">
+          <button
+            type="button"
+            id="btn-add-day-row"
+            class="w-full py-3.5 px-4 rounded-2xl border-2 border-dashed border-slate-300 hover:border-teal-brand text-slate-700 hover:text-teal-brand font-heading font-bold text-sm flex items-center justify-center gap-2 transition-colors bg-slate-50/50 hover:bg-teal-50/30 min-h-12"
+          >
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4" />
+            </svg>
+            <span id="add-day-btn-label">
+              {isFr ? "Ajouter un jour supplémentaire (+250 $ de base)" : "Add Another Event Day (+$250 base)"}
+            </span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right Column: Sticky Live Quote Summary (5 cols) -->
+    <div class="lg:col-span-5 lg:sticky lg:top-24 space-y-6">
+      <div class="bg-midnight text-white rounded-3xl p-6 sm:p-8 border border-slate-800 shadow-xl space-y-6">
+        
+        <div class="flex items-start justify-between gap-4 border-b border-slate-800 pb-5">
+          <div>
+            <span class="text-xs font-bold font-mono uppercase tracking-wider text-teal-light block mb-1">
+              {isFr ? "Estimation en temps réel" : "Live Custom Quote"}
+            </span>
+            <h3 class="text-xl sm:text-2xl font-extrabold font-heading text-white">
+              {isFr ? "Résumé du devis Entreprise" : "Enterprise Quote Summary"}
+            </h3>
+          </div>
+          <span id="summary-currency-badge" class="px-3 py-1 rounded-lg bg-white/10 border border-white/15 text-xs font-mono font-bold text-teal-light">
+            CAD
+          </span>
+        </div>
+
+        <!-- High-Level Metrics -->
+        <div class="grid grid-cols-2 gap-3">
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-3.5">
+            <span class="text-xs text-slate-400 block">{isFr ? "Durée totale" : "Total Duration"}</span>
+            <span id="summary-total-days" class="text-lg font-extrabold font-heading text-white">
+              1 {isFr ? "Jour" : "Day"}
+            </span>
+          </div>
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-3.5">
+            <span class="text-xs text-slate-400 block">{isFr ? "Total salles-jours" : "Total Room-Days"}</span>
+            <span id="summary-total-room-days" class="text-lg font-extrabold font-heading text-white">
+              1 {isFr ? "Salle-jour" : "Room-Day"}
+            </span>
+          </div>
+        </div>
+
+        <!-- Itemized Line Items -->
+        <div class="space-y-3 text-sm border-b border-slate-800 pb-5">
+          <div class="flex items-center justify-between text-slate-200">
+            <span>{isFr ? "Jour 1 (Base + 1 salle + soutien)" : "Day 1 (Base + 1 room + support)"}</span>
+            <span id="summary-line-day1" class="font-mono font-semibold text-white">$1,000</span>
+          </div>
+
+          <div id="summary-row-extra-days" class="flex items-center justify-between text-slate-300">
+            <span id="summary-label-extra-days">
+              {isFr ? "Jours additionnels (0 × 250 $)" : "Additional days (0 × $250)"}
+            </span>
+            <span id="summary-line-extra-days" class="font-mono font-semibold text-white">$0</span>
+          </div>
+
+          <div id="summary-row-extra-rooms" class="flex items-center justify-between text-slate-300">
+            <span id="summary-label-extra-rooms">
+              {isFr ? "Salles additionnelles (0 × 200 $)" : "Additional rooms (0 × $200)"}
+            </span>
+            <span id="summary-line-extra-rooms" class="font-mono font-semibold text-white">$0</span>
+          </div>
+        </div>
+
+        <!-- Day-by-Day Collapsible / Scrollable Breakdown -->
+        <div class="space-y-2">
+          <span class="text-xs font-bold font-mono uppercase tracking-wider text-slate-400 block">
+            {isFr ? "Détail jour par jour" : "Day-by-Day Schedule Breakdown"}
+          </span>
+          <ul id="summary-daily-breakdown" class="space-y-1.5 max-h-44 overflow-y-auto pr-1 text-xs text-slate-300 font-mono">
+            <!-- Populated dynamically -->
+          </ul>
+        </div>
+
+        <!-- Grand Total -->
+        <div class="pt-4 border-t border-slate-800 flex items-baseline justify-between">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block">
+              {isFr ? "Total estimé" : "Estimated Total"}
+            </span>
+            <span id="summary-tax-note" class="text-[11px] text-slate-400">
+              {isFr ? "Hors taxes applicables" : "Before applicable taxes"}
+            </span>
+          </div>
+          <div class="text-right">
+            <span id="summary-grand-total" class="text-3xl sm:text-4xl font-extrabold font-heading text-teal-light">
+              {isFr ? "1 000 $" : "$1,000"}
+            </span>
+            <span id="summary-grand-currency" class="text-xs font-mono text-slate-300 ml-1">CAD</span>
+          </div>
+        </div>
+
+        <!-- Primary Action: Pre-fill & Jump to Quote Request Form -->
+        <div class="space-y-3 pt-2">
+          <a
+            href={`#${formTargetId}`}
+            id="btn-apply-to-form"
+            class="w-full py-4 px-6 rounded-xl font-heading font-bold text-white bg-teal-brand hover:bg-teal-light hover:text-midnight shadow-md hover:shadow-lg transition-all text-sm sm:text-base flex items-center justify-center gap-2 min-h-12"
+          >
+            <span>{isFr ? "Pré-remplir et envoyer cette demande de devis" : "Pre-Fill & Submit Official Quote Request"}</span>
+            <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </a>
+          <p class="text-[11px] text-slate-400 text-center leading-relaxed">
+            {isFr
+              ? "Votre configuration jour par jour est automatiquement jointe au formulaire ci-dessous pour notre équipe."
+              : "Your day-by-day room configuration is automatically attached to the quote request form below."}
+          </p>
+        </div>
+
+        <!-- Enterprise Inclusions List -->
+        <div class="pt-4 border-t border-slate-800/80 space-y-2.5">
+          <span class="text-xs font-bold font-heading text-slate-200 block">
+            {isFr ? "Inclus dans chaque devis Entreprise :" : "Included with Every Enterprise Quote:"}
+          </span>
+          <ul class="space-y-2 text-xs text-slate-300">
+            {enterpriseInclusions.map((item) => (
+              <li class="flex items-start gap-2">
+                <span class="text-teal-light font-bold mt-0.5 shrink-0">✓</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  interface DayConfig {
+    rooms: number;
+    note: string;
+  }
+
+  const root = document.getElementById('enterprise-calculator-root');
+  if (root) {
+    const isFr = root.dataset.lang === 'fr';
+    const formTargetId = root.dataset.formTarget || 'enterprise-quote-form';
+
+    // Base pricing constants (in CAD)
+    const BASE_DAY_1 = 1000;
+    const BASE_EXTRA_DAY = 250;
+    const EXTRA_ROOM_PER_DAY = 200;
+    const USD_EXCHANGE_MULTIPLIER = 0.725;
+
+    // State
+    let currency: 'CAD' | 'USD' = 'CAD';
+    let usdMode: 'converted' | 'nominal' = 'converted';
+    let days: DayConfig[] = [{ rooms: 1, note: '' }];
+
+    // DOM Elements
+    const totalDaysInput = document.getElementById('calc-total-days') as HTMLInputElement;
+    const btnDaysDec = document.getElementById('btn-days-dec') as HTMLButtonElement;
+    const btnDaysInc = document.getElementById('btn-days-inc') as HTMLButtonElement;
+    const btnAddDayRow = document.getElementById('btn-add-day-row') as HTMLButtonElement;
+    const addDayBtnLabel = document.getElementById('add-day-btn-label');
+    const daysScheduleList = document.getElementById('days-schedule-list');
+    const usdRateOptions = document.getElementById('usd-rate-options');
+    const applyToFormBtn = document.getElementById('btn-apply-to-form');
+
+    // Summary DOM Elements
+    const summaryCurrencyBadge = document.getElementById('summary-currency-badge');
+    const summaryTotalDays = document.getElementById('summary-total-days');
+    const summaryTotalRoomDays = document.getElementById('summary-total-room-days');
+    const summaryLineDay1 = document.getElementById('summary-line-day1');
+    const summaryLabelExtraDays = document.getElementById('summary-label-extra-days');
+    const summaryLineExtraDays = document.getElementById('summary-line-extra-days');
+    const summaryLabelExtraRooms = document.getElementById('summary-label-extra-rooms');
+    const summaryLineExtraRooms = document.getElementById('summary-line-extra-rooms');
+    const summaryDailyBreakdown = document.getElementById('summary-daily-breakdown');
+    const summaryGrandTotal = document.getElementById('summary-grand-total');
+    const summaryGrandCurrency = document.getElementById('summary-grand-currency');
+
+    function getMultiplier(): number {
+      if (currency === 'USD' && usdMode === 'converted') {
+        return USD_EXCHANGE_MULTIPLIER;
+      }
+      return 1;
+    }
+
+    function formatMoney(amount: number): string {
+      const rounded = Math.round(amount);
+      if (isFr) {
+        return `${rounded.toLocaleString('fr-CA')} $`;
+      }
+      return `$${rounded.toLocaleString('en-US')}`;
+    }
+
+    function setDayCount(newCount: number) {
+      const clamped = Math.max(1, Math.min(30, Math.floor(newCount) || 1));
+      while (days.length < clamped) {
+        // Default new day's room count to match the last configured day for convenience
+        const lastRooms = days.length > 0 ? days[days.length - 1].rooms : 1;
+        days.push({ rooms: lastRooms, note: '' });
+      }
+      if (days.length > clamped) {
+        days = days.slice(0, clamped);
+      }
+      renderAll();
+    }
+
+    function renderDayRows() {
+      if (!daysScheduleList) return;
+      const mult = getMultiplier();
+      const day1Rate = Math.round(BASE_DAY_1 * mult);
+      const extraDayRate = Math.round(BASE_EXTRA_DAY * mult);
+      const extraRoomRate = Math.round(EXTRA_ROOM_PER_DAY * mult);
+
+      daysScheduleList.innerHTML = '';
+
+      days.forEach((day, idx) => {
+        const dayNum = idx + 1;
+        const isFirstDay = idx === 0;
+        const baseForThisDay = isFirstDay ? day1Rate : extraDayRate;
+        const extraRooms = Math.max(0, day.rooms - 1);
+        const extraRoomsCost = extraRooms * extraRoomRate;
+        const daySubtotal = baseForThisDay + extraRoomsCost;
+
+        const row = document.createElement('div');
+        row.className = 'rounded-2xl border border-slate-200 bg-slate-50/70 p-4 sm:p-5 transition-all hover:border-slate-300';
+
+        const dayTitle = isFr ? `Jour ${dayNum}` : `Day ${dayNum}`;
+        const baseBadgeText = isFirstDay
+          ? (isFr ? `Base Jour 1 : ${formatMoney(baseForThisDay)} (1 salle incluse)` : `Day 1 Base: ${formatMoney(baseForThisDay)} (1st room included)`)
+          : (isFr ? `Jour suppl. : +${formatMoney(baseForThisDay)} (1 salle incluse)` : `Additional Day: +${formatMoney(baseForThisDay)} (1st room included)`);
+
+        const extraRoomText = extraRooms > 0
+          ? (isFr
+              ? `+ ${extraRooms} salle${extraRooms > 1 ? 's' : ''} suppl. (${formatMoney(extraRoomsCost)})`
+              : `+ ${extraRooms} extra room${extraRooms > 1 ? 's' : ''} (${formatMoney(extraRoomsCost)})`)
+          : (isFr ? `Aucune salle suppl.` : `No extra rooms`);
+
+        row.innerHTML = `
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="space-y-1.5 flex-1">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg text-xs font-extrabold font-heading ${isFirstDay ? 'bg-teal-brand text-white' : 'bg-amethyst/15 text-amethyst'}">
+                  ${dayTitle}
+                </span>
+                <span class="text-xs font-semibold text-slate-600">
+                  ${baseBadgeText}
+                </span>
+              </div>
+              <div class="pt-1">
+                <label for="day-note-${dayNum}" class="sr-only">${isFr ? `Nom ou note pour le jour ${dayNum}` : `Optional label for Day ${dayNum}`}</label>
+                <input
+                  type="text"
+                  id="day-note-${dayNum}"
+                  data-day-note-idx="${idx}"
+                  value="${day.note.replace(/"/g, '&quot;')}"
+                  placeholder="${isFr ? `Optionnel : ex. Plénière, Ateliers simultanés...` : `Optional label: e.g. Keynote Day, 4 Breakout Tracks...`}"
+                  class="w-full sm:max-w-xs px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs text-midnight placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-brand"
+                />
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between sm:justify-end gap-4 pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-200/80">
+              <!-- Room Stepper -->
+              <div>
+                <label for="day-rooms-${dayNum}" class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1 text-left sm:text-center">
+                  ${isFr ? 'Salles actives' : 'Active Rooms'}
+                </label>
+                <div class="inline-flex items-center rounded-xl border border-slate-300 bg-white p-0.5 shadow-2xs">
+                  <button
+                    type="button"
+                    data-room-dec="${idx}"
+                    aria-label="${isFr ? `Réduire les salles pour le jour ${dayNum}` : `Decrease rooms for Day ${dayNum}`}"
+                    class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-midnight hover:bg-slate-100 active:bg-slate-200 transition-colors disabled:opacity-40"
+                    ${day.rooms <= 1 ? 'disabled' : ''}
+                  >
+                    &minus;
+                  </button>
+                  <input
+                    type="text"
+                    inputmode="numeric"
+                    pattern="[0-9]*"
+                    id="day-rooms-${dayNum}"
+                    data-room-input="${idx}"
+                    value="${day.rooms}"
+                    class="w-12 text-center font-heading font-bold text-base text-midnight bg-transparent focus:outline-none"
+                  />
+                  <button
+                    type="button"
+                    data-room-inc="${idx}"
+                    aria-label="${isFr ? `Augmenter les salles pour le jour ${dayNum}` : `Increase rooms for Day ${dayNum}`}"
+                    class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-midnight hover:bg-slate-100 active:bg-slate-200 transition-colors"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+
+              <!-- Day Subtotal -->
+              <div class="text-right min-w-[105px]">
+                <span class="block text-[11px] text-slate-500">${extraRoomText}</span>
+                <span class="text-base sm:text-lg font-extrabold font-heading text-midnight">
+                  ${formatMoney(daySubtotal)}
+                </span>
+                ${days.length > 1 ? `
+                  <button
+                    type="button"
+                    data-remove-day="${idx}"
+                    class="block ml-auto mt-0.5 text-[11px] font-semibold text-slate-400 hover:text-coral transition-colors"
+                  >
+                    ${isFr ? 'Retirer' : 'Remove'}
+                  </button>
+                ` : ''}
+              </div>
+            </div>
+          </div>
+        `;
+
+        daysScheduleList.appendChild(row);
+      });
+
+      // Attach listeners for dynamic inputs inside rows
+      daysScheduleList.querySelectorAll('[data-room-dec]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const idx = Number((btn as HTMLElement).dataset.roomDec);
+          if (days[idx] && days[idx].rooms > 1) {
+            days[idx].rooms -= 1;
+            renderAll();
+          }
+        });
+      });
+
+      daysScheduleList.querySelectorAll('[data-room-inc]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const idx = Number((btn as HTMLElement).dataset.roomInc);
+          if (days[idx] && days[idx].rooms < 50) {
+            days[idx].rooms += 1;
+            renderAll();
+          }
+        });
+      });
+
+      daysScheduleList.querySelectorAll('[data-room-input]').forEach((inp) => {
+        inp.addEventListener('change', () => {
+          const idx = Number((inp as HTMLElement).dataset.roomInput);
+          const val = Math.max(1, Math.min(50, parseInt((inp as HTMLInputElement).value, 10) || 1));
+          if (days[idx]) {
+            days[idx].rooms = val;
+            renderAll();
+          }
+        });
+      });
+
+      daysScheduleList.querySelectorAll('[data-day-note-idx]').forEach((inp) => {
+        inp.addEventListener('input', () => {
+          const idx = Number((inp as HTMLElement).dataset.dayNoteIdx);
+          if (days[idx]) {
+            days[idx].note = (inp as HTMLInputElement).value;
+            updateSummaryAndDispatch();
+          }
+        });
+      });
+
+      daysScheduleList.querySelectorAll('[data-remove-day]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const idx = Number((btn as HTMLElement).dataset.removeDay);
+          if (days.length > 1) {
+            days.splice(idx, 1);
+            renderAll();
+          }
+        });
+      });
+    }
+
+    function updateSummaryAndDispatch() {
+      const mult = getMultiplier();
+      const day1Rate = Math.round(BASE_DAY_1 * mult);
+      const extraDayRate = Math.round(BASE_EXTRA_DAY * mult);
+      const extraRoomRate = Math.round(EXTRA_ROOM_PER_DAY * mult);
+
+      const numDays = days.length;
+      const extraDaysCount = Math.max(0, numDays - 1);
+      const extraDaysTotal = extraDaysCount * extraDayRate;
+
+      let totalRoomsAcrossDays = 0;
+      let totalExtraRoomDays = 0;
+
+      const breakdownLines: string[] = [];
+      if (summaryDailyBreakdown) summaryDailyBreakdown.innerHTML = '';
+
+      days.forEach((d, idx) => {
+        const dayNum = idx + 1;
+        const base = idx === 0 ? day1Rate : extraDayRate;
+        const extraR = Math.max(0, d.rooms - 1);
+        const extraRCost = extraR * extraRoomRate;
+        const sub = base + extraRCost;
+
+        totalRoomsAcrossDays += d.rooms;
+        totalExtraRoomDays += extraR;
+
+        const noteSuffix = d.note.trim() ? ` (${d.note.trim()})` : '';
+        const lineText = isFr
+          ? `Jour ${dayNum}${noteSuffix} : ${d.rooms} salle${d.rooms > 1 ? 's' : ''} → ${formatMoney(sub)}`
+          : `Day ${dayNum}${noteSuffix}: ${d.rooms} room${d.rooms > 1 ? 's' : ''} → ${formatMoney(sub)}`;
+
+        breakdownLines.push(lineText);
+
+        if (summaryDailyBreakdown) {
+          const li = document.createElement('li');
+          li.className = 'flex items-center justify-between py-1 border-b border-slate-800/60 last:border-b-0';
+          li.innerHTML = `
+            <span class="truncate pr-2">${isFr ? `Jour ${dayNum}` : `Day ${dayNum}`}${noteSuffix} (${d.rooms} ${isFr ? (d.rooms > 1 ? 'salles' : 'salle') : (d.rooms > 1 ? 'rooms' : 'room')})</span>
+            <span class="text-white font-semibold shrink-0">${formatMoney(sub)}</span>
+          `;
+          summaryDailyBreakdown.appendChild(li);
+        }
+      });
+
+      const extraRoomsTotal = totalExtraRoomDays * extraRoomRate;
+      const grandTotal = day1Rate + extraDaysTotal + extraRoomsTotal;
+
+      // Update rate cards at top
+      document.querySelectorAll('[data-rate-display="day1"]').forEach((el) => {
+        el.textContent = formatMoney(day1Rate);
+      });
+      document.querySelectorAll('[data-rate-display="extraDay"]').forEach((el) => {
+        el.textContent = `+${formatMoney(extraDayRate)}`;
+      });
+      document.querySelectorAll('[data-rate-display="extraRoom"]').forEach((el) => {
+        el.textContent = `+${formatMoney(extraRoomRate)}`;
+      });
+      document.querySelectorAll('[data-currency-label]').forEach((el) => {
+        el.textContent = currency;
+      });
+
+      if (addDayBtnLabel) {
+        addDayBtnLabel.textContent = isFr
+          ? `Ajouter un jour supplémentaire (+${formatMoney(extraDayRate)} de base)`
+          : `Add Another Event Day (+${formatMoney(extraDayRate)} base)`;
+      }
+
+      // Update Summary Card
+      const currencyBadgeText = currency === 'USD'
+        ? (usdMode === 'converted' ? 'USD (~0.72x CAD)' : 'USD')
+        : 'CAD';
+
+      if (summaryCurrencyBadge) summaryCurrencyBadge.textContent = currencyBadgeText;
+      if (summaryTotalDays) {
+        summaryTotalDays.textContent = `${numDays} ${isFr ? (numDays > 1 ? 'Jours' : 'Jour') : (numDays > 1 ? 'Days' : 'Day')}`;
+      }
+      if (summaryTotalRoomDays) {
+        summaryTotalRoomDays.textContent = `${totalRoomsAcrossDays} ${isFr ? (totalRoomsAcrossDays > 1 ? 'Salles-jours' : 'Salle-jour') : (totalRoomsAcrossDays > 1 ? 'Room-Days' : 'Room-Day')}`;
+      }
+      if (summaryLineDay1) summaryLineDay1.textContent = formatMoney(day1Rate);
+
+      if (summaryLabelExtraDays) {
+        summaryLabelExtraDays.textContent = isFr
+          ? `Jours additionnels (${extraDaysCount} × ${formatMoney(extraDayRate)})`
+          : `Additional days (${extraDaysCount} × ${formatMoney(extraDayRate)})`;
+      }
+      if (summaryLineExtraDays) summaryLineExtraDays.textContent = formatMoney(extraDaysTotal);
+
+      if (summaryLabelExtraRooms) {
+        summaryLabelExtraRooms.textContent = isFr
+          ? `Salles additionnelles (${totalExtraRoomDays} × ${formatMoney(extraRoomRate)})`
+          : `Additional rooms (${totalExtraRoomDays} × ${formatMoney(extraRoomRate)})`;
+      }
+      if (summaryLineExtraRooms) summaryLineExtraRooms.textContent = formatMoney(extraRoomsTotal);
+
+      if (summaryGrandTotal) summaryGrandTotal.textContent = formatMoney(grandTotal);
+      if (summaryGrandCurrency) summaryGrandCurrency.textContent = currency;
+
+      // Update Day Preset active state
+      document.querySelectorAll('.day-preset-btn').forEach((btn) => {
+        const presetVal = Number((btn as HTMLElement).dataset.dayPreset);
+        if (presetVal === numDays) {
+          btn.className = 'day-preset-btn px-3.5 py-2.5 rounded-xl text-xs font-bold font-heading border transition-all min-h-12 bg-midnight text-white border-midnight';
+        } else {
+          btn.className = 'day-preset-btn px-3.5 py-2.5 rounded-xl text-xs font-bold font-heading border transition-all min-h-12 bg-slate-50 text-slate-700 border-slate-200 hover:border-teal-brand hover:bg-white';
+        }
+      });
+
+      // Dispatch custom event so QuoteForm on the page stays live-synced
+      const quoteSummaryText = [
+        isFr ? `=== ESTIMATION DU CALCULATEUR ENTREPRISE ===` : `=== ENTERPRISE CALCULATOR ESTIMATE ===`,
+        isFr ? `Devise : ${currencyBadgeText}` : `Currency: ${currencyBadgeText}`,
+        isFr ? `Durée totale : ${numDays} jour(s) (${totalRoomsAcrossDays} salle(s)-jour(s) au total)` : `Total Duration: ${numDays} day(s) (${totalRoomsAcrossDays} total room-day(s))`,
+        isFr ? `Jour 1 (Base + 1 salle + soutien) : ${formatMoney(day1Rate)}` : `Day 1 (Base + 1 room + support): ${formatMoney(day1Rate)}`,
+        isFr ? `Jours additionnels (${extraDaysCount} × ${formatMoney(extraDayRate)}) : ${formatMoney(extraDaysTotal)}` : `Additional Days (${extraDaysCount} × ${formatMoney(extraDayRate)}): ${formatMoney(extraDaysTotal)}`,
+        isFr ? `Salles additionnelles (${totalExtraRoomDays} × ${formatMoney(extraRoomRate)}) : ${formatMoney(extraRoomsTotal)}` : `Additional Rooms (${totalExtraRoomDays} × ${formatMoney(extraRoomRate)}): ${formatMoney(extraRoomsTotal)}`,
+        isFr ? `Répartition jour par jour :` : `Day-by-Day Schedule:`,
+        ...breakdownLines.map((l) => `  • ${l}`),
+        isFr ? `TOTAL ESTIMÉ : ${formatMoney(grandTotal)} ${currency}` : `ESTIMATED TOTAL: ${formatMoney(grandTotal)} ${currency}`
+      ].join('\n');
+
+      const detailPayload = {
+        currency,
+        usdMode,
+        numDays,
+        totalRoomsAcrossDays,
+        totalExtraRoomDays,
+        grandTotalFormatted: `${formatMoney(grandTotal)} ${currency}`,
+        breakdownLines,
+        summaryText: quoteSummaryText
+      };
+
+      (window as any).__zipEnterpriseQuote = detailPayload;
+      window.dispatchEvent(new CustomEvent('zip:enterprise-quote-updated', { detail: detailPayload }));
+    }
+
+    function renderAll() {
+      if (totalDaysInput) totalDaysInput.value = String(days.length);
+      if (btnDaysDec) btnDaysDec.disabled = days.length <= 1;
+      renderDayRows();
+      updateSummaryAndDispatch();
+    }
+
+    // Event Listeners: Currency
+    document.querySelectorAll('input[name="calc_currency"]').forEach((radio) => {
+      radio.addEventListener('change', (e) => {
+        currency = (e.target as HTMLInputElement).value as 'CAD' | 'USD';
+        if (usdRateOptions) {
+          usdRateOptions.classList.toggle('hidden', currency !== 'USD');
+        }
+        renderAll();
+      });
+    });
+
+    // Event Listeners: USD Rate Mode
+    document.querySelectorAll('input[name="usd_rate_mode"]').forEach((radio) => {
+      radio.addEventListener('change', (e) => {
+        usdMode = (e.target as HTMLInputElement).value as 'converted' | 'nominal';
+        renderAll();
+      });
+    });
+
+    // Event Listeners: Days Stepper & Presets
+    btnDaysDec?.addEventListener('click', () => {
+      if (days.length > 1) setDayCount(days.length - 1);
+    });
+
+    btnDaysInc?.addEventListener('click', () => {
+      if (days.length < 30) setDayCount(days.length + 1);
+    });
+
+    totalDaysInput?.addEventListener('change', () => {
+      setDayCount(parseInt(totalDaysInput.value, 10) || 1);
+    });
+
+    document.querySelectorAll('[data-day-preset]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const d = Number((btn as HTMLElement).dataset.dayPreset);
+        setDayCount(d);
+      });
+    });
+
+    btnAddDayRow?.addEventListener('click', () => {
+      if (days.length < 30) setDayCount(days.length + 1);
+    });
+
+    // Bulk room buttons
+    document.querySelectorAll('[data-bulk-rooms]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const r = Number((btn as HTMLElement).dataset.bulkRooms) || 1;
+        days = days.map((d) => ({ ...d, rooms: r }));
+        renderAll();
+      });
+    });
+
+    // Smooth scroll + highlight on "Pre-Fill & Submit Official Quote Request"
+    applyToFormBtn?.addEventListener('click', () => {
+      updateSummaryAndDispatch();
+      window.dispatchEvent(new CustomEvent('zip:enterprise-quote-locked'));
+    });
+
+    // Initial render
+    renderAll();
+  }
+</script>

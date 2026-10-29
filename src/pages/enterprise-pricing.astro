@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EnterprisePricingCalculator from '../components/EnterprisePricingCalculator.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import FaqSection from '../components/FaqSection.astro';
+
+const enterpriseSchema = {
+  "@type": "Service",
+  "@id": "https://zipsolutions.org/enterprise-pricing#service",
+  "name": "Zip Captions Enterprise & Supported Live Event Custom Pricing",
+  "provider": {
+    "@id": "https://zipsolutions.org/#organization"
+  },
+  "serviceType": "Enterprise Live Captioning, Multi-Room Event Broadcast & Dedicated Support",
+  "description": "Custom quote calculator for Zip Captions enterprise and live event use with dedicated support: $1,000 CAD for Day 1 (includes 1 room), $250 CAD for each additional day, and $200 CAD per day for each additional concurrent room.",
+  "url": "https://zipsolutions.org/enterprise-pricing",
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "CAD",
+    "lowPrice": "1000.00",
+    "description": "Day 1: $1,000 CAD base (1 room + dedicated enterprise support). Each additional day: $250 CAD/day. Each additional room: $200 CAD/room/day."
+  }
+};
+
+const faqs = [
+  {
+    question: "What is the difference between Patreon tiers ($5–$30/mo) and Enterprise Custom Pricing?",
+    answer: "Our monthly Patreon memberships ($5 Essential, $15 Premium, and $30 Platinum) are strictly designed for personal or individual self-serve usage. Enterprise Custom Pricing ($1,000 CAD Day 1, $250 CAD each additional day, and $200 CAD/day per additional room) is built for organizations, conferences, school boards, universities, and municipalities that require dedicated technical onboarding, custom AI vocabulary configuration, multi-room event coordination, live support, and official Purchase Order (PO) or invoice billing."
+  },
+  {
+    question: "How does per-day room pricing work if our conference has 1 keynote room on Day 1, 4 breakout rooms on Day 2, and 1 plenary room on Day 3?",
+    answer: "Every event day includes 1 primary room in the base day rate ($1,000 CAD for Day 1; $250 CAD for each additional day). You only pay the $200 CAD additional room fee on the specific days those extra rooms are active. In that 3-day example: Day 1 (1 room) = $1,000 CAD; Day 2 (4 rooms = $250 base + 3 extra rooms × $200) = $850 CAD; Day 3 (1 room) = $250 CAD, for a transparent 3-day total of $2,100 CAD."
+  },
+  {
+    question: "Is there any limit or extra charge for the number of attendees who scan our room QR codes?",
+    answer: "Never. Whether 30 people or 3,000 attendees scan a room's QR code to read live captions and translations on their own smartphones, tablets, or laptops, audience viewing is 100% unlimited at no extra cost."
+  },
+  {
+    question: "Can we receive an official quote and pay via Purchase Order (PO), wire transfer, or corporate invoice in CAD or USD?",
+    answer: "Yes. Our base enterprise pricing is in Canadian Dollars (CAD), and you can toggle between CAD and USD directly in the calculator above. Submit the pre-filled form below and our team will issue a formal PDF quote for your procurement department, accepting Purchase Orders (POs), EFT/ACH bank transfers, or corporate credit cards."
+  }
+];
+---
+
+<BaseLayout
+  title="Enterprise & Event Pricing Calculator — Zip Captions Custom Quotes | Zip Solutions"
+  description="Calculate your instant custom quote for Zip Captions enterprise and supported live event usage: $1,000 CAD for 1 day, $250 CAD per additional day, and $200 CAD/day per additional room."
+  schema={enterpriseSchema}
+  faqs={faqs}
+>
+  <Fragment slot="head">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  </Fragment>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-b from-white to-slate-50 border-b border-slate-200/80 pt-12 pb-14 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm font-bold text-teal-brand tracking-wide uppercase mb-3 font-heading">
+        Enterprise &amp; Supported Events
+      </p>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-midnight font-heading leading-tight">
+        Zip Captions Enterprise Quote Calculator
+      </h1>
+      <p class="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        Build an instant, transparent quote for enterprise deployments, multi-room conferences, and supported live events. Need self-serve captions for personal or individual use? Explore our <a href="/pricing#personal-plans" class="text-amethyst font-semibold underline hover:text-amethyst-dark">Individual Patreon Tiers</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Interactive Calculator Section -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+    <EnterprisePricingCalculator formTargetId="enterprise-quote-form" />
+  </section>
+
+  <!-- Pre-Filled Quote Submission Form Section -->
+  <section id="enterprise-quote-form" class="py-16 bg-slate-50 border-t border-slate-200/80 scroll-mt-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading block mb-2">
+          Step 3 • Official Procurement Proposal
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold font-heading text-midnight">
+          Submit Your Custom Quote to Our Team
+        </h2>
+        <p class="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
+          Your configured day-by-day schedule and room estimate above are automatically attached below. Complete your contact and venue details to receive an official proposal and invoice/PO setup.
+        </p>
+      </div>
+
+      <QuoteForm id="enterprise-quote-request-form" showCalculatorBanner={false} />
+
+      <div class="text-center text-xs text-slate-500 pt-2 space-y-1">
+        <p>
+          Want to learn more about QR code attendee relays, stage displays, and theatre surtitles? View our <a href="/live-event-quotes" class="text-teal-brand font-semibold hover:underline">Live Event Capabilities</a>.
+        </p>
+        <p>
+          Looking for personal or individual usage plans instead? Visit <a href="/pricing" class="text-amethyst font-semibold hover:underline">Personal &amp; Individual Pricing</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <FaqSection
+    title="Enterprise & Event Pricing FAQ"
+    subtitle="Clear answers on enterprise support, multi-room calculations, and PO billing."
+    faqs={faqs}
+    groupName="faq-enterprise-pricing"
+  />
+</BaseLayout>
