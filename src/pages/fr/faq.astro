@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import { faqsFr } from '../../data/faqData';
+---
+
+<BaseLayout
+  title="Foire aux questions | Solutions Zip"
+  description="Réponses pour les enseignants, équipes AV et organisateurs : confidentialité et approbation TI, micros, sous-titres en plein écran, accès discret des élèves, OBS/vMix et zones de service."
+  faqs={faqsFr}
+>
+  <!-- En-tête de page -->
+  <section class="bg-gradient-to-b from-white to-slate-50 border-b border-slate-200/80 pt-12 pb-14 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-xs sm:text-sm font-bold text-amethyst tracking-wide uppercase mb-3 font-heading">
+        Aide et réponses
+      </p>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-midnight font-heading">
+        Foire aux questions
+      </h1>
+      <p class="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        Des réponses pratiques issues de vraies classes, de lieux de culte et de régies qui utilisent Zip Captions et nos outils d'accessibilité.
+      </p>
+    </div>
+  </section>
+
+  <FaqSection
+    faqs={faqsFr}
+    title="Questions des enseignants, équipes AV et organisateurs d'événements"
+    subtitle="Défis concrets des classes, lieux de culte et salles de spectacle"
+    groupName="faq-fr-page"
+  />
+
+  <!-- Prochaines étapes -->
+  <section class="py-14 bg-slate-50 border-t border-slate-200/80">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <h2 class="text-xl sm:text-2xl font-extrabold font-heading text-midnight">
+        Une autre question?
+      </h2>
+      <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+        Consultez la <a href="/fr/products" class="text-teal-brand font-semibold hover:underline">liste complète des outils et services</a>,
+        les <a href="/fr/pricing" class="text-teal-brand font-semibold hover:underline">tarifs</a>
+        ou <a href="/fr/contact-us" class="text-teal-brand font-semibold hover:underline">écrivez-nous</a>. Nous lisons chaque message.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

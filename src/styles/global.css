@@ -29,6 +29,15 @@
   --font-heading: "Plus Jakarta Sans", system-ui, sans-serif;
   --font-sans: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
+
+  /* Elevation scale: layered, midnight-tinted shadows (overrides Tailwind defaults site-wide) */
+  --shadow-2xs: 0 1px 1px 0 rgb(15 23 42 / 0.04);
+  --shadow-xs: 0 1px 2px 0 rgb(15 23 42 / 0.05);
+  --shadow-sm: 0 1px 2px 0 rgb(15 23 42 / 0.04), 0 6px 16px -6px rgb(15 23 42 / 0.07);
+  --shadow-md: 0 1px 2px 0 rgb(15 23 42 / 0.05), 0 10px 22px -6px rgb(15 23 42 / 0.10);
+  --shadow-lg: 0 2px 5px -1px rgb(15 23 42 / 0.05), 0 16px 32px -8px rgb(15 23 42 / 0.12);
+  --shadow-xl: 0 2px 6px -1px rgb(15 23 42 / 0.06), 0 24px 48px -12px rgb(15 23 42 / 0.16);
+  --drop-shadow-sm: 0 2px 6px rgb(15 23 42 / 0.08);
 }
 
 @layer base {
@@ -152,4 +161,77 @@
 
 .prose-custom td {
   @apply p-3 border border-slate-200 text-slate-700;
+}
+
+/* ------------------------------------------------------------------
+   Isometric micro-dot grid (60deg lattice, 11px pitch, 0.6px dots)
+   Tile is 11 x 19 (11 * sqrt(3) = 19.05). Dots sit at 1/4 and 3/4 of the tile.
+   Always paired with an iso-mask-* vignette so dots fade out before reading text.
+   ------------------------------------------------------------------ */
+.iso-dots {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='19'%3E%3Ccircle cx='2.75' cy='4.75' r='.6' fill='%230F172A' fill-opacity='.17'/%3E%3Ccircle cx='8.25' cy='14.25' r='.6' fill='%230F172A' fill-opacity='.17'/%3E%3C/svg%3E");
+  background-size: 11px 19px;
+}
+
+.iso-dots-dark {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='19'%3E%3Ccircle cx='2.75' cy='4.75' r='.6' fill='%2394A3B8' fill-opacity='.23'/%3E%3Ccircle cx='8.25' cy='14.25' r='.6' fill='%232DD4BF' fill-opacity='.23'/%3E%3C/svg%3E");
+  background-size: 11px 19px;
+}
+
+.iso-mask-hero {
+  -webkit-mask-image: radial-gradient(ellipse 74% 70% at 50% 42%, #000 26%, rgb(0 0 0 / 0.48) 64%, transparent 96%);
+  mask-image: radial-gradient(ellipse 74% 70% at 50% 42%, #000 26%, rgb(0 0 0 / 0.48) 64%, transparent 96%);
+}
+
+.iso-mask-stage {
+  -webkit-mask-image: radial-gradient(ellipse 88% 84% at 50% 50%, #000 38%, transparent 98%);
+  mask-image: radial-gradient(ellipse 88% 84% at 50% 50%, #000 38%, transparent 98%);
+}
+
+.iso-mask-cta {
+  -webkit-mask-image: radial-gradient(ellipse 78% 88% at 75% 50%, #000 24%, rgb(0 0 0 / 0.38) 68%, transparent 100%);
+  mask-image: radial-gradient(ellipse 78% 88% at 75% 50%, #000 24%, rgb(0 0 0 / 0.38) 68%, transparent 100%);
+}
+
+/* ------------------------------------------------------------------
+   Parallax: decorative only, three zones (hero, product stage, event CTA).
+   Native scroll-driven animations (transform only). Progressive enhancement:
+   browsers without support, and users who prefer reduced motion, see a static layout.
+   ------------------------------------------------------------------ */
+@keyframes px-hero {
+  to { transform: translate3d(0, 40px, 0); }
+}
+
+@keyframes px-slow {
+  from { transform: translate3d(0, -18px, 0); }
+  to { transform: translate3d(0, 18px, 0); }
+}
+
+@keyframes px-counter {
+  from { transform: translate3d(0, 10px, 0); }
+  to { transform: translate3d(0, -10px, 0); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports ((animation-timeline: view()) and (animation-range: entry)) {
+    .parallax-scope {
+      view-timeline: --parallax block;
+    }
+
+    .parallax-hero-bg {
+      animation: px-hero linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 0 90vh;
+    }
+
+    .parallax-slow {
+      animation: px-slow linear both;
+      animation-timeline: --parallax;
+    }
+
+    .parallax-counter {
+      animation: px-counter linear both;
+      animation-timeline: --parallax;
+    }
+  }
 }

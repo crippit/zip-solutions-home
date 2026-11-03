@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FaqSection from '../components/FaqSection.astro';
+import { faqsEn } from '../data/faqData';
+---
+
+<BaseLayout
+  title="Frequently Asked Questions | Zip Solutions"
+  description="Answers for educators, AV teams and event organizers: privacy and IT approval, microphones, full-screen captions, discreet student access, OBS/vMix setup and service areas."
+  faqs={faqsEn}
+>
+  <!-- Page header -->
+  <section class="bg-gradient-to-b from-white to-slate-50 border-b border-slate-200/80 pt-12 pb-14 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-xs sm:text-sm font-bold text-amethyst tracking-wide uppercase mb-3 font-heading">
+        Help &amp; Answers
+      </p>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-midnight font-heading">
+        Frequently Asked Questions
+      </h1>
+      <p class="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        Practical answers from real classrooms, sanctuaries and production booths using Zip Captions and our accessibility tools.
+      </p>
+    </div>
+  </section>
+
+  <FaqSection
+    faqs={faqsEn}
+    title="Questions from Educators, AV Teams & Event Organizers"
+    subtitle="Real classroom, sanctuary & production hurdles"
+    groupName="faq-page"
+  />
+
+  <!-- Next steps -->
+  <section class="py-14 bg-slate-50 border-t border-slate-200/80">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <h2 class="text-xl sm:text-2xl font-extrabold font-heading text-midnight">
+        Still have a question?
+      </h2>
+      <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+        Browse the <a href="/products" class="text-teal-brand font-semibold hover:underline">full list of tools and services</a>,
+        check <a href="/pricing" class="text-teal-brand font-semibold hover:underline">pricing</a>,
+        or <a href="/contact-us" class="text-teal-brand font-semibold hover:underline">get in touch</a>. We read every message.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

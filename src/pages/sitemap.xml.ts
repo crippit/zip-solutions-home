@@ -21,6 +21,7 @@ export const GET: APIRoute = async ({ site }) => {
     'pricing',
     'enterprise-pricing',
     'contact-us',
+    'faq',
     'events',
     'live-event-quotes',
     'zipmath',

@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import FaqSection from '../components/FaqSection.astro';
 
 const homeSchema = [
   {
@@ -126,49 +125,20 @@ const features = [
   }
 ];
 
-const homeFaqs = [
-  {
-    question: "Our school board IT department blocks software downloads and refuses to sign vendor student-data agreements. Can teachers still use Zip Captions or EasySpeak?",
-    answer: "Yes. Both Zip Captions and Zip EasySpeak run 100% inside standard web browsers (Chrome, Safari, and Edge for free captioning; any browser for viewing or EasySpeak) with zero software or MSI packages to install, require zero student accounts or logins, and never store audio or transcripts on external servers. Live transcripts stay in local browser RAM and vanish when the tab closes—meeting strict Quebec Law 25, FIPPA, FERPA, and GDPR privacy rules out of the box."
-  },
-  {
-    question: "Why do live captions miss words when I use my laptop's built-in microphone from across a noisy classroom or church sanctuary?",
-    answer: "A laptop's built-in microphone is engineered for someone sitting 18 inches away, so room echo and background chatter will degrade any speech-to-text engine. In a classroom, clipping on an inexpensive wireless lapel (lavalier) mic or routing your Phonak Roger receiver into the laptop transforms accuracy immediately. In a church sanctuary or auditorium, send an Aux or Line-Out feed of the speaker's vocal mic from your soundboard into your laptop via a simple USB audio interface."
-  },
-  {
-    question: "When I present Google Slides or PowerPoint in full-screen on a projector or SMART Board, it covers up my browser tab. How do I keep captions visible on top?",
-    answer: "Click the Picture-in-Picture (PiP) button inside the Zip Captions toolbar before launching your slideshow. That detaches your live captions into a resizable, always-on-top floating window that hovers cleanly over full-screen PowerPoint, Google Slides, PDFs, or videos. You can also use our free ZipPanel Chrome extension."
-  },
-  {
-    question: "Hard-of-hearing or ESL students often refuse to sit in the front row or wear bulky gear because they don't want to feel singled out. How do you solve that?",
-    answer: "With Zip Captions Broadcast mode, you share a permanent Room Code or QR code with the whole room. Any student can discreetly follow the live transcript on their own Chromebook, tablet, or phone from any desk, adjust font size, switch on the Lexend dyslexia-friendly font, or enable free Chrome On-Device AI translation into their home language on their own screen."
-  },
-  {
-    question: "We used WebCaptioner before it shut down, and our AV booth is run by rotating volunteers. Will they have to set up new links or reconfigure OBS/vMix every week?",
-    answer: "No. Zip Captions gives you a permanent, static Broadcast Room Code. You print your QR code pew cards or lobby posters once, configure your OBS WebSocket or free Zip vMix Title bridge once, and every week your volunteer simply opens zipcaptions.app and clicks Start."
-  },
-  {
-    question: "Where do you provide on-site event production, custom live captioning, and Google for Education PD training versus remote services?",
-    answer: "We are based near Montreal, Quebec, Canada. We provide on-site hybrid event production, live event & theatre surtitling, assistive listening AV consultancy, and in-person Google for Education workshops across Greater Montreal, Quebec, and Canada—while our browser apps, virtual event captioning, and remote PD sessions are available worldwide."
-  }
-];
 ---
 
 <BaseLayout 
-  title="Zip Solutions | Free Live Captioning, AAC Tools & Event Accessibility"
-  description="Empowering communication with free browser-based live captions, offline AI AAC tools, hybrid event production, and inclusive educational technology. Winner of the 2025 University of Portsmouth Alumni Impact Award."
+  title="Free Live Captioning, AAC Tools & Events | Zip Solutions"
+  description="Free browser-based live captioning, offline AAC tools, hybrid event production and inclusive classroom tech. 2025 Portsmouth Alumni Impact Award winner."
   schema={homeSchema}
-  faqs={homeFaqs}
 >
   
   <!-- Hero Section -->
   <section class="relative overflow-hidden pt-12 sm:pt-20 pb-16 sm:pb-24 bg-gradient-to-b from-white via-slate-50 to-alabaster border-b border-slate-200/80">
     
-    <!-- Subtle background pattern accents -->
-    <div class="absolute inset-0 pointer-events-none opacity-40">
-      <div class="absolute -top-40 -right-40 w-96 h-96 rounded-3xl bg-amethyst/10 blur-3xl"></div>
-      <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-3xl bg-teal-brand/10 blur-3xl"></div>
-    </div>
+    <!-- Isometric micro-dot grid (drifts slowly behind content) + soft top wash -->
+    <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_60%_45%_at_50%_0%,rgba(139,92,246,0.06),transparent_80%)]" aria-hidden="true"></div>
+    <div class="iso-dots iso-mask-hero parallax-hero-bg absolute inset-x-0 -top-12 -bottom-4 pointer-events-none" aria-hidden="true"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
       
@@ -464,7 +434,7 @@ const homeFaqs = [
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {features.map((feature) => (
-        <div class="group bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+        <div class="group bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-6">
               <span class={`w-12 h-12 rounded-2xl ${feature.color} text-white flex items-center justify-center shadow-md`}>
@@ -545,13 +515,13 @@ const homeFaqs = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
         <!-- Left: Image / Preview Card -->
-        <div class="relative bg-slate-50 rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm overflow-hidden">
-          <div class="absolute -right-8 -bottom-8 w-48 h-48 rounded-3xl bg-teal-brand/10 blur-2xl"></div>
+        <div class="parallax-scope relative bg-slate-50 rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm overflow-hidden">
+          <div class="iso-dots iso-mask-stage parallax-slow absolute inset-x-0 -inset-y-8 pointer-events-none" aria-hidden="true"></div>
           <img 
             src="/images/zippreview.png" 
             alt="Zip Captions in action on laptop and mobile screen" 
             loading="lazy"
-            class="rounded-2xl shadow-md border border-slate-200 w-full h-auto object-cover" 
+            class="relative z-10 parallax-counter rounded-2xl shadow-md border border-slate-200 w-full h-auto object-cover" 
           />
         </div>
 
@@ -680,83 +650,48 @@ const homeFaqs = [
     </div>
   </section>
 
-  <!-- Clean Raw-Text Overview: Business Name, Services, Pricing & Service Areas -->
-  <section class="py-16 bg-white border-t border-slate-200/80" aria-labelledby="business-summary-heading">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-      <div class="max-w-3xl">
-        <span class="text-xs font-bold uppercase tracking-wider text-amethyst font-heading block mb-1">
-          Company Overview • Services • Pricing • Service Areas
+    <!-- Company overview (compact): entity, pricing, service area -->
+  <section class="py-14 sm:py-16 bg-white border-t border-slate-200/80" aria-labelledby="business-summary-heading">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      <div class="lg:col-span-7 space-y-3">
+        <span class="text-xs font-bold font-mono text-amethyst uppercase tracking-wider block">
+          About Zip Solutions
         </span>
         <h2 id="business-summary-heading" class="text-2xl sm:text-3xl font-extrabold font-heading text-midnight">
-          Zip Solutions at a Glance: What We Provide, Pricing &amp; Where We Operate
+          Accessibility software and live event services from Montreal
         </h2>
-        <p class="mt-2 text-sm sm:text-base text-slate-600 leading-relaxed">
-          <strong>Zip Solutions</strong> (French: <strong>Solutions Zip</strong>) is an award-winning educational and assistive technology company founded in 2023 near Montreal, Quebec, Canada by educators and software engineers Chris Webb and James Petersen.
+        <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+          <strong>Zip Solutions</strong> (French: <strong>Solutions Zip</strong>) is an award-winning educational and assistive technology company founded in 2023 near Montreal, Quebec by educators and software engineers Chris Webb and James Petersen. We build <a href="/zipcaptions" class="text-amethyst font-semibold hover:underline">Zip Captions</a> for free browser live captioning, <a href="/easyspeak" class="text-amethyst font-semibold hover:underline">EasySpeak</a> for offline AAC, and <a href="/zipmath" class="text-amethyst font-semibold hover:underline">Zip Math Remediator</a> for Google Workspace. We also provide <a href="/events" class="text-amethyst font-semibold hover:underline">in-person and hybrid event production</a>, live captioning, Google for Education training and AV consultancy.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <!-- Card 1: Software & Professional Services -->
-        <article class="p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200/90 space-y-3">
-          <span class="text-xs font-bold font-mono text-amethyst uppercase tracking-wider block">
-            1. Products &amp; Services
-          </span>
-          <h3 class="text-lg font-bold font-heading text-midnight">
-            What Zip Solutions Sells &amp; Builds
-          </h3>
-          <ul class="text-xs sm:text-sm text-slate-700 space-y-2 leading-relaxed">
-            <li><strong>Live Captioning &amp; Broadcast Apps:</strong> <a href="/zipcaptions" class="text-amethyst font-semibold hover:underline">Zip Captions</a> (browser live captioning &amp; QR room relay), <a href="/zipvmix" class="text-amethyst font-semibold hover:underline">Zip Captions for vMix</a>, <a href="/zipcaptionscompanion" class="text-amethyst font-semibold hover:underline">Stream Deck Companion</a>, <a href="/zippanel" class="text-amethyst font-semibold hover:underline">ZipPanel</a>, and <a href="/zipconnect" class="text-amethyst font-semibold hover:underline">Zip Connect</a>.</li>
-            <li><strong>AAC &amp; Classroom Learning Tools:</strong> <a href="/easyspeak" class="text-amethyst font-semibold hover:underline">Zip EasySpeak &amp; EasySpeak AI</a> (offline AAC speech synthesis), <a href="/zipspeech" class="text-amethyst font-semibold hover:underline">Zip Speech</a> for Google Meet, <a href="/zipmath" class="text-amethyst font-semibold hover:underline">Zip Solutions Remediator</a> (Google Workspace math assessment), and <a href="/equibrowse" class="text-amethyst font-semibold hover:underline">EquiBrowse</a>.</li>
-            <li><strong>Live Events, Educator PD &amp; AV Consulting:</strong> <a href="/live-event-quotes" class="text-amethyst font-semibold hover:underline">Custom Live Event Captioning &amp; Theatre Surtitles</a>, <a href="/events" class="text-amethyst font-semibold hover:underline">In-Person &amp; Hybrid Event Production</a>, <strong>Google for Education Certified Training &amp; Educator PD</strong>, and Assistive Listening / Venue AV Consultancy.</li>
-          </ul>
-        </article>
-
-        <!-- Card 2: Transparent Pricing -->
-        <article class="p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200/90 space-y-3">
-          <span class="text-xs font-bold font-mono text-teal-brand uppercase tracking-wider block">
-            2. Transparent Pricing (USD)
-          </span>
-          <h3 class="text-lg font-bold font-heading text-midnight">
-            Free Core Apps &amp; Optional AI Plans
-          </h3>
-          <ul class="text-xs sm:text-sm text-slate-700 space-y-2 leading-relaxed">
-            <li><strong>Core Web Apps &amp; Extensions ($0 / Free Forever):</strong> Standard browser captioning in Zip Captions, room broadcast codes, OBS/vMix integration, EasySpeak AAC, EquiBrowse, and Zip Solutions Remediator (BYOK Gemini key) are <strong>100% free ($0.00 USD)</strong> with no account required.</li>
-            <li><strong>Essential AI Tier ($5 USD/month):</strong> Includes 5 hours/month of advanced AI-powered live captioning via Patreon.</li>
-            <li><strong>Premium AI Tier ($15 USD/month):</strong> Includes 10 hours/month of advanced AI-powered live captioning.</li>
-            <li><strong>Platinum AI Tier ($30 USD/month):</strong> Includes 25 hours/month of advanced AI-powered live captioning plus supporter SWAG.</li>
-            <li><strong>Live Events, Educator PD &amp; AV Consulting:</strong> <a href="/live-event-quotes" class="text-teal-brand font-semibold hover:underline">Custom project quotes</a> tailored to venue size, session count, and staffing.</li>
-          </ul>
-        </article>
-
-        <!-- Card 3: Service Areas -->
-        <article class="p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200/90 space-y-3">
-          <span class="text-xs font-bold font-mono text-coral uppercase tracking-wider block">
-            3. Service Areas &amp; Availability
-          </span>
-          <h3 class="text-lg font-bold font-heading text-midnight">
-            Local in Quebec &amp; Canada • Global Online
-          </h3>
-          <ul class="text-xs sm:text-sm text-slate-700 space-y-2 leading-relaxed">
-            <li><strong>Headquarters:</strong> Based near <strong>Montreal, Quebec, Canada</strong>.</li>
-            <li><strong>On-Site Production, Live Event Captioning &amp; AV Consultancy:</strong> Serving schools, school boards, universities, theatres, municipalities, and conferences across <strong>Greater Montreal, Quebec, and Canada</strong>.</li>
-            <li><strong>Google for Education Training &amp; Educator PD:</strong> Delivered <strong>in-person across Montreal, Quebec, and Canada</strong>, and <strong>virtually worldwide</strong> (United States, United Kingdom, Europe, and international schools) in English and French.</li>
-            <li><strong>Browser Software &amp; Virtual Broadcasts:</strong> Available <strong>worldwide</strong> in any modern web browser with zero software installation.</li>
-          </ul>
-        </article>
-      </div>
+      <dl class="lg:col-span-5 space-y-5 text-sm">
+        <div>
+          <dt class="text-xs font-bold font-mono text-teal-brand uppercase tracking-wider">Pricing (USD)</dt>
+          <dd class="mt-1 text-slate-700 leading-relaxed">
+            Core web apps are free ($0), with no account required. Optional AI captioning runs $5&ndash;$30/month. <a href="/live-event-quotes" class="text-teal-brand font-semibold hover:underline">Event and PD quotes</a> are custom. <a href="/pricing" class="text-teal-brand font-semibold hover:underline">See pricing</a>.
+          </dd>
+        </div>
+        <div>
+          <dt class="text-xs font-bold font-mono text-coral uppercase tracking-wider">Where we work</dt>
+          <dd class="mt-1 text-slate-700 leading-relaxed">
+            On site across Greater Montreal, Quebec and Canada. Browser apps, virtual events and remote training are available worldwide, in English and French.
+          </dd>
+        </div>
+        <div>
+          <dt class="text-xs font-bold font-mono text-slate-500 uppercase tracking-wider">Have a question?</dt>
+          <dd class="mt-1 text-slate-700 leading-relaxed">
+            <a href="/faq" class="text-amethyst font-semibold hover:underline">Read the FAQ</a> or browse <a href="/products" class="text-amethyst font-semibold hover:underline">all tools and services</a>.
+          </dd>
+        </div>
+      </dl>
     </div>
   </section>
 
-  <FaqSection
-    faqs={homeFaqs}
-    title="Real-World Questions from Educators, AV Teams & Event Organizers"
-    subtitle="Solving Real Classroom, Sanctuary & Production Hurdles"
-    groupName="faq-home"
-  />
-
   <!-- CTA Consultation & Event Services Banner (Zero Pills) -->
-  <section class="py-16 bg-midnight text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="parallax-scope relative overflow-hidden py-16 bg-midnight text-white">
+    <div class="iso-dots-dark iso-mask-cta parallax-slow absolute inset-x-0 -inset-y-8 pointer-events-none" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
         <div class="space-y-3">
           <p class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading">
