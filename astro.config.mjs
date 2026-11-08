@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 import { unified } from '@astrojs/markdown-remark';
 
@@ -42,6 +43,7 @@ export default defineConfig({
       prefixDefaultLocale: false,
     },
   },
+  integrations: [react()],
   vite: {
     plugins: [tailwindcss()],
   },
