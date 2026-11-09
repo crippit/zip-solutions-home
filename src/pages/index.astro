@@ -67,61 +67,72 @@ const homeSchema = [
 
 const features = [
   {
-    title: "Zip Captions",
-    details: "We are the creators of Zip Captions, a free, privacy-focused live captioning tool that runs right in your web browser.",
-    icon: "ear",
-    badge: "Flagship",
+    title: "Live Captioning & Broadcast",
+    details: "Browser-based real-time transcription with Zip Captions, plus native vMix Bridge, Stream Deck Companion, ZipPanel, and Zip Connect integrations.",
+    icon: "captions",
+    badge: "Family 01 • Flagship",
     color: "bg-amethyst",
     href: "/zipcaptions",
     linkText: "Explore Zip Captions",
+    secondaryHref: "https://zipcaptions.app",
+    secondaryLinkText: "Launch App ↗",
+    secondaryExternal: true,
   },
   {
-    title: "Privacy Focused",
-    details: "We only collect the data that we need, and nothing more. We never track you, and we don't sell your data. Your audio stays private.",
-    icon: "shield",
-    badge: "Core Value",
-    color: "bg-teal-brand",
-    href: "/privacy",
-    linkText: "Read our Privacy Architecture",
-  },
-  {
-    title: "Dignity",
-    details: "Zip Solutions is committed to providing a private, seamless, and dignified live captioning and communication experience for all users.",
-    icon: "heart",
-    badge: "Philosophy",
-    color: "bg-coral",
-    href: "/story",
-    linkText: "Discover our Story & Philosophy",
-  },
-  {
-    title: "Inclusivity & Accessibility",
-    details: "Creating tools which allow everyone to be included: in the classroom, lecture hall, theatre, place of worship, or wider community.",
-    icon: "users",
-    badge: "Mission",
-    color: "bg-indigo-600",
-    href: "/products",
-    linkText: "Explore Accessibility Solutions",
-  },
-  {
-    title: "Community",
-    details: "Building open community is just as vital as building software. We collaborate closely with educators, d/Deaf mentors, and advocates.",
+    title: "AAC & Speech Synthesis",
+    details: "Dignified communication with Zip EasySpeak, offline on-device AI prediction, classroom printable boards, and Zip Speech for Google Meet.",
     icon: "chat",
-    badge: "Open Source",
-    color: "bg-teal-dark",
-    href: "/advisory",
-    linkText: "Meet our Advisory Board",
-    secondaryHref: "https://discord.gg/5Hyu7sQTHv",
-    secondaryLinkText: "Discord Forum",
+    badge: "Family 02 • Offline AI",
+    color: "bg-teal-brand",
+    href: "/easyspeak",
+    linkText: "Explore EasySpeak AAC",
+    secondaryHref: "/zipspeech",
+    secondaryLinkText: "Zip Speech",
   },
   {
-    title: "Respect",
-    details: "We respect our users and their unique needs. Share your suggestions, feedback, and accommodation requests directly on our forum.",
-    icon: "hand",
-    badge: "Commitment",
-    color: "bg-amethyst-dark",
-    href: "https://discord.gg/5Hyu7sQTHv",
-    linkText: "Join our Discord Forum",
-    external: true,
+    title: "Equitable Reading & K-13 Learning",
+    details: "Bionic reading, dyslexia-friendly fonts, and tint overlays via EquiBrowse, alongside our free BYOK Gemini math assessment remediator for Google Workspace.",
+    icon: "book",
+    badge: "Family 03 • K-13 & Workspace",
+    color: "bg-indigo-600",
+    href: "/zipmath",
+    linkText: "Zip Math Remediator",
+    secondaryHref: "/equibrowse",
+    secondaryLinkText: "EquiBrowse",
+  },
+  {
+    title: "Event Production & Educator PD",
+    details: "Turnkey in-person, hybrid, and virtual conference production, stage surtitle displays, mobile QR attendee relays, and Google for Education Certified Trainer PD.",
+    icon: "calendar",
+    badge: "Family 04 • Events & PD",
+    color: "bg-coral",
+    href: "/events",
+    linkText: "Events & Certified PD",
+    secondaryHref: "/enterprise-pricing",
+    secondaryLinkText: "Instant Quote",
+  },
+  {
+    title: "AV Consultancy & Printable Kits",
+    details: "Vendor-neutral assistive listening blueprints (Phonak Roger, Wi-Fi audio), theatre sound and lighting, plus free bilingual Printable Sector Kits.",
+    icon: "headphones",
+    badge: "Family 05 • Open Blueprints",
+    color: "bg-teal-dark",
+    href: "/use-cases",
+    linkText: "Browse Sector Kits",
+    secondaryHref: "https://resources.zipsolutions.org",
+    secondaryLinkText: "Knowledge Base ↗",
+    secondaryExternal: true,
+  },
+  {
+    title: "Privacy & Dignity by Design",
+    details: "Zero user tracking, no audio recording, 100% Free Forever core browser tools, and co-design governance with d/Deaf mentors, clinicians, and educators.",
+    icon: "shield",
+    badge: "Core Architecture",
+    color: "bg-midnight",
+    href: "/privacy",
+    linkText: "Privacy Architecture",
+    secondaryHref: "/advisory",
+    secondaryLinkText: "Advisory Board",
   }
 ];
 
@@ -142,17 +153,10 @@ const features = [
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
       
-      <!-- Main Logo Banner -->
-      <div class="flex justify-center mb-8">
-        <img 
-          src="/images/zipsolutions_logo.svg" 
-          alt="Zip Solutions" 
-          fetchpriority="high"
-          class="h-16 sm:h-24 md:h-28 w-auto object-contain drop-shadow-sm" 
-          width="400"
-          height="96"
-        />
-      </div>
+      <!-- Hero Eyebrow -->
+      <p class="text-xs sm:text-sm font-bold font-mono uppercase tracking-wider text-amethyst mb-4">
+        Open-Source Assistive Tech &bull; Free Live Captions, AAC &amp; Event Production
+      </p>
 
       <!-- Hero Heading -->
       <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-midnight font-heading max-w-4xl mx-auto leading-[1.1]">
@@ -228,30 +232,17 @@ const features = [
         <div class="bg-white border border-slate-200 hover:border-amethyst/50 rounded-2xl p-6 sm:p-8 transition-all shadow-sm hover:shadow-md flex flex-col justify-between group">
           <div class="space-y-4">
             <div class="flex items-center gap-4">
-              <a 
-                href="https://www.port.ac.uk/news-events-and-blogs/news/students-contribution-to-the-community-celebrated-at-the-2025-student-impact-awards" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                class="w-16 h-16 rounded-2xl bg-white p-2.5 border border-slate-200 flex items-center justify-center shadow-xs shrink-0 hover:border-amethyst/50 transition-colors"
-                title="Read University of Portsmouth Official Citation"
-              >
+              <div class="w-16 h-16 rounded-2xl bg-white p-2.5 border border-slate-200 flex items-center justify-center shadow-xs shrink-0">
                 <img src="/images/logos/portsmouth.svg" alt="University of Portsmouth Official Logo" class="h-11 w-auto object-contain" loading="lazy" />
-              </a>
+              </div>
               <div>
                 <span class="text-xs font-bold font-mono text-amethyst uppercase tracking-wider block">
                   Alumni Impact Award Winner (May 2025)
                 </span>
                 <h3 class="text-lg font-bold text-midnight font-heading leading-tight">
-                  <a 
-                    href="https://www.port.ac.uk/news-events-and-blogs/news/students-contribution-to-the-community-celebrated-at-the-2025-student-impact-awards" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    class="hover:text-amethyst transition-colors"
-                  >
-                    University of Portsmouth
-                  </a>
+                  University of Portsmouth
                 </h3>
-                <p class="text-xs text-slate-500 font-medium mt-0.5">
+                <p class="text-xs text-slate-600 font-medium mt-0.5">
                   Student Impact Awards
                 </p>
               </div>
@@ -266,20 +257,20 @@ const features = [
               </p>
             </div>
 
-            <blockquote class="border-l-4 border-amethyst pl-3 py-1.5 text-xs text-slate-600 italic bg-purple-50/50 rounded-r-xl">
+            <blockquote class="p-3.5 text-xs text-slate-700 italic bg-purple-50/60 border border-purple-200/70 rounded-xl">
               "Chris's innovative work embodies the University's values, making education accessible for all."
             </blockquote>
           </div>
 
           <div class="pt-5 mt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
-            <a href="/press#portsmouth" class="text-xs text-slate-500 hover:text-midnight font-medium transition-colors">
+            <a href="/press#portsmouth" class="py-1.5 text-xs text-slate-600 hover:text-midnight font-medium transition-colors">
               Higher Education Impact &bull; Press
             </a>
             <a 
               href="https://www.port.ac.uk/news-events-and-blogs/news/students-contribution-to-the-community-celebrated-at-the-2025-student-impact-awards" 
               target="_blank" 
               rel="noopener noreferrer" 
-              class="text-xs font-bold text-teal-brand hover:text-teal-700 inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform"
+              class="py-1.5 text-xs font-bold text-teal-brand hover:text-teal-700 inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform"
             >
               <span>Read Official Citation</span>
               <svg class="w-3.5 h-3.5 ml-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -293,30 +284,17 @@ const features = [
         <div class="bg-white border border-slate-200 hover:border-teal-300 rounded-2xl p-6 sm:p-8 transition-all shadow-sm hover:shadow-md flex flex-col justify-between group">
           <div class="space-y-4">
             <div class="flex items-center gap-4">
-              <a 
-                href="https://www.youtube.com/watch?v=u2wNoSQz0Zk" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                class="w-16 h-16 rounded-2xl bg-white p-2.5 border border-slate-200 flex items-center justify-center shadow-xs shrink-0 hover:border-teal-300 transition-colors"
-                title="Watch VSTE Winning Demo on YouTube"
-              >
+              <div class="w-16 h-16 rounded-2xl bg-white p-2.5 border border-slate-200 flex items-center justify-center shadow-xs shrink-0">
                 <img src="/images/logos/vste.png" alt="Virginia Society for Technology in Education Logo" class="h-8 w-auto object-contain" loading="lazy" />
-              </a>
+              </div>
               <div>
                 <span class="text-xs font-bold font-mono text-teal-brand uppercase tracking-wider block">
                   Accessibility Demo Slam Winner
                 </span>
                 <h3 class="text-lg font-bold text-midnight font-heading leading-tight">
-                  <a 
-                    href="https://www.youtube.com/watch?v=u2wNoSQz0Zk" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    class="hover:text-teal-brand transition-colors"
-                  >
-                    Virginia Society for Tech in Ed
-                  </a>
+                  Virginia Society for Tech in Ed
                 </h3>
-                <p class="text-xs text-slate-500 font-medium mt-0.5">
+                <p class="text-xs text-slate-600 font-medium mt-0.5">
                   Universal Design for Learning
                 </p>
               </div>
@@ -331,20 +309,20 @@ const features = [
               </p>
             </div>
 
-            <blockquote class="border-l-4 border-teal-brand pl-3 py-1.5 text-xs text-slate-600 italic bg-teal-50/50 rounded-r-xl">
+            <blockquote class="p-3.5 text-xs text-slate-700 italic bg-teal-50/60 border border-teal-200/70 rounded-xl">
               "A really powerful way to live caption your class that supports all learners in your classroom."
             </blockquote>
           </div>
 
           <div class="pt-5 mt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
-            <a href="/testimonial#katie-fielding" class="text-xs text-slate-500 hover:text-midnight font-medium transition-colors">
+            <a href="/testimonial#katie-fielding" class="py-1.5 text-xs text-slate-600 hover:text-midnight font-medium transition-colors">
               Katie Fielding &bull; Testimonial
             </a>
             <a 
               href="https://www.youtube.com/watch?v=u2wNoSQz0Zk" 
               target="_blank" 
               rel="noopener noreferrer" 
-              class="text-xs font-bold text-teal-brand hover:text-teal-700 inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform"
+              class="py-1.5 text-xs font-bold text-teal-brand hover:text-teal-700 inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform"
             >
               <span>Watch Winning Demo</span>
               <svg class="w-3.5 h-3.5 ml-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -359,7 +337,7 @@ const features = [
       <!-- Tier 2: Institutional & Program Partners Logo Bar (Zero Pills) -->
       <div class="pt-8 border-t border-slate-200 space-y-6">
         <div class="text-center">
-          <span class="text-xs font-bold font-mono text-slate-400 uppercase tracking-wider">
+          <span class="text-xs font-bold font-mono text-slate-600 uppercase tracking-wider">
             Innovation Accelerators, District Partners and Publications
           </span>
         </div>
@@ -421,14 +399,17 @@ const features = [
     </div>
   </section>
 
-  <!-- Core Features / Pillars Section -->
+  <!-- 5-Family Product & Service Hub + Privacy Architecture Section -->
   <section class="py-20 sm:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-xs font-bold font-mono text-amethyst uppercase tracking-wider block mb-2">
+        Five Accessibility Families &bull; Privacy by Design
+      </span>
       <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-midnight">
-        Built on Values That Matter
+        Tools, Live Events, and Open Blueprints
       </h2>
       <p class="mt-4 text-base sm:text-lg text-slate-600">
-        Every tool we design is engineered to respect individual privacy, dignity, and universal access without barriers.
+        Explore our five assistive technology and service families—every one engineered to respect individual privacy, dignity, and universal access without barriers.
       </p>
     </div>
 
@@ -438,24 +419,9 @@ const features = [
           <div>
             <div class="flex items-center justify-between mb-6">
               <span class={`w-12 h-12 rounded-2xl ${feature.color} text-white flex items-center justify-center shadow-md`}>
-                {feature.icon === 'ear' && (
+                {feature.icon === 'captions' && (
                   <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z" />
-                  </svg>
-                )}
-                {feature.icon === 'shield' && (
-                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                )}
-                {feature.icon === 'heart' && (
-                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                  </svg>
-                )}
-                {feature.icon === 'users' && (
-                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h6m-6 4h8M5 4h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z" />
                   </svg>
                 )}
                 {feature.icon === 'chat' && (
@@ -463,13 +429,28 @@ const features = [
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                   </svg>
                 )}
-                {feature.icon === 'hand' && (
+                {feature.icon === 'book' && (
                   <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                )}
+                {feature.icon === 'calendar' && (
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                )}
+                {feature.icon === 'headphones' && (
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 00-14 0v6a2 2 0 002 2h1a1 1 0 001-1v-4a1 1 0 00-1-1H6v-2a5 5 0 0110 0v2h-2a1 1 0 00-1 1v4a1 1 0 001 1h1a2 2 0 002-2v-6z" />
+                  </svg>
+                )}
+                {feature.icon === 'shield' && (
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 )}
               </span>
-              <span class="text-xs font-bold font-mono tracking-wider text-slate-400 uppercase">
+              <span class="text-xs font-bold font-mono tracking-wider text-slate-600 uppercase">
                 {feature.badge}
               </span>
             </div>
@@ -486,7 +467,7 @@ const features = [
           <div class="mt-8 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2">
             <a 
               href={feature.href} 
-              class="inline-flex items-center text-xs font-bold text-teal-brand hover:text-teal-700 transition-colors"
+              class="py-1.5 inline-flex items-center text-xs font-bold text-teal-brand hover:text-teal-700 transition-colors"
             >
               <span>{feature.linkText}</span>
               <svg class="w-3.5 h-3.5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -496,9 +477,9 @@ const features = [
             {feature.secondaryHref && (
               <a 
                 href={feature.secondaryHref} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                class="inline-flex items-center text-xs font-medium text-slate-400 hover:text-midnight transition-colors"
+                target={feature.secondaryExternal ? "_blank" : undefined}
+                rel={feature.secondaryExternal ? "noopener noreferrer" : undefined}
+                class="py-1.5 inline-flex items-center text-xs font-semibold text-slate-600 hover:text-midnight transition-colors"
               >
                 <span>{feature.secondaryLinkText}</span>
               </a>
@@ -527,7 +508,7 @@ const features = [
 
         <!-- Right: Description & Highlights -->
         <div class="space-y-6">
-          <p class="text-sm font-bold text-teal-brand tracking-wide uppercase font-heading">
+          <p class="text-xs font-bold text-teal-brand tracking-wider uppercase font-mono">
             Featured Tool
           </p>
           <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-midnight">
@@ -586,7 +567,7 @@ const features = [
       <!-- Card 1: Doris (Faith Community) -->
       <div class="bg-gradient-to-br from-purple-50/60 to-slate-50 rounded-3xl p-8 border border-purple-100 shadow-sm flex flex-col justify-between">
         <div>
-          <span class="text-xs font-bold font-heading text-amethyst uppercase tracking-wider block mb-3">
+          <span class="text-xs font-bold font-mono text-amethyst uppercase tracking-wider block mb-3">
             Worship and Live Streaming
           </span>
           <blockquote class="text-base sm:text-lg font-medium text-slate-800 leading-relaxed mb-6 italic">
@@ -596,9 +577,9 @@ const features = [
         <div class="pt-4 border-t border-purple-200/60 flex items-center justify-between">
           <div>
             <p class="font-heading font-bold text-midnight text-sm">Doris</p>
-            <p class="text-xs text-slate-500">Congregation Member, Rock Valley First Reformed Church</p>
+            <p class="text-xs text-slate-600">Congregation Member, Rock Valley First Reformed Church</p>
           </div>
-          <a href="/testimonial" class="text-xs font-bold text-amethyst hover:text-amethyst-dark transition-colors">
+          <a href="/testimonial" class="py-1.5 text-xs font-bold text-amethyst hover:text-amethyst-dark transition-colors">
             Read Story &rarr;
           </a>
         </div>
@@ -607,7 +588,7 @@ const features = [
       <!-- Card 2: Tracey Green (Education) -->
       <div class="bg-gradient-to-br from-teal-50/60 to-slate-50 rounded-3xl p-8 border border-teal-100 shadow-sm flex flex-col justify-between">
         <div>
-          <span class="text-xs font-bold font-heading text-teal-brand uppercase tracking-wider block mb-3">
+          <span class="text-xs font-bold font-mono text-teal-brand uppercase tracking-wider block mb-3">
             Classroom Independence
           </span>
           <blockquote class="text-base sm:text-lg font-medium text-slate-800 leading-relaxed mb-6 italic">
@@ -617,9 +598,9 @@ const features = [
         <div class="pt-4 border-t border-teal-200/60 flex items-center justify-between">
           <div>
             <p class="font-heading font-bold text-midnight text-sm">Tracey Green</p>
-            <p class="text-xs text-slate-500">Teacher of the Deaf, Montreal Oral School for the Deaf</p>
+            <p class="text-xs text-slate-600">Teacher of the Deaf, Montreal Oral School for the Deaf</p>
           </div>
-          <a href="/press" class="text-xs font-bold text-teal-brand hover:text-teal-700 transition-colors">
+          <a href="/press" class="py-1.5 text-xs font-bold text-teal-brand hover:text-teal-700 transition-colors">
             View Feature &rarr;
           </a>
         </div>
@@ -667,9 +648,9 @@ const features = [
 
       <dl class="lg:col-span-5 space-y-5 text-sm">
         <div>
-          <dt class="text-xs font-bold font-mono text-teal-brand uppercase tracking-wider">Pricing (USD)</dt>
+          <dt class="text-xs font-bold font-mono text-teal-brand uppercase tracking-wider">Transparent Pricing (CAD &amp; USD)</dt>
           <dd class="mt-1 text-slate-700 leading-relaxed">
-            Core web apps are free ($0), with no account required. Optional AI captioning runs $5&ndash;$30/month. <a href="/live-event-quotes" class="text-teal-brand font-semibold hover:underline">Event and PD quotes</a> are custom. <a href="/pricing" class="text-teal-brand font-semibold hover:underline">See pricing</a>.
+            <strong>$0 Free Forever</strong> core web apps (no account required), <strong>$5&ndash;$30 USD/mo</strong> personal AI captioning (<a href="/pricing" class="text-teal-brand font-semibold hover:underline">Patreon tiers</a>), and <strong>$1,000 CAD Day 1</strong> PO-ready live event &amp; enterprise packages (<a href="/enterprise-pricing" class="text-teal-brand font-semibold hover:underline">instant calculator</a>).
           </dd>
         </div>
         <div>
@@ -679,7 +660,7 @@ const features = [
           </dd>
         </div>
         <div>
-          <dt class="text-xs font-bold font-mono text-slate-500 uppercase tracking-wider">Have a question?</dt>
+          <dt class="text-xs font-bold font-mono text-slate-600 uppercase tracking-wider">Have a question?</dt>
           <dd class="mt-1 text-slate-700 leading-relaxed">
             <a href="/faq" class="text-amethyst font-semibold hover:underline">Read the FAQ</a> or browse <a href="/products" class="text-amethyst font-semibold hover:underline">all tools and services</a>.
           </dd>
@@ -694,28 +675,28 @@ const features = [
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
         <div class="space-y-3">
-          <p class="text-xs font-bold uppercase tracking-wider text-teal-brand font-heading">
+          <p class="text-xs font-bold uppercase tracking-wider text-teal-brand font-mono">
             Live Events • Hybrid Production • Google for Education Training &amp; PD
           </p>
           <h2 class="text-2xl sm:text-4xl font-extrabold font-heading text-white">
             Planning an In-Person or Hybrid Event?
           </h2>
           <p class="text-slate-300 text-sm sm:text-base max-w-2xl leading-relaxed">
-            We provide in-person and hybrid event production, live captioning setups, and <strong>custom Google for Education training &amp; educator PD</strong> for schools and organizations. Reach out for tailored quotes or workshop discussions.
+            Build an instant, PO-ready budget for live stage captioning and multi-room translation (starting at <strong>$1,000 CAD Day 1</strong>), or explore our custom <strong>Google for Education training &amp; hybrid production</strong> packages.
           </p>
         </div>
         <div class="flex flex-col sm:flex-row gap-3.5 shrink-0">
           <a 
-            href="/contact-us" 
+            href="/enterprise-pricing" 
             class="inline-flex items-center justify-center px-8 py-4 rounded-2xl font-heading font-bold text-sm sm:text-base text-midnight bg-white hover:bg-alabaster shadow-lg transition-all"
           >
-            Get a Custom Quote
+            Calculate Instant Quote
           </a>
           <a 
-            href="/products" 
+            href="/live-event-quotes" 
             class="inline-flex items-center justify-center px-7 py-4 rounded-2xl font-heading font-bold text-sm sm:text-base text-white border border-slate-700 hover:bg-slate-800/80 transition-all"
           >
-            Explore Services
+            Explore Event Solutions
           </a>
         </div>
       </div>

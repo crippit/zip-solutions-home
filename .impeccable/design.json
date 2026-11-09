@@ -1,0 +1,329 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-08T21:42:30-05:00",
+  "title": "Design System: Zip Solutions",
+  "extensions": {
+    "colorMeta": {
+      "midnight": {
+        "role": "neutral",
+        "displayName": "Midnight Obsidian",
+        "canonical": "#0F172A",
+        "tonalRamp": ["#020617", "#0F172A", "#1E293B", "#334155", "#475569", "#64748B", "#94A3B8", "#E2E8F0"]
+      },
+      "alabaster": {
+        "role": "neutral",
+        "displayName": "Soft Alabaster",
+        "canonical": "#F8FAFC",
+        "tonalRamp": ["#0F172A", "#334155", "#64748B", "#94A3B8", "#CBD5E1", "#E2E8F0", "#F1F5F9", "#F8FAFC"]
+      },
+      "pure-white": {
+        "role": "neutral",
+        "displayName": "Pure White",
+        "canonical": "#FFFFFF",
+        "tonalRamp": ["#1E293B", "#475569", "#64748B", "#94A3B8", "#CBD5E1", "#E2E8F0", "#F8FAFC", "#FFFFFF"]
+      },
+      "amethyst": {
+        "role": "primary",
+        "displayName": "Electric Amethyst",
+        "canonical": "#8B5CF6",
+        "tonalRamp": ["#4C1D95", "#5B21B6", "#6D28D9", "#7C3AED", "#8B5CF6", "#A78BFA", "#DDD6FE", "#F5F3FF"]
+      },
+      "amethyst-light": {
+        "role": "primary",
+        "displayName": "Amethyst Light",
+        "canonical": "#A78BFA",
+        "tonalRamp": ["#4C1D95", "#5B21B6", "#6D28D9", "#7C3AED", "#8B5CF6", "#A78BFA", "#DDD6FE", "#F5F3FF"]
+      },
+      "amethyst-dark": {
+        "role": "primary",
+        "displayName": "Amethyst Dark",
+        "canonical": "#7C3AED",
+        "tonalRamp": ["#4C1D95", "#5B21B6", "#6D28D9", "#7C3AED", "#8B5CF6", "#A78BFA", "#DDD6FE", "#F5F3FF"]
+      },
+      "amethyst-tint": {
+        "role": "primary",
+        "displayName": "Amethyst Tint",
+        "canonical": "#F5F3FF",
+        "tonalRamp": ["#4C1D95", "#5B21B6", "#6D28D9", "#7C3AED", "#8B5CF6", "#A78BFA", "#DDD6FE", "#F5F3FF"]
+      },
+      "teal-brand": {
+        "role": "secondary",
+        "displayName": "Vibrant Teal",
+        "canonical": "#0D9488",
+        "tonalRamp": ["#134E4A", "#115E59", "#0F766E", "#0D9488", "#14B8A6", "#2DD4BF", "#99F6E4", "#F0FDFA"]
+      },
+      "teal-light": {
+        "role": "secondary",
+        "displayName": "Teal Light",
+        "canonical": "#14B8A6",
+        "tonalRamp": ["#134E4A", "#115E59", "#0F766E", "#0D9488", "#14B8A6", "#2DD4BF", "#99F6E4", "#F0FDFA"]
+      },
+      "teal-dark": {
+        "role": "secondary",
+        "displayName": "Teal Dark",
+        "canonical": "#0F766E",
+        "tonalRamp": ["#134E4A", "#115E59", "#0F766E", "#0D9488", "#14B8A6", "#2DD4BF", "#99F6E4", "#F0FDFA"]
+      },
+      "teal-tint": {
+        "role": "secondary",
+        "displayName": "Teal Tint",
+        "canonical": "#F0FDFA",
+        "tonalRamp": ["#134E4A", "#115E59", "#0F766E", "#0D9488", "#14B8A6", "#2DD4BF", "#99F6E4", "#F0FDFA"]
+      },
+      "coral": {
+        "role": "tertiary",
+        "displayName": "Safety Coral",
+        "canonical": "#FB7185",
+        "tonalRamp": ["#881337", "#9F1239", "#BE123C", "#E11D48", "#F43F5E", "#FB7185", "#FDA4AF", "#FFF1F2"]
+      },
+      "coral-light": {
+        "role": "tertiary",
+        "displayName": "Coral Light",
+        "canonical": "#FDA4AF",
+        "tonalRamp": ["#881337", "#9F1239", "#BE123C", "#E11D48", "#F43F5E", "#FB7185", "#FDA4AF", "#FFF1F2"]
+      },
+      "coral-dark": {
+        "role": "tertiary",
+        "displayName": "Coral Dark",
+        "canonical": "#F43F5E",
+        "tonalRamp": ["#881337", "#9F1239", "#BE123C", "#E11D48", "#F43F5E", "#FB7185", "#FDA4AF", "#FFF1F2"]
+      },
+      "indigo-learning": {
+        "role": "tertiary",
+        "displayName": "Deep Indigo",
+        "canonical": "#4F46E5",
+        "tonalRamp": ["#312E81", "#3730A3", "#4338CA", "#4F46E5", "#6366F1", "#818CF8", "#C7D2FE", "#EEF2FF"]
+      },
+      "slate-body": {
+        "role": "neutral",
+        "displayName": "Slate Body",
+        "canonical": "#475569",
+        "tonalRamp": ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B", "#94A3B8", "#CBD5E1", "#F1F5F9"]
+      },
+      "slate-muted": {
+        "role": "neutral",
+        "displayName": "Slate Muted",
+        "canonical": "#64748B",
+        "tonalRamp": ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B", "#94A3B8", "#CBD5E1", "#F1F5F9"]
+      },
+      "slate-border": {
+        "role": "neutral",
+        "displayName": "Slate Border",
+        "canonical": "#E2E8F0",
+        "tonalRamp": ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B", "#94A3B8", "#CBD5E1", "#E2E8F0"]
+      },
+      "slate-surface": {
+        "role": "neutral",
+        "displayName": "Slate Surface",
+        "canonical": "#F1F5F9",
+        "tonalRamp": ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B", "#94A3B8", "#E2E8F0", "#F1F5F9"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Primary hero headlines on the homepage and flagship product landings."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings (h2) and major page banners."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card titles (h3), team member names, and form step headers."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Standard paragraphs, FAQ answers, and documentation prose (60-72ch max)."
+      },
+      "label": {
+        "displayName": "Label / Eyebrow",
+        "purpose": "Plain uppercase section kickers, live pricing telemetry, and language codes."
+      }
+    },
+    "shadows": [
+      {
+        "name": "shadow-2xs",
+        "value": "0 1px 1px 0 rgb(15 23 42 / 0.04)",
+        "purpose": "Micro-elevation for utility controls like the EN/FR language switcher."
+      },
+      {
+        "name": "shadow-xs",
+        "value": "0 1px 2px 0 rgb(15 23 42 / 0.05)",
+        "purpose": "Subtle rest state for institutional partner logo tiles and framed logo wells."
+      },
+      {
+        "name": "shadow-sm",
+        "value": "0 1px 2px 0 rgb(15 23 42 / 0.04), 0 6px 16px -6px rgb(15 23 42 / 0.07)",
+        "purpose": "Default rest elevation for primary cards, form containers, prose articles, and sticky header."
+      },
+      {
+        "name": "shadow-md",
+        "value": "0 1px 2px 0 rgb(15 23 42 / 0.05), 0 10px 22px -6px rgb(15 23 42 / 0.10)",
+        "purpose": "Default elevation for primary CTA buttons, product family icon wells, and card hover states."
+      },
+      {
+        "name": "shadow-lg",
+        "value": "0 2px 5px -1px rgb(15 23 42 / 0.05), 0 16px 32px -8px rgb(15 23 42 / 0.12)",
+        "purpose": "Hover elevation for primary CTA buttons and inverted white CTA buttons on dark stages."
+      },
+      {
+        "name": "shadow-xl",
+        "value": "0 2px 6px -1px rgb(15 23 42 / 0.06), 0 24px 48px -12px rgb(15 23 42 / 0.16)",
+        "purpose": "High-elevation showcase frames, interactive product card hover lift, and skip-link focus banners."
+      }
+    ],
+    "motion": [
+      {
+        "name": "transition-interactive",
+        "value": "200ms cubic-bezier(0.4, 0, 0.2, 1)",
+        "purpose": "Standard hover and focus transition for buttons, links, inputs, and navigation triggers."
+      },
+      {
+        "name": "transition-card-lift",
+        "value": "300ms cubic-bezier(0.4, 0, 0.2, 1)",
+        "purpose": "Card elevation lift (hover:-translate-y-1 and shadow-sm to shadow-xl) and ambient corner glow."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button (Amethyst)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Flagship CTA button for launching tools and primary product actions.",
+      "html": "<button class=\"ds-btn-primary\"><span>Launch Zip Captions</span><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14\"/></svg></button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 28px; border-radius: 16px; background: var(--color-amethyst, #8B5CF6); color: #FFFFFF; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-weight: 700; font-size: 16px; border: none; box-shadow: 0 1px 2px 0 rgb(15 23 42 / 0.05), 0 10px 22px -6px rgb(15 23 42 / 0.10); cursor: pointer; transition: background 200ms ease, box-shadow 200ms ease, transform 200ms ease; } .ds-btn-primary:hover { background: var(--color-amethyst-dark, #7C3AED); box-shadow: 0 2px 5px -1px rgb(15 23 42 / 0.05), 0 16px 32px -8px rgb(15 23 42 / 0.12); } .ds-btn-primary:focus-visible { outline: 2px solid #8B5CF6; outline-offset: 2px; }"
+    },
+    {
+      "name": "Primary Dark Button (Midnight)",
+      "kind": "button",
+      "refersTo": "button-midnight",
+      "description": "High-contrast Midnight Obsidian CTA button for catalog exploration.",
+      "html": "<button class=\"ds-btn-midnight\">Explore All Tools</button>",
+      "css": ".ds-btn-midnight { display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; border-radius: 16px; background: var(--color-midnight, #0F172A); color: #FFFFFF; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-weight: 700; font-size: 16px; border: none; box-shadow: 0 1px 2px 0 rgb(15 23 42 / 0.05), 0 10px 22px -6px rgb(15 23 42 / 0.10); cursor: pointer; transition: background 200ms ease, box-shadow 200ms ease; } .ds-btn-midnight:hover { background: #1E293B; box-shadow: 0 2px 6px -1px rgb(15 23 42 / 0.06), 0 24px 48px -12px rgb(15 23 42 / 0.16); } .ds-btn-midnight:focus-visible { outline: 2px solid #8B5CF6; outline-offset: 2px; }"
+    },
+    {
+      "name": "Header Action Button (Teal)",
+      "kind": "button",
+      "refersTo": "button-teal",
+      "description": "Compact Vibrant Teal CTA button used in the sticky header and enterprise actions.",
+      "html": "<button class=\"ds-btn-teal\">Contact Us</button>",
+      "css": ".ds-btn-teal { display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; border-radius: 12px; background: var(--color-teal-brand, #0D9488); color: #FFFFFF; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-weight: 600; font-size: 14px; border: none; box-shadow: 0 1px 2px 0 rgb(15 23 42 / 0.04), 0 6px 16px -6px rgb(15 23 42 / 0.07); cursor: pointer; transition: background 200ms ease, box-shadow 200ms ease; } .ds-btn-teal:hover { background: var(--color-teal-dark, #0F766E); box-shadow: 0 1px 2px 0 rgb(15 23 42 / 0.05), 0 10px 22px -6px rgb(15 23 42 / 0.10); } .ds-btn-teal:focus-visible { outline: 2px solid #0D9488; outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Outline Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "High-contrast white squircle button with a 1px slate border for secondary actions.",
+      "html": "<button class=\"ds-btn-secondary\">Learn More</button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 14px 28px; border-radius: 16px; background: #FFFFFF; color: var(--color-midnight, #0F172A); font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-weight: 700; font-size: 16px; border: 1px solid #E2E8F0; box-shadow: 0 1px 2px 0 rgb(15 23 42 / 0.04), 0 6px 16px -6px rgb(15 23 42 / 0.07); cursor: pointer; transition: background 200ms ease, border-color 200ms ease; } .ds-btn-secondary:hover { background: #F1F5F9; border-color: #CBD5E1; } .ds-btn-secondary:focus-visible { outline: 2px solid #8B5CF6; outline-offset: 2px; }"
+    },
+    {
+      "name": "Category Filter Toggle (Zero-Pill)",
+      "kind": "chip",
+      "refersTo": "button-secondary",
+      "description": "Squircle category filter button in ZipDashboard with active Midnight Obsidian lock.",
+      "html": "<div class=\"ds-filter-group\"><button class=\"ds-chip ds-chip-active\" aria-pressed=\"true\">All</button><button class=\"ds-chip\" aria-pressed=\"false\">Live Captioning &amp; Broadcast</button><button class=\"ds-chip\" aria-pressed=\"false\">AAC &amp; Speech Synthesis</button></div>",
+      "css": ".ds-filter-group { display: flex; flex-wrap: wrap; gap: 8px; } .ds-chip { padding: 6px 14px; border-radius: 12px; font-family: 'Inter', system-ui, sans-serif; font-size: 12px; font-weight: 600; background: #FFFFFF; color: #475569; border: 1px solid #E2E8F0; cursor: pointer; transition: all 200ms ease; } .ds-chip:hover { border-color: rgba(139, 92, 246, 0.5); color: #8B5CF6; } .ds-chip-active, .ds-chip-active:hover { background: #0F172A; color: #FFFFFF; border-color: #0F172A; } .ds-chip:focus-visible { outline: 2px solid #8B5CF6; outline-offset: 2px; }"
+    },
+    {
+      "name": "Form Field with Above-Input Hint",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Accessible form input with above-input format hint and 48px touch target.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-label\" for=\"ds-email\">Work or Organization Email <span class=\"ds-req\">*</span></label><span class=\"ds-hint\">Format: name@organization.org</span><input id=\"ds-email\" type=\"email\" class=\"ds-input\" placeholder=\"jane@organization.org\" /></div>",
+      "css": ".ds-field { display: flex; flex-direction: column; max-width: 360px; font-family: 'Inter', system-ui, sans-serif; } .ds-label { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 14px; font-weight: 600; color: #0F172A; margin-bottom: 4px; } .ds-req { color: #FB7185; } .ds-hint { font-size: 12px; color: #64748B; margin-bottom: 6px; } .ds-input { min-height: 48px; padding: 12px 16px; border-radius: 12px; border: 1px solid #CBD5E1; background: #FFFFFF; color: #0F172A; font-size: 16px; transition: border-color 200ms ease, box-shadow 200ms ease; } .ds-input::placeholder { color: #94A3B8; } .ds-input:focus { outline: none; border-color: #0D9488; box-shadow: 0 0 0 2px #0D9488; }"
+    },
+    {
+      "name": "Header Navigation Bar & Language Switcher",
+      "kind": "nav",
+      "refersTo": "button-teal",
+      "description": "Sticky top navigation cluster with squircle triggers, monospace EN/FR switcher, and Teal CTA.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" class=\"ds-nav-link ds-nav-active\">Home</a><button class=\"ds-nav-link\"><span>Products &amp; Services</span><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M6 9l6 6 6-6\"/></svg></button><button class=\"ds-lang-btn\"><span>🌐</span><span>FR</span></button></nav>",
+      "css": ".ds-nav { display: inline-flex; align-items: center; gap: 8px; padding: 12px 16px; background: rgba(255,255,255,0.95); border: 1px solid #E2E8F0; border-radius: 16px; font-family: 'Inter', system-ui, sans-serif; } .ds-nav-link { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 12px; font-size: 14px; font-weight: 600; color: #334155; background: transparent; border: none; text-decoration: none; cursor: pointer; transition: background 200ms ease, color 200ms ease; } .ds-nav-link:hover { background: #F1F5F9; color: #0F172A; } .ds-nav-active { background: #F5F3FF; color: #8B5CF6; } .ds-lang-btn { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 12px; border: 1px solid #E2E8F0; background: #FFFFFF; color: #334155; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; cursor: pointer; transition: all 200ms ease; } .ds-lang-btn:hover { border-color: #8B5CF6; background: #F5F3FF; color: #8B5CF6; }"
+    },
+    {
+      "name": "Product Catalog Card (ZipDashboard)",
+      "kind": "card",
+      "refersTo": "card-surface",
+      "description": "Signature 24px squircle product card with semantic family icon well, ambient corner glow, and plain uppercase metadata.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-card-blob\"></div><div class=\"ds-card-top\"><div class=\"ds-icon-well\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4.5 10c0-3.6 2.7-6.5 6-6.5s6 2.9 6 6.5c0 3.2-1.8 5.2-3 6.5-.8.8-1.5 1.8-1.5 2.8a2.2 2.2 0 1 1-4.4 0\"/><path d=\"M17.5 7a5 5 0 0 1 0 6\"/></svg></div><span class=\"ds-eyebrow\">Flagship Web App</span></div><h3 class=\"ds-card-title\">Zip Captions</h3><p class=\"ds-card-body\">Free, privacy-focused live captioning tool that runs directly in your web browser with zero tracking.</p><div class=\"ds-card-meta\">100% Free ($0) • Optional AI $5–$30 USD/mo</div></article>",
+      "css": ".ds-card { position: relative; overflow: hidden; max-width: 360px; padding: 24px; border-radius: 24px; background: #FFFFFF; border: 1px solid rgba(226, 232, 240, 0.8); box-shadow: 0 1px 2px 0 rgb(15 23 42 / 0.04), 0 6px 16px -6px rgb(15 23 42 / 0.07); transition: transform 300ms ease, box-shadow 300ms ease; font-family: 'Inter', system-ui, sans-serif; } .ds-card:hover { transform: translateY(-4px); box-shadow: 0 2px 6px -1px rgb(15 23 42 / 0.06), 0 24px 48px -12px rgb(15 23 42 / 0.16); } .ds-card-blob { position: absolute; right: -40px; top: -40px; width: 112px; height: 112px; border-radius: 24px; background: #8B5CF6; opacity: 0.1; transition: opacity 300ms ease; pointer-events: none; } .ds-card:hover .ds-card-blob { opacity: 0.25; } .ds-card-top { position: relative; z-index: 1; display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; } .ds-icon-well { padding: 14px; border-radius: 16px; background: #8B5CF6; color: #FFFFFF; box-shadow: 0 1px 2px 0 rgb(15 23 42 / 0.05), 0 10px 22px -6px rgb(15 23 42 / 0.10); display: inline-flex; } .ds-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #8B5CF6; } .ds-card-title { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 20px; font-weight: 700; color: #0F172A; margin: 0 0 8px 0; } .ds-card-body { font-size: 14px; line-height: 1.6; color: #475569; margin: 0 0 16px 0; } .ds-card-meta { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; color: #0D9488; padding-top: 12px; border-top: 1px solid #F1F5F9; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Dignity by Design, Inclusion without Friction",
+    "overview": "Zip Solutions is the engine room of modern assistive technology. Historically, the assistive technology sector has imposed an \"accessibility tax\"—locking essential human communication behind overpriced hardware, institutional red tape, and dated, clinical interfaces. The visual system of ZipSolutions.org directly combats this tax by championing open access, technical elegance, and human-centric engineering. Every page must feel simultaneously trustworthy to a school board procurement officer, technically credible to a theatre or broadcast AV engineer, and welcoming to an individual learner or educator launching a free tool in their browser.\n\nThe aesthetic philosophy is built on high-contrast daylight clarity. Crisp Soft Alabaster (#F8FAFC) and Pure White (#FFFFFF) surfaces anchor a WCAG AAA contrast ratio (~16.8:1) against Midnight Obsidian (#0F172A) typography. Geometric Plus Jakarta Sans headings project confidence and warmth, Inter delivers effortless long-form readability, and JetBrains Mono provides precision technical eyebrows and live pricing readouts. Across the entire platform, a strict zero-pill geometry replaces generic SaaS floating pill badges with structured squircle containers (12px to 24px radii) and clean typographic hierarchy.\n\nWe explicitly reject generic AI-slop SaaS tropes: no floating rounded-full pill badges above headings, no low-contrast slate-on-slate body copy, no dark-only neon cyberpunk gradients, and no cluttered decorative chrome that competes with assistive utility.",
+    "keyCharacteristics": [
+      "WCAG AAA Daylight Foundation: High-contrast #0F172A text over #F8FAFC and #FFFFFF canvases (~16.8:1 contrast ratio) engineered for immediate legibility across laptops, smartphones, and classroom projectors.",
+      "Engine-Room Technical Elegance: Precision monospace eyebrows (JetBrains Mono), masked isometric micro-dot lattices (.iso-dots), and structured specification grids that signal serious acoustic and software engineering.",
+      "Semantic Product-Family Color Coding: Distinct, purposeful color lanes mapping each of the five product families to a dedicated brand hue without overwhelming the calm daylight canvas.",
+      "Disciplined Zero-Pill Geometry: Squircle corners (8px, 12px, 16px, 24px) across all buttons, inputs, tabs, and cards—never rounded-full capsules or floating decorative pills.",
+      "Tactile, Accessible Interaction: Unmistakable 2px Electric Amethyst focus rings, generous 48px (min-h-12) form touch targets, above-input format hints, and complete prefers-reduced-motion parity."
+    ],
+    "rules": [
+      {
+        "name": "The AAA Daylight Rule",
+        "body": "Primary reading surfaces must pair Midnight Obsidian (#0F172A) text with Soft Alabaster (#F8FAFC) or Pure White (#FFFFFF) backgrounds to preserve the ~16.8:1 contrast foundation. Dark Midnight Obsidian backgrounds are reserved strictly for full-bleed closing CTA stages, dark UI showcase frames, and the global footer.",
+        "section": "colors"
+      },
+      {
+        "name": "The Semantic Family Lane Rule",
+        "body": "Product families own their assigned accent color across icon wells, ambient corner glows, and category indicators: Live Captioning & Broadcast uses Electric Amethyst (#8B5CF6), AAC & Speech Synthesis uses Vibrant Teal (#0D9488), Equitable Reading & Learning uses Deep Indigo (#4F46E5), Event Organisation & PD uses Safety Coral (#FB7185), and AV Consultancy & Open Guides uses Teal Dark (#0F766E). Never scramble family colors for decoration.",
+        "section": "colors"
+      },
+      {
+        "name": "The Single-Gradient Rule",
+        "body": "Multi-stop brand gradients (from-amethyst via-purple-600 to-teal-brand) are reserved exclusively for focal hero display phrases (such as \"Accessibility\" in \"The Home of Accessibility\") and subtle radial top-washes (rgba(139,92,246,0.06)). Buttons, cards, and navigation surfaces use solid, high-contrast fills.",
+        "section": "colors"
+      },
+      {
+        "name": "The Plain Eyebrow Rule",
+        "body": "Category kickers, award dates, and step indicators above headings must be rendered as plain uppercase text (text-xs font-bold uppercase tracking-wider) in amethyst, teal-brand, or slate-400—never wrapped inside pill borders or shaded lozenge backgrounds.",
+        "section": "typography"
+      },
+      {
+        "name": "The Monospace Telemetry Rule",
+        "body": "Use JetBrains Mono (font-mono) for live price calculations ($1,000 CAD), bilingual switcher codes (EN / FR), date stamps, JSON/configuration previews, and technical eyebrow metadata so operational figures stand apart from narrative prose.",
+        "section": "typography"
+      },
+      {
+        "name": "The Border-First Elevation Rule",
+        "body": "Never rely on box-shadow alone to separate a white card from an alabaster or white background. Every card, input, and surface container must carry an explicit 1px border (border-slate-200) at rest so boundaries remain unmistakable on low-contrast classroom projectors.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Masked Lattice Rule",
+        "body": "Background dot grids (.iso-dots and .iso-dots-dark) must always be paired with a radial mask class (.iso-mask-*) and pointer-events-none (aria-hidden=\"true\"), ensuring decorative texture never degrades text contrast.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Zero-Pill Rule",
+        "body": "Do not use rounded-full (9999px) for badges, category tags, tab bars, or buttons. All interactive controls, status labels, and segmented switches use structured squircle radii (rounded-lg 8px, rounded-xl 12px, or rounded-2xl 16px), and category headers use plain uppercase typography.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do maintain the ~16.8:1 WCAG AAA contrast baseline by setting primary text in Midnight Obsidian (#0F172A) over Soft Alabaster (#F8FAFC) or Pure White (#FFFFFF) canvases.",
+      "Do use plain uppercase typography (text-xs font-bold uppercase tracking-wider) in Electric Amethyst (#8B5CF6), Vibrant Teal (#0D9488), or Slate for section eyebrows and card category labels.",
+      "Do honor the semantic product-family color assignments (amethyst for Live Captioning, teal-brand for AAC, indigo-600 for Equitable Learning, coral for Events/PD, teal-dark for AV Consultancy).",
+      "Do place form field format hints (span.hint) above the <input> element and enforce a 48px (min-h-12) minimum touch target on form controls.",
+      "Do pair every decorative .iso-dots or .iso-dots-dark background lattice with its radial fade mask (.iso-mask-hero, .iso-mask-stage, .iso-mask-cta) and prefers-reduced-motion safeguards.",
+      "Do design every component layout to expand gracefully for both English and Canadian French (Solutions Zip) copy without truncation or horizontal overflow."
+    ],
+    "donts": [
+      "Don't use rounded-full pill badges, lozenge tags, or floating capsule kickers anywhere in the UI (strictly follow The Zero-Pill Rule).",
+      "Don't place white cards on white or alabaster backgrounds without an explicit 1px border (border-slate-200).",
+      "Don't use low-contrast gray body text (slate-400 or lighter) on light surfaces for readable content; keep body copy at slate-600 (#475569), slate-700 (#334155), or midnight (#0F172A).",
+      "Don't apply multi-stop purple-to-teal gradients to buttons, card backgrounds, or form controls; keep interactive surfaces solid and crisp.",
+      "Don't obscure or alter confirmed pricing tiers ($0 Free Forever core tools, $5/$15/$30 USD Patreon AI tiers, and $1,000 CAD Day 1 + $250/day + $200/room/day Enterprise event formula)."
+    ]
+  }
+}

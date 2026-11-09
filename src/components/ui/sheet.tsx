@@ -26,12 +26,13 @@ SheetOverlay.displayName = SheetPrimitive.Overlay.displayName;
 interface SheetContentProps
   extends React.ComponentPropsWithoutRef<typeof SheetPrimitive.Content> {
   side?: "top" | "bottom" | "left" | "right";
+  closeLabel?: string;
 }
 
 const SheetContent = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Content>,
   SheetContentProps
->(({ side = "right", className, children, ...props }, ref) => {
+>(({ side = "right", closeLabel = "Close", className, children, ...props }, ref) => {
   const sideClasses = {
     top: "inset-x-0 top-0 border-b data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top",
     bottom: "inset-x-0 bottom-0 border-t data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom",
@@ -54,7 +55,7 @@ const SheetContent = React.forwardRef<
         {children}
         <SheetPrimitive.Close className="absolute right-4 top-4 rounded-xl p-2 text-slate-500 hover:text-midnight hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-amethyst transition-colors">
           <X className="h-5 w-5" />
-          <span className="sr-only">Close</span>
+          <span className="sr-only">{closeLabel}</span>
         </SheetPrimitive.Close>
       </SheetPrimitive.Content>
     </SheetPortal>

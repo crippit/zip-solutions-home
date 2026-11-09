@@ -240,15 +240,15 @@ const currentYear = new Date().getFullYear();
     </div>
 
     <!-- Bottom Bar -->
-    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
       <p>
         Zip Solutions | Copyright &copy; 2023-{currentYear} Solutions Zip. {isFr ? "Tous droits réservés." : "All rights reserved."}
       </p>
       <div class="flex items-center space-x-6">
-        <a href={l('/privacy')} class="hover:text-slate-300 transition-colors">{isFr ? "Confidentialité" : "Privacy"}</a>
-        <a href={l('/terms')} class="hover:text-slate-300 transition-colors">{isFr ? "Conditions" : "Terms"}</a>
-        <a href={l('/cookies')} class="hover:text-slate-300 transition-colors">{isFr ? "Témoins" : "Cookies"}</a>
-        <a href={l('/contact-us')} class="hover:text-slate-300 transition-colors">Contact</a>
+        <a href={l('/privacy')} class="py-1.5 hover:text-white transition-colors">{isFr ? "Confidentialité" : "Privacy"}</a>
+        <a href={l('/terms')} class="py-1.5 hover:text-white transition-colors">{isFr ? "Conditions" : "Terms"}</a>
+        <a href={l('/cookies')} class="py-1.5 hover:text-white transition-colors">{isFr ? "Témoins" : "Cookies"}</a>
+        <a href={l('/contact-us')} class="py-1.5 hover:text-white transition-colors">Contact</a>
         <a 
           href={switchLangUrl} 
           class="px-2 py-1 rounded-md border border-slate-700 bg-slate-900 text-slate-300 hover:text-white hover:border-amethyst transition-colors font-mono font-bold flex items-center gap-1"
