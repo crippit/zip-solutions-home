@@ -481,16 +481,22 @@ const schemaOrgJson = {
             var rect = stage.getBoundingClientRect();
 
             // Entry progress: 0 when top of section is at bottom of viewport (vh),
-            // reaching 1.0 once its top enters 72% of viewport height (28% up from bottom)
-            var enterZone = vh * 0.28;
+            // reaching 1.0 once its top enters 62% of viewport height (38% up from bottom)
+            var enterZone = vh * 0.38;
             var distFromBottom = vh - rect.top;
             var enterProgress = isHeroStage ? 1 : clamp(distFromBottom / enterZone, 0, 1);
 
-            // Exit progress: 1 while bottom of section is below 30% of viewport height,
-            // fading down to 0 as the bottom of the section scrolls out the top (rect.bottom -> 60px)
-            var exitStart = vh * 0.34;
-            var exitEnd = 60;
-            var exitProgress = clamp((rect.bottom - exitEnd) / (exitStart - exitEnd), 0, 1);
+            // Exit progress:
+            // - For full-viewport Hero stage: begins fading out smoothly as soon as the user scrolls past 24px
+            // - For content stages: begins fading when bottom of section enters the top 42% of viewport toward the 80px header
+            var exitProgress;
+            if (isHeroStage) {
+              exitProgress = 1 - clamp((scrollY - 24) / (vh * 0.65), 0, 1);
+            } else {
+              var exitStart = vh * 0.42;
+              var exitEnd = 80;
+              exitProgress = clamp((rect.bottom - exitEnd) / (exitStart - exitEnd), 0, 1);
+            }
 
             // If at the very bottom of the page, keep the final section solid so the user can read it
             var docHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
@@ -504,16 +510,16 @@ const schemaOrgJson = {
             var exitEased = easeOutCubic(exitProgress);
 
             var opacity = Math.min(enterEased, exitEased);
-            // Minimum floor of 0.08 so layout never pops harshly
-            var finalOpacity = 0.06 + opacity * 0.94;
+            // Minimum floor of 0.04 so layout never pops harshly
+            var finalOpacity = 0.04 + opacity * 0.96;
 
-            // Parallax Y offset: rises +48px -> 0px on entry, and drifts 0px -> -38px on exit
-            var enterY = (1 - enterEased) * 48;
-            var exitY = (1 - exitEased) * -38;
+            // Parallax Y offset: rises +52px -> 0px on entry, and drifts 0px -> -48px on exit
+            var enterY = (1 - enterEased) * 52;
+            var exitY = (1 - exitEased) * (isHeroStage ? -56 : -44);
             var translateY = enterY + exitY;
 
-            // Subtle depth scale: 0.965 -> 1.0 -> 0.975
-            var scale = 0.965 + 0.035 * opacity;
+            // Subtle depth scale: 0.96 -> 1.0 -> 0.96
+            var scale = 0.96 + 0.04 * opacity;
 
             stage.style.opacity = finalOpacity.toFixed(3);
             stage.style.transform = 'translate3d(0,' + translateY.toFixed(1) + 'px,0) scale(' + scale.toFixed(4) + ')';
