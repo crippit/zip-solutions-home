@@ -54,16 +54,27 @@
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: #0F172A;
     background-color: #F8FAFC;
+    caret-color: #8B5CF6;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: #0F172A;
     font-weight: 700;
+    text-wrap: balance;
   }
 
-  code, pre, kbd {
+  p, dd, li, blockquote {
+    text-wrap: pretty;
+  }
+
+  a {
+    text-underline-offset: 4px;
+  }
+
+  code, pre, kbd, .font-mono {
     font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
   }
 
   *,
