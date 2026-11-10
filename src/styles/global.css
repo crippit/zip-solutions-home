@@ -235,3 +235,41 @@
     }
   }
 }
+
+/* ------------------------------------------------------------------
+   Hero Word Color-Sweep Animation ("Accessibility" / "l'accessibilité")
+   Starts in solid Midnight Obsidian (#0F172A) on load, then sweeps the
+   brand gradient (Amethyst -> Purple -> Teal) across the letters from
+   left to right. Falls back to static gradient if reduced motion is on.
+   ------------------------------------------------------------------ */
+@keyframes hero-color-sweep {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hero-word-sweep {
+  background-image: linear-gradient(
+    90deg,
+    #8B5CF6 0%,
+    #9333EA 26%,
+    #0D9488 48%,
+    #0F172A 54%,
+    #0F172A 100%
+  );
+  background-size: 230% 100%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-word-sweep {
+    background-position: 100% 50%;
+    animation: hero-color-sweep 1.35s cubic-bezier(0.22, 1, 0.36, 1) 0.18s forwards;
+  }
+}
