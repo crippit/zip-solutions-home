@@ -452,47 +452,98 @@ const schemaOrgJson = {
     <Footer />
 
     <script is:inline>
-      // Universal progressive-enhancement parallax controller (Option A: Background & Stage Only)
+      // Scroll-Driven Section Fade-In / Fade-Out & Parallax Controller
       (function () {
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-        // Skip JS fallback when native CSS view() timelines are supported
-        if (window.CSS && CSS.supports && CSS.supports('animation-timeline: view()')) return;
-
+        var stageEls = Array.prototype.slice.call(document.querySelectorAll('.scroll-section-stage'));
         var heroEls = Array.prototype.slice.call(document.querySelectorAll('.parallax-hero-bg'));
         var slowEls = Array.prototype.slice.call(document.querySelectorAll('.parallax-slow'));
         var counterEls = Array.prototype.slice.call(document.querySelectorAll('.parallax-counter'));
-        if (!heroEls.length && !slowEls.length && !counterEls.length) return;
+        if (!stageEls.length && !heroEls.length && !slowEls.length && !counterEls.length) return;
+
+        function clamp(val, min, max) {
+          return Math.min(max, Math.max(min, val));
+        }
+
+        function easeOutCubic(t) {
+          return 1 - Math.pow(1 - t, 3);
+        }
 
         var ticking = false;
-        function updateParallax() {
+        function updateScrollParallax() {
           ticking = false;
           var vh = window.innerHeight || 800;
           var scrollY = window.scrollY || window.pageYOffset || 0;
 
+          // 1. Section Fade-In / Fade-Out + Vertical Parallax
+          for (var s = 0; s < stageEls.length; s++) {
+            var stage = stageEls[s];
+            var isHeroStage = stage.hasAttribute('data-hero-stage');
+            var rect = stage.getBoundingClientRect();
+
+            // Entry progress: 0 when top of section is at bottom of viewport (vh),
+            // reaching 1.0 once its top enters 72% of viewport height (28% up from bottom)
+            var enterZone = vh * 0.28;
+            var distFromBottom = vh - rect.top;
+            var enterProgress = isHeroStage ? 1 : clamp(distFromBottom / enterZone, 0, 1);
+
+            // Exit progress: 1 while bottom of section is below 30% of viewport height,
+            // fading down to 0 as the bottom of the section scrolls out the top (rect.bottom -> 60px)
+            var exitStart = vh * 0.34;
+            var exitEnd = 60;
+            var exitProgress = clamp((rect.bottom - exitEnd) / (exitStart - exitEnd), 0, 1);
+
+            // If at the very bottom of the page, keep the final section solid so the user can read it
+            var docHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+            var nearPageBottom = (scrollY + vh) >= (docHeight - 40);
+            if (nearPageBottom && s === stageEls.length - 1) {
+              enterProgress = 1;
+              exitProgress = 1;
+            }
+
+            var enterEased = easeOutCubic(enterProgress);
+            var exitEased = easeOutCubic(exitProgress);
+
+            var opacity = Math.min(enterEased, exitEased);
+            // Minimum floor of 0.08 so layout never pops harshly
+            var finalOpacity = 0.06 + opacity * 0.94;
+
+            // Parallax Y offset: rises +48px -> 0px on entry, and drifts 0px -> -38px on exit
+            var enterY = (1 - enterEased) * 48;
+            var exitY = (1 - exitEased) * -38;
+            var translateY = enterY + exitY;
+
+            // Subtle depth scale: 0.965 -> 1.0 -> 0.975
+            var scale = 0.965 + 0.035 * opacity;
+
+            stage.style.opacity = finalOpacity.toFixed(3);
+            stage.style.transform = 'translate3d(0,' + translateY.toFixed(1) + 'px,0) scale(' + scale.toFixed(4) + ')';
+          }
+
+          // 2. Hero background lattice drift
           for (var i = 0; i < heroEls.length; i++) {
-            var p = Math.min(1, Math.max(0, scrollY / (vh * 0.95)));
-            var y = -18 + p * 86;
+            var p = clamp(scrollY / (vh * 0.95), 0, 1);
+            var y = -18 + p * 96;
             heroEls[i].style.transform = 'translate3d(0,' + y.toFixed(1) + 'px,0)';
           }
 
+          // 3. Background lattice & ambient glow counter-drift
           for (var j = 0; j < slowEls.length; j++) {
             var el = slowEls[j];
             var parent = el.parentElement || el;
-            var rect = parent.getBoundingClientRect();
-            if (rect.bottom < -100 || rect.top > vh + 100) continue;
-            var progress = (vh - rect.top) / (vh + rect.height);
-            var clamped = Math.min(1, Math.max(0, progress));
-            var shift = -44 + clamped * 88;
+            var prect = parent.getBoundingClientRect();
+            if (prect.bottom < -120 || prect.top > vh + 120) continue;
+            var progress = clamp((vh - prect.top) / (vh + prect.height), 0, 1);
+            var shift = -56 + progress * 112;
             el.style.transform = 'translate3d(0,' + shift.toFixed(1) + 'px,0)';
           }
 
+          // 4. Foreground product preview image counter-parallax
           for (var k = 0; k < counterEls.length; k++) {
             var cel = counterEls[k];
             var crect = cel.getBoundingClientRect();
-            if (crect.bottom < -100 || crect.top > vh + 100) continue;
-            var cprog = (vh - crect.top) / (vh + crect.height);
-            var cclamp = Math.min(1, Math.max(0, cprog));
-            var cshift = 26 - cclamp * 52;
+            if (crect.bottom < -120 || crect.top > vh + 120) continue;
+            var cprog = clamp((vh - crect.top) / (vh + crect.height), 0, 1);
+            var cshift = 34 - cprog * 68;
             cel.style.transform = 'translate3d(0,' + cshift.toFixed(1) + 'px,0)';
           }
         }
@@ -500,10 +551,11 @@ const schemaOrgJson = {
         window.addEventListener('scroll', function () {
           if (!ticking) {
             ticking = true;
-            window.requestAnimationFrame(updateParallax);
+            window.requestAnimationFrame(updateScrollParallax);
           }
         }, { passive: true });
-        updateParallax();
+        window.addEventListener('resize', updateScrollParallax, { passive: true });
+        updateScrollParallax();
       })();
     </script>
   </body>
