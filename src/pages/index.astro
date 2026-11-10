@@ -209,8 +209,9 @@ const features = [
   </section>
 
   <!-- Institutional Accolades & Partners Section (Two-Tier, Zero Pills) -->
-  <section class="bg-slate-50/80 border-b border-slate-200 py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-6xl mx-auto space-y-12">
+  <section class="relative overflow-hidden bg-slate-50/80 border-b border-slate-200 py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+    <div class="iso-dots iso-mask-stage parallax-slow absolute inset-x-0 -inset-y-14 pointer-events-none opacity-60" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-6xl mx-auto space-y-12">
       
       <!-- Section Header: Centered Typographic Hierarchy -->
       <div class="text-center max-w-3xl mx-auto space-y-3">
@@ -400,7 +401,9 @@ const features = [
   </section>
 
   <!-- 5-Family Product & Service Hub + Privacy Architecture Section -->
-  <section class="py-20 sm:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="relative overflow-hidden py-20 sm:py-28">
+    <div class="parallax-slow absolute inset-x-0 -inset-y-16 pointer-events-none bg-[radial-gradient(ellipse_55%_45%_at_20%_30%,rgba(139,92,246,0.05),transparent_70%),radial-gradient(ellipse_55%_45%_at_80%_70%,rgba(13,148,136,0.05),transparent_70%)]" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-3xl mx-auto mb-16">
       <span class="text-xs font-bold font-mono text-amethyst uppercase tracking-wider block mb-2">
         Five Accessibility Families &bull; Privacy by Design
@@ -488,6 +491,7 @@ const features = [
         </div>
       ))}
     </div>
+    </div>
   </section>
 
   <!-- Featured Product Teaser: Zip Captions -->
@@ -497,7 +501,7 @@ const features = [
         
         <!-- Left: Image / Preview Card -->
         <div class="parallax-scope relative bg-slate-50 rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm overflow-hidden">
-          <div class="iso-dots iso-mask-stage parallax-slow absolute inset-x-0 -inset-y-8 pointer-events-none" aria-hidden="true"></div>
+          <div class="iso-dots iso-mask-stage parallax-slow absolute inset-x-0 -inset-y-14 pointer-events-none" aria-hidden="true"></div>
           <img 
             src="/images/zippreview.png" 
             alt="Zip Captions in action on laptop and mobile screen" 
@@ -671,7 +675,7 @@ const features = [
 
   <!-- CTA Consultation & Event Services Banner (Zero Pills) -->
   <section class="parallax-scope relative overflow-hidden py-16 bg-midnight text-white">
-    <div class="iso-dots-dark iso-mask-cta parallax-slow absolute inset-x-0 -inset-y-8 pointer-events-none" aria-hidden="true"></div>
+    <div class="iso-dots-dark iso-mask-cta parallax-slow absolute inset-x-0 -inset-y-14 pointer-events-none" aria-hidden="true"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
         <div class="space-y-3">

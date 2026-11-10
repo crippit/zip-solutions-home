@@ -194,44 +194,59 @@
 }
 
 /* ------------------------------------------------------------------
-   Parallax: decorative only, three zones (hero, product stage, event CTA).
-   Native scroll-driven animations (transform only). Progressive enhancement:
-   browsers without support, and users who prefer reduced motion, see a static layout.
+   Tactile Depth & Background Parallax (Option A: Zero Text Dimming)
+   Uses self-scoped view() timelines so background lattices, ambient washes,
+   and stage frames counter-drift against 100% solid AAA foreground text.
    ------------------------------------------------------------------ */
 @keyframes px-hero {
-  to { transform: translate3d(0, 40px, 0); }
+  from { transform: translate3d(0, -18px, 0); }
+  to { transform: translate3d(0, 68px, 0); }
 }
 
 @keyframes px-slow {
-  from { transform: translate3d(0, -18px, 0); }
-  to { transform: translate3d(0, 18px, 0); }
+  from { transform: translate3d(0, -44px, 0); }
+  to { transform: translate3d(0, 44px, 0); }
 }
 
 @keyframes px-counter {
-  from { transform: translate3d(0, 10px, 0); }
-  to { transform: translate3d(0, -10px, 0); }
+  from { transform: translate3d(0, 26px, 0) scale(0.985); }
+  50% { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(0, -26px, 0) scale(0.985); }
+}
+
+@keyframes px-float {
+  from { transform: translate3d(0, 18px, 0); }
+  to { transform: translate3d(0, -18px, 0); }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  @supports ((animation-timeline: view()) and (animation-range: entry)) {
-    .parallax-scope {
-      view-timeline: --parallax block;
-    }
-
+  @supports (animation-timeline: view()) {
     .parallax-hero-bg {
       animation: px-hero linear both;
       animation-timeline: scroll(root block);
-      animation-range: 0 90vh;
+      animation-range: 0 95vh;
+      will-change: transform;
     }
 
     .parallax-slow {
       animation: px-slow linear both;
-      animation-timeline: --parallax;
+      animation-timeline: view();
+      animation-range: cover 0% cover 100%;
+      will-change: transform;
     }
 
     .parallax-counter {
       animation: px-counter linear both;
-      animation-timeline: --parallax;
+      animation-timeline: view();
+      animation-range: cover 0% cover 100%;
+      will-change: transform;
+    }
+
+    .parallax-float {
+      animation: px-float linear both;
+      animation-timeline: view();
+      animation-range: cover 0% cover 100%;
+      will-change: transform;
     }
   }
 }
