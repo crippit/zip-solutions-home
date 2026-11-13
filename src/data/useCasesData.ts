@@ -48,6 +48,12 @@ export interface RelatedLink {
   external?: boolean;
 }
 
+export interface ComplianceCallout {
+  badge?: string;
+  title: string;
+  description: string;
+}
+
 export interface SectorData {
   slug: string;
   navLabel: string;
@@ -60,6 +66,7 @@ export interface SectorData {
   reasonsTitle: string;
   reasonsSubtitle: string;
   reasons: SectorReason[];
+  complianceCallout?: ComplianceCallout;
   setupTitle: string;
   setupSubtitle: string;
   setupSteps: SetupStep[];
@@ -864,6 +871,11 @@ export const sectorsData: Record<'en' | 'fr', SectorData[]> = {
           description: 'Transcripts are held locally in browser memory during the meeting and are not stored on external third-party servers.'
         }
       ],
+      complianceCallout: {
+        badge: 'ADA Title II · WCAG 2.1 AA',
+        title: 'ADA Title II Compliance (April 2027 / 2028 WCAG 2.1 AA) for Municipal Council & School Board Streams',
+        description: 'Public agencies—including municipal councils and school boards—face upcoming ADA Title II WCAG 2.1 Level AA web and livestream accessibility deadlines (April 2027 / 2028). Zip Captions helps community media teams and clerks add real-time captions to OBS Studio and vMix council broadcasts and export time-coded .SRT and .VTT subtitle files for archived public meeting videos with zero software procurement.'
+      },
       setupTitle: 'How Municipal & Senior Center Setup Works',
       setupSubtitle: 'Simple setup for town clerks, librarians, and community media teams.',
       setupSteps: [
@@ -1908,6 +1920,11 @@ export const sectorsData: Record<'en' | 'fr', SectorData[]> = {
           description: 'La transcription demeure dans la mémoire locale du navigateur durant la séance et n’est pas conservée sur des serveurs infonuagiques externes.'
         }
       ],
+      complianceCallout: {
+        badge: 'Conformité ADA Titre II · WCAG 2.1 AA',
+        title: 'Conformité ADA Titre II (avril 2027 / 2028 WCAG 2.1 AA) pour les diffusions municipales et scolaires',
+        description: 'Aux États-Unis, les organismes publics — notamment les conseils municipaux et conseils scolaires — doivent respecter les échéances d’accessibilité numérique ADA Titre II (WCAG 2.1 niveau AA, avril 2027 / 2028). Solutions Zip aide les équipes de médias communautaires et les greffiers à intégrer des sous-titres en direct dans OBS Studio et vMix ainsi qu’à exporter des fichiers .SRT et .VTT horodatés pour l’archivage vidéo des séances publiques, sans aucun coût logiciel.'
+      },
       setupTitle: 'Comment fonctionne l’installation municipale ou communautaire',
       setupSubtitle: 'Une mise en place simple pour les greffiers, bibliothécaires et animateurs.',
       setupSteps: [
